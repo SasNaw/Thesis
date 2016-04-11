@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  11 APR 2016 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  11 APR 2016 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,7 +8,7 @@ LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 ! Undefined control sequence.
 l.1 \chapter
-            {Basiscs}
+            {Background}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -23,20 +23,23 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1 \chapter{B
-              asiscs}
+              ackground}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no B in font nullfont!
 Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
 Missing character: There is no c in font nullfont!
-Missing character: There is no s in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.2 	\section
-             {Definition of terms}
+l.2 \section
+            {Definition of terms}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -61,8 +64,8 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.3 		\subsection
-                 {Deep Zoom Image Format}
+l.3 \subsection
+               {Deep Zoom Image Format}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -117,8 +120,8 @@ Missing character: There is no z in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no ) in font nullfont!
 ! Undefined control sequence.
-l.4 			The Deep Zoom Image Format (.dzi)\nmc
-                                            {.dzi}{Deep Zoom Image Format} i...
+l.4 The Deep Zoom Image Format (.dzi)\nomenclature
+                                                  {.dzi}{Deep Zoom Image For...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -192,72 +195,6 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no f in font nullfont!
 Missing character: There is no t in font nullfont!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
-! Undefined control sequence.
-\@footnotetext ...tins {\reset@font \footnotesize 
-                                                  \interlinepenalty \interfo...
-l.7 			details.}
-                 to improve performance and quality in the handling of large...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\@footnotetext ...}\color@begingroup \@makefntext 
-                                                  {\rule \z@ \footnotesep \i...
-l.7 			details.}
-                 to improve performance and quality in the handling of large...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (14.44446pt too wide) in paragraph at lines 7--7
-[][]\OT1/cmr/m/n/10 See
- []
-
-
-Overfull \hbox (140.75032pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 https://msdn.microsoft.com/en-
- []
-
-
-Overfull \hbox (152.72263pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 us/library/cc645077(v=vs.95).aspx
- []
-
-
-Overfull \hbox (11.97226pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 for
- []
-
-
-Overfull \hbox (15.86115pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 fur-
- []
-
-
-Overfull \hbox (17.80559pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 ther
- []
-
-
-Overfull \hbox (13.33334pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 de-
- []
-
-
-Overfull \hbox (21.16672pt too wide) in paragraph at lines 7--7
-\OT1/cmr/m/n/10 tails.| 
- []
-
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
@@ -387,12 +324,7 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 1--10
-[]
- []
-
-
-Overfull \hbox (4.48613pt too wide) in paragraph at lines 1--10
+Overfull \hbox (20.0pt too wide) in paragraph at lines 1--5
 []
  []
 
@@ -403,8 +335,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 			\begin{figure}
-                      [!htbp]
+l.6 	\begin{figure}
+                   [!htbp]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -416,8 +348,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 			\begin{figure}[
-                       !htbp]
+l.6 	\begin{figure}[
+                    !htbp]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -429,13 +361,13 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no ] in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 11--12
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
 [] 
  []
 
 ! Undefined control sequence.
-l.13 					\includegraphics
-                          [scale=0.5]{img/dzi_pyramid.png}
+l.8 			\includegraphics
+                       [scale=0.5]{img/dzi_pyramid.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -463,13 +395,17 @@ Missing character: There is no i in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.13 					\includegraphics[scale=0.5]{img/dzi_
-                                              pyramid.png}
+l.8 			\includegraphics[scale=0.5]{img/dzi_
+                                           pyramid.png}
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 8.
 ! Extra }, or forgotten $.
-l.13 ...degraphics[scale=0.5]{img/dzi_pyramid.png}
+l.8 ...udegraphics[scale=0.5]{img/dzi_pyramid.png}
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -484,10 +420,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.14 					\caption
-                  {example of the dzi pyramid image representation (source:
+l.9 				\caption
+                {of the dzi pyramid image representation (source: \url{https...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
+
+! Undefined control sequence.
+l.9 ... pyramid image representation (source: \url
+                                                  {https://i-msdn.sec.s-msft...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 ! LaTeX Error: Command \end{center} invalid in math mode.
@@ -496,8 +442,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 				\end{center}
-                     
+l.11 		\end{center}
+                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -508,8 +454,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 				\end{center}
-                     
+l.11 		\end{center}
+                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -520,16 +466,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 				\end{center}
-                     
+l.11 		\end{center}
+                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.17 				\end{center}
-                     
+l.11 		\end{center}
+                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -539,8 +485,8 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.17 				\end{center}
-                     
+l.11 		\end{center}
+                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -554,14 +500,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.18 			\end{figure}
-                    
+l.12 	\end{figure}
+                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (575.63637pt too wide) in paragraph at lines 13--19
+Overfull \hbox (538.33072pt too wide) in paragraph at lines 8--13
 []\OML/cmm/m/it/10 yramid:png[][]$
  []
 
@@ -1097,10 +1043,32 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no ) in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{web:dzi}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.14 ...ighlited tiles in fig. 2.1) \cite{web:dzi}
+                                                  .
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `web:dzi' on page  undefined on input line 14.
+
+Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 20--29
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--15
 []
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 14--15
+[] 
  []
 
 Missing character: There is no E in font nullfont!
@@ -1363,6 +1331,23 @@ Missing character: There is no x in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no ) in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{web:dzi}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .
+l.16 ...ed from level 0 (1*1 Pixel) \cite{web:dzi}
+                                                  . E.g. the levels shown in...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `web:dzi' on page  undefined on input line 16.
+
+Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 Missing character: There is no E in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -1396,13 +1381,18 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no : in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 30--35
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--17
 []
  []
 
 
-Overfull \hbox (18.91096pt too wide) in paragraph at lines 30--35
+Overfull \hbox (18.91096pt too wide) in paragraph at lines 16--17
 \OT1/cmr/m/it/10 level
+ []
+
+
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 16--17
+[]
  []
 
 Missing character: There is no l in font nullfont!
@@ -1430,17 +1420,17 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.04166pt too wide) in paragraph at lines 36--37
+Overfull \hbox (20.04166pt too wide) in paragraph at lines 18--19
 \OT1/cmr/m/n/10 2[] =
  []
 
 
-Overfull \hbox (15.00005pt too wide) in paragraph at lines 36--37
+Overfull \hbox (15.00005pt too wide) in paragraph at lines 18--19
 \OT1/cmr/m/n/10 256$
  []
 
 
-Overfull \hbox (19.48618pt too wide) in paragraph at lines 36--37
+Overfull \hbox (19.48618pt too wide) in paragraph at lines 18--19
 \OT1/cmr/m/n/10 256[]$ 
  []
 
@@ -1469,17 +1459,17 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (20.04166pt too wide) in paragraph at lines 37--38
+Overfull \hbox (20.04166pt too wide) in paragraph at lines 19--20
 \OT1/cmr/m/n/10 2[] =
  []
 
 
-Overfull \hbox (15.00005pt too wide) in paragraph at lines 37--38
+Overfull \hbox (15.00005pt too wide) in paragraph at lines 19--20
 \OT1/cmr/m/n/10 512$
  []
 
 
-Overfull \hbox (19.48618pt too wide) in paragraph at lines 37--38
+Overfull \hbox (19.48618pt too wide) in paragraph at lines 19--20
 \OT1/cmr/m/n/10 512[]$ 
  []
 
@@ -1509,22 +1499,22 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (25.04167pt too wide) in paragraph at lines 38--39
+Overfull \hbox (25.04167pt too wide) in paragraph at lines 20--21
 \OT1/cmr/m/n/10 2[]0 =
  []
 
 
-Overfull \hbox (20.00006pt too wide) in paragraph at lines 38--39
+Overfull \hbox (20.00006pt too wide) in paragraph at lines 20--21
 \OT1/cmr/m/n/10 1024$
  []
 
 
-Overfull \hbox (24.48619pt too wide) in paragraph at lines 38--39
+Overfull \hbox (24.48619pt too wide) in paragraph at lines 20--21
 \OT1/cmr/m/n/10 1024[]$
  []
 
 ! Undefined control sequence.
-l.41 \subsection
+l.23 \subsection
                 {Microservice}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1545,7 +1535,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.42 \subsection
+l.24 \subsection
                 {Machine Learning}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1569,7 +1559,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.43 \subsection
+l.25 \subsection
                 {Neural Networks}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1592,7 +1582,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no k in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.44 \section
+l.26 \section
              {Process chain}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1613,7 +1603,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.45 \subsection
+l.27 \subsection
                 {Description}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1633,7 +1623,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.46 \subsection
+l.28 \subsection
                 {Definition of Conversion Service}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1671,7 +1661,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.47 \subsection
+l.29 \subsection
                 {Definition of Annotation Service}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1709,7 +1699,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.48 \subsection
+l.30 \subsection
                 {Definition of Tesselation Service}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1755,11 +1745,11 @@ Missing character: There is no e in font nullfont!
 
  
 Here is how much of TeX's memory you used:
- 14 strings out of 493029
- 210 string characters out of 6136235
+ 17 strings out of 493029
+ 240 string characters out of 6136235
  54071 words of memory out of 5000000
- 3649 multiletter control sequences out of 15000+600000
- 3986 words of font info for 15 fonts, out of 8000000 for 9000
+ 3651 multiletter control sequences out of 15000+600000
+ 4294 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,5n,14p,105b,104s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18i,3n,21p,699b,105s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!
