@@ -1,0 +1,76 @@
+\documentclass{report}
+
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{morefloats}
+% --- Abkürzungsverzeichnis: ----------------------------
+% START % Näheres siehe http://my.opera.com/timomeinen/blog/show.dml/68644
+\usepackage{nomencl}
+% Befehl umbenennen in abk
+\let\nmc\nomenclature
+% Punkte zw. Abkürzung und Erklärung
+\setlength{\nomlabelwidth}{.20\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+% Zeilenabstände verkleinern
+\setlength{\nomitemsep}{-\parsep}
+\makenomenclature
+%--------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	{\huge\textbf{Preparation of whole slide images for usage in neural
+	networks\\}}
+	\vspace{1cm}
+	{\huge A Thesis\\}
+	\vspace{2cm}
+	{\large Submitted in partial fulfillment of the requirements for the degree
+	of\\}
+	\vspace{0.5cm}
+	{\large \textbf{Master of Science (M.Sc.)}\\ 
+	in Applied Computer Science\\}
+	\vspace{0.5cm}
+	{\large at the\\}
+	\vspace{0.5cm}
+	{\large Berlin University of Applied Sciences (HTW)\\}
+	\vspace{0.5cm}
+	\includegraphics[scale=1]{img/HTW_Logo_quer_rgb.jpg}
+	\\
+	\vspace{1cm}
+	\raggedright
+	{\large First Supervisor: Prof. Dr. Peter Hufnagl\\}
+	\vspace{0.25cm}
+	{\large Second Supervisor: Diplom Informatiker Benjaming Voigt\\}
+	\centering
+	\vspace{1.5cm}
+	{\large Submitted by: \\}
+	\vspace{0.25cm}
+	{\large \textbf{Sascha Nawrot (B.Sc.)}}
+	\vfill
+		{\large Berlin, \today{}\par}
+\end{titlepage}
+
+% preface
+
+% abstract
+
+\newpage
+\tableofcontents
+\printnomenclature
+
+\input{./tex/chap1.tex}
+\input{./tex/chap2.tex}
+\input{./tex/chap3.tex}
+\input{./tex/chap4.tex}
+\input{./tex/chap5.tex}
+\input{./tex/chap6.tex}
+
+\listoffigures
+
+\end{document}
