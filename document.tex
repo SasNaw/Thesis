@@ -1,13 +1,13 @@
 \documentclass{report}
 
-\usepackage[ansinew]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{cite}
-\usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{enumerate}
 \usepackage{morefloats}
+\usepackage[nottoc]{tocbibind}
 % --- Abkürzungsverzeichnis: ----------------------------
 % START % Näheres siehe http://my.opera.com/timomeinen/blog/show.dml/68644
 \usepackage{nomencl}
@@ -25,10 +25,10 @@
 
 \begin{titlepage}
 	\centering
-	{\huge\textbf{Preparation of whole slide images for usage in neural
-	networks\\}}
+	{\huge\textbf{Preparation of Whole Slide Images for usage in Neural
+	Networks\\}}
 	\vspace{1cm}
-	{\huge A Thesis\\}
+	{\huge Master Thesis\\}
 	\vspace{2cm}
 	{\large Submitted in partial fulfillment of the requirements for the degree
 	of\\}
@@ -58,11 +58,18 @@
 
 % preface
 
-% abstract
+\cleardoublepage
+\begin{abstract}
+This is the abstract.
+\end{abstract}
+
+\chapter*{Preface}
+Hello, this is the preface
 
 \newpage
 \tableofcontents
-\printnomenclature
+
+% vorwort
 
 \input{./tex/chap1.tex}
 \input{./tex/chap2.tex}
@@ -71,6 +78,10 @@
 \input{./tex/chap5.tex}
 \input{./tex/chap6.tex}
 
+\bibliographystyle{plain}
+\bibliography{./bibl/bibl}
+\printnomenclature
 \listoffigures
+\listoftables
 
 \end{document}
