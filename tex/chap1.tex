@@ -1,8 +1,14 @@
 \chapter{Introduction}
 
-
 \section{Motivation}
+
+
 \section{Research Objective}
+The objective of this thesis is the conceptualization and implementation of tools for whole slide images\footnote{See chapter 2.1.x}\nmc{WHI}{Whole Slide Image}, which allow for their annotation and a further usage in neural networks\footnote{See chapter 2.1.x}\nmc{NN}{Neural Networks}.
+As a requirement, the tools have to be implemented in the form of microservices\footnote{See chapter 2.1.x}, each one with their own short documentation, including instructions for installation, usage and some examplary use cases. To achieve this goal, the implementation of 3 microservices is necessary.
+
+The first microservice needs to be capable of converting a given set of image formats into the so called \emph{Deep Zoom Image Format}\footnote{See chapter 2.1.x}. The supported image formats are \emph{.bif, .mrxs, .ndpi, .scn, .svs, .svslide, .tif, .tiff, .vms} and \emph{.vmu}, in accordance with the capabilities of the Openslide framework\cite{Goode13}.
+
 \section{About this thesis}
 Apart from the \emph{Introduction}, there are 5 more chapters in this thesis.
 
