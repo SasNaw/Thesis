@@ -1,6 +1,7 @@
 \chapter{Introduction}
 
 \section{Motivation}
+
 The medical discipline of pathology is in a digital transformation. Instead of looking at tissue samples through the means of traditional light microscopes it now is possible to digitalize those samples. This digitalization is done with the help of a so called slide scanner. The result of such an operation is a\emph{whole slide image}\cite{Cornish13}. The digital nature of whole slide images opens the door to the realm of image processesing and analysis which yields certain benefits, such as the use of image segmentation and registration methods to support the pathologist in his/her work.
 
 \begin{figure}[ht]
@@ -11,7 +12,6 @@ The medical discipline of pathology is in a digital transformation. Instead of l
 	\end{center}
 \end{figure}
 
-
 A very promising area of image analysis are the so called \emph{neural networks}\footnote{See chapter 2.1.x}\nmc{NN}{Neural Networks}, which follow a machine learning approach. Their use, especially in the area of image classification and object recognition, made big breakthroughs possible in the recent past, e.g. Karpathy and Fei-Fei \cite{Karpathy15}, who created a neural network which is capable of describing an image or a scene with written text (see fig. 1.1 for some examples).
 
 There is enormous potential in the use of neural networks in the digital pathology as well, but to transfer these algorithms and technologies, certain hindrances must be overcome. One of those hindrances is the need for proper training samples and an established ground truth\footnote{\emph{Ground truth} refers to a training sample whose outcome is known and validated as true.}. While generally there are huge amounts of whole slide images, most of them won't be usable without further preparation as a training sample. One way of preparing them are annotations. These can be added to the whole slide images, stored and later used for training.
@@ -20,6 +20,7 @@ Therefore the goal of this thesis is to give tools into the hands of pathologist
 
 
 \section{Research Objective}
+
 The objective of this thesis is the conceptualization and implementation of tools for whole slide images\footnote{See chapter 2.1.x}\nmc{WHI}{Whole Slide Image}, which allow for their annotation and a further usage in neural networks.
 As a requirement, the tools have to be implemented in the form of microservices\footnote{See chapter 2.1.x}, each one with their own short documentation, including instructions for installation, usage and some examplary use cases. To achieve this goal, the implementation of 3 microservices is necessary.
 
@@ -29,7 +30,9 @@ The second microservices task is to give a tool at hand with which a pathologist
 
 The third microservice will be responsible for preparing the annotated whole slide images for the further usage in neural networks. For that purpose the service needs to be capable of dividing a single annotated whole slide image into multiple tiles, with the choice of either using the whole image or just the annotated areas. Furthermore, each tile needs enough information to reconstruct the whole image again afterwards.
 
+
 \section{About this thesis}
+
 Apart from the \emph{Introduction}, there are 5 more chapters in this thesis.
 
 \emph{Chapter 2 - Background} defines some terminoligy and the general, required process chain which are all necessary to understand further chapters of this thesis. Furthermore, 3 microservices will be introduced in short.
