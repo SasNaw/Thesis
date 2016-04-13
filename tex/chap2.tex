@@ -73,8 +73,31 @@ Basically, the input layer, as the name suggests, is the layer where the NN gets
 A huge benefit of NN, over other software models, is their ability to learn. While certain problems are easier to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems are so complex that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can train to solve a problem, not unlike a human, by learning. Since this topic alone is enough for a number of theses, the author refers to \cite{Kriesel07} for further detailed information.
 
 
-\section{Process chain}
-\subsection{Description}
+\section{Process Chain}
+
+This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illustrating the defined process chain necessary to accomplish the research objective stated in chapter 1.2.
+
+The process chain has the following basic steps in the given order:
+\begin{itemize}
+	\item convert WHIs to .dzi format
+	\item annotate converted images with annotation tool
+	\item persist annotations
+	\item seperate annotated image into tiles of custom size and keep correspondence between tile and annotation
+\end{itemize}
+
+To fulfill those steps, 3 Microservices will be introduced. Those are:
+
+\begin{itemize}
+	\item Conversion Service (see chap. 2.2.1)
+	\item Annotation Service (see chap. 2.2.2)
+	\item Tesselation Service (see chap. 2.2.3)
+\end{itemize}
+
+The conversion service will be responsible for converting WHIs into the .dzi format. The anntation service will offer a user interface to make annotations and be responsible for persisting them. Last, the tesselation service will be responsible for creating tiles with the annotated informations from the corresponding picture. Furthermore, this service must also be able to restructure the tiles into the initial image again.
+
+In the following, each mircoservice will have a section to define it more closey.
+
+
 \subsection{Definition of Conversion Service}
 \subsection{Definition of Annotation Service}
 \subsection{Definition of Tesselation Service}
