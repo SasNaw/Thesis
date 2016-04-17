@@ -1,10 +1,12 @@
 \chapter{Background}
 
 \section{Definition of terms}
+
 To prevent missunderstandings and confusion, the following subsections 2.1.1 - 2.1.3 will define some terminoligy which will be mandatory for the understanding of certain areas of this thesis.
 
 
 \subsection{Deep Zoom Image Format}
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
@@ -12,6 +14,7 @@ To prevent missunderstandings and confusion, the following subsections 2.1.1 - 2
 		\label{fig:fig2.1}
 	\end{center}
 \end{figure}
+
 The Deep Zoom Image Format (.dzi)\nomenclature{.dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
 
 As seen in fig. 2.1 there are multiple versions of a single image in different resolutions. Each resolution in the pyramid is called a \emph{level}. At each level the image is scaled down by the factor 4 (2 in each dimension). Furthermore, the image gets tiled up into $256^2$ tiles (256 in each dimension)\cite{web:dzi}.
@@ -20,13 +23,17 @@ If a viewer wants to view a certain area of the image (e.g. the highlighted tile
 
 A .dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
 
+
 \subsection{Microservice}
+
 The concept of microservices is to seperate one monolithic software construct into several smaller, modular pieces of software. According to \cite{Wolff16}, the idea of microservices is not new, but can be found in the UNIX philosophy. Three basic ideas are stated in \cite{Wolff16}:
+
 \begin{itemize}
 	\item A program should fulfill only one task, and it should do it well.
 	\item Programs should be able to work together.
 	\item Besides, the programs should use a universal interface.
 \end{itemize}
+
 As such, microservices are a modularization concept. However, they differ from other concepts, since they are independet from each other. This is a trait, other modularization concepts usually lack. As a result, changes in one microservice don't bring up the necessity of deploying the whole product again but just the one service.
 
 Because of their inherent traits, microservices need to be their own processes in one way or another, may it be as an actual operating system process or as e.g. a docker container\footnote{Docker is a tool, which enables software to be wrapped up in so called "'containers"'. Those containers are a complete, but stripped down, filesystem containing everything the software needs to run (e.g. source code, runtime environment, system tools and libraries, ...). See \url{https://www.docker.com/what-docker}}.
@@ -34,21 +41,25 @@ Because of their inherent traits, microservices need to be their own processes i
 One big advantage of this modularization is that each service can be written in a different programming language, using different frameworks and tools. Furthermore, each microservice can bring along its own support services and data storages, like data bases. It is imperative for the concept of modularization, however, that each microservice has its own storage of which it is in charge of.
 
 A disadvantage of this modularization is, that inter process communication becomes a necessity. However, there are different approaches with which microservices can communicate. \cite{Wolff16} suggests the following:
+
 \begin{itemize}
 	\item communication via protocols like REST\footnote{Representational state transfer (REST)\nmc{REST}{Representational state transfer} is architectural style for distributed hypermedia systems, see \cite{Fielding00}.}
 	\item an HTML user interfaces with links to other microservices
 	\item data replication
 \end{itemize}
+
 It is important to define how and with which technology to communicate with, when adressing each microservices to ensure that this particular one can actually be reached with the defined method.
 
 
 \subsection{Neural Network}
 Artificial neural networks (NN)\nmc{NN}{Neural Networks} are a group of models inspiried by biological neural networks\footnote{For the remainder of this thesis, neural network will always represent the artificial one, unless explicitly stated otherwise.}. In a NN, regardless if artificial or biological, many neurons are interconnected with each other. The construct of interconnected neurons can be seperated into layers, of which there are three kinds:
+
 \begin{itemize}
 	\item input layer
 	\item hidden layer
 	\item output layer
 \end{itemize}
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.7]{img/mlp.png}
@@ -56,6 +67,7 @@ Artificial neural networks (NN)\nmc{NN}{Neural Networks} are a group of models i
 		\label{fig:fig2.2}
 	\end{center}
 \end{figure}
+
 Basically, the input layer, as the name suggests, is the layer where the NN gets its input data from. After that, there are a number of hidden layers\footnote{A NN doesn't necessarily need to have any hidden layers. For non trivial problems however, it becomes mandatory.}, which are responsible for further computation of the input values. At the end is the output layer which is responsible for communicating the results of the prior operations (compare fig. 2.2). Each single neuron has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. 
 
 A huge benefit of NN, over other software models, is their ability to learn. While certain problems are easier to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems are so complex that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can train to solve a problem, not unlike a human, by learning. Since this topic alone is enough for a number of theses, the author refers to \cite{Kriesel07} for further detailed information.
@@ -63,6 +75,7 @@ A huge benefit of NN, over other software models, is their ability to learn. Whi
 
 \section{Process Chain}
 This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illustrate the process chain necessary to accomplish the research objective stated in chapter 1.2. The process chain consists of the following steps:
+
 \begin{enumerate}[(a)]
 	\item convert WHIs of different\footnote{see chap. 2.2.1 for a listing of valid input formats.} formats to .dzi format
 	\item annotate .dzi images with the annotation tool made for this purpose
@@ -70,7 +83,9 @@ This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illu
 	\item seperate annotated images into tiles of custom size
 	\item keep correspondence between tiles of an image and its annotations
 \end{enumerate}
+
 To fulfill those steps, 3 Microservices will be introduced in the following subsections. Those are:
+
 \begin{itemize}
 	\item Conversion Service (see chap. 2.2.1)\\
 	This service will be responsible for converting WHIs into the .dzi format (a).
@@ -82,6 +97,9 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 
 
 \subsection{Definition of Conversion Service}
+
+The devices which create an WHI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the .dzi format, not only for unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WHI with 1.600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.35]{img/processChainA.png}
@@ -89,6 +107,21 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 		\label{fig:fig2.3}
 	\end{center}
 \end{figure}
+
+The Conversion Service will be implemented as a python script, which upon calling takes every single WHI of a certain format inside a given folder and converts it to the .dzi format. Each converted WHI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
+
+\begin{itemize}
+	\item .bif (Ventana)
+	\item .mrxs (Mirax)
+	\item .ndpi (Hamamatsu)
+	\item .scn (Leica)
+	\item .svs (Aperio)
+	\item .svslide (Sakura)
+	\item .tif (Aperio, Trestle, Ventana)
+	\item .tiff (Philips)
+	\item .vms (Hamamatsu)
+	\item .vmu (Hamamatsu)
+\end{itemize}
 
 
 \subsection{Definition of Annotation Service}

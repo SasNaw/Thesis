@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  17 APR 2016 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  17 APR 2016 23:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,61 +601,61 @@ Chapter 2.
 <img/dzi_pyramid.png, id=40, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
  <use img/dzi_pyramid.png>
-Package pdftex.def Info: img/dzi_pyramid.png used on input line 10.
+Package pdftex.def Info: img/dzi_pyramid.png used on input line 12.
 (pdftex.def)             Requested size: 264.98933pt x 182.68205pt.
 
 [6
 
  <./img/dzi_pyramid.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
  [7]
 <img/mlp.png, id=50, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
-Package pdftex.def Info: img/mlp.png used on input line 54.
+Package pdftex.def Info: img/mlp.png used on input line 65.
 (pdftex.def)             Requested size: 166.52098pt x 150.50124pt.
- [8 <./img/mlp.png>] <img/processChainA.png, id=55, 779.91376pt x 210.7875pt>
+ [8 <./img/mlp.png>] [9] <img/processChainA.png, id=58, 779.91376pt x 210.7875p
+t>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
-Package pdftex.def Info: img/processChainA.png used on input line 87.
+Package pdftex.def Info: img/processChainA.png used on input line 105.
 (pdftex.def)             Requested size: 272.9739pt x 73.77672pt.
- [9]
+
 <img/processChainB.png, id=59, 1257.19687pt x 331.99031pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
-Package pdftex.def Info: img/processChainB.png used on input line 97.
+Package pdftex.def Info: img/processChainB.png used on input line 130.
 (pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
-
-<img/processChainC.png, id=60, 1132.23pt x 289.08pt>
+ [10 <./img/processChainA.png>]
+<img/processChainC.png, id=64, 1132.23pt x 289.08pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
-Package pdftex.def Info: img/processChainC.png used on input line 107.
+Package pdftex.def Info: img/processChainC.png used on input line 140.
 (pdftex.def)             Requested size: 339.67162pt x 86.72466pt.
-) (./tex/chap3.tex [10 <./img/processChainA.png> <./img/processChainB.png> <./i
-mg/processChainC.png>]
+) (./tex/chap3.tex [11 <./img/processChainB.png> <./img/processChainC.png>]
 Chapter 3.
-) (./tex/chap4.tex [11
+) (./tex/chap4.tex [12
 
 ]
 Chapter 4.
-) (./tex/chap5.tex [12
+) (./tex/chap5.tex [13
 
 ]
 Chapter 5.
-) (./tex/chap6.tex [13
+) (./tex/chap6.tex [14
 
 ]
 Chapter 6.
-) (./document.bbl [14
+) (./document.bbl [15
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 11--18
@@ -663,7 +663,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--18
  . pdf$\OT1/cmr/m/n/10 , July
  []
 
-) (./document.nls) [15
+
+Underfull \hbox (badness 3209) in paragraph at lines 28--34
+\OT1/cmr/m/n/10 lim-i-ta-tions, and emerg-ing per-spec-tives.  \OT1/cmr/m/it/10
+ Pathol-ogy and Lab-o-ra-tory
+ []
+
+
+Overfull \hbox (239.30069pt too wide) in paragraph at lines 28--34
+\OT1/cmtt/m/n/10 whole-[]slide-[]imaging-[]in-[]pathology-[]advantages-[]limita
+tions-[]and-[]emerging-[]p-[]peer-[]reviewed-[]fulltext-[]article-[]PLMI #
+ []
+
+) (./document.nls) [16
 
 ] (./document.lof
 Overfull \hbox (191.33446pt too wide) in paragraph at lines 3--3
@@ -675,20 +687,20 @@ ce: http://cs.stanford.edu/people/karpathy/deepimagesent/ []
 \tf@lof=\write5
 \openout5 = `document.lof'.
 
- [16
+ [17
 
 ] (./document.lot)
 \tf@lot=\write6
 \openout6 = `document.lot'.
 
- [17
+ [18
 
 ] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 3383 strings out of 493029
- 43544 string characters out of 6136235
- 114369 words of memory out of 5000000
- 6810 multiletter control sequences out of 15000+600000
+ 3384 strings out of 493029
+ 43557 string characters out of 6136235
+ 114372 words of memory out of 5000000
+ 6811 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,8n,23p,675b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -705,10 +717,10 @@ public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt8.pfb>
-Output written on document.pdf (20 pages, 1566250 bytes).
+Output written on document.pdf (21 pages, 1569190 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
