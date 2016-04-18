@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  17 APR 2016 23:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  18 APR 2016 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -627,35 +627,42 @@ File: img/processChainA.png Graphic file (type png)
 <use img/processChainA.png>
 Package pdftex.def Info: img/processChainA.png used on input line 105.
 (pdftex.def)             Requested size: 272.9739pt x 73.77672pt.
-
-<img/processChainB.png, id=59, 1257.19687pt x 331.99031pt>
+ [10 <./img/processChainA.png>]
+<img/processChainB.png, id=63, 1257.19687pt x 331.99031pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
-Package pdftex.def Info: img/processChainB.png used on input line 130.
+Package pdftex.def Info: img/processChainB.png used on input line 133.
 (pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
- [10 <./img/processChainA.png>]
-<img/processChainC.png, id=64, 1132.23pt x 289.08pt>
+
+<img/microdrawUI.png, id=64, 1509.64pt x 874.26625pt>
+File: img/microdrawUI.png Graphic file (type png)
+
+<use img/microdrawUI.png>
+Package pdftex.def Info: img/microdrawUI.png used on input line 143.
+(pdftex.def)             Requested size: 301.92265pt x 174.85014pt.
+ [11 <./img/processChainB.png> <./img/microdrawUI.png>] <img/processChainC.png,
+ id=70, 1132.23pt x 289.08pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
-Package pdftex.def Info: img/processChainC.png used on input line 140.
+Package pdftex.def Info: img/processChainC.png used on input line 163.
 (pdftex.def)             Requested size: 339.67162pt x 86.72466pt.
-) (./tex/chap3.tex [11 <./img/processChainB.png> <./img/processChainC.png>]
+) (./tex/chap3.tex [12 <./img/processChainC.png>]
 Chapter 3.
-) (./tex/chap4.tex [12
+) (./tex/chap4.tex [13
 
 ]
 Chapter 4.
-) (./tex/chap5.tex [13
+) (./tex/chap5.tex [14
 
 ]
 Chapter 5.
-) (./tex/chap6.tex [14
+) (./tex/chap6.tex [15
 
 ]
 Chapter 6.
-) (./document.bbl [15
+) (./document.bbl [16
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 11--18
@@ -675,7 +682,7 @@ Overfull \hbox (239.30069pt too wide) in paragraph at lines 28--34
 tions-[]and-[]emerging-[]p-[]peer-[]reviewed-[]fulltext-[]article-[]PLMI #
  []
 
-) (./document.nls) [16
+) (./document.nls) [17
 
 ] (./document.lof
 Overfull \hbox (191.33446pt too wide) in paragraph at lines 3--3
@@ -687,20 +694,20 @@ ce: http://cs.stanford.edu/people/karpathy/deepimagesent/ []
 \tf@lof=\write5
 \openout5 = `document.lof'.
 
- [17
+ [18
 
 ] (./document.lot)
 \tf@lot=\write6
 \openout6 = `document.lot'.
 
- [18
+ [19
 
 ] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 3384 strings out of 493029
- 43557 string characters out of 6136235
- 114372 words of memory out of 5000000
- 6811 multiletter control sequences out of 15000+600000
+ 3391 strings out of 493029
+ 43694 string characters out of 6136235
+ 114386 words of memory out of 5000000
+ 6817 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,8n,23p,675b,286s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -717,10 +724,10 @@ public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt8.pfb>
-Output written on document.pdf (21 pages, 1569190 bytes).
+Output written on document.pdf (22 pages, 2695860 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

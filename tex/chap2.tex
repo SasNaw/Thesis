@@ -125,6 +125,9 @@ The Conversion Service will be implemented as a python script, which upon callin
 
 
 \subsection{Definition of Annotation Service}
+
+The first step to create a valid training sample for a NN is to annotate the WHIs which will later serve as that. To do so, a GUI\nmc{GUI}{Graphical User Interface} must be deployed which enables a pathologist to make annotations to an WHI. Additionally, the Annotation Service also needs to be capable to persist made annotations (see fig. 2.4). This will happen by saving the annotations into a file which will be placed next to the image.
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.25]{img/processChainB.png}
@@ -133,12 +136,32 @@ The Conversion Service will be implemented as a python script, which upon callin
 	\end{center}
 \end{figure}
 
+To enable the pathologist to make annotations in the first place, a GUI needs to be offered by the service. This GUI will be developed in iterations with the help of a number of pathologists to adapt it to their wishes and grant the best possible usability. The basic concept of the first iteration will be based on the Microdraw\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the Microdraw project} GUI (see fig. 2.5).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.2]{img/microdrawUI.png}
+		\caption{Microdraw GUI with opened WHI}
+		\label{fig:fig2.5}
+	\end{center}
+\end{figure}
+
+Microdraw is a webbased annotation tool, which describes itself as
+
+\begin{quotation}
+"(...) a collaborative vectorial annotation tool for ultra high resolution data, such as that produced by high-throughput histology." \cite{web:microdraw}
+\end{quotation}
+
+Therefore, the GUI of the Annotation Service, or Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}, will run as a web application in a browser. Annotations will be made by selecting a shape or annotation method from the various tools in the toolbar (see the gray bar on the left in fig. 2.5). After selecting the area to be annotated, an actual description of that area can be made via keyboard input.
+
+When the pathologist is done or wants to save the made annotations, the Annotation Service will create a file in which they will be persisted in. Only one WHI can be opened in one ASV at a time.
+
 
 \subsection{Definition of Tessellation Service}
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.3]{img/processChainC.png}
 		\caption{Visualization of the Tessellation Service}
-		\label{fig:fig2.5}
+		\label{fig:fig2.6}
 	\end{center}
 \end{figure}

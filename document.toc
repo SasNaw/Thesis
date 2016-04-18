@@ -11,41 +11,41 @@
 \contentsline {section}{\numberline {2.2}Process Chain}{9}
 \contentsline {subsection}{\numberline {2.2.1}Definition of Conversion Service}{10}
 \contentsline {subsection}{\numberline {2.2.2}Definition of Annotation Service}{11}
-\contentsline {subsection}{\numberline {2.2.3}Definition of Tessellation Service}{11}
-\contentsline {chapter}{\numberline {3}Methodology}{12}
-\contentsline {section}{\numberline {3.1}Conversion Service}{12}
-\contentsline {subsection}{\numberline {3.1.1}Literature review}{12}
-\contentsline {subsection}{\numberline {3.1.2}Chosen methods}{12}
-\contentsline {section}{\numberline {3.2}Annotation Service}{12}
-\contentsline {subsection}{\numberline {3.2.1}Literature review}{12}
-\contentsline {subsection}{\numberline {3.2.2}Chosen methods}{12}
-\contentsline {section}{\numberline {3.3}Tessellation Service}{12}
-\contentsline {subsection}{\numberline {3.3.1}Literature review}{12}
-\contentsline {subsection}{\numberline {3.3.2}Chosen methods}{12}
-\contentsline {chapter}{\numberline {4}Implementation}{13}
-\contentsline {section}{\numberline {4.1}Implementation of Conversion Service}{13}
-\contentsline {subsection}{\numberline {4.1.1}Used technologies and frameworks}{13}
-\contentsline {subsection}{\numberline {4.1.2}Documentation}{13}
-\contentsline {section}{\numberline {4.2}Implementation of Annotation Service}{13}
-\contentsline {subsection}{\numberline {4.2.1}Used technologies and frameworks}{13}
-\contentsline {subsection}{\numberline {4.2.2}Documentation}{13}
-\contentsline {section}{\numberline {4.3}Implementation of Tessellation Service}{13}
-\contentsline {subsection}{\numberline {4.3.1}Used technologies and frameworks}{13}
-\contentsline {subsection}{\numberline {4.3.2}Documentation}{13}
-\contentsline {chapter}{\numberline {5}Discussion}{14}
-\contentsline {section}{\numberline {5.1}Conversion Service Test}{14}
-\contentsline {subsection}{\numberline {5.1.1}Setup}{14}
-\contentsline {subsection}{\numberline {5.1.2}Results}{14}
-\contentsline {section}{\numberline {5.2}Annotation Service Test}{14}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{14}
-\contentsline {subsection}{\numberline {5.2.2}Results}{14}
-\contentsline {section}{\numberline {5.3}Tessellation Service Test}{14}
-\contentsline {subsection}{\numberline {5.3.1}Setup}{14}
-\contentsline {subsection}{\numberline {5.3.2}Results}{14}
-\contentsline {chapter}{\numberline {6}Conclusion}{15}
-\contentsline {section}{\numberline {6.1}Results}{15}
-\contentsline {section}{\numberline {6.2}Conclusion}{15}
-\contentsline {section}{\numberline {6.3}Future tasks}{15}
-\contentsline {chapter}{Bibliography}{16}
-\contentsline {chapter}{List of Figures}{17}
-\contentsline {chapter}{List of Tables}{18}
+\contentsline {subsection}{\numberline {2.2.3}Definition of Tessellation Service}{12}
+\contentsline {chapter}{\numberline {3}Methodology}{13}
+\contentsline {section}{\numberline {3.1}Conversion Service}{13}
+\contentsline {subsection}{\numberline {3.1.1}Literature review}{13}
+\contentsline {subsection}{\numberline {3.1.2}Chosen methods}{13}
+\contentsline {section}{\numberline {3.2}Annotation Service}{13}
+\contentsline {subsection}{\numberline {3.2.1}Literature review}{13}
+\contentsline {subsection}{\numberline {3.2.2}Chosen methods}{13}
+\contentsline {section}{\numberline {3.3}Tessellation Service}{13}
+\contentsline {subsection}{\numberline {3.3.1}Literature review}{13}
+\contentsline {subsection}{\numberline {3.3.2}Chosen methods}{13}
+\contentsline {chapter}{\numberline {4}Implementation}{14}
+\contentsline {section}{\numberline {4.1}Implementation of Conversion Service}{14}
+\contentsline {subsection}{\numberline {4.1.1}Used technologies and frameworks}{14}
+\contentsline {subsection}{\numberline {4.1.2}Documentation}{14}
+\contentsline {section}{\numberline {4.2}Implementation of Annotation Service}{14}
+\contentsline {subsection}{\numberline {4.2.1}Used technologies and frameworks}{14}
+\contentsline {subsection}{\numberline {4.2.2}Documentation}{14}
+\contentsline {section}{\numberline {4.3}Implementation of Tessellation Service}{14}
+\contentsline {subsection}{\numberline {4.3.1}Used technologies and frameworks}{14}
+\contentsline {subsection}{\numberline {4.3.2}Documentation}{14}
+\contentsline {chapter}{\numberline {5}Discussion}{15}
+\contentsline {section}{\numberline {5.1}Conversion Service Test}{15}
+\contentsline {subsection}{\numberline {5.1.1}Setup}{15}
+\contentsline {subsection}{\numberline {5.1.2}Results}{15}
+\contentsline {section}{\numberline {5.2}Annotation Service Test}{15}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{15}
+\contentsline {subsection}{\numberline {5.2.2}Results}{15}
+\contentsline {section}{\numberline {5.3}Tessellation Service Test}{15}
+\contentsline {subsection}{\numberline {5.3.1}Setup}{15}
+\contentsline {subsection}{\numberline {5.3.2}Results}{15}
+\contentsline {chapter}{\numberline {6}Conclusion}{16}
+\contentsline {section}{\numberline {6.1}Results}{16}
+\contentsline {section}{\numberline {6.2}Conclusion}{16}
+\contentsline {section}{\numberline {6.3}Future tasks}{16}
+\contentsline {chapter}{Bibliography}{17}
+\contentsline {chapter}{List of Figures}{18}
+\contentsline {chapter}{List of Tables}{19}
