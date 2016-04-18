@@ -158,6 +158,9 @@ When the pathologist is done or wants to save the made annotations, the Annotati
 
 
 \subsection{Definition of Tessellation Service}
+
+The task of the Tessellation Service is to tessellate a given WHI into multiple tiles while keeping up the correspondence between image areas and annotations (see fig. 2.6). Tessellation describes the process of seperating a geometric space (e.g. a plane) into multiple tiles of one or more shapes. No matter if the tiles are unifrom or of different shapes, there must be no gaps or overlapping areas in the resulting tiles.
+
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.3]{img/processChainC.png}
@@ -165,3 +168,7 @@ When the pathologist is done or wants to save the made annotations, the Annotati
 		\label{fig:fig2.6}
 	\end{center}
 \end{figure}
+
+The tessellation of the Tessellation Service differs from the given definition in two aspects. First, all tiles will be of a unifrom shape (square). Second, the service will also offer the possibility of seperating only the annotated areas of an WHI into tiles. Therefore, the "no gaps" rule is invalid, when this option is chosen. The rule of no overlapping areas holds true in either case, however.
+
+As mentioned before, the second task of the Tessellation Service is to ensure the correspondence between tiles and annotations of the original WHI. This means that, if the original WHI has an annotation in the area of a tile, this tile needs to have the same annotation.
