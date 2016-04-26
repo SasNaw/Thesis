@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{web:openseadragon}
+Openseadragon.
+\newblock
+  \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{Karpathy15}
+L.~Fei-Fei A.~Karpathy.
+\newblock {\em Deep Visual-Semantic Alignments for Generating Image
+  Descriptions}.
+\newblock Department of Computer Science, Standford University, 2015.
+\newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
+
+\bibitem{Cornish13}
+T.~Cornish.
+\newblock An introduction to digital whole slide imaging and whole slide image
+  analysis.
+\newblock
+  \url{http://www.hopkinsmedicine.org/mcp/PHENOCORE/CoursePDFs/2013/13%2019%20Cornish%20Digital%20Path.pdf},
+  July 2013.
+\newblock Accessed: 12.04.2016.
+
+\bibitem{Goode13}
+A.~Goode et~al.
+\newblock Openslide: A vendor-neutral software foundation for digital
+  pathology.
+\newblock {\em J pathol inform}, 4(1), September 2013.
+\newblock
+  \url{http://download.openslide.org/docs/JPatholInform_2013_4_1_27_119005.pdf}.
+
+\bibitem{web:iiif}
+M.~Appleby et~al.
+\newblock Iiif image api 2.0.
+\newblock \url{http://iiif.io/api/image/2.0/#status-of-this-document}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{Farahanil15}
+N.~Farahanil et~al.
+\newblock Whole slide imaging in pathology: advantages, limitations, and
+  emerging perspectives.
+\newblock {\em Pathology and Laboratory Medicine International}, 7, June 2015.
+\newblock
+  \url{https://www.dovepress.com/whole-slide-imaging-in-pathology-advantages-limitations-and-emerging-p-peer-reviewed-fulltext-article-PLMI#ref10}.
+
+\bibitem{Fielding00}
+R.~Fielding.
+\newblock {\em Architectural Styles and the Design of Network-based Software
+  Architectures}.
+\newblock PhD thesis, University of Carolina, 2000.
+\newblock \url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.
+
+\bibitem{web:tms}
+Open Source~Geospatial Foundation.
+\newblock Tile map service specification.
+\newblock \url{http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{Kriesel07}
+D.~Kriesel.
+\newblock {\em A Brief Introduction to Neural Networks}, 2007.
+\newblock \url{http://www.dkriesel.com/en/science/neural_networks}.
+
+\bibitem{web:dzi}
+Microsoft.
+\newblock Deep zoom file format overview.
+\newblock
+  \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
+\newblock Accessed: 11.04.2016.
+
+\bibitem{web:microdraw}
+Roberto Toro.
+\newblock Microdraw.
+\newblock \url{https://github.com/r03ert0/microdraw/wiki}.
+\newblock Accessed: 18.04.2016.
+
+\bibitem{Wolff16}
+E.~Wolff.
+\newblock {\em Microservices Primer}.
+\newblock innoQ, January 2016.
+\newblock \url{https://leanpub.com/microservices-primer/read}.
+
+\end{thebibliography}

@@ -16,26 +16,26 @@
 \contentsline {section}{\numberline {3.1}Methodology}{13}
 \contentsline {subsection}{\numberline {3.1.1}Creating a Deep Zoom Image}{14}
 \contentsline {subsection}{\numberline {3.1.2}Deepzoom.py}{14}
-\contentsline {section}{\numberline {3.2}Implementation}{14}
-\contentsline {section}{\numberline {3.3}Test}{14}
-\contentsline {subsection}{\numberline {3.3.1}Setup}{14}
-\contentsline {subsection}{\numberline {3.3.2}Result}{14}
-\contentsline {chapter}{\numberline {4}Annotation Service}{15}
-\contentsline {section}{\numberline {4.1}Methodology}{15}
-\contentsline {section}{\numberline {4.2}Implementation}{15}
-\contentsline {section}{\numberline {4.3}Test}{15}
-\contentsline {subsection}{\numberline {4.3.1}Setup}{15}
-\contentsline {subsection}{\numberline {4.3.2}Result}{15}
-\contentsline {chapter}{\numberline {5}Tessellation Service}{16}
-\contentsline {section}{\numberline {5.1}Methodology}{16}
-\contentsline {section}{\numberline {5.2}Implementation}{16}
-\contentsline {section}{\numberline {5.3}Test}{16}
-\contentsline {subsection}{\numberline {5.3.1}Setup}{16}
-\contentsline {subsection}{\numberline {5.3.2}Result}{16}
-\contentsline {chapter}{\numberline {6}Conclusion}{17}
-\contentsline {section}{\numberline {6.1}Results}{17}
-\contentsline {section}{\numberline {6.2}Conclusion}{17}
-\contentsline {section}{\numberline {6.3}Future tasks}{17}
-\contentsline {chapter}{Bibliography}{18}
-\contentsline {chapter}{List of Figures}{19}
-\contentsline {chapter}{List of Tables}{20}
+\contentsline {section}{\numberline {3.2}Implementation}{17}
+\contentsline {section}{\numberline {3.3}Test}{17}
+\contentsline {subsection}{\numberline {3.3.1}Setup}{17}
+\contentsline {subsection}{\numberline {3.3.2}Result}{17}
+\contentsline {chapter}{\numberline {4}Annotation Service}{18}
+\contentsline {section}{\numberline {4.1}Methodology}{18}
+\contentsline {section}{\numberline {4.2}Implementation}{18}
+\contentsline {section}{\numberline {4.3}Test}{18}
+\contentsline {subsection}{\numberline {4.3.1}Setup}{18}
+\contentsline {subsection}{\numberline {4.3.2}Result}{18}
+\contentsline {chapter}{\numberline {5}Tessellation Service}{19}
+\contentsline {section}{\numberline {5.1}Methodology}{19}
+\contentsline {section}{\numberline {5.2}Implementation}{19}
+\contentsline {section}{\numberline {5.3}Test}{19}
+\contentsline {subsection}{\numberline {5.3.1}Setup}{19}
+\contentsline {subsection}{\numberline {5.3.2}Result}{19}
+\contentsline {chapter}{\numberline {6}Conclusion}{20}
+\contentsline {section}{\numberline {6.1}Results}{20}
+\contentsline {section}{\numberline {6.2}Conclusion}{20}
+\contentsline {section}{\numberline {6.3}Future tasks}{20}
+\contentsline {chapter}{Bibliography}{21}
+\contentsline {chapter}{List of Figures}{23}
+\contentsline {chapter}{List of Tables}{24}
