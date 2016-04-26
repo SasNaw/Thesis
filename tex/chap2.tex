@@ -10,18 +10,18 @@ To prevent missunderstandings and confusion, the following subsections 2.1.1 - 2
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
-		\caption{3 consecutive levels of a .dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}
+		\caption{3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}
 		\label{fig:fig2.1}
 	\end{center}
 \end{figure}
 
-The Deep Zoom Image Format (.dzi)\nomenclature{.dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
+The Deep Zoom Image Format (dzi)\nomenclature{dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
 
 As seen in fig. 2.1 there are multiple versions of a single image in different resolutions. Each resolution in the pyramid is called a \emph{level}. At each level the image is scaled down by the factor 4 (2 in each dimension). Furthermore, the image gets tiled up into $256^2$ tiles (256 in each dimension)\cite{web:dzi}.
 
 If a viewer wants to view a certain area of the image (e.g. the highlighted tile in the last image in fig. 2.1), only the corresponding tiles need to be loaded. This saves large amounts of bandwidth and memory. The same goes for a viewer, who is zoomed out very far. In such a view the full level of detail isn't needed, so that a version from a lower level can be loaded.
 
-A .dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
+A dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
 
 
 \subsection{Microservice}
@@ -77,8 +77,8 @@ A huge benefit of NN, over other software models, is their ability to learn. Whi
 This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illustrate the process chain necessary to accomplish the research objective stated in chapter 1.2. The process chain consists of the following steps:
 
 \begin{enumerate}[(a)]
-	\item convert WHIs of different\footnote{see chap. 2.2.1 for a listing of valid input formats.} formats to .dzi format
-	\item annotate .dzi images with the annotation tool made for this purpose
+	\item convert WHIs of different\footnote{see chap. 2.2.1 for a listing of valid input formats.} formats to dzi format
+	\item annotate dzi images with the annotation tool made for this purpose
 	\item persist made annotations in a file
 	\item seperate annotated images into tiles of custom size
 	\item keep correspondence between tiles of an image and its annotations
@@ -88,7 +88,7 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 
 \begin{itemize}
 	\item Conversion Service (see chap. 2.2.1)\\
-	This service will be responsible for converting WHIs into the .dzi format (a).
+	This service will be responsible for converting WHIs into the dzi format (a).
 	\item Annotation Service (see chap. 2.2.2)\\
 	This service will offer a tool to annotate an image (b) and persist made annotations (c).
 	\item Tessellation Service (see chap. 2.2.3)\\
@@ -98,7 +98,7 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 
 \subsection{Definition of Conversion Service}
 
-The devices which create an WHI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the .dzi format, not only for unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WHI with 1.600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+The devices which create an WHI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the dzi format, not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WHI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -108,7 +108,7 @@ The devices which create an WHI, so called whole slide scanners, create images i
 	\end{center}
 \end{figure}
 
-The Conversion Service will be implemented as a python script, which upon calling takes every single WHI of a certain format inside a given folder and converts it to the .dzi format. Each converted WHI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
+The Conversion Service will be implemented as a python script, which upon calling takes every single WHI of a certain format inside a given folder and converts it to the dzi format. Each converted WHI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
 
 \begin{itemize}
 	\item .bif (Ventana)
