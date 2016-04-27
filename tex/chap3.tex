@@ -131,6 +131,71 @@ Every tile will be saved as [column]{\textunderscore}[row].[format] ([format] de
 
 
 \section{Implementation}
+
+As stated before, the Conversion Service is implemented as a python script. The script is to be called inside a terminal in the following fashion:
+
+\begin{lstlisting}
+	$ python ConversionService.py -i [folder]
+\end{lstlisting}
+
+There are two possible options for the call of ConversionService.py (see tab. 3.3), it's mandatory to pick one of the two, since there are no default values.
+
+\begin{table} [h]
+	\begin{center}
+		\begin{tabular}{| r | l |}
+			\hline
+			\textbf{option} & \textbf{description} \\ \hline
+			-h & show help \\ \hline
+			-i & folder with WSI to convert \\ \hline
+		\end{tabular}
+		\caption{Options for ConversionService.py}
+	\end{center}
+\end{table}
+
+Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. It looks as follows:
+
+\begin{lstlisting}[frame=single]
+def main():
+	path = checkParams()
+	files = os.listdir(path)
+	for file in files:
+		print("-----------------------------------------")
+		extLen = getFileExt(file)
+		if(extLen != 0):
+			print("converting " + file + "...")
+			convert(path, file, extLen)
+			print("done!")
+\end{lstlisting}
+
+\emph{checkParams()} will check if the input parameters are valid and, if so, return the path to the specified folder or exit otherwise. In the next step, the specified folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each given file and will either return the length of the files extension, if valid (\emph{extLen} $<0$) and $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
+
+\begin{lstlisting}[frame=single]
+# convert image source into .dzi format
+# param path: directory of param file
+# param file: file to be converted
+# param extLen: length of file extension
+def convert(path, file, extLen):
+
+	if not(path.endswith("/")):
+		path += "/"
+	dzi = file[:extLen] + "dzi"
+	
+	# create Deep Zoom Image creator
+	creator = deepzoom.ImageCreator(tile_size=256, tile_overlap=0,
+				tile_format="png", image_quality=1.0, 
+				resize_filter="bicubic")
+
+	# create Deep Zoom image pyramid from source
+	creator.create(path + file, OUTPUT + dzi)
+\end{lstlisting}
+
+The name for the new dzi file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 9). Next, deepzooms ImageCreator will be initialized with the following parameters: tile{\textunderscore}size = 256, tile{\textunderscore}overlap = 0, tile{\textunderscore}format = "png", image{\textunderscore}quality = 1.0, resize{\textunderscore}filter = "bicubic" (see line 12 - 14). Once the ImageCreator is initialized, its \emph{create(...)} function is called (see line 17), in which the input image will be converted. The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/".
+
+
 \section{Test}
+
+Another script, \ will be deployed to make sure that the ConversionService.py is actually working correctly
+
+
 \subsection{Setup}
 \subsection{Result}
