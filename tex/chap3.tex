@@ -17,9 +17,13 @@ Therefore, the Conversion Service must be able to open an WHI $img_{input}$ of a
 
 \subsection{Creating a Deep Zoom Image}
 
-To create a dzi, the Conversion Service must be capable of 
+To create a dzi, the Conversion Service must be capable of all the afore mentioned tasks. According to \cite{web:openseadragon}, there is a number of frameworks, that can achieve this task (see tab. 3.1).
 
-\begin{table}
+Since the conversion to dzi is required, two frameworks are not usable from the start. Those are MapTiler, who creates tms\footnote{Tile Map Service (tms) is a tile scheme developed and maintained by the Open Source Geospatial Foundation \cite{web:tms}} images and Kakadu, which creates iiif\footnote{International Image Interoperability Framework (iiif), specified by the International Image Interoperability Framework group, is an image delivery API which responds to requests via HTTP and HTTPS \cite{web:iiif}} images. Furthermore, the various desktop applications are not usable either, since the Conversion Service should operate as a microservice.
+
+For ease of use and personal preferrence, the author settled with Deepzoom.py for the converison.\newpage
+
+\begin{table}[H]
 	\begin{center}
 		\begin{tabular}{| p{3cm} | p{4cm} | p{2cm} |}
 			\hline
@@ -48,10 +52,6 @@ To create a dzi, the Conversion Service must be capable of
   	\caption{Overview of conversion options for zooming image formats (source: \cite{web:openseadragon})}
   	\end{center}
 \end{table}
-  
-iiif\footnote{International Image Interoperability Framework (iiif), specified by the International Image Interoperability Framework group, is an image delivery API which responds to requests via HTTP and HTTPS \cite{web:iiif}}
-
-tms\footnote{Tile Map Service (tms) is a tile scheme developed and maintained by the Open Source Geospatial Foundation \cite{web:tms}} 
 
 
 \subsection{Deepzoom.py}
