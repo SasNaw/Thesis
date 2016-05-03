@@ -194,8 +194,14 @@ The name for the new dzi file will be created from the original file name, howev
 
 \section{Test}
 
-Another script, \ will be deployed to make sure that the ConversionService.py is actually working correctly
+To test the correct functionality of the Conversion Service, an automated test will be deployed. The test will be in the form of a bash script (ConversionTest.sh), which calls ConversionService.py in a controlled evironment with a specific set of WSIs dedicated for testing purposes and verifies that the conversion succeeded.
 
 
 \subsection{Setup}
+
+The only requirement for this test is that a specified test directory (\emph{imgTest}, the test itself (\emph{ConversionTest.sh}) and \emph{ConversionService.py} are located in the same directory. 
+
+If called, the conversion test will create a specific folder (\emph{csTest}), in which the testing will be done. Furthermore, a set of images from imgTest will be copied into the same folder. Afterwards, ConversionService.py is called, with \emph{imgTest/} as input directory. After ConversionService.py is done, the test will check if the output directory was created, as well as every image was converted successfully. The test can be considered a success, if both cases are given.
+
+
 \subsection{Result}
