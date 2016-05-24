@@ -16,12 +16,14 @@
 \contentsline {section}{\numberline {3.1}Methodology}{13}
 \contentsline {subsection}{\numberline {3.1.1}Creating a Deep Zoom Image}{14}
 \contentsline {subsection}{\numberline {3.1.2}Deepzoom.py}{16}
+\contentsline {subsection}{\numberline {3.1.3}VIPS}{17}
 \contentsline {section}{\numberline {3.2}Implementation}{17}
 \contentsline {section}{\numberline {3.3}Test}{19}
 \contentsline {subsection}{\numberline {3.3.1}Setup}{19}
 \contentsline {subsection}{\numberline {3.3.2}Result}{19}
 \contentsline {chapter}{\numberline {4}Annotation Service}{20}
 \contentsline {section}{\numberline {4.1}Methodology}{20}
+\contentsline {subsection}{\numberline {4.1.1}DICOM}{20}
 \contentsline {section}{\numberline {4.2}Implementation}{20}
 \contentsline {section}{\numberline {4.3}Test}{20}
 \contentsline {subsection}{\numberline {4.3.1}Setup}{20}

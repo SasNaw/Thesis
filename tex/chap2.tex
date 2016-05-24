@@ -77,7 +77,7 @@ A huge benefit of NN, over other software models, is their ability to learn. Whi
 This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illustrate the process chain necessary to accomplish the research objective stated in chapter 1.2. The process chain consists of the following steps:
 
 \begin{enumerate}[(a)]
-	\item convert WHIs of different\footnote{see chap. 2.2.1 for a listing of valid input formats.} formats to dzi format
+	\item convert WSIs of different\footnote{see chap. 2.2.1 for a listing of valid input formats.} formats to dzi format
 	\item annotate dzi images with the annotation tool made for this purpose
 	\item persist made annotations in a file
 	\item seperate annotated images into tiles of custom size
@@ -88,7 +88,7 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 
 \begin{itemize}
 	\item Conversion Service (see chap. 2.2.1)\\
-	This service will be responsible for converting WHIs into the dzi format (a).
+	This service will be responsible for converting WSIs into the dzi format (a).
 	\item Annotation Service (see chap. 2.2.2)\\
 	This service will offer a tool to annotate an image (b) and persist made annotations (c).
 	\item Tessellation Service (see chap. 2.2.3)\\
@@ -98,7 +98,7 @@ To fulfill those steps, 3 Microservices will be introduced in the following subs
 
 \subsection{Definition of Conversion Service}
 
-The devices which create an WHI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the dzi format, not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WHI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+The devices which create an WSI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the dzi format, not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WSI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -108,7 +108,7 @@ The devices which create an WHI, so called whole slide scanners, create images i
 	\end{center}
 \end{figure}
 
-The Conversion Service will be implemented as a python script, which upon calling takes every single WHI of a certain format inside a given folder and converts it to the dzi format. Each converted WHI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
+The Conversion Service will be implemented as a python script, which upon calling takes every single WSI of a certain format inside a given folder and converts it to the dzi format. Each converted WSI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
 
 \begin{itemize}
 	\item .bif (Ventana)
@@ -126,7 +126,7 @@ The Conversion Service will be implemented as a python script, which upon callin
 
 \subsection{Definition of Annotation Service}
 
-The first step to create a valid training sample for a NN is to annotate the WHIs which will later serve as that. To do so, a GUI\nmc{GUI}{Graphical User Interface} must be deployed which enables a pathologist to make annotations to an WHI. Additionally, the Annotation Service also needs to be capable to persist made annotations (see fig. 2.4). This will happen by saving the annotations into a file which will be placed next to the image.
+The first step to create a valid training sample for a NN is to annotate the WSIs which will later serve as that. To do so, a GUI\nmc{GUI}{Graphical User Interface} must be deployed which enables a pathologist to make annotations to an WSI. Additionally, the Annotation Service also needs to be capable to persist made annotations (see fig. 2.4). This will happen by saving the annotations into a file which will be placed next to the image.
 
 \begin{figure}[H]
 	\begin{center}
@@ -141,7 +141,7 @@ To enable the pathologist to make annotations in the first place, a GUI needs to
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{img/microdrawUI.png}
-		\caption{Microdraw GUI with opened WHI}
+		\caption{Microdraw GUI with opened WSI}
 		\label{fig:fig2.5}
 	\end{center}
 \end{figure}
@@ -154,12 +154,12 @@ Microdraw is a webbased annotation tool, which describes itself as
 
 Therefore, the GUI of the Annotation Service, or Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}, will run as a web application in a browser. Annotations will be made by selecting a shape or annotation method from the various tools in the toolbar (see the gray bar on the left in fig. 2.5). After selecting the area to be annotated, an actual description of that area can be made via keyboard input.
 
-When the pathologist is done or wants to save the made annotations, the Annotation Service will create a file in which they will be persisted in. Only one WHI can be opened in one ASV at a time.
+When the pathologist is done or wants to save the made annotations, the Annotation Service will create a file in which they will be persisted in. Only one WSI can be opened in one ASV at a time.
 
 
 \subsection{Definition of Tessellation Service}
 
-The task of the Tessellation Service is to tessellate a given WHI into multiple tiles while keeping up the correspondence between image areas and annotations (see fig. 2.6). Tessellation describes the process of seperating a geometric space (e.g. a plane) into multiple tiles of one or more shapes. No matter if the tiles are unifrom or of different shapes, there must be no gaps or overlapping areas in the resulting tiles.
+The task of the Tessellation Service is to tessellate a given WSI into multiple tiles while keeping up the correspondence between image areas and annotations (see fig. 2.6). Tessellation describes the process of seperating a geometric space (e.g. a plane) into multiple tiles of one or more shapes. No matter if the tiles are unifrom or of different shapes, there must be no gaps or overlapping areas in the resulting tiles.
 
 \begin{figure}[H]
 	\begin{center}
@@ -169,6 +169,6 @@ The task of the Tessellation Service is to tessellate a given WHI into multiple 
 	\end{center}
 \end{figure}
 
-The tessellation of the Tessellation Service differs from the given definition in two aspects. First, all tiles will be of a unifrom shape (square). Second, the service will also offer the possibility of seperating only the annotated areas of an WHI into tiles. Therefore, the "no gaps" rule is invalid, when this option is chosen. The rule of no overlapping areas holds true in either case, however.
+The tessellation of the Tessellation Service differs from the given definition in two aspects. First, all tiles will be of a unifrom shape (square). Second, the service will also offer the possibility of seperating only the annotated areas of an WSI into tiles. Therefore, the "no gaps" rule is invalid, when this option is chosen. The rule of no overlapping areas holds true in either case, however.
 
-As mentioned before, the second task of the Tessellation Service is to ensure the correspondence between tiles and annotations of the original WHI. This means that, if the original WHI has an annotation in the area of a tile, this tile needs to have the same annotation.
+As mentioned before, the second task of the Tessellation Service is to ensure the correspondence between tiles and annotations of the original WSI. This means that, if the original WSI has an annotation in the area of a tile, this tile needs to have the same annotation.

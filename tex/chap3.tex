@@ -21,7 +21,7 @@ To create a dzi, the Conversion Service must be capable of all the afore mention
 
 Since the conversion to dzi is required, two frameworks are not usable from the start. Those are MapTiler, who creates tms\footnote{Tile Map Service (tms) is a tile scheme developed and maintained by the Open Source Geospatial Foundation \cite{web:tms}} images and Kakadu, which creates iiif\footnote{International Image Interoperability Framework (iiif), specified by the International Image Interoperability Framework group, is an image delivery API which responds to requests via HTTP and HTTPS \cite{web:iiif}} images. Furthermore, the various desktop applications are not usable either, since the Conversion Service should operate as a microservice.
 
-For ease of use and personal preferrence, the author settled with Deepzoom.py for the converison.\newpage
+For a python script, deepzoom.py would be the natural choice, however at a second glance it can be seen that VIPS offers "[...] for a number of languages" (see tab. 3.1). One of those languages happens to be python. Therefore, deepzoom.py and VIPS will be further investigated in the following two subsections.
 
 \begin{table}[H]
 	\begin{center}
@@ -130,27 +130,22 @@ Once $img_i$ has been created, it will be tessellated into as many tiles of the 
 Every tile will be saved as [column]{\textunderscore}[row].[format] ([format] depending on -f/file{\textunderscore}format) in a folder called according to the corresponding level $i$. This folder will be located inside another folder, called [filename]{\textunderscore}files. The describing xml file will be persisted as [filename].dzi on the same level.
 
 
+\subsection{VIPS}
+
+
+
+
 \section{Implementation}
 
-As stated before, the Conversion Service is implemented as a python script. The script is to be called inside a terminal in the following fashion:
+As stated before, the Conversion Service is implemented as a python script. The first iteration of the script used deepzoom.py for the conversion. This caused severe performance issues though. Out of all the image files in the test set\footnote{see chap. 3.3}, only one could be converted\footnote{CMU-3.svs from aperio, see chap. 3.3}. Every other file was either too big, so the process would eventually be killed by the operating system or exit with an IOError concerning the input file from the PIL imaging library. The second iteration of the Conversion Service uses VIPS, which is not only a lot faster then deepzoom.py, but also capable of converting all the given test images.
+
+The script has to be called inside a terminal in the following fashion:
 
 \begin{lstlisting}
-	$ python ConversionService.py -i [folder]
+	$ python ConversionService.py [input dir] [output dir]
 \end{lstlisting}
 
-There are two possible options for the call of ConversionService.py (see tab. 3.3), it's mandatory to pick one of the two, since there are no default values.
-
-\begin{table} [h]
-	\begin{center}
-		\begin{tabular}{| r | l |}
-			\hline
-			\textbf{option} & \textbf{description} \\ \hline
-			-h & show help \\ \hline
-			-i & folder with WSI to convert \\ \hline
-		\end{tabular}
-		\caption{Options for ConversionService.py}
-	\end{center}
-\end{table}
+It is mandatory to specify the input and output directory in the call, so the script knows where to look for images up to conversion and where to save the resulting dzi files.
 
 Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. It looks as follows:
 
@@ -167,7 +162,7 @@ def main():
 			print("done!")
 \end{lstlisting}
 
-\emph{checkParams()} will check if the input parameters are valid and, if so, return the path to the specified folder or exit otherwise. In the next step, the specified folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each given file and will either return the length of the files extension, if valid (\emph{extLen} $<0$) and $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
+\emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or exit otherwise. Furthermore, it will create the specified output folder, if it doesn't exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
 
 \begin{lstlisting}[frame=single]
 # convert image source into .dzi format
@@ -175,21 +170,12 @@ def main():
 # param file: file to be converted
 # param extLen: length of file extension
 def convert(path, file, extLen):
-
-	if not(path.endswith("/")):
-		path += "/"
-	dzi = file[:extLen] + "dzi"
-	
-	# create Deep Zoom Image creator
-	creator = deepzoom.ImageCreator(tile_size=256, tile_overlap=0,
-				tile_format="png", image_quality=1.0, 
-				resize_filter="bicubic")
-
-	# create Deep Zoom image pyramid from source
-	creator.create(path + file, OUTPUT + dzi)
+	dzi = OUTPUT + file[:extLen] + "dzi"
+	im = Vips.Image.new_from_file(path + file)
+	im.dzsave(dzi, overlap=OVERLAP, tile_size=TILESIZE)
 \end{lstlisting}
 
-The name for the new dzi file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 9). Next, deepzooms ImageCreator will be initialized with the following parameters: tile{\textunderscore}size = 256, tile{\textunderscore}overlap = 0, tile{\textunderscore}format = "png", image{\textunderscore}quality = 1.0, resize{\textunderscore}filter = "bicubic" (see line 12 - 14). Once the ImageCreator is initialized, its \emph{create(...)} function is called (see line 17), in which the input image will be converted. The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/".
+The name for the new dzi file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 6). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/[\emph{OUTPUT}]/".
 
 
 \section{Test}
