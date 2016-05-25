@@ -182,8 +182,13 @@ The name for the new dzi file will be created from the original file name, howev
 
 To test the correct functionality of the Conversion Service, an automated test will be deployed. The test will be in the form of a bash script (ConversionTest.sh), which calls ConversionService.py in a controlled evironment with a specific set of WSIs dedicated for testing purposes and verifies that the conversion succeeded.
 
+Since the test images are of enormous size, they are not delivered via the repository. Instead they need to be downloaded separately from the OpenSlide homepage\footnote{see \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, where a freely distributable test data can be found.
+
+See Appendix A for a listing of all the WSIs in the test data.
 
 \subsection{Setup}
+
+To set up the environment for the test, some of the test slides mentioned in chap. 3.3 
 
 The only requirement for this test is that a specified test directory (\emph{imgTest}, the test itself (\emph{ConversionTest.sh}) and \emph{ConversionService.py} are located in the same directory. 
 

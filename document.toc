@@ -38,6 +38,17 @@
 \contentsline {section}{\numberline {6.1}Results}{22}
 \contentsline {section}{\numberline {6.2}Conclusion}{22}
 \contentsline {section}{\numberline {6.3}Future tasks}{22}
-\contentsline {chapter}{Bibliography}{23}
-\contentsline {chapter}{List of Figures}{25}
-\contentsline {chapter}{List of Tables}{26}
+\contentsline {chapter}{Appendices}{23}
+\contentsline {chapter}{\numberline {A}Listing of Conversion Service Test Data}{24}
+\contentsline {section}{\numberline {A.1}Aperio (.svs)}{24}
+\contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{25}
+\contentsline {section}{\numberline {A.3}Hamamatsu (.ndpi)}{25}
+\contentsline {section}{\numberline {A.4}Hamamatsu (.vms)}{25}
+\contentsline {section}{\numberline {A.5}Leica (.scn)}{26}
+\contentsline {section}{\numberline {A.6}Mirax (.mrxs)}{27}
+\contentsline {section}{\numberline {A.7}Olympus (.vsi)}{28}
+\contentsline {section}{\numberline {A.8}Trestle (.tiff)}{28}
+\contentsline {section}{\numberline {A.9}Ventana (.bif)}{28}
+\contentsline {chapter}{Bibliography}{29}
+\contentsline {chapter}{List of Figures}{31}
+\contentsline {chapter}{List of Tables}{32}
