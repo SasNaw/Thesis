@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{web:openseadragon}
-Openseadragon.
-\newblock
-  \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
-\newblock Accessed: 26.04.2016.
-
 \bibitem{Karpathy15}
 L.~Fei-Fei A.~Karpathy.
 \newblock {\em Deep Visual-Semantic Alignments for Generating Image
@@ -21,6 +15,12 @@ T.~Cornish.
   \url{http://www.hopkinsmedicine.org/mcp/PHENOCORE/CoursePDFs/2013/13%2019%20Cornish%20Digital%20Path.pdf},
   July 2013.
 \newblock Accessed: 12.04.2016.
+
+\bibitem{web:vips}
+J.~Cupitt.
+\newblock Vips.
+\newblock \url{http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS}.
+\newblock Accessed: 25.05.2016.
 
 \bibitem{Goode13}
 A.~Goode et~al.
@@ -56,6 +56,26 @@ Open Source~Geospatial Foundation.
 \newblock Tile map service specification.
 \newblock \url{http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification}.
 \newblock Accessed: 26.04.2016.
+
+\bibitem{web:openseadragon}
+I.~Gilman.
+\newblock Openseadragon.
+\newblock
+  \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{cupitt96}
+K.~Martinez J.~Cupitt.
+\newblock Vips: an image processing system for large images.
+\newblock {\em Proc. SPIE}, 2663:19 -- 28, 1996.
+\newblock \url{http://eprints.soton.ac.uk/252227/1/vipsspie96a.pdf}.
+
+\bibitem{cupitt05}
+K.~Martinez J.~Cupitt.
+\newblock Vips - a highly tuned image processing software architecture.
+\newblock In {\em IEEE International Conference on Image Processing}, pages 574
+  -- 577, September 2005.
+\newblock \url{http://eprints.soton.ac.uk/262371/}.
 
 \bibitem{Kriesel07}
 D.~Kriesel.

@@ -7,7 +7,7 @@ The objective of the Conversion Service is to convert a given set of input WHIs 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/pyramid.png}
-		\caption{Example of a pyramid scheme in image processing (source: http://iipimage.sourceforge.net/images/pyramid.png)}
+		\caption{Example of a pyramid scheme in image processing (source: \url{http://iipimage.sourceforge.net/images/pyramid.png})}
 		\label{fig:fig3.1}
 	\end{center}
 \end{figure}
@@ -112,11 +112,11 @@ creator.create([source], [destination])
 Upon calling, the ImageCreator opens the input image $img_{input}$ and creates a description with all the needed information for the dzis describing xml file\footnote{Compare chap. 2.1.1}. After that, the number of levels is calculated. For this, the bigger value of height and width of $img_{input}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl$ (see eq. 3.2).
 
 \begin{equation}
-	max{\textunderscore}dim = max(height, width)
+	max{\_}dim = max(height, width)
 \end{equation}
 
 \begin{equation}
-	lvl = {\lceil}log_2(max{\textunderscore}dim) + 1\rceil
+	lvl = {\lceil}log_2(max{\_}dim) + 1\rceil
 \end{equation}
 
 Once $lvl$ has been determined, $img_{input}$ will be resized in the chosen quality (-q/image{\textunderscore}quality) for every level $i$, with $i \in (0, lvl-1)$. The new resolution will be calculated for both dimensions $dim$ with a function $scale$ (see eq. 3.3) analogously. Furthermore, the image will be interpolated with the specified filter (-r/resize{\textunderscore}filter). The resized image will be called $img_i$.
@@ -132,12 +132,53 @@ Every tile will be saved as [column]{\textunderscore}[row].[format] ([format] de
 
 \subsection{VIPS}
 
+VIPS (VASARI Image Processing System)\nmc{VIPS}{VASARI Image Processing System} describes itself as "[...] a free image processing system [...]" \cite{web:vips}. It includes a wide range of different image processing tools, such as various filters, histograms, geometric transformations and color processing algorithms. It also supports various scientific image formats, especially those needed for the Conversion Service\footnote{See chap. 2.2.1}\cite{web:vips}.
 
+VIPS comes in two parts: the actual library (called libvips) and a GUI (called nip2). libvips offers interfaces for C, C++, python and the command line. The GUI will not be further discussed, since it is of no interest for the implementation of the Conversion Service.
+
+One of the strongest traits of VIPS is its speed and little data usage compared to other imaging libraries\cite{cupitt05}. Given the task of the Conversion Service to convert WSIs of various formats, which tend to be quite large, both of those perks are especially welcome.
+
+VIPS superior speed and little data usage comes from a fully demand-driven image input/output system. While conventional imaging libraries queue their operations and go through them sequentially, VIPS awaits a final write command, before actually manipulating the image. All the queued operations will then be evaluated and molded into a few single operations. Thus, requiring no additional disc space for intermediates and no unnecessary disc in- and output. Furthermore, if more than one CPU is available, VIPS will automatically evaluate in parallel\cite{cupitt96}.
+
+As mentioned before, VIPS has a command line and python interface. In either case, a function called \emph{dzsave(...)} will manage the conversion from a WSI to a dzi. A call in the terminal will look like the following:
+
+\begin{lstlisting}
+$ vips dzsave [input] [output] [options]
+\end{lstlisting}
+
+When called, VIPS will take the image [input], convert it into the dzi file format and then save it to [output]. The various options and their default values can be seen in tab. 3.3. 
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l | l |}
+			\hline
+			\textbf{option} & \textbf{description} & \textbf{default} \\ \hline
+			layout & directory layout (allowed: dz, google, zoomify) & dz \\ \hline
+			overlap & tile overlap in pixels & 1 \\ \hline
+			centre & center image in tile & false \\ \hline
+			depth & pyramid depth & onepixel \\ \hline
+			angle & rotate image during save & d0 \\ \hline
+			container & pyramid container type & fs \\ \hline
+			properties & write a properties file to the output directory & false \\ \hline
+			strip & strip all metadata from image & false \\ \hline
+		\end{tabular}
+		\caption{Options for VIPS}
+	\end{center}
+\end{table}
+
+A call in python does have the same parameters and default values. It looks like this:
+
+\begin{lstlisting}[frame=single]
+image = Vips.Image.new_from_file(input)
+image.dzsave(output[, options])
+\end{lstlisting}
+
+In line 1 the image gets opened and saved into \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image into the specified output location.
 
 
 \section{Implementation}
 
-As stated before, the Conversion Service is implemented as a python script. The first iteration of the script used deepzoom.py for the conversion. This caused severe performance issues though. Out of all the image files in the test set\footnote{See chap. 3.3}, only one could be converted\footnote{CMU-3.svs from aperio, see chap. 3.3}. Every other file was either too big, so the process would eventually be killed by the operating system or exit with an IOError concerning the input file from the PIL imaging library. The second iteration of the Conversion Service uses VIPS, which is not only a lot faster then deepzoom.py, but also capable of converting all the given test images.
+As stated before, the Conversion Service is implemented as a python script. The first iteration of the script used deepzoom.py for the conversion. This caused severe performance issues though. Out of all the image files in the test set\footnote{See chap. 3.3}, only one could be converted\footnote{CMU-3.svs from Aperio, see Appendix A}. Every other file was either too big, so the process would eventually be killed by the operating system or exit with an IOError concerning the input file from the PIL imaging library. The second iteration of the Conversion Service uses VIPS, which is faster then deepzoom.py and also capable of converting all the given test images.
 
 The script has to be called inside a terminal in the following fashion:
 
@@ -180,17 +221,64 @@ The name for the new dzi file will be created from the original file name, howev
 
 \section{Test}
 
-To test the correct functionality of the Conversion Service, an automated test will be deployed. The test will be in the form of a bash script (ConversionTest.sh), which calls ConversionService.py in a controlled evironment with a specific set of WSIs dedicated for testing purposes and verifies that the conversion succeeded.
+To test the correct functionality of the Conversion Service, test data is needed. OpenSlide offers a selection of freely distributable data\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
 
-Since the test images are of enormous size, they are not delivered via the repository. Instead they need to be downloaded separately from the OpenSlide homepage\footnote{See \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, where freely distributable test data can be found\footnote{See Appendix A for a listing}.
+Since the WSIs are of enormous size, they are not delivered via the repository. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see Appendix A.
+
 
 \subsection{Setup}
 
-To set up the environment for the test, some of the test slides mentioned in chap. 3.3 
+To create a controlled environment for the test, a new directory will be created, called \emph{CS{\textunderscore}test}. A copy of ConversionService.py as well as a directory containing all the test WSIs (called \emph{input}) will be placed in that directory.
 
-The only requirement for this test is that a specified test directory (\emph{imgTest}, the test itself (\emph{ConversionTest.sh}) and \emph{ConversionService.py} are located in the same directory. 
+\emph{Input} contains the following slides:
 
-If called, the conversion test will create a specific folder (\emph{csTest}), in which the testing will be done. Furthermore, a set of images from imgTest will be copied into the same folder. Afterwards, ConversionService.py is called, with \emph{imgTest/} as input directory. After ConversionService.py is done, the test will check if the output directory was created, as well as every image was converted successfully. The test can be considered a success, if both cases are given.
+\begin{enumerate}[(1)]
+	\item CMU-2 (Aperio, .svs)
+	\item CMU-1 (Generic Tiled tiff, .tiff)
+	\item OS-3 (Hamamatsu, .ndpi)
+	\item CMU-2 (Hamamatsu, .vms)
+	\item Leica-2 (Leica, .scn)
+	\item Mirax2.2-3 (Mirax, .mrxs)
+	\item CMU-2 (Trestle, .tif)
+	\item OS-2 (Ventana, .bif)
+\end{enumerate}
+
+Because of their structure, (4), (6) and (7) will be placed in directories titled with their file extension. Fig. 3.2 shows the content of the input folder.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/inputDir.png}
+		\caption{Content of input directory}
+		\label{fig:fig3.2}
+	\end{center}
+\end{figure}
+
+This makes multiple calls of the Conversion Service necessary. The calls, in that order, are:
+
+\begin{lstlisting}
+	$ python ConversionService.py input/ out_1/
+	$ python ConversionService.py input/mrxs out_2/
+	$ python ConversionService.py input/tif out_3/
+	$ python ConversionService.py input/vms out_4/
+\end{lstlisting}
 
 
 \subsection{Result}
+
+All runs of ConversionService.py were successful. Tab. 3.3 shows an overview of the results:
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l | r |}
+			\hline
+			\textbf{input} & \textbf{output} & \textbf{time (sec)} \\ \hline
+			input/ & CMU-1.dzi, CMU-2.dzi, Leica-2.dzi, OS-2.dzi, OS-3.dzi & 1992 \\ \hline
+			input/mrxs/ & Mirax2.2-3.dzi & 500 \\ \hline
+			input/tif/ & CMU-2.dzi & 56 \\ \hline
+			input/vms/ & CMU-2-40x - 2010-01-12 13.38.58.dzi & 305 \\ \hline
+		\end{tabular}
+		\caption{Results of Conversion Service Test}
+	\end{center}
+\end{table}
+
+The vast difference in file size of the test data accounts for the different run times of the tests. While the first test converted 5 WSIs (399 sec/WSI), every other test converted a single one. The conversion of (6) was much faster, since the file was smaller in size (304.22 MB) compared to the others (1495.24 MB on average).

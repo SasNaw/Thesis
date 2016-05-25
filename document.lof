@@ -1,15 +1,16 @@
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Example results of the in \cite {Karpathy15} introduced model (source: http://cs.stanford.edu/people/karpathy/deepimagesent/}}{4}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Example results of the in \cite {Karpathy15} introduced model (source: \url {http://cs.stanford.edu/people/karpathy/deepimagesent/})}}{4}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces 3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}}{6}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces 3 layer NN (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}}{8}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the Conversion Service}}{10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of the Annotation Service}}{11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Microdraw GUI with opened WSI}}{11}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Visualization of the Tessellation Service}}{12}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces 3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces 3 layer NN (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}}{8}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Visualization of the Conversion Service}}{10}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualization of the Annotation Service}}{11}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Microdraw GUI with opened WSI}}{11}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Visualization of the Tessellation Service}}{12}{figure.2.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of a pyramid scheme in image processing (source: http://iipimage.sourceforge.net/images/pyramid.png)}}{13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of a pyramid scheme in image processing (source: \url {http://iipimage.sourceforge.net/images/pyramid.png})}}{13}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Content of input directory}}{21}{figure.3.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
