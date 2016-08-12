@@ -7,6 +7,14 @@ L.~Fei-Fei A.~Karpathy.
 \newblock Department of Computer Science, Standford University, 2015.
 \newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
 
+\bibitem{Bugwadia15}
+J.~Bugwadia.
+\newblock Microservices: Five architectural constraints.
+\newblock
+  \url{http://www.nirmata.com/2015/02/microservices-five-architectural-constraints/},
+  February 2015.
+\newblock Accessed: 12.08.2016.
+
 \bibitem{Cornish13}
 T.~Cornish.
 \newblock An introduction to digital whole slide imaging and whole slide image
@@ -21,14 +29,6 @@ J.~Cupitt.
 \newblock Vips.
 \newblock \url{http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS}.
 \newblock Accessed: 25.05.2016.
-
-\bibitem{Goode13}
-A.~Goode et~al.
-\newblock Openslide: A vendor-neutral software foundation for digital
-  pathology.
-\newblock {\em J pathol inform}, 4(1), September 2013.
-\newblock
-  \url{http://download.openslide.org/docs/JPatholInform_2013_4_1_27_119005.pdf}.
 
 \bibitem{web:iiif}
 M.~Appleby et~al.
@@ -77,6 +77,14 @@ K.~Martinez J.~Cupitt.
   -- 577, September 2005.
 \newblock \url{http://eprints.soton.ac.uk/262371/}.
 
+\bibitem{Lewis14}
+M.~Fowler J.Lewis.
+\newblock Microservices, a definition of this new architectural term.
+\newblock
+  \url{http://martinfowler.com/articles/microservices.html#footnote-etymology},
+  March 2014.
+\newblock Accessed: 12.08.2016.
+
 \bibitem{Kriesel07}
 D.~Kriesel.
 \newblock {\em A Brief Introduction to Neural Networks}, 2007.
@@ -88,6 +96,15 @@ Microsoft.
 \newblock
   \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
 \newblock Accessed: 11.04.2016.
+
+\bibitem{Riggins15}
+J.~Riggins.
+\newblock Microservices architecture: The good, the bad, and what you could be
+  doing better.
+\newblock
+  \url{http://nordicapis.com/microservices-architecture-the-good-the-bad-and-what-you-could-be-doing-better/},
+  April 2015.
+\newblock Accessed: 12.08.2016.
 
 \bibitem{web:microdraw}
 Roberto Toro.
