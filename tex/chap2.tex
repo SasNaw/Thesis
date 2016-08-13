@@ -85,15 +85,18 @@ This makes the advantages outweight the disadvantages clearly:
 
 
 \section{Process Chain}
-This section and its following subsections (2.2.1 - 2.2.3) are dedicated to illustrate the process chain necessary to accomplish the research objective stated in chapter 1.2. The process chain consists of the following steps:
+This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in 1.2(a) - 1.2(c). The usual procedure would look as follows:
 
-\begin{enumerate}[(a)]
-	\item convert WSIs of different\footnote{See chap. 2.2.1 for a listing of valid input formats.} formats to dzi format
-	\item annotate dzi images with the annotation tool made for this purpose
-	\item persist made annotations in a file
-	\item seperate annotated images into tiles of custom size
-	\item keep correspondence between tiles of an image and its annotations
+\begin{enumerate}[(1.)]
+	\item convert chosen WSI $img^{wsi}_i$ to DZI format $img^{dzi}_i$
+	\item open $img^{dzi}_i$ in a viewer $V$
+	\item annotate $img^{dzi}_i$ in $V$
+	\item persist annotations $A_i$ on $img^{dzi}_i$ in a file $f_{(A_i)}$
+	\item create training sample $ts_i$ by extracting the information of $A_i$ in correspondence to $img^{dzi}_i$
 \end{enumerate}
+
+As stated in 2.3, MS will be used to 
+
 
 To fulfill those steps, 3 Microservices will be introduced in the following subsections. Those are:
 

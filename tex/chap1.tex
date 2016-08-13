@@ -22,7 +22,7 @@ Therefore the goal of this thesis is to give tools into the hands of pathologist
 
 \section{Research Objective}
 The objective of this thesis is the conceptualization and implementation of tools to prepare WSIs for the further use as training samples in NN. To achieve this, a process chain with all the necessary steps needs to be established. The chain consists of the following tasks:
-\begin{enumerate}[(a)]
+\begin{enumerate}[(A)]
 	\item open WSI with a viewer tool
 	\item make that viewer tool capable of creating, managing and saving annotations
 	\item make made annotations usable as training samples for NN
@@ -40,15 +40,21 @@ There is no standardized WSI file format. Hence, slide scanner vendors developed
 	\item Deep Zoom Images (DZI)\nmc{DZI}{Deep Zoom Images}
 	\item DICOM (supplement 145), without reference implementation as of yet\cite{Cornish13}
 \end{itemize}
-Therefore, to achieve (a), the first step of the process chain is to establish a tool with which WSIs of various formats can be turned into one of those open ones. This way, neither (i) nor (ii) will arise as a problem.
+Therefore, to achieve (A), the first step of the process chain is to establish a tool with which WSIs of various formats can be turned into one of those open ones. This way, neither (i) nor (ii) will arise as a problem.
 
-To achieve (a) and (b), it is also necessary to deploy a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface}, that not only makes it possible to open and view a WSI ((a)), but also enables the user to annotate the WSI, as well as manage made annotations ((b)).
+To achieve (A) and (B), it is also necessary to deploy a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface}, that not only makes it possible to open and view a WSI (A), but also enables the user to annotate the WSI, as well as manage made annotations (B).
 
-To achieve (c), another tool needs to be established, that is capable of turning saved annotations into training samples which are prepared for a further use in NN.
+To achieve (C), another tool needs to be established, that is capable of turning saved annotations into training samples which are prepared for a further use in NN.
 
+In summary: to reach the research objective of this thesis, tools to achieve the following tasks need to be established:
+\begin{enumerate}[(a)]
+	\item conversion of various WSI formats into an open format
+	\item annotation of WSIs and management thereof
+	\item extracting and preparing annotations as training samples for later use in NN
+\end{enumerate}
 
 \section{About this thesis}
-This thesis contains 6 chapters. \emph{Chapter 1 - Introduction} and \emph{2 - Background} address the scope, background and vocabulary of this thesis. The chapters 3 - 5 are directly concerning themselves with the steps (a) - (c) of the process chain from section 1.2. They correspond as follows:
+This thesis contains 6 chapters. \emph{Chapter 1 - Introduction} and \emph{2 - Background} address the scope, background and vocabulary of this thesis. The chapters 3 - 5 are directly concerning themselves with 1.2(a) - 1.2(c). They correspond as follows:
 \begin{enumerate}[(a):]
 	\item \emph{chapter 3 - Conversion Service}
 	\item \emph{chapter 4 - Annotation Service}

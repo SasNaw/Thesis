@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  12 AUG 2016 18:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  13 AUG 2016 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -758,8 +758,8 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 38.
-) (./tex/chap2.tex
-[5] [6]
+ [5]) (./tex/chap2.tex
+[6]
 Chapter 2.
 [7
 
@@ -769,56 +769,56 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 82--83
 ork on this project
  []
 
-[10] <img/processChainA.png, id=432, 779.91376pt x 210.7875pt>
+[10] <img/processChainA.png, id=434, 779.91376pt x 210.7875pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
-Package pdftex.def Info: img/processChainA.png used on input line 116.
+Package pdftex.def Info: img/processChainA.png used on input line 119.
 (pdftex.def)             Requested size: 272.9739pt x 73.77672pt.
  [11pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.125 	\item .
-              bif (Ventana) <./img/processChainA.png>]
-<img/processChainB.png, id=446, 1257.19687pt x 331.99031pt>
+l.126 
+       <./img/processChainA.png>]
+<img/processChainB.png, id=450, 1257.19687pt x 331.99031pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
-Package pdftex.def Info: img/processChainB.png used on input line 144.
+Package pdftex.def Info: img/processChainB.png used on input line 147.
 (pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
 
-<img/microdrawUI.png, id=449, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=453, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
-Package pdftex.def Info: img/microdrawUI.png used on input line 154.
+Package pdftex.def Info: img/microdrawUI.png used on input line 157.
 (pdftex.def)             Requested size: 301.92265pt x 174.85014pt.
  [12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.159 
-       <./img/processChainB.png>]
-<img/processChainC.png, id=458, 1132.23pt x 289.08pt>
+l.161 \end{figure}
+                   <./img/processChainB.png>]
+<img/processChainC.png, id=462, 1132.23pt x 289.08pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
-Package pdftex.def Info: img/processChainC.png used on input line 177.
+Package pdftex.def Info: img/processChainC.png used on input line 180.
 (pdftex.def)             Requested size: 339.67162pt x 86.72466pt.
  [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.182 
+l.185 
        <./img/microdrawUI.png>]
-<img/dzi_pyramid.png, id=467, 529.98pt x 365.365pt>
+<img/dzi_pyramid.png, id=471, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
  <use img/dzi_pyramid.png>
-Package pdftex.def Info: img/dzi_pyramid.png used on input line 195.
+Package pdftex.def Info: img/dzi_pyramid.png used on input line 198.
 (pdftex.def)             Requested size: 264.98933pt x 182.68205pt.
 
 [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
@@ -826,18 +826,18 @@ Package pdftex.def Info: img/dzi_pyramid.png used on input line 195.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.200 
+l.203 
        <./img/processChainC.png>] [15pdfTeX warning (ext4): destination with th
 e same identifier (name{figure.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.212 
+l.215 
        <./img/dzi_pyramid.png>]
-<img/mlp.png, id=485, 237.88875pt x 215.00325pt>
+<img/mlp.png, id=489, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
-Package pdftex.def Info: img/mlp.png used on input line 221.
+Package pdftex.def Info: img/mlp.png used on input line 224.
 (pdftex.def)             Requested size: 166.52098pt x 150.50124pt.
 )
 (./tex/chap3.tex [16pdfTeX warning (ext4): destination with the same identifier
@@ -848,7 +848,7 @@ Package pdftex.def Info: img/mlp.png used on input line 221.
 l.1 \chapter
             {Conversion Service} <./img/mlp.png>]
 Chapter 3.
-<img/pyramid.png, id=496, 301.125pt x 335.2525pt>
+<img/pyramid.png, id=500, 301.125pt x 335.2525pt>
 File: img/pyramid.png Graphic file (type png)
  <use img/pyramid.png>
 Package pdftex.def Info: img/pyramid.png used on input line 9.
@@ -936,7 +936,7 @@ d, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.182 
-      ] [23] <img/inputDir.png, id=616, 435.6275pt x 286.06876pt>
+      ] [23] <img/inputDir.png, id=618, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
@@ -1361,8 +1361,8 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 8854 strings out of 493029
- 122808 string characters out of 6136235
+ 8856 strings out of 493029
+ 122817 string characters out of 6136235
  295095 words of memory out of 5000000
  11999 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
@@ -1371,24 +1371,25 @@ Here is how much of TeX's memory you used:
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (41 pages, 2921135 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt8.pfb>
+Output written on document.pdf (41 pages, 2930695 bytes).
 PDF statistics:
- 895 PDF objects out of 1000 (max. 8388607)
- 807 compressed objects within 9 object streams
- 237 named destinations out of 1000 (max. 500000)
+ 900 PDF objects out of 1000 (max. 8388607)
+ 811 compressed objects within 9 object streams
+ 239 named destinations out of 1000 (max. 500000)
  515 words of extra memory for PDF output out of 10000 (max. 10000000)
 
