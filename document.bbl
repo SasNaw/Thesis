@@ -15,6 +15,13 @@ J.~Bugwadia.
   February 2015.
 \newblock Accessed: 12.08.2016.
 
+\bibitem{Stergiou96}
+D.~Siganos C.~Stergiou.
+\newblock Neural networks.
+\newblock Technical report, Imperial College London, 1995.
+\newblock
+  \url{https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Conclusion}.
+
 \bibitem{Cornish13}
 T.~Cornish.
 \newblock An introduction to digital whole slide imaging and whole slide image
@@ -30,11 +37,23 @@ J.~Cupitt.
 \newblock \url{http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS}.
 \newblock Accessed: 25.05.2016.
 
+\bibitem{Bourg04}
+G.~Seeman D.~Bourg.
+\newblock {\em AI for Game Developers}.
+\newblock O'Reilly, 2004.
+
 \bibitem{web:iiif}
 M.~Appleby et~al.
 \newblock Iiif image api 2.0.
 \newblock \url{http://iiif.io/api/image/2.0/#status-of-this-document}.
 \newblock Accessed: 26.04.2016.
+
+\bibitem{Egmont-Petersen02}
+M.~Egmonst-Petersen et~al.
+\newblock Image processing with neural networks - a review.
+\newblock {\em Pattern Regcognition}, (35), October 2002.
+\newblock
+  \url{https://www.researchgate.net/publication/220603536_Image_processing_with_neural_networks_-_a_review_Pattern_Recogn_352279C2301}.
 
 \bibitem{Farahanil15}
 N.~Farahanil et~al.
@@ -43,13 +62,6 @@ N.~Farahanil et~al.
 \newblock {\em Pathology and Laboratory Medicine International}, 7, June 2015.
 \newblock
   \url{https://www.dovepress.com/whole-slide-imaging-in-pathology-advantages-limitations-and-emerging-p-peer-reviewed-fulltext-article-PLMI#ref10}.
-
-\bibitem{Fielding00}
-R.~Fielding.
-\newblock {\em Architectural Styles and the Design of Network-based Software
-  Architectures}.
-\newblock PhD thesis, University of Carolina, 2000.
-\newblock \url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.
 
 \bibitem{web:tms}
 Open Source~Geospatial Foundation.
@@ -105,6 +117,18 @@ J.~Riggins.
   \url{http://nordicapis.com/microservices-architecture-the-good-the-bad-and-what-you-could-be-doing-better/},
   April 2015.
 \newblock Accessed: 12.08.2016.
+
+\bibitem{Rojas96}
+R.~Rojas.
+\newblock {\em Neural Networks - A Systematic Introduction}.
+\newblock Springer-Verlag, 1996.
+\newblock \url{https://page.mi.fu-berlin.de/rojas/neural/}.
+
+\bibitem{Shiffman12}
+D.~Shiffman.
+\newblock {\em The Nature of Code}.
+\newblock D. Shiffman, 2012.
+\newblock \url{http://natureofcode.com/book/chapter-10-neural-networks/}.
 
 \bibitem{web:microdraw}
 Roberto Toro.

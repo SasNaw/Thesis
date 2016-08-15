@@ -1,14 +1,125 @@
 \chapter{Background}
 \section{Image Formats}
+not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WSI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+
+
 \subsection{Open WSI Formats}
 \subsubsection{Deep Zoom Images}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
+		\caption{3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}
+		\label{fig:fig2.1}
+	\end{center}
+\end{figure}
+
+The Deep Zoom Image Format (dzi)\nomenclature{dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
+
+As seen in fig. 2.1 there are multiple versions of a single image in different resolutions. Each resolution in the pyramid is called a \emph{level}. At each level the image is scaled down by the factor 4 (2 in each dimension). Furthermore, the image gets tiled up into $256^2$ tiles (256 in each dimension)\cite{web:dzi}.
+
+If a viewer wants to view a certain area of the image (e.g. the highlighted tile in the last image in fig. 2.1), only the corresponding tiles need to be loaded. This saves large amounts of bandwidth and memory. The same goes for a viewer, who is zoomed out very far. In such a view the full level of detail isn't needed, so that a version from a lower level can be loaded.
+
+A dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
+
+
 \section{Short Introduction to Neural Networks}
+The objective of this thesis ultimately is to create training samples for NN\footnote{see chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (see e.g. \cite{Stergiou96},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12},\cite{Bourg04}) is highly recommended.}.
+
+Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig 2.x), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and send output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.7]{img/bnn.png}
+		\caption{Neuron in a BNN (source:\cite{Shiffman12})}
+		\label{fig:fig2.2}
+	\end{center}
+\end{figure}
+
+NN are much simpler in comparison\footnote{Usually, they don't have much more than a few dozen neurons\cite{Bourg04}.}, but generally work in the same fashion.
+
+One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig 2.x shows an exemplary NN with neurons and the connections between them.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=1.0]{img/NN.png}
+		\caption{Exemplary NN (source:\cite{Shiffman12})}
+		\label{fig:fig2.3}
+	\end{center}
+\end{figure}
+
+Each line in fig, 2.x represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
+
+According to \cite{Shiffman12}, some of the standard use cases for NN are:
+
+\begin{itemize}
+	\item Pattern Recognition
+	\item Time Series Prediction
+	\item Signal Processing Perceptron
+	\item Control
+	\item Soft Sensors
+	\item Anomaly Detection
+\end{itemize}
+
+
+\subsection{Methods of Learning}
+There are 3 general strategies when it comes to the training of a NN\cite{Bourg04}. Those are:
+
+\begin{enumerate}
+	\item Supervised Learning
+	\item Unsupervised Learning
+	\item Reinforcement Learning (a variant of Unsupervised Learning\cite{Rojas96})
+\end{enumerate}
+
+\emph{Supervised Learning} is a strategy that involves a training set to which the correct output is known, as well as an observing teacher. The NN is provided with the training data and computes its output. This output is compared to the expected output and the difference is measured. According to the error made, the weights of the NN are corrected. The magnitude of the correction is determined by the used learning algorithm\cite{Rojas96}.
+
+\emph{Unsupervised Learning} is a strategy that is required when the correct output is unknown and no teacher is available. Because of this, he NN must organize itself\cite{Shiffman12}. \cite{Rojas96} makes a distinction between 2 different classes of unsupervised learning:
+
+\begin{itemize}
+	\item reinforced learning
+	\item competitive learning
+\end{itemize}
+
+Reinforced learning adjusts the weights in such a way, that desired output is reproduced. For example, a robot in a maze. If the robot can drive straight without any hindrances, it can associate this sensory input with driving straight (desired outcome). As soon as it approaches a turn, the robot will hit a wall (non-desired outcome). To prevent it from hitting the wall it must turn, therefore the weights of turning must be adjusted to the sensory input of being at a turn. Another example is \emph{Hebbian learning}\footnote{see \cite{Rojas96} for further information}\cite{Rojas96}.
+
+In competitive learning, the single neurons compete against each other for the right to give a certain output for an associated input. Only one element in the NN is allowed to answer, so that other, competing neurons are inhibited\cite{Rojas96}.
+
+
+\subsection{The Perceptron}
+
+\subsection{Architecture of Neural Networks}
+
 
 % https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Introduction to neural networks
 
 % http://natureofcode.com/book/chapter-10-neural-networks/
 
-% http://ufldl.stanford.edu/tutorial/supervised/MultiLayerNeuralNetworks/
+
+
+
+
+
+
+In a NN, regardless if artificial or biological, many neurons are interconnected with each other. The construct of interconnected neurons can be seperated into layers, of which there are three kinds:
+
+\begin{itemize}
+	\item input layer
+	\item hidden layer
+	\item output layer
+\end{itemize}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.7]{img/mlp.png}
+		\caption{3 layer NN (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}
+		\label{fig:fig2.2}
+	\end{center}
+\end{figure}
+
+Basically, the input layer, as the name suggests, is the layer where the NN gets its input data from. After that, there are a number of hidden layers\footnote{A NN doesn't necessarily need to have any hidden layers. For non trivial problems however, it becomes mandatory.}, which are responsible for further computation of the input values. At the end is the output layer which is responsible for communicating the results of the prior operations (compare fig. 2.2). Each single neuron has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. 
+
+A huge benefit of NN, over other software models, is their ability to learn. While certain problems are easier to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems are so complex that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can train to solve a problem, not unlike a human, by learning. Since this topic alone is enough for a number of theses, the author refers to \cite{Kriesel07} for further detailed information.
+
 
 \section{Microservices}
 The following section elaborates on the concept of \emph{Microservices} (MS)\nmc{MS}{Microservice}, defining what they are, listing their pros and cons, as well as explaining why this approach was chosen over a monolithic approach. A monolithic software solution is described by \cite{Lewis14} as follows:
@@ -95,34 +206,35 @@ This section and its following subsections are dedicated to establish the proces
 	\item create training sample $ts_i$ by extracting the information of $A_i$ in correspondence to $img^{dzi}_i$
 \end{enumerate}
 
-As stated in 2.3, MS will be used to 
+While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{dzi}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable.
 
+The single steps of the process chain will be sorted into semantic groups. Each group will be realized by its own MS, as stated in 2.3. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
 
-To fulfill those steps, 3 Microservices will be introduced in the following subsections. Those are:
+A MS will be introduced for each group in the following subsections(2.4.1 - 2.4.3). Those are:
 
 \begin{itemize}
-	\item Conversion Service (see chap. 2.2.1)\\
-	This service will be responsible for converting WSIs into the dzi format (a).
-	\item Annotation Service (see chap. 2.2.2)\\
-	This service will offer a tool to annotate an image (b) and persist made annotations (c).
-	\item Tessellation Service (see chap. 2.2.3)\\
-	This service will be responsible for seperating an image into tiles (d) and keep the correspondence between tiles and annotations (e).
+	\item \textbf{Conversion Service}\\
+	This service will be responsible of the conversion from $img^{wsi}_i$ to $img^{dzi}_i$ (1.).
+	\item \textbf{Annotation Service}\\
+	This service will offer a GUI to view a $img^{dzi}_i$, as well as make and manage annotations (2. - 4.)
+	\item \textbf{Tessellation Service}\\
+	This service will be responsible for extracting a $ts_i$ from a given $A_i$ and $img^{dzi}_i$ (5.).
 \end{itemize}
 
 
 \subsection{Conversion Service}
 
-The devices which create an WSI, so called whole slide scanners, create images in various formats, depending on the producer. The conversion service has the goal of converting those formats into the dzi format, not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WSI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer and a lack of a defined standard\cite{Cornish13}. The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to DZI\footnote{see chap. 1.2(i) and 1.2(ii) for the reasons}].
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.35]{img/processChainA.png}
 		\caption{Visualization of the Conversion Service}
-		\label{fig:fig2.3}
+		\label{fig:fig2.1}
 	\end{center}
 \end{figure}
 
-The Conversion Service will be implemented as a python script, which upon calling takes every single WSI of a certain format inside a given folder and converts it to the dzi format. Each converted WSI will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
+Upon invocation, the CS will take every single WSI inside a given directory and convert it to DZI. The output of each conversion will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
 
 \begin{itemize}
 	\item .bif (Ventana)
@@ -139,8 +251,7 @@ The Conversion Service will be implemented as a python script, which upon callin
 
 
 \subsection{Annotation Service}
-
-The first step to create a valid training sample for a NN is to annotate the WSIs which will later serve as that. To do so, a GUI\nmc{GUI}{Graphical User Interface} must be deployed which enables a pathologist to make annotations to an WSI. Additionally, the Annotation Service also needs to be capable to persist made annotations (see fig. 2.4). This will happen by saving the annotations into a file which will be placed next to the image.
+As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a DZI, make annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.2).
 
 \begin{figure}[H]
 	\begin{center}
@@ -150,30 +261,12 @@ The first step to create a valid training sample for a NN is to annotate the WSI
 	\end{center}
 \end{figure}
 
-To enable the pathologist to make annotations in the first place, a GUI needs to be offered by the service. This GUI will be developed in iterations with the help of a number of pathologists to adapt it to their wishes and grant the best possible usability. The basic concept of the first iteration will be based on the Microdraw\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the Microdraw project} GUI (see fig. 2.5).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.2]{img/microdrawUI.png}
-		\caption{Microdraw GUI with opened WSI}
-		\label{fig:fig2.5}
-	\end{center}
-\end{figure}
-
-Microdraw is a webbased annotation tool, which describes itself as
-
-\begin{quotation}
-	"[...] a collaborative vectorial annotation tool for ultra high resolution data, such as that produced by high-throughput histology." \cite{web:microdraw}
-\end{quotation}
-
-Therefore, the GUI of the Annotation Service, or Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}, will run as a web application in a browser. Annotations will be made by selecting a shape or annotation method from the various tools in the toolbar (see the gray bar on the left in fig. 2.5). After selecting the area to be annotated, an actual description of that area can be made via keyboard input.
-
-When the pathologist is done or wants to save the made annotations, the Annotation Service will create a file in which they will be persisted in. Only one WSI can be opened in one ASV at a time.
+The supplied GUI will offer different tools to help the user annotate the DZI, e.g. a ruler to measure the distance between 2 points. The annotations themselves will be made via drawing a contour around an object of interest and putting a specified label to that region. To ensure uniformity of annotations, labels will not be added in free text. Instead they will be selected from a predefined dictionary.
 
 
 \subsection{Tessellation Service}
 
-The task of the Tessellation Service is to tessellate a given WSI into multiple tiles while keeping up the correspondence between image areas and annotations (see fig. 2.6). Tessellation describes the process of seperating a geometric space (e.g. a plane) into multiple tiles of one or more shapes. No matter if the tiles are unifrom or of different shapes, there must be no gaps or overlapping areas in the resulting tiles.
+The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to extract annotations and their corresponding image data in such a fashion that they will become usable as training samples for NN.
 
 \begin{figure}[H]
 	\begin{center}
@@ -183,50 +276,4 @@ The task of the Tessellation Service is to tessellate a given WSI into multiple 
 	\end{center}
 \end{figure}
 
-The tessellation of the Tessellation Service differs from the given definition in two aspects. First, all tiles will be of a unifrom shape (square). Second, the service will also offer the possibility of seperating only the annotated areas of an WSI into tiles. Therefore, the "no gaps" rule is invalid, when this option is chosen. The rule of no overlapping areas holds true in either case, however.
-
-As mentioned before, the second task of the Tessellation Service is to ensure the correspondence between tiles and annotations of the original WSI. This means that, if the original WSI has an annotation in the area of a tile, this tile needs to have the same annotation.
-
-\section{Definition of terms}
-To prevent missunderstandings and confusion, the following subsections 2.1.1 - 2.1.3 will define some terminoligy which will be mandatory for the understanding of certain areas of this thesis.
-
-
-\subsection{Deep Zoom Image Format}
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
-		\caption{3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}
-		\label{fig:fig2.1}
-	\end{center}
-\end{figure}
-
-The Deep Zoom Image Format (dzi)\nomenclature{dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
-
-As seen in fig. 2.1 there are multiple versions of a single image in different resolutions. Each resolution in the pyramid is called a \emph{level}. At each level the image is scaled down by the factor 4 (2 in each dimension). Furthermore, the image gets tiled up into $256^2$ tiles (256 in each dimension)\cite{web:dzi}.
-
-If a viewer wants to view a certain area of the image (e.g. the highlighted tile in the last image in fig. 2.1), only the corresponding tiles need to be loaded. This saves large amounts of bandwidth and memory. The same goes for a viewer, who is zoomed out very far. In such a view the full level of detail isn't needed, so that a version from a lower level can be loaded.
-
-A dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
-
-
-\subsection{Neural Network}
-Artificial neural networks (NN)\nmc{NN}{Neural Networks} are a group of models inspiried by biological neural networks\footnote{For the remainder of this thesis, neural network will always represent the artificial one, unless explicitly stated otherwise.}. In a NN, regardless if artificial or biological, many neurons are interconnected with each other. The construct of interconnected neurons can be seperated into layers, of which there are three kinds:
-
-\begin{itemize}
-	\item input layer
-	\item hidden layer
-	\item output layer
-\end{itemize}
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.7]{img/mlp.png}
-		\caption{3 layer NN (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}
-		\label{fig:fig2.2}
-	\end{center}
-\end{figure}
-
-Basically, the input layer, as the name suggests, is the layer where the NN gets its input data from. After that, there are a number of hidden layers\footnote{A NN doesn't necessarily need to have any hidden layers. For non trivial problems however, it becomes mandatory.}, which are responsible for further computation of the input values. At the end is the output layer which is responsible for communicating the results of the prior operations (compare fig. 2.2). Each single neuron has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. 
-
-A huge benefit of NN, over other software models, is their ability to learn. While certain problems are easier to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems are so complex that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can train to solve a problem, not unlike a human, by learning. Since this topic alone is enough for a number of theses, the author refers to \cite{Kriesel07} for further detailed information.
+Let there be a DZI $D$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $d_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.3). To be used as training sample, the TS must keep up the correspondence between $d_i$ and $a_i$.
