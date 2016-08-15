@@ -86,6 +86,41 @@ In competitive learning, the single neurons compete against each other for the r
 
 
 \subsection{The Perceptron}
+The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory in 1957\cite{Rosenblatt58}. It is the computational model of a single neuron and as such, the simplest NN possible\cite{Shiffman12}. A perceptron consists of one or more inputs, a processor and a single output (see fig. 2.x)\cite{Rosenblatt58}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.7]{img/perceptron.png}
+		\caption{Perceptron by Rosenblatt (source:\cite{Shiffman12})}
+		\label{fig:fig2.5}
+	\end{center}
+\end{figure}
+
+This can be directly compared to the neuron in fig. 2.x, where:
+\begin{itemize}
+	\item input = dendrites
+	\item processor = cell
+	\item output = axon
+\end{itemize}
+
+A perceptron is only capable of solving \emph{linearly separable} problems, such as logical \emph{AND} and \emph{OR} problems. To solve non-linearly separable problems, more then one perceptron is required\cite{Rosenblatt58}. Simply put, a problem is linearly separable, if it can be solved with a straight line (see fig. 2.x), otherwise it is considered a non-linearly separable problem (see fig. 2.x).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.6]{img/lsp.png}
+		\caption{Examples for linearly separable problems (source:\cite{Shiffman12})}
+		\label{fig:fig2.7}
+	\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.75]{img/nlsp.png}
+		\caption{Examples for non-linearly separable problems (source:\cite{Shiffman12})}
+		\label{fig:fig2.8}
+	\end{center}
+\end{figure}
+
 
 \subsection{Architecture of Neural Networks}
 

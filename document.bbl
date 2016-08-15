@@ -124,6 +124,13 @@ R.~Rojas.
 \newblock Springer-Verlag, 1996.
 \newblock \url{https://page.mi.fu-berlin.de/rojas/neural/}.
 
+\bibitem{Rosenblatt58}
+F.~Rosenblatt.
+\newblock The perceptron: a probabilistic model for information storage and
+  organization in the brain.
+\newblock {\em Psychological Review}, 65(6), 1958.
+\newblock \url{http://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf}.
+
 \bibitem{Shiffman12}
 D.~Shiffman.
 \newblock {\em The Nature of Code}.
