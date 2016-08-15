@@ -24,7 +24,7 @@ A dzi file consists of two parts: a describing .xml file\footnote{Frameworks lik
 
 
 \section{Short Introduction to Neural Networks}
-The objective of this thesis ultimately is to create training samples for NN\footnote{see chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (see e.g. \cite{Stergiou96},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12},\cite{Bourg04}) is highly recommended.}.
+The objective of this thesis ultimately is to create training samples for NN\footnote{see chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
 
 Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig 2.x), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and send output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
 
@@ -122,38 +122,44 @@ A perceptron is only capable of solving \emph{linearly separable} problems, such
 \end{figure}
 
 
-\subsection{Architecture of Neural Networks}
+\subsection{Multi-layered Neural Networks}
+To solve more complex problems, multiple perceptrons can be connected to from a more powerful NN. A single perceptron might not be able to solve \emph{XOR}, but one perceptron can solve \emph{OR}, while the other can solve \emph{$\neg$AND}. Those two perceptrons combined can solve \emph{XOR}\cite{Shiffman12}.
 
-
-% https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Introduction to neural networks
-
-% http://natureofcode.com/book/chapter-10-neural-networks/
-
-
-
-
-
-
-
-In a NN, regardless if artificial or biological, many neurons are interconnected with each other. The construct of interconnected neurons can be seperated into layers, of which there are three kinds:
-
+If multiple perceptrons get combined, they create layers. Those layers can be separated into 3 distinct types\cite{Stergiou96}:
 \begin{itemize}
 	\item input layer
 	\item hidden layer
 	\item output layer
 \end{itemize}
 
+A typical NN will have an input layer, which is connected to a number of hidden layers, which either connect to more hidden layers or, eventually, an output layer (see fig. 2.x for a NN with one hidden layer).
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.7]{img/mlp.png}
-		\caption{3 layer NN (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}
+		\includegraphics[scale=0.8]{img/mlp.png}
+		\caption{NN with multiple layers (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}
 		\label{fig:fig2.2}
 	\end{center}
 \end{figure}
 
-Basically, the input layer, as the name suggests, is the layer where the NN gets its input data from. After that, there are a number of hidden layers\footnote{A NN doesn't necessarily need to have any hidden layers. For non trivial problems however, it becomes mandatory.}, which are responsible for further computation of the input values. At the end is the output layer which is responsible for communicating the results of the prior operations (compare fig. 2.2). Each single neuron has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. 
+As the name suggests, the input layer gets provided with the raw information input. Depending on the internal weights and connections inside the hidden layer, a representation of the input information gets formed. At last, the output layer generates output, again based on the connections and weights of the hidden and output layer\cite{Stergiou96}.
 
-A huge benefit of NN, over other software models, is their ability to learn. While certain problems are easier to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems are so complex that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can train to solve a problem, not unlike a human, by learning. Since this topic alone is enough for a number of theses, the author refers to \cite{Kriesel07} for further detailed information.
+Training this kind of NN is much more complicated than training a simple perceptron, since weights are scattered all over the NN and its layers. A solution to this problem is called \emph{backpropagation}\cite{Shiffman12}.
+
+
+\subsubsection{Backpropagation}
+Training is an optimization process. To optimize something, a metric to measure has to be established. In the case of backpropagation, this metric is the accumulated output error of the NN to a given input\footnote{To do so, it is necessary to know the right answer. Therefore, backpropagation is part of the supervised learning process.}. There are several ways to calculate this error, with the \emph{mean square error}\footnote{Mean square error is the average of the square of the differences of two variables, in this case the expected and the actual output.} being the most common one\cite{Bourg04}.
+
+Finding the optimal weights is an iterative process of the following steps:
+\begin{enumerate}
+	\item start with training set of data with known output
+	\item initialize weights in NN
+	\item for each set of input, feed the NN and compute the output
+	\item compare calculated with known output
+	\item adjust weights to reduce error
+\end{enumerate}
+
+There are 2 possibilities in how to proceed. The first one is to compare results and adjust weights after each input/output-cycle. The second one is to calculate the accumulated error over a whole iteration of the input/output-cycle. Each of those iterations is known as an \emph{epoch}\cite{Bourg04}.
 
 
 \section{Microservices}

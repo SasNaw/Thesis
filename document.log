@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  15 AUG 2016 18:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  15 AUG 2016 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -737,7 +737,7 @@ l.98 \end{abstract}
 the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.35 ...n}{\numberline {4.3}Test}{29}{section.4.3}
+l.36 ...n}{\numberline {4.3}Test}{30}{section.4.3}
                                                    [1
 
 ])
@@ -835,85 +835,90 @@ File: img/nlsp.png Graphic file (type png)
  <use img/nlsp.png>
 Package pdftex.def Info: img/nlsp.png used on input line 118.
 (pdftex.def)             Requested size: 325.2142pt x 69.74037pt.
-
-<img/mlp.png, id=463, 237.88875pt x 215.00325pt>
-File: img/mlp.png Graphic file (type png)
- <use img/mlp.png>
-Package pdftex.def Info: img/mlp.png used on input line 148.
-(pdftex.def)             Requested size: 166.52098pt x 150.50124pt.
  [11pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 
+l.136 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 
-       <./img/lsp.png> <./img/nlsp.png>] [12pdfTeX warning (ext4): destination 
-with the same identifier (name{figure.2.7}) has been already used, duplicate ig
-nored
+l.136 
+       <./img/lsp.png> <./img/nlsp.png>]
+<img/mlp.png, id=472, 237.88875pt x 215.00325pt>
+File: img/mlp.png Graphic file (type png)
+ <use img/mlp.png>
+Package pdftex.def Info: img/mlp.png used on input line 139.
+(pdftex.def)             Requested size: 190.31123pt x 172.00282pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+[]\OT1/cmr/m/n/10 Figure 2.7: []NN with mul-ti-ple lay-ers (source:
+ []
+
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.163 \end{quotation}
-                      <./img/mlp.png>] [13] [14]
-Overfull \hbox (0.16719pt too wide) in paragraph at lines 228--229
+l.157 	\item f
+              or each set of input, feed the NN and compute the output <./img/m
+lp.png>] [13] [14] [15]
+Overfull \hbox (0.16719pt too wide) in paragraph at lines 234--235
 []\OT1/cmr/m/n/10 other bach-e-lor/-mas-ter stu-dents may con-tinue to use or w
 ork on this project
  []
 
-[15] <img/processChainA.png, id=529, 779.91376pt x 210.7875pt>
+[16] <img/processChainA.png, id=555, 779.91376pt x 210.7875pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
-Package pdftex.def Info: img/processChainA.png used on input line 266.
+Package pdftex.def Info: img/processChainA.png used on input line 272.
 (pdftex.def)             Requested size: 272.9739pt x 73.77672pt.
- [16]
-<img/processChainB.png, id=543, 1257.19687pt x 331.99031pt>
-File: img/processChainB.png Graphic file (type png)
-
-<use img/processChainB.png>
-Package pdftex.def Info: img/processChainB.png used on input line 293.
-(pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.298 
-       <./img/processChainA.png>]
-<img/processChainC.png, id=550, 1132.23pt x 289.08pt>
+l.282 	\item .
+              mrxs (Mirax) <./img/processChainA.png>]
+<img/processChainB.png, id=562, 1257.19687pt x 331.99031pt>
+File: img/processChainB.png Graphic file (type png)
+
+<use img/processChainB.png>
+Package pdftex.def Info: img/processChainB.png used on input line 299.
+(pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
+
+<img/processChainC.png, id=563, 1132.23pt x 289.08pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
-Package pdftex.def Info: img/processChainC.png used on input line 308.
+Package pdftex.def Info: img/processChainC.png used on input line 314.
 (pdftex.def)             Requested size: 339.67162pt x 86.72466pt.
-) (./tex/chap3.tex [18pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.2.9}) has been already used, duplicate ignored
+ [18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.319 
+       <./img/processChainB.png>]) (./tex/chap3.tex [19pdfTeX warning (ext4): d
+estination with the same identifier (name{figure.2.10}) has been already used, 
+duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Conversion Service}pdfTeX warning (ext4): destination with the sam
-e identifier (name{figure.2.10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1 \chapter
-            {Conversion Service} <./img/processChainB.png> <./img/processChainC
-.png>]
+            {Conversion Service} <./img/processChainC.png>]
 Chapter 3.
-<img/pyramid.png, id=557, 301.125pt x 335.2525pt>
+<img/pyramid.png, id=574, 301.125pt x 335.2525pt>
 File: img/pyramid.png Graphic file (type png)
  <use img/pyramid.png>
 Package pdftex.def Info: img/pyramid.png used on input line 9.
 (pdftex.def)             Requested size: 150.56212pt x 167.62584pt.
 
-[19
+[20
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
 has been already used, duplicate ignored
@@ -976,37 +981,37 @@ Underfull \hbox (badness 1895) in paragraph at lines 48--48
 []\OT1/cmr/m/n/10 service, un-der con-struc-
  []
 
-[20] [21pdfTeX warning (ext4): destination with the same identifier (name{table
+[21] [22pdfTeX warning (ext4): destination with the same identifier (name{table
 .3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.60 
-     ] [22pdfTeX warning (ext4): destination with the same identifier (name{tab
+     ] [23pdfTeX warning (ext4): destination with the same identifier (name{tab
 le.3.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.108 # 
-        Create Deep Zoom image pyramid from source] [23] [24pdfTeX warning (ext
+        Create Deep Zoom image pyramid from source] [24] [25pdfTeX warning (ext
 4): destination with the same identifier (name{table.3.3}) has been already use
 d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.182 
-      ] [25] <img/inputDir.png, id=676, 435.6275pt x 286.06876pt>
+      ] [26] <img/inputDir.png, id=693, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
 Package pdftex.def Info: img/inputDir.png used on input line 250.
 (pdftex.def)             Requested size: 217.81322pt x 143.03403pt.
- [26]
+ [27]
 Overfull \hbox (37.27258pt too wide) in paragraph at lines 272--280
  [] 
  []
 
-) (./tex/chap4.tex [27pdfTeX warning (ext4): destination with the same identifi
+) (./tex/chap4.tex [28pdfTeX warning (ext4): destination with the same identifi
 er (name{figure.3.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1020,13 +1025,13 @@ e identifier (name{table.3.4}) has been already used, duplicate ignored
 l.1 \chapter
             {Annotation Service} <./img/inputDir.png>]
 Chapter 4.
-<img/microdrawUI.png, id=704, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=722, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
 Package pdftex.def Info: img/microdrawUI.png used on input line 7.
 (pdftex.def)             Requested size: 301.92265pt x 174.85014pt.
- [28
+ [29
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
 has been already used, duplicate ignored
@@ -1034,15 +1039,15 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.20 
-      <./img/microdrawUI.png>]) (./tex/chap5.tex [29]
+      <./img/microdrawUI.png>]) (./tex/chap5.tex [30]
 Chapter 5.
-) (./tex/chap6.tex [30
+) (./tex/chap6.tex [31
 
 ]
 Chapter 6.
-) [31
+) [32
 
-] [32
+] [33
 
 
 ] (./tex/app1.tex
@@ -1083,7 +1088,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 []\OT1/cmr/m/n/10 Table A.2: []Generic Tiled tiff data set (source:
  []
 
-[33
+[34
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.1})
  has been already used, duplicate ignored
@@ -1152,7 +1157,7 @@ Overfull \hbox (19.61179pt too wide) in paragraph at lines 86--86
 edu/download/openslide-
  []
 
-[34pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[35pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1271,7 +1276,7 @@ Overfull \hbox (22.83405pt too wide) in paragraph at lines 112--112
 edu/download/openslide-
  []
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[36pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1288,7 +1293,7 @@ Overfull \hbox (26.50066pt too wide) in paragraph at lines 128--128
 u.edu/download/openslide-
  []
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[37pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1305,7 +1310,7 @@ Overfull \hbox (26.50066pt too wide) in paragraph at lines 143--143
 u.edu/download/openslide-
  []
 
-) (./document.bbl [37pdfTeX warning (ext4): destination with the same identifie
+) (./document.bbl [38pdfTeX warning (ext4): destination with the same identifie
 r (name{table.1.A.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1353,7 +1358,7 @@ Underfull \hbox (badness 3568) in paragraph at lines 73--78
 penseadragon . github . io /
  []
 
-[38
+[39
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 113--120
@@ -1361,11 +1366,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--120
  -[] you -[] could -[] be -[] doing -[]
  []
 
-) (./document.nls) [39] (./document.lof)
+) (./document.nls) [40] (./document.lof
+Overfull \hbox (51.2942pt too wide) in paragraph at lines 11--11
+ [][] [][]\OT1/cmr/m/n/10 NN with mul-ti-ple lay-ers (source: http://docs.openc
+v.org/2.4/[]images/mlp.png)[] [][]  
+ []
+
+)
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [40
+ [41
 
 ] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 5--5
@@ -1426,7 +1437,7 @@ Overfull \hbox (41.66739pt too wide) in paragraph at lines 20--20
 \openout7 = `document.lot'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
- [41
+ [42
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
@@ -1434,7 +1445,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 83A87C1EAEEAD226D2958A890F3AB340;3603.
+(rerunfilecheck)             Checksum: 3C42E48860860789401A8A64E1B4F063;3601.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1442,9 +1453,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 8909 strings out of 493029
- 123530 string characters out of 6136235
- 294427 words of memory out of 5000000
+ 8917 strings out of 493029
+ 123594 string characters out of 6136235
+ 295440 words of memory out of 5000000
  12026 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1467,10 +1478,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (44 pages, 3211658 bytes).
+Output written on document.pdf (45 pages, 3214377 bytes).
 PDF statistics:
- 992 PDF objects out of 1000 (max. 8388607)
- 895 compressed objects within 9 object streams
- 260 named destinations out of 1000 (max. 500000)
+ 1011 PDF objects out of 1200 (max. 8388607)
+ 912 compressed objects within 10 object streams
+ 268 named destinations out of 1000 (max. 500000)
  540 words of extra memory for PDF output out of 10000 (max. 10000000)
 
