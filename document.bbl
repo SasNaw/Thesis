@@ -42,6 +42,14 @@ G.~Seeman D.~Bourg.
 \newblock {\em AI for Game Developers}.
 \newblock O'Reilly, 2004.
 
+\bibitem{Goode13}
+A.~Goode et~al.
+\newblock Openslide: A vendor-neutral software foundation for digital
+  pathology.
+\newblock {\em J pathol inform}, 4(1), September 2013.
+\newblock
+  \url{http://download.openslide.org/docs/JPatholInform_2013_4_1_27_119005.pdf}.
+
 \bibitem{web:iiif}
 M.~Appleby et~al.
 \newblock Iiif image api 2.0.
@@ -51,7 +59,7 @@ M.~Appleby et~al.
 \bibitem{Egmont-Petersen02}
 M.~Egmonst-Petersen et~al.
 \newblock Image processing with neural networks - a review.
-\newblock {\em Pattern Regcognition}, (35), October 2002.
+\newblock {\em Pattern Regcognition}, 35, October 2002.
 \newblock
   \url{https://www.researchgate.net/publication/220603536_Image_processing_with_neural_networks_-_a_review_Pattern_Recogn_352279C2301}.
 
@@ -62,6 +70,19 @@ N.~Farahanil et~al.
 \newblock {\em Pathology and Laboratory Medicine International}, 7, June 2015.
 \newblock
   \url{https://www.dovepress.com/whole-slide-imaging-in-pathology-advantages-limitations-and-emerging-p-peer-reviewed-fulltext-article-PLMI#ref10}.
+
+\bibitem{Singh11}
+R.~Singh et~al.
+\newblock Standardization in digital pathology: Supplement 145 of the dicom
+  standards.
+\newblock {\em J pathol inform}, 2(23), March 2011.
+\newblock
+  \url{http://www.jpathinformatics.org/temp/JPatholInform2123-3144928_084409.pdf}.
+
+\bibitem{Park12}
+S.~Park et~al.
+\newblock Digital imaging in pathology.
+\newblock {\em Clin Lab Med}, 4(32), December 2012.
 
 \bibitem{web:tms}
 Open Source~Geospatial Foundation.
@@ -75,6 +96,14 @@ I.~Gilman.
 \newblock
   \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
 \newblock Accessed: 26.04.2016.
+
+\bibitem{Optimus15}
+Optimus~Information Inc.
+\newblock Open-source vs. proprietary software, pros and cons.
+\newblock
+  \url{http://www.optimusinfo.com/downloads/white-paper/open-source-vs-proprietary-software-pros-and-cons.pdf},
+  2015.
+\newblock Accessed: 16.08.2016.
 
 \bibitem{cupitt96}
 K.~Martinez J.~Cupitt.
@@ -108,6 +137,12 @@ Microsoft.
 \newblock
   \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
 \newblock Accessed: 11.04.2016.
+
+\bibitem{web:openslide}
+OpenSlide.
+\newblock Openslide format documentation.
+\newblock \url{http://openslide.org/}.
+\newblock Accessed: 16.08.2016.
 
 \bibitem{Riggins15}
 J.~Riggins.

@@ -1,11 +1,84 @@
 \chapter{Background}
-\section{Image Formats}
-not only for the purpose of unification, but also to add the deep zoom feature\footnote{See chap. 2.1.1} to the images (see fig. 2.3). This is of special importance, since an average WSI with 1,600 megapixels has a size of approximately 4.6 GB\cite{Farahanil15}.
+\section{Whole Slide Image Formats}
+As the size of an acquired raw, uncompressed WSI is massive\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}.}, file formatting is required to mitigate the enormous amounts of information. Since there is no standardized format for WSI vendors came up with their own, proprietary solutions, which may vary greatly in size\cite{Cornish13}. Efforts of standardization are being made through \emph{Digital Imaging and Communications in Medicine} (DICOM)\nmc{DICOM}{Digital Imaging and Communications in Medicine}, but the progress is a slow one\cite{Farahanil15}.
+
+To achieve a WSI, different compression and decompression methods are applied, depending on the vendor\cite{Farahanil15}. Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. 2.1).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.2]{img/imgPyramid.png}
+		\caption{Example of an image pyramid (DICOM, source:\cite{Singh11})}
+		\label{fig:fig2.1}
+	\end{center}
+\end{figure}
+
+The image pyramid model is used to enable the real-time viewing of different magnifications and to reduce the computational burden of traversing a WSI\cite{Park12}. This is made possible by creating copies of the original image in different resolutions (compare "Intermediate image" and "Baseline image" in fig. 2.1), which are referred to as \emph{levels}. Usually, the resolution is lowered by the factor 2 in each dimension for every level in the pyramid:
+\begin{equation}
+	width(n) = width(n-1) / 2
+\end{equation}
+\begin{equation}
+	height(n) = height(n-1) / 2
+\end{equation}
+
+where $n$ is the level of the pyramid. The result is, that each image has only $1/4$ the amount of pixels compared to the image in the level before. The image in unaltered resolution is considered as the \emph{baseline image}\cite{web:openslide}.
+
+Furthermore, each level gets tessellated into several tiles (compare fig. 2.1). Because of this, it is possible to only load the visible tiles, instead of the whole image of the corresponding level.
 
 
-\subsection{Open WSI Formats}
+\subsection{Proprietary Formats}
+Vendors of whole slide scanners implement their own file formats, libraries and viewers (see tab. 2.1 for a list of vendors and their formats). Because of this, they can focus on the key features and abilities of their product. This generally leads to a higher usability, ease-of-use and enables highly tailored customer support. Furthermore, in comparison to open source projects, the longevity of proprietary software is often higher\cite{Optimus15}.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l |}
+			\hline
+			\textbf{vendor} & \textbf{formats}\\ \hline
+			Aperio & svs, tif\\ \hline
+			Hamamatsu & vms, vmu, ndpi\\ \hline
+			Leica & scn\\ \hline
+			Mirax & mrxs\\ \hline
+			Philips & tiff\\ \hline
+			Sakura & svslide\\ \hline
+			Trestle & tif\\ \hline
+			Ventana & bif, tif\\ \hline
+		\end{tabular}
+		\caption{File formats by vendor}
+	\end{center}
+\end{table}
+
+
+\subsubsection{Aperio}
+The .svs format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with $240^2$ pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
+
+
+\subsubsection{Hamamatsu}
+
+
+\subsubsection{Leica}
+
+
+\subsubsection{Mirax}
+
+
+\subsubsection{Philips}
+
+
+\subsubsection{Sakura}
+
+
+\subsubsection{Ventana}
+
+	
+\subsection{Open Formats}
+Proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors\cite{Goode13}. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
+
+To compensate those issues, open image formats have been suggested, which will be discussed further, in the following subsections.
+
+
+\subsubsection{DICOM (Digital Imaging and Communications in Medicine)}
+
+
 \subsubsection{Deep Zoom Images}
-
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
@@ -21,6 +94,15 @@ As seen in fig. 2.1 there are multiple versions of a single image in different r
 If a viewer wants to view a certain area of the image (e.g. the highlighted tile in the last image in fig. 2.1), only the corresponding tiles need to be loaded. This saves large amounts of bandwidth and memory. The same goes for a viewer, who is zoomed out very far. In such a view the full level of detail isn't needed, so that a version from a lower level can be loaded.
 
 A dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
+
+
+\subsubsection{JPEG2000}
+
+
+\subsubsection{TIFF/BigTIFF}
+
+
+\subsection{Choice of Format}
 
 
 \section{Short Introduction to Neural Networks}
