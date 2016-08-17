@@ -1,0 +1,33 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{AS}]\begingroup Annotation Service\nomeqref {2.0}
+		\nompageref{23}
+  \item [{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}
+		\nompageref{35}
+  \item [{BNN}]\begingroup Biological Neural Networks\nomeqref {2.0}
+		\nompageref{13}
+  \item [{CS}]\begingroup Conversion Service\nomeqref {2.0}
+		\nompageref{22}
+  \item [{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}
+		\nompageref{7}
+  \item [{DZI}]\begingroup Deep Zoom Image\nomeqref {2.0}
+		\nompageref{12}
+  \item [{DZI}]\begingroup Deep Zoom Images\nomeqref {1.0}
+		\nompageref{5}
+  \item [{GUI}]\begingroup Graphical User Interface\nomeqref {1.0}
+		\nompageref{5}
+  \item [{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}
+		\nompageref{23}
+  \item [{MS}]\begingroup Microservice\nomeqref {2.0}\nompageref{18}
+  \item [{NN}]\begingroup Neural Network\nomeqref {1.0}\nompageref{3}
+  \item [{NN}]\begingroup Neural Networks\nomeqref {2.0}\nompageref{13}
+  \item [{TS}]\begingroup Tessellation Service\nomeqref {2.0}
+		\nompageref{23}
+  \item [{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}
+		\nompageref{29}
+  \item [{WSI}]\begingroup Whole Slide Image\nomeqref {1.0}
+		\nompageref{3}
+
+\end{thenomenclature}

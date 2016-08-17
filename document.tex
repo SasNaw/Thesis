@@ -3,7 +3,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{cite}
-\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bmpsize}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
 \usepackage{enumerate}
@@ -17,7 +18,7 @@
 
 % --- Abk�rzungsverzeichnis: ----------------------------
 % START % N�heres siehe http://my.opera.com/timomeinen/blog/show.dml/68644
-\usepackage{nomencl}
+\usepackage[intoc]{nomencl}
 % Befehl umbenennen in abk
 \let\nmc\nomenclature
 % Punkte zw. Abk�rzung und Erkl�rung
@@ -114,8 +115,8 @@ This is the abstract.
 \bibliographystyle{plain}
 
 \bibliography{./bibl/bibl}
-\printnomenclature
 \listoffigures
 \listoftables
+\printnomenclature
 
 \end{document}

@@ -116,11 +116,19 @@ To compensate those issues, open image formats have been suggested, which will b
 
 
 \subsubsection{Deep Zoom Images}
-The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image, similar to the one described in \cite{DICOM10}, with two exceptions:
+The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image (see fig. 2.2), similar to the one described in \cite{DICOM10} (compare fig 2.1 and 2.2), with two exceptions:
 \begin{enumerate}
 	\item the baseline image is referred to as the highest level, instead of the lowest; this either turns the image pyramid or its labeling upside down
 	\item tiles are always square, with the exception of the last column/row
 \end{enumerate}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/dzi_pyramid.png}
+		\caption{DZI pyramid model example (source:\cite{web:dzi})}
+		\label{fig:fig2.1}
+	\end{center}
+\end{figure}
 
 A DZI consists of two main parts\cite{web:dzi}: 
 \begin{enumerate}[(1)]
@@ -137,10 +145,11 @@ A DZI consists of two main parts\cite{web:dzi}:
 (1) and (2) are stored "next" to each other, so that there are 2 spearate files. (2) contains sub directories, one for each level of the image pyramid. The baseline image of a DZI is in the highest level. Each level is tessellated into as many tiles necessary to go over the whole image, with each tile having the size specified in the XML file. If the image size is no multiple of the specified tile size, the width of the $n^{th}$ column of tiles will be $(width \mod tile$ $size)$ pixels. Equally, the height of the $m^{th}$ row will be $(height \mod tile$ $size)$ pixels. Thus, the outermost right bottom tile $t_{n,m}$ will be of $(width \mod tile$ $size)$ x $(height \mod tile$ $size)$ pixels.
 
 
+\subsubsection{International Image Interoperability Framework}
 \subsubsection{JPEG2000}
-
-
+\subsubsection{Open Street Maps}
 \subsubsection{TIFF/BigTIFF}
+\subsubsection{Tiled Map Service}
 
 
 \subsection{Choice of Format}
@@ -260,7 +269,7 @@ A typical NN will have an input layer, which is connected to a number of hidden 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.8]{img/mlp.png}
-		\caption{NN with multiple layers (source: http://docs.opencv.org/2.4/\textunderscore images/mlp.png)}
+		\caption{NN with multiple layers (source: \url{http://docs.opencv.org/2.4/_images/mlp.png)}}
 		\label{fig:fig2.2}
 	\end{center}
 \end{figure}
