@@ -3,13 +3,13 @@
 \nomenclatureentry{aDZI@[{DZI}]\begingroup Deep Zoom Images\nomeqref {1.0}|nompageref}{5}
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {1.0}|nompageref}{5}
 \nomenclatureentry{aDICOM@[{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}|nompageref}{7}
-\nomenclatureentry{adzi@[{dzi}]\begingroup Deep Zoom Image Format\nomeqref {2.2}|nompageref}{12}
+\nomenclatureentry{aDZI@[{DZI}]\begingroup Deep Zoom Image\nomeqref {2.2}|nompageref}{11}
 \nomenclatureentry{aNN@[{NN}]\begingroup Neural Networks\nomeqref {2.2}|nompageref}{12}
 \nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Networks\nomeqref {2.2}|nompageref}{12}
 \nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.2}|nompageref}{17}
 \nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.2}|nompageref}{21}
 \nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.2}|nompageref}{22}
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.2}|nompageref}{22}
-\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.2}|nompageref}{23}
+\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.2}|nompageref}{22}
 \nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{28}
 \nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{34}

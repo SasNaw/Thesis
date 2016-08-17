@@ -114,21 +114,19 @@ To compensate those issues, open image formats have been suggested, which will b
 
 
 \subsubsection{Deep Zoom Images}
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/dzi_pyramid.png}
-		\caption{3 consecutive levels of a dzi image (source: https://i-msdn.sec.s-msft.com/dynimg/IC141135.png)}
-		\label{fig:fig2.1}
-	\end{center}
-\end{figure}
+The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, maintained by Microsoft. A DZI is a pyramidcal, tiled image as described in 2.1.\cite{web:dzi}. It consists of two parts: 
+\begin{enumerate}[(1)]
+	\item a describing XML file ([file name].dzi) with informations about:
+	\begin{itemize}
+		\item the format of single tiles (e.g. JPEG or PNG)
+		\item overlap between tiles
+		\item size of tiles
+		\item height and width of baseline image
+	\end{itemize}
+	\item a directory ([file name]{\textunderscore}files) with image tiles of the specified format
+\end{enumerate}
 
-The Deep Zoom Image Format (dzi)\nomenclature{dzi}{Deep Zoom Image Format} is an xml-based file format maintained by Microsoft to improve performance and quality in the handling of large image files. For this purpose an image is represented in a tiled pyramid (see fig. 2.1).
-
-As seen in fig. 2.1 there are multiple versions of a single image in different resolutions. Each resolution in the pyramid is called a \emph{level}. At each level the image is scaled down by the factor 4 (2 in each dimension). Furthermore, the image gets tiled up into $256^2$ tiles (256 in each dimension)\cite{web:dzi}.
-
-If a viewer wants to view a certain area of the image (e.g. the highlighted tile in the last image in fig. 2.1), only the corresponding tiles need to be loaded. This saves large amounts of bandwidth and memory. The same goes for a viewer, who is zoomed out very far. In such a view the full level of detail isn't needed, so that a version from a lower level can be loaded.
-
-A dzi file consists of two parts: a describing .xml file\footnote{Frameworks like \emph{OpenSeaDragon} also support further formats, such as .json.} and a folder with more subfolder. Each subfolder describes a level and as such contains all the tiles for that particular level.
+(1) and (2) are stored "next" to each other, so that there are 2 spearate files. (2) contains sub directories, one for each level of the image pyramid. The baseline image of a DZI is in the highest level. Each level is tessellated into as many tiles necessary to go over the whole image, with each tile having the size specified in the XML file. If the image size is no multiple of the specified tile size, the width of the $n^{th}$ column of tiles will be $(width \mod tile$ $size)$ pixels. Equally, the height of the $m^{th}$ row will be $(height \mod tile$ $size)$ pixels. Thus, the outermost right bottom tile $t_{n,m}$ will be of $(width \mod tile$ $size)$ x $(height \mod tile$ $size)$ pixels.
 
 
 \subsubsection{JPEG2000}
