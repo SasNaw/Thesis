@@ -42,6 +42,11 @@ G.~Seeman D.~Bourg.
 \newblock {\em AI for Game Developers}.
 \newblock O'Reilly, 2004.
 
+\bibitem{DICOM10}
+Working Group 26.~Pathology DICOM Standards~Committee.
+\newblock Digital imaging and communications in medicine (dicom), supplement
+  145: Whole slide microscopic image iod and sop classes, August 2010.
+
 \bibitem{Goode13}
 A.~Goode et~al.
 \newblock Openslide: A vendor-neutral software foundation for digital

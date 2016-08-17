@@ -1,28 +1,33 @@
 \chapter{Background}
 \section{Whole Slide Image Formats}
-As the size of an acquired raw, uncompressed WSI is massive\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}.}, file formatting is required to mitigate the enormous amounts of information. Since there is no standardized format for WSI vendors came up with their own, proprietary solutions, which may vary greatly in size\cite{Cornish13}. Efforts of standardization are being made through \emph{Digital Imaging and Communications in Medicine} (DICOM)\nmc{DICOM}{Digital Imaging and Communications in Medicine}, but the progress is a slow one\cite{Farahanil15}.
+As the size of an acquired raw, uncompressed WSI is massive\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}. The size of a H\&E (hematoxylin and eosin) stained slide ranges typically from 4 to 20 GB\cite{Singh11}.}, file formatting is required to mitigate the enormous amounts of information. Since there is no standardized format for WSIs, vendors came up with their own, proprietary solutions, which vary greatly\cite{Cornish13}. Efforts of standardization are being made through the \emph{Digital Imaging and Communications in Medicine} (DICOM) Standard\cite{DICOM10}\nmc{DICOM}{Digital Imaging and Communications in Medicine}.
 
-To achieve a WSI, different compression and decompression methods are applied, depending on the vendor\cite{Farahanil15}. Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. 2.1).
+Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. 2.1 and the following DICOM Supplement 145 subsection).
+
+
+\subsubsection{DICOM Supplement 145}
+\cite{Singh11} describes DICOM as follows:
+\begin{quotation}
+	"Digital Imaging and Communications in Medicine (DICOM), synonymous with ISO (International Organization for Standardization) standard 12052, is the global standard for medical imaging and is used in all electronic medical record systems that include imaging as part of the patient record."
+\end{quotation}
+
+Before \emph{Supplement 145: Whole Slide Microscopic Image IOD and SOP Classes}, the DICOM Standard did not address standardization of WSI. Among others, the College of American Pathologist’s Diagnostic Intelligence and Health Information Technology Committee is responsible for the creation and further advancement of this supplement\cite{Singh11}.
+
+It addresses every step involved in creating WSIs: image creation, acquisition, processing, analyzing, distribution, visualization and data management\cite{DICOM10}. It impacted the way how data is stored greatly\cite{Singh11}, due to the introduction of a pyramid image model\cite{DICOM10} (see fig. 2.1).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{img/imgPyramid.png}
-		\caption{Example of an image pyramid (DICOM, source:\cite{Singh11})}
+		\caption{DICOMs image pyramid (source:\cite{Singh11})}
 		\label{fig:fig2.1}
 	\end{center}
 \end{figure}
 
-The image pyramid model is used to enable the real-time viewing of different magnifications and to reduce the computational burden of traversing a WSI\cite{Park12}. This is made possible by creating copies of the original image in different resolutions (compare "Intermediate image" and "Baseline image" in fig. 2.1), which are referred to as \emph{levels}. Usually, the resolution is lowered by the factor 2 in each dimension for every level in the pyramid:
-\begin{equation}
-	width(n) = width(n-1) / 2
-\end{equation}
-\begin{equation}
-	height(n) = height(n-1) / 2
-\end{equation}
+The image pyramid model facilitates rapid zooming and reduces the computational burden of randomly accessing and traversing a WSI\cite{Singh11},\cite{Park12}. This is made possible by storing an image in several precomputed resolutions, with the highest resolution sitting at the bottom (called the \emph{baseline image}) and a thumbnail or low power image at the top (compare fig. 2.1)\cite{DICOM10}. This creates a pyramid like stack of images, hence the name "pyramid model". The different resolutions are referred to as \emph{layers}\cite{DICOM10} or \emph{levels}\cite{Singh11} respectively.
 
-where $n$ is the level of the pyramid. The result is, that each image has only $1/4$ the amount of pixels compared to the image in the level before. The image in unaltered resolution is considered as the \emph{baseline image}\cite{web:openslide}.
+Each level is tessellated into square or rectangular fragments, called tiles, and stored in a two dimensional array\cite{Farahanil15}. 
 
-Furthermore, each level gets tessellated into several tiles (compare fig. 2.1). Because of this, it is possible to only load the visible tiles, instead of the whole image of the corresponding level.
+Because of this internal organization, the tiles of each level can be retrieved and put together separately, to either form a subregion of the image or show it entirely. This makes it easy to randomly access any subregion of the image without loading large amounts of data\cite{Singh11}.
 
 
 \subsection{Proprietary Formats}
@@ -46,11 +51,11 @@ Vendors of whole slide scanners implement their own file formats, libraries and 
 	\end{center}
 \end{table}
 
-Since the proprietary formats have little to no documentation, most of the information presented here was reverse engineered in \cite{Goode13} and \cite{web:openslide}.
+Since the proprietary formats have little to no documentation, most of the information presented here was reverse engineered in \cite{Goode13} and \cite{web:openslide}. All proprietary formats listed here implement a modified version of the pyramid model introduced in \cite{DICOM10}.
 
 
 \subsubsection{Aperio}
-The SVS format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with $240^2$ pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
+The SVS format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with 240x240 pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
 
 
 \subsubsection{Hamamatsu}
@@ -110,11 +115,14 @@ As mentioned in 2.1.1, proprietary formats typically come without much or any do
 To compensate those issues, open image formats have been suggested, which will be discussed further, in the following subsections.
 
 
-\subsubsection{DICOM (Digital Imaging and Communications in Medicine)}
-
-
 \subsubsection{Deep Zoom Images}
-The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, maintained by Microsoft. A DZI is a pyramidcal, tiled image as described in 2.1.\cite{web:dzi}. It consists of two parts: 
+The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image, similar to the one described in \cite{DICOM10}, with two exceptions:
+\begin{enumerate}
+	\item the baseline image is referred to as the highest level, instead of the lowest; this either turns the image pyramid or its labeling upside down
+	\item tiles are always square, with the exception of the last column/row
+\end{enumerate}
+
+A DZI consists of two main parts\cite{web:dzi}: 
 \begin{enumerate}[(1)]
 	\item a describing XML file ([file name].dzi) with informations about:
 	\begin{itemize}
