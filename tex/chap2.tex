@@ -33,44 +33,79 @@ Vendors of whole slide scanners implement their own file formats, libraries and 
 		\begin{tabular}{| l | l |}
 			\hline
 			\textbf{vendor} & \textbf{formats}\\ \hline
-			Aperio & svs, tif\\ \hline
-			Hamamatsu & vms, vmu, ndpi\\ \hline
-			Leica & scn\\ \hline
-			Mirax & mrxs\\ \hline
-			Philips & tiff\\ \hline
-			Sakura & svslide\\ \hline
-			Trestle & tif\\ \hline
-			Ventana & bif, tif\\ \hline
+			Aperio & SVS, TIF\\ \hline
+			Hamamatsu & VMS, VMU, NDPI\\ \hline
+			Leica & SCN\\ \hline
+			3DHistech/Mirax & MRXS\\ \hline
+			Philips & TIFF\\ \hline
+			Sakura & SVSLIDE\\ \hline
+			Trestle & TIF\\ \hline
+			Ventana & BIF, TIF\\ \hline
 		\end{tabular}
 		\caption{File formats by vendor}
 	\end{center}
 \end{table}
 
+Since the proprietary formats have little to no documentation, most of the information presented here was reverse engineered in \cite{Goode13} and \cite{web:openslide}.
+
 
 \subsubsection{Aperio}
-The .svs format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with $240^2$ pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
+The SVS format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with $240^2$ pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
 
 
 \subsubsection{Hamamatsu}
+Hamamatsu WSIs come in 3 variants:
+\begin{enumerate}[(1)]
+	\item VMS
+	\item VMU
+	\item NDPI
+\end{enumerate}
+
+(1) and (2) consist of an index file ((1) - [file name].vms, (2) - [file name].vmu) and 2 or more image files. In the case of (2), there is also an additional optimization file. (3) consists of a single TIFF-like file with custom TIFF tags. While (1) and (3) contain jpeg images, (2) contains a custom, uncompressed image format called \emph{NGR}\footnote{For more information on NGR, consult \url{http://openslide.org/formats/hamamatsu/}}\cite{web:openslide}.
+
+The random access support for decoding parts of jpeg files is poor. To get around this, so called \emph{restart markers}\footnote{Restart markers were originally designed for error recovery. The markers allow the decoder to resynchronize at set intervals throughout the image\cite{Goode13}.} are used to create virtual slides\cite{Goode13}. The markers are placed at regular intervals. The offset of every marker is specified in different manner. In the case of (1), it can be found in the index file. In the case of (2), the optimization file holds the information and in the case of (3), a TIFF tag contains the offset\cite{web:openslide}.
 
 
 \subsubsection{Leica}
+SCN is a single file format based on BigTIFF, additionally .scn provides a pyramidal thumbnail image.\cite{Goode13}.
+
+The first TIFF directory has a tag called "ImageDescription" which contains an XML document that defines the internal structure of the WSI\cite{web:openslide}.
+
+Leica WSIs are structured as a collection of images, each of which has multiple pyramid levels. While the collection only has a size, images have a size and position, all measured in nanometers. Each dimension has a size in pixels, an optional focal plane number, and a TIFF directory containing the image data. Fluorescence images have different dimensions (and thus different TIFF directories) for each channel\cite{web:openslide}.
+
+Brightfield slides have at least two images: a low-resolution macro image and one or more main images corresponding to regions of the macro image. Fluorescence slides can have two macro images: one brightfield and one fluorescence\cite{web:openslide}.
 
 
-\subsubsection{Mirax}
+\subsubsection{3DHistech/Mirax}
+MRXS is a multi-file format with very complicated metadata in a mixture of text and binary formats. Images are stored as either JPEG, PNG or BMP\cite{Goode13}. The poor handling of random access is also applicable to PNG. Because of this, multiple images are needed to encode a single slide image. To avoid having many individual files, images are packed into a small number of data files. An index file provides offsets into the data files for each required piece of data.\cite{web:openslide}. 
+
+A 3DHistech/Mirax scanner take images with an overlap. Each picture taken is then tessellated without an overlap. Therefore, they only occur between taken pictures\cite{web:openslide}.
+
+The generation of the image pyramid differs from the process described in 2.1. To create the $n^{th}$ level, each image of the $n^{th}-1$ level is divided by 2 in each dimension and then concatenated into a new image. Where the $n^{th}-1$ level had 4 images in 2x2 neighborhood, the $n^{th}$ level will only have 1 image. This process has no regards for overlaps. Thus, overlaps may occur in the higher levels of the image pyramid\cite{web:openslide}.
 
 
 \subsubsection{Philips}
+Philips' TIFF is an export from the native iSyntax format. An XML document with the hierarchical structure of the WSI can be found over the \emph{ImageDescription} tag of the first TIFF directory. It contains key-value pairs based on DICOM tags\cite{web:openslide}.
+
+Slides with multiple regions of interest are structured as a single image pyramid enclosing all regions. Slides may omit pixel data for TIFF tiles not in an ROI. When such tiles are downsampled into a tile that does contain pixel data, their contents are rendered as white pixels\cite{web:openslide}.
+
+Label and macro images are stored either as JPEG or as stripped TIFF directories.
 
 
 \subsubsection{Sakura}
+WSIs in the SVSLIDE format are SQLite 3 database files. Their tables contain the metadata, associated images and tiles in the JPEG format. The tiles are addressed as (focal plane, downsample, level-0 X coordinate, level-0 Y coordinate, color channel). Additionally, each color channel has a separate grayscale image\cite{web:openslide}.
+
+
+\subsubsection{Trestle}
+Trestles TIF is a single-file TIFF. The WSI has the standard pyramdic scheme and tessellation. It contains non-standard metadata and overlaps, which are specified in additional files. The first image in the TIFF file is the baseline image. Subsequent images are assumed to be consecutive levels of the image pyramid with decreasing resolution\cite{web:openslide}.
 
 
 \subsubsection{Ventana}
+Ventanas WSIs are single-file BigTIFF images, organized in the typical pyramidical scheme. The images are tiled and have non-standard metadata, as well as overlaps. They come with a macro and a thumbnail image\cite{web:openslide}.
 
 	
 \subsection{Open Formats}
-Proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors\cite{Goode13}. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
+As mentioned in 2.1.1, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
 
 To compensate those issues, open image formats have been suggested, which will be discussed further, in the following subsections.
 
@@ -357,19 +392,19 @@ The devices which create WSIs, so called \emph{whole slide scanners}, create ima
 	\end{center}
 \end{figure}
 
-Upon invocation, the CS will take every single WSI inside a given directory and convert it to DZI. The output of each conversion will be saved in another specified folder. Valid image formats (and their corresponding producers) for conversion are:
+Upon invocation, the CS will take every single WSI inside a given directory and convert it to DZI. The output of each conversion will be saved in another specified folder. Valid image formats for conversion are:
 
 \begin{itemize}
-	\item .bif (Ventana)
-	\item .mrxs (Mirax)
-	\item .ndpi (Hamamatsu)
-	\item .scn (Leica)
-	\item .svs (Aperio)
-	\item .svslide (Sakura)
-	\item .tif (Aperio, Trestle, Ventana)
-	\item .tiff (Philips)
-	\item .vms (Hamamatsu)
-	\item .vmu (Hamamatsu)
+	\item .bif
+	\item .mrxs
+	\item .ndpi
+	\item .scn
+	\item .svs
+	\item .svslide
+	\item .tif
+	\item .tiff
+	\item .vms
+	\item .vmu
 \end{itemize}
 
 
