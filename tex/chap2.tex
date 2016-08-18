@@ -126,7 +126,7 @@ The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-ba
 	\begin{center}
 		\includegraphics[scale=0.4]{img/dzi_pyramid.png}
 		\caption{DZI pyramid model example (source:\cite{web:dzi})}
-		\label{fig:fig2.1}
+		\label{fig:fig2.2}
 	\end{center}
 \end{figure}
 
@@ -146,6 +146,90 @@ A DZI consists of two main parts\cite{web:dzi}:
 
 
 \subsubsection{International Image Interoperability Framework}
+The International Image Interoperability Framework (IIIF)\nmc{IIIF}{International Image Interoperability Framework} is the result of a cooperation between The British Library, Stanford University, the Bodleian Libraries\footnote{Oxford University}, the Bibliothèque Nationale de France, Nasjonalbiblioteket\footnote{National Library of Norway}], Los Alamos National Laboratory Research Library and Cornell University\cite{Cramer11}. Version 1.0 was published in 2012.
+
+IIIFs goal is to collaboratively produce an interoperable technology and community framework for image delivery\cite{web:iiif2}. To achieve this, IIIF tries to:
+\begin{enumerate}[(1)]
+	\item give scholars access to image-based resources around the world
+	\item define a set of common APIs to support interoperability between image repositories
+	\item develop and document shared technologies (such as image servers and web clients), that enable scholars to view, compare, manipulate and annotate images
+\end{enumerate}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.3]{img/iiif_url_example.jpg}
+		\caption{Example of iiif request (source:\url{http://www.slideshare.net/Tom-Cramer/iiif-international-image-interoperability-framework-dlf2012?ref=https://www.diglib.org/forums/2012forum/transcending-silos-leveraging-linked-data-and-open-image-apis-for-collaborative-access-to-digital-facsimiles/})}
+		\label{fig:fig2.3}
+	\end{center}
+\end{figure}
+
+The relevant part for this thesis is (2), especially the image API\cite{web:iiif}. It specifies a web service that returns an image in response to a standard web request. The URL can specify the region, size, rotation, quality and format of the requested image (see fig. 2.3). Originally intended for resources in digital image repositories maintained by cultural heritage organizations, the API can be used to retrieve static images in response to a properly constructed URL\cite{web:openseadragon}. The URL scheme looks like this\cite{web:iiif}:
+\begin{lstlisting}
+{scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
+\end{lstlisting}
+
+The \emph{region} and \emph{size} parameters are of special interest for this thesis\footnote{For detailed information on all parameters see the official API: \url{http://iiif.io/api/image/2.0}}. With them, it is possible to request only a certain region of an image in a specified size.
+
+The region parameter defines the rectangular portion of the full image to be returned. It can be specified by pixel coordinates, percentage or by the value “full” (see tab. 2.2 and fig. 2.4).
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{2cm} | p{9cm} |}
+			\hline
+			\textbf{Form} & \textbf{Description}\\ \hline
+			full & The complete image is returned, without any cropping.\\ \hline
+			x,y,w,h & The region of the full image to be returned is defined in terms of absolute pixel values. The value of x represents the number of pixels from the 0 position on the horizontal axis. The value of y represents the number of pixels from the 0 position on the vertical axis. Thus the x,y position 0,0 is the upper left-most pixel of the image. w represents the width of the region and h represents the height of the region in pixels.\\ \hline
+			pct:x,y,w,h & The region to be returned is specified as a sequence of percentages of the full image’s dimensions, as reported in the Image Information document. Thus, x represents the number of pixels from the 0 position on the horizontal axis, calculated as a percentage of the reported width. w represents the width of the region, also calculated as a percentage of the reported width. The same applies to y and h respectively. These may be floating point numbers.\\ \hline
+		\end{tabular}
+		\caption{Valid values for \emph{region} parameter (source:\cite{web:iiif})}
+	\end{center}
+\end{table}
+
+If the request specifies a regions whose size extends beyond the actual size of the image, the response should be a cropped image, instead of an image with added empty space. If the region is completely outside of the image, the response should be a 404 http status code\cite{web:iiif}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/region_param.png}
+		\caption{Results of IIIF request with different values for region parameter (source:\cite{web:iiif})}
+		\label{fig:fig2.4}
+	\end{center}
+\end{figure}
+
+If a region was extracted, it is scaled to the dimensions specified by the size parameter (see tab. 2.3 and fig. 2.5).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.35]{img/size_parameter.png}
+		\caption{Results of IIIF request with different values for size parameter (source:\cite{web:iiif})}
+		\label{fig:fig2.5}
+	\end{center}
+\end{figure}
+
+If the resulting height or width equals 0, then the server should return a 400 http status code. Depending on the image server, scaling above the full size of the extracted region may be supported\cite{web:iiif}.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{2cm} | p{9cm} |}
+			\hline
+			\textbf{Form} & \textbf{Description}\\ \hline
+			full & The extracted region is not scaled, and is returned at its full size.\\ \hline
+			w, & The extracted region should be scaled so that its width is exactly equal to w, and the height will be a calculated value that maintains the aspect ratio of the extracted region.\\ \hline
+			,h & The extracted region should be scaled so that its height is exactly equal to h, and the width will be a calculated value that maintains the aspect ratio of the extracted region.\\ \hline
+			pct:n & The width and height of the returned image is scaled to n\% of the width and height of the extracted region. The aspect ratio of the returned image is the same as that of the extracted region.\\ \hline
+			w,h & The width and height of the returned image are exactly w and h. The aspect ratio of the returned image may be different than the extracted region, resulting in a distorted image.\\ \hline
+			!w,h & The image content is scaled for the best fit such that the resulting width and height are less than or equal to the requested width and height. The exact scaling may be determined by the service provider, based on characteristics including image quality and system performance. The dimensions of the returned image content are calculated to maintain the aspect ratio of the extracted region.\\ \hline
+		\end{tabular}
+		\caption{Valid values for \emph{size} parameter (source:\cite{web:iiif})}
+	\end{center}
+\end{table}
+
+To use the IIIF API, a compliant web server must be deployed. There are 2 alternatives to set up a new one\cite{web:openseadragon},\cite{web:iiif2}:
+\begin{itemize}
+	\item \textbf{Loris}, an open source image server based on python that supports the IIIF API versions 2.0, 1.1 and 1.0. Supported image formats are JPEG, JPEG2000 and TIFF.
+	\item \textbf{IIPImage Server}, an open source Fast CGI module written in C++, that is designed to be embedded within a hosting web server such as Apache, Lighttpd, MyServer or Nginx. Supported image formats are JPEG2000 and TIFF.
+\end{itemize}
+
+
 \subsubsection{JPEG2000}
 \subsubsection{Open Street Maps}
 \subsubsection{TIFF/BigTIFF}
@@ -156,7 +240,7 @@ A DZI consists of two main parts\cite{web:dzi}:
 
 
 \section{Short Introduction to Neural Networks}
-The objective of this thesis ultimately is to create training samples for NN\footnote{see chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
+The objective of this thesis ultimately is to create training samples for NN\footnote{compare chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
 
 Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig 2.x), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and send output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
 

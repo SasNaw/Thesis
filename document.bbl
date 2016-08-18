@@ -31,6 +31,16 @@ T.~Cornish.
   July 2013.
 \newblock Accessed: 12.04.2016.
 
+\bibitem{Cramer11}
+T.~Cramer.
+\newblock The international image interoperability framework (iiif): Laying the
+  foundation for common services, integrated resources and a marketplace of
+  tools for scholars worldwide.
+\newblock
+  \url{https://www.cni.org/topics/information-access-retrieval/international-image-interoperability-framework},
+  December 2011.
+\newblock Accessed: 18.08.2016.
+
 \bibitem{web:vips}
 J.~Cupitt.
 \newblock Vips.
@@ -58,8 +68,8 @@ A.~Goode et~al.
 \bibitem{web:iiif}
 M.~Appleby et~al.
 \newblock Iiif image api 2.0.
-\newblock \url{http://iiif.io/api/image/2.0/#status-of-this-document}.
-\newblock Accessed: 26.04.2016.
+\newblock \url{http://iiif.io/api/image/2.0/}.
+\newblock Accessed: 18.08.2016.
 
 \bibitem{Egmont-Petersen02}
 M.~Egmonst-Petersen et~al.
@@ -101,6 +111,12 @@ I.~Gilman.
 \newblock
   \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
 \newblock Accessed: 26.04.2016.
+
+\bibitem{web:iiif2}
+IIIF.
+\newblock Internation image interoperability framework homepage.
+\newblock \url{http://iiif.io}.
+\newblock Accessed: 18.08.2016.
 
 \bibitem{Optimus15}
 Optimus~Information Inc.
