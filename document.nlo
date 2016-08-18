@@ -5,12 +5,15 @@
 \nomenclatureentry{aDICOM@[{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}|nompageref}{7}
 \nomenclatureentry{aDZI@[{DZI}]\begingroup Deep Zoom Image\nomeqref {2.0}|nompageref}{12}
 \nomenclatureentry{aIIIF@[{IIIF}]\begingroup International Image Interoperability Framework\nomeqref {2.0}|nompageref}{13}
-\nomenclatureentry{aNN@[{NN}]\begingroup Neural Networks\nomeqref {2.0}|nompageref}{17}
-\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Networks\nomeqref {2.0}|nompageref}{17}
-\nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{22}
-\nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{26}
-\nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{27}
-\nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{27}
-\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{27}
-\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{33}
-\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{39}
+\nomenclatureentry{aOSM@[{OSM}]\begingroup OpenStreetMap\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aTMS@[{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aOSGF@[{OSGF}]\begingroup Open Source Geospatial Foundation\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aNN@[{NN}]\begingroup Neural Networks\nomeqref {2.0}|nompageref}{18}
+\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Networks\nomeqref {2.0}|nompageref}{18}
+\nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{23}
+\nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{27}
+\nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
+\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{40}

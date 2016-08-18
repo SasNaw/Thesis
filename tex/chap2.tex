@@ -112,7 +112,7 @@ Ventanas WSIs are single-file BigTIFF images, organized in the typical pyramidic
 \subsection{Open Formats}
 As mentioned in 2.1.1, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
 
-To compensate those issues, open image formats have been suggested, which will be discussed further, in the following subsections.
+To compensate those issues, open image formats have been suggested, which will be discussed further in the following subsections.
 
 
 \subsubsection{Deep Zoom Images}
@@ -229,11 +229,43 @@ To use the IIIF API, a compliant web server must be deployed. There are 2 altern
 	\item \textbf{IIPImage Server}, an open source Fast CGI module written in C++, that is designed to be embedded within a hosting web server such as Apache, Lighttpd, MyServer or Nginx. Supported image formats are JPEG2000 and TIFF.
 \end{itemize}
 
+\subsubsection{OpenStreetMap/Tiled Map Service}
+OpenStreetMap (OSM)\nmc{OSM}{OpenStreetMap} is a popular tile source used in many online geographic mapping specifications\cite{web:openseadragon}. It's a community driven alternative to services such as Google Maps. Information is added by users via aerial images, GPS devices and field maps. All OSM data is classified as \emph{open data}, meaning that it can be used anywhere, as long as the OSM Foundation is credited\cite{web:osm}.
 
-\subsubsection{JPEG2000}
-\subsubsection{Open Street Maps}
+Tiled Map Service (TMS)\nmc{TMS}{Tiled Map Service} is a tile scheme developed by the Open Source Geospatial Foundation (OSGF)\nmc{OSGF}{Open Source Geospatial Foundation}\cite{web:openseadragon} and specified in \cite{web:tms}. The OSGF is a nonprofit organization whose goal it is to support the needs of the open source geospatial community. TMS provides access to cartographic maps of geo-referenced data. Access to these resources is provided via a "REST" interface, starting with a root resource describing available layers, then map resources with a set of scales, then scales holding sets of tiles\cite{web:tms}.
+
+Both, OSM and TMS, offer zooming images, which in general, have the functionality necessary, to be of use for this thesis. Unfortunately, the are also highly specialized on the needs of the mapping community, which makes them unattractive choices for the research objective of this thesis respectively.
+
+
+\subsubsection{JPEG 2000}
+\cite{web:jpeg2000} describes JPEG 2000 as follows:
+\begin{quotation}
+	"JPEG 2000 is an image coding system that uses state-of-the-art compression techniques based on wavelet technology. Its architecture lends itself to a wide range of uses from portable digital cameras through to advanced pre-press, medical imaging and other key sectors."
+\end{quotation}
+
+JPEG 2000 is an image compression standard and coding system. It was created by the Joint Photographic Experts Group committee in 2000 with the intention of superseding their original JPEG standard. This should be accomplished through the use of a novel wavelet based approach\cite{web:jpeg2000}.
+
+The improved standard has certain benefits over its predecessor\cite{intoPix08}:
+\begin{itemize}
+	\item \textbf{improved compression efficiency}
+	\item \textbf{mathematically lossless compression}
+	\item \textbf{graceful degradation}
+	\item \textbf{scalability}
+	\item \textbf{dynamic bandwidth allocation}
+	\item \textbf{scalability and adaptive reception}
+	\item \textbf{robust transmission}
+	\item \textbf{easy post-production}
+	\item \textbf{region of interest}
+	\item \textbf{low latency}
+	\item \textbf{encoding-decoding processing power}
+\end{itemize}
+
+
+The code streams are regions of interest that offer several mechanisms to support spatial random access or region of interest access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality.
+
+
+
 \subsubsection{TIFF/BigTIFF}
-\subsubsection{Tiled Map Service}
 
 
 \subsection{Choice of Format}

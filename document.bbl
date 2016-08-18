@@ -105,6 +105,12 @@ Open Source~Geospatial Foundation.
 \newblock \url{http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification}.
 \newblock Accessed: 26.04.2016.
 
+\bibitem{web:osm}
+OpenStreetMap Foundation.
+\newblock Openstreetmap homepage.
+\newblock \url{http://www.openstreetmap.org/about}.
+\newblock Accessed: 18.08.2016.
+
 \bibitem{web:openseadragon}
 I.~Gilman.
 \newblock Openseadragon.
@@ -125,6 +131,11 @@ Optimus~Information Inc.
   \url{http://www.optimusinfo.com/downloads/white-paper/open-source-vs-proprietary-software-pros-and-cons.pdf},
   2015.
 \newblock Accessed: 16.08.2016.
+
+\bibitem{intoPix08}
+intoPix.
+\newblock Everything you always wanted to know about jpeg 2000.
+\newblock \url{http://www.intopix.com/pdf/JPEG%202000%20Handbook.pdf}, 2008.
 
 \bibitem{cupitt96}
 K.~Martinez J.~Cupitt.
@@ -147,6 +158,12 @@ M.~Fowler J.Lewis.
   March 2014.
 \newblock Accessed: 12.08.2016.
 
+\bibitem{web:jpeg2000}
+JPEG.
+\newblock Overview of jpeg 2000.
+\newblock \url{https://jpeg.org/jpeg2000/}.
+\newblock Accessed: 18.08.2016.
+
 \bibitem{Kriesel07}
 D.~Kriesel.
 \newblock {\em A Brief Introduction to Neural Networks}, 2007.
@@ -157,7 +174,7 @@ Microsoft.
 \newblock Deep zoom file format overview.
 \newblock
   \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
-\newblock Accessed: 11.04.2016.
+\newblock Accessed: 17.08.2016.
 
 \bibitem{web:openslide}
 OpenSlide.
