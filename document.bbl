@@ -52,6 +52,12 @@ G.~Seeman D.~Bourg.
 \newblock {\em AI for Game Developers}.
 \newblock O'Reilly, 2004.
 
+\bibitem{Taubmann01}
+M.~Marcellin D.~Taubmann.
+\newblock {\em JPEG 2000: Image compression fundamentals, standards and
+  practice}.
+\newblock Kluwer Academic Publishers, 2001.
+
 \bibitem{DICOM10}
 Working Group 26.~Pathology DICOM Standards~Committee.
 \newblock Digital imaging and communications in medicine (dicom), supplement
@@ -168,6 +174,12 @@ JPEG.
 D.~Kriesel.
 \newblock {\em A Brief Introduction to Neural Networks}, 2007.
 \newblock \url{http://www.dkriesel.com/en/science/neural_networks}.
+
+\bibitem{Rabbani02}
+R.~Joshi M.~Rabbani.
+\newblock An overview of the jpeg2000 still image compression standard.
+\newblock {\em Signal Processing Image Communication}, 17(3), 2002.
+\newblock \url{https://www.csd.uoc.gr/~hy471/bibliography/jpeg2000.pdf}.
 
 \bibitem{web:dzi}
 Microsoft.

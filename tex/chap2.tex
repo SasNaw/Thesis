@@ -238,30 +238,19 @@ Both, OSM and TMS, offer zooming images, which in general, have the functionalit
 
 
 \subsubsection{JPEG 2000}
-\cite{web:jpeg2000} describes JPEG 2000 as follows:
+\cite{web:jpeg2000} describes the image compression standard JPEG 2000 as follows:
 \begin{quotation}
 	"JPEG 2000 is an image coding system that uses state-of-the-art compression techniques based on wavelet technology. Its architecture lends itself to a wide range of uses from portable digital cameras through to advanced pre-press, medical imaging and other key sectors."
 \end{quotation}
 
-JPEG 2000 is an image compression standard and coding system. It was created by the Joint Photographic Experts Group committee in 2000 with the intention of superseding their original JPEG standard. This should be accomplished through the use of a novel wavelet based approach\cite{web:jpeg2000}.
+It incorporates a mathematically lossless compression mode, in which the storage requirement of images can be reduced by an average of 2:1. On top of that, there is a visually lossless compression rate\footnote{At \emph{At visually lossless compression rates, even a trained a can't see the difference between original and compressed version\cite{intoPix08}.}} of between 10:1 to 20:1\cite{intoPix08}. JPEG 2000 code streams offer mechanisms to support random access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality\cite{Taubmann01}. 
 
-The improved standard has certain benefits over its predecessor\cite{intoPix08}:
-\begin{itemize}
-	\item \textbf{improved compression efficiency}
-	\item \textbf{mathematically lossless compression}
-	\item \textbf{graceful degradation}
-	\item \textbf{scalability}
-	\item \textbf{dynamic bandwidth allocation}
-	\item \textbf{scalability and adaptive reception}
-	\item \textbf{robust transmission}
-	\item \textbf{easy post-production}
-	\item \textbf{region of interest}
-	\item \textbf{low latency}
-	\item \textbf{encoding-decoding processing power}
-\end{itemize}
+In the compression process, JPEG 2000 partitions an image into rectangular and non-overlapping tiles of equal size (except for tiles at the image borders). The tile size is arbitrary and
+can be as large as the original image itself (resulting in only one tile) or as small as a single pixel. Furthermore, the image gets decomposed into a multiple resolution representation\cite{Rabbani02}. 
 
+This creates a tiled image pyramid, similar to the one described in \cite{DICOM10}.
 
-The code streams are regions of interest that offer several mechanisms to support spatial random access or region of interest access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality.
+The encoding-decoding process of JPEG 2000 is beyond the scope of this thesis. Therefore, it is recommended to consult either \cite{intoPix08} for a quick overview or \cite{Rabbani02} for an in depth guide.
 
 
 
