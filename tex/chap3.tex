@@ -2,7 +2,7 @@
 
 \section{Methodology}
 
-The objective of the Conversion Service is to convert a given set of input WHIs into dzi files. Since a dzi is layered into a pyramid scheme, it is necessary to calculate the needed number of levels, as well as the dimensions of each level (see fig. 3.1 for an example).
+The objective of the Conversion Service is to convert a given set of input WSIs into dzi files. Since a dzi is layered into a pyramid scheme, it is necessary to calculate the needed number of levels, as well as the dimensions of each level (see fig. 3.1 for an example).
 
 \begin{figure}[H]
 	\begin{center}
@@ -12,7 +12,7 @@ The objective of the Conversion Service is to convert a given set of input WHIs 
 	\end{center}
 \end{figure}
 
-Therefore, the Conversion Service must be able to open an WHI $img_{input}$ of any of the in 2.2.1 defined formats. Based on the size of $img_{input}$ the number of necessary levels $lvl$ must be calculated. Once $lvl$ has been determined, $img_{input}$ must be resized into an appropriate scale for each $lvl_i$ in $lvl$. The resized image will be called $img_i$, with $i$ representing the corresponding level. In the next step, every $img_i$ will be tessellated into $x*y$ tiles. Each tile will be referrenced via $t^i_{c,r}$, with $r$ being the row and $c$ being the column of the tile in $whi_i$. To complete the conversion, the Conversion Service must create a describing xml file for each converted image $img_{dzi}$.
+Therefore, the Conversion Service must be able to open an WSI $img_{input}$ of any of the in 2.2.1 defined formats. Based on the size of $img_{input}$ the number of necessary levels $lvl$ must be calculated. Once $lvl$ has been determined, $img_{input}$ must be resized into an appropriate scale for each $lvl_i$ in $lvl$. The resized image will be called $img_i$, with $i$ representing the corresponding level. In the next step, every $img_i$ will be tessellated into $x*y$ tiles. Each tile will be referrenced via $t^i_{c,r}$, with $r$ being the row and $c$ being the column of the tile in $whi_i$. To complete the conversion, the Conversion Service must create a describing xml file for each converted image $img_{dzi}$.
 
 
 \subsection{Creating a Deep Zoom Image}
