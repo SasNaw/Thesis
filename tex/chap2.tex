@@ -480,14 +480,14 @@ This makes the advantages outweight the disadvantages clearly:
 This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in 1.2(a) - 1.2(c). The usual procedure would look as follows:
 
 \begin{enumerate}[(1.)]
-	\item convert chosen WSI $img^{wsi}_i$ to DZI format $img^{dzi}_i$
-	\item open $img^{dzi}_i$ in a viewer $V$
-	\item annotate $img^{dzi}_i$ in $V$
-	\item persist annotations $A_i$ on $img^{dzi}_i$ in a file $f_{(A_i)}$
-	\item create training sample $ts_i$ by extracting the information of $A_i$ in correspondence to $img^{dzi}_i$
+	\item convert chosen WSI $img^{wsi}_i$ to open format $img^{cvrt}_i$
+	\item open $img^{cvrt}_i$ in a viewer $V$
+	\item annotate $img^{cvrt}_i$ in $V$
+	\item persist annotations $A_i$ on $img^{cvrt}_i$ in a file $f_{(A_i)}$
+	\item create training sample $ts_i$ by extracting the information of $A_i$ in correspondence to $img^{cvrt}_i$
 \end{enumerate}
 
-While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{dzi}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable.
+While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{cvrt}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable.
 
 The single steps of the process chain will be sorted into semantic groups. Each group will be realized by its own MS, as stated in 2.3. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
 
@@ -495,17 +495,16 @@ A MS will be introduced for each group in the following subsections(2.4.1 - 2.4.
 
 \begin{itemize}
 	\item \textbf{Conversion Service}\\
-	This service will be responsible of the conversion from $img^{wsi}_i$ to $img^{dzi}_i$ (1.).
+	This service will be responsible of the conversion from $img^{wsi}_i$ to $img^{cvrt}_i$ (1.).
 	\item \textbf{Annotation Service}\\
-	This service will offer a GUI to view a $img^{dzi}_i$, as well as make and manage annotations (2. - 4.)
+	This service will offer a GUI to view a $img^{cvrt}_i$, as well as make and manage annotations (2. - 4.)
 	\item \textbf{Tessellation Service}\\
-	This service will be responsible for extracting a $ts_i$ from a given $A_i$ and $img^{dzi}_i$ (5.).
+	This service will be responsible for extracting a $ts_i$ from a given $A_i$ and $img^{cvrt}_i$ (5.).
 \end{itemize}
 
 
 \subsection{Conversion Service}
-
-The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer and a lack of a defined standard\cite{Cornish13}. The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to DZI\footnote{see chap. 1.2(i) and 1.2(ii) for the reasons}].
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer and a lack of a defined standard\cite{Cornish13}. The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{see chap. 2.1.2 for the reasons}].
 
 \begin{figure}[H]
 	\begin{center}
@@ -515,7 +514,7 @@ The devices which create WSIs, so called \emph{whole slide scanners}, create ima
 	\end{center}
 \end{figure}
 
-Upon invocation, the CS will take every single WSI inside a given directory and convert it to DZI. The output of each conversion will be saved in another specified folder. Valid image formats for conversion are:
+Upon invocation, the CS will take every single WSI inside a given directory and convert it to a chosen open format. The output of each conversion will be saved in another specified folder. Valid image formats for conversion are:
 
 \begin{itemize}
 	\item .bif
@@ -532,17 +531,17 @@ Upon invocation, the CS will take every single WSI inside a given directory and 
 
 
 \subsection{Annotation Service}
-As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a DZI, make annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.2).
+As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a WSI, make annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.2).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.25]{img/processChainB.png}
+		\includegraphics[scale=0.2]{img/processChainB.png}
 		\caption{Visualization of the Annotation Service}
 		\label{fig:fig2.4}
 	\end{center}
 \end{figure}
 
-The supplied GUI will offer different tools to help the user annotate the DZI, e.g. a ruler to measure the distance between 2 points. The annotations themselves will be made via drawing a contour around an object of interest and putting a specified label to that region. To ensure uniformity of annotations, labels will not be added in free text. Instead they will be selected from a predefined dictionary.
+The supplied GUI will offer different tools to help the user annotate the WSI, e.g. a ruler to measure the distance between 2 points. The annotations themselves will be made via drawing a contour around an object of interest and putting a specified label to that region. To ensure uniformity of annotations, labels will not be added in free text. Instead they will be selected from a predefined dictionary.
 
 
 \subsection{Tessellation Service}
@@ -551,10 +550,10 @@ The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to ex
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.3]{img/processChainC.png}
+		\includegraphics[scale=0.25]{img/processChainC.png}
 		\caption{Visualization of the Tessellation Service}
 		\label{fig:fig2.6}
 	\end{center}
 \end{figure}
 
-Let there be a DZI $D$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $d_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.3). To be used as training sample, the TS must keep up the correspondence between $d_i$ and $a_i$.
+Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.3). To be used as training sample, the TS must keep up the correspondence between $img_i$ and $a_i$.

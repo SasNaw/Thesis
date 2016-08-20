@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 AUG 2016 16:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 AUG 2016 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -992,48 +992,52 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 474--475
 ork on this project
  []
 
-[26] <img/processChainA.png, id=769, 779.91376pt x 210.7875pt>
+[26] <img/processChainA.png, id=769, 1039.885pt x 281.05pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
-Package pdftex.def Info: img/processChainA.png used on input line 512.
-(pdftex.def)             Requested size: 272.9739pt x 73.77672pt.
- [27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-12}) has been already used, duplicate ignored
+Package pdftex.def Info: img/processChainA.png used on input line 511.
+(pdftex.def)             Requested size: 363.9652pt x 98.36896pt.
+
+Overfull \hbox (18.9652pt too wide) in paragraph at lines 511--512
+ [] 
+ []
+
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.523 	\item .
-              ndpi <./img/processChainA.png>]
-<img/processChainB.png, id=776, 1257.19687pt x 331.99031pt>
+l.518 
+       <./img/processChainA.png>]
+<img/processChainB.png, id=777, 1676.2625pt x 442.65375pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
-Package pdftex.def Info: img/processChainB.png used on input line 539.
-(pdftex.def)             Requested size: 314.29845pt x 82.99736pt.
-
-<img/processChainC.png, id=777, 1132.23pt x 289.08pt>
-File: img/processChainC.png Graphic file (type png)
-
-<use img/processChainC.png>
-Package pdftex.def Info: img/processChainC.png used on input line 554.
-(pdftex.def)             Requested size: 339.67162pt x 86.72466pt.
+Package pdftex.def Info: img/processChainB.png used on input line 538.
+(pdftex.def)             Requested size: 335.24657pt x 88.52917pt.
  [28pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.559 
-       <./img/processChainB.png>]) (./tex/chap3.tex [29pdfTeX warning (ext4): d
-estination with the same identifier (name{figure.2.14}) has been already used, 
-duplicate ignored
+l.550 
+       <./img/processChainB.png>]
+<img/processChainC.png, id=785, 1204.5pt x 307.1475pt>
+File: img/processChainC.png Graphic file (type png)
+
+<use img/processChainC.png>
+Package pdftex.def Info: img/processChainC.png used on input line 553.
+(pdftex.def)             Requested size: 301.12427pt x 76.78668pt.
+) (./tex/chap3.tex [29pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.2.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {Conversion Service} <./img/processChainC.png>]
 Chapter 3.
-<img/pyramid.png, id=789, 301.125pt x 335.2525pt>
+<img/pyramid.png, id=792, 301.125pt x 335.2525pt>
 File: img/pyramid.png Graphic file (type png)
  <use img/pyramid.png>
 Package pdftex.def Info: img/pyramid.png used on input line 9.
@@ -1121,7 +1125,7 @@ d, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.182 
-      ] [36] <img/inputDir.png, id=902, 435.6275pt x 286.06876pt>
+      ] [36] <img/inputDir.png, id=905, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
@@ -1146,7 +1150,7 @@ e identifier (name{table.3.4}) has been already used, duplicate ignored
 l.1 \chapter
             {Annotation Service} <./img/inputDir.png>]
 Chapter 4.
-<img/microdrawUI.png, id=929, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=932, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1674,9 +1678,9 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (57 pages, 4167512 bytes).
+Output written on document.pdf (57 pages, 4165710 bytes).
 PDF statistics:
- 1290 PDF objects out of 1440 (max. 8388607)
+ 1293 PDF objects out of 1440 (max. 8388607)
  1168 compressed objects within 12 object streams
  335 named destinations out of 1000 (max. 500000)
  584 words of extra memory for PDF output out of 10000 (max. 10000000)

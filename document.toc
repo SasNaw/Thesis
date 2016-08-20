@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {2.4}Process Chain}{26}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Conversion Service}{27}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Annotation Service}{28}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Tessellation Service}{28}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Tessellation Service}{29}{subsection.2.4.3}
 \contentsline {chapter}{\numberline {3}Conversion Service}{30}{chapter.3}
 \contentsline {section}{\numberline {3.1}Methodology}{30}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Creating a Deep Zoom Image}{31}{subsection.3.1.1}
