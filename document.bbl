@@ -63,6 +63,25 @@ Working Group 26.~Pathology DICOM Standards~Committee.
 \newblock Digital imaging and communications in medicine (dicom), supplement
   145: Whole slide microscopic image iod and sop classes, August 2010.
 
+\bibitem{web:digitalpreservation}
+digitalpreservation.
+\newblock Bigtiff.
+\newblock \url{http://www.digitalpreservation.gov/formats/fdd/fdd000328.shtml}.
+\newblock Accessed: 20.08.2016.
+
+\bibitem{web:digitalpreservation2}
+digitalpreservation.
+\newblock Tiff.
+\newblock \url{http://www.digitalpreservation.gov/formats/fdd/fdd000237.shtml}.
+\newblock Accessed: 20.08.2016.
+
+\bibitem{Eddins07}
+S.~Eddins.
+\newblock Tiff, bigtiff, and blockproc.
+\newblock
+  \url{http://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/},
+  August 2013.
+
 \bibitem{Goode13}
 A.~Goode et~al.
 \newblock Openslide: A vendor-neutral software foundation for digital

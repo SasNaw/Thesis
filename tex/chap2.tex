@@ -253,11 +253,18 @@ This creates a tiled image pyramid, similar to the one described in \cite{DICOM1
 The encoding-decoding process of JPEG 2000 is beyond the scope of this thesis. Therefore, it is recommended to consult either \cite{intoPix08} for a quick overview or \cite{Rabbani02} for an in depth guide.
 
 
-
 \subsubsection{TIFF/BigTIFF}
+The Tagged Image File Format (TIFF)\nmc{TIFF}{Tagged Image File Format} consists of a number of corresponding key-value pairs (e.g. \emph{ImageWidth} and \emph{ImageLength}, who describe the width and length of contained the image), called \emph{tags}. One of the core features of this format is that it allows for the image data to be stored in tiles\cite{Eddins07}.
+
+Each tiles offset is saved in an image header, so that efficient random access to any tile is granted. The original specification demands a use of 32 bit file offset values, limiting the maximum offset to $2^{32}$. This constraint limits the file size to be below 4 GB\cite{Eddins07}.
+
+This constraint lead to the development of BigTIFF. The offset values were raised to a 64 bit base, limiting the maximum offset to $2^{64}$. This results in an image size of up to 18,000 peta bytes\cite{web:digitalpreservation}.
+
+TIFF and BigTIFF are capable of saving images in multiple resolutions. Together with the feature of saving tiles, the image pyramid model described in \cite{DICOM10} can be used in BigTIFF/TIFF images\cite{web:digitalpreservation2}.
 
 
 \subsection{Choice of Format}
+
 
 
 \section{Short Introduction to Neural Networks}
