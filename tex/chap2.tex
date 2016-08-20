@@ -19,7 +19,7 @@ It addresses every step involved in creating WSIs: image creation, acquisition, 
 	\begin{center}
 		\includegraphics[scale=0.2]{img/imgPyramid.png}
 		\caption{DICOMs image pyramid (source:\cite{Singh11})}
-		\label{fig:fig2.1}
+		\label{fig2.1}
 	\end{center}
 \end{figure}
 
@@ -116,7 +116,7 @@ To compensate those issues, open image formats have been suggested, which will b
 
 
 \subsubsection{Deep Zoom Images}
-The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image (see fig. 2.2), similar to the one described in 2.1.1 (compare fig 2.1 and 2.2), with two exceptions:
+The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image (see fig. 2.2), similar to the one described in 2.1.1 (compare fig. 2.1 and 2.2), with two exceptions:
 \begin{enumerate}
 	\item the baseline image is referred to as the highest level, instead of the lowest; this either turns the image pyramid or its labeling upside down
 	\item tiles are always square, with the exception of the last column/row
@@ -266,7 +266,7 @@ TIFF and BigTIFF are capable of saving images in multiple resolutions. Together 
 \section{Short Introduction to Neural Networks}
 The objective of this thesis ultimately is to create training samples for NN\footnote{compare chap. 1.2}. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{It should be mentioned that the scope of NN is huge and worth a whole thesis by themselves. This is nothing more than a short introduction and further consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
 
-Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig 2.x), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and send output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
+Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig. 2.6), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and send output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -278,7 +278,7 @@ Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models i
 
 NN are much simpler in comparison\footnote{Usually, they don't have much more than a few dozen neurons\cite{Bourg04}.}, but generally work in the same fashion.
 
-One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig 2.x shows an exemplary NN with neurons and the connections between them.
+One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig 2.7 shows an exemplary NN with neurons and the connections between them.
 
 \begin{figure}[H]
 	\begin{center}
@@ -288,7 +288,7 @@ One of the biggest strengths of a NN, much like a BNN, is the ability to adapt b
 	\end{center}
 \end{figure}
 
-Each line in fig, 2.x represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
+Each line in fig, 2.7 represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
 
 According to \cite{Shiffman12}, some of the standard use cases for NN are:
 
@@ -326,7 +326,7 @@ In competitive learning, the single neurons compete against each other for the r
 
 
 \subsection{The Perceptron}
-The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory in 1957\cite{Rosenblatt58}. It is the computational model of a single neuron and as such, the simplest NN possible\cite{Shiffman12}. A perceptron consists of one or more inputs, a processor and a single output (see fig. 2.x)\cite{Rosenblatt58}.
+The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory in 1957\cite{Rosenblatt58}. It is the computational model of a single neuron and as such, the simplest NN possible\cite{Shiffman12}. A perceptron consists of one or more inputs, a processor and a single output (see fig. 2.8)\cite{Rosenblatt58}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -336,14 +336,14 @@ The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory
 	\end{center}
 \end{figure}
 
-This can be directly compared to the neuron in fig. 2.x, where:
+This can be directly compared to the neuron in fig. 2.7, where:
 \begin{itemize}
 	\item input = dendrites
 	\item processor = cell
 	\item output = axon
 \end{itemize}
 
-A perceptron is only capable of solving \emph{linearly separable} problems, such as logical \emph{AND} and \emph{OR} problems. To solve non-linearly separable problems, more then one perceptron is required\cite{Rosenblatt58}. Simply put, a problem is linearly separable, if it can be solved with a straight line (see fig. 2.x), otherwise it is considered a non-linearly separable problem (see fig. 2.x).
+A perceptron is only capable of solving \emph{linearly separable} problems, such as logical \emph{AND} and \emph{OR} problems. To solve non-linearly separable problems, more then one perceptron is required\cite{Rosenblatt58}. Simply put, a problem is linearly separable, if it can be solved with a straight line (see fig. 2.9), otherwise it is considered a non-linearly separable problem (see fig. 2.10).
 
 \begin{figure}[H]
 	\begin{center}
@@ -372,7 +372,7 @@ If multiple perceptrons get combined, they create layers. Those layers can be se
 	\item output layer
 \end{itemize}
 
-A typical NN will have an input layer, which is connected to a number of hidden layers, which either connect to more hidden layers or, eventually, an output layer (see fig. 2.x for a NN with one hidden layer).
+A typical NN will have an input layer, which is connected to a number of hidden layers, which either connect to more hidden layers or, eventually, an output layer (see fig. 2.11 for a NN with one hidden layer).
 
 \begin{figure}[H]
 	\begin{center}
@@ -504,7 +504,7 @@ A MS will be introduced for each group in the following subsections(2.4.1 - 2.4.
 
 
 \subsection{Conversion Service}
-The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer and a lack of a defined standard\cite{Cornish13}. The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{see chap. 2.1.2 for the reasons}].
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer and a lack of a defined standard\cite{Cornish13}. The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{see chap. 2.1.2 for the reasons} (see fig. 2.12).
 
 \begin{figure}[H]
 	\begin{center}
@@ -531,7 +531,7 @@ Upon invocation, the CS will take every single WSI inside a given directory and 
 
 
 \subsection{Annotation Service}
-As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a WSI, make annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.2).
+As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a WSI, make annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.13).
 
 \begin{figure}[H]
 	\begin{center}
@@ -556,4 +556,4 @@ The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to ex
 	\end{center}
 \end{figure}
 
-Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.3). To be used as training sample, the TS must keep up the correspondence between $img_i$ and $a_i$.
+Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.14). To be used as training sample, the TS must keep up the correspondence between $img_i$ and $a_i$.

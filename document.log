@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 AUG 2016 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 AUG 2016 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -650,24 +650,6 @@ Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 Writing nomenclature file document.nlo
 (./document.aux
 
-LaTeX Warning: Label `fig:fig2.2' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2.3' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2.5' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2.2' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2.1' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2.4' multiply defined.
-
-
 LaTeX Warning: Label `fig:fig2.5' multiply defined.
 
 )
@@ -817,7 +799,7 @@ e identifier (name{table.2.1}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.72 
-     ] [10] [11] <img/dzi_pyramid.png, id=492, 529.98pt x 365.365pt>
+     ] [10] [11] <img/dzi_pyramid.png, id=493, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
 
 <use img/dzi_pyramid.png>
@@ -830,7 +812,7 @@ Package pdftex.def Info: img/dzi_pyramid.png used on input line 127.
                                                   \fi \fi 
 l.150 
        <./img/dzi_pyramid.png>]
-<img/iiif_url_example.jpg, id=511, 1027.84pt x 770.88pt>
+<img/iiif_url_example.jpg, id=512, 1027.84pt x 770.88pt>
 File: img/iiif_url_example.jpg Graphic file (type jpg)
 
 <use img/iiif_url_example.jpg>
@@ -870,7 +852,7 @@ l.167 \begin{lstlisting}
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
 
-<img/region_param.png, id=538, 824.07875pt x 601.24625pt>
+<img/region_param.png, id=539, 824.07875pt x 601.24625pt>
 File: img/region_param.png Graphic file (type png)
 
 <use img/region_param.png>
@@ -882,7 +864,7 @@ Package pdftex.def Info: img/region_param.png used on input line 192.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.197 
-      ] <img/size_parameter.png, id=554, 825.0825pt x 478.78876pt>
+      ] <img/size_parameter.png, id=555, 825.0825pt x 478.78876pt>
 File: img/size_parameter.png Graphic file (type png)
 
 <use img/size_parameter.png>
@@ -913,7 +895,7 @@ Overfull \hbox (11.4347pt too wide) in paragraph at lines 235--236
 c maps of geo-referenced
  []
 
-[17] <img/bnn.png, id=614, 433.62pt x 109.8504pt>
+[17] <img/bnn.png, id=615, 433.62pt x 109.8504pt>
 File: img/bnn.png Graphic file (type png)
  <use img/bnn.png>
 Package pdftex.def Info: img/bnn.png used on input line 273.
@@ -924,7 +906,7 @@ Package pdftex.def Info: img/bnn.png used on input line 273.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.280 
-       <./img/bnn.png>] <img/NN.png, id=635, 207.6558pt x 137.5539pt>
+       <./img/bnn.png>] <img/NN.png, id=636, 207.6558pt x 137.5539pt>
 File: img/NN.png Graphic file (type png)
 
 <use img/NN.png>
@@ -937,7 +919,7 @@ Package pdftex.def Info: img/NN.png used on input line 285.
                                                   \fi \fi 
 l.310 	\item U
               nsupervised Learning <./img/NN.png>]
-<img/perceptron.png, id=658, 433.62pt x 69.6201pt>
+<img/perceptron.png, id=659, 433.62pt x 69.6201pt>
 File: img/perceptron.png Graphic file (type png)
  <use img/perceptron.png>
 Package pdftex.def Info: img/perceptron.png used on input line 333.
@@ -950,13 +932,13 @@ Package pdftex.def Info: img/perceptron.png used on input line 333.
                                                   \fi \fi 
 l.342 	\item p
               rocessor = cell <./img/perceptron.png>]
-<img/lsp.png, id=672, 433.62pt x 119.4864pt>
+<img/lsp.png, id=673, 433.62pt x 119.4864pt>
 File: img/lsp.png Graphic file (type png)
  <use img/lsp.png>
 Package pdftex.def Info: img/lsp.png used on input line 350.
 (pdftex.def)             Requested size: 260.17401pt x 71.69238pt.
 
-<img/nlsp.png, id=674, 433.62pt x 92.9874pt>
+<img/nlsp.png, id=675, 433.62pt x 92.9874pt>
 File: img/nlsp.png Graphic file (type png)
  <use img/nlsp.png>
 Package pdftex.def Info: img/nlsp.png used on input line 358.
@@ -974,7 +956,7 @@ l.376
                                                   \fi \fi 
 l.376 
        <./img/lsp.png> <./img/nlsp.png>]
-<img/mlp.png, id=684, 237.88875pt x 215.00325pt>
+<img/mlp.png, id=685, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
 Package pdftex.def Info: img/mlp.png used on input line 379.
@@ -992,7 +974,7 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 474--475
 ork on this project
  []
 
-[26] <img/processChainA.png, id=769, 1039.885pt x 281.05pt>
+[26] <img/processChainA.png, id=770, 1039.885pt x 281.05pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
@@ -1010,7 +992,7 @@ Overfull \hbox (18.9652pt too wide) in paragraph at lines 511--512
                                                   \fi \fi 
 l.518 
        <./img/processChainA.png>]
-<img/processChainB.png, id=777, 1676.2625pt x 442.65375pt>
+<img/processChainB.png, id=778, 1676.2625pt x 442.65375pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
@@ -1023,7 +1005,7 @@ Package pdftex.def Info: img/processChainB.png used on input line 538.
                                                   \fi \fi 
 l.550 
        <./img/processChainB.png>]
-<img/processChainC.png, id=785, 1204.5pt x 307.1475pt>
+<img/processChainC.png, id=786, 1204.5pt x 307.1475pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
@@ -1037,7 +1019,7 @@ er (name{figure.2.14}) has been already used, duplicate ignored
 l.1 \chapter
             {Conversion Service} <./img/processChainC.png>]
 Chapter 3.
-<img/pyramid.png, id=792, 301.125pt x 335.2525pt>
+<img/pyramid.png, id=793, 301.125pt x 335.2525pt>
 File: img/pyramid.png Graphic file (type png)
  <use img/pyramid.png>
 Package pdftex.def Info: img/pyramid.png used on input line 9.
@@ -1125,7 +1107,7 @@ d, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.182 
-      ] [36] <img/inputDir.png, id=905, 435.6275pt x 286.06876pt>
+      ] [36] <img/inputDir.png, id=906, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
@@ -1150,7 +1132,7 @@ e identifier (name{table.3.4}) has been already used, duplicate ignored
 l.1 \chapter
             {Annotation Service} <./img/inputDir.png>]
 Chapter 4.
-<img/microdrawUI.png, id=932, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=933, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1653,10 +1635,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 9085 strings out of 493029
- 126226 string characters out of 6136235
- 296586 words of memory out of 5000000
- 12114 multiletter control sequences out of 15000+600000
+ 9091 strings out of 493029
+ 126299 string characters out of 6136235
+ 297290 words of memory out of 5000000
+ 12120 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,32p,1285b,1814s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1678,10 +1660,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (57 pages, 4165710 bytes).
+Output written on document.pdf (57 pages, 4165794 bytes).
 PDF statistics:
- 1293 PDF objects out of 1440 (max. 8388607)
- 1168 compressed objects within 12 object streams
+ 1294 PDF objects out of 1440 (max. 8388607)
+ 1169 compressed objects within 12 object streams
  335 named destinations out of 1000 (max. 500000)
  584 words of extra memory for PDF output out of 10000 (max. 10000000)
 
