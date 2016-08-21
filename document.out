@@ -21,7 +21,7 @@
 \BOOKMARK [2][-]{subsection.2.4.3}{Tessellation Service}{section.2.4}% 21
 \BOOKMARK [0][-]{chapter.3}{Conversion Service}{}% 22
 \BOOKMARK [1][-]{section.3.1}{Methodology}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.1.1}{Creating a Deep Zoom Image}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{Selection of Image Format}{section.3.1}% 24
 \BOOKMARK [2][-]{subsection.3.1.2}{Deepzoom.py}{section.3.1}% 25
 \BOOKMARK [2][-]{subsection.3.1.3}{VIPS}{section.3.1}% 26
 \BOOKMARK [1][-]{section.3.2}{Implementation}{chapter.3}% 27

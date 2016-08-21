@@ -1,57 +1,84 @@
 \chapter{Conversion Service}
 
 \section{Methodology}
+As stated in 2.1, there is no standardized format for WSIs. Supplement 145 of the DICOM standard tries to unify the whole process around WSIs, but vendors still push their proprietary formats. For the reasons mentioned in 2.1.3, it is necessary to establish a common format for all the WSIs which are subject to the process chain established in 2.4. Therefore, the goal of the CS is to convert WSIs of proprietary formats into a common open format.
 
-The objective of the Conversion Service is to convert a given set of input WSIs into dzi files. Since a dzi is layered into a pyramid scheme, it is necessary to calculate the needed number of levels, as well as the dimensions of each level (see fig. 3.1 for an example).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/pyramid.png}
-		\caption{Example of a pyramid scheme in image processing (source: \url{http://iipimage.sourceforge.net/images/pyramid.png})}
-		\label{fig:fig3.1}
-	\end{center}
-\end{figure}
-
-Therefore, the Conversion Service must be able to open an WSI $img_{input}$ of any of the in 2.2.1 defined formats. Based on the size of $img_{input}$ the number of necessary levels $lvl$ must be calculated. Once $lvl$ has been determined, $img_{input}$ must be resized into an appropriate scale for each $lvl_i$ in $lvl$. The resized image will be called $img_i$, with $i$ representing the corresponding level. In the next step, every $img_i$ will be tessellated into $x*y$ tiles. Each tile will be referrenced via $t^i_{c,r}$, with $r$ being the row and $c$ being the column of the tile in $whi_i$. To complete the conversion, the Conversion Service must create a describing xml file for each converted image $img_{dzi}$.
-
-
-\subsection{Creating a Deep Zoom Image}
-
-To create a dzi, the Conversion Service must be capable of all the afore mentioned tasks. According to \cite{web:openseadragon}, there is a number of frameworks, that can achieve this task (see tab. 3.1).
-
-Since the conversion to dzi is required, two frameworks are not usable from the start. Those are MapTiler, who creates tms\footnote{Tile Map Service (tms) is a tile scheme developed and maintained by the Open Source Geospatial Foundation \cite{web:tms}} images and Kakadu, which creates iiif\footnote{International Image Interoperability Framework (iiif), specified by the International Image Interoperability Framework group, is an image delivery API which responds to requests via HTTP and HTTPS \cite{web:iiif}} images. Furthermore, the various desktop applications are not usable either, since the Conversion Service should operate as a microservice.
-
-For a python script, deepzoom.py would be the natural choice, however at a second glance it can be seen that VIPS offers "[...] for a number of languages" (see tab. 3.1). One of those languages happens to be python. Therefore, deepzoom.py and VIPS will be further investigated in the following two subsections.
+To make the conversion as convenient and fast as possible, the CS should only have brief user interaction. For this purpose it will not have a GUI but be done as a console script. Furthermore, it shouldn't be necessary to restart the conversion for every WSI to convert. Instead, the CS will take an input directory as parameter and convert all WSIs of a valid format inside this directory. Another parameter will be a specified output folder, in which the DZIs are stored.
 
 \begin{table}[H]
 	\begin{center}
-		\begin{tabular}{| p{3cm} | p{4cm} | p{2cm} |}
+		\begin{tabular}{| l | l |}
 			\hline
-			\textbf{option} & \textbf{description} & \textbf{image format} \\
-			\hline
-      		Deep Zoom Composer & dekstop app for Windows & dzi \\ \hline
-      		Image Composite Editor & panoramic image stitcher from Microsoft Research for the Windows desktop & dzi \\ \hline
-      		DeepZoomTools.dll & .NET-library, comes with Deep Zoom Composer & dzi \\ \hline
-      		deepzoom.py & Python & dzi \\ \hline
-      		deepzoom & Perl utility & dzi \\ \hline
-      		PHP Deep Zoom Tools & PHP & dzi \\ \hline
-      		Deepzoom & PHP & dzi \\ \hline
-     		 DZT & an image slicing library and tool written in Ruby & dzi \\ \hline
-     		MapTiler &  desktop app for Windows, Mac, Linux & tms \\ \hline
-      		VIPS & command line tool and library for a number of languages & dzi (via dzsave feature) \\ \hline
-     		Sharp & Node.js, uses VIPS & dzi \\ \hline
-      		MagickSlicer & shell script (Linux/Max) & dzi \\ \hline
-      		Gmap Uploader Tiler & C++ & dzi \\ \hline
-      		Node.js Deep Zoom Tools & Node.js, under construction & dzi \\ \hline
-      		OpenSeaDragon DZI Online Composer & Web app (and PERL and PHP scripts) & dzi \\ \hline
-      		Zoomable & service, offers embeds; no explicit API & dzi \\ \hline
-      		ZoomHub & service, under construction & dzi \\ \hline
-      		Kakadu & C++ library to encode or decode JPEG 2000 images & iiif \\ \hline
-      		PyramidIO & Java (command line and library) & dzi \\ \hline
-  		\end{tabular}
-  	\caption{Overview of conversion options for zooming image formats (source: \cite{web:openseadragon})}
-  	\end{center}
+			\textbf{vendor} & \textbf{formats}\\ \hline
+			Aperio & SVS, TIF\\ \hline
+			Hamamatsu & VMS, VMU, NDPI\\ \hline
+			Leica & SCN\\ \hline
+			3DHistech/Mirax & MRXS\\ \hline
+			Philips & TIFF\\ \hline
+			Sakura & SVSLIDE\\ \hline
+			Trestle & TIF\\ \hline
+			Ventana & BIF, TIF\\ \hline
+		\end{tabular}
+		\caption{File formats by vendor}
+		\label{tab3.1}
+	\end{center}
 \end{table}
+
+Tab. \ref{tab3.1} gives an overview of file formats, sorted by vendor, which are viable as input for the conversion.
+
+
+\subsection{Selection of Image Format}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{3cm} | p{4cm} | p{2.5cm} |}
+			\hline
+			\textbf{tool} & \textbf{description} & \textbf{image format} \\
+			\hline
+			Deep Zoom Composer & dekstop app for Windows & DZI \\ \hline
+			Image Composite Editor & panoramic image stitcher from Microsoft Research for the Windows desktop & DZI \\ \hline
+			DeepZoomTools.dll & .NET-library, comes with Deep Zoom Composer & DZI \\ \hline
+			deepzoom.py & Python & DZI \\ \hline
+			deepzoom & Perl utility & DZI \\ \hline
+			PHP Deep Zoom Tools & PHP & DZI \\ \hline
+			Deepzoom & PHP & DZI \\ \hline
+			DZT & an image slicing library and tool written in Ruby & DZI \\ \hline
+			MapTiler &  desktop app for Windows, Mac, Linux & TMS \\ \hline
+			VIPS & command line tool and library for a number of languages & DZI \\ \hline
+			Sharp & Node.js, uses VIPS & DZI \\ \hline
+			MagickSlicer & shell script (Linux/Mac) & DZI \\ \hline
+			Gmap Uploader Tiler & C++ & DZI \\ \hline
+			Node.js Deep Zoom Tools & Node.js, under construction & DZI \\ \hline
+			OpenSeaDragon DZI Online Composer & Web app (and PERL and PHP scripts) & DZI \\ \hline
+			Zoomable & service, offers embeds; no explicit API & DZI \\ \hline
+			ZoomHub & service, under construction & DZI \\ \hline
+			Kakadu & C++ library to encode or decode JPEG 2000 images & IIIF \\ \hline
+			PyramidIO & Java (command line and library) & DZI \\ \hline
+		\end{tabular}
+		\caption{Overview of conversion options for zooming image formats (source: \cite{web:openseadragon})}
+		\label{tab3.2}
+	\end{center}
+\end{table}
+
+A format or service must be chosen as conversion target for the CS. Choices have been established in 2.1.3. These are:
+\begin{enumerate}[(1)]
+	\item BigTIFF
+	\item DZI
+	\item IFFF
+	\item JPEG 2000
+	\item TMS/OMS
+\end{enumerate}
+
+To convert a WSI, a conversion tool is needed. Tab. \ref{tab3.2} shows a listing of possibilities for that purpose. Listed are the name of the tool, used technology and output format. It shows clearly, that DZI has a great variety of options, while the alternatives have little to none (Map Tiler for TMS, Kakadu for IFFF and none for the others).
+
+Since the CS should only consist of brief user interaction and be as automated as possible, desktop and web applications are not valid as tools for conversion. This excludes \emph{Deep Zoom Composer}, \emph{MapTiler}, \emph{OpenSeaDragon DZI Online Composer} and \emph{Zoomable} as possible choices (therefore also excluding, next to other reasons\footnote{compare chap 2.1.3}, TMS as possible format).
+
+One of the reasons not to use proprietary formats was the support of only certain operating systems, eliminating Windows-only tools. Those are \emph{Image Composite Editor} and \emph{DeepZoomTools.dll}.
+
+Furthermore, reading the proprietary formats is a highly specialized task, eliminating most of the leftover choices: \emph{deepzoom}\cite{web:deepzoom}, \emph{DZT}\cite{web:dzt}, \emph{sharp}\cite{web:sharp}, \emph{MagickSlicer}, \emph{Node.js Deep Zoom Tools}\footnote{MagickSlicer and Node.js Deep Zoom Tools use ImageMagick to read images, which doesn't support any of the proprietary WSI formats\cite{web:imagemagick}.}, \emph{Gmap Uploader Tiler}\cite{web:gmap}, Zoomhub\cite{web:zoomhub} and \emph{PyramidIO}\cite{web:pyramidio}.
+
+\emph{Kakadu} can only encode and decode JPEG 2000 images\cite{web:openseadragon}, making it no valid choice either.
+
+This leaves \emph{deepzoom.py} and \emph{VIPS}, both creating DZI as output.
 
 
 \subsection{Deepzoom.py}

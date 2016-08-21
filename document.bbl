@@ -7,6 +7,13 @@ L.~Fei-Fei A.~Karpathy.
 \newblock Department of Computer Science, Standford University, 2015.
 \newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
 
+\bibitem{web:deepzoom}
+R.~Berta.
+\newblock deepzoom.
+\newblock
+  \url{http://search.cpan.org/~drrho/Graphics-DZI-0.05/script/deepzoom}.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{Bugwadia15}
 J.~Bugwadia.
 \newblock Microservices: Five architectural constraints.
@@ -75,6 +82,12 @@ digitalpreservation.
 \newblock \url{http://www.digitalpreservation.gov/formats/fdd/fdd000237.shtml}.
 \newblock Accessed: 20.08.2016.
 
+\bibitem{web:dzt}
+D.~Doubrovkine.
+\newblock Dzt.
+\newblock \url{https://github.com/dblock/dzt}.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{Eddins07}
 S.~Eddins.
 \newblock Tiff, bigtiff, and blockproc.
@@ -124,6 +137,12 @@ S.~Park et~al.
 \newblock Digital imaging in pathology.
 \newblock {\em Clin Lab Med}, 4(32), December 2012.
 
+\bibitem{web:pyramidio}
+National~Institute for Standards and Technology.
+\newblock Pyramidio.
+\newblock \url{https://github.com/usnistgov/pyramidio}.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{web:tms}
 Open Source~Geospatial Foundation.
 \newblock Tile map service specification.
@@ -135,6 +154,18 @@ OpenStreetMap Foundation.
 \newblock Openstreetmap homepage.
 \newblock \url{http://www.openstreetmap.org/about}.
 \newblock Accessed: 18.08.2016.
+
+\bibitem{web:sharp}
+L.~Fuller.
+\newblock sharp homepage.
+\newblock \url{http://sharp.dimens.io/en/stable/}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{web:zoomhub}
+D.~Gasienica.
+\newblock Vips.
+\newblock \url{https://github.com/zoomhub/zoomhub}.
+\newblock Accessed: 22.08.2016.
 
 \bibitem{web:openseadragon}
 I.~Gilman.
@@ -148,6 +179,12 @@ IIIF.
 \newblock Internation image interoperability framework homepage.
 \newblock \url{http://iiif.io}.
 \newblock Accessed: 18.08.2016.
+
+\bibitem{web:imagemagick}
+ImageMagick.
+\newblock Imagemagick: Formats.
+\newblock \url{http://www.imagemagick.org/script/formats.php}.
+\newblock Accessed: 22.08.2016.
 
 \bibitem{Optimus15}
 Optimus~Information Inc.
@@ -207,6 +244,12 @@ Microsoft.
   \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
 \newblock Accessed: 17.08.2016.
 
+\bibitem{web:gmap}
+K.~Mulka.
+\newblock Gmap uploader tiler.
+\newblock \url{https://github.com/mulka/tiler}.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{web:openslide}
 OpenSlide.
 \newblock Openslide format documentation.
@@ -242,7 +285,7 @@ D.~Shiffman.
 \newblock \url{http://natureofcode.com/book/chapter-10-neural-networks/}.
 
 \bibitem{web:microdraw}
-Roberto Toro.
+R.~Toro.
 \newblock Microdraw.
 \newblock \url{https://github.com/r03ert0/microdraw/wiki}.
 \newblock Accessed: 18.04.2016.
