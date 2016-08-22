@@ -3,44 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-You've used 45 entries,
+Repeated entry---line 65 of file ./bibl/bibl.bib
+ :  @article{Park12
+ :                 ,
+I'm skipping whatever remains of this entry
+You've used 50 entries,
             2118 wiz_defined-function locations,
-            744 strings with 10480 characters,
-and the built_in function-call counts, 10066 in all, are:
-= -- 993
-> -- 321
+            772 strings with 11391 characters,
+and the built_in function-call counts, 11146 in all, are:
+= -- 1101
+> -- 356
 < -- 1
-+ -- 143
-- -- 92
-* -- 363
-:= -- 1739
-add.period$ -- 172
-call.type$ -- 45
-change.case$ -- 175
++ -- 158
+- -- 102
+* -- 398
+:= -- 1926
+add.period$ -- 192
+call.type$ -- 50
+change.case$ -- 195
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 391
-empty$ -- 976
-format.name$ -- 92
-if$ -- 2173
+cite$ -- 50
+duplicate$ -- 429
+empty$ -- 1082
+format.name$ -- 102
+if$ -- 2407
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 21
-newline$ -- 265
-num.names$ -- 90
-pop$ -- 329
+int.to.str$ -- 50
+missing$ -- 22
+newline$ -- 295
+num.names$ -- 100
+pop$ -- 368
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 151
 quote$ -- 0
-skip$ -- 287
+skip$ -- 316
 stack$ -- 0
-substring$ -- 288
-swap$ -- 57
+substring$ -- 313
+swap$ -- 62
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
+type$ -- 188
 warning$ -- 0
-while$ -- 93
-width$ -- 47
-write$ -- 517
+while$ -- 103
+width$ -- 52
+write$ -- 575
+(There was 1 error message)

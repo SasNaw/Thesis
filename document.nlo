@@ -17,4 +17,7 @@
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{28}
 \nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
+\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{40}
 \nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{40}
+\nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{40}
+\nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{41}

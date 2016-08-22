@@ -103,6 +103,22 @@ A.~Goode et~al.
 \newblock
   \url{http://download.openslide.org/docs/JPatholInform_2013_4_1_27_119005.pdf}.
 
+\bibitem{Wilbur09}
+D.~Wilbur et~al.
+\newblock Whole-slide imaging digital pathology as a platform for
+  teleconsultation.
+\newblock {\em Arch Pathol Lab Med}, 133(12), December 2009.
+\newblock
+  \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
+
+\bibitem{Tseytlin14}
+E.~Tseytlin et~al.
+\newblock Wsi zoomviewer.
+\newblock
+  \url{http://www.pathologyinformatics.com/sites/default/files/archives/2014/Day2/20140514%201120%20-%20WSI%20Zoom%20Viewer.pdf},
+  2014.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{web:iiif}
 M.~Appleby et~al.
 \newblock Iiif image api 2.0.
@@ -237,6 +253,13 @@ R.~Joshi M.~Rabbani.
 \newblock {\em Signal Processing Image Communication}, 17(3), 2002.
 \newblock \url{https://www.csd.uoc.gr/~hy471/bibliography/jpeg2000.pdf}.
 
+\bibitem{web:mdn}
+Mozilla Developer~Network (MDN).
+\newblock Same-origin policy for file: Uris.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Same-origin_policy_for_file:_URIs}.
+\newblock Accessed: 22.08.2016.
+
 \bibitem{web:dzi}
 Microsoft.
 \newblock Deep zoom file format overview.
@@ -248,6 +271,13 @@ Microsoft.
 K.~Mulka.
 \newblock Gmap uploader tiler.
 \newblock \url{https://github.com/mulka/tiler}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{COA}
+College of~American~Pathologists.
+\newblock Sample emplyment contract for a pathologist.
+\newblock
+  \url{http://www.cap.org/ShowProperty?nodePath=/UCMCon/Contribution%20Folders/WebContent/pdf/pm-sample-employment-contract.pdf}.
 \newblock Accessed: 22.08.2016.
 
 \bibitem{web:openslide}
@@ -283,6 +313,13 @@ D.~Shiffman.
 \newblock {\em The Nature of Code}.
 \newblock D. Shiffman, 2012.
 \newblock \url{http://natureofcode.com/book/chapter-10-neural-networks/}.
+
+\bibitem{USSanDiego}
+US~San Diego~Health System.
+\newblock Confidentiality agreement.
+\newblock
+  \url{https://health.ucsd.edu/about/volunteer/Documents/Confidentiality%20Agreement%20D214.pdf}.
+\newblock Accessed: 22.08.2016.
 
 \bibitem{web:microdraw}
 R.~Toro.
