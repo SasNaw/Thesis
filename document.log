@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  22 AUG 2016 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  22 AUG 2016 13:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,15 +1084,16 @@ identifier (name{table.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.210 
-      ] [36] <img/inputDir.png, id=927, 435.6275pt x 286.06876pt>
+l.215 \begin{lstlisting}
+                        ] [36]
+<img/inputDir.png, id=943, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
-
-<use img/inputDir.png>
-Package pdftex.def Info: img/inputDir.png used on input line 278.
+ <use img/inputDir.png>
+Package pdftex.def Info: img/inputDir.png used on input line 298.
 (pdftex.def)             Requested size: 217.81322pt x 143.03403pt.
- [37]
-Overfull \hbox (37.27258pt too wide) in paragraph at lines 300--308
+
+[37]
+Overfull \hbox (37.27258pt too wide) in paragraph at lines 320--328
  [] 
  []
 
@@ -1110,7 +1111,7 @@ e identifier (name{table.3.5}) has been already used, duplicate ignored
 l.1 \chapter
             {Annotation Service} <./img/inputDir.png>]
 Chapter 4.
-<img/microdrawUI.png, id=955, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=972, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1613,9 +1614,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 9108 strings out of 493029
- 126461 string characters out of 6136235
- 297598 words of memory out of 5000000
+ 9123 strings out of 493029
+ 126682 string characters out of 6136235
+ 366598 words of memory out of 5000000
  12125 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1638,10 +1639,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (58 pages, 4080771 bytes).
+Output written on document.pdf (58 pages, 4083982 bytes).
 PDF statistics:
- 1328 PDF objects out of 1440 (max. 8388607)
- 1204 compressed objects within 13 object streams
- 348 named destinations out of 1000 (max. 500000)
+ 1349 PDF objects out of 1440 (max. 8388607)
+ 1225 compressed objects within 13 object streams
+ 363 named destinations out of 1000 (max. 500000)
  579 words of extra memory for PDF output out of 10000 (max. 10000000)
 

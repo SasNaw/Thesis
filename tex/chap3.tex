@@ -160,21 +160,19 @@ Every tile will be saved as [column]{\textunderscore}[row].[format] (depending o
 
 \subsection{VIPS}
 
-VIPS (VASARI Image Processing System)\nmc{VIPS}{VASARI Image Processing System} describes itself as "[...] a free image processing system [...]" \cite{web:vips}. It includes a wide range of different image processing tools, such as various filters, histograms, geometric transformations and color processing algorithms. It also supports various scientific image formats, especially those needed for the Conversion Service\footnote{See chap. 2.2.1}\cite{web:vips}.
+VIPS (VASARI Image Processing System)\nmc{VIPS}{VASARI Image Processing System} describes itself as "[...] a free image processing system [...]" \cite{web:vips}. It includes a wide range of different image processing tools, such as various filters, histograms, geometric transformations and color processing algorithms. It also supports various scientific image formats, especially those needed by the CS\footnote{See chap. 2.2.1}\cite{web:vips}. One of the strongest traits of VIPS is its speed and little data usage compared to other imaging libraries\cite{cupitt05}.
 
-VIPS comes in two parts: the actual library (called libvips) and a GUI (called nip2). libvips offers interfaces for C, C++, python and the command line. The GUI will not be further discussed, since it is of no interest for the implementation of the Conversion Service.
+VIPS comes in two parts: the actual library (called libvips) and a GUI (called nip2). libvips offers interfaces for C, C++, python and the command line. The GUI will not be further discussed, since it is of no interest for the implementation of the CS. 
 
-One of the strongest traits of VIPS is its speed and little data usage compared to other imaging libraries\cite{cupitt05}. Given the task of the Conversion Service to convert WSIs of various formats, which tend to be quite large, both of those perks are especially welcome.
+VIPS speed and little data usage comes from a fully demand-driven image input/output system. While conventional imaging libraries queue their operations and go through them sequentially, VIPS awaits a final write command, before actually manipulating the image. All the queued operations will then be evaluated and molded into a few single operations. Thus, requiring no additional disc space for intermediates and no unnecessary disc in- and output. Furthermore, if more than one CPU is available, VIPS will automatically evaluate in parallel\cite{cupitt96}.
 
-VIPS superior speed and little data usage comes from a fully demand-driven image input/output system. While conventional imaging libraries queue their operations and go through them sequentially, VIPS awaits a final write command, before actually manipulating the image. All the queued operations will then be evaluated and molded into a few single operations. Thus, requiring no additional disc space for intermediates and no unnecessary disc in- and output. Furthermore, if more than one CPU is available, VIPS will automatically evaluate in parallel\cite{cupitt96}.
-
-As mentioned before, VIPS has a command line and python interface. In either case, a function called \emph{dzsave(...)} will manage the conversion from a WSI to a dzi. A call in the terminal will look like the following:
+As mentioned before, VIPS has a command line and python interface. In either case, a function called \emph{dzsave(...)} will manage the conversion from a WSI to a DZI. A call in the terminal looks as follows:
 
 \begin{lstlisting}
 $ vips dzsave [input] [output] [options]
 \end{lstlisting}
 
-When called, VIPS will take the image [input], convert it into the dzi file format and then save it to [output]. The various options and their default values can be seen in tab. 3.3. 
+When called, VIPS will take the image [input], convert it into a DZI and then save it to [output]. The various options and their default values can be seen in tab. 3.4. 
 
 \begin{table}[H]
 	\begin{center}
@@ -201,12 +199,16 @@ image = Vips.Image.new_from_file(input)
 image.dzsave(output[, options])
 \end{lstlisting}
 
-In line 1 the image gets opened and saved into \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image into the specified output location.
+In line 1 the image gets opened and saved into \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image as DZI into the specified output location.
 
 
 \section{Implementation}
 
-As stated before, the Conversion Service is implemented as a python script. The first iteration of the script used deepzoom.py for the conversion. This caused severe performance issues though. Out of all the image files in the test set\footnote{See chap. 3.3}, only one could be converted\footnote{CMU-3.svs from Aperio, see Appendix A}. Every other file was either too big, so the process would eventually be killed by the operating system or exit with an IOError concerning the input file from the PIL imaging library. The second iteration of the Conversion Service uses VIPS, which is faster then deepzoom.py and also capable of converting all the given test images.
+As stated before, the CS should be implemented as a script.
+
+The first iteration was a python script using deepzoom.py for the conversion. This caused severe performance issues. Out of all the image files in the test set\footnote{See chap. 3.3}, only one could be converted\footnote{CMU-3.svs from Aperio, see Appendix A}. Other files were either too big, so the process would eventually be killed by the operating system, or exited with an IOError concerning the input file from the PIL imaging library.
+
+The second iteration uses VIPS python implementation, which is not only faster than deepzoom.py, but also capable of converting all the given test images.
 
 The script has to be called inside a terminal in the following fashion:
 
@@ -214,7 +216,7 @@ The script has to be called inside a terminal in the following fashion:
 	$ python ConversionService.py [input dir] [output dir]
 \end{lstlisting}
 
-It is mandatory to specify the input and output directory in the call, so the script knows where to look for images up to conversion and where to save the resulting dzi files.
+It is mandatory to specify the input and output directory in the call, so the script knows where to look for images to convert and where to save the resulting DZIs.
 
 Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. It looks as follows:
 
@@ -234,24 +236,42 @@ def main():
 \emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or exit otherwise. Furthermore, it will create the specified output folder, if it doesn't exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
 
 \begin{lstlisting}[frame=single]
-# convert image source into .dzi format
+# convert image source into .dzi format and copies all header 
+# information into [img]_files dir as metadata.txt
 # param path: directory of param file
 # param file: file to be converted
 # param extLen: length of file extension
 def convert(path, file, extLen):
 	dzi = OUTPUT + file[:extLen] + "dzi"
 	im = Vips.Image.new_from_file(path + file)
+	# get image header and save to metadata file
 	im.dzsave(dzi, overlap=OVERLAP, tile_size=TILESIZE)
+	# create file for header
+	headerOutput = OUTPUT + file[:extLen-1] + "_files/metadata.txt"
+	bashCommand = "touch " + headerOutput
+	call(bashCommand.split())
+	# get header information
+	bashCommand = "vipsheader -a " + path + file
+	p = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	out, err = p.communicate()
+	# write header information to file
+	text_file = open(headerOutput, "w")
+	text_file.write(out)
+	text_file.close()
 \end{lstlisting}
 
-The name for the new dzi file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 6). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/[\emph{OUTPUT}]/".
+The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/[\emph{OUTPUT}]/".
+
+When a WSI gets converted into DZI by the CS, most of the image header information is lost. To counteract this, a file \emph{metadata.txt} is created in the [name]{\textunderscore}files directory, which serves as container for the header information of the original WSI (see line 12 and 13).
+
+The console command \emph{vipsheader -a} is responsible for extracting the header information (see line 17 - 18). The read information (\emph{out} in line 18) is then written into the \emph{metadata.txt} file (Line 20 - 22).
 
 
 \section{Test}
 
-To test the correct functionality of the Conversion Service, test data is needed. OpenSlide offers a selection of freely distributable data\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
+Data is needed to test the correct functionality of the CS. OpenSlide offers a selection of freely distributable WSIs\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
 
-Since the WSIs are of enormous size, they are not delivered via the repository. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see Appendix A.
+Since the WSIs are of enormous size, they are not delivered via the CS repository\footnote{see \url{https://github.com/SasNaw/ConversionService}}. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see Appendix A.
 
 
 \subsection{Setup}
@@ -271,7 +291,7 @@ To create a controlled environment for the test, a new directory will be created
 	\item OS-2 (Ventana, .bif)
 \end{enumerate}
 
-Because of their structure, (4), (6) and (7) will be placed in directories titled with their file extension. Fig. 3.2 shows the content of the input folder.
+Because of their structure, (4), (6) and (7) will be placed in directories titled with their file extension. Fig. 3.1 shows the content of the input folder.
 
 \begin{figure}[H]
 	\begin{center}
@@ -281,7 +301,7 @@ Because of their structure, (4), (6) and (7) will be placed in directories title
 	\end{center}
 \end{figure}
 
-This makes multiple calls of the Conversion Service necessary. The calls, in that order, are:
+This makes multiple calls of the CS necessary. The calls, in that order, are:
 
 \begin{lstlisting}
 	$ python ConversionService.py input/ out_1/
@@ -293,7 +313,7 @@ This makes multiple calls of the Conversion Service necessary. The calls, in tha
 
 \subsection{Result}
 
-All runs of ConversionService.py were successful. Tab. 3.3 shows an overview of the results:
+All runs of ConversionService.py were successful. Tab. 3.5 shows an overview of the results:
 
 \begin{table}[H]
 	\begin{center}
