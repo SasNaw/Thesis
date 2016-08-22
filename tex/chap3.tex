@@ -3,7 +3,7 @@
 \section{Methodology}
 As stated in 2.1, there is no standardized format for WSIs. Supplement 145 of the DICOM standard tries to unify the whole process around WSIs, but vendors still push their proprietary formats. For the reasons mentioned in 2.1.3, it is necessary to establish a common format for all the WSIs which are subject to the process chain established in 2.4. Therefore, the goal of the CS is to convert WSIs of proprietary formats into a common open format.
 
-To make the conversion as convenient and fast as possible, the CS should only have brief user interaction. For this purpose it will not have a GUI but be done as a console script. Furthermore, it shouldn't be necessary to restart the conversion for every WSI to convert. Instead, the CS will take an input directory as parameter and convert all WSIs of a valid format inside this directory. Another parameter will be a specified output folder, in which the DZIs are stored.
+To make the conversion as convenient and fast as possible, the CS should only have brief user interaction. For this purpose it will not have a GUI. Instead the CS will be implemented as a console script. Furthermore, the CS should be capable of converting multiple WSIs after one another, so that no restart is necessary between conversions. Therefore, the CS will take an input directory as parameter and convert all WSIs of valid format inside that directory. Another parameter will be the output folder, in which the converted DZIs are stored.
 
 \begin{table}[H]
 	\begin{center}
@@ -78,7 +78,7 @@ Furthermore, reading the proprietary formats is a highly specialized task, elimi
 
 \emph{Kakadu} can only encode and decode JPEG 2000 images\cite{web:openseadragon}, making it no valid choice either.
 
-This leaves \emph{deepzoom.py} and \emph{VIPS}, both creating DZI as output.
+This leaves \emph{deepzoom.py} and \emph{VIPS}, both creating DZI as output. Through the use of OpenSlide, they are both capable of reading all proprietary formats stated in tab. \ref{tab3.1}\cite{web:openslide}.
 
 
 \subsection{Deepzoom.py}
@@ -91,7 +91,7 @@ If run in a terminal the call looks like the following:
 	$ python deepzoom.py [options] [input file]
 \end{lstlisting}
 
-The various options and their default values can be seen in tab. 3.2. If called without a designated output destination, deepzoom.py will save the converted dzi right next to the original input file.
+The various options and their default values can be seen in tab. 3.3. If called without a designated output destination, deepzoom.py will save the converted DZI in the same directory as the input file.
 
 \begin{table}[H]
 	\begin{center}
@@ -107,6 +107,7 @@ The various options and their default values can be seen in tab. 3.2. If called 
 			-r & type of resize filter & antialias \\ \hline
 		\end{tabular}
 		\caption{Options for deepzoom.py}
+		\label{tab3.3}
 	\end{center}
 \end{table}
 
@@ -129,32 +130,32 @@ creator = deepzoom.ImageCreator(tile_size=[size],
 	image_quality=[quality], resize_filter=[filter])
 \end{lstlisting}
 
-The options are analogous with the terminal version (compare tab. 3.2). To start the conversion process, the following call must be made within the python script:
+The options are analogous with the terminal version (compare tab. \ref{tab3.3}). To start the conversion process, the following call must be made within the python script:
 
 \begin{lstlisting}[frame=single]
 # Create Deep Zoom image pyramid from source
 creator.create([source], [destination])
 \end{lstlisting}
 
-Upon calling, the ImageCreator opens the input image $img_{input}$ and creates a description with all the needed information for the dzis describing xml file\footnote{Compare chap. 2.1.1}. After that, the number of levels is calculated. For this, the bigger value of height and width of $img_{input}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl$ (see eq. 3.2).
+Upon calling, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI\footnote{Compare chap. 2.1.3}. The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
 
 \begin{equation}
 	max{\_}dim = max(height, width)
 \end{equation}
 
 \begin{equation}
-	lvl = {\lceil}log_2(max{\_}dim) + 1\rceil
+	lvl^{max} = {\lceil}log_2(max{\_}dim) + 1\rceil
 \end{equation}
 
-Once $lvl$ has been determined, $img_{input}$ will be resized in the chosen quality (-q/image{\textunderscore}quality) for every level $i$, with $i \in (0, lvl-1)$. The new resolution will be calculated for both dimensions $dim$ with a function $scale$ (see eq. 3.3) analogously. Furthermore, the image will be interpolated with the specified filter (-r/resize{\textunderscore}filter). The resized image will be called $img_i$.
+Once $lvl^{max}$ has been determined, a resized version $img^{dzi}_i$ of $img^{wsi}$ will be created for every level $i \in [0, lvl-1]$. The quality of $img^{dzi}_i$ will be reduced according to the value specified for -q/image{\textunderscore}quality (see tab. \ref{tab3.3}). The resolution of $img^{dzi}_i$ will be calculated with the \emph{scale} function (see eq. 3.3) for both, height and width. Furthermore, the image will be interpolated with the specified filter (-r/resize{\textunderscore}filter parameter, see tab. \ref{tab3.3}).
 
 \begin{equation}
-	scale = {\lceil}dim * 0.5^{lvl-i}\rceil
+	scale = {\lceil}dim * 0.5^{lvl^{max}-i}\rceil
 \end{equation}
 
-Once $img_i$ has been created, it will be tessellated into as many tiles of the specified size (-s/tile{\textunderscore}size) and with the specified overlap (-o/tile{\textunderscore}overlap) as possible. Since not every image will be of the size $2^n, n \in $ in either dimension, it is highly likely that the set of tiles for the last column/row will be smaller then specified in either dimension.
+Once $img^{dzi}_i$ has been created, it will be tessellated into as many tiles of the specified size (-s/tile{\textunderscore}size parameter, see tab. \ref{tab3.3}) and overlap (-o/tile{\textunderscore}overlap parameter, see tab. \ref{tab3.3}) as possible. If the size of $img^{wsi}$ in either dimension isn't a multiple of the tile size, the last row/column of tiles will be smaller by the amount of $(tile$ $size - ([height$ or $width] \mod tile$ $size))$ pixels.
 
-Every tile will be saved as [column]{\textunderscore}[row].[format] ([format] depending on -f/file{\textunderscore}format) in a folder called according to the corresponding level $i$. This folder will be located inside another folder, called [filename]{\textunderscore}files. The describing xml file will be persisted as [filename].dzi on the same level.
+Every tile will be saved as [column]{\textunderscore}[row].[format] (depending on the -f/file{\textunderscore} format parameter, see tab. \ref{tab3.3}) in a directory called according to the corresponding level $i$. Each one of those level directories will be contained within a directory called [filename]{\textunderscore}files. The describing XML file will be persisted as [filename].dzi in the same directory as [filename]{\textunderscore}files.
 
 
 \subsection{VIPS}
