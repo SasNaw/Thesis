@@ -45,11 +45,14 @@
 \contentsline {subsection}{\numberline {3.3.2}Result}{38}{subsection.3.3.2}
 \contentsline {chapter}{\numberline {4}Annotation Service}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Methodology}{40}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}DICOM}{40}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.1}Parts of the Annotation Service}{40}{subsection.4.1.1}
+\contentsline {subsubsection}{Annotation Service Viewer}{40}{section*.17}
+\contentsline {subsubsection}{Annotation Service Server}{40}{section*.18}
+\contentsline {subsection}{\numberline {4.1.2}Functionality}{40}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Implementation}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}Test}{40}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Setup}{40}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Result}{40}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.2.1}Technologies and Frameworks}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Local Web Server}{40}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Web Application}{40}{subsection.4.2.3}
 \contentsline {chapter}{\numberline {5}Tessellation Service}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Methodology}{41}{section.5.1}
 \contentsline {section}{\numberline {5.2}Implementation}{41}{section.5.2}
@@ -60,7 +63,7 @@
 \contentsline {section}{\numberline {6.1}Results}{42}{section.6.1}
 \contentsline {section}{\numberline {6.2}Conclusion}{42}{section.6.2}
 \contentsline {section}{\numberline {6.3}Future tasks}{42}{section.6.3}
-\contentsline {chapter}{Appendices}{43}{section*.17}
+\contentsline {chapter}{Appendices}{43}{section*.19}
 \contentsline {chapter}{\numberline {A}Listing of Conversion Service Test Data}{44}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Aperio (.svs)}{44}{section.1.A.1}
 \contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{45}{section.1.A.2}
@@ -70,7 +73,7 @@
 \contentsline {section}{\numberline {A.6}Mirax (.mrxs)}{47}{section.1.A.6}
 \contentsline {section}{\numberline {A.7}Trestle (.tiff)}{48}{section.1.A.7}
 \contentsline {section}{\numberline {A.8}Ventana (.bif)}{48}{section.1.A.8}
-\contentsline {chapter}{Bibliography}{49}{chapter*.18}
-\contentsline {chapter}{List of Figures}{53}{chapter*.19}
-\contentsline {chapter}{List of Tables}{54}{chapter*.20}
-\contentsline {chapter}{Nomenclature}{55}{chapter*.21}
+\contentsline {chapter}{Bibliography}{49}{chapter*.20}
+\contentsline {chapter}{List of Figures}{53}{chapter*.21}
+\contentsline {chapter}{List of Tables}{54}{chapter*.22}
+\contentsline {chapter}{Nomenclature}{55}{chapter*.23}
