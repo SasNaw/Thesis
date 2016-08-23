@@ -7,45 +7,45 @@ Repeated entry---line 65 of file ./bibl/bibl.bib
  :  @article{Park12
  :                 ,
 I'm skipping whatever remains of this entry
-You've used 50 entries,
+You've used 51 entries,
             2118 wiz_defined-function locations,
-            772 strings with 11391 characters,
-and the built_in function-call counts, 11146 in all, are:
-= -- 1101
-> -- 356
+            776 strings with 11512 characters,
+and the built_in function-call counts, 11395 in all, are:
+= -- 1125
+> -- 369
 < -- 1
-+ -- 158
-- -- 102
-* -- 398
-:= -- 1926
-add.period$ -- 192
-call.type$ -- 50
-change.case$ -- 195
++ -- 163
+- -- 106
+* -- 407
+:= -- 1968
+add.period$ -- 196
+call.type$ -- 51
+change.case$ -- 200
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 429
-empty$ -- 1082
-format.name$ -- 102
-if$ -- 2407
+cite$ -- 51
+duplicate$ -- 436
+empty$ -- 1104
+format.name$ -- 106
+if$ -- 2461
 int.to.chr$ -- 0
-int.to.str$ -- 50
+int.to.str$ -- 51
 missing$ -- 22
-newline$ -- 295
-num.names$ -- 100
-pop$ -- 368
+newline$ -- 301
+num.names$ -- 102
+pop$ -- 379
 preamble$ -- 1
-purify$ -- 151
+purify$ -- 155
 quote$ -- 0
-skip$ -- 316
+skip$ -- 322
 stack$ -- 0
-substring$ -- 313
-swap$ -- 62
+substring$ -- 318
+swap$ -- 63
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 188
+type$ -- 192
 warning$ -- 0
-while$ -- 103
-width$ -- 52
-write$ -- 575
+while$ -- 105
+width$ -- 53
+write$ -- 586
 (There was 1 error message)

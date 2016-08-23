@@ -46,10 +46,10 @@
 \contentsline {chapter}{\numberline {4}Annotation Service}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Objective of the Annotation Service}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}Methodology}{39}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Parts of the Annotation Service}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Functionality of the Annotation Service}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Parts of the Annotation Service}{40}{subsection.4.2.2}
 \contentsline {subsubsection}{Annotation Service Server}{41}{section*.17}
 \contentsline {subsubsection}{Annotation Service Viewer}{41}{section*.18}
-\contentsline {subsection}{\numberline {4.2.2}Functionality}{42}{subsection.4.2.2}
 \contentsline {section}{\numberline {4.3}Implementation}{42}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Technologies and Frameworks}{42}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Annotation Service Viewer}{42}{subsection.4.3.2}

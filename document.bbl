@@ -7,6 +7,12 @@ L.~Fei-Fei A.~Karpathy.
 \newblock Department of Computer Science, Standford University, 2015.
 \newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
 
+\bibitem{web:microdraw2}
+Neuroanatomy Applied and Theoretical (NAAT).
+\newblock Microdraw.
+\newblock \url{http://microdraw.pasteur.fr/index.html}.
+\newblock Accessed: 23.08.2016.
+
 \bibitem{web:deepzoom}
 R.~Berta.
 \newblock deepzoom.
@@ -323,9 +329,9 @@ US~San Diego~Health System.
 
 \bibitem{web:microdraw}
 R.~Toro.
-\newblock Microdraw.
+\newblock Microdraw repository.
 \newblock \url{https://github.com/r03ert0/microdraw/wiki}.
-\newblock Accessed: 18.04.2016.
+\newblock Accessed: 23.08.2016.
 
 \bibitem{Wolff16}
 E.~Wolff.

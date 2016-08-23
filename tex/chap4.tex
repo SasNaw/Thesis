@@ -21,31 +21,62 @@ Independence from an operating system can be achieved by using web technologies,
 Because of this, the AS will be implemented as a web browser application. 
 
 
+\subsection{Functionality of the Annotation Service}
+The goal of viewing a WSI (1) is a straight forward task. (2) and (3) are more elusive. For that reason, this subsection elaborates on the functionality needed to help achieve those objectives.
+
+Annotations will be created by drawing directly onto the viewed WSI. If the user spots a region of interest, a contour can be drawn around it. This can  either be done in a free hand or polygon mode. In free hand mode, the contour will follow the mouse pointer until the mode is disabled again, all the while drawing a contour. Upon deactivation, the contour will be closed. In polygon mode, the user can place coordinates which will be connected from one to another in the order they're placed in. A contour in this mode considers to be closed, once a point on the contour is clicked a second time.
+
+
+% draw free hand or draw polygon
+% set poi
+% measure distance
+% create dictionaries
+% activate differnt dictionaries
+% add labels to dictionaries
+% select labels
+% why dictionaries and labels can only be deleted by manipulating the file on the server, but regions can be deleted?
+% regions and context regions
+
+
 \subsection{Parts of the Annotation Service}
-The AS is implemented in 2 parts. These are the Annotation Service Server (ASS)\nmc{ASS}{Annoation Service Server} and the Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}.
+The AS is implemented in 2 parts. Those are the Annotation Service Server (ASS)\nmc{ASS}{Annoation Service Server} and the Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}.
 
-This is because of the \emph{same-origin policy} (SOP)\nmc{SOP}{same-origin policy}. SOP is a security concept of the web application security model. It prevents a direct access to files, if the parent directory of the originating file is not an ancestor directory of the target file\cite{web:mdn}. Because of the SOP, WSIs would have to be located in the directory structure of the AS, which by itself doesn't create a problem. To get a new WSI there, however, the user would be forced to navigate through the structure of the AS, find the correct directory and then place a the WSI there manually. This makes knowledge of the service structure necessary and creates a horrible UX. Furthermore, tinkering with the file structure of the AS creates a possible error source.
+This is because of the \emph{same-origin policy} (SOP)\nmc{SOP}{same-origin policy}. SOP is a security concept of the web application security model. It prevents a direct access to files, if the parent directory of the originating file is not an ancestor directory of the target file\cite{web:mdn}. Because of the SOP, WSIs would have to be located in the directory structure of the AS, which by itself doesn't create a problem. To get a new WSI there, however, the user would be forced to navigate through the structure of the AS, find the correct directory and then place it there manually. This makes knowledge of the service structure necessary and creates a horrible UX. Furthermore, tinkering with the file structure of the AS creates a possible source for errors.
 
-A workaround of this problem is to deploy a web server, which can redirect the image request, access the WSI and return it in response\cite{Tseytlin14}. The use of DZI creates another advantage here. The used image pyramid model reduces the network traffic necessary to load and show a WSI in a viewer\cite{Cornish13}\cite{DICOM10}.
+A workaround of this problem is to deploy a web server, which can redirect the image request, access the WSI and return it in response\cite{Tseytlin14}. The use of DZI creates another advantage: the used image pyramid model reduces the network traffic necessary to load and show a WSI in a viewer\cite{Cornish13}\cite{DICOM10}.
 
-Furthermore, even a single WSI takes up a lot of storage capacity\cite{Singh11}. Having multiple on a local storage would either create the need for huge amounts of available storage space or restrict the amount of accessible WSIs to a few at any given time. The latter solution would create two follow-up problems:
+Furthermore, even a single WSI takes up a lot of storage capacity\cite{Singh11}. Having multiple WSIs on a local hard drive would either create the need for huge amounts of available storage space or restrict the amount of accessible WSIs to a few at any given time. The latter solution would create two follow-up problems:
 \begin{itemize}
-	\item WSIs are medical images and as such confidential information. Therefore, not everyone is allowed to just have access to or copies of a WSI\cite{COA}\cite{USSanDiego}. URLs are easier to manage, since they access one centralized resource, making it easier to regulate access. Once a copy of a WSI changes hands, it is virtually impossible to make sure that privacy regulations are uphold.
-	\item With only a subset of all WSIs present at all times, the work of the user is impacted and slowed down greatly. It becomes necessary to make sure to have all WSIs of the current set in a completely annotated state without any errors, before switching to the next set, because the process of copying WSIs back and forth is time consuming. Correcting errors, as well as adding, updating and changing annotations will probably also involve the need to go over most or all WSIs the user has access to. Not only is this slow and inefficient, it also creates a new source for possible errors and mistakes.
+	\item WSIs are medical images and as such confidential information. Therefore, not everyone is allowed to just have access to or copies of them\cite{COA}\cite{USSanDiego}. Once a copy of a WSI changes hands, it is virtually impossible to make sure that privacy regulations will be uphold.	
+	\item With only a small amount out of all WSIs accessible at all times, the need for copying files back and forth arises as soon as the user wants to compare, update or correct a WSI, which is not on his local file system at the given moment. Not only is this a great source for possible errors, but also very time consuming and inefficient.
 \end{itemize}
 
-With the use of a web server as a central image repository, WSIs and the access to them can easily be managed in a centralized spot, while upholding confidentiality regulations. Furthermore, a user has access to all his WSIs at any given time, without the need for subsets or copying files back and forth.
-
-Depending on the setup of the network, other factors can come into play as well, such as access to and sharing of rare cases, educational material, training samples and consulting experts independent of their physical position on the planet\cite{Wilbur09}.
+With the use of a web server as a central image repository, WSIs and the access to them can be managed in a centralized spot, while upholding confidentiality regulations. Furthermore, a user has access to all of her/his WSIs at any given time, without the need for creating subsets and copying files back and forth. Depending on the setup of the network, other factors can come into play as well. Access to and sharing of rare cases, educational material and training samples can be granted without a complicated distribution chain and a smaller risk for confidentiality issues. It also enables the consultation of case experts independent of their physical position on the planet\cite{Wilbur09}.
 
 
 \subsubsection{Annotation Service Server}
-% web browser needs server to deliver images
+The ASS has 2 main purposes.
+
+First, it serves as a so called \emph{Digital Slide Repository} (DSR)\nmc{DSR}{Digital Slide Repository}. A DSR manages storage of WSIs and their metadata. Furthermore, it serves requested image data to a viewer client, such as the ASV\cite{Cornish13}. 
+
+Second, it is responsible for file management. In detail, this means:
+\begin{itemize}
+	\item persist made annotations in a file
+	\item deliver annotation data together with image data
+	\item serve list of all available label dictionaries
+	\item serve label dictionary entries
+	\item save added entries to existing label dictionary
+	\item create new label dictionaries
+\end{itemize}
+
+
+
+
 % local for now
 
 
 \subsubsection{Annotation Service Viewer}
-To enable the pathologist to view a WSI and make annotations, a GUI needs to be deployed. This GUI will be called Annotation Service Viewer and developed in an iterative approach with the help of selected pathologists. After each iteration, they'll evaluate the GUI and user experience (UX)\nmc{UX}{User Experience} of the ASV and give feedback. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
+To enable the pathologist to view a WSI and annotate it, a GUI needs to be deployed. This GUI will be called Annotation Service Viewer and developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
 
 \begin{figure}[H]
 	\begin{center}
@@ -55,23 +86,14 @@ To enable the pathologist to view a WSI and make annotations, a GUI needs to be 
 	\end{center}
 \end{figure}
 
-The first iteration of the AS will be based on Microdraw\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the Microdraw project} (see fig. \ref{fig4_microdrawUI} for it's GUI). Microdraw is a web application, which describes itself as
+The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraws GUI).  MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on another open source project, called \emph{OpenSeadragon}\cite{web:openseadragon}. Annotations are made possible by the use of \emph{Paper.js}\footnote{see \url{http://paperjs.org/} for more information on Paper.js}. Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{see \url{https://jquery.com/} for more information on jQuery}.
 
-\begin{quotation}
-	"[...] a collaborative vectorial annotation tool for ultra high resolution data, such as that produced by high-throughput histology." \cite{web:microdraw}
-\end{quotation}
-
-will run as a web application in a browser. Annotations will be made by selecting a shape or annotation method from the various tools in the toolbar (see the gray bar on the left in fig. 2.5). After selecting the area to be annotated, an actual description of that area can be made via keyboard input.
-
-
-\subsection{Functionality}
-% shortcuts, funtions, etc. pp.
 
 \section{Implementation}
 % what was used for implementation
 \subsection{Technologies and Frameworks}
 % openslide, openslide web server
-% python web server, flask, openslide, java script, html5, css
+% python web server, flask, openslide, java script, html5, css, jquery
 \subsection{Annotation Service Viewer}
 % documentation
 \subsection{Annotation Service Server}
