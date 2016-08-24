@@ -191,6 +191,12 @@ S.~Wienert et~al.
 \newblock
   \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
 
+\bibitem{web:flask}
+Flask.
+\newblock Flask user guide.
+\newblock \url{http://flask.pocoo.org/docs/0.11/}.
+\newblock Accessed: 24.08.2016.
+
 \bibitem{web:pyramidio}
 National~Institute for Standards and Technology.
 \newblock Pyramidio.

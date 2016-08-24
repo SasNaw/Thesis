@@ -107,11 +107,110 @@ Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, 
 
 
 \section{Implementation}
-% what was used for implementation
-\subsection{Technologies and Frameworks}
+The AS was realized in 2 components: the ASS and the ASV. The implementation of the ASS was done in python with the use of \emph{OpenSlide} and \emph{Flask}. The ASV was implemented using JavaScript, HTML5 and CSS3 with the use of \emph{OpenSeadragon}, \emph{jQuery} and \emph{Paper.js}.
+
+The following subsections will explain the implementation and used frameworks of the ASS (see 4.3.1) and the ASV (see 4.3.2), as well as the way how those 2 components work together (see 4.3.3).
+
+For a detailed explanation of the single functions of ASS and ASV, see Appendix B.
+
 % openslide, openslide web server
 % python web server, flask, openslide, java script, html5, css, jquery
-\subsection{Annotation Service Viewer}
-% documentation
 \subsection{Annotation Service Server}
-% documentation
+To make OpenSeadragon capable of viewing it anyway, OpenSlides \emph{DeepZoomGenerator} (DZG)\nmc{DeepZoomGenerator} is used. 
+% openslide
+% flask
+% how does it work?
+% where does it listen?
+% functions?
+
+\subsection{Annotation Service Viewer}
+% paper
+% osd
+% jquery
+% functions?
+% loading process
+% inizialization of paper and openseadragon
+% uses json to save annotations and dictionaries
+
+\subsection{Communication between Server and Viewer}
+
+The communication between Server and Viewer is realized by Flasks \emph{route() decorator} (see fig. \ref{fig4_routeDecorator}), which binds a URL to a function\cite{web:flask}. When bound, the function will be called, once the specified URL is requested by the client.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/route.png}
+		\caption{Hello, World! example on how to use Flasks route() decorator (source: \cite{web:flask})}
+		\label{fig4_routeDecorator}
+	\end{center}
+\end{figure}
+
+A bound URL can also contain variable sections, which are marked as \emph{/{\textless}variable name{\textgreater}}. Optionally, a converter can by used to only accept variables of a certain type. This becomes possible by specifying the converter in front of the variable: \emph{/{\textless}converter:variable name{\textgreater}}\cite{web:flask}. See tab. \ref{tab4_converter} for the list of available converters in Flask.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l |}
+			\hline
+			\textbf{name} & \textbf{accepted input}\\ \hline
+			string & any text without a slash (default)\\ \hline
+			int & integer values\\ \hline
+			float & floating point values\\ \hline
+			path & like string, but also accepts slashes \\ \hline
+			any & matches one of the items provided\\ \hline
+			uuid & UUID strings\\ \hline
+		\end{tabular}
+		\caption{Available converters in Flask (source: \cite{web:flask})}
+		\label{tab4_converter}
+	\end{center}
+\end{table}
+
+To bind a URL with one or more variable sections to a function, the corresponding function must have the variable sections as parameters:
+
+\begin{lstlisting}[frame=single]
+@app.route('/<slug>_files/<int:level>/<int:col>_
+	<int:row>.<format>')
+def tile(slug, level, col, row, format): ...
+\end{lstlisting}
+
+HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a 405 HTTP code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/HTTPmethods.png}
+		\caption{Example use of the method argument (source: \cite{web:flask})}
+		\label{fig4_methods}
+	\end{center}
+\end{figure}
+
+The following route() decorators are used for communication between ASS and ASV (URL:function(params)):
+
+\begin{enumerate}[(1) -]
+	\item\textbf{@app.route('/wsi/{\textless}path:file{\textunderscore}path{\textgreater}.dzi'):} \emph{index{\textunderscore}dzi(file{\textunderscore}path)}\\
+	This URL is used to request a viewer with a specified DZI from the ASS. The ASS then renders an ASV and passes the path (\emph{file{\textunderscore}path}) to the DZI, its microns per pixel (MPP)\nmc{MPP}{Microns per Pixel} and its name to it. The ASV feeds the path to OpenSeadragon, which then views the DZI. The MPP are used to calculate the actual image size in $\mu$m for the scale. Lastly, the file name is used to change the name of the browser tab accordingly.
+	
+	\item \textbf{@app.route('/wsi/{\textless}path:file{\textunderscore}path{\textgreater}'):} \emph{index{\textunderscore}wsi(file{\textunderscore}path)}\\
+	Works similar to (1), except that the requested image is not of the DZI format. To view it in OpenSeadragon anyway, an instance of the DZG is created which wraps the proprietary WSI. Then, a specific path ("\emph{/slide.dzi}") is handed to the ASV.
+	
+	\item \textbf{@app.route('/{\textless}slug{\textgreater}.dzi'):} \emph{dzi(slug)}\\
+	Once the ASV requests slide.dzi, the DZG builds a response with the descriptive DZI file, created from the proprietary WSI format (via its \emph{.get{\textunderscore}dzi(format)} function, with \emph{format} being the file format of the tiles) and serves it to the ASV.
+	
+	\item \textbf{@app.route('/{\textless}slug{\textgreater}{\textunderscore}files/'\\{\textless}int:level{\textgreater}{\textunderscore}{\textless}int:col{\textgreater}{\textunderscore}{\textless}int:row{\textgreater}.{\textless}format{\textgreater}):}\\ \emph{tile(slug, level, col, row, format)}\\
+	If an original DZI is requested, there is a \emph{/wsi/} in front of the URL. Therefore, this URL only triggers if (3) was called before. This way OpenSeadragon requests the separate tiles needed to fill the current view of the user. This is done via the DZG \emph{.get{\textunderscore}tile(level, address)} function. \emph{Level} describes the requested level, while \emph{address} is a tuple with the x (col) and y (row) position of the requested tile.
+	
+	\item \textbf{@app.route('/saveJson', methods=['POST']):} \emph{saveJson()}\\
+	This URL is used when the user wants to save made annotations. The name of the JSON file and the content to write into it will be send via the POST request. The content of the POST request can be accessed via Flasks \emph{Request} object\cite{web:flask} in the following fashion:
+	\begin{lstlisting}[frame=single]
+post_data = request.form
+source = post_data.get('file', default='')
+content = post_data.get('content', default='{}').
+	encode('utf-8')
+	\end{lstlisting}
+	
+	\item \textbf{@app.route('/loadJson'):} \emph{loadJson()}\\
+	(6) is used to load a JSON file, may that be the \emph{configuration.json}, a dictionary or saved annotations. The name of the source is passed as parameter (?src=[file]) to the ASS. Similar to (5), it can be accessed with the Request object\cite{web:flask}: \emph{request.args.get(parameter, default value)}.
+	
+	\item \textbf{@app.route('/createDictionary'):} \emph{createDictionary()}\\
+	If the user sends the command to create a new dictionary, this URL is called. The ASS then creates a new, empty dictionary file. The name of the dictionary is passed as a URL parameter (?name=[name]) and then acquired in the same fashion as in (5). The ASS also opens the configuration file and changes the currently selected dictionary to the newly created one.
+	
+	\item \textbf{@app.route('/getDictionaries'):} \emph{getDictionaries()}\\
+	When called, the ASS looks up the content of its \emph{dictionaries} folder and returns a list with the found file names or -1 in the case of an error.
+\end{enumerate}
