@@ -116,12 +116,14 @@ For a detailed explanation of the single functions of ASS and ASV, see Appendix 
 % openslide, openslide web server
 % python web server, flask, openslide, java script, html5, css, jquery
 \subsection{Annotation Service Server}
-To make OpenSeadragon capable of viewing it anyway, OpenSlides \emph{DeepZoomGenerator} (DZG)\nmc{DeepZoomGenerator} is used. 
+To make OpenSeadragon capable of viewing it anyway, OpenSlides \emph{DeepZoomGenerator} (DZG)\nmc{DeepZoomGenerator} is used.
 % openslide
 % flask
 % how does it work?
 % where does it listen?
 % functions?
+% uses json to save annotations and dictionaries
+% internal structure
 
 \subsection{Annotation Service Viewer}
 % paper
@@ -130,7 +132,6 @@ To make OpenSeadragon capable of viewing it anyway, OpenSlides \emph{DeepZoomGen
 % functions?
 % loading process
 % inizialization of paper and openseadragon
-% uses json to save annotations and dictionaries
 
 \subsection{Communication between Server and Viewer}
 
@@ -171,7 +172,7 @@ To bind a URL with one or more variable sections to a function, the correspondin
 def tile(slug, level, col, row, format): ...
 \end{lstlisting}
 
-HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a 405 HTTP code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
+HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a 405 HTTP status code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -181,7 +182,7 @@ HTTP knows different methods for accessing URLs. By default, a route only answer
 	\end{center}
 \end{figure}
 
-The following route() decorators are used for communication between ASS and ASV (URL:function(params)):
+The route() decorators used for communication between ASS and ASV are listed below. They first state their URL, then the bound function and parameter (\textbf{URL:} \emph{function(parameter)}), followed by a brief description of their functionality:
 
 \begin{enumerate}[(1) -]
 	\item\textbf{@app.route('/wsi/{\textless}path:file{\textunderscore}path{\textgreater}.dzi'):} \emph{index{\textunderscore}dzi(file{\textunderscore}path)}\\
