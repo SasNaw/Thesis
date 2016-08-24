@@ -13,6 +13,11 @@ Neuroanatomy Applied and Theoretical (NAAT).
 \newblock \url{http://microdraw.pasteur.fr/index.html}.
 \newblock Accessed: 23.08.2016.
 
+\bibitem{Bankman00}
+I.~Bankman.
+\newblock {\em Handbook of Medical Imaging: Processing and Analysis}.
+\newblock Academic Press.
+
 \bibitem{web:deepzoom}
 R.~Berta.
 \newblock deepzoom.
@@ -125,6 +130,18 @@ E.~Tseytlin et~al.
   2014.
 \newblock Accessed: 22.08.2016.
 
+\bibitem{Qi12}
+H.~Sharma et~al.
+\newblock Robust segmentation of overlapping cells in histopathology specimens
+  using parallel seed detection and repulsive level set.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(3).
+
+\bibitem{Sharma16}
+H.~Sharma et~al.
+\newblock Deep convolutional neural networks for histological image analysis in
+  gastric cancer whole slide images.
+\newblock {\em Computerized Medical Imaging and Graphics}, December 2016.
+
 \bibitem{web:iiif}
 M.~Appleby et~al.
 \newblock Iiif image api 2.0.
@@ -158,6 +175,14 @@ R.~Singh et~al.
 S.~Park et~al.
 \newblock Digital imaging in pathology.
 \newblock {\em Clin Lab Med}, 4(32), December 2012.
+
+\bibitem{Wienert12}
+S.~Wienert et~al.
+\newblock Detection and segmentation of cell nuclei in virtual microscopy
+  images: A minimum-model approach.
+\newblock {\em Scientific Reports}, 2(503), Juli 2012.
+\newblock
+  \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
 
 \bibitem{web:pyramidio}
 National~Institute for Standards and Technology.
@@ -234,6 +259,11 @@ K.~Martinez J.~Cupitt.
   -- 577, September 2005.
 \newblock \url{http://eprints.soton.ac.uk/262371/}.
 
+\bibitem{Angulo10}
+K.~Martinez J.~Cupitt.
+\newblock Nucleus modelling and segmentation in cell clusters.
+\newblock {\em Mathematics in Industry}, 15, May 2010.
+
 \bibitem{Lewis14}
 M.~Fowler J.Lewis.
 \newblock Microservices, a definition of this new architectural term.
@@ -252,6 +282,12 @@ JPEG.
 D.~Kriesel.
 \newblock {\em A Brief Introduction to Neural Networks}, 2007.
 \newblock \url{http://www.dkriesel.com/en/science/neural_networks}.
+
+\bibitem{Liu12}
+D.~Liu.
+\newblock A review of computer vision segmentation algorithms.
+\newblock Technical report, University of Washington, 2012.
+\newblock \url{https://homes.cs.washington.edu/~bilge/remote.pdf}.
 
 \bibitem{Rabbani02}
 R.~Joshi M.~Rabbani.
@@ -326,12 +362,6 @@ US~San Diego~Health System.
 \newblock
   \url{https://health.ucsd.edu/about/volunteer/Documents/Confidentiality%20Agreement%20D214.pdf}.
 \newblock Accessed: 22.08.2016.
-
-\bibitem{web:microdraw}
-R.~Toro.
-\newblock Microdraw repository.
-\newblock \url{https://github.com/r03ert0/microdraw/wiki}.
-\newblock Accessed: 23.08.2016.
 
 \bibitem{Wolff16}
 E.~Wolff.

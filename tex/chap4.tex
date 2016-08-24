@@ -24,18 +24,26 @@ Because of this, the AS will be implemented as a web browser application.
 \subsection{Functionality of the Annotation Service}
 The goal of viewing a WSI (1) is a straight forward task. (2) and (3) are more elusive. For that reason, this subsection elaborates on the functionality needed to help achieve those objectives.
 
-Annotations will be created by drawing directly onto the viewed WSI. If the user spots a region of interest, a contour can be drawn around it. This can  either be done in a free hand or polygon mode. In free hand mode, the contour will follow the mouse pointer until the mode is disabled again, all the while drawing a contour. Upon deactivation, the contour will be closed. In polygon mode, the user can place coordinates which will be connected from one to another in the order they're placed in. A contour in this mode considers to be closed, once a point on the contour is clicked a second time.
+Annotations will be created by drawing directly onto the viewed WSI. If the user spots a region of interest, a contour can be drawn around it. This can  either be done in \emph{free hand} or \emph{polygon mode}. In free hand mode, the contour will be drawn along the path of the mouse pointer, until the mode is disabled again. Upon deactivation, the contour will be closed. In polygon mode, the user can place coordinates which will be connected from one to another in the order they're placed in. A contour in this mode considers to be closed, once a point on the contour is clicked a second time. A marked region of interest is simply called \emph{region} from this point on.
 
+The information what a region is surrounded by can be as valuable as the information about the region itself\cite{Bankman00}. Therefore, every region will have a \emph{context} trait, which lists every label of regions it touches, crosses, surrounds or is surrounded by (see fig. \ref{fig4_contextregions}).
 
-% draw free hand or draw polygon
-% set poi
-% measure distance
-% create dictionaries
-% activate differnt dictionaries
-% add labels to dictionaries
-% select labels
-% why dictionaries and labels can only be deleted by manipulating the file on the server, but regions can be deleted?
-% regions and context regions
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.8]{img/contextregions.png}
+		\caption{Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}
+		\label{fig4_contextregions}
+	\end{center}
+\end{figure}
+% TODO: add figure about context regions
+
+Another way of creating regions will be so called \emph{points of interest} (POI)\nmc{POI}{Point of Interest}. A POI will be placed with a mouse click. After that, an external script will be invoked to run an automated segmentation in the proximity of the POI and return with a contour which will be marked as region. The segmentation approaches may differ drastically in different scenarios\cite{Liu12}, therefore the script will be interchangeable\footnote{There are many different ways of how to approach the topic of segmentation (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12}, \cite{Angulo10} for cell segmentation alone). Writing a fully working segmentation script is worth another thesis by itself, therefore only a dummy implementation will be delivered with this work.}.
+
+Each region has a \emph{label} associated to it. A label is a predefined string, which describes what the region just created shows. The labels available will be determined through a \emph{label dictionary}, which is a container that offers a list of strings to select from. This approach guarantees a unified labeling, independent of a specific WSI or pathologist. The option to choose between multiple available label dictionaries opens up the possibility of creating dictionaries which are specialized on certain cases or studies. Again, to keep up labeling integrity, labels can only be selected from one dictionary per WSI.
+
+Users will be able to create new, empty dictionaries, if the need arises. Furthermore, they will be able to add entries to existing and new dictionaries alike, to further advance or specialize them. To delete single entries or whole dictionaries, file access to the server is necessary. This is due to the fact, that knowledge can by added without direct negative consequences. Deleting existing knowledge influences all WSIs on which this knowledge was used, may it be as a label or a whole dictionary.
+
+To support the user in annotating a WSI, a distance measurement tool will be usable as well. This tool can measure the distance between 2 pixels in $\mu$m.
 
 
 \subsection{Parts of the Annotation Service}

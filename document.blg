@@ -3,49 +3,66 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-Repeated entry---line 65 of file ./bibl/bibl.bib
+I was expecting a `,' or a `}'---line 10 of file ./bibl/bibl.bib
+ :   
+ :   pages = "217 - 222"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 75 of file ./bibl/bibl.bib
  :  @article{Park12
  :                 ,
 I'm skipping whatever remains of this entry
-You've used 51 entries,
+I was expecting a `,' or a `}'---line 91 of file ./bibl/bibl.bib
+ :   
+ :   year      = "2012",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Unbalanced braces---line 162 of file ./bibl/bibl.bib
+ :  
+ :  }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty year in Bankman00
+Warning--empty year in Qi12
+You've used 56 entries,
             2118 wiz_defined-function locations,
-            776 strings with 11512 characters,
-and the built_in function-call counts, 11395 in all, are:
-= -- 1125
-> -- 369
+            805 strings with 12264 characters,
+and the built_in function-call counts, 12459 in all, are:
+= -- 1229
+> -- 404
 < -- 1
-+ -- 163
-- -- 106
-* -- 407
-:= -- 1968
-add.period$ -- 196
-call.type$ -- 51
-change.case$ -- 200
++ -- 179
+- -- 116
+* -- 468
+:= -- 2171
+add.period$ -- 212
+call.type$ -- 56
+change.case$ -- 220
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 436
-empty$ -- 1104
-format.name$ -- 106
-if$ -- 2461
+cite$ -- 58
+duplicate$ -- 489
+empty$ -- 1189
+format.name$ -- 116
+if$ -- 2670
 int.to.chr$ -- 0
-int.to.str$ -- 51
-missing$ -- 22
-newline$ -- 301
-num.names$ -- 102
-pop$ -- 379
+int.to.str$ -- 56
+missing$ -- 28
+newline$ -- 327
+num.names$ -- 112
+pop$ -- 392
 preamble$ -- 1
-purify$ -- 155
+purify$ -- 170
 quote$ -- 0
-skip$ -- 322
+skip$ -- 357
 stack$ -- 0
-substring$ -- 318
-swap$ -- 63
+substring$ -- 344
+swap$ -- 67
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 192
-warning$ -- 0
-while$ -- 105
-width$ -- 53
-write$ -- 586
-(There was 1 error message)
+type$ -- 210
+warning$ -- 2
+while$ -- 115
+width$ -- 58
+write$ -- 641
+(There were 4 error messages)
