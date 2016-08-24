@@ -65,7 +65,7 @@ With the use of a web server as a central image repository, WSIs and the access 
 \subsubsection{Annotation Service Server}
 The ASS has 2 main purposes.
 
-First, it serves as a so called \emph{Digital Slide Repository} (DSR)\nmc{DSR}{Digital Slide Repository}. A DSR manages storage of WSIs and their metadata. Furthermore, it serves requested image data to a viewer client, such as the ASV\cite{Cornish13}. 
+First, it serves as a so called \emph{Digital Slide Repository} (DSR)\nmc{DSR}{Digital Slide Repository}. A DSR manages storage of WSIs and their metadata. Additionally, it serves requested image data to a viewer client\cite{Cornish13}, such as the ASV. 
 
 Second, it is responsible for file management. In detail, this means:
 \begin{itemize}
@@ -74,17 +74,24 @@ Second, it is responsible for file management. In detail, this means:
 	\item serve list of all available label dictionaries
 	\item serve label dictionary entries
 	\item save added entries to existing label dictionary
-	\item create new label dictionaries
+	\item create new, empty label dictionaries
+\end{itemize} 
+
+The development of a fully functional web server isn't in the scope of this thesis. Therefore, the ASS will run as a local web server. This works around many of the common issues when hosting a web server\cite{web:typicalissues}, such as:
+
+\begin{itemize}
+	\item inefficient data or page caching
+	\item firewall throughput
+	\item internet access throughput
+	\item load balance issues
+	\item gateway issues
+	\item poor security design
+	\item connectivity issues
 \end{itemize}
 
 
-
-
-% local for now
-
-
 \subsubsection{Annotation Service Viewer}
-To enable the pathologist to view a WSI and annotate it, a GUI needs to be deployed. This GUI will be called Annotation Service Viewer and developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
+The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it. The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
 
 \begin{figure}[H]
 	\begin{center}
@@ -94,7 +101,9 @@ To enable the pathologist to view a WSI and annotate it, a GUI needs to be deplo
 	\end{center}
 \end{figure}
 
-The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraws GUI).  MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on another open source project, called \emph{OpenSeadragon}\cite{web:openseadragon}. Annotations are made possible by the use of \emph{Paper.js}\footnote{see \url{http://paperjs.org/} for more information on Paper.js}. Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{see \url{https://jquery.com/} for more information on jQuery}.
+The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraws GUI).  MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on another open source project, called \emph{OpenSeadragon}\cite{web:openseadragon}. Annotations are made possible by the use of \emph{Paper.js}\footnote{see \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the functionality specified in 4.2.1 and can be further adjusted to the needs of the ASV.
+
+Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{see \url{https://jquery.com/} for more information on jQuery}.
 
 
 \section{Implementation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  24 AUG 2016 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  24 AUG 2016 15:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1122,28 +1122,28 @@ Package pdftex.def Info: img/contextregions.png used on input line 33.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.41 
-      <./img/contextregions.png>] [41]
-<img/microdrawUI.png, id=1029, 1509.64pt x 874.26625pt>
+      <./img/contextregions.png>] [41] [42]
+<img/microdrawUI.png, id=1039, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
-Package pdftex.def Info: img/microdrawUI.png used on input line 91.
+Package pdftex.def Info: img/microdrawUI.png used on input line 98.
 (pdftex.def)             Requested size: 301.92265pt x 174.85014pt.
- [42]) (./tex/chap5.tex [43pdfTeX warning (ext4): destination with the same ide
-ntifier (name{figure.4.2}) has been already used, duplicate ignored
+ [43pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1 \chapter
-            {Tessellation Service} <./img/microdrawUI.png>]
+l.107 
+       <./img/microdrawUI.png>]) (./tex/chap5.tex [44]
 Chapter 5.
-) (./tex/chap6.tex [44
+) (./tex/chap6.tex [45
 
 ]
 Chapter 6.
-) [45
+) [46
 
-] [46
+] [47
 
 
 ] (./tex/app1.tex
@@ -1184,7 +1184,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 []\OT1/cmr/m/n/10 Table A.2: []Generic Tiled tiff data set (source:
  []
 
-[47
+[48
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.1})
  has been already used, duplicate ignored
@@ -1253,7 +1253,7 @@ Overfull \hbox (19.61179pt too wide) in paragraph at lines 86--86
 edu/download/openslide-
  []
 
-[48pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[49pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1372,7 +1372,7 @@ Overfull \hbox (22.83405pt too wide) in paragraph at lines 112--112
 edu/download/openslide-
  []
 
-[49pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[50pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1389,7 +1389,7 @@ Overfull \hbox (26.50066pt too wide) in paragraph at lines 128--128
 u.edu/download/openslide-
  []
 
-[50pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
+[51pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1406,7 +1406,7 @@ Overfull \hbox (26.50066pt too wide) in paragraph at lines 143--143
 u.edu/download/openslide-
  []
 
-) (./document.bbl [51pdfTeX warning (ext4): destination with the same identifie
+) (./document.bbl [52pdfTeX warning (ext4): destination with the same identifie
 r (name{table.1.A.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1419,140 +1419,158 @@ l.1 \begin{thebibliography}{10}
                                                   \fi \fi 
 l.1 \begin{thebibliography}{10}
                                ]
-Underfull \hbox (badness 10000) in paragraph at lines 29--35
+Underfull \hbox (badness 5954) in paragraph at lines 11--16
+[]\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
+t/m/n/10 http : / / www .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+\OT1/cmtt/m/n/10 agileload . com / performance -[] testing / performance -[] te
+sting -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
+\OT1/cmtt/m/n/10 methodology / performance -[] symptoms -[] and -[] issues$[]\O
+T1/cmr/m/n/10 .  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--42
 \OT1/cmtt/m/n/10 / / www . nirmata . com / 2015 / 02 / microservices -[] five -
 [] architectural -[]
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 44--51
+Underfull \hbox (badness 1931) in paragraph at lines 51--58
 \OT1/cmr/m/n/10 im-age anal-y-sis.  []$\OT1/cmtt/m/n/10 http : / / www . hopkin
 smedicine . org / mcp / PHENOCORE /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--51
+Underfull \hbox (badness 10000) in paragraph at lines 51--58
 \OT1/cmtt/m/n/10 CoursePDFs / 2013 / 13 % 2019 % 20Cornish % 20Digital % 20Path
  . pdf$[]\OT1/cmr/m/n/10 , July
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--61
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
 []\OT1/cmr/m/n/10 T. Cramer.  The in-ter-na-tional im-age in-ter-op-er-abil-ity
  frame-
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 53--61
+Underfull \hbox (badness 5331) in paragraph at lines 60--68
 \OT1/cmr/m/n/10 work (iiif): Lay-ing the foun-da-tion for com-mon ser-vices, in
 -te-
  []
 
 
-Underfull \hbox (badness 3780) in paragraph at lines 53--61
+Underfull \hbox (badness 3780) in paragraph at lines 60--68
 \OT1/cmr/m/n/10 grated re-sources and a mar-ket-place of tools for schol-ars wo
 rld-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--61
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
 \OT1/cmr/m/n/10 wide.  []$\OT1/cmtt/m/n/10 https : / / www . cni . org / topics
  / information -[] access -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--61
+Underfull \hbox (badness 10000) in paragraph at lines 60--68
 \OT1/cmtt/m/n/10 retrieval / international -[] image -[] interoperability -[] f
 ramework$[]\OT1/cmr/m/n/10 ,
  []
 
-[52
+[53
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 91--95
+Underfull \hbox (badness 2608) in paragraph at lines 98--102
 []\OT1/cmr/m/n/10 digitalpreservation.  Tiff.  []$\OT1/cmtt/m/n/10 http : / / w
 ww . digitalpreservation . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--132
+Underfull \hbox (badness 10000) in paragraph at lines 133--139
 \OT1/cmtt/m/n/10 com / sites / default / files / archives / 2014 / Day2 / 20140
 514 % 201120 %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--157
+Underfull \hbox (badness 10000) in paragraph at lines 159--164
 \OT1/cmtt/m/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--165
+Underfull \hbox (badness 10000) in paragraph at lines 166--172
 \OT1/cmtt/m/n/10 imaging -[] in -[] pathology -[] advantages -[] limitations -[
 ] and -[] emerging -[] p -[]
  []
 
-[53]
-Underfull \hbox (badness 3158) in paragraph at lines 167--173
+[54]
+Underfull \hbox (badness 3158) in paragraph at lines 174--180
 []\OT1/cmr/m/n/10 R. Singh et al.  Stan-dard-iza-tion in dig-i-tal pathol-ogy: 
 Sup-ple-
  []
 
 
-Underfull \hbox (badness 3568) in paragraph at lines 218--223
+Underfull \hbox (badness 3568) in paragraph at lines 225--230
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/m/n/10 http : / / o
 penseadragon . github . io /
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 237--243
+Underfull \hbox (badness 2134) in paragraph at lines 244--250
 \OT1/cmr/m/n/10 cons.  []$\OT1/cmtt/m/n/10 http : / / www . optimusinfo . com /
  downloads / white -[] paper / open -[]
  []
 
 
-Underfull \hbox (badness 2582) in paragraph at lines 237--243
+Underfull \hbox (badness 2582) in paragraph at lines 244--250
 \OT1/cmtt/m/n/10 source -[] vs -[] proprietary -[] software -[] pros -[] and -[
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[54]
-Underfull \hbox (badness 3229) in paragraph at lines 299--304
+[55]
+Underfull \hbox (badness 3229) in paragraph at lines 306--311
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
  []
 
 
-Underfull \hbox (badness 6364) in paragraph at lines 299--304
+Underfull \hbox (badness 6364) in paragraph at lines 306--311
 \OT1/cmr/m/n/10 Uris.  []$\OT1/cmtt/m/n/10 https : / / developer . mozilla . or
 g / en -[] US / docs / Same -[] origin _
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 319--324
+Underfull \hbox (badness 1270) in paragraph at lines 326--331
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/m/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--324
+Underfull \hbox (badness 10000) in paragraph at lines 326--331
 \OT1/cmtt/m/n/10 Contribution % 20Folders / WebContent / pdf / pm -[] sample -[
 ] employment -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--339
+Underfull \hbox (badness 10000) in paragraph at lines 339--346
 \OT1/cmtt/m/n/10 architecture -[] the -[] good -[] the -[] bad -[] and -[] what
  -[] you -[] could -[] be -[] doing -[]
  []
 
-[55]
-Underfull \hbox (badness 10000) in paragraph at lines 360--365
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 367--372
 \OT1/cmtt/m/n/10 / / health . ucsd . edu / about / volunteer / Documents / Conf
 identiality %
  []
 
-) [56] (./document.lof
+) [57] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/m/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -1580,7 +1598,7 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [57
+ [58
 
 ] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
@@ -1640,11 +1658,11 @@ Overfull \hbox (41.66739pt too wide) in paragraph at lines 24--24
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [58
+ (./document.nls [59
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
- [59
+ [60
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 122.
@@ -1656,10 +1674,10 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
  ) 
 Here is how much of TeX's memory you used:
- 9169 strings out of 493029
- 127272 string characters out of 6136235
- 366154 words of memory out of 5000000
- 12144 multiletter control sequences out of 15000+600000
+ 9172 strings out of 493029
+ 127320 string characters out of 6136235
+ 367194 words of memory out of 5000000
+ 12145 multiletter control sequences out of 15000+600000
  10131 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,32p,1285b,1102s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1681,10 +1699,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (62 pages, 4331148 bytes).
+Output written on document.pdf (63 pages, 4332598 bytes).
 PDF statistics:
- 1450 PDF objects out of 1728 (max. 8388607)
- 1319 compressed objects within 14 object streams
- 389 named destinations out of 1000 (max. 500000)
+ 1460 PDF objects out of 1728 (max. 8388607)
+ 1328 compressed objects within 14 object streams
+ 391 named destinations out of 1000 (max. 500000)
  600 words of extra memory for PDF output out of 10000 (max. 10000000)
 

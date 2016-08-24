@@ -7,6 +7,13 @@ L.~Fei-Fei A.~Karpathy.
 \newblock Department of Computer Science, Standford University, 2015.
 \newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
 
+\bibitem{web:typicalissues}
+AgileLoad.
+\newblock Performance symptoms and issues.
+\newblock
+  \url{http://www.agileload.com/performance-testing/performance-testing-methodology/performance-symptoms-and-issues}.
+\newblock Accessed: 24.08.2016.
+
 \bibitem{web:microdraw2}
 Neuroanatomy Applied and Theoretical (NAAT).
 \newblock Microdraw.
