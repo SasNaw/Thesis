@@ -112,7 +112,7 @@ Ventanas WSIs are single-file BigTIFF images, organized in the typical pyramidic
 	
 \subsection{Open Formats}
 \label{sec2_openFormats}
-As mentioned in \ref{sec2_proprietaryForams}, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
+As mentioned in \ref{sec2_proprietaryForams}, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can not take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
 
 To resolve these issues, open image formats have been suggested, which will be discussed further in the following subsections.
 
@@ -235,7 +235,7 @@ Loris and IIPImageserver are examples for open source IIIF API compliant systems
 \end{itemize}
 
 \subsubsection{OpenStreetMap/Tiled Map Service}
-OpenStreetMap (OSM)\nmc{OSM}{OpenStreetMap} is a popular tile source used in many online geographic mapping specifications\cite{web:openseadragon}. It's a community driven alternative to services such as Google Maps. Information is added by users via aerial images, GPS devices and field maps. All OSM data is classified as \emph{open data}, meaning that it can be used anywhere, as long as the OSM Foundation is credited\cite{web:osm}.
+OpenStreetMap (OSM)\nmc{OSM}{OpenStreetMap} is a popular tile source used in many online geographic mapping specifications\cite{web:openseadragon}. It is a community driven alternative to services such as Google Maps. Information is added by users via aerial images, GPS devices and field maps. All OSM data is classified as \emph{open data}, meaning that it can be used anywhere, as long as the OSM Foundation is credited\cite{web:osm}.
 
 Tiled Map Service (TMS)\nmc{TMS}{Tiled Map Service} is a tile scheme developed by the Open Source Geospatial Foundation (OSGF)\nmc{OSGF}{Open Source Geospatial Foundation}\cite{web:openseadragon} and specified in \cite{web:tms}. The OSGF is a nonprofit organization whose goal it is to support the needs of the open source geospatial community. TMS provides access to cartographic maps of geo-referenced data. Access to these resources is provided via a "REST" interface, starting with a root resource describing available layers, then map resources with a set of scales, then scales holding sets of tiles\cite{web:tms}.
 
@@ -248,7 +248,7 @@ Both, OSM and TMS, offer zooming images, which in general, have the functionalit
 	"JPEG 2000 is an image coding system that uses state-of-the-art compression techniques based on wavelet technology. Its architecture lends itself to a wide range of uses from portable digital cameras through to advanced pre-press, medical imaging and other key sectors."
 \end{quotation}
 
-It incorporates a mathematically lossless compression mode, in which the storage requirement of images can be reduced by an average of 2:1. On top of that, there is a visually lossless compression mode\footnote{At \emph{visually lossless compression rates, even a trained observer can't see the difference between original and compressed version\cite{intoPix08}.}} with compression rates between 10:1 to 20:1\cite{intoPix08}. JPEG 2000 code streams offer mechanisms to support random access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality\cite{Taubmann01}. 
+It incorporates a mathematically lossless compression mode, in which the storage requirement of images can be reduced by an average of 2:1. On top of that, there is a visually lossless compression mode\footnote{At \emph{visually lossless compression rates, even a trained observer can not see the difference between original and compressed version\cite{intoPix08}.}} with compression rates between 10:1 to 20:1\cite{intoPix08}. JPEG 2000 code streams offer mechanisms to support random access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality\cite{Taubmann01}. 
 
 In the compression process, JPEG 2000 partitions an image into rectangular and non-overlapping tiles of equal size (except for tiles at the image borders). The tile size is arbitrary and
 can be as large as the original image itself (resulting in only one tile) or as small as a single pixel. Furthermore, the image gets decomposed into a multiple resolution representation\cite{Rabbani02}. 
@@ -282,7 +282,7 @@ Artificial NNs are a group of models inspired by Biological Neural Networks (BNN
 	\end{center}
 \end{figure}
 
-Although artificial NNs are much simpler in comparison\footnote{Usually, they don't have much more than a few dozen neurons\cite{Bourg04}.}, they generally work in the same fashion.
+Although artificial NNs are much simpler in comparison\footnote{Usually, they do not have much more than a few dozen neurons\cite{Bourg04}.}, they generally work in the same fashion.
 
 One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig \ref{fig2_nn} shows an exemplary NN with neurons and the connections between them.
 
@@ -417,7 +417,7 @@ The following section elaborates on the concept of \emph{Microservices} (MS)\nmc
 
 \subsection{Definition}
 \label{sec2_msDef}
-MS are an interpretation of the Service Oriented Architecture. The concept is to separate one monolithic software construct into several smaller, modular pieces of software\cite{Wolff16}. As such, MS are a modularization concept. However, they differ from other such concepts, since MS are independent from each other. This is a trait, other modularization concepts usually lack\cite{Wolff16}. As a result, changes in one MS don't bring up the necessity of deploying the whole product cycle again, but just the one service. This can be achieved by turning each MS into an independent process with its own runtime\cite{Lewis14}.
+MS are an interpretation of the Service Oriented Architecture. The concept is to separate one monolithic software construct into several smaller, modular pieces of software\cite{Wolff16}. As such, MS are a modularization concept. However, they differ from other such concepts, since MS are independent from each other. This is a trait, other modularization concepts usually lack\cite{Wolff16}. As a result, changes in one MS do not bring up the necessity of deploying the whole product cycle again, but just the one service. This can be achieved by turning each MS into an independent process with its own runtime\cite{Lewis14}.
 
 This modularization creates an information barrier between different MS. Therefore, if MS need to share data or communicate with each other, light weight communication mechanisms must be established, such as a RESTful API\cite{Riggins15}.
 
@@ -459,7 +459,7 @@ The small and focused nature of MS makes scaling, updates, general changes and t
 Another advantage is how well MS plays into the hands of agile, scrum and continuous software development processes, due to their previously discussed inherent traits.
 
 % cons
-The modularization of MS doesn't only yield advantages. Since each MS has its own, closed off data management\footnote{See subsection \ref{sec2_msDef} - \emph{Decentralized Data Management}}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
+The modularization of MS does not only yield advantages. Since each MS has its own, closed off data management\footnote{See subsection \ref{sec2_msDef} - \emph{Decentralized Data Management}}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
 
 2.3.1(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
 
@@ -469,9 +469,9 @@ It often makes sense to share code inside a system to not replicate functionalit
 \subsection{Conclusion}	
 The tools needed to achieve the research objective stated in subsection \ref{sec1_researchObjective} will be implemented by using the MS modularization patterns. Due to the implementation being done by a single person, some of the inherent disadvantages of MS are negated (making them a favorable modularization concept):
 \begin{itemize}
-	\item Interprocess communication doesn't arise between the single stages of the process chain, since they have a set order\footnote{E.g. it wouldn't make sense trying to extract a training sample without converting or annotating a WSI first.}
+	\item Interprocess communication does not arise between the single stages of the process chain, since they have a set order\footnote{E.g. it would not make sense trying to extract a training sample without converting or annotating a WSI first.}
 	\item Different technologies may be chosen for the single steps of the process chain, however, working alone on the project makes technological incompatibilities instantly visible
-	\item The services shouldn't share functionality, therefore there should be no need for shared libraries
+	\item The services should not share functionality, therefore there should be no need for shared libraries
 \end{itemize}
 This makes the advantages outweight the disadvantages clearly:
 \begin{itemize}
@@ -520,7 +520,7 @@ A MS will be introduced for each group in the subsections \ref{sec2_cs} - \ref{s
 
 \subsection{Conversion Service}
 \label{sec2_cs}
-The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the vendor's system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{Compare subsections \ref{sec2_proprietaryForams} and \ref{sec2_openFormats}} (see fig. \ref{fig2_processChainA}).
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the vendor system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{Compare subsections \ref{sec2_proprietaryForams} and \ref{sec2_openFormats}} (see fig. \ref{fig2_processChainA}).
 
 \begin{figure}[H]
 	\begin{center}
