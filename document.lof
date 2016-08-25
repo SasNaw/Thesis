@@ -21,8 +21,8 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{40}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Microdraw GUI with opened WSI}}{43}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Hello, World! example on how to use Flasks route() decorator (source: \cite {web:flask})}}{46}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Example use of the method argument (source: \cite {web:flask})}}{47}{figure.4.4}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Hello, World! example on how to use Flasks route() decorator (source: \cite {web:flask})}}{45}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example use of the method argument (source: \cite {web:flask})}}{46}{figure.4.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

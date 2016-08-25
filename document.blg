@@ -24,45 +24,45 @@ Unbalanced braces---line 162 of file ./bibl/bibl.bib
 I'm skipping whatever remains of this entry
 Warning--empty year in Bankman00
 Warning--empty year in Qi12
-You've used 58 entries,
+You've used 59 entries,
             2118 wiz_defined-function locations,
-            814 strings with 12524 characters,
-and the built_in function-call counts, 12885 in all, are:
-= -- 1271
-> -- 418
+            819 strings with 12643 characters,
+and the built_in function-call counts, 13084 in all, are:
+= -- 1290
+> -- 425
 < -- 1
-+ -- 185
-- -- 120
-* -- 478
-:= -- 2243
-add.period$ -- 220
-call.type$ -- 58
-change.case$ -- 228
++ -- 188
+- -- 122
+* -- 488
+:= -- 2278
+add.period$ -- 223
+call.type$ -- 59
+change.case$ -- 231
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 503
-empty$ -- 1233
-format.name$ -- 120
-if$ -- 2764
+cite$ -- 61
+duplicate$ -- 512
+empty$ -- 1251
+format.name$ -- 122
+if$ -- 2804
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 59
 missing$ -- 28
-newline$ -- 339
-num.names$ -- 116
-pop$ -- 412
+newline$ -- 344
+num.names$ -- 118
+pop$ -- 416
 preamble$ -- 1
-purify$ -- 176
+purify$ -- 179
 quote$ -- 0
-skip$ -- 367
+skip$ -- 374
 stack$ -- 0
-substring$ -- 354
-swap$ -- 69
+substring$ -- 359
+swap$ -- 71
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 218
+type$ -- 222
 warning$ -- 2
-while$ -- 119
-width$ -- 60
-write$ -- 663
+while$ -- 121
+width$ -- 61
+write$ -- 673
 (There were 4 error messages)

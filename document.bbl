@@ -32,6 +32,11 @@ R.~Berta.
   \url{http://search.cpan.org/~drrho/Graphics-DZI-0.05/script/deepzoom}.
 \newblock Accessed: 22.08.2016.
 
+\bibitem{Brandl16}
+G.~Brandl.
+\newblock {\em Python Web Server Gateway Interface v1.0}, June 2016.
+\newblock \url{https://hg.python.org/peps/file/tip/pep-0333.txt}.
+
 \bibitem{Bugwadia15}
 J.~Bugwadia.
 \newblock Microservices: Five architectural constraints.
