@@ -1,9 +1,10 @@
 \chapter{Introduction}
 
+\review{Ist das absicht das die Referenzen hardgecoded sind? In diesem Fall ignoriere meine Änderungen an Section 2.1.1 =)}
 \section{Motivation}
-The medical discipline of pathology is in a digital transformation. Instead of looking at tissue samples through the means of traditional light microscopy, it now is possible to digitalize those samples. This digitalization is done with the help of a so called slide scanner. The result of such an operation is a \emph{whole slide image} (WSI)\nmc{WSI}{Whole Slide Image}\cite{Cornish13}. The digital nature of WSIs opens the door to the realm of image processesing and analysis which yields certain benefits, such as the use of image segmentation and registration methods to support the pathologist in his/her work.
+The medical discipline of pathology is in a digital transformation. Instead of looking at tissue samples through the means of traditional light microscopy, it is now possible to digitize those samples. This digitalization is done with the help of a so called slide scanner. The result of such an operation is a \emph{whole slide image} (WSI)\nmc{WSI}{Whole Slide Image}\cite{Cornish13}. The digital nature of WSIs opens the door to the realm of image processesing and analysis which yields certain benefits, such as the use of image segmentation and registration methods to support the pathologist in his/her work.
 
-A very promising novel approach to image analysis is the use of \emph{neural networks}\footnote{See chapter 2.2}\nmc{NN}{Neural Network}. These are a group of models inspired by our current understanding of biological NN. In them, regardless if artificial or biological, many neurons are interconnected with each other. The construct of interconnected neurons is what we consider a NN. Each single one of those neurons has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. The connections between the neurons are weighted and can dampen or strengthen a signal. Because of this, old pathways can be blocked and new ones created. In other words, a NN is capable of "learning"\cite{Kriesel07}. This is a huge advantage compared to other software models. While certain problems are "easier" to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems (e.g. image segmentation or object recognition) are very complex, so that new approaches are needed, while other problems can't be solved algorithmic at all. With the use of adequate training samples, a NN can learn to solve a problem, much like a human.
+A very promising approach to image analysis is the use of \emph{neural networks}\footnote{See chapter 2.2}\nmc{NN}{Neural Network}. These are a group of \review{(computational? neural? software?)} models inspired by our current understanding of biological NN. The construct of many interconnected neurons is considered a NN (both in the biological and artificial context). Each single one of those neurons has input values and an output value. Once the input reaches a certain trigger point, the cell in the neuron sends a signal as output. The connections between the neurons are weighted and can dampen or strengthen a signal. Because of this, old pathways can be blocked and new ones created. In other words, a NN is capable of "learning"\cite{Kriesel07}. This is a huge advantage compared to other software models. While certain problems are "easier" to solve in a sequential, algorithmic fashion (say an equation or the towers of hanoi), certain problems (e.g. image segmentation or object recognition) are very complex, so that new approaches are needed, while other problems can't be solved algorithmically at all. With the use of adequate training samples, a NN can learn to solve a problem, much like a human.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -13,11 +14,11 @@ A very promising novel approach to image analysis is the use of \emph{neural net
 	\end{center}
 \end{figure}
 
-Their use, especially in the area of image classification and object recognition, enabled big breakthroughs in the recent past. Karpathy and Fei-Fei, for example, created a NN that is capable of describing an image or a scene with written text\cite{Karpathy15} (see fig. 1.1 for a selection of examples).
+In the recent past the use of NN enabled major breakthroughs, especially in the area of image classification and object recognition. Karpathy and Fei-Fei, for example, created a NN that is capable of describing an image or a scene using natural language text blocks \cite{Karpathy15} (see fig. 1.1 for a selection of examples).
 
-There is enormous potential in the use of NN in the digital pathology as well, but to transfer these models and technologies, certain hindrances must be overcome. One of those hindrances is the need for proper training samples. While generally there are large amounts of WSIs (e.g. publicly available at the Cancer Genome Atlas\footnote{\url{https://gdc-portal.nci.nih.gov/}}), most of them won't be usable without further preparation as a training sample. One way of preparing them are annotations. These can be added to the WSIs, stored and later used for training. The result of such an approach could be similar to the one of \cite{Karpathy15}, but with a medical context instead of daily situations.
+There is enormous potential in the use of NN in the digital pathology as well, but to transfer these models and technologies, certain obstacles must be overcome. One of those is the need for proper training samples. While generally there are large amounts of WSIs (e.g. publicly available at the Cancer Genome Atlas\footnote{\url{https://gdc-portal.nci.nih.gov/}}), most of them won't be usable as a training sample without further preparation. One way of preparing them are annotations. \review{Was für annotations? Evtl eher One way of preparing them is adding metadata in the form of ... annotations?} These can be added to the WSIs, stored and later used for training. The result of such an approach could be similar to the one of \cite{Karpathy15}, but with a medical context instead of daily situations.
 
-Therefore the goal of this thesis is to give tools into the hands of pathologists and data scientists to annotate WSIs and save those annotations in such a way that they will be usable later in combination with NN.
+Therefore the goal of this thesis is to provide tools for pathologists and data scientists to annotate WSIs and save those annotations in such a way that they will be usable later in combination with NN.
 
 
 \section{Research Objective}
@@ -27,20 +28,21 @@ The objective of this thesis is the conceptualization and implementation of tool
 	\item make that viewer tool capable of creating, managing and saving annotations
 	\item make made annotations usable as training samples for NN
 \end{enumerate}
+\review{Hier scheinen mir zwei Dinge vermischt zu sein: Zum einen was ein Anwender tun soll (open wsi with a viewer tool) und zum anderen was du in deiner arbeit tun willst (make the tool capable...) kann mich aber auch irren}
 
 There is no standardized WSI file format\cite{Cornish13}. Hence, slide scanner vendors developed their own proprietary solutions. This either leads to
 \begin{enumerate}[(i)]
 	\item locking-in on a specific vendor or
 	\item separate handling of each proprietary format
 \end{enumerate}
-(i) would render the whole process chain vendor specific, limiting it's use drastically. (ii) would not render the process chain vendor specific but call for a lot of extra work, due to the separate handling of different formats. Luckily, open file formats have been specified. According to \cite{Cornish13}, those are:
+(i) would render the whole process chain vendor specific, limiting it's use drastically. (ii) would not render the process chain vendor specific but call for a lot of extra work, due to the separate handling of different formats. Luckily \review{luckily ist nicht wirklich wissenschaftlich}, open file formats have been specified. According to Cornish \cite{Cornish13}, those are:
 \begin{itemize}
 	\item JPEG2000
 	\item TIFF
 	\item Deep Zoom Images (DZI)\nmc{DZI}{Deep Zoom Images}
 	\item DICOM (supplement 145), without reference implementation as of yet\cite{Cornish13}
 \end{itemize}
-Therefore, to achieve (A), the first step of the process chain is to establish a tool with which WSIs of various formats can be turned into one of those open ones. This way, neither (i) nor (ii) will arise as a problem.
+Therefore, to achieve (A), the first step of the process chain is to establish a tool with which WSIs of various vendor specific formats can be turned into an open file format. This way, neither (i) nor (ii) will arise as a problem.
 
 To achieve (A) and (B), it is also necessary to deploy a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface}, that not only makes it possible to open and view a WSI (A), but also enables the user to annotate the WSI, as well as manage made annotations (B).
 
@@ -54,7 +56,7 @@ In summary: to reach the research objective of this thesis, tools to achieve the
 \end{enumerate}
 
 \section{About this thesis}
-This thesis contains 6 chapters. \emph{Chapter 1 - Introduction} and \emph{2 - Background} address the scope, background and vocabulary of this thesis. The chapters 3 - 5 are directly concerning themselves with 1.2(a) - 1.2(c). They correspond as follows:
+This thesis contains 6 chapters. \emph{Chapter 1 - Introduction} and \emph{2 - Background} address the scope, background and vocabulary of this thesis. The chapters 3 - 5 are directly concerning themselves with 1.2(a) - 1.2(c). \review{imho kannst du dich hier gerne wiederholen: The chapters 3 to 5 describe the components described in the last section. Chapter 3 describes the Conversion Service (...)} They correspond as follows:
 \begin{enumerate}[(a):]
 	\item \emph{chapter 3 - Conversion Service}
 	\item \emph{chapter 4 - Annotation Service}

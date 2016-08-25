@@ -68,9 +68,9 @@ A format or service must be chosen as conversion target for the CS. Choices have
 	\item TMS/OMS
 \end{enumerate}
 
-To convert a WSI, a conversion tool is needed. Tab. \ref{tab3.2} shows a listing of possibilities for that purpose. Listed are the name of the tool, used technology and output format. It shows clearly, that DZI has a great variety of options, while the alternatives have little to none (Map Tiler for TMS, Kakadu for IFFF and none for the others).
+To convert a WSI, a conversion tool is needed. Tab. \ref{tab3.2} shows a listing of possibilities for that purpose. Listed are the name of the tool, the technology used and the output format. The table indicates, that DZI has a great variety of options, while the alternatives have little to none (Map Tiler for TMS, Kakadu for IFFF and none for the others).
 
-Since the CS should only consist of brief user interaction and be as automated as possible, desktop and web applications are not valid as tools for conversion. This excludes \emph{Deep Zoom Composer}, \emph{MapTiler}, \emph{OpenSeaDragon DZI Online Composer} and \emph{Zoomable} as possible choices (therefore also excluding, next to other reasons\footnote{compare chap 2.1.3}, TMS as possible format).
+Since the CS should only consist of brief user interaction and be as automated as possible, desktop and web applications are not valid as tools for conversion. This excludes \emph{Deep Zoom Composer}, \emph{MapTiler}, \emph{OpenSeaDragon DZI Online Composer} and \emph{Zoomable} as possible choices (therefore also excluding (next to the reasons given in section 2.1.3), TMS as possible format).
 
 One of the reasons not to use proprietary formats was the support of only certain operating systems, eliminating Windows-only tools. Those are \emph{Image Composite Editor} and \emph{DeepZoomTools.dll}.
 
@@ -137,7 +137,7 @@ The options are analogous with the terminal version (compare tab. \ref{tab3.3}).
 creator.create([source], [destination])
 \end{lstlisting}
 
-Upon calling, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI\footnote{Compare chap. 2.1.3}. The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
+In the proposed workflow, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI\footnote{Compare chap. 2.1.3}. The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
 
 \begin{equation}
 	max{\_}dim = max(height, width)
@@ -155,18 +155,18 @@ Once $lvl^{max}$ has been determined, a resized version $img^{dzi}_i$ of $img^{w
 
 Once $img^{dzi}_i$ has been created, it will be tessellated into as many tiles of the specified size (-s/tile{\textunderscore}size parameter, see tab. \ref{tab3.3}) and overlap (-o/tile{\textunderscore}overlap parameter, see tab. \ref{tab3.3}) as possible. If the size of $img^{wsi}$ in either dimension isn't a multiple of the tile size, the last row/column of tiles will be smaller by the amount of $(tile$ $size - ([height$ or $width] \mod tile$ $size))$ pixels.
 
-Every tile will be saved as [column]{\textunderscore}[row].[format] (depending on the -f/file{\textunderscore} format parameter, see tab. \ref{tab3.3}) in a directory called according to the corresponding level $i$. Each one of those level directories will be contained within a directory called [filename]{\textunderscore}files. The describing XML file will be persisted as [filename].dzi in the same directory as [filename]{\textunderscore}files.
+Every tile will be saved as [column]{\textunderscore}[row].[format] (depending on the -f/file{\textunderscore} format parameter, see tab. \ref{tab3.3}) in a directory named according to the corresponding level $i$. Each one of those level directories will be contained within a directory called [filename]{\textunderscore}files. The describing XML file will be persisted as [filename].dzi in the same directory as [filename]{\textunderscore}files.
 
 
 \subsection{VIPS}
 
-VIPS (VASARI Image Processing System)\nmc{VIPS}{VASARI Image Processing System} describes itself as "[...] a free image processing system [...]" \cite{web:vips}. It includes a wide range of different image processing tools, such as various filters, histograms, geometric transformations and color processing algorithms. It also supports various scientific image formats, especially those needed by the CS\footnote{See chap. 2.2.1}\cite{web:vips}. One of the strongest traits of VIPS is its speed and little data usage compared to other imaging libraries\cite{cupitt05}.
+VIPS (VASARI Image Processing System)\nmc{VIPS}{VASARI Image Processing System} is described as "[...] a free image processing system [...]" \cite{web:vips}. It includes a wide range of different image processing tools, such as various filters, histograms, geometric transformations and color processing algorithms. It also supports various scientific image formats, especially those needed by the CS\footnote{See chap. 2.2.1}\cite{web:vips}. One of the strongest traits of VIPS is its speed and little data usage compared to other imaging libraries\cite{cupitt05}.
 
-VIPS comes in two parts: the actual library (called libvips) and a GUI (called nip2). libvips offers interfaces for C, C++, python and the command line. The GUI will not be further discussed, since it is of no interest for the implementation of the CS. 
+VIPS consists of two parts: the actual library (called libvips) and a GUI (called nip2). libvips offers interfaces for C, C++, python and the command line. The GUI will not be further discussed, since it is of no interest for the implementation of the CS. 
 
-VIPS speed and little data usage comes from a fully demand-driven image input/output system. While conventional imaging libraries queue their operations and go through them sequentially, VIPS awaits a final write command, before actually manipulating the image. All the queued operations will then be evaluated and molded into a few single operations. Thus, requiring no additional disc space for intermediates and no unnecessary disc in- and output. Furthermore, if more than one CPU is available, VIPS will automatically evaluate in parallel\cite{cupitt96}.
+VIPS speed and little data usage is achieved by the usage of a fully demand-driven image input/output system. While conventional imaging libraries queue their operations and go through them sequentially, VIPS awaits a final write command, before actually manipulating the image. All the queued operations will then be evaluated and merged into a few single operations, requiring no additional disc space for intermediates and no unnecessary disc in- and output. Furthermore, if more than one CPU is available, VIPS will automatically evaluate the operations in parallel\cite{cupitt96}.
 
-As mentioned before, VIPS has a command line and python interface. In either case, a function called \emph{dzsave(...)} will manage the conversion from a WSI to a DZI. A call in the terminal looks as follows:
+As mentioned before, VIPS has a command line and python interface. In either case, a function called \emph{dzsave} will manage the conversion from a WSI to a DZI. A call in the terminal looks as follows:
 
 \begin{lstlisting}
 $ vips dzsave [input] [output] [options]
@@ -192,14 +192,14 @@ When called, VIPS will take the image [input], convert it into a DZI and then sa
 	\end{center}
 \end{table}
 
-A call in python does have the same parameters and default values. It looks like this:
+A call in python has the same parameters and default values. It looks like this:
 
 \begin{lstlisting}[frame=single]
 image = Vips.Image.new_from_file(input)
 image.dzsave(output[, options])
 \end{lstlisting}
 
-In line 1 the image gets opened and saved into \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image as DZI into the specified output location.
+In line 1 the image gets opened and saved into a local variable called \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image as DZI into the specified output location.
 
 
 \section{Implementation}
@@ -208,7 +208,7 @@ As stated before, the CS should be implemented as a script.
 
 The first iteration was a python script using deepzoom.py for the conversion. This caused severe performance issues. Out of all the image files in the test set\footnote{See chap. 3.3}, only one could be converted\footnote{CMU-3.svs from Aperio, see Appendix A}. Other files were either too big, so the process would eventually be killed by the operating system, or exited with an IOError concerning the input file from the PIL imaging library.
 
-The second iteration uses VIPS python implementation, which is not only faster than deepzoom.py, but also capable of converting all the given test images.
+The second iteration uses VIPS python implementation, which is not only faster than deepzoom.py \review{(citation or data needed)}, but also capable of converting all the given test images.
 
 The script has to be called inside a terminal in the following fashion:
 
@@ -216,9 +216,9 @@ The script has to be called inside a terminal in the following fashion:
 	$ python ConversionService.py [input dir] [output dir]
 \end{lstlisting}
 
-It is mandatory to specify the input and output directory in the call, so the script knows where to look for images to convert and where to save the resulting DZIs.
+Both the input and the output directory parameter are mandatory, in order for the script to know where to look for images to convert and where to save the resulting DZIs.
 
-Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. It looks as follows:
+Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. The source code is as follows:
 
 \begin{lstlisting}[frame=single]
 def main():
@@ -233,7 +233,7 @@ def main():
 			print("done!")
 \end{lstlisting}
 
-\emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or exit otherwise. Furthermore, it will create the specified output folder, if it doesn't exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
+\emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or aborts the execution otherwise. Furthermore, it will create the specified output folder, if it doesn't exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
 
 \begin{lstlisting}[frame=single]
 # convert image source into .dzi format and copies all header 
@@ -260,7 +260,7 @@ def convert(path, file, extLen):
 	text_file.close()
 \end{lstlisting}
 
-The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the same folder as ConversionService.py is operating from, plus "/dzi/[\emph{OUTPUT}]/".
+The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the current working directory of ConversionService.py, appending "/dzi/[\emph{OUTPUT}]/".
 
 When a WSI gets converted into DZI by the CS, most of the image header information is lost. To counteract this, a file \emph{metadata.txt} is created in the [name]{\textunderscore}files directory, which serves as container for the header information of the original WSI (see line 12 and 13).
 
@@ -268,10 +268,9 @@ The console command \emph{vipsheader -a} is responsible for extracting the heade
 
 
 \section{Test}
+To test the correct functionality of the CS a test data set was needed. OpenSlide offers a selection of freely distributable WSIs\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
 
-Data is needed to test the correct functionality of the CS. OpenSlide offers a selection of freely distributable WSIs\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
-
-Since the WSIs are of enormous size, they are not delivered via the CS repository\footnote{see \url{https://github.com/SasNaw/ConversionService}}. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see Appendix A.
+Since the size of the WSIs is big, they are not delivered via the CS repository\footnote{see \url{https://github.com/SasNaw/ConversionService}}. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see Appendix A.
 
 
 \subsection{Setup}
