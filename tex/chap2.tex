@@ -1,10 +1,8 @@
 \chapter{Background}
 \section{Whole Slide Image Formats}
-\review{massive und enormous sind übertreibend}
+Due to the amount of data stored in a raw, uncompressed WSI\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}. The size of a H\&E (hematoxylin and eosin) stained slide ranges typically from 4 to 20 GB\cite{Singh11}.}, file formatting and compression are required to make working with WSIs feasible. Since there is no standardized format for WSIs, vendors came up with their own, proprietary solutions, which vary greatly\cite{Cornish13}. Efforts of standardization are being made through the \emph{Digital Imaging and Communications in Medicine} (DICOM) Standard\cite{DICOM10}\nmc{DICOM}{Digital Imaging and Communications in Medicine}.
 
-Due to the amount of data stored in a raw, uncompressed WSI\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}. The size of a H\&E (hematoxylin and eosin) stained slide ranges typically from 4 to 20 GB\cite{Singh11}.}, file formatting and compression is required to make working with WSIs feasible. Since there is no standardized format for WSIs, vendors came up with their own, proprietary solutions, which vary greatly\cite{Cornish13}. Efforts of standardization are being made through the \emph{Digital Imaging and Communications in Medicine} (DICOM) Standard\cite{DICOM10}\nmc{DICOM}{Digital Imaging and Communications in Medicine}.
-
-Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. 2.1 and subsection \ref{sec:dicomSupplement}).
+Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. \ref{fig2_pyramid} and subsection \ref{sec:dicomSupplement}).
 
 
 \subsection{DICOM Supplement 145}
@@ -16,17 +14,17 @@ Singh et al. \cite{Singh11} describe DICOM as follows:
 
 Before \emph{Supplement 145: Whole Slide Microscopic Image IOD and SOP Classes}, the DICOM Standard did not address standardization of WSI. Among others, the College of American Pathologist’s Diagnostic Intelligence and Health Information Technology Committee is responsible for the creation and further advancement of this supplement\cite{Singh11}.
 
-It addresses every step involved in creating WSIs: image creation, acquisition, processing, analyzing, distribution, visualization and data management\cite{DICOM10}. It impacted the way how data is stored greatly\cite{Singh11}, due to the introduction of a pyramid image model\cite{DICOM10} (see fig. 2.1).
+It addresses every step involved in creating WSIs: image creation, acquisition, processing, analyzing, distribution, visualization and data management\cite{DICOM10}. It impacted the way how data is stored greatly\cite{Singh11}, due to the introduction of a pyramid image model\cite{DICOM10} (see fig. \ref{fig2_pyramid}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{img/imgPyramid.png}
 		\caption{DICOMs image pyramid (source:\cite{Singh11})}
-		\label{fig2.1}
+		\label{fig2_pyramid}
 	\end{center}
 \end{figure}
 
-The image pyramid model facilitates rapid zooming and reduces the computational burden of randomly accessing and traversing a WSI\cite{Singh11},\cite{Park12}. This is made possible by storing an image in several precomputed resolutions, with the highest resolution sitting at the bottom (called the \emph{baseline image}) and a thumbnail or \review{low power klingt für mich n bisschen komisch. könnte man da low resolution schreiben?} low power image at the top (compare fig. 2.1)\cite{DICOM10}. This creates a pyramid like stack of images, hence the name "pyramid model". The different resolutions are referred to as \emph{layers}\cite{DICOM10} or \emph{levels}\cite{Singh11} respectively.
+The image pyramid model facilitates rapid zooming and reduces the computational burden of randomly accessing and traversing a WSI\cite{Singh11},\cite{Park12}. This is made possible by storing an image in several precomputed resolutions, with the highest resolution sitting at the bottom (called the \emph{baseline image}) and a thumbnail or low power image at the top (compare fig. \ref{fig2_pyramid})\cite{DICOM10}. This creates a pyramid like stack of images, hence the name "pyramid model". The different resolutions are referred to as \emph{layers}\cite{DICOM10} or \emph{levels}\cite{Singh11} respectively.
 
 Each level is tessellated into square or rectangular fragments, called tiles, and stored in a two dimensional array\cite{Farahanil15}. 
 
@@ -34,7 +32,8 @@ Because of this internal organization, the tiles of each level can be retrieved 
 
 
 \subsection{Proprietary Formats}
-Vendors of whole slide scanners implement their own file formats, libraries and viewers (see tab. 2.1 for a list of vendors and their formats). Because of this, they can focus on the key features and abilities of their product. This generally leads to a higher usability, ease-of-use and enables highly tailored customer support. Furthermore, in comparison to open source projects, the longevity of proprietary software is often higher\cite{Optimus15}.
+\label{sec2_proprietaryForams}
+Vendors of whole slide scanners implement their own file formats, libraries and viewers (see tab. \ref{tab2_formatsByVendor} for a list of vendors and their formats). Because of this, they can focus on the key features and abilities of their product. This generally leads to a higher usability, ease-of-use and enables highly tailored customer support. Furthermore, in comparison to open source projects, the longevity of proprietary software is often higher\cite{Optimus15}.
 
 \begin{table}[H]
 	\begin{center}
@@ -51,6 +50,7 @@ Vendors of whole slide scanners implement their own file formats, libraries and 
 			Ventana & BIF, TIF\\ \hline
 		\end{tabular}
 		\caption{File formats by vendor}
+		\label{tab2_formatsByVendor}
 	\end{center}
 \end{table}
 
@@ -58,7 +58,7 @@ Since the proprietary formats have little to no documentation, most of the subse
 
 
 \subsubsection{Aperio}
-The SVS format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with 240x240 pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. 2.1), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
+The SVS format by Aperio is a TIFF-based format, which comes in a single file\cite{Goode13}. It has a specific internal organization in which the first image is the baseline image, which is always tiled (usually with 240x240 pixels). This is followed by a thumbnail, typically with dimensions of about 1024x768 pixels. The thumbnail is followed by at least one intermediate pyramid image (compare fig. \ref{fig2_pyramid}), with the same compression and tile organization as the baseline image\cite{web:openslide}. Optionally, there may be a slide label and macro camera image at the end of each file\cite{web:openslide}.
 
 
 \subsubsection{Hamamatsu}
@@ -69,15 +69,13 @@ Hamamatsu WSIs come in 3 variants:
 	\item NDPI
 \end{enumerate}
 
-(1) and (2) consist of an index file ((1) - [file name].vms, (2) - [file name].vmu) and 2 or more image files. In the case of (2), there is also an additional optimization file. (3) consists of a single TIFF-like file with custom TIFF tags. While (1) and (3) contain jpeg images, (2) contains a custom, uncompressed image format called \emph{NGR}\footnote{For more information on NGR, consult \url{http://openslide.org/formats/hamamatsu/}}\cite{web:openslide}.
+(1) and (2) consist of an index file ((1) - [file name].vms, (2) - [file name].vmu) and 2 or more image files. In the case of (2), there is also an additional optimization file. (3) consists of a single TIFF-like file with custom TIFF tags. While (1) and (3) contain JPEG images, (2) contains a custom, uncompressed image format called \emph{NGR}\footnote{For more information on NGR, consult \url{http://openslide.org/formats/hamamatsu/}}\cite{web:openslide}.
 
-The random access support for decoding parts of jpeg files is poor \review{(citation needed)}. To get around this, so called \emph{restart markers}\footnote{Restart markers were originally designed for error recovery. The markers allow the decoder to resynchronize at set intervals throughout the image\cite{Goode13}.} are used to create virtual slides\cite{Goode13}. The markers are placed at regular intervals. The offset of every marker is specified in different manner. In the case of (1), it can be found in the index file. In the case of (2), the optimization file holds the information and in the case of (3), a TIFF tag contains the offset\cite{web:openslide}.
+The random access support for decoding parts of jpeg files is poor \cite{web:openslide}. To get around this, so called \emph{restart markers}\footnote{Restart markers were originally designed for error recovery. The markers allow the decoder to resynchronize at set intervals throughout the image\cite{Goode13}.} are used to create virtual slides\cite{Goode13}. The markers are placed at regular intervals. The offset of every marker is specified in different manner. In the case of (1), it can be found in the index file. In the case of (2), the optimization file holds the information and in the case of (3), a TIFF tag contains the offset\cite{web:openslide}.
 
 
 \subsubsection{Leica}
-SCN is a single file format based on BigTIFF, additionally .scn provides a pyramidal thumbnail image \cite{Goode13}.
-\review{Das verstehe ich nicht. Ist .scn ein eigenes Format? Dann würde ich das so schreiben, wenn nicht würde ich schreiben: SCN is a single file format based on BigTIFF that additionally provides a pyramidal thumbnail image.}
-The first TIFF directory has a tag called "ImageDescription" which contains an XML document that defines the internal structure of the WSI\cite{web:openslide}.
+SCN is a single file format based on BigTIFF that additionally provides a pyramidal thumbnail image\cite{Goode13}. The first TIFF directory has a tag called "ImageDescription" which contains an XML document that defines the internal structure of the WSI\cite{web:openslide}.
 
 Leica WSIs are structured as a collection of images, each of which has multiple pyramid levels. While the collection only has a size, images have a size and position, all measured in nanometers. Each dimension has a size in pixels, an optional focal plane number, and a TIFF directory containing the image data. Fluorescence images have different dimensions (and thus different TIFF directories) for each channel\cite{web:openslide}.
 
@@ -95,7 +93,7 @@ The generation of the image pyramid differs from the process described in \ref{s
 \subsubsection{Philips}
 Philips' TIFF is an export from the native iSyntax format. An XML document with the hierarchical structure of the WSI can be found over the \emph{ImageDescription} tag of the first TIFF directory. It contains key-value pairs based on DICOM tags\cite{web:openslide}.
 
-Slides with multiple regions of interest are structured as a single image pyramid enclosing all regions. Slides may omit pixel data for TIFF tiles not in an ROI \review{Was heisst ROI ausgeschrieben?}. When such tiles are downsampled into a tile that does contain pixel data, their contents are rendered as white pixels\cite{web:openslide}.
+Slides with multiple regions of interest are structured as a single image pyramid enclosing all regions. Slides may omit pixel data for TIFF tiles not in an ROI. When such tiles are downsampled into a tile that does contain pixel data, their contents are rendered as white pixels\cite{web:openslide}.
 
 Label and macro images are stored either as JPEG or as stripped TIFF directories.
 
@@ -113,13 +111,14 @@ Ventanas WSIs are single-file BigTIFF images, organized in the typical pyramidic
 
 	
 \subsection{Open Formats}
-As mentioned in 2.1.2, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
+\label{sec2_openFormats}
+As mentioned in \ref{sec2_proprietaryForams}, proprietary formats typically come without much or any documentation. Furthermore, a vendors viewer is usually the only way of viewing WSIs of a particular format. This creates a vendor lock-in, where users can't take advantage of new improvements offered by other vendors. Furthermore, most viewers only provide support for Windows platforms. While, in a clinical setting, Windows may dominate the market, a significant amount of users in medical research prefer Linux or Mac OS X\cite{Goode13}. The use of mobile platforms, such as iOS or Android tablets may also have a great influence of the work flow in the future. Some vendors try to compensate for this fact with a server-based approach, which hurts performance by adding a network round-trip delay on every digital slide operation\cite{Goode13}.
 
 To resolve these issues, open image formats have been suggested, which will be discussed further in the following subsections.
 
 
 \subsubsection{Deep Zoom Images}
-The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image (see fig. 2.2), similar to the one described in 2.1.1 (compare fig. 2.1 and 2.2), with two exceptions:
+The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-based file format, developed and maintained by Microsoft\cite{web:dzi}. A DZI is a pyramidcal, tiled image (see fig. \ref{fig2_dziModel}), similar to the one described in \ref{sec:dicomSupplement} (compare \ref{fig2_pyramid} and \ref{fig2_dziModel}), with two exceptions:
 \begin{enumerate}
 	\item the baseline image is referred to as the highest level, instead of the lowest; this either turns the image pyramid or its labeling upside down
 	\item tiles are always square, with the exception of the last column/row
@@ -129,7 +128,7 @@ The Deep Zoom Image (DZI)\nomenclature{DZI}{Deep Zoom Image} format is an XML-ba
 	\begin{center}
 		\includegraphics[scale=0.4]{img/dzi_pyramid.png}
 		\caption{DZI pyramid model example (source:\cite{web:dzi})}
-		\label{fig:fig2.2}
+		\label{fig2_dziModel}
 	\end{center}
 \end{figure}
 
@@ -162,18 +161,18 @@ IIIFs goal is to collaboratively produce an interoperable technology and communi
 	\begin{center}
 		\includegraphics[scale=0.3]{img/iiif_url_example.jpg}
 		\caption{Example of iiif request (source:\url{http://www.slideshare.net/Tom-Cramer/iiif-international-image-interoperability-framework-dlf2012?ref=https://www.diglib.org/forums/2012forum/transcending-silos-leveraging-linked-data-and-open-image-apis-for-collaborative-access-to-digital-facsimiles/})}
-		\label{fig:fig2.3}
+		\label{fig2_iiifExample}
 	\end{center}
 \end{figure}
 
-The part relevant for this thesis is (2), especially the image API\cite{web:iiif}. It specifies a web service that returns an image in response to a standard web request. The URL can specify the region, size, rotation, quality and format of the requested image (see fig. 2.3). Originally intended for resources in digital image repositories maintained by cultural heritage organizations, the API can be used to retrieve static images in response to a properly constructed URL\cite{web:openseadragon}. The URL scheme looks like this \footnote{For detailed information on all parameters see the official API: \url{http://iiif.io/api/image/2.0}}:
+The part relevant for this thesis is (2), especially the image API\cite{web:iiif}. It specifies a web service that returns an image in response to a standard web request. The URL can specify the region, size, rotation, quality and format of the requested image (see \ref{fig2_iiifExample}). Originally intended for resources in digital image repositories maintained by cultural heritage organizations, the API can be used to retrieve static images in response to a properly constructed URL\cite{web:openseadragon}. The URL scheme looks like this \footnote{For detailed information on all parameters see the official API: \url{http://iiif.io/api/image/2.0}}:
 \begin{lstlisting}
 {scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}
 \end{lstlisting}
 
 The \emph{region} and \emph{size} parameters are of special interest for this thesis. With them, it is possible to request only a certain region of an image in a specified size.
 
-The region parameter defines the rectangular portion of the full image to be returned. It can be specified by pixel coordinates, percentage or by the value “full” (see tab. 2.2 and fig. 2.4).
+The region parameter defines the rectangular portion of the full image to be returned. It can be specified by pixel coordinates, percentage or by the value “full” (see tab. \ref{tab2_regionParams} and fig. \ref{fig2_iiifRegion}).
 
 \begin{table}[H]
 	\begin{center}
@@ -185,6 +184,7 @@ The region parameter defines the rectangular portion of the full image to be ret
 			pct:x,y,w,h & The region to be returned is specified as a sequence of percentages of the full image’s dimensions, as reported in the Image Information document. Thus, x represents the number of pixels from the 0 position on the horizontal axis, calculated as a percentage of the reported width. w represents the width of the region, also calculated as a percentage of the reported width. The same applies to y and h respectively. These may be floating point numbers.\\ \hline
 		\end{tabular}
 		\caption{Valid values for \emph{region} parameter (source:\cite{web:iiif})}
+		\label{tab2_regionParams}
 	\end{center}
 \end{table}
 
@@ -194,17 +194,17 @@ If the request specifies a region whose size extends beyond the actual size of t
 	\begin{center}
 		\includegraphics[scale=0.4]{img/region_param.png}
 		\caption{Results of IIIF request with different values for region parameter (source:\cite{web:iiif})}
-		\label{fig:fig2.4}
+		\label{fig2_iiifRegion}
 	\end{center}
 \end{figure}
 
-If a region was extracted, it is scaled to the dimensions specified by the size parameter (see tab. 2.3 and fig. 2.5).
+If a region was extracted, it is scaled to the dimensions specified by the size parameter (see tab. \ref{tab2_sizeParam} and fig. \ref{fig2_iiifSize}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.35]{img/size_parameter.png}
 		\caption{Results of IIIF request with different values for size parameter (source:\cite{web:iiif})}
-		\label{fig:fig2.5}
+		\label{fig2_iiifSize}
 	\end{center}
 \end{figure}
 
@@ -223,6 +223,7 @@ If the resulting height or width equals 0, then the server should return a "400 
 			!w,h & The image content is scaled for the best fit such that the resulting width and height are less than or equal to the requested width and height. The exact scaling may be determined by the service provider, based on characteristics including image quality and system performance. The dimensions of the returned image content are calculated to maintain the aspect ratio of the extracted region.\\ \hline
 		\end{tabular}
 		\caption{Valid values for \emph{size} parameter (source:\cite{web:iiif})}
+		\label{tab2_sizeParam}
 	\end{center}
 \end{table}
 
@@ -238,8 +239,8 @@ OpenStreetMap (OSM)\nmc{OSM}{OpenStreetMap} is a popular tile source used in man
 
 Tiled Map Service (TMS)\nmc{TMS}{Tiled Map Service} is a tile scheme developed by the Open Source Geospatial Foundation (OSGF)\nmc{OSGF}{Open Source Geospatial Foundation}\cite{web:openseadragon} and specified in \cite{web:tms}. The OSGF is a nonprofit organization whose goal it is to support the needs of the open source geospatial community. TMS provides access to cartographic maps of geo-referenced data. Access to these resources is provided via a "REST" interface, starting with a root resource describing available layers, then map resources with a set of scales, then scales holding sets of tiles\cite{web:tms}.
 
-Both, OSM and TMS, offer zooming images, which in general, have the functionality necessary, to be of use for this thesis. Unfortunately, they are also highly specialized on the needs of the mapping community, which makes them unattractive choices for the research objective of this thesis respectively.
-\review{unattractive ist imho nicht so gut ausgedrückt. Ich würde eher was in die richtung: "Unfortunately, they are also highly specialized on the needs of the mapping community, with many features not needed in the context of this thesis.}
+Both, OSM and TMS, offer zooming images, which in general, have the functionality necessary, to be of use for this thesis. Unfortunately, they are also highly specialized on the needs of the mapping community, with many features not needed in the context of this thesis.
+
 
 \subsubsection{JPEG 2000}
 \cite{web:jpeg2000} describes the image compression standard JPEG 2000 as follows:
@@ -252,7 +253,7 @@ It incorporates a mathematically lossless compression mode, in which the storage
 In the compression process, JPEG 2000 partitions an image into rectangular and non-overlapping tiles of equal size (except for tiles at the image borders). The tile size is arbitrary and
 can be as large as the original image itself (resulting in only one tile) or as small as a single pixel. Furthermore, the image gets decomposed into a multiple resolution representation\cite{Rabbani02}. 
 
-This creates a tiled image pyramid, similar to the one described in 2.1.1.
+This creates a tiled image pyramid, similar to the one described in subsection \ref{sec:dicomSupplement}.
 
 The encoding-decoding process of JPEG 2000 is beyond the scope of this thesis. Therefore, it is recommended to consult either \cite{intoPix08} for a quick overview or \cite{Rabbani02} for an in depth guide.
 
@@ -264,37 +265,36 @@ Each tile offset is saved in an image header, so that efficient random access to
 
 This constraint led to the development of BigTIFF. The offset values were raised to a 64 bit base, limiting the maximum offset to $2^{64}$. This results in an image size of up to 18,000 peta bytes\cite{web:digitalpreservation}.
 
-TIFF and BigTIFF are capable of saving images in multiple resolutions. Together with the feature of saving tiles, the image pyramid model described in 2.1.1 can be taken advantage of\cite{web:digitalpreservation2}. \review{Den letzten Satz würde ich nochmal umformulieren: Together with the feature of saving tiles, an image pyramid model (as described in 2.1.1) can be applied oder so}
+TIFF and BigTIFF are capable of saving images in multiple resolutions. Together with the feature of saving tiles, the image pyramid model (as described in subsection \ref{sec:dicomSupplement}) can be applied\cite{web:digitalpreservation2}. 
 
 
 \section{Short Introduction to Neural Networks}
-\review{Auch hier wieder das Problem: steht NN für ein Neural Network oder für mehrere?}
-The objective of the workflows introduced in chapter 1.2. is to create training samples for NN. Before going into other details, it is necessary to clarify what NN are, how they work, why they need training samples and what they use them for\footnote{
-	An in-depth introduction into the field of NNs is far beyond the scope of this work. For further information about NNs consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
+The objective of the workflows introduced in chapter \ref{sec1_researchObjective} is to create training samples for NNs. Before going into other details, it is necessary to clarify what NNs are, how they work, why they need training samples and what they are used for\footnote{
+	An in-depth introduction into the field of NNs is far beyond the scope of this work. For further information about NNs, consultation of literature (e.g. \cite{Stergiou96},\cite{Bourg04},\cite{Egmont-Petersen02},\cite{Kriesel07},\cite{Shiffman12}) is highly recommended.}.
 
-Artificial Neural Networks (NN)\nmc{NN}{Neural Networks} are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Networks}. BNNs can be described as an interconnected web of neurons (see fig. 2.6), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and sends output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
+Artificial NNs are a group of models inspired by Biological Neural Networks (BNN) \nmc{BNN}{Biological Neural Network}. BNNs can be described as an interconnected web of neurons (see \ref{fig2_bnn}), whose purpose it is to transmit information in the form of electrical signals. A neuron receives input via dendrites and sends output via axons\cite{Shiffman12}. An average human adult brain contains about $10^{11}$ neurons. Each of those receives input from about $10^4$ other neurons. If their combined input is strong enough, the receiving neuron will send an output signal to other neurons\cite{Bourg04}.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.7]{img/bnn.png}
 		\caption{Neuron in a BNN (source:\cite{Shiffman12})}
-		\label{fig:fig2.6}
+		\label{fig2_bnn}
 	\end{center}
 \end{figure}
 
 Although artificial NNs are much simpler in comparison\footnote{Usually, they don't have much more than a few dozen neurons\cite{Bourg04}.}, they generally work in the same fashion.
 
-One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig 2.7 shows an exemplary NN with neurons and the connections between them.
+One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig \ref{fig2_nn} shows an exemplary NN with neurons and the connections between them.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=1.0]{img/NN.png}
 		\caption{Exemplary NN (source:\cite{Shiffman12})}
-		\label{fig:fig2.7}
+		\label{fig2_nn}
 	\end{center}
 \end{figure}
 
-Each line in fig, 2.7 represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
+Each line in fig. \ref{fig2_nn} represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
 
 According to \cite{Shiffman12}, some of the standard use cases for NN are:
 
@@ -332,30 +332,30 @@ In competitive learning, the single neurons compete against each other for the r
 
 
 \subsection{The Perceptron}
-The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory in 1957\cite{Rosenblatt58}. It is the computational model of a single neuron and as such, the simplest NN possible\cite{Shiffman12}. A perceptron consists of one or more inputs, a processor and a single output (see fig. 2.8)\cite{Rosenblatt58}.
+The perceptron was invented by Rosenblatt at the Cornell Aeronautical Laboratory in 1957\cite{Rosenblatt58}. It is the computational model of a single neuron and as such, the simplest NN possible\cite{Shiffman12}. A perceptron consists of one or more inputs, a processor and a single output (see fig. \ref{fig2_pereptron})\cite{Rosenblatt58}.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.7]{img/perceptron.png}
 		\caption{Perceptron by Rosenblatt (source:\cite{Shiffman12})}
-		\label{fig:fig2.8}
+		\label{fig2_pereptron}
 	\end{center}
 \end{figure}
 
-This can be directly compared to the neuron in fig. 2.7, where:
+This can be directly compared to the neuron in fig. \ref{fig2_bnn}, where:
 \begin{itemize}
 	\item input = dendrites
 	\item processor = cell
 	\item output = axon
 \end{itemize}
 
-A perceptron is only capable of solving \emph{linearly separable} problems, such as logical \emph{AND} and \emph{OR} problems. To solve non-linearly separable problems, more then one perceptron is required\cite{Rosenblatt58}. Simply put, a problem is linearly separable, if it can be solved with a straight line (see fig. 2.9), otherwise it is considered a non-linearly separable problem (see fig. 2.10).
+A perceptron is only capable of solving \emph{linearly separable} problems, such as logical \emph{AND} and \emph{OR} problems. To solve non-linearly separable problems, more then one perceptron is required\cite{Rosenblatt58}. Simply put, a problem is linearly separable, if it can be solved with a straight line (see fig. \ref{fig2_linear}), otherwise it is considered a non-linearly separable problem (see fig. \ref{fig2_nonLinear}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.6]{img/lsp.png}
 		\caption{Examples for linearly separable problems (source:\cite{Shiffman12})}
-		\label{fig:fig2.9}
+		\label{fig2_linear}
 	\end{center}
 \end{figure}
 
@@ -363,7 +363,7 @@ A perceptron is only capable of solving \emph{linearly separable} problems, such
 	\begin{center}
 		\includegraphics[scale=0.75]{img/nlsp.png}
 		\caption{Examples for non-linearly separable problems (source:\cite{Shiffman12})}
-		\label{fig:fig2.10}
+		\label{fig2_nonLinear}
 	\end{center}
 \end{figure}
 
@@ -378,13 +378,13 @@ If multiple perceptrons get combined, they create layers. Those layers can be se
 	\item output layer
 \end{itemize}
 
-A typical NN will have an input layer, which is connected to a number of hidden layers, which either connect to more hidden layers or, eventually, an output layer (see fig. 2.11 for a NN with one hidden layer).
+A typical NN will have an input layer, which is connected to a number of hidden layers, which either connect to more hidden layers or, eventually, an output layer (see fig. \ref{fig2_multilayeredNN} for a NN with one hidden layer).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.8]{img/mlp.png}
 		\caption{NN with multiple layers (source: \url{http://docs.opencv.org/2.4/_images/mlp.png)}}
-		\label{fig:fig2.11}
+		\label{fig2_multilayeredNN}
 	\end{center}
 \end{figure}
 
@@ -409,13 +409,14 @@ There are 2 possibilities in how to proceed. The first one is to compare results
 
 
 \section{Microservices}
-The following section elaborates on the concept of \emph{Microservices} (MS)\nmc{MS}{Microservice}, defining what they are, listing their pros and cons, as well as explaining why this approach was chosen over a monolithic approach \review{eigentlich hat die erklärung warum du microservices genutzt hast in den grundlagen nichts verloren :p} . A monolithic software solution is described by \cite{Lewis14} as follows:
+The following section elaborates on the concept of \emph{Microservices} (MS)\nmc{MS}{Microservice}, defining what they are, listing their advantages and disadvantages, as well as explaining why this approach was chosen over a monolithic approach. A monolithic software solution is described by \cite{Lewis14} as follows:
 \begin{quotation}
 	"[...] a monolithic application [is] built as a single unit. Enterprise Applications are often built in three main parts: a client-side user interface (consisting of HTML pages and javascript running in a browser on the user's machine) a database (consisting of many tables inserted into a common, and usually relational, database management system), and a server-side application. The server-side application will handle HTTP requests, execute domain logic, retrieve and update data from the database, and select and populate HTML views to be sent to the browser. This server-side application is a monolith - a single logical executable. Any changes to the system involve building and deploying a new version of the server-side application."
 \end{quotation}
 
 
 \subsection{Definition}
+\label{sec2_msDef}
 MS are an interpretation of the Service Oriented Architecture. The concept is to separate one monolithic software construct into several smaller, modular pieces of software\cite{Wolff16}. As such, MS are a modularization concept. However, they differ from other such concepts, since MS are independent from each other. This is a trait, other modularization concepts usually lack\cite{Wolff16}. As a result, changes in one MS don't bring up the necessity of deploying the whole product cycle again, but just the one service. This can be achieved by turning each MS into an independent process with its own runtime\cite{Lewis14}.
 
 This modularization creates an information barrier between different MS. Therefore, if MS need to share data or communicate with each other, light weight communication mechanisms must be established, such as a RESTful API\cite{Riggins15}.
@@ -458,7 +459,7 @@ The small and focused nature of MS makes scaling, updates, general changes and t
 Another advantage is how well MS plays into the hands of agile, scrum and continuous software development processes, due to their previously discussed inherent traits.
 
 % cons
-The modularization of MS doesn't only yield advantages. Since each MS has its own, closed off data management\footnote{See 2.3.1(f) (\emph{Decentralized Data Management})}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
+The modularization of MS doesn't only yield advantages. Since each MS has its own, closed off data management\footnote{See subsection \ref{sec2_msDef} - \emph{Decentralized Data Management}}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
 
 2.3.1(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
 
@@ -466,7 +467,7 @@ It often makes sense to share code inside a system to not replicate functionalit
 
 
 \subsection{Conclusion}	
-The tools represented in 1.2 were implemented by using the MS modularization patterns. Due to the implementation being done by a single person, some of the inherent disadvantages of MS are negated (making them a favorable modularization concept):
+The tools needed to achieve the research objective stated in subsection \ref{sec1_researchObjective} will be implemented by using the MS modularization patterns. Due to the implementation being done by a single person, some of the inherent disadvantages of MS are negated (making them a favorable modularization concept):
 \begin{itemize}
 	\item Interprocess communication doesn't arise between the single stages of the process chain, since they have a set order\footnote{E.g. it wouldn't make sense trying to extract a training sample without converting or annotating a WSI first.}
 	\item Different technologies may be chosen for the single steps of the process chain, however, working alone on the project makes technological incompatibilities instantly visible
@@ -476,14 +477,14 @@ This makes the advantages outweight the disadvantages clearly:
 \begin{itemize}
 	\item different languages and technologies can be used for every single step of the process chain, making the choice of the most fitting tool possible
 	\item WSIs take a heavy toll on memory and disk space due to their size; the use of MS allows each step of the chain to handle those issues in the most suitable way for each given step
-	\item separating the steps of the process chain into multiple MS makes for a smaller and easier maintainable code base \review{whait what? im Vergleich zu nem Monolithen? Glaube ich nicht :p Ich glaube was du sagen willst ist: separating the steps of the process chain into multiple MS leads to well separated modules, each having a small and therefore easy to maintain codebase}
+	\item separating the steps of the process chain into multiple MS leads to well separated modules, each having a small and therefore easy to maintain codebase
 	\item other bachelor/master students may continue to use or work on this project in the future, making the benefit of a small, easily maintainable code base twice as important
-	\item the implementation of the project will happen in an iterative, continuous manner, which is easily doable with the use of MS \review{würde ich eventuell als punkt rausnehmen weil für die arbeit nicht relevant}
 \end{itemize}
 
 
 \section{Process Chain}
-This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in 1.2(a) - 1.2(c). The usual procedure would look as follows:
+\label{sec2_pc}
+This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The usual procedure look as follows:
 
 \begin{enumerate}[(1.)]
 	\item convert chosen WSI $img^{wsi}_i$ to open format $img^{cvrt}_i$
@@ -493,13 +494,19 @@ This section and its following subsections are dedicated to establish the proces
 	\item create training sample $ts_i$ by extracting the information of $A_i$ in correspondence to $img^{cvrt}_i$
 \end{enumerate}
 
-\review{wenn du cool bist machst du hier noch ein process chart als bild rein der deinen gesamtprozess beschreibt, UML fuckyeah :p (alternativ auch in den anhang, falls dir das zu dick aufgetragen ist)}
+While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{cvrt}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable (see fig. \ref{fig2_processChainUML}).
 
-While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{cvrt}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable.
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/processChainUML.png}
+		\caption{Activity diagram of the process chain}
+		\label{fig2_processChainUML}
+	\end{center}
+\end{figure}
 
-The single steps of the process chain will be sorted into semantic groups. Each group will be realized by its own MS, as stated in 2.3. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
+The single steps of the process chain will be sorted into semantic groups. Each group will be realized as its own MS. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
 
-A MS will be introduced for each group in the following subsections(2.4.1 - 2.4.3). Those are:
+A MS will be introduced for each group in the subsections \ref{sec2_cs} - \ref{sec2_ts}). Those are:
 
 \begin{itemize}
 	\item \textbf{Conversion Service}\\
@@ -512,13 +519,14 @@ A MS will be introduced for each group in the following subsections(2.4.1 - 2.4.
 
 
 \subsection{Conversion Service}
-The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the producer system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{see chap. 2.1.2 for the reasons} (see fig. 2.12).
+\label{sec2_cs}
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the vendor's system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{Compare subsections \ref{sec2_proprietaryForams} and \ref{sec2_openFormats}} (see fig. \ref{fig2_processChainA}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.35]{img/processChainA.png}
 		\caption{Visualization of the Conversion Service}
-		\label{fig:fig2.12}
+		\label{fig2_processChainA}
 	\end{center}
 \end{figure}
 
@@ -539,13 +547,14 @@ Upon invocation, the CS will take every single WSI inside a given directory and 
 
 
 \subsection{Annotation Service}
-As mentioned in 2.4, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a WSI, create annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. 2.13).
+\label{sec2_as}
+As mentioned in \ref{sec2_pc}, the Annotation Service (AS)\nmc{AS}{Annotation Service} will provide a graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} to view a WSI, create annotations and manage those annotations. This also includes persisting made annotations in a file (see fig. \ref{fig2_processChainB}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.2]{img/processChainB.png}
 		\caption{Visualization of the Annotation Service}
-		\label{fig:fig2.13}
+		\label{fig2_processChainB}
 	\end{center}
 \end{figure}
 
@@ -553,15 +562,15 @@ The supplied GUI will offer different tools to help the user annotate the WSI, e
 
 
 \subsection{Tessellation Service}
-
+\label{sec2_ts}
 The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to extract annotations and their corresponding image data in such a fashion that they will become usable as training samples for NN.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.25]{img/processChainC.png}
 		\caption{Visualization of the Tessellation Service}
-		\label{fig:fig2.14}
+		\label{fig2_processChainC}
 	\end{center}
 \end{figure}
 
-Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. 2.14). To be used as training sample, the TS must keep up the relationship between $img_i$ and $a_i$.
+Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. \ref{fig2_processChainC}). To be used as training sample, the TS must keep up the relationship between $img_i$ and $a_i$.

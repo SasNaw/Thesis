@@ -7,22 +7,23 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Example of iiif request (source:\url {http://www.slideshare.net/Tom-Cramer/iiif-international-image-interoperability-framework-dlf2012?ref=https://www.diglib.org/forums/2012forum/transcending-silos-leveraging-linked-data-and-open-image-apis-for-collaborative-access-to-digital-facsimiles/})}}{13}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Results of IIIF request with different values for region parameter (source:\cite {web:iiif})}}{15}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Results of IIIF request with different values for size parameter (source:\cite {web:iiif})}}{15}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Neuron in a BNN (source:\cite {Shiffman12})}}{19}{figure.2.6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Neuron in a BNN (source:\cite {Shiffman12})}}{18}{figure.2.6}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplary NN (source:\cite {Shiffman12})}}{19}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Perceptron by Rosenblatt (source:\cite {Shiffman12})}}{21}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Perceptron by Rosenblatt (source:\cite {Shiffman12})}}{20}{figure.2.8}
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Examples for linearly separable problems (source:\cite {Shiffman12})}}{21}{figure.2.9}
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Examples for non-linearly separable problems (source:\cite {Shiffman12})}}{21}{figure.2.10}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces NN with multiple layers (source: \url {http://docs.opencv.org/2.4/_images/mlp.png)}}}{22}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Visualization of the Conversion Service}}{28}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Visualization of the Annotation Service}}{29}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Visualization of the Tessellation Service}}{29}{figure.2.14}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Activity diagram of the process chain}}{27}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Visualization of the Conversion Service}}{28}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Visualization of the Annotation Service}}{29}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Visualization of the Tessellation Service}}{29}{figure.2.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{38}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{39}{figure.3.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{41}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Microdraw GUI with opened WSI}}{44}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Hello, World! example on how to use Flasks route() decorator (source: \cite {web:flask})}}{46}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Example use of the method argument (source: \cite {web:flask})}}{47}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{42}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Microdraw GUI with opened WSI}}{45}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Hello, World! example on how to use Flasks route() decorator (source: \cite {web:flask})}}{47}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example use of the method argument (source: \cite {web:flask})}}{48}{figure.4.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

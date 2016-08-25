@@ -9,11 +9,11 @@ A very promising approach to image analysis is the use of \emph{neural networks}
 	\begin{center}
 		\includegraphics[scale=0.3]{img/deepVisual.png}
 		\caption{Example results of the in \cite{Karpathy15} introduced model (source: \url{http://cs.stanford.edu/people/karpathy/deepimagesent/})}
-		\label{fig:fig1.1}
+		\label{fig1_karpathy}
 	\end{center}
 \end{figure}
 
-In the recent past the use of NN enabled major breakthroughs, especially in the area of image classification and object recognition. Karpathy and Fei-Fei, for example, created a NN that is capable of describing an image or a scene using natural language text blocks \cite{Karpathy15} (see fig. 1.1 for a selection of examples).
+In the recent past the use of NN enabled major breakthroughs, especially in the area of image classification and object recognition. Karpathy and Fei-Fei, for example, created a NN that is capable of describing an image or a scene using natural language text blocks \cite{Karpathy15} (see fig. \ref{fig1_karpathy} for a selection of examples).
 
 There is enormous potential in the use of NN in the digital pathology as well, but to transfer these models and technologies, certain obstacles must be overcome. One of those is the need for proper training samples. While generally there are large amounts of WSIs (e.g. publicly available at the Cancer Genome Atlas\footnote{\url{https://gdc-portal.nci.nih.gov/}}), most of them won't be usable as a training sample without further preparation.
 
@@ -23,6 +23,7 @@ Therefore the goal of this thesis is to provide tools for pathologists and data 
 
 
 \section{Research Objective}
+\label{sec1_researchObjective}
 The objective of this thesis is the conceptualization and implementation of tools to prepare WSIs for the further use as training samples in NN. To achieve this, a process chain with all the necessary steps needs to be established. The chain consists of the following tasks:
 \begin{enumerate}[(A)]
 	\item open WSI with a viewer tool

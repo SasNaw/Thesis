@@ -10,20 +10,19 @@
 \nomenclatureentry{aTMS@[{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}|nompageref}{17}
 \nomenclatureentry{aOSGF@[{OSGF}]\begingroup Open Source Geospatial Foundation\nomeqref {2.0}|nompageref}{17}
 \nomenclatureentry{aTIFF@[{TIFF}]\begingroup Tagged Image File Format\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aNN@[{NN}]\begingroup Neural Networks\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Networks\nomeqref {2.0}|nompageref}{18}
+\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Network\nomeqref {2.0}|nompageref}{18}
 \nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{23}
 \nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{28}
 \nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
-\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aDSR@[{DSR}]\begingroup Digital Slide Repository\nomeqref {4.0}|nompageref}{43}
-\nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{44}
-\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{46}
-\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{47}
-\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{49}
+\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{35}
+\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aDSR@[{DSR}]\begingroup Digital Slide Repository\nomeqref {4.0}|nompageref}{44}
+\nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{45}
+\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{47}
+\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{48}
+\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{50}
