@@ -1,5 +1,6 @@
 \nomenclatureentry{aWSI@[{WSI}]\begingroup Whole Slide Image\nomeqref {1.0}|nompageref}{3}
 \nomenclatureentry{aNN@[{NN}]\begingroup Neural Network\nomeqref {1.0}|nompageref}{3}
+\nomenclatureentry{aROI@[{ROI}]\begingroup Regions of Interest\nomeqref {1.0}|nompageref}{4}
 \nomenclatureentry{aDZI@[{DZI}]\begingroup Deep Zoom Images\nomeqref {1.0}|nompageref}{5}
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {1.0}|nompageref}{5}
 \nomenclatureentry{aDICOM@[{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}|nompageref}{7}
@@ -12,17 +13,17 @@
 \nomenclatureentry{aNN@[{NN}]\begingroup Neural Networks\nomeqref {2.0}|nompageref}{18}
 \nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Networks\nomeqref {2.0}|nompageref}{18}
 \nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{23}
-\nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{27}
-\nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{28}
-\nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{28}
+\nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{29}
+\nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
-\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{41}
-\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{41}
-\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{41}
-\nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{41}
-\nomenclatureentry{aDSR@[{DSR}]\begingroup Digital Slide Repository\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{43}
-\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{45}
-\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{46}
-\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{48}
+\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{42}
+\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{42}
+\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{42}
+\nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{42}
+\nomenclatureentry{aDSR@[{DSR}]\begingroup Digital Slide Repository\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{44}
+\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{46}
+\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{47}
+\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{49}
