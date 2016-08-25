@@ -18,7 +18,7 @@
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Visualization of the Annotation Service}}{29}{figure.2.14}
 \contentsline {figure}{\numberline {2.15}{\ignorespaces Visualization of the Tessellation Service}}{29}{figure.2.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{39}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{40}{figure.3.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{42}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Microdraw GUI with opened WSI}}{45}{figure.4.2}

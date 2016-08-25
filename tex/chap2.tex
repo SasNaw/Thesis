@@ -1,5 +1,6 @@
 \chapter{Background}
 \section{Whole Slide Image Formats}
+\label{sec2_wsif}
 Due to the amount of data stored in a raw, uncompressed WSI\footnote{ A typical 1,600 megapixel slide requires about 4.6 GB of memory on average\cite{Farahanil15}. The size of a H\&E (hematoxylin and eosin) stained slide ranges typically from 4 to 20 GB\cite{Singh11}.}, file formatting and compression are required to make working with WSIs feasible. Since there is no standardized format for WSIs, vendors came up with their own, proprietary solutions, which vary greatly\cite{Cornish13}. Efforts of standardization are being made through the \emph{Digital Imaging and Communications in Medicine} (DICOM) Standard\cite{DICOM10}\nmc{DICOM}{Digital Imaging and Communications in Medicine}.
 
 Usually, WSI files are stored as a multitude of single images, spanning multiple folders and different resolutions. Those files are used to construct a so called \emph{image pyramid}\cite{Farahanil15} (see fig. \ref{fig2_pyramid} and subsection \ref{sec:dicomSupplement}).
