@@ -51,10 +51,9 @@
 \contentsline {subsubsection}{Annotation Service Server}{42}{section*.17}
 \contentsline {subsubsection}{Annotation Service Viewer}{43}{section*.18}
 \contentsline {section}{\numberline {4.3}Annotation Service Server Implementation}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Flask}{44}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Flask}{45}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}OpenSlide Python}{46}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Annotation Service Server RESTful API}{47}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Annotation Service Viewer}{49}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.3}Annotation Service Server RESTful API}{48}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}Annotation Service Viewer Implementation}{49}{section.4.4}
 \contentsline {chapter}{\numberline {5}Tessellation Service}{50}{chapter.5}
 \contentsline {section}{\numberline {5.1}Methodology}{50}{section.5.1}

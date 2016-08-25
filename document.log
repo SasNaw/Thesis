@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  25 AUG 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  25 AUG 2016 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -717,7 +717,7 @@ LaTeX Info: Redefining \nameref on input line 58.
 \MPnumerator=\count130
 \makeMPintoPDFobject=\count131
 \everyMPtoPDFconversion=\toks27
-) <img/HTW_Logo_quer_rgb.jpg, id=277, 174.1707pt x 41.4348pt>
+) <img/HTW_Logo_quer_rgb.jpg, id=273, 174.1707pt x 41.4348pt>
 File: img/HTW_Logo_quer_rgb.jpg Graphic file (type jpg)
 
 <use img/HTW_Logo_quer_rgb.jpg>
@@ -751,7 +751,7 @@ l.48 ...berline {4.2}Methodology}{39}{section.4.2}
 
  [2] (./tex/chap1.tex
 Chapter 1.
-<img/deepVisual.png, id=375, 754.82pt x 778.91pt>
+<img/deepVisual.png, id=370, 754.82pt x 778.91pt>
 File: img/deepVisual.png Graphic file (type png)
  <use img/deepVisual.png>
 Package pdftex.def Info: img/deepVisual.png used on input line 10.
@@ -776,7 +776,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [5]) (./tex/chap2.tex
 [6]
 Chapter 2.
-<img/imgPyramid.png, id=440, 1016.79875pt x 630.355pt>
+<img/imgPyramid.png, id=435, 1016.79875pt x 630.355pt>
 File: img/imgPyramid.png Graphic file (type png)
 
 <use img/imgPyramid.png>
@@ -796,7 +796,7 @@ e identifier (name{table.2.1}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.72 
-     ] [10] [11] <img/dzi_pyramid.png, id=527, 529.98pt x 365.365pt>
+     ] [10] [11] <img/dzi_pyramid.png, id=522, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
 
 <use img/dzi_pyramid.png>
@@ -809,7 +809,7 @@ Package pdftex.def Info: img/dzi_pyramid.png used on input line 127.
                                                   \fi \fi 
 l.150 
        <./img/dzi_pyramid.png>]
-<img/iiif_url_example.jpg, id=546, 1027.84pt x 770.88pt>
+<img/iiif_url_example.jpg, id=541, 1027.84pt x 770.88pt>
 File: img/iiif_url_example.jpg Graphic file (type jpg)
 
 <use img/iiif_url_example.jpg>
@@ -849,7 +849,7 @@ l.167 \begin{lstlisting}
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 168.
 
-<img/region_param.png, id=573, 824.07875pt x 601.24625pt>
+<img/region_param.png, id=568, 824.07875pt x 601.24625pt>
 File: img/region_param.png Graphic file (type png)
 
 <use img/region_param.png>
@@ -861,7 +861,7 @@ Package pdftex.def Info: img/region_param.png used on input line 192.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.197 
-      ] <img/size_parameter.png, id=589, 825.0825pt x 478.78876pt>
+      ] <img/size_parameter.png, id=584, 825.0825pt x 478.78876pt>
 File: img/size_parameter.png Graphic file (type png)
 
 <use img/size_parameter.png>
@@ -892,7 +892,7 @@ Overfull \hbox (11.4347pt too wide) in paragraph at lines 235--236
 c maps of geo-referenced
  []
 
-[17] <img/bnn.png, id=649, 433.62pt x 109.8504pt>
+[17] <img/bnn.png, id=644, 433.62pt x 109.8504pt>
 File: img/bnn.png Graphic file (type png)
  <use img/bnn.png>
 Package pdftex.def Info: img/bnn.png used on input line 273.
@@ -903,7 +903,7 @@ Package pdftex.def Info: img/bnn.png used on input line 273.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.280 
-       <./img/bnn.png>] <img/NN.png, id=670, 207.6558pt x 137.5539pt>
+       <./img/bnn.png>] <img/NN.png, id=665, 207.6558pt x 137.5539pt>
 File: img/NN.png Graphic file (type png)
 
 <use img/NN.png>
@@ -916,7 +916,7 @@ Package pdftex.def Info: img/NN.png used on input line 285.
                                                   \fi \fi 
 l.310 	\item U
               nsupervised Learning <./img/NN.png>]
-<img/perceptron.png, id=693, 433.62pt x 69.6201pt>
+<img/perceptron.png, id=688, 433.62pt x 69.6201pt>
 File: img/perceptron.png Graphic file (type png)
  <use img/perceptron.png>
 Package pdftex.def Info: img/perceptron.png used on input line 333.
@@ -929,13 +929,13 @@ Package pdftex.def Info: img/perceptron.png used on input line 333.
                                                   \fi \fi 
 l.342 	\item p
               rocessor = cell <./img/perceptron.png>]
-<img/lsp.png, id=707, 433.62pt x 119.4864pt>
+<img/lsp.png, id=702, 433.62pt x 119.4864pt>
 File: img/lsp.png Graphic file (type png)
  <use img/lsp.png>
 Package pdftex.def Info: img/lsp.png used on input line 350.
 (pdftex.def)             Requested size: 260.17401pt x 71.69238pt.
 
-<img/nlsp.png, id=709, 433.62pt x 92.9874pt>
+<img/nlsp.png, id=704, 433.62pt x 92.9874pt>
 File: img/nlsp.png Graphic file (type png)
  <use img/nlsp.png>
 Package pdftex.def Info: img/nlsp.png used on input line 358.
@@ -953,7 +953,7 @@ l.376
                                                   \fi \fi 
 l.376 
        <./img/lsp.png> <./img/nlsp.png>]
-<img/mlp.png, id=719, 237.88875pt x 215.00325pt>
+<img/mlp.png, id=714, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
 Package pdftex.def Info: img/mlp.png used on input line 379.
@@ -971,7 +971,7 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 474--475
 ork on this project
  []
 
-[26] <img/processChainA.png, id=804, 1039.885pt x 281.05pt>
+[26] <img/processChainA.png, id=799, 1039.885pt x 281.05pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
@@ -989,7 +989,7 @@ Overfull \hbox (18.9652pt too wide) in paragraph at lines 511--512
                                                   \fi \fi 
 l.518 
        <./img/processChainA.png>]
-<img/processChainB.png, id=812, 1676.2625pt x 442.65375pt>
+<img/processChainB.png, id=807, 1676.2625pt x 442.65375pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
@@ -1002,7 +1002,7 @@ Package pdftex.def Info: img/processChainB.png used on input line 538.
                                                   \fi \fi 
 l.550 
        <./img/processChainB.png>]
-<img/processChainC.png, id=820, 1204.5pt x 307.1475pt>
+<img/processChainC.png, id=815, 1204.5pt x 307.1475pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
@@ -1083,7 +1083,7 @@ identifier (name{table.3.4}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.215 \begin{lstlisting}
                         ] [36]
-<img/inputDir.png, id=979, 435.6275pt x 286.06876pt>
+<img/inputDir.png, id=974, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
  <use img/inputDir.png>
 Package pdftex.def Info: img/inputDir.png used on input line 298.
@@ -1110,7 +1110,7 @@ l.1 \chapter
 Chapter 4.
 [39
 
-] <img/contextregions.png, id=1022, 311.1625pt x 285.065pt>
+] <img/contextregions.png, id=1017, 311.1625pt x 285.065pt>
 File: img/contextregions.png Graphic file (type png)
 
 <use img/contextregions.png>
@@ -1123,7 +1123,7 @@ Package pdftex.def Info: img/contextregions.png used on input line 35.
                                                   \fi \fi 
 l.43 
       <./img/contextregions.png>] [41] [42]
-<img/microdrawUI.png, id=1067, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=1062, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1136,69 +1136,75 @@ Package pdftex.def Info: img/microdrawUI.png used on input line 100.
                                                   \fi \fi 
 l.108 A
        part from the frameworks used, MicroDraw is written in JavaScript usi...
- <./img/microdrawUI.png>] <img/route.png, id=1097, 491.8375pt x 145.54375pt>
-File: img/route.png Graphic file (type png)
+ <./img/microdrawUI.png>] [44pdfTeX warning (ext4): destination with the same i
+dentifier (name{table.4.1}) has been already used, duplicate ignored
 
-<use img/route.png>
-Package pdftex.def Info: img/route.png used on input line 150.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.158 
+      ] <img/route.png, id=1110, 491.8375pt x 145.54375pt>
+File: img/route.png Graphic file (type png)
+ <use img/route.png>
+Package pdftex.def Info: img/route.png used on input line 180.
 (pdftex.def)             Requested size: 245.91814pt x 72.77168pt.
- [44]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 156.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 186.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 156.
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 178.
-
-<img/HTTPmethods.png, id=1124, 581.17125pt x 161.60374pt>
-File: img/HTTPmethods.png Graphic file (type png)
-
-<use img/HTTPmethods.png>
-Package pdftex.def Info: img/HTTPmethods.png used on input line 187.
-(pdftex.def)             Requested size: 290.58492pt x 80.80167pt.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 186.
  [45pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.192 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.1}) has been already used, duplicate ignored
+l.187 
+       <./img/route.png>]
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 208.
+
+<img/HTTPmethods.png, id=1136, 581.17125pt x 161.60374pt>
+File: img/HTTPmethods.png Graphic file (type png)
+
+<use img/HTTPmethods.png>
+Package pdftex.def Info: img/HTTPmethods.png used on input line 217.
+(pdftex.def)             Requested size: 290.58492pt x 80.80167pt.
+ [46pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.192 
-       <./img/route.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+l.233 	\item M
+              RXSpdfTeX warning (ext4): destination with the same identifier (n
+ame{figure.4.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.233 	\item M
+              RXS <./img/HTTPmethods.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
 []\OT1/cmr/m/n/10 OpenSlide,
  []
 
-[46pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4
-}) has been already used, duplicate ignored
+[47pdfTeX warning (ext4): destination with the same identifier (name{table.4.3}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.236 
-       <./img/HTTPmethods.png>]
+l.270 
+      ]
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 259.
- [47pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 291.
+ [48pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.261 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.261 
-      ] [48]) (./tex/chap5.tex [49]
+l.300 	\item \textbf
+                    {/{\textless}slug{\textgreater}{\textunderscore}files/{\...
+]) (./tex/chap5.tex [49]
 Chapter 5.
 ) (./tex/chap6.tex [50
 
@@ -1675,49 +1681,49 @@ Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  []
 
 
-Overfull \hbox (41.3341pt too wide) in paragraph at lines 20--20
+Overfull \hbox (41.3341pt too wide) in paragraph at lines 21--21
  [][] [][]\OT1/cmr/m/n/10 Aperio data set (source: http://openslide.cs.cmu.edu/
 download/openslide- 
  []
 
 
-Overfull \hbox (85.0147pt too wide) in paragraph at lines 21--21
+Overfull \hbox (85.0147pt too wide) in paragraph at lines 22--22
  [][] [][]\OT1/cmr/m/n/10 Generic Tiled tiff data set (source: http://openslide
 .cs.cmu.edu/download/openslide- 
  []
 
 
-Overfull \hbox (91.86203pt too wide) in paragraph at lines 22--22
+Overfull \hbox (91.86203pt too wide) in paragraph at lines 23--23
  [][] [][]\OT1/cmr/m/n/10 Hamamatsu data set (.ndpi, source: http://openslide.c
 s.cmu.edu/download/openslide- 
  []
 
 
-Overfull \hbox (89.97313pt too wide) in paragraph at lines 23--23
+Overfull \hbox (89.97313pt too wide) in paragraph at lines 24--24
  [][] [][]\OT1/cmr/m/n/10 Hamamatsu data set (.vms, source: http://openslide.cs
 .cmu.edu/download/openslide- 
  []
 
 
-Overfull \hbox (34.77852pt too wide) in paragraph at lines 24--24
+Overfull \hbox (34.77852pt too wide) in paragraph at lines 25--25
  [][] [][]\OT1/cmr/m/n/10 Leica data set (source: http://openslide.cs.cmu.edu/d
 ownload/openslide- 
  []
 
 
-Overfull \hbox (38.00078pt too wide) in paragraph at lines 25--25
+Overfull \hbox (38.00078pt too wide) in paragraph at lines 26--26
  [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: http://openslide.cs.cmu.edu/d
 ownload/openslide- 
  []
 
 
-Overfull \hbox (41.66739pt too wide) in paragraph at lines 26--26
+Overfull \hbox (41.66739pt too wide) in paragraph at lines 27--27
  [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: http://openslide.cs.cmu.edu
 /download/openslide- 
  []
 
 
-Overfull \hbox (41.66739pt too wide) in paragraph at lines 27--27
+Overfull \hbox (41.66739pt too wide) in paragraph at lines 28--28
  [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: http://openslide.cs.cmu.edu
 /download/openslide- 
  []
@@ -1738,41 +1744,42 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: DFF0EBE0DED5B8B90DA8F9D661527DAB;4477.
+(rerunfilecheck)             Checksum: AA87BECB5686362297DE9036257F64D7;4398.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
- 9275 strings out of 493029
- 128752 string characters out of 6136235
- 367727 words of memory out of 5000000
- 12182 multiletter control sequences out of 15000+600000
- 10489 words of font info for 38 fonts, out of 8000000 for 9000
+ 9285 strings out of 493029
+ 128887 string characters out of 6136235
+ 367782 words of memory out of 5000000
+ 12183 multiletter control sequences out of 15000+600000
+ 10848 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,32p,1285b,1202s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmtt8.pfb>
-Output written on document.pdf (69 pages, 4390247 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb>
+Output written on document.pdf (69 pages, 4402492 bytes).
 PDF statistics:
- 1626 PDF objects out of 1728 (max. 8388607)
- 1482 compressed objects within 15 object streams
- 448 named destinations out of 1000 (max. 500000)
- 650 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1641 PDF objects out of 1728 (max. 8388607)
+ 1496 compressed objects within 15 object streams
+ 456 named destinations out of 1000 (max. 500000)
+ 642 words of extra memory for PDF output out of 10000 (max. 10000000)
 

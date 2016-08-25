@@ -108,23 +108,53 @@ The first iteration of the ASV will be based on an open source project called \e
 Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{see \url{https://jquery.com/} for more information on jQuery}.
 
 \section{Annotation Service Server Implementation}
-
-% openslide
-% flask
-% how does it work?
-% where does it listen?
-% functions?
 % uses json to save annotations and dictionaries
 % internal structure
 
-% The ASS is a local RESTful server written in python (\emph{\textbf{as{\textunderscore}server.py}}). Additional frameworks have been used to improve functionality. Those are:
+The ASS is a local RESTful server written in python (\emph{\textbf{as{\textunderscore}server.py}}). Additional frameworks have been used to improve functionality. Those are:
 
 \begin{itemize}
-	\item Flask\cite{web:flask}
-	\item OpenSlide Python\cite{web:openslide}
+	\item Flask\cite{web:flask} (see chap. 4.3.1)
+	\item OpenSlide Python\cite{web:openslide} (see chap. 4.3.2)
 \end{itemize}
 
-The Flask framework operates with a specific directory setup. This made a specific structure necessary. 
+The use of the Flask framework makes a certain folder structure necessary\cite{web:flask}. To serve static files, a \emph{"static/"} directory must be present in the base directory of the ASS. The static/ directory contains the CSS, JavaScript, dictionaries and WSIs. To read a WSI with the ASS, it must be placed in static/wsi/[file path/]. The dictionaries can be found in static/dictionaries/, if a manual manipulation of a dictionary (deleting one or deleting/updating an entry in one) becomes necessary.
+
+The ASS can be started from a terminal through the use of a python interpreter:
+\begin{lstlisting}
+	$ python as_server.py
+\end{lstlisting}
+
+Alternatively, python's -m switch can be used:
+\begin{lstlisting}
+	$ export FLASK_APP=as_server.py
+	$ python python -m flask run
+\end{lstlisting}
+
+When started without further parameters, the server will listen to the IP 127.0.0.1, port 5000 by default. Another IP address or port can be specified via the -l and -p parameter (see tab. \ref{tab4_assParams} for a complete list of available parameters):
+\begin{lstlisting}
+	$ python as_server.py -l 192.27.119.89 -p 4711
+\end{lstlisting}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l | r |}
+			\hline
+			\textbf{parameter} & \textbf{description} & \textbf{default}\\ \hline
+			-B, --ignore-bounds & render only the non-empty slide region & false\\ \hline
+			-e, --overlap & set overlap between adjacent tiles in pixels & 0 \\ \hline
+			-f, --format & set tile format (PNG or JPEG) & JPEG \\ \hline
+			-l, --listen & set IP address to listen to & 127.0.0.1\\ \hline
+			-p, --port & set port to listen to & 5000\\ \hline
+			-Q, --quality & set JPEG compression quality in \% & 100\\ \hline
+			-s, --size & set tile size & 256\\ \hline
+		\end{tabular}
+		\caption{Parameters for as{\textunderscore}server.py}
+		\label{tab4_assParams}
+	\end{center}
+\end{table}
+
+To access a WSI, the URL must be pointed to it, e.g. \url{http://127.0.0.1:5000/wsi/openslide/CMU-1.svs} to access the WSI CMU-1.svs in the directory static/wsi/openslide/.
 
 
 \subsection{Flask}
@@ -190,6 +220,8 @@ HTTP knows different methods for accessing URLs. By default, a route only answer
 	\end{center}
 \end{figure}
 
+Through the use of decorators a RESTful API was deployed for the ASS (compare chap. 4.3.3).
+
 
 \subsection{OpenSlide Python}
 
@@ -253,7 +285,7 @@ Through the use of those 2 functions, the ASS can create the metadata of a DZI o
 
 
 \subsection{Annotation Service Server RESTful API}
-To communicate with the ASS a RESTful API was deployed. This is realized with Flasks route() decorators\footnote{see chap. 4.3.1}. The listing below gives an overview over the URLs that the ASS RESTful API offers (in the style of \textbf{URL} (method): \emph{function(parameters)}), followed by a brief description of the functionality:
+To communicate with the ASS a RESTful API was deployed. This is realized with Flasks route() decorators\footnote{see chap. 4.3.1}. The listing below gives an overview over the URLs that the ASS RESTful API offers (in the style of \textbf{URL} (method): \emph{function(parameters)}), followed by a brief description of the functionality\footnote{see Appendix B.1 for a detailed documentation of the ASS functions}:
 
 \begin{enumerate}[(1) -]
 	\item\textbf{/wsi/{\textless}path:file{\textunderscore}path{\textgreater}.dzi} (GET): \emph{index{\textunderscore}dzi(file{\textunderscore}path)}\\
@@ -287,11 +319,8 @@ To communicate with the ASS a RESTful API was deployed. This is realized with Fl
 	When called, the ASS looks up the content of its \emph{dictionaries} folder and returns a list with the found file names or -1 in the case of an error.
 \end{enumerate}
 
+
 % python web server, flask, openslide, java script, html5, css, jquery
-
-
-\subsection{Annotation Service Viewer}
-
 \section{Annotation Service Viewer Implementation}
 % paper
 % osd
