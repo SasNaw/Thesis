@@ -15,6 +15,8 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage[toc,page]{appendix}
+\usepackage{array}
+\usepackage{longtable}
 
 % --- Abk�rzungsverzeichnis: ----------------------------
 % START % N�heres siehe http://my.opera.com/timomeinen/blog/show.dml/68644
@@ -38,7 +40,7 @@
 	\textbf{\textcolor{red}{#1}}
 }
 
-
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   

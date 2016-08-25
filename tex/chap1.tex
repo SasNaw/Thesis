@@ -17,7 +17,7 @@ In the recent past the use of NN enabled major breakthroughs, especially in the 
 
 There is enormous potential in the use of NN in the digital pathology as well, but to transfer these models and technologies, certain obstacles must be overcome. One of those is the need for proper training samples. While generally there are large amounts of WSIs (e.g. publicly available at the Cancer Genome Atlas\footnote{\url{https://gdc-portal.nci.nih.gov/}}), most of them will not be usable as a training sample without further preparation.
 
-A possible way to prepare them is by using image annotation: tagging regions of interest (ROI)\nmc{ROI}{Regions of Interest} on an image and assigning labels or keywords as metadata to those tags. These can be added to the WSIs, stored and later used for training. The result of such an approach could be similar to the one of Karpathy and Fei-Fei\cite{Karpathy15}, but with a medical context instead of daily situations.
+A possible way to prepare them is by using image annotation: tagging regions of interest (ROI)\nmc{ROI}{Region of Interest} on an image and assigning labels or keywords as metadata to those tags. These can be added to the WSIs, stored and later used for training. The result of such an approach could be similar to the one of Karpathy and Fei-Fei\cite{Karpathy15}, but with a medical context instead of daily situations.
 
 Therefore the goal of this thesis is to provide tools for pathologists and data scientists to annotate WSIs and save those annotations in such a way that they will be usable later in combination with NN.
 
@@ -40,7 +40,7 @@ There is no standardized WSI file format\cite{Cornish13}. Hence, slide scanner v
 \begin{itemize}
 	\item JPEG2000
 	\item TIFF
-	\item Deep Zoom Images (DZI)\nmc{DZI}{Deep Zoom Images}
+	\item Deep Zoom Images (DZI)\nmc{DZI}{Deep Zoom Image}
 	\item DICOM (supplement 145), without reference implementation as of yet\cite{Cornish13}
 \end{itemize}
 Therefore, to achieve (A), the first step of the process chain is to establish a tool with which WSIs of various vendor specific formats can be turned into an open file format. This way, neither (i) nor (ii) will arise as a problem.
