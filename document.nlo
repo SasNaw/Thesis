@@ -17,11 +17,11 @@
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {2.0}|nompageref}{28}
 \nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{29}
 \nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
-\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{40}
+\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{41}
 \nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{41}
 \nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{41}
 \nomenclatureentry{aSOP@[{SOP}]\begingroup same-origin policy\nomeqref {4.0}|nompageref}{41}
 \nomenclatureentry{aDSR@[{DSR}]\begingroup Digital Slide Repository\nomeqref {4.0}|nompageref}{42}
 \nomenclatureentry{aUX@[{UX}]\begingroup User Experience\nomeqref {4.0}|nompageref}{43}
-\nomenclatureentry{aDeepZoomGenerator@[{DeepZoomGenerator}]\begingroup  \nomeqref {4.0}|nompageref}{44}
-\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{45}
+\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{44}
+\nomenclatureentry{aMPP@[{MPP}]\begingroup Microns per Pixel\nomeqref {4.0}|nompageref}{47}

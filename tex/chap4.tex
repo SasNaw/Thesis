@@ -10,15 +10,17 @@ As described in 2.4.2, the goal of the AS is to provide a user with the possibil
 
 In order to achieve objective (1) - (3), a GUI needs to be deployed which supports the user in working on those tasks. (3) also adds the need for file persistence management.
 
+During the development process it became clear that supporting only DZI as input format was impractical for the real life environment of the AS. Therefore, the need to support proprietary formats as well arose. The proprietary formats should be supported without implementing separate handling for each one and without creating a vendor lock-in or platform restriction\footnote{see chap. 1.2(i), 1.2(ii) and 2.1.3}].
+
 
 \section{Methodology}
-As stated in 2.1, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often only support Windows platforms, ignoring other operating systems\cite{Cornish13}\cite{DICOM10}\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
-
-Chap. 3 already established a service to convert WSIs of various formats into the DZI format, solving the problem of multiple proprietary formats. 
+As stated in 2.1, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often support only Windows platforms, ignoring other operating systems\cite{Cornish13}\cite{DICOM10}\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
 
 Independence from an operating system can be achieved by using web technologies, especially when running an application in a web browser\cite{Tseytlin14}, since those are supported by all modern operating systems. 
 
-Because of this, the AS will be implemented as a web browser application. 
+Chap. 3 already established a service to convert WSIs of various formats into the DZI format, solving the problem of multiple proprietary formats. But, as the development process has shown, this is not enough. Therefore, a solution must be established, with which proprietary formats can be handled as well. The use of OpenSlides python interface provides the functionality of generating individual Deep Zoom tiles from slide objects without a complete conversion via a DZI wrapper, which can be used to wrap proprietary image formats and serve them to a web browser as if they would be DZI\cite{web:openslide}.
+
+Because of those reasons, the AS will be implemented as a web browser application. 
 
 
 \subsection{Functionality of the Annotation Service}
@@ -30,7 +32,7 @@ The information what a region is surrounded by can be as valuable as the informa
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.8]{img/contextregions.png}
+		\includegraphics[scale=0.5]{img/contextregions.png}
 		\caption{Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}
 		\label{fig4_contextregions}
 	\end{center}
@@ -111,12 +113,84 @@ The AS was realized in 2 components: the ASS and the ASV. The implementation of 
 
 The following subsections will explain the implementation and used frameworks of the ASS (see 4.3.1) and the ASV (see 4.3.2), as well as the way how those 2 components work together (see 4.3.3).
 
-For a detailed explanation of the single functions of ASS and ASV, see Appendix B.
+For a detailed explanation of the single functions of ASS and ASV, see Appendix B.1 and B.2.
 
 % openslide, openslide web server
 % python web server, flask, openslide, java script, html5, css, jquery
 \subsection{Annotation Service Server}
-To make OpenSeadragon capable of viewing it anyway, OpenSlides \emph{DeepZoomGenerator} (DZG)\nmc{DeepZoomGenerator} is used.
+The ASS is a local web server written in python. Additionally, frameworks have been used for improved functionality. Those were: 
+
+\begin{itemize}
+	\item Flask\cite{web:flask}
+	\item OpenSlide Python\cite{web:openslide}
+\end{itemize}
+
+
+
+\subsubsection{Frameworks}
+To read WSIs, the ASS uses OpenSlide Python, a python interface to the OpenSlide C library. It provides a simple interface for reading WSI. Additionally, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}, which can be used to create Deep Zoom tiles on demand. WSIs of the following formats are supported:
+
+\begin{itemize}
+	\item BIF
+	\item NDPI
+	\item MRXS
+	\item SCN
+	\item SVS
+	\item SVSLIDE
+	\item TIF
+	\item TIFF
+	\item VMS
+	\item VMU
+\end{itemize}
+
+Through OpenSlide, the ASS can read a proprietary WSI as a so called \emph{OpenSlide} object (see line 4). As such it has methods to access available metadata, image tiles, the thumbnail and associated images. This OpenSlide object can be wrapped with a DZG to enable DZI support\cite{web:openslide}. To do so, the OpenSlide object needs to be passed into the constructor of the DZG (see line 5), together with a number of optional parameters (see tab \ref{tab4_DZGparam} for parameters and their default values):
+
+\begin{lstlisting}[frame=single]
+from openslide import open_slide
+from openslide.deepzoom import DeepZoomGenerator
+
+slide = open_slide(slide path)
+dzg = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds])
+\end{lstlisting}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{2.5cm} | p{2cm} | p{5.5cm} |}
+			\hline
+			\textbf{parameter} & \textbf{type} & \textbf{description}\\ \hline
+			osr & OpenSlide, ImageSlide & the slide object
+			\\ \hline
+			tile{\textunderscore}size & integer & the width and height of a single tile (254)\\ \hline
+			overlap & integer & the number of extra pixels to add to each interior edge of a tile (1)\\ \hline
+			limit{\textunderscore}bounds & boolean & true to render only the non-empty slide region (false)\\ \hline
+		\end{tabular}
+		\caption{DeepZoomGenerator parameters (with default values, source: \cite{web:openslide})}
+		\label{tab4_DZGparam}
+	\end{center}
+\end{table}
+
+Once created, the DZG can give numerous informations about the tiles and levels of the wrapped WSI\footnote{see \cite{web:openslide} for an in-depth list of functions}. Of special importance are the \emph{get{\textunderscore}dzi} and \emph{get{\textunderscore}tile} functions. The get{\textunderscore}file(format) function creates a string, containing the metadata of the .dzi-file\footnote{see chap. 2.1.3 - Deep Zoom Images}. The \emph{format} parameter specifies the format of the individual tiles (PNG or JPEG). The get{\textunderscore}tile(level, address) function returns an image of the tile corresponding to the supplied parameter values (see tab. \ref{tab4_getTileParams}). The returned tile is either PNG or JPEG, depending on the value on the value passed to the format parameter of the get{\textunderscore}file function.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{1.5cm} | p{1.5cm} | p{7cm} |}
+			\hline
+			\textbf{name} & \textbf{type} & \textbf{description}\\ \hline
+			level & integer & the DZI level to get the tile from \\ \hline
+			address & tuple & the address of the thile within the level as a (column, row) tuple\\ \hline
+		\end{tabular}
+		\caption{DeepZoomGenerators get{\textunderscore}tile parameters (source: \cite{web:openslide})}
+		\label{tab4_getTileParams}
+	\end{center}
+\end{table}
+
+Through the use of those 2 functions, the ASS can create the metadata for a DZI on demand and pass it to the ASV, which in return requests the single needed 
+
+
+\subsubsection{Structure}
+
+
+
 % openslide
 % flask
 % how does it work?
