@@ -3,66 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-I was expecting a `,' or a `}'---line 10 of file ./bibl/bibl.bib
- :   
- :   pages = "217 - 222"
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Repeated entry---line 75 of file ./bibl/bibl.bib
- :  @article{Park12
- :                 ,
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 91 of file ./bibl/bibl.bib
- :   
- :   year      = "2012",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Unbalanced braces---line 162 of file ./bibl/bibl.bib
- :  
- :  }
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--empty year in Bankman00
-Warning--empty year in Qi12
-You've used 60 entries,
+You've used 62 entries,
             2118 wiz_defined-function locations,
-            824 strings with 12793 characters,
-and the built_in function-call counts, 13283 in all, are:
-= -- 1309
-> -- 432
+            838 strings with 13143 characters,
+and the built_in function-call counts, 13798 in all, are:
+= -- 1366
+> -- 446
 < -- 1
-+ -- 191
-- -- 124
-* -- 498
-:= -- 2313
-add.period$ -- 226
-call.type$ -- 60
-change.case$ -- 234
++ -- 197
+- -- 128
+* -- 522
+:= -- 2404
+add.period$ -- 234
+call.type$ -- 62
+change.case$ -- 241
 chr.to.int$ -- 0
 cite$ -- 62
-duplicate$ -- 521
-empty$ -- 1269
-format.name$ -- 124
-if$ -- 2844
+duplicate$ -- 538
+empty$ -- 1316
+format.name$ -- 128
+if$ -- 2956
 int.to.chr$ -- 0
-int.to.str$ -- 60
+int.to.str$ -- 62
 missing$ -- 28
-newline$ -- 349
-num.names$ -- 120
-pop$ -- 420
+newline$ -- 361
+num.names$ -- 124
+pop$ -- 426
 preamble$ -- 1
-purify$ -- 182
+purify$ -- 188
 quote$ -- 0
-skip$ -- 381
+skip$ -- 394
 stack$ -- 0
-substring$ -- 364
-swap$ -- 73
+substring$ -- 401
+swap$ -- 75
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 226
-warning$ -- 2
-while$ -- 123
-width$ -- 62
-write$ -- 683
-(There were 4 error messages)
+type$ -- 234
+warning$ -- 0
+while$ -- 128
+width$ -- 64
+write$ -- 710

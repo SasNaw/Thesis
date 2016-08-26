@@ -11,10 +11,11 @@
 \contentsline {table}{\numberline {3.4}{\ignorespaces Options for VIPS}}{37}{table.3.4}
 \contentsline {table}{\numberline {3.5}{\ignorespaces Results of Conversion Service Test}}{40}{table.3.5}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Parameters for as{\textunderscore }server.py}}{48}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Available converters in Flask (source: \cite {web:flask})}}{49}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces DeepZoomGenerator parameters (with default values, source: \cite {web:openslide})}}{51}{table.4.3}
-\contentsline {table}{\numberline {4.4}{\ignorespaces DeepZoomGenerators get{\textunderscore }tile parameters (source: \cite {web:openslide})}}{51}{table.4.4}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Available converters in Flask (source: \cite {web:flask})}}{48}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces DZG parameters (source: \cite {web:openslide})}}{50}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Description of \texttt {get{\textunderscore }tile(level, address)} parameters (source: \cite {web:openslide})}}{50}{table.4.3}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Configurable parameters in configuration.json}}{51}{table.4.4}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Parameters for as{\textunderscore }server.py}}{51}{table.4.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

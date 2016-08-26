@@ -23,7 +23,7 @@ Neuroanatomy Applied and Theoretical (NAAT).
 \bibitem{Bankman00}
 I.~Bankman.
 \newblock {\em Handbook of Medical Imaging: Processing and Analysis}.
-\newblock Academic Press.
+\newblock Academic Press, 2000.
 
 \bibitem{web:deepzoom}
 R.~Berta.
@@ -146,7 +146,7 @@ E.~Tseytlin et~al.
 H.~Sharma et~al.
 \newblock Robust segmentation of overlapping cells in histopathology specimens
   using parallel seed detection and repulsive level set.
-\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(3).
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(3), March 2012.
 
 \bibitem{Sharma16}
 H.~Sharma et~al.
@@ -195,6 +195,13 @@ S.~Wienert et~al.
 \newblock {\em Scientific Reports}, 2(503), Juli 2012.
 \newblock
   \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
+
+\bibitem{Fielding00}
+R.~Fielding.
+\newblock {\em Architectural Styles and the Design of Network-based Software
+  Architectures}.
+\newblock PhD thesis, University of Carolina, 2000.
+\newblock \url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.
 
 \bibitem{web:flask}
 Flask.
@@ -280,7 +287,7 @@ K.~Martinez J.~Cupitt.
 \bibitem{Angulo10}
 K.~Martinez J.~Cupitt.
 \newblock Nucleus modelling and segmentation in cell clusters.
-\newblock {\em Mathematics in Industry}, 15, May 2010.
+\newblock {\em Mathematics in Industry}, 15:217 -- 222, May 2010.
 
 \bibitem{Lewis14}
 M.~Fowler J.Lewis.
@@ -379,6 +386,12 @@ D.~Shiffman.
 \newblock {\em The Nature of Code}.
 \newblock D. Shiffman, 2012.
 \newblock \url{http://natureofcode.com/book/chapter-10-neural-networks/}.
+
+\bibitem{web:w3c}
+The~Internet Society.
+\newblock Hypertext transfer protocol -- http/1.1.
+\newblock \url{https://www.w3.org/Protocols/rfc2616/rfc2616.html}, 1999.
+\newblock Accessed: 26.08.2016.
 
 \bibitem{USSanDiego}
 US~San Diego~Health System.

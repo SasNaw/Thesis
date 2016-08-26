@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  26 AUG 2016 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  27 AUG 2016 00:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,20 +689,20 @@ Writing nomenclature file document.nlo
 (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -722,7 +722,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box36
-Package hyperref Info: Link coloring OFF on input line 67.
+Package hyperref Info: Link coloring OFF on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -732,9 +732,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 69.
+LaTeX Info: Redefining \pageref on input line 69.
+LaTeX Info: Redefining \nameref on input line 69.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
@@ -758,93 +758,93 @@ LaTeX Info: Redefining \nameref on input line 67.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 67.
+(Font)              using `OT1/cmtt/m/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/it' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 67.
+(Font)              using `OT1/cmtt/b/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/sl' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 67.
+(Font)              using `OT1/cmtt/b/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/sc' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 67.
+(Font)              using `OT1/cmtt/b/n' instead on input line 69.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 67.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 67.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sl' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 67.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sc' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 67.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 67.
+(Font)              using `OT1/cmtt/m/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/it' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 67.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/sl' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 67.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/sc' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 67.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 67.
+(Font)              using `OT1/cmtt/m/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/it' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 67.
+(Font)              using `OT1/cmtt/c/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/sl' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 67.
+(Font)              using `OT1/cmtt/c/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/sc' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 67.
+(Font)              using `OT1/cmtt/c/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 67.
+(Font)              using `OT1/cmtt/m/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/it' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 67.
+(Font)              using `OT1/cmtt/l/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/sl' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 67.
+(Font)              using `OT1/cmtt/l/n' instead on input line 69.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/sc' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 67.
+(Font)              using `OT1/cmtt/l/n' instead on input line 69.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/m/ui' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 67.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/ui' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 67.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/In' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 67.
+(Font)              using `OT1/cmtt/m/n' instead on input line 69.
 
-<img/HTW_Logo_quer_rgb.jpg, id=281, 174.1707pt x 41.4348pt>
+<img/HTW_Logo_quer_rgb.jpg, id=285, 174.1707pt x 41.4348pt>
 File: img/HTW_Logo_quer_rgb.jpg Graphic file (type jpg)
 
 <use img/HTW_Logo_quer_rgb.jpg>
-Package pdftex.def Info: img/HTW_Logo_quer_rgb.jpg used on input line 85.
+Package pdftex.def Info: img/HTW_Logo_quer_rgb.jpg used on input line 87.
 (pdftex.def)             Requested size: 174.17027pt x 41.43468pt.
  [1
 
@@ -853,14 +853,14 @@ g>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.105 \newpage
+l.107 \newpage
                [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.108 \end{abstract}
+l.110 \end{abstract}
                      [1] (./document.tocpdfTeX warning (ext4): destination with
  the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -875,7 +875,7 @@ l.48 ...f the Annotation Service}{41}{section.4.2}
  [3]
 (./tex/chap1.tex
 Chapter 1.
-<img/deepVisual.png, id=384, 754.82pt x 778.91pt>
+<img/deepVisual.png, id=389, 754.82pt x 778.91pt>
 File: img/deepVisual.png Graphic file (type png)
  <use img/deepVisual.png>
 Package pdftex.def Info: img/deepVisual.png used on input line 10.
@@ -900,7 +900,7 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
  [6]) (./tex/chap2.tex
 [7]
 Chapter 2.
-<img/imgPyramid.png, id=450, 1016.79875pt x 630.355pt>
+<img/imgPyramid.png, id=455, 1016.79875pt x 630.355pt>
 File: img/imgPyramid.png Graphic file (type png)
 
 <use img/imgPyramid.png>
@@ -920,7 +920,7 @@ me identifier (name{table.2.1}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.76 
-     ] [11] [12] <img/dzi_pyramid.png, id=548, 529.98pt x 365.365pt>
+     ] [11] [12] <img/dzi_pyramid.png, id=553, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
 
 <use img/dzi_pyramid.png>
@@ -933,7 +933,7 @@ Package pdftex.def Info: img/dzi_pyramid.png used on input line 130.
                                                   \fi \fi 
 l.153 
        <./img/dzi_pyramid.png>]
-<img/iiif_url_example.jpg, id=567, 1027.84pt x 770.88pt>
+<img/iiif_url_example.jpg, id=572, 1027.84pt x 770.88pt>
 File: img/iiif_url_example.jpg Graphic file (type jpg)
 
 <use img/iiif_url_example.jpg>
@@ -973,7 +973,7 @@ l.170 \begin{lstlisting}
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
 
-<img/region_param.png, id=596, 824.07875pt x 601.24625pt>
+<img/region_param.png, id=601, 824.07875pt x 601.24625pt>
 File: img/region_param.png Graphic file (type png)
 
 <use img/region_param.png>
@@ -985,7 +985,7 @@ Package pdftex.def Info: img/region_param.png used on input line 196.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.201 
-      ] <img/size_parameter.png, id=616, 825.0825pt x 478.78876pt>
+      ] <img/size_parameter.png, id=621, 825.0825pt x 478.78876pt>
 File: img/size_parameter.png Graphic file (type png)
 
 <use img/size_parameter.png>
@@ -1016,7 +1016,7 @@ Overfull \hbox (11.4347pt too wide) in paragraph at lines 241--242
 c maps of geo-referenced
  []
 
-[18] <img/bnn.png, id=677, 433.62pt x 109.8504pt>
+[18] <img/bnn.png, id=682, 433.62pt x 109.8504pt>
 File: img/bnn.png Graphic file (type png)
  <use img/bnn.png>
 Package pdftex.def Info: img/bnn.png used on input line 280.
@@ -1027,7 +1027,7 @@ Package pdftex.def Info: img/bnn.png used on input line 280.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.287 
-       <./img/bnn.png>] <img/NN.png, id=698, 207.6558pt x 137.5539pt>
+       <./img/bnn.png>] <img/NN.png, id=703, 207.6558pt x 137.5539pt>
 File: img/NN.png Graphic file (type png)
 
 <use img/NN.png>
@@ -1040,7 +1040,7 @@ Package pdftex.def Info: img/NN.png used on input line 292.
                                                   \fi \fi 
 l.317 	\item U
               nsupervised Learning <./img/NN.png>]
-<img/perceptron.png, id=721, 433.62pt x 69.6201pt>
+<img/perceptron.png, id=726, 433.62pt x 69.6201pt>
 File: img/perceptron.png Graphic file (type png)
  <use img/perceptron.png>
 Package pdftex.def Info: img/perceptron.png used on input line 340.
@@ -1053,19 +1053,19 @@ Package pdftex.def Info: img/perceptron.png used on input line 340.
                                                   \fi \fi 
 l.350 	\item o
               utput = axon <./img/perceptron.png>]
-<img/lsp.png, id=738, 433.62pt x 119.4864pt>
+<img/lsp.png, id=743, 433.62pt x 119.4864pt>
 File: img/lsp.png Graphic file (type png)
  <use img/lsp.png>
 Package pdftex.def Info: img/lsp.png used on input line 357.
 (pdftex.def)             Requested size: 260.17401pt x 71.69238pt.
 
-<img/nlsp.png, id=740, 433.62pt x 92.9874pt>
+<img/nlsp.png, id=745, 433.62pt x 92.9874pt>
 File: img/nlsp.png Graphic file (type png)
  <use img/nlsp.png>
 Package pdftex.def Info: img/nlsp.png used on input line 365.
 (pdftex.def)             Requested size: 325.2142pt x 69.74037pt.
 
-<img/mlp.png, id=745, 237.88875pt x 215.00325pt>
+<img/mlp.png, id=750, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
 Package pdftex.def Info: img/mlp.png used on input line 386.
@@ -1096,7 +1096,7 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 482--483
 ork on this project
  []
 
-<img/processChainUML.png, id=826, 809.0225pt x 832.10875pt>
+<img/processChainUML.png, id=831, 809.0225pt x 832.10875pt>
 File: img/processChainUML.png Graphic file (type png)
 
 <use img/processChainUML.png>
@@ -1109,7 +1109,7 @@ re.2.12}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.517 	\item \textbf
                     {Tessellation Service}\\ <./img/processChainUML.png>]
-<img/processChainA.png, id=852, 1039.885pt x 281.05pt>
+<img/processChainA.png, id=857, 1039.885pt x 281.05pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
@@ -1127,14 +1127,14 @@ Overfull \hbox (18.9652pt too wide) in paragraph at lines 528--529
                                                   \fi \fi 
 l.547 \end{itemize}
                     <./img/processChainA.png>]
-<img/processChainB.png, id=862, 1676.2625pt x 442.65375pt>
+<img/processChainB.png, id=867, 1676.2625pt x 442.65375pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
 Package pdftex.def Info: img/processChainB.png used on input line 556.
 (pdftex.def)             Requested size: 335.24657pt x 88.52917pt.
 
-<img/processChainC.png, id=863, 1204.5pt x 307.1475pt>
+<img/processChainC.png, id=868, 1204.5pt x 307.1475pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
@@ -1219,7 +1219,7 @@ identifier (name{table.3.4}) has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.215 
-      ] [38] <img/inputDir.png, id=1035, 435.6275pt x 286.06876pt>
+      ] [38] <img/inputDir.png, id=1040, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
@@ -1246,7 +1246,7 @@ l.1 \chapter
 Chapter 4.
 [41
 
-] <img/contextregions.png, id=1076, 311.1625pt x 285.065pt>
+] <img/contextregions.png, id=1081, 311.1625pt x 285.065pt>
 File: img/contextregions.png Graphic file (type png)
 
 <use img/contextregions.png>
@@ -1257,15 +1257,15 @@ Package pdftex.def Info: img/contextregions.png used on input line 27.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.39 
+l.38 
       <./img/contextregions.png>] [43]
-<img/asUML.png, id=1127, 884.30376pt x 928.46875pt>
+<img/asUML.png, id=1133, 884.30376pt x 928.46875pt>
 File: img/asUML.png Graphic file (type png)
  <use img/asUML.png>
-Package pdftex.def Info: img/asUML.png used on input line 88.
+Package pdftex.def Info: img/asUML.png used on input line 89.
 (pdftex.def)             Requested size: 353.71524pt x 371.38092pt.
 
-Overfull \hbox (8.71524pt too wide) in paragraph at lines 88--89
+Overfull \hbox (8.71524pt too wide) in paragraph at lines 89--90
  [] 
  []
 
@@ -1277,94 +1277,97 @@ e.4.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.108 \end{itemize}
-                    <./img/asUML.png>]
-<img/microdrawUI.png, id=1142, 1509.64pt x 874.26625pt>
+l.106 ...d through shortcuts in the ASV.\clearpage
+                                                   <./img/asUML.png>]
+<img/microdrawUI.png, id=1151, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
-Package pdftex.def Info: img/microdrawUI.png used on input line 129.
+Package pdftex.def Info: img/microdrawUI.png used on input line 121.
 (pdftex.def)             Requested size: 301.92265pt x 174.85014pt.
- [46pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-3}) has been already used, duplicate ignored
+ [46
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.128 
        <./img/microdrawUI.png>]
-Overfull \hbox (0.51726pt too wide) in paragraph at lines 170--181
- [] 
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 168.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 168.
+ [47]
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 171.
+ [48pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 
+      ]
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
+[]|\OT1/cmr/m/n/10 OpenSlide,
  []
 
-[47] <img/route.png, id=1193, 491.8375pt x 145.54375pt>
-File: img/route.png Graphic file (type png)
- <use img/route.png>
-Package pdftex.def Info: img/route.png used on input line 212.
-(pdftex.def)             Requested size: 245.91814pt x 72.77168pt.
+[49]
+Overfull \hbox (0.78085pt too wide) in paragraph at lines 304--304
+[]|\OT1/cmr/m/n/10 defaultStrokeWidth| 
+ []
 
-[48pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}
+[50pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.217 
+l.313 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.4
+.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.313 
       ]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 218.
+Overfull \hbox (0.51726pt too wide) in paragraph at lines 329--340
+ [] 
+ []
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 218.
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 240.
+<img/wsiUrl.png, id=1283, 1630.09pt x 1059.96pt>
+File: img/wsiUrl.png Graphic file (type png)
+ <use img/wsiUrl.png>
+Package pdftex.def Info: img/wsiUrl.png used on input line 349.
+(pdftex.def)             Requested size: 326.01222pt x 211.98824pt.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+}) has been already used, duplicate ignored
 
-<img/HTTPmethods.png, id=1220, 581.17125pt x 161.60374pt>
-File: img/HTTPmethods.png Graphic file (type png)
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.354 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.4
+.5}) has been already used, duplicate ignored
 
-<use img/HTTPmethods.png>
-Package pdftex.def Info: img/HTTPmethods.png used on input line 249.
-(pdftex.def)             Requested size: 290.58492pt x 80.80167pt.
- [49pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.354 
+      ]
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 361.
+ [52pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.254 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.254 
-       <./img/route.png>] [50pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.4.5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.282 dzg 
-          = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds]) <./img
-/HTTPmethods.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 290--290
-[]|\OT1/cmr/m/n/10 OpenSlide,
- []
-
-[51pdfTeX warning (ext4): destination with the same identifier (name{table.4.3}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.322 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.322 
-      ]
-LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 324.
- [52]) (./tex/chap5.tex [53]
+l.369 
+       <./img/wsiUrl.png>]) (./tex/chap5.tex [53]
 Chapter 5.
 ) (./tex/chap6.tex [54
 
@@ -1623,51 +1626,9 @@ n with the same identifier (name{table.1.A.8}) has been already used, duplicate
 l.1 \chapter
             {Annotation Service Documentation}]
 Appendix B.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 15.
-
-
-Package Listings Warning: Text dropped after begin of listing on input line 15.
-
-
 [62
 
-]
-
-Package Listings Warning: Text dropped after begin of listing on input line 44.
-
-
-[63]
-
-Package Listings Warning: Text dropped after begin of listing on input line 81.
-
-
-
-Package Listings Warning: Text dropped after begin of listing on input line 106
-.
-
-[64]
-
-Package Listings Warning: Text dropped after begin of listing on input line 136
-.
-
-
-Package Listings Warning: Text dropped after begin of listing on input line 154
-.
-
-[65]
-
-Package Listings Warning: Text dropped after begin of listing on input line 174
-.
-
-
-Package Listings Warning: Text dropped after begin of listing on input line 200
-.
-
-[66]) (./document.bbl [67]
+] [63] [64] [65] [66]) (./document.bbl [67]
 Underfull \hbox (badness 5954) in paragraph at lines 11--16
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -1766,55 +1727,61 @@ Sup-ple-
  []
 
 
-Underfull \hbox (badness 3568) in paragraph at lines 236--241
+Underfull \hbox (badness 3568) in paragraph at lines 243--248
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
  []
 
-
-Underfull \hbox (badness 2134) in paragraph at lines 255--261
+[70]
+Underfull \hbox (badness 2134) in paragraph at lines 262--268
 \OT1/cmr/m/n/10 cons.  []$\OT1/cmtt/l/n/10 http : / / www . optimusinfo . com /
  downloads / white -[] paper / open -[]
  []
 
 
-Underfull \hbox (badness 2582) in paragraph at lines 255--261
+Underfull \hbox (badness 2582) in paragraph at lines 262--268
 \OT1/cmtt/l/n/10 source -[] vs -[] proprietary -[] software -[] pros -[] and -[
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[70]
-Underfull \hbox (badness 3229) in paragraph at lines 323--328
+
+Underfull \hbox (badness 3229) in paragraph at lines 330--335
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
  []
 
 
-Underfull \hbox (badness 6364) in paragraph at lines 323--328
+Underfull \hbox (badness 6364) in paragraph at lines 330--335
 \OT1/cmr/m/n/10 Uris.  []$\OT1/cmtt/l/n/10 https : / / developer . mozilla . or
 g / en -[] US / docs / Same -[] origin _
  []
 
-
-Underfull \hbox (badness 1270) in paragraph at lines 343--348
+[71]
+Underfull \hbox (badness 1270) in paragraph at lines 350--355
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/l/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--348
+Underfull \hbox (badness 10000) in paragraph at lines 350--355
 \OT1/cmtt/l/n/10 Contribution % 20Folders / WebContent / pdf / pm -[] sample -[
 ] employment -[]
  []
 
-[71]
-Underfull \hbox (badness 10000) in paragraph at lines 356--363
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--370
 \OT1/cmtt/l/n/10 architecture -[] the -[] good -[] the -[] bad -[] and -[] what
  -[] you -[] could -[] be -[] doing -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--389
+Underfull \hbox (badness 3872) in paragraph at lines 391--395
+\OT1/cmtt/l/n/10 / / www . w3 . org / Protocols / rfc2616 / rfc2616 . html$[]\O
+T1/cmr/m/n/10 , 1999.  Ac-cessed:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--402
 \OT1/cmtt/l/n/10 / / health . ucsd . edu / about / volunteer / Documents / Conf
 identiality %
  []
@@ -1856,37 +1823,37 @@ Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  []
 
 
-Overfull \hbox (18.47083pt too wide) in paragraph at lines 21--21
+Overfull \hbox (18.47083pt too wide) in paragraph at lines 22--22
  [][] [][]\OT1/cmr/m/n/10 Aperio data set (source: []$\OT1/cmtt/l/n/10 http : /
  / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (0.74934pt too wide) in paragraph at lines 23--23
+Overfull \hbox (0.74934pt too wide) in paragraph at lines 24--24
  [][] [][]\OT1/cmr/m/n/10 Hamamatsu data set (.ndpi, source: []$\OT1/cmtt/l/n/1
 0 http : / / openslide . cs . cmu . 
  []
 
 
-Overfull \hbox (11.91524pt too wide) in paragraph at lines 25--25
+Overfull \hbox (11.91524pt too wide) in paragraph at lines 26--26
  [][] [][]\OT1/cmr/m/n/10 Leica data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (15.1375pt too wide) in paragraph at lines 26--26
+Overfull \hbox (15.1375pt too wide) in paragraph at lines 27--27
  [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (18.80411pt too wide) in paragraph at lines 27--27
+Overfull \hbox (18.80411pt too wide) in paragraph at lines 28--28
  [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
 / / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (18.80411pt too wide) in paragraph at lines 28--28
+Overfull \hbox (18.80411pt too wide) in paragraph at lines 29--29
  [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
 / / openslide . cs . cmu . edu / download / 
  []
@@ -1898,30 +1865,30 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 28--28
  (./document.nls [75
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 133.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
  [76
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 2FDF0B532F52DA7BAE3DD240B4FDA8E4;4542.
+(rerunfilecheck)             Checksum: DDF0441D1FEEC541DCA92CB6D09A3528;4575.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 9952 strings out of 493029
- 137699 string characters out of 6136235
- 389641 words of memory out of 5000000
- 12689 multiletter control sequences out of 15000+600000
+ 9988 strings out of 493029
+ 138064 string characters out of 6136235
+ 391025 words of memory out of 5000000
+ 12702 multiletter control sequences out of 15000+600000
  11355 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,11n,42p,1248b,2102s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,42p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1943,10 +1910,10 @@ e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt8.pfb>
-Output written on document.pdf (79 pages, 4515866 bytes).
+Output written on document.pdf (79 pages, 5615692 bytes).
 PDF statistics:
- 1990 PDF objects out of 2073 (max. 8388607)
- 1821 compressed objects within 19 object streams
- 599 named destinations out of 1000 (max. 500000)
- 668 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2041 PDF objects out of 2073 (max. 8388607)
+ 1870 compressed objects within 19 object streams
+ 623 named destinations out of 1000 (max. 500000)
+ 671 words of extra memory for PDF output out of 10000 (max. 10000000)
 

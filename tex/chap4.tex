@@ -29,7 +29,6 @@ The information what a region is surrounded by can be as valuable as the informa
 		\label{fig4_contextregions}
 	\end{center}
 \end{figure}
-% TODO: add figure about context regions
 
 Another way of creating regions will be so called \emph{points of interest} (POI)\nmc{POI}{Point of Interest}. A POI will be placed with a mouse click. After that, an external script will be invoked to run an automated segmentation in the proximity of the POI and return with a contour which will be marked as region. The segmentation approaches may differ drastically in different scenarios\cite{Liu12}, therefore the script will be interchangeable\footnote{There are many different ways of how to approach the topic of segmentation (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12}, \cite{Angulo10} for cell segmentation alone). Writing a fully working segmentation script is worth another thesis by itself, therefore only a dummy implementation will be delivered with this work.}.
 
@@ -69,7 +68,9 @@ For the reasons mentioned above, the AS will be implemented as a web application
 \label{sec4_parts}
 As described in section \ref{sec4_methodology}, the AS will be realized in 2 separate parts:
 \begin{itemize}
-	\item a DSR, called \emph{Annotation Service Server} (ASS)\nmc{ASS}{Annoation Service Server} (see subsection \ref{sec4_assPart})
+	\item a DSR, called \emph{Annotation Service Server} (ASS)\footnote{
+		ASS is pronounced "A2S".
+	}\nmc{ASS}{Annoation Service Server} (see subsection \ref{sec4_assPart})
 	\item a viewer, called \emph{Annotation Service Viewer} (ASV)\nmc{ASV}{Annotation Service Viewer} (see subsection \ref{sec4_asvPart})
 \end{itemize}
 
@@ -91,38 +92,29 @@ See fig. \ref{fig4_asUml} for a diagram of how the ASS and ASV interact with eac
 	\end{center}
 \end{figure}
 
+
 \subsection{Annotation Service Server}
 \label{sec4_assPart}
-As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such it is responsible for the storage of WSI files and their related metadata\cite{Cornish13}. Additionally, it will be responsible to serve a
-
-First, it serves as a so called \emph{Digital Slide Repository} (DSR). A DSR manages storage of WSIs and their metadata. Additionally, it serves requested image data to a viewer client\cite{Cornish13}, such as the ASV. 
-
-Second, it is responsible for file management. In detail, this means:
-\begin{itemize}
-	\item persist made annotations in a file
-	\item deliver annotation data together with image data
-	\item serve list of all available label dictionaries
-	\item serve label dictionary entries
-	\item save added entries to existing label dictionary
-	\item create new, empty label dictionaries
-\end{itemize} 
-
-The development of a fully functional web server is not in the scope of this thesis. Therefore, the ASS will run as a local web server. This works around many of the common issues when hosting a web server\cite{web:typicalissues}, such as:
+As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such it is responsible for the storage of WSI files and their related metadata\cite{Cornish13}. Additional data managed by the ASS will be:
 
 \begin{itemize}
-	\item inefficient data or page caching
-	\item firewall throughput
-	\item internet access throughput
-	\item load balance issues
-	\item gateway issues
-	\item poor security design
-	\item connectivity issues
+	\item annotation data
+	\item the ASV's configuration data
+	\item dictionary data
 \end{itemize}
+
+Communication with the ASS directly is only necessary to request the rendering of an ASV with a WSI. Once the ASV is rendered, communication can be handled through shortcuts in the ASV.\clearpage
+
+Communication between ASS and client, as well as ASS and ASV, will be realized over a RESTful API\footnote{
+	\emph{Representational State Transfer} (REST)\nmc{REST}{Representational State Transfer} is an architectural style for developing web applications. It was established in 2000 by Fielding in \cite{Fielding00}. A system that complies to the constraints of REST can be called RESTful. Typically, RESTful systems communicate via the HTTP protocol\cite{Fielding00}.
+	} offered by the ASS.
+
+The development of a fully functional web server is not within the scope of this thesis. Therefore, the ASS will run as a local web server. This works around many of the common issues when hosting a web server (e.g. inefficient caching, load balance issues, gateway issues, poor security design, connectivity issues)\cite{web:typicalissues}.
 
 
 \subsection{Annotation Service Viewer}
 \label{sec4_asvPart}
-The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it. The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
+The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it (see section ). The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
 
 \begin{figure}[H]
 	\begin{center}
@@ -137,33 +129,200 @@ The first iteration of the ASV will be based on an open source project called \e
 Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{See \url{https://jquery.com/} for more information on jQuery}.
 
 \section{Annotation Service Server Implementation}
-% uses json to save annotations and dictionaries
-% internal structure
-
-The ASS is a local RESTful server written in python (\emph{\textbf{as{\textunderscore}server.py}}). Additional frameworks have been used to improve functionality. Those are:
+The ASS is a local server, implemented in python (\emph{\textbf{as{\textunderscore}server.py}}). It offers a RESTful styled API for communication (see subsection \ref{sec4_api}). To improve functionality, the following frameworks were used:
 
 \begin{itemize}
-	\item Flask\cite{web:flask} (see subsection \ref{sec4_flask})
-	\item OpenSlide Python\cite{web:openslide} (see subsection \ref{sec4_openslide})
+	\item Flask (see subsection \ref{sec4_flask})
+	\item OpenSlide Python (see subsection \ref{sec4_openslide})
 \end{itemize}
 
-The use of the Flask framework makes a certain folder structure necessary\cite{web:flask}. To serve static files, a \emph{"static/"} directory must be present in the base directory of the ASS. The static/ directory contains the CSS, JavaScript, dictionaries and WSIs. To read a WSI with the ASS, it must be placed in static/wsi/[file path/]. The dictionaries can be found in static/dictionaries/, if a manual manipulation of a dictionary (deleting one or deleting/updating an entry in one) becomes necessary.
+All code snippets in the following subsections have been taken from \emph{\textbf{as{\textunderscore} server.py}}. A detailed documentation of the individual functions can be found in appendix \ref{sec_B1}.
+
+
+\subsection{Flask}
+\label{sec4_flask}
+To give ASS its server capabilities, Flask was used\footnote{
+	See Flasks homepage for additional information: \url{http://flask.pocoo.org/}
+}. It provides a built-in development server, integrated unit testing, RESTful request dispatching and is Web Server Gateway Interface\footnote{
+		The WSGI is a standard interface for the communication between web servers and web applications or frameworks in python. The interface has a server and application side. Basically, the server side invokes a callable object that is provided by the application side. The specifics of providing this object are up to the individual server\cite{Brandl16}.
+} (WSGI)\nmc{WSGI}{Web Server Gateway Interface} compliant\cite{web:flask}.
+
+Flask's so called \emph{route() decorator} provides a simple way to build a RESTful API for server client communication:
+
+\begin{lstlisting}[language=Python, frame=single]
+@app.route('/loadJson')
+def loadJson(): 
+	...
+
+@app.route('/createDictionary')
+def createDictionary():
+	...
+
+@app.route('/getDictionaries')
+def getDictionaries():
+	...
+\end{lstlisting}
+
+Decorating a function with \texttt{@app.route([URL])} will bind it to the supplied URL. When the client requests that bound URL, the server will call the decorated function\cite{web:flask}. The code snippet above shows exemplary how to use decorators.
+
+A bound URL can also contain variable sections, which are marked as \emph{{\textless}variable name{\textgreater}}. Optionally, a converter can by used to only accept variables of a certain type. This becomes possible by specifying the converter in front of the variable: \emph{{\textless}converter:variable name{\textgreater}}\cite{web:flask}. The following code snippet shows possible examples for URLs with variables (see tab. \ref{tab4_converter} for a list of available converters):
+
+\begin{lstlisting}[language=Python, frame=single]
+@app.route('/wsi/<path:file_path>.dzi')
+def index_dzi(file_path):
+	...
+
+@app.route('/wsi/<path:file_path>')
+def index_wsi(file_path):
+	...
+
+@app.route('/<slug>.dzi')
+def dzi(slug):
+	...
+
+@app.route('/<slug>_files/<int:level>/
+<int:col>_<int:row>.<format>')
+def tile(slug, level, col, row, format):
+	...
+\end{lstlisting}
+
+To bind a URL with one or more variables, the corresponding function must be parameterized with same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l |}
+			\hline
+			\textbf{name} & \textbf{accepted input}\\ \hline
+			string & any text without a slash (default)\\ \hline
+			int & integer values\\ \hline
+			float & floating point values\\ \hline
+			path & like string, but also accepts slashes \\ \hline
+			any & matches one of the items provided\\ \hline
+			uuid & UUID strings\\ \hline
+		\end{tabular}
+		\caption{Available converters in Flask (source: \cite{web:flask})}
+		\label{tab4_converter}
+	\end{center}
+\end{table}
+
+HTTP knows different methods for accessing URLs (such as GET or POST)\cite{web:w3c}]. Flask will answer only GET requests by default. Any other method is answered with a "405 Method not allowed" HTTP status code\cite{web:flask}. This can be changed by adding the \emph{methods} argument to the decorator:
+
+\begin{lstlisting}[language=Python, frame=single]
+@app.route('/saveJson', methods=['POST'])
+def saveJson():
+	...
+\end{lstlisting}
+
+
+\subsection{OpenSlide Python}
+\label{sec4_openslide}
+To read a WSI, ASS uses OpenSlide Python, which is a python interface to the OpenSlide C library. Besides providing an interface to read a WSI, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}. The DZG can be used to create Deep Zoom tiles on demand. The following formats are supported by OpenSlide\cite{web:openslide}:
+
+\begin{itemize}
+	\item BIF
+	\item NDPI
+	\item MRXS
+	\item SCN
+	\item SVS
+	\item SVSLIDE
+	\item TIF
+	\item TIFF
+	\item VMS
+	\item VMU
+\end{itemize}
+
+This list is identical to the list of image formats supported by the CS (compare chapter \ref{sec3_cs}. This is due to the fact that \emph{VIPS} uses OpenSlide to read WSIs as well\cite{web:vips}.
+
+OpenSlide can read a proprietary WSI as a so called \emph{OpenSlide} object (see line 4):
+
+\begin{lstlisting}[language=python, frame=single]
+from openslide import open_slide
+from openslide.deepzoom import DeepZoomGenerator
+
+slide = open_slide(slide path)
+dzg = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds])
+\end{lstlisting}
+
+An OpenSlide object offers methods to access available metadata, image tiles, the thumbnail image and associated images, if available\footnote{
+	See the OpenSlide documentation for further information: \url{http://openslide.org/api/python/}
+} The OpenSlide object can be wrapped with a DZG to enable DZI support (see line 5)\cite{web:openslide}. A number of optional parameters can be passed into the constructor as well (see tab \ref{tab4_DZGparam} for parameters and their default values).
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{2.5cm} | p{2cm} | p{5.5cm} |}
+			\hline
+			\textbf{parameter} & \textbf{type} & \textbf{description (default value)}\\ \hline
+			osr & OpenSlide, ImageSlide & the slide object (mandatory)
+			\\ \hline
+			tile{\textunderscore}size & integer & the width and height of a single tile (254)\\ \hline
+			overlap & integer & the number of extra pixels to add to each interior edge of a tile (1)\\ \hline
+			limit{\textunderscore}bounds & boolean & true to render only the non-empty slide region (false)\\ \hline
+		\end{tabular}
+		\caption{DZG parameters (source: \cite{web:openslide})}
+		\label{tab4_DZGparam}
+	\end{center}
+\end{table}
+
+The DZG\footnote{
+	For an in-depth list of functions, see \url{http://openslide.org/api/python/}
+} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. Of special importance are the \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions.
+
+\texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file\footnote{
+	Compare subsection \ref{sec2_openFormats} - Deep Zoom Images
+}. The parameter (format) specifies the format (PNG or JPEG) of the individual Deep Zoom tiles.
+
+\texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}, 
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{1.5cm} | p{1.5cm} | p{7cm} |}
+			\hline
+			\textbf{name} & \textbf{type} & \textbf{description}\\ \hline
+			level & integer & the DZI level to get the tile from \\ \hline
+			address & tuple & the address of the tile within the level as a (column, row) tuple\\ \hline
+		\end{tabular}
+		\caption{Description of \texttt{get{\textunderscore}tile(level, address)} parameters (source: \cite{web:openslide})}
+		\label{tab4_getTileParams}
+	\end{center}
+\end{table}
+
+The use of the DZG enables ASS to create DZI metadata and Deep Zoom tiles from proprietary WSI files on demand.
+
+
+\subsection{Setup}
+To provide static files to Flask a \emph{static/} directory must be present at the root level of the ASS. This directory contains the CSS, JavaScript, dictionary, configuration and WSI files. To make a WSI accessible to the ASV, it must be placed in \emph{static/wsi/}. From there, the file path is arbitrary.
+
+To provide a segmentation script, it must be placed in \emph{static/segmentation}. Furthermore, the name of the script must be adjusted in the configuration file (\emph{"segmentationScript"} in \emph{configuration.json}, see tab. \ref{tab4_assConfig} for a list of all configurable parameters). 
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{3cm} | p{5.5cm} | p{2cm} |}
+			\hline
+			\textbf{parameter} & \textbf{description} & \textbf{standard}\\ \hline
+			defaultFillAlpha & Default alpha value for regions & 0.5\\ \hline
+			defaultStrokeColor & Default color for region strokes & black \\ \hline
+			defaultStrokeWidth & Default width for region strokes & 1 \\ \hline
+			dictionary & Name of currently active dictionary & example.json\\ \hline
+			hideToolbar & Hide toolbar when ASV is rendered & false\\ \hline
+			segmentationScript & Script used for segmentation of POIs & opencv.py\\ \hline
+		\end{tabular}
+		\caption{Configurable parameters in configuration.json}
+		\label{tab4_assConfig}
+	\end{center}
+\end{table}
 
 The ASS can be started from a terminal through the use of a python interpreter:
 \begin{lstlisting}
-	$ python as_server.py
+$ python as_server.py
 \end{lstlisting}
 
 Alternatively, python's -m switch can be used:
 \begin{lstlisting}
-	$ export FLASK_APP=as_server.py
-	$ python python -m flask run
+$ export FLASK_APP=as_server.py
+$ python python -m flask run
 \end{lstlisting}
 
-When started without further parameters, the server will listen to the IP 127.0.0.1, port 5000 by default. Another IP address or port can be specified via the -l and -p parameter (see tab. \ref{tab4_assParams} for a complete list of available parameters):
-\begin{lstlisting}
-	$ python as_server.py -l 192.27.119.89 -p 4711
-\end{lstlisting}
+When started, the server will listen on 127.0.0.1:5000 by default. Another port (-p, --port) or IP address (-l, --listen) can be specified when starting the ASS. Additionally, DZG-related parameters can be changed (see tab. \ref{tab4_assParams}).
 
 \begin{table}[H]
 	\begin{center}
@@ -183,140 +342,18 @@ When started without further parameters, the server will listen to the IP 127.0.
 	\end{center}
 \end{table}
 
-To access a WSI, the URL must be pointed to it, e.g. \url{http://127.0.0.1:5000/wsi/openslide/CMU-1.svs} to access the WSI CMU-1.svs in the directory static/wsi/openslide/.
-
-
-\subsection{Flask}
-\label{sec4_flask}
-To give the ASS its server capabilities, Flask was used. Flask considers itself as \emph{"microframework"}, meaning that the development team tries to keep its core \emph{"simple, but extensible"}\cite{web:flask}. It contains a built-in development server, integrated unit testing, RESTful request dispatching and is fairly easy to set up and use. A minimal Flask application can look like this\footnote{The example application code snippet is taken from \cite{web:flask}}:
-
-\begin{lstlisting}[frame=single]
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-	return 'Hello, World!'
-
-app.run(host='127.0.0.1', port='5000')
-\end{lstlisting}
-
-After the import of the Flask class (line 1), a Web Server Gateway Interface (WSGI)\nmc{WSGI}{Web Server Gateway Interface} object is created\footnote{The WSGI is a standard interface for the communication between web servers and web applications or frameworks in python. The interface has a server and application side. Basically, the server side invokes a callable object that is provided by the application side. The specifics of providing this object are up to the individual server\cite{Brandl16}.} (line 2). The defined \emph{hello\textunderscore}world function (line 5 and 6) is annotated with a \emph{route() decorator} to bind a specific URL to it (line 4). Once the specified URL is requested, Flask knows which function to invoke. Line 8 starts a local server listening on 127.0.0.1:5000.
-
-As mentioned above, a \emph{route() decorator} (see fig. \ref{fig4_routeDecorator}) binds a URL to a function. When bound, the function will be called, once the specified URL is requested by the client\cite{web:flask}.
-
-
+To retrieve a WSI from the ASS, the URL must be pointed to it in the following manner: \emph{http://[host]:[port]/wsi/[file path]} (see fig. \ref{fig4_wsiUrl} for an example).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/route.png}
-		\caption{Hello, World! example on how to use Flasks route() decorator (source: \cite{web:flask})}
-		\label{fig4_routeDecorator}
+		\includegraphics[scale=0.2]{img/wsiUrl.png}
+		\caption{Example URL to retrieve WSI (\url{http://127.0.0.1:5000/wsi/CMU-1.svs)}
+		\label{fig4_wsiUrl}; WSI source: OpenSlides freely distributable test data (see appendix \ref{sec_A1})}
 	\end{center}
 \end{figure}
 
-A bound URL can also contain variable sections, which are marked as \emph{/{\textless}variable name{\textgreater}}. Optionally, a converter can by used to only accept variables of a certain type. This becomes possible by specifying the converter in front of the variable: \emph{/{\textless}converter:variable name{\textgreater}}\cite{web:flask}. See tab. \ref{tab4_converter} for the list of available converters in Flask.
 
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{| l | l |}
-			\hline
-			\textbf{name} & \textbf{accepted input}\\ \hline
-			string & any text without a slash (default)\\ \hline
-			int & integer values\\ \hline
-			float & floating point values\\ \hline
-			path & like string, but also accepts slashes \\ \hline
-			any & matches one of the items provided\\ \hline
-			uuid & UUID strings\\ \hline
-		\end{tabular}
-		\caption{Available converters in Flask (source: \cite{web:flask})}
-		\label{tab4_converter}
-	\end{center}
-\end{table}
-
-To bind a URL with one or more variable sections to a function, the corresponding function must have the variable sections as parameters:
-
-\begin{lstlisting}[frame=single]
-@app.route('/<slug>_files/<int:level>/<int:col>_
-<int:row>.<format>')
-def tile(slug, level, col, row, format): ...
-\end{lstlisting}
-
-HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a "405 Method not allowed" http status code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/HTTPmethods.png}
-		\caption{Example use of the method argument (source: \cite{web:flask})}
-		\label{fig4_methods}
-	\end{center}
-\end{figure}
-
-Through the use of decorators a RESTful API was deployed for the ASS (compare subsection \ref{sec4_api}).
-
-
-\subsection{OpenSlide Python}
-\label{sec4_openslide}
-To read WSIs, the ASS uses OpenSlide Python, a python interface to the OpenSlide C library. It provides a simple interface for reading WSI. Additionally, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}, which can be used to create Deep Zoom tiles on demand. WSIs of the following formats are supported:
-
-\begin{itemize}
-	\item BIF
-	\item NDPI
-	\item MRXS
-	\item SCN
-	\item SVS
-	\item SVSLIDE
-	\item TIF
-	\item TIFF
-	\item VMS
-	\item VMU
-\end{itemize}
-
-Through OpenSlide, the ASS can read a proprietary WSI as a so called \emph{OpenSlide} object (see line 4). As such it has methods to access available metadata, image tiles, the thumbnail and associated images. This OpenSlide object can be wrapped with a DZG to enable DZI support\cite{web:openslide}. To do so, the OpenSlide object needs to be passed into the constructor of the DZG (see line 5), together with a number of optional parameters (see tab \ref{tab4_DZGparam} for parameters and their default values):
-
-\begin{lstlisting}[frame=single]
-from openslide import open_slide
-from openslide.deepzoom import DeepZoomGenerator
-
-slide = open_slide(slide path)
-dzg = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds])
-\end{lstlisting}
-
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{| p{2.5cm} | p{2cm} | p{5.5cm} |}
-			\hline
-			\textbf{parameter} & \textbf{type} & \textbf{description}\\ \hline
-			osr & OpenSlide, ImageSlide & the slide object
-			\\ \hline
-			tile{\textunderscore}size & integer & the width and height of a single tile (254)\\ \hline
-			overlap & integer & the number of extra pixels to add to each interior edge of a tile (1)\\ \hline
-			limit{\textunderscore}bounds & boolean & true to render only the non-empty slide region (false)\\ \hline
-		\end{tabular}
-		\caption{DeepZoomGenerator parameters (with default values, source: \cite{web:openslide})}
-		\label{tab4_DZGparam}
-	\end{center}
-\end{table}
-
-Once created, the DZG can give numerous informations about the tiles and levels of the wrapped WSI\footnote{See \cite{web:openslide} for an in-depth list of functions}. Of special importance are the \emph{get{\textunderscore}dzi} and \emph{get{\textunderscore}tile} functions. The get{\textunderscore}file(format) function creates a string, containing the metadata of the .dzi-file\footnote{See subsection \ref{sec2_openFormats} - Deep Zoom Images}. The \emph{format} parameter specifies the format of the individual tiles (PNG or JPEG). The get{\textunderscore}tile(level, address) function returns an image of the tile corresponding to the supplied parameter values (see tab. \ref{tab4_getTileParams}). The returned tile is either PNG or JPEG, depending on the value on the value passed to the format parameter of the get{\textunderscore}file function.
-
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{| p{1.5cm} | p{1.5cm} | p{7cm} |}
-			\hline
-			\textbf{name} & \textbf{type} & \textbf{description}\\ \hline
-			level & integer & the DZI level to get the tile from \\ \hline
-			address & tuple & the address of the thile within the level as a (column, row) tuple\\ \hline
-		\end{tabular}
-		\caption{DeepZoomGenerators get{\textunderscore}tile parameters (source: \cite{web:openslide})}
-		\label{tab4_getTileParams}
-	\end{center}
-\end{table}
-
-Through the use of those 2 functions, the ASS can create the metadata of a DZI on the fly and pass it to the ASV. The ASV then requests the individual tiles needed for the current view in return, which are generated by the DZG from the original WSI on demand.
-
-
-\subsection{Annotation Service Server RESTful API}
+\subsection{RESTful API}
 \label{sec4_api}
 To communicate with the ASS a RESTful API was deployed. This is realized with Flasks route() decorators\footnote{See subsection \ref{sec4_flask}}. The listing below gives an overview over the URLs that the ASS RESTful API offers (in the style of \textbf{URL} (method): \emph{function(parameters)}), followed by a brief description of the functionality\footnote{See appendix \ref{sec_B1} for a detailed documentation of the ASS functions}:
 
