@@ -168,7 +168,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-return 'Hello, World!'
+	return 'Hello, World!'
 
 app.run(host='127.0.0.1', port='5000')
 \end{lstlisting}
@@ -176,6 +176,8 @@ app.run(host='127.0.0.1', port='5000')
 After the import of the Flask class (line 1), a Web Server Gateway Interface (WSGI)\nmc{WSGI}{Web Server Gateway Interface} object is created\footnote{The WSGI is a standard interface for the communication between web servers and web applications or frameworks in python. The interface has a server and application side. Basically, the server side invokes a callable object that is provided by the application side. The specifics of providing this object are up to the individual server\cite{Brandl16}.} (line 2). The defined \emph{hello\textunderscore}world function (line 5 and 6) is annotated with a \emph{route() decorator} to bind a specific URL to it (line 4). Once the specified URL is requested, Flask knows which function to invoke. Line 8 starts a local server listening on 127.0.0.1:5000.
 
 As mentioned above, a \emph{route() decorator} (see fig. \ref{fig4_routeDecorator}) binds a URL to a function. When bound, the function will be called, once the specified URL is requested by the client\cite{web:flask}.
+
+
 
 \begin{figure}[H]
 	\begin{center}
@@ -212,7 +214,7 @@ To bind a URL with one or more variable sections to a function, the correspondin
 def tile(slug, level, col, row, format): ...
 \end{lstlisting}
 
-HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a 405 HTTP status code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
+HTTP knows different methods for accessing URLs. By default, a route only answers to GET requests and refuses every other kind with a "405 Method not allowed" http status code. This can be changed by adding the \emph{methods} argument to the route() decorator (see fig. \ref{fig4_methods})\cite{web:flask}.
 
 \begin{figure}[H]
 	\begin{center}

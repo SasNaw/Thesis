@@ -1,9 +1,213 @@
 \chapter{Annotation Service Documentation}
 
-The following two sections explain the most important functions of the ASS and ASV in detail.
+The following two sections document the implemented functions of the ASS (section \ref{sec_B1}) and ASV (section \ref{sec_B2}) in detail. Both files can be found in the AS' repository at:
+
+ \url{https://github.com/SasNaw/AnnotationService}.
 
 \section{Annotation Service Server}
 \label{sec_B1}
+
+\subsubsection{index{\textunderscore}dzi()}
+If the client requests a DZI (URL ends in \emph{".dzi"}), \texttt{index{\textunderscore}dzi()} renders an ASV and passes the necessary information (slide URL, file name, MPP) to it.
+
+It builds the file name and slide URL (line 3 and 4) for a requested DZI. A metadata.txt will be present in the [slide name]{\textunderscore}files directory, if the DZI was created with the CS. If so, the function will try to fetch the metadata information about MPP and calculate the average height of a pixel (line 6 - 16). If the MPP metadata could not be fetched, it is set to 0 (line 17 - 18). File name, URL and MPP are then passed onto the ASV, which then is rendered with the given information (line 19).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/wsi/<path:file_path>.dzi')
+def index_dzi(file_path):
+	file_name = file_path + '.dzi'
+	slide_url = '/wsi/' + file_name
+	# read dzi file
+	try:
+		with open('static/wsi/' + file_path + '_files/metadata.txt') as file:
+			mpp_x = 0
+			mpp_y = 0
+			metadata = file.read().split('\n')
+			for property in metadata:
+				if openslide.PROPERTY_NAME_MPP_X in property:
+					mpp_x = property.split(': ')[1]
+				elif openslide.PROPERTY_NAME_MPP_Y in property:
+					mpp_y = property.split(': ')[1]
+			slide_mpp = (float(mpp_x) + float(mpp_y)) / 2
+	except IOError:
+		slide_mpp = 0
+	return render_template('as_viewer.html', slide_url=slide_url, slide_mpp=slide_mpp, file_name=file_name)
+\end{lstlisting}
+
+
+\subsubsection{index{\textunderscore}wsi()}
+When the client requests a proprietary WSI (URL \emph{does not} end in ".dzi"), \texttt{index{\textunderscore}wsi()} renders an ASV and passes the necessary information (slide URL, file name, MPP) to it. Furthermore, it wraps a DZG around the proprietary WSI and adds that to the WSGI object.
+
+Line 22 - 27 create a map with the optional DZG parameters (compare tab. \ref{tab4_DZGparam}) and turn them into a dictionary. Line 28 reads the proprietary WSI. A DZG with the supplied parameters\footnote{Compare tab. \ref{tab4_assParams}} is created, which wraps the proprietary slide object to add Deep Zoom support (line 29 - 31). The created DZG is added to the WSGI object (line 29). Line 32 - 37 fetch associated images, the metadata (line 33), wrap the associated images with a DZG of their own and add this, together with the metadata, to the WSGI object. Line 39 - 43 fetch the MPP metadata and calculate the average MPP (or set it to 0, if not found). 
+Line 44 creates a URL for the DZG object with Flasks \texttt{url{\textunderscore}for(endpoint, **values)} function. This URL is passed, together with the MPP and file path, to an ASV which then gets rendered (line 45).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/wsi/<path:file_path>')
+def index_wsi(file_path):
+	config_map = {
+		'DEEPZOOM_TILE_SIZE': 'tile_size',
+		'DEEPZOOM_OVERLAP': 'overlap',
+		'DEEPZOOM_LIMIT_BOUNDS': 'limit_bounds',
+	}
+	opts = dict((v, app.config[k]) for k, v in config_map.items())
+	slide = open_slide('static/wsi/' + file_path)
+	app.slides = {
+		SLIDE_NAME: DeepZoomGenerator(slide, **opts)
+	}
+	app.associated_images = []
+	app.slide_properties = slide.properties
+	for name, image in slide.associated_images.items():
+		app.associated_images.append(name)
+		slug = slugify(name)
+		app.slides[slug] = DeepZoomGenerator(ImageSlide(image), **opts)
+	try:
+		mpp_x = slide.properties[openslide.PROPERTY_NAME_MPP_X]
+		mpp_y = slide.properties[openslide.PROPERTY_NAME_MPP_Y]
+		slide_mpp = (float(mpp_x) + float(mpp_y)) / 2
+	except (KeyError, ValueError):
+		slide_mpp = 0
+	slide_url = url_for('dzi', slug=SLIDE_NAME)
+	return render_template('as_viewer.html', slide_url=slide_url, slide_mpp=slide_mpp, file_name=file_path)
+\end{lstlisting}
+
+
+\subsubsection{dzi(slug)}
+If \texttt{index{\textunderscore}wsi()} was called before, a URL was generated for the WSI. This URL will be requested from the ASS by OpenSeadragon, which causes \texttt{slug(dzi)} to be called. \texttt{slug(dzi)} creates the DZI metadata and returns it to OpenSeadragon.
+
+The \emph{dzi} parameter is the slide URL generated in \texttt{index{\textunderscore}wsi} (line 44).
+
+Line 48 retrieves the format for the individual Deep Zoom tiles. Line 49 - 52 try to create a response. If a response can not be created, because the requested DZG is unknown, a "404 Not Found" http status code will be returned instead. If the DZG could be found, a response with the DZIs metadata will be created via the DZGs \texttt{get{\textunderscore}dzi(format)} function (line 50, compare subsection \ref{sec4_openslide}).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/<slug>.dzi')
+def dzi(slug):
+	format = app.config['DEEPZOOM_FORMAT']
+	try:
+		resp = make_response(app.slides[slug].get_dzi(format))
+		resp.mimetype = 'application/xml'
+		return resp
+	except KeyError:
+		# Unknown slug
+		abort(404)
+\end{lstlisting}
+
+
+\subsubsection{tile(slug, level, col, row, format)}
+If a response for OpenSeadragon was created via \texttt{slug(dzi)}, OpenSeadragon will request the individual image tiles in such a way, that, through the use of the route() decorator, \texttt{tile(slug, level, col, row, format)} will be called.
+
+As in \texttt{slug(dzi)}, the \emph{slug} parameter is the slide URL generated in \texttt{index{\textunderscore}wsi} (line 44). The parameters \emph{level}, \emph{col} and \emph{row} describe the DZI level and address of the requested image tile. \emph{format} is the image format of the tile.
+
+If the format is not JPEG or PNG, the ASS return a "404 Not Found" http status code (line 58 - 61).
+
+If the format is either JPEG or PNG, the requested tile is generated through the use of the DZGs \texttt{get{\textunderscore}tile(level, address)} function (line 63). If it was not possible to generate the tile, a "404 Not Found" http status code will be returned.
+
+The generated tile is then saved into a PIL image object\footnote{See \url{http://pillow.readthedocs.io/en/3.3.x/reference/Image.html}}, stored in either a JPEG or PNG image and returned as response to OpenSeadragon (line 70 - 74).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/<slug>_files/<int:level>/<int:col>_<int:row>.<format>')
+def tile(slug, level, col, row, format):
+	format = format.lower()
+	if format != 'jpeg' and format != 'png':
+		# Not supported by Deep Zoom
+		abort(404)
+	try:
+		tile = app.slides[slug].get_tile(level, (col, row))
+	except KeyError:
+		# Unknown slug
+		abort(404)
+	except ValueError:
+		# Invalid level or coordinates
+		abort(404)
+	buf = PILBytesIO()
+	tile.save(buf, format, quality=app.config['DEEPZOOM_TILE_QUALITY'])
+	resp = make_response(buf.getvalue())
+	resp.mimetype = 'image/%s' % format
+	return resp
+\end{lstlisting}
+
+
+\subsubsection{saveJson()}
+When the client sends JSON data to save, the \texttt{saveJson()} function is called.
+
+The associated request is a POST request. This means that the posted data needs to be extracted. This can be done via Flasks \emph{request object}\footnote{Compare subsection \ref{sec4_flask}} (line 77 - 79). The file path will be transmitted as \emph{"source"}, the content to save as \emph{"json"}.
+
+If there is something to save (line 80), the content will be written into the provided file. If the file does not exist yet, it will be created (line 81 - 82).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/saveJson', methods=['POST'])
+def saveJson():
+	dict = request.form
+	source = dict.get('source', default='')
+	json = dict.get('json', default='{}').encode('utf-8')
+	if len(source) > 0:
+		with open('static/' + source, 'w+') as file:
+			file.write(json)
+	return 'Ok'
+\end{lstlisting}
+
+
+\subsubsection{loadJson()}
+When the client requests JSON data, \texttt{loadJson()} is called.
+
+The source of the JSON data is passed in the URL as parameter (\emph{"src=[path to source]"}). The src parameter can be extracted via Flasks request object\footnote{Compare subsection \ref{sec4_flask}} (line 86). If the provided source is a file, the content will be read and returned as JSON data (line 87 - 90). Otherwise an empty JSON list is returned (line 91 - 92).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/loadJson')
+def loadJson():
+	source = 'static/wsi/' + request.args.get('src', '')
+	if os.path.isfile(source):
+		with open(source, 'r') as file:
+			content = file.read()
+			return jsonify(content)
+	else:
+		return jsonify('[]')
+\end{lstlisting}
+
+
+\subsubsection{createDictionary()}
+When the client requests the creation of a new dictionary, \texttt{createDictionary()} is called. The name of the new dictionary is passed as URL parameter (\emph{name= [name]}). The name parameter can be extracted via Flasks request object\footnote{Compare subsection \ref{sec4_flask}} (line 95).
+
+Once the name was extracted, the function checks if a dictionary with the provided name already exists. If so, \emph{"error"} is returned (line 96 - 99). Otherwise a new, empty dictionary is created (line 101 - 102). To switch to the newly created dictionary, the configuration file must be updated (line 103 - 107).
+
+As response, the name and path of the newly created dictionary is returned (line 108 - 109).
+
+\begin{lstlisting}[language=Python][frame=single]
+@app.route('/createDictionary')
+def createDictionary():
+	name = request.args.get('name', '')
+	path = 'static/dictionaries/' + name
+	if os.path.isfile(path):
+		# dictionary already exists
+		return 'error'
+	else:
+		with open(path, 'w+') as dictionary:
+			dictionary.write("[]")
+		with open('static/configuration.json', 'r') as config:
+			content = json.loads(config.read())
+			content['dictionary'] = name
+		with open('static/configuration.json', 'w+') as config:
+			config.write(json.dumps(content))
+		respone = '{"name":"' + name + '", "path":"/' + path + '"}'
+		return respone
+\end{lstlisting}
+
+
+\subsubsection{getDictionaries()}
+The \texttt{getDictionaries()} function is called, when the client requests a list of all available dictionaries.
+
+If no dictionaries could be found, "-1" will be returned, otherwise a JSON list of all available dictionaries.
+
+\begin{lstlisting}[language=Python][frame=single]
+def getDictionaries():
+	dir = 'static/dictionaries/'
+	if os.path.isfile(dir):
+		# no dictionaries found
+		return '-1'
+	else:
+		# return dictionaries
+		return json.dumps(os.listdir(dir))
+\end{lstlisting}
+
 
 \section{Annotation Service Viewer}
 \label{sec_B2}
