@@ -62,16 +62,38 @@ Chapter \ref{sec3_cs} established a service to convert WSIs of various, propriet
 
 \emph{OpenSlides Python} provides a DZI wrapper. This wrapper can be used to wrap a proprietary WSI and treat it as a DZI\cite{web:openslide}. A DSR can use this to serve a proprietary WSI as DZI to a viewer.
 
-For the reasons mentioned above, the AS will be implemented as a web application. To do so it must be split in 2 parts:
+For the reasons mentioned above, the AS will be implemented as a web application. To do so, it will be split into 2 parts: a DSR and a viewer.
+
+
+\section{Parts of the Annotation Service}
+\label{sec4_parts}
+As described in section \ref{sec4_methodology}, the AS will be realized in 2 separate parts:
 \begin{itemize}
-	\item a DSR, called Annotation Service Server (ASS)\nmc{ASS}{Annoation Service Server}
-	\item a viewer, called Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}.
+	\item a DSR, called \emph{Annotation Service Server} (ASS)\nmc{ASS}{Annoation Service Server} (see subsection \ref{sec4_assPart})
+	\item a viewer, called \emph{Annotation Service Viewer} (ASV)\nmc{ASV}{Annotation Service Viewer} (see subsection \ref{sec4_asvPart})
 \end{itemize}
 
+The ASS will be responsible for data management, supplying image data and serving the ASV to the client. The ASV will supply a GUI, including a WSI viewer and all functions specified in section \ref{sec4_functions}.
+
+The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, MPP and file name of the WSI. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
+
+The ASV is returned to the client and requests the data necessary to view the WSI and it's annotation if they should already exist (this includes configurations, annotations, labels and the image tiles for the current view).
+
+Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Additionally, annotations can be made and persisted at any time.
+
+See fig. \ref{fig4_asUml} for a diagram of how the ASS and ASV interact with each other.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/asUML.png}
+		\caption{Activity diagram of ASS and ASV}
+		\label{fig4_asUml}
+	\end{center}
+\end{figure}
 
 \subsection{Annotation Service Server}
-\label{sec4_assMethod}
-As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such it is responsible for the storage of WSI files and their metadata\cite{Cornish13}.
+\label{sec4_assPart}
+As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such it is responsible for the storage of WSI files and their related metadata\cite{Cornish13}. Additionally, it will be responsible to serve a
 
 First, it serves as a so called \emph{Digital Slide Repository} (DSR). A DSR manages storage of WSIs and their metadata. Additionally, it serves requested image data to a viewer client\cite{Cornish13}, such as the ASV. 
 
@@ -99,7 +121,7 @@ The development of a fully functional web server is not in the scope of this the
 
 
 \subsection{Annotation Service Viewer}
-\label{sec4_asvMethod}
+\label{sec4_asvPart}
 The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it. The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
 
 \begin{figure}[H]
