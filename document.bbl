@@ -296,6 +296,12 @@ JPEG.
 \newblock \url{https://jpeg.org/jpeg2000/}.
 \newblock Accessed: 18.08.2016.
 
+\bibitem{Kesteren14}
+A.~Kesteren.
+\newblock {\em Cross-Origin Resource Sharing: W3C Recommendation 16 January
+  2014}, January 2014.
+\newblock \url{https://www.w3.org/TR/cors/#cross-origin-request}.
+
 \bibitem{Kriesel07}
 D.~Kriesel.
 \newblock {\em A Brief Introduction to Neural Networks}, 2007.

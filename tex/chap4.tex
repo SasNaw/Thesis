@@ -1,6 +1,7 @@
 \chapter{Annotation Service}
 
 \section{Objective of the Annotation Service}
+\label{sec4_objective}
 As described in \ref{sec2_as}, the goal of the AS is to provide a user with the possibility to:
 \begin{enumerate}[(1)]
 	\item view A WSI
@@ -10,20 +11,10 @@ As described in \ref{sec2_as}, the goal of the AS is to provide a user with the 
 
 In order to achieve objective (1) - (3), a GUI needs to be deployed which supports the user in working on those tasks. (3) also adds the need for file persistence management.
 
-During the development process it became clear that supporting only DZI as input format was impractical for the real life environment of the AS. Therefore, the need to support proprietary formats as well arose. The proprietary formats should be supported without implementing separate handling for each one and without creating a vendor lock-in or platform restriction\footnote{See subsection \ref{sec1_researchObjective}(i), \ref{sec1_researchObjective}(ii) and \ref{sec2_openFormats}}.
+It became clear during the development process that the support of only DZI was impractical for the real life environment of the AS, thus making it necessary to support proprietary formats as well. A solution has to be found, that still addresses the vendor and platform issues stated in \ref{sec1_researchObjective} and \ref{sec2_openFormats}.
 
 
-\section{Methodology}
-As stated in 2.1, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often support only Windows platforms, ignoring other operating systems\cite{Cornish13}\cite{DICOM10}\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
-
-Independence from an operating system can be achieved by using web technologies, especially when running an application in a web browser\cite{Tseytlin14}, since those are supported by all modern operating systems. 
-
-Chapter \ref{sec3_cs} already established a service to convert WSIs of various formats into the DZI format, solving the problem of multiple proprietary formats. But, as the development process has shown, this is not enough. Therefore, a solution must be established, with which proprietary formats can be handled as well. The use of OpenSlides python interface provides the functionality of generating individual Deep Zoom tiles from slide objects without a complete conversion via a DZI wrapper, which can be used to wrap proprietary image formats and serve them to a web browser as if they would be DZI\cite{web:openslide}.
-
-Because of those reasons, the AS will be implemented as a web browser application. 
-
-
-\subsection{Functionality of the Annotation Service}
+\section{Functionality of the Annotation Service}
 \label{sec4_functions}
 The goal of viewing a WSI (1) is a straight forward task. (2) and (3) are more elusive. For that reason, this subsection elaborates on the functionality needed to help achieve those objectives.
 
@@ -49,26 +40,40 @@ Users will be able to create new, empty dictionaries, if the need arises. Furthe
 To support the user in annotating a WSI, a distance measurement tool will be usable as well. This tool can measure the distance between 2 pixels in $\mu$m.
 
 
-\subsection{Parts of the Annotation Service}
-The AS is implemented in 2 parts. Those are the Annotation Service Server (ASS)\nmc{ASS}{Annoation Service Server} and the Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}.
+\section{Methodology}
+\label{sec4_methodology}
+As stated in \ref{sec2_openFormats}, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often support only Windows platforms, ignoring other operating systems\cite{Cornish13},\cite{DICOM10},\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
 
-This is because of the \emph{same-origin policy} (SOP)\nmc{SOP}{Same-Origin Policy}. SOP is a security concept of the web application security model. It prevents a direct access to files, if the parent directory of the originating file is not an ancestor directory of the target file\cite{web:mdn}. Because of the SOP, WSIs would have to be located in the directory structure of the AS, which by itself does not create a problem. To get a new WSI there, however, the user would be forced to navigate through the structure of the AS, find the correct directory and then place it there manually. This makes knowledge of the service structure necessary and creates a horrible UX. Furthermore, tinkering with the file structure of the AS creates a possible source for errors.
+Independence from an operating system can be achieved by using web technologies, especially when running an application in a web browser, since those are supported by all modern operating systems and even mobile platforms\cite{Tseytlin14}.
 
-A workaround of this problem is to deploy a web server, which can redirect the image request, access the WSI and return it in response\cite{Tseytlin14}. The use of DZI creates another advantage: the used image pyramid model reduces the network traffic necessary to load and show a WSI in a viewer\cite{Cornish13}\cite{DICOM10}.
+To develop the AS as a web application means to become subject to \emph{cross-origin resource sharing} (CORS)\nmc{CORS}{Cross Origin Resource Sharing}\cite{Kesteren14} and the \emph{same-origin policy} (SOP)\cite{web:mdn}\nmc{SOP}{Same-Origin Policy}. The SOP is a security concept of the web application security model, that only allows direct file access if the parent directory of the originating file is an ancestor directory of the target file\cite{web:mdn}. Since the local WSI file will not have the same origin, CORS is needed. CORS is a standard that defines mechanisms to allow access to restricted resources from a domain outside of the origin, when using the HTTP protocol\cite{Kesteren14}. Since the WSI is a local file, HTTP can not be used to retrieve the file.
 
-Furthermore, even a single WSI takes up a lot of storage capacity\cite{Singh11}. Having multiple WSIs on a local hard drive would either create the need for huge amounts of available storage space or restrict the amount of accessible WSIs to a few at any given time. The latter solution would create two follow-up problems:
+The restrictions of SOP and CORS can be worked around by deploying a server as so called \emph{digital slide repository} (DSR). A DSR manages storage of WSIs and their metadata\cite{Cornish13}. This way, WSIs would share the same origin as the viewer and their retrieval would be possible.
+
+Using a DSR has additional advantages: 
 \begin{itemize}
-	\item WSIs are medical images and as such confidential information. Therefore, not everyone is allowed to just have access to or copies of them\cite{COA}\cite{USSanDiego}. Once a copy of a WSI changes hands, it is virtually impossible to make sure that privacy regulations will be uphold.	
-	\item With only a small amount out of all WSIs accessible at all times, the need for copying files back and forth arises as soon as the user wants to compare, update or correct a WSI, which is not on his local file system at the given moment. Not only is this a great source for possible errors, but also very time consuming and inefficient.
+	\item WSIs are medical images and as such confidential information. Their access is usually tied to non-disclosure or confidentiality agreements (e.g. \cite{COA} or \cite{USSanDiego}). A DSR eliminates the need to hand out copies of WSIs, which makes it easier to uphold the mentioned agreements.
+	\item WSIs take up big portions of storage\cite{Singh11}. The local systems used by pathologists in the environment of the AS are usual desktop computers and laptops. As such, their storage might be insufficient to hold data in those quantities. A DSR can be set up as a dedicated file server, equipped for the purpose of offering large amounts of storage.
+	\item A DSR enables centralized file management. Pathologists don't access local their local version of a WSI and it's annotations, but share the same data pool.
+	\item Depending on the network setup, other advantages become possible, e.g. sharing of rare cases as educational material and teleconsultation of experts independent of their physical position\cite{Wilbur09}.
 \end{itemize}
 
-With the use of a web server as a central image repository, WSIs and the access to them can be managed in a centralized spot, while upholding confidentiality regulations. Furthermore, a user has access to all of her/his WSIs at any given time, without the need for creating subsets and copying files back and forth. Depending on the setup of the network, other factors can come into play as well. Access to and sharing of rare cases, educational material and training samples can be granted without a complicated distribution chain and a smaller risk for confidentiality issues. It also enables the consultation of case experts independent of their physical position on the planet\cite{Wilbur09}.
+Chapter \ref{sec3_cs} established a service to convert WSIs of various, proprietary formats to DZI, addressing the need to implement multiple image format drivers. But, as stated in \ref{sec4_objective}, a solution to serve proprietary image formats without explicit conversion must be found.
+
+\emph{OpenSlides Python} provides a DZI wrapper. This wrapper can be used to wrap a proprietary WSI and treat it as a DZI\cite{web:openslide}. A DSR can use this to serve a proprietary WSI as DZI to a viewer.
+
+For the reasons mentioned above, the AS will be implemented as a web application. To do so it must be split in 2 parts:
+\begin{itemize}
+	\item a DSR, called Annotation Service Server (ASS)\nmc{ASS}{Annoation Service Server}
+	\item a viewer, called Annotation Service Viewer (ASV)\nmc{ASV}{Annotation Service Viewer}.
+\end{itemize}
 
 
-\subsubsection{Annotation Service Server}
-The ASS has 2 main purposes.
+\subsection{Annotation Service Server}
+\label{sec4_assMethod}
+As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such it is responsible for the storage of WSI files and their metadata\cite{Cornish13}.
 
-First, it serves as a so called \emph{Digital Slide Repository} (DSR)\nmc{DSR}{Digital Slide Repository}. A DSR manages storage of WSIs and their metadata. Additionally, it serves requested image data to a viewer client\cite{Cornish13}, such as the ASV. 
+First, it serves as a so called \emph{Digital Slide Repository} (DSR). A DSR manages storage of WSIs and their metadata. Additionally, it serves requested image data to a viewer client\cite{Cornish13}, such as the ASV. 
 
 Second, it is responsible for file management. In detail, this means:
 \begin{itemize}
@@ -93,7 +98,8 @@ The development of a fully functional web server is not in the scope of this the
 \end{itemize}
 
 
-\subsubsection{Annotation Service Viewer}
+\subsection{Annotation Service Viewer}
+\label{sec4_asvMethod}
 The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it. The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
 
 \begin{figure}[H]
