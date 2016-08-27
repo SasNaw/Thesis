@@ -18,9 +18,9 @@ It became clear during the development process that the support of only DZI was 
 \label{sec4_functions}
 The goal of viewing a WSI (1) is a straight forward task. (2) and (3) are more elusive. For that reason, this subsection elaborates on the functionality needed to help achieve those objectives.
 
-Annotations will be created by drawing directly onto the viewed WSI. If the user spots a region of interest, a contour can be drawn around it. This can  either be done in \emph{free hand} or \emph{polygon mode}. In free hand mode, the contour will be drawn along the path of the mouse pointer, until the mode is disabled again. Upon deactivation, the contour will be closed. In polygon mode, the user can place coordinates which will be connected from one to another in the order they are placed in. A contour in this mode considers to be closed, once a point on the contour is clicked a second time. A marked region of interest is simply called \emph{region} from this point on.
+Annotations will be created by drawing directly onto the viewed WSI. If the user spots a ROI, a path can be drawn around it. This can  either be done in \emph{free hand} or \emph{polygon mode}. In free hand mode, the path will be drawn along the movement of the mouse pointer, until the mode is disabled again. Upon deactivation, the path will be closed, creating a contour around the ROI. In polygon mode, the user can place coordinates which will be connected from one to another in the order they are placed in. A path in this mode considers to be closed, once a point on the contour is clicked a second time. A marked ROI is simply called \emph{region} from this point on.
 
-The information what a region is surrounded by can be as valuable as the information about the region itself\cite{Bankman00}. Therefore, every region will have a \emph{context} trait, which lists every label of regions it touches, crosses, surrounds or is surrounded by (see fig. \ref{fig4_contextregions}).
+The information what a region is surrounded by can be as valuable as the information about the region itself\cite{Bankman00}. Therefore, every region will have a \emph{context} trait, which lists the labels of regions it touches, crosses, surrounds or is surrounded by (see fig. \ref{fig4_contextregions}).
 
 \begin{figure}[H]
 	\begin{center}
@@ -30,11 +30,11 @@ The information what a region is surrounded by can be as valuable as the informa
 	\end{center}
 \end{figure}
 
-Another way of creating regions will be so called \emph{points of interest} (POI)\nmc{POI}{Point of Interest}. A POI will be placed with a mouse click. After that, an external script will be invoked to run an automated segmentation in the proximity of the POI and return with a contour which will be marked as region. The segmentation approaches may differ drastically in different scenarios\cite{Liu12}, therefore the script will be interchangeable\footnote{There are many different ways of how to approach the topic of segmentation (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12}, \cite{Angulo10} for cell segmentation alone). Writing a fully working segmentation script is worth another thesis by itself, therefore only a dummy implementation will be delivered with this work.}.
+Another way of creating regions will be so called \emph{points of interest} (POI)\nmc{POI}{Point of Interest}. A POI will be placed with a single mouse click. After that, an external script will be invoked to run an automated segmentation in the proximity of the POI and return with a contour which will be marked as region. The segmentation approaches may differ drastically in different scenarios\cite{Liu12}, therefore the script will be interchangeable\footnote{There are many different ways of how to approach the topic of segmentation (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12}, \cite{Angulo10} for cell segmentation alone). Writing a fully working segmentation script is worth another thesis by itself, therefore only a dummy implementation will be delivered with this work.}.
 
-Each region has a \emph{label} associated to it. A label is a predefined string, which describes what the region just created shows. The labels available will be determined through a \emph{label dictionary}, which is a container that offers a list of strings to select from. This approach guarantees a unified labeling, independent of a specific WSI or pathologist. The option to choose between multiple available label dictionaries opens up the possibility of creating dictionaries which are specialized on certain cases or studies. Again, to keep up labeling integrity, labels can only be selected from one dictionary per WSI.
+Each region has a \emph{label} associated to it. A label is a predefined string, which describes what a region shows. The labels available will be determined through a \emph{label dictionary}, which is a container that offers a list of strings to select from. This approach guarantees a unified labeling, independent of a specific WSI or pathologist. The option to choose between multiple available label dictionaries opens up the possibility of creating dictionaries which are specialized on certain cases or studies. Again, to keep up labeling integrity, labels can only be selected from one dictionary per WSI.
 
-Users will be able to create new, empty dictionaries, if the need arises. Furthermore, they will be able to add entries to existing and new dictionaries alike, to further advance or specialize them. To delete single entries or whole dictionaries, file access to the server is necessary. This is due to the fact, that knowledge can by added without direct negative consequences. Deleting existing knowledge influences all WSIs on which this knowledge was used, may it be as a label or a whole dictionary.
+Users will be able to create new, empty dictionaries, if the need arises. Furthermore, they will be able to add entries to existing and new dictionaries alike, to further advance or specialize them.
 
 To support the user in annotating a WSI, a distance measurement tool will be usable as well. This tool can measure the distance between 2 pixels in $\mu$m.
 
@@ -161,6 +161,10 @@ def createDictionary():
 @app.route('/getDictionaries')
 def getDictionaries():
 	...
+	
+@app.route("/runSegmentation")
+def runSegmentation():
+	...
 \end{lstlisting}
 
 Decorating a function with \texttt{@app.route([URL])} will bind it to the supplied URL. When the client requests that bound URL, the server will call the decorated function\cite{web:flask}. The code snippet above shows exemplary how to use decorators.
@@ -228,6 +232,7 @@ Tab. \ref{tab4_flaskBindigns} states a number of URLs, that have been bound to a
 			/loadJson & \texttt{loadJson()}\\ \hline
 			/createDictionary & \texttt{createDictionary()}\\ \hline
 			/getDictionaries & \texttt{getDictionaries()}\\ \hline
+			/runSementation & \texttt{runSegmentation()}\\ \hline
 		\end{tabular}
 		\caption{ASS' URL-function binding overview}
 		\label{tab4_flaskBindigns}
@@ -429,6 +434,11 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	method:} GET\\
 	Requests a list of files contained in the \emph{dictionaries} folder.\\
 	\emph{Returns} a list with the file names, or "-1" if no dictionaries are present.
+	
+	\item \textbf{/runSegmentation?x=[x]\&y=[y]\\
+		method:} GET\\
+	Requests the invocation of the segmentation script provided in the configuration file. The coordinates of the POI are passed as URL arguments and will be handed down to the segmentation script.\\
+	\emph{Returns} a list of 2D coordinates, describing the contour around the POI, or a "404 Not Found" HTTP status code if no script was provided or the provided script was not found.
 \end{enumerate}
 
 

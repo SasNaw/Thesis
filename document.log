@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  27 AUG 2016 02:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  27 AUG 2016 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -689,20 +689,20 @@ Writing nomenclature file document.nlo
 (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -722,7 +722,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box36
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 89.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -732,9 +732,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 69.
-LaTeX Info: Redefining \pageref on input line 69.
-LaTeX Info: Redefining \nameref on input line 69.
+LaTeX Info: Redefining \ref on input line 89.
+LaTeX Info: Redefining \pageref on input line 89.
+LaTeX Info: Redefining \nameref on input line 89.
 
 (./document.out) (./document.out)
 \@outlinefile=\write4
@@ -758,93 +758,93 @@ LaTeX Info: Redefining \nameref on input line 69.
 )
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 69.
+(Font)              using `OT1/cmtt/m/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/it' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 69.
+(Font)              using `OT1/cmtt/b/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/sl' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 69.
+(Font)              using `OT1/cmtt/b/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/b/sc' undefined
-(Font)              using `OT1/cmtt/b/n' instead on input line 69.
+(Font)              using `OT1/cmtt/b/n' instead on input line 89.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 69.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 89.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sl' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 69.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/bx/sc' undefined
-(Font)              using `OT1/cmtt/bx/n' instead on input line 69.
+(Font)              using `OT1/cmtt/bx/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 69.
+(Font)              using `OT1/cmtt/m/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/it' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/sl' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/sb/sc' undefined
-(Font)              using `OT1/cmtt/sb/n' instead on input line 69.
+(Font)              using `OT1/cmtt/sb/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 69.
+(Font)              using `OT1/cmtt/m/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/it' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 69.
+(Font)              using `OT1/cmtt/c/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/sl' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 69.
+(Font)              using `OT1/cmtt/c/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/c/sc' undefined
-(Font)              using `OT1/cmtt/c/n' instead on input line 69.
+(Font)              using `OT1/cmtt/c/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/n' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 69.
+(Font)              using `OT1/cmtt/m/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/it' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 69.
+(Font)              using `OT1/cmtt/l/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/sl' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 69.
+(Font)              using `OT1/cmtt/l/n' instead on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/l/sc' undefined
-(Font)              using `OT1/cmtt/l/n' instead on input line 69.
+(Font)              using `OT1/cmtt/l/n' instead on input line 89.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/m/ui' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 89.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/ui' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 69.
+(Font)              Font shape `OT1/cmtt/m/it' tried instead on input line 89.
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/In' undefined
-(Font)              using `OT1/cmtt/m/n' instead on input line 69.
+(Font)              using `OT1/cmtt/m/n' instead on input line 89.
 
 <img/HTW_Logo_quer_rgb.jpg, id=285, 174.1707pt x 41.4348pt>
 File: img/HTW_Logo_quer_rgb.jpg Graphic file (type jpg)
 
 <use img/HTW_Logo_quer_rgb.jpg>
-Package pdftex.def Info: img/HTW_Logo_quer_rgb.jpg used on input line 87.
+Package pdftex.def Info: img/HTW_Logo_quer_rgb.jpg used on input line 107.
 (pdftex.def)             Requested size: 174.17027pt x 41.43468pt.
  [1
 
@@ -853,14 +853,14 @@ g>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.107 \newpage
+l.127 \newpage
                [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 \end{abstract}
+l.130 \end{abstract}
                      [1] (./document.tocpdfTeX warning (ext4): destination with
  the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
@@ -1257,9 +1257,9 @@ Package pdftex.def Info: img/contextregions.png used on input line 27.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.38 
-      <./img/contextregions.png>] [43]
-<img/asUML.png, id=1133, 884.30376pt x 928.46875pt>
+l.42 \section
+             {Methodology} <./img/contextregions.png>] [43]
+<img/asUML.png, id=1134, 884.30376pt x 928.46875pt>
 File: img/asUML.png Graphic file (type png)
  <use img/asUML.png>
 Package pdftex.def Info: img/asUML.png used on input line 89.
@@ -1296,57 +1296,57 @@ l.128
        <./img/microdrawUI.png>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 168.
+) [47]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 172.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 168.
- [47]
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 172.
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 171.
-LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 223.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 175.
+ [48pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
+}) has been already used, duplicate ignored
 
-Overfull \hbox (2.47444pt too wide) in paragraph at lines 223--223
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.220 T
+       ab. \ref{tab4_flaskBindigns} states a number of URLs, that have been ...
+]
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 227.
+
+Overfull \hbox (2.47444pt too wide) in paragraph at lines 227--227
 []|\OT1/cmtt/l/n/10 index[]dzi(file[]path)| 
  []
 
 
-Overfull \hbox (2.47444pt too wide) in paragraph at lines 224--224
+Overfull \hbox (2.47444pt too wide) in paragraph at lines 228--228
 []|\OT1/cmtt/l/n/10 index[]wsi(file[]path)| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 230--230
 []|\OT1/cmr/m/n/10 /\OML/cmm/m/it/10 <\OT1/cmr/m/n/10 slug\OML/cmm/m/it/10 >[]\
 OT1/cmr/m/n/10 files/\OML/cmm/m/it/10 <\OT1/cmr/m/n/10 int:level\OML/cmm/m/it/1
 0 >[]<\OT1/cmr/m/n/10 int:col\OML/cmm/m/it/10 >[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--226
+Underfull \hbox (badness 10000) in paragraph at lines 230--230
 []|\OT1/cmtt/l/n/10 tile(slug, level,
  []
 
-[48pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}
+[49pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.236 
-      ] [49pdfTeX warning (ext4): destination with the same identifier (name{ta
-ble.4.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.266 A
-       n OpenSlide object offers methods to access available metadata, image...
-]
-Underfull \hbox (badness 10000) in paragraph at lines 275--275
+l.263 ...stlisting}[language=python, frame=single]
+                                                  ]
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
 []|\OT1/cmr/m/n/10 OpenSlide,
  []
 
@@ -1355,33 +1355,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--275
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.310 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.310 
+l.313 
       ]
-Overfull \hbox (0.78085pt too wide) in paragraph at lines 324--324
+Overfull \hbox (0.78085pt too wide) in paragraph at lines 329--329
 []|\OT1/cmr/m/n/10 defaultStrokeWidth| 
  []
 
 
-Overfull \hbox (0.51726pt too wide) in paragraph at lines 349--360
+Overfull \hbox (0.51726pt too wide) in paragraph at lines 354--365
  [] 
  []
 
-[51pdfTeX warning (ext4): destination with the same identifier (name{table.4.5}
+[51pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.364 
-      ] <img/wsiUrl.png, id=1297, 1630.09pt x 1059.96pt>
+l.369 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.4
+.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.369 
+      ] <img/wsiUrl.png, id=1301, 1630.09pt x 1059.96pt>
 File: img/wsiUrl.png Graphic file (type png)
  <use img/wsiUrl.png>
-Package pdftex.def Info: img/wsiUrl.png used on input line 369.
+Package pdftex.def Info: img/wsiUrl.png used on input line 374.
 (pdftex.def)             Requested size: 326.01222pt x 211.98824pt.
 
 [52pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}
@@ -1389,13 +1389,13 @@ Package pdftex.def Info: img/wsiUrl.png used on input line 369.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.385 
+l.390 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.385 
+l.390 
        <./img/wsiUrl.png>] [53]) (./tex/chap5.tex [54]
 Chapter 5.
 ) (./tex/chap6.tex [55
@@ -1894,27 +1894,27 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 30--30
  (./document.nls [76
 
 ] [77])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
  [78
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: DDF0441D1FEEC541DCA92CB6D09A3528;4575.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
  ) 
 Here is how much of TeX's memory you used:
- 9993 strings out of 493029
- 138141 string characters out of 6136235
- 392085 words of memory out of 5000000
- 12700 multiletter control sequences out of 15000+600000
+ 10035 strings out of 493029
+ 138629 string characters out of 6136235
+ 392572 words of memory out of 5000000
+ 12736 multiletter control sequences out of 15000+600000
  10997 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,42p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1938,10 +1938,10 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt8.pfb>
-Output written on document.pdf (81 pages, 5609053 bytes).
+Output written on document.pdf (81 pages, 5610088 bytes).
 PDF statistics:
- 2053 PDF objects out of 2073 (max. 8388607)
- 1881 compressed objects within 19 object streams
- 631 named destinations out of 1000 (max. 500000)
+ 2060 PDF objects out of 2073 (max. 8388607)
+ 1888 compressed objects within 19 object streams
+ 637 named destinations out of 1000 (max. 500000)
  671 words of extra memory for PDF output out of 10000 (max. 10000000)
 
