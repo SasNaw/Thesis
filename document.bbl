@@ -20,11 +20,6 @@ Neuroanatomy Applied and Theoretical (NAAT).
 \newblock \url{http://microdraw.pasteur.fr/index.html}.
 \newblock Accessed: 23.08.2016.
 
-\bibitem{Bankman00}
-I.~Bankman.
-\newblock {\em Handbook of Medical Imaging: Processing and Analysis}.
-\newblock Academic Press, 2000.
-
 \bibitem{web:deepzoom}
 R.~Berta.
 \newblock deepzoom.
@@ -166,6 +161,13 @@ M.~Egmonst-Petersen et~al.
 \newblock {\em Pattern Regcognition}, 35, October 2002.
 \newblock
   \url{https://www.researchgate.net/publication/220603536_Image_processing_with_neural_networks_-_a_review_Pattern_Recogn_352279C2301}.
+
+\bibitem{Frosterus11}
+M.~Frosterus et~al.
+\newblock Extending ontologies with free keywords in a collaborative annotation
+  environment.
+\newblock Technical report, University of Helsinki, 2010.
+\newblock \url{http://ceur-ws.org/Vol-809/paper-02.pdf}.
 
 \bibitem{Farahanil15}
 N.~Farahanil et~al.
@@ -392,6 +394,11 @@ The~Internet Society.
 \newblock Hypertext transfer protocol -- http/1.1.
 \newblock \url{https://www.w3.org/Protocols/rfc2616/rfc2616.html}, 1999.
 \newblock Accessed: 26.08.2016.
+
+\bibitem{Strang03}
+G.~Strang.
+\newblock {\em Introduction to Linear Algebra}.
+\newblock Springer, 2003.
 
 \bibitem{USSanDiego}
 US~San Diego~Health System.

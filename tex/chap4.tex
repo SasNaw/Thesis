@@ -14,31 +14,6 @@ In order to achieve objective (1) - (3), a GUI needs to be deployed which suppor
 It became clear during the development process that the support of only DZI was impractical for the real life environment of the AS, thus making it necessary to support proprietary formats as well. A solution has to be found, that still addresses the vendor and platform issues stated in \ref{sec1_researchObjective} and \ref{sec2_openFormats}.
 
 
-\section{Functionality of the Annotation Service}
-\label{sec4_functions}
-The goal of viewing a WSI (1) is a straight forward task. (2) and (3) are more elusive. For that reason, this subsection elaborates on the functionality needed to help achieve those objectives.
-
-Annotations will be created by drawing directly onto the viewed WSI. If the user spots a ROI, a path can be drawn around it. This can  either be done in \emph{free hand} or \emph{polygon mode}. In free hand mode, the path will be drawn along the movement of the mouse pointer, until the mode is disabled again. Upon deactivation, the path will be closed, creating a contour around the ROI. In polygon mode, the user can place coordinates which will be connected from one to another in the order they are placed in. A path in this mode considers to be closed, once a point on the contour is clicked a second time. A marked ROI is simply called \emph{region} from this point on.
-
-The information what a region is surrounded by can be as valuable as the information about the region itself\cite{Bankman00}. Therefore, every region will have a \emph{context} trait, which lists the labels of regions it touches, crosses, surrounds or is surrounded by (see fig. \ref{fig4_contextregions}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/contextregions.png}
-		\caption{Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}
-		\label{fig4_contextregions}
-	\end{center}
-\end{figure}
-
-Another way of creating regions will be so called \emph{points of interest} (POI)\nmc{POI}{Point of Interest}. A POI will be placed with a single mouse click. After that, an external script will be invoked to run an automated segmentation in the proximity of the POI and return with a contour which will be marked as region. The segmentation approaches may differ drastically in different scenarios\cite{Liu12}, therefore the script will be interchangeable\footnote{There are many different ways of how to approach the topic of segmentation (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12}, \cite{Angulo10} for cell segmentation alone). Writing a fully working segmentation script is worth another thesis by itself, therefore only a dummy implementation will be delivered with this work.}.
-
-Each region has a \emph{label} associated to it. A label is a predefined string, which describes what a region shows. The labels available will be determined through a \emph{label dictionary}, which is a container that offers a list of strings to select from. This approach guarantees a unified labeling, independent of a specific WSI or pathologist. The option to choose between multiple available label dictionaries opens up the possibility of creating dictionaries which are specialized on certain cases or studies. Again, to keep up labeling integrity, labels can only be selected from one dictionary per WSI.
-
-Users will be able to create new, empty dictionaries, if the need arises. Furthermore, they will be able to add entries to existing and new dictionaries alike, to further advance or specialize them.
-
-To support the user in annotating a WSI, a distance measurement tool will be usable as well. This tool can measure the distance between 2 pixels in $\mu$m.
-
-
 \section{Methodology}
 \label{sec4_methodology}
 As stated in \ref{sec2_openFormats}, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often support only Windows platforms, ignoring other operating systems\cite{Cornish13},\cite{DICOM10},\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
@@ -74,7 +49,7 @@ As described in section \ref{sec4_methodology}, the AS will be realized in 2 sep
 	\item a viewer, called \emph{Annotation Service Viewer} (ASV)\nmc{ASV}{Annotation Service Viewer} (see subsection \ref{sec4_asvPart})
 \end{itemize}
 
-The ASS will be responsible for data management, supplying image data and serving the ASV to the client. The ASV will supply a GUI, including a WSI viewer and all functions specified in section \ref{sec4_functions}.
+The ASS will be responsible for data management, supplying image data and serving the ASV to the client. The ASV will provide a WSI viewer with the tools needed to annotate ROIs in a WSI.
 
 The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, MPP and file name of the WSI. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
 
@@ -114,7 +89,52 @@ The development of a fully functional web server is not within the scope of this
 
 \subsection{Annotation Service Viewer}
 \label{sec4_asvPart}
-The ASV is developed to deploy a GUI through which the pathologist is enabled to view a WSI and annotate it (see section ). The ASV is developed in an iterative approach with the help of selected pathologists. After each iteration, the GUI and user experience (UX)\nmc{UX}{User Experience} will be evaluated. This way, the ASV can be adapted to the needs of a real life environment based on the pathologists feedback.
+
+The ASV is developed to provide a WSI viewer with annotation capabilities. It serves as main component for interaction with the AS, realizing most of the communication with the ASS (compare fig. \ref{fig4_asUml}).
+
+The annotation capabilities look as follows:
+\begin{itemize}
+	\item Annotations will be represented by so called \emph{regions}. A region is defined by a path enclosing the ROI. This path can be drawn directly onto the WSI. The drawing is done either in \emph{free hand} or \emph{polygon} mode. When drawing free hand, the path will follow the mouse cursor along its way as long as the drawing mode is activated. In polygon mode, segments can be placed, which are connected with a path in the order that they were placed in.
+	
+	\item Each region has an associated \emph{label} that describes the region. A label is a keyword, predefined by a \emph{dictionary}. A dictionary contains a list of keywords that are available as labels.
+	
+	\item New, empty label dictionaries can be created.
+	
+	\item New labels can be added to existing dictionaries.
+	
+	\item Each region has a \emph{context} trait. This trait lists all other regions that
+	\begin{itemize}
+		\item touch
+		\item cross
+		\item surround
+		\item are surrounded by
+	\end{itemize}
+	the region (see fig. \ref{fig4_contextregions}).
+
+	\item A \emph{point of interest} (POI)\nmc{POI}{Point of Interest} is another way to create a region. After selecting a POI (a point coordinate in the image), an external script will start a segmentation\footnote{
+		Segmentation approaches differ drastically between cases and scenarios\cite{Liu12}, see e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12} or \cite{Angulo10} alone for cell segmentation. Since image segmentation exceeds the scope of this work by far, only a dummy implementation will be delivered, to show basic functionality. The script will be an interchangeable python plug in.
+	} and return the image coordinates for an enclosing path to the ASV. The ASV will then automatically create a region based on the provided information.
+	
+	\item For annotation support, a distance measurement tool is provided. This tool can measure the distance between 2 pixels in a straight line\footnote{
+		The measurement will be realized by the euclidean distance between a pixel $p_A$ and $p_B$\cite{Strang03}.
+	}	
+\end{itemize}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.55]{img/contextregions.png}
+		\caption{Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}
+		\label{fig4_contextregions}
+	\end{center}
+\end{figure}
+
+The ASV uses keywords from a dictionary to label regions. While a free text approach is more flexible and easier to handle for novice users, it encounters difficulties in a professional metadata environment (such as histopathological image annotation). A dictionary-based approach facilitates interoperability between different persons and annotation precision\cite{Frosterus11}. To increase flexibility, the ASV will offer the possibility of adding new entries to existing dictionaries.
+
+Since the vocabulary may vary strongly between different studies, the ASV offers the possibility to create new dictionaries. This way, dictionaries can be filled with a few case-relevant keywords instead of many generic, mostly irrelevant ones\footnote{
+	This does not exclude the use of a "generic" dictionary if it should serve a broad series of cases.
+}.
+
+The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraw's GUI).  
 
 \begin{figure}[H]
 	\begin{center}
@@ -124,9 +144,10 @@ The ASV is developed to deploy a GUI through which the pathologist is enabled to
 	\end{center}
 \end{figure}
 
-The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraws GUI).  MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on another open source project, called \emph{OpenSeadragon}\cite{web:openseadragon}. Annotations are made possible by the use of \emph{Paper.js}\footnote{See \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the functionality specified in \ref{sec4_functions} and can be further adjusted to the needs of the ASV.
+MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on \emph{OpenSeadragon}\cite{web:openseadragon}, another open source project. Annotations are made possible by the use of \emph{Paper.js}\footnote{See \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the capabilities stated earlier in this subsection.
 
-Apart from the frameworks used, MicroDraw is written in JavaScript using HTML5, CSS3 and jQuery\footnote{See \url{https://jquery.com/} for more information on jQuery}.
+Each iteration of the ASV will be reviewed regarding its usability and functionality by a pathologist, thus adjusting it to its real life environment with each iteration.
+
 
 \section{Annotation Service Server Implementation}
 The ASS is a local server, implemented in python (\emph{\textbf{as{\textunderscore}server.py}}). It offers a RESTful styled API for communication (see subsection \ref{sec4_api}). To improve functionality, the following frameworks were used:
@@ -188,7 +209,7 @@ def dzi(slug):
 <int:col>_<int:row>.<format>')
 def tile(slug, level, col, row, format):
 	...
-\end{lstlisting}
+\end{lstlisting}\clearpage
 
 To bind a URL with one or more variables, the corresponding function must be parameterized with same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
 
@@ -429,7 +450,7 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 		"path":"[dictionary path]"
 	}
 	\end{lstlisting}
-	or "error" if [name] is already taken by another dictionary.
+	or "error" if [name] is already taken by another dictionary.\clearpage
 	
 	\item \textbf{/getDictionaries\\
 	method:} GET\\
@@ -445,6 +466,8 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 
 % python web server, flask, openslide, java script, html5, css, jquery
 \section{Annotation Service Viewer Implementation}
+\subsection{Frameworks}
+
 % paper
 % osd
 % jquery

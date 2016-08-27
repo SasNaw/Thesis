@@ -248,8 +248,55 @@ def runSegmentation():
 \section{Annotation Service Viewer}
 \label{sec_B2}
 
+Since the ASV has \textgreater 2,000 lines of code, there will be no documentation of every single line of code\footnote{
+	The implementation of the ASV can be found in its GIT repository at: \url{https://github.com/SasNaw/AnnotationService}
+}. Instead a description of every function is provided. Code snippets are present, when necessary or helpful for understanding.
 
-
+\subsubsection{init()}
 \begin{lstlisting}[language=JavaScript, frame=single]
-
+function init(file_name, url, mpp) {
+	slide = {"name":file_name, "url":url, "mpp":mpp};
+	staticPath = "/static";
+	loadConfiguration();
+	initAnnotationService();
+}
 \end{lstlisting}
+
+\subsubsection{loadConfiguration()}
+\begin{lstlisting}[language=JavaScript, frame=single]
+function loadConfiguration() {
+var def = $.Deferred();
+// load general microdraw configuration
+$.getJSON(staticPath + "/configuration.json", function(data) {
+config = data;
+
+// set default values for new regions (general configuration)
+config.defaultStrokeColor = 'black';
+config.defaultStrokeWidth = 1;
+config.defaultFillAlpha = 0.5;
+
+// get list of dictionaries
+getDictionaryList();
+
+// load label dictionary
+loadDictionary(staticPath + "/dictionaries/" + config.dictionary);
+
+drawingTools = ["select", "draw", "draw-polygon", "save", "addpoi"];
+if( config.drawingEnabled == false ) {
+// remove drawing tools from ui
+for( var i = 0; i < drawingTools.length; i++ ){
+$("#" + drawingTools[i]).remove();
+}
+
+}
+for( var i = 0; i < config.removeTools.length; i++ ) {
+$("#" + config.removeTools[i]).remove();
+}
+def.resolve();
+});
+
+return def.promise();
+}
+\end{lstlisting}
+
+\subsubsection{initAnnotationService()}

@@ -20,10 +20,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{40}{figure.3.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{42}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Activity diagram of ASS and ASV}}{45}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Microdraw GUI with opened WSI}}{46}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Example URL to retrieve WSI (\url {http://127.0.0.1:5000/wsi/CMU-1.svs)} ; WSI source: OpenSlides freely distributable test data (see appendix \ref {sec_A1})}}{52}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Activity diagram of ASS and ASV}}{44}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{46}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Microdraw GUI with opened WSI}}{47}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example URL to retrieve WSI (\url {http://127.0.0.1:5000/wsi/CMU-1.svs)} ; WSI source: OpenSlides freely distributable test data (see appendix \ref {sec_A1})}}{53}{figure.4.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
