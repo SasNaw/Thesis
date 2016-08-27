@@ -86,8 +86,9 @@
 \contentsline {subsubsection}{loadJson()}{66}{section*.23}
 \contentsline {subsubsection}{createDictionary()}{67}{section*.24}
 \contentsline {subsubsection}{getDictionaries()}{67}{section*.25}
-\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{68}{section.1.B.2}
-\contentsline {chapter}{Bibliography}{69}{chapter*.26}
-\contentsline {chapter}{List of Figures}{74}{chapter*.27}
-\contentsline {chapter}{List of Tables}{76}{chapter*.28}
-\contentsline {chapter}{Nomenclature}{78}{chapter*.29}
+\contentsline {subsubsection}{runSegmentation()}{68}{section*.26}
+\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{69}{section.1.B.2}
+\contentsline {chapter}{Bibliography}{70}{chapter*.27}
+\contentsline {chapter}{List of Figures}{75}{chapter*.28}
+\contentsline {chapter}{List of Tables}{77}{chapter*.29}
+\contentsline {chapter}{Nomenclature}{79}{chapter*.30}

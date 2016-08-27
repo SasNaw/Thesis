@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  27 AUG 2016 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  27 AUG 2016 18:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1357,12 +1357,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--280
                                                   \fi \fi 
 l.313 
       ]
-Overfull \hbox (0.78085pt too wide) in paragraph at lines 329--329
+Overfull \hbox (0.78085pt too wide) in paragraph at lines 330--330
 []|\OT1/cmr/m/n/10 defaultStrokeWidth| 
  []
 
 
-Overfull \hbox (0.51726pt too wide) in paragraph at lines 354--365
+Overfull \hbox (0.51726pt too wide) in paragraph at lines 355--366
  [] 
  []
 
@@ -1371,17 +1371,17 @@ Overfull \hbox (0.51726pt too wide) in paragraph at lines 354--365
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.369 
+l.370 
       pdfTeX warning (ext4): destination with the same identifier (name{table.4
 .5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.369 
+l.370 
       ] <img/wsiUrl.png, id=1301, 1630.09pt x 1059.96pt>
 File: img/wsiUrl.png Graphic file (type png)
  <use img/wsiUrl.png>
-Package pdftex.def Info: img/wsiUrl.png used on input line 374.
+Package pdftex.def Info: img/wsiUrl.png used on input line 375.
 (pdftex.def)             Requested size: 326.01222pt x 211.98824pt.
 
 [52pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}
@@ -1389,13 +1389,13 @@ Package pdftex.def Info: img/wsiUrl.png used on input line 374.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.390 
+l.391 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.390 
+l.391 
        <./img/wsiUrl.png>] [53]) (./tex/chap5.tex [54]
 Chapter 5.
 ) (./tex/chap6.tex [55
@@ -1657,7 +1657,9 @@ l.1 \chapter
 Appendix B.
 [63
 
-] [64] [65] [66] [67]) (./document.bbl [68]
+] [64] [65] [66] [67
+
+] [68]) (./document.bbl [69]
 Underfull \hbox (badness 5954) in paragraph at lines 11--16
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -1723,7 +1725,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--73
 ramework$[]\OT1/cmr/m/n/10 ,
  []
 
-[69
+[70
 
 ]
 Underfull \hbox (badness 2608) in paragraph at lines 103--107
@@ -1743,7 +1745,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--169
 ing _ with _
  []
 
-[70]
+[71]
 Underfull \hbox (badness 10000) in paragraph at lines 171--177
 \OT1/cmtt/l/n/10 imaging -[] in -[] pathology -[] advantages -[] limitations -[
 ] and -[] emerging -[] p -[]
@@ -1761,7 +1763,7 @@ Underfull \hbox (badness 3568) in paragraph at lines 243--248
 penseadragon . github . io /
  []
 
-[71]
+[72]
 Underfull \hbox (badness 2134) in paragraph at lines 262--268
 \OT1/cmr/m/n/10 cons.  []$\OT1/cmtt/l/n/10 http : / / www . optimusinfo . com /
  downloads / white -[] paper / open -[]
@@ -1785,7 +1787,7 @@ Underfull \hbox (badness 6364) in paragraph at lines 330--335
 g / en -[] US / docs / Same -[] origin _
  []
 
-[72]
+[73]
 Underfull \hbox (badness 1270) in paragraph at lines 350--355
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/l/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
@@ -1815,7 +1817,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 397--402
 identiality %
  []
 
-) [73] (./document.lof
+) [74] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/l/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -1843,9 +1845,9 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [74
+ [75
 
-] [75] (./document.lot
+] [76] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  [][] [][]\OT1/cmr/m/n/10 Overview of con-ver-sion op-tions for zoom-ing im-age
  for-mats (source: 
@@ -1891,11 +1893,11 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 30--30
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [76
+ (./document.nls [77
 
-] [77])
+] [78])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
- [78
+ [79
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
@@ -1903,7 +1905,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: DDF0441D1FEEC541DCA92CB6D09A3528;4575.
+(rerunfilecheck)             Checksum: 18483DA8F454046FCF5924CADA900022;4575.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1911,10 +1913,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
  ) 
 Here is how much of TeX's memory you used:
- 10035 strings out of 493029
- 138629 string characters out of 6136235
- 392572 words of memory out of 5000000
- 12736 multiletter control sequences out of 15000+600000
+ 10067 strings out of 493029
+ 139086 string characters out of 6136235
+ 392612 words of memory out of 5000000
+ 12745 multiletter control sequences out of 15000+600000
  10997 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,42p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1938,10 +1940,10 @@ s/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt8.pfb>
-Output written on document.pdf (81 pages, 5610088 bytes).
+Output written on document.pdf (82 pages, 5614801 bytes).
 PDF statistics:
- 2060 PDF objects out of 2073 (max. 8388607)
- 1888 compressed objects within 19 object streams
- 637 named destinations out of 1000 (max. 500000)
+ 2091 PDF objects out of 2487 (max. 8388607)
+ 1917 compressed objects within 20 object streams
+ 660 named destinations out of 1000 (max. 500000)
  671 words of extra memory for PDF output out of 10000 (max. 10000000)
 

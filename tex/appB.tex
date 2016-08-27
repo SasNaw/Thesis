@@ -129,7 +129,7 @@ def tile(slug, level, col, row, format):
 \subsubsection{saveJson()}
 When the client sends JSON data to save, the \texttt{saveJson()} function is called.
 
-The associated request is a POST request. This means that the posted data needs to be extracted. This can be done via Flasks \emph{request object}\footnote{Compare subsection \ref{sec4_flask}} (line 77 - 79). The file path will be transmitted as \emph{"source"}, the content to save as \emph{"json"}.
+The associated request is a POST request. This means that the posted data needs to be extracted. This can be done via Flasks \emph{request object} (line 77 - 79). The file path will be transmitted as \emph{"source"}, the content to save as \emph{"json"}.
 
 If there is something to save (line 80), the content will be written into the provided file. If the file does not exist yet, it will be created (line 81 - 82).
 
@@ -149,7 +149,7 @@ def saveJson():
 \subsubsection{loadJson()}
 When the client requests JSON data, \texttt{loadJson()} is called.
 
-The source of the JSON data is passed in the URL as parameter (\emph{"src=[path to source]"}). The src parameter can be extracted via Flasks request object\footnote{Compare subsection \ref{sec4_flask}} (line 86). If the provided source is a file, the content will be read and returned as JSON data (line 87 - 90). Otherwise an empty JSON list is returned (line 91 - 92).
+The source of the JSON data is passed in the URL as parameter (\emph{"src=[path to source]"}). The src parameter can be extracted via Flasks request object (line 86). If the provided source is a file, the content will be read and returned as JSON data (line 87 - 90). Otherwise an empty JSON list is returned (line 91 - 92).\clearpage
 
 \begin{lstlisting}[language=Python, frame=single]
 @app.route('/loadJson')
@@ -198,6 +198,7 @@ The \texttt{getDictionaries()} function is called, when the client requests a li
 If no dictionaries could be found, "-1" will be returned, otherwise a JSON list of all available dictionaries.
 
 \begin{lstlisting}[language=Python, frame=single]
+@app.route('/getDictionaries')
 def getDictionaries():
 	dir = 'static/dictionaries/'
 	if os.path.isfile(dir):
@@ -206,6 +207,41 @@ def getDictionaries():
 	else:
 		# return dictionaries
 		return json.dumps(os.listdir(dir))
+\end{lstlisting}
+
+
+\subsubsection{runSegmentation()}
+The \texttt{runSegmentation()} function is called, when the client tags a POI. It imports the python script provided in the configuration file\footnote{
+	Compare tab. \ref{tab4_assConfig} in subsection \ref{sec4_setup}.
+} as module and calls the module's \texttt{run(x,y)} function.
+
+The function uses Flasks \emph{request object} to acquire the provided x and y coordinates from the provided URL (line 3 \& 4). It then opens the configuration file and extracts the name of the segmentation script (line 5 - 7). If no name was provided for the script (string is empty) the server will print an error message and return with a "404 Not Found" HTTP status code (line 8 - 11).
+
+If a script name was provided and successfully extracted, it is imported as python module (line 13, 14). If the import was successful, the script's run method is called and the returned contour will be passed back to the server as JSON data (line 15 - 16).
+
+If the script could not be imported, a error message will be printed by the server and a "404 Not Found" HTTP status code is returned (line 18 - 20).
+
+\begin{lstlisting}[language=Python, frame=single]
+@app.route("/runSegmentation")
+def runSegmentation():
+	x = request.args.get('x', '0')
+	y = request.args.get('y', '0')
+	with open("static/configuration.json", 'r') as file:
+		config = json.loads(file.read())
+		module_name = config.get("segmentationScript")
+	if(len(module_name) == 0):
+		print("ERROR: no segmentation script provided 
+				in configuration file (configuration.json)!")
+		return "404"
+	try:
+		module = __import__("static.segmentation.%s" % (module_name),
+				fromlist=["segmentation"])
+		contour = module.run(x,y)
+		return json.dumps(contour)
+	except ImportError:
+		print("ERROR: provided segmentation script (" + module_name +
+				") not found!")
+		return "404"
 \end{lstlisting}
 
 
