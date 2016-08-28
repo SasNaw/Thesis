@@ -593,7 +593,51 @@ When navigating through the tiles and layers of the OSDV's tile source, it will 
 
 
 \subsubsection{Paper.js}
+The ASV utilizes Paper.js to create a region's path. Paper.js is an \emph{"open source vector graphics scripting framework"}, running on top of the HTML5 canvas\cite{web:paper}. It offers an API to create and manage vector graphics and bezier curves\footnote{
+	A \emph{bezier curve} is a parametric curve, frequently used in computer graphics\cite{Strang03}.
+}. Additionally, it offers vector relevant entities, such as \emph{point}, \emph{size} and \emph{rectangle} objects and enables the drawing of finely grained paths.
 
+When the OSDV opens an image, a so called \emph{annotation overlay} (AO)\nmc{AO}{Annotation Overlay} is created:
+\begin{lstlisting}[title=Excerpt from \texttt{initAnnotationService()} in as{\textunderscore}viewer.js, frame=single, language=JavaScript]
+viewer.addHandler('open',function(){
+	initAnnotationOverlay();
+	[...]
+}
+\end{lstlisting}
+
+The AO is a canvas which is placed above the OSDV. On it, paths can be drawn, which will be used to enclose an ROI. The AO is initialized in \texttt{initAnnotationOverlay()} (see line 3 in the code snippet above). Once created, the AO is resized to fit the opened WSI in height and width. This only happens when initializing the canvas. Therefore the AO will have (and keep) the dimensions of the level the WSI was opened in.
+
+This leads to issues when zooming in and out onthe OSDV (and consequently changing the level of the tile source). To counteract this, the AO is stretched to fit the new dimensions of the WSI's currently viewed layer. This leads to the problem of having different pixel densities in AO and OSDV.
+
+The AO is of very fine granularity and, when added programmatically, can create path segments within the decimals of a single pixel\cite{web:paper}. In drawing mode however, segments are only added between whole pixels, making it impossible to draw regions in high zoom levels. Since both, AO and OSDV, calculate clicked pixel positions from the clicked pixel in the browser\cite{web:paper},\cite{web:openseadragon}, a conversion is possible. Two conversion functions haven been implemented:
+\begin{enumerate}[(1)]
+	\item\label{item_AOtoIC} AO coordinate $\rightarrow$ image coordinate
+	\item\label{item_ICtoAO} image coordinate $\rightarrow$ AO coordinate
+\end{enumerate}
+
+With those conversion functions, a communication between AO and OSDV becomes possible.
+
+\begin{lstlisting}[title=as{\textunderscore}viewer.js, frame=single, language=JavaScript]
+function convertPathToImgCoordinates(point) {
+	// convert to screen coordinates
+	var screenCoords = paper.view.projectToView(point);
+	// convert to viewport coordinates
+	var viewportCoords = viewer.viewport.pointFromPixel(new OpenSeadragon.Point(screenCoords.x, screenCoords.y));
+	// convert to image coordinates
+	var imgCoords = viewer.viewport.viewportToImageCoordinates(viewportCoords);
+	return imgCoords;
+}
+
+function convertImgToPathCoordinates(point) {
+	// convert to viewport coordinates
+	var viewportCoords = viewer.viewport.imageToViewportCoordinates(point);
+	// convert to screen coordinates
+	var pixel = viewer.viewport.pixelFromPoint(viewportCoords);
+	// convert to project coordinates
+	var projectCoords = paper.view.viewToProject(pixel);
+	return projectCoords;
+}
+\end{lstlisting}
 
 % paper
 % osd

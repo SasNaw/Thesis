@@ -3,52 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-I was expecting a `,' or a `}'---line 201 of file ./bibl/bibl.bib
- :   title     = "
- :                Beginning Ajax",
-I'm skipping whatever remains of this entry
-Warning--empty title in Ullman07
-Warning--empty publisher in Ullman07
-Warning--empty year in Ullman07
-You've used 66 entries,
+You've used 67 entries,
             2118 wiz_defined-function locations,
-            857 strings with 13524 characters,
-and the built_in function-call counts, 14635 in all, are:
-= -- 1445
-> -- 474
+            864 strings with 13755 characters,
+and the built_in function-call counts, 14866 in all, are:
+= -- 1473
+> -- 481
 < -- 1
-+ -- 209
-- -- 136
-* -- 553
-:= -- 2551
-add.period$ -- 247
-call.type$ -- 66
-change.case$ -- 257
++ -- 212
+- -- 138
+* -- 552
+:= -- 2594
+add.period$ -- 254
+call.type$ -- 67
+change.case$ -- 261
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 572
-empty$ -- 1397
-format.name$ -- 136
-if$ -- 3132
+cite$ -- 67
+duplicate$ -- 579
+empty$ -- 1419
+format.name$ -- 138
+if$ -- 3186
 int.to.chr$ -- 0
-int.to.str$ -- 66
+int.to.str$ -- 67
 missing$ -- 30
-newline$ -- 382
-num.names$ -- 132
-pop$ -- 462
+newline$ -- 391
+num.names$ -- 134
+pop$ -- 465
 preamble$ -- 1
-purify$ -- 200
+purify$ -- 203
 quote$ -- 0
-skip$ -- 413
+skip$ -- 420
 stack$ -- 0
-substring$ -- 421
-swap$ -- 77
+substring$ -- 426
+swap$ -- 79
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 248
-warning$ -- 3
-while$ -- 136
-width$ -- 68
-write$ -- 750
-(There was 1 error message)
+type$ -- 252
+warning$ -- 0
+while$ -- 138
+width$ -- 69
+write$ -- 768

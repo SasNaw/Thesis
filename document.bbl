@@ -48,7 +48,11 @@ D.~Siganos C.~Stergiou.
   \url{https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Conclusion}.
 
 \bibitem{Ullman07}
-title~= C.~Ullmann, L.~Dykes.
+L.~Dykes C.~Ullmann.
+\newblock {\em Beginning Ajax}.
+\newblock Wiley Publishing, Inc., 2007.
+\newblock
+  \url{http://crypto.cs.mcgill.ca/~simonpie/webdav/ipad/EBook/Programmation/Beginning%20Ajax%20(Programmer%20to%20Programmer).pdf}.
 
 \bibitem{Cornish13}
 T.~Cornish.
@@ -293,6 +297,12 @@ K.~Martinez J.~Cupitt.
 K.~Martinez J.~Cupitt.
 \newblock Nucleus modelling and segmentation in cell clusters.
 \newblock {\em Mathematics in Industry}, 15:217 -- 222, May 2010.
+
+\bibitem{web:paper}
+J.~Puckey J.~Lehni.
+\newblock Paper.js homepage.
+\newblock \url{http://paperjs.org/about/}.
+\newblock Accessed: 28.08.2016.
 
 \bibitem{Lewis14}
 M.~Fowler J.Lewis.
