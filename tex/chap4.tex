@@ -144,7 +144,9 @@ The first iteration of the ASV will be based on an open source project called \e
 	\end{center}
 \end{figure}
 
-MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on \emph{OpenSeadragon}\cite{web:openseadragon}, another open source project. Annotations are made possible by the use of \emph{Paper.js}\footnote{See \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the capabilities stated earlier in this subsection.
+MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on \emph{OpenSeadragon} (OSD)\nmc{OSD}{OpenSeadragon}\footnote{
+	For more information visit OSDs repository on GitHub: \url{https://openseadragon.github.io/}.
+}, another open source project. Annotations are made possible by the use of \emph{Paper.js}\footnote{See \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the capabilities stated earlier in this subsection.
 
 Each iteration of the ASV will be reviewed regarding its usability and functionality by a pathologist, thus adjusting it to its real life environment with each iteration.
 
@@ -209,7 +211,7 @@ def dzi(slug):
 <int:col>_<int:row>.<format>')
 def tile(slug, level, col, row, format):
 	...
-\end{lstlisting}\clearpage
+\end{lstlisting}
 
 To bind a URL with one or more variables, the corresponding function must be parameterized with same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
 
@@ -466,7 +468,132 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 
 % python web server, flask, openslide, java script, html5, css, jquery
 \section{Annotation Service Viewer Implementation}
+
+The ASV is a browser application based on the MicroDraw open source project. It provides a client with a WSI viewer with annotation capabilities (see subsection \ref{sec4_asvPart}). It is implemented using JavaScript, HTML5 and CSS. The following frameworks were used to add additional functionality:
+
+\begin{itemize}
+	\item jQuery
+	\item OSD
+	\item Paper.js
+\end{itemize}
+
+The ASV consists of the following files:
+
+\begin{itemize}
+	\item \emph{as{\textunderscore}viewer.html} (template/)
+	\item \emph{as{\textunderscore}viewer.js} (static/lib/)
+	\item \emph{as{\textunderscore}viewer.css} (static/css/)
+	\item \emph{style.css} (static/css/)
+\end{itemize}
+
+A documentation of the individual functions of the ASV JavaScript (as{\textunderscore}server.js) can be found in appendix \ref{sec_B2}.
+
 \subsection{Frameworks}
+The ASV uses jQuery, OSD and Paper.js for additional functionality.
+
+jQuery is a common JavaScript library, that offers an API to handle HTML document traversal and manipulation, event handling, animation and AJAX\footnote{
+	Asynchronous JavaScript and XML (AJAX)\nmc{AJAX}{Asynchronous JavaScript and XML} is a group of technologies which enable a client to make asynchronous web requests\cite{Ullman07}.
+} requests\cite{web:jquery}. It is also supported by all common web browsers\cite{web:jqueryBS}. The ASV uses jQuery especially for its HTML document traversal and manipulation capabilities, as well as its AJAX support.
+
+See the corresponding subsections for OSD and Paper.js.
+
+\subsubsection{OpenSeadragon}
+OSD is used by the ASV to show a WSI. It is a JavaScript based, open source web application to serve a viewer for \emph{"high-resolution zoomable images"}\cite{web:openseadragon}. It supports the following image formats:
+
+\begin{itemize}
+	\item DZI
+	\item IIIF
+	\item OSM
+	\item TMS
+\end{itemize}
+
+Furthermore, custom tile sources can be added to support other image formats as well. Since the ASS is capable of delivering every WSI as DZI, no custom tile source implementation is necessary for proprietary WSIs\footnote{
+	Compare subsection \ref{sec2_openFormats}.
+}.
+
+The ASV defines a \textless{div}{\textgreater} in its HTML file, which will be used to hold the OSD viewer (OSDV)\nmc{OSDV}{OpenSeadragon Viewer}:
+\begin{lstlisting}[title=as{\textunderscore}viewer.html, frame=single, language=html]
+<!-- OpenSeadragon viewer -->
+<div id="openseadragon1" style="width:vh;height:hh"></div>
+\end{lstlisting}
+
+The OSDV is then created in the ASV's JavaScript file:
+\begin{lstlisting}[title=as{\textunderscore}viewer.js, frame=single, language=JavaScript]
+ // create image viewer
+ viewer = OpenSeadragon({
+	 id: "openseadragon1",
+	 prefixUrl: staticPath + "/lib/openseadragon/images/",
+	 showReferenceStrip: false,
+	 showNavigator: true,
+	 sequenceMode: false,
+	 navigatorId:"myNavigator",
+	 zoomPerClick: 1,
+ });
+\end{lstlisting}
+
+The relation between \textless{div}{\textgreater} and OSDV is created through the \emph{id} parameter (line 3). Tab. \ref{tab4_osdvParams} states a description of every parameter used in the above constructor\footnote{
+	See \url{https://openseadragon.github.io/docs/OpenSeadragon.html\#.Options} for an in-depth documentation of every parameter available.
+}.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{3.5cm} | p{6.5cm} |}
+			\hline
+			\textbf{parameter} & \textbf{description}\\ \hline
+			id & Id of the element to append the viewer's container element to.\\ \hline
+			prefixUrl & Prepends the provided prefixUrl to the path for the OSDVs internal images.\\ \hline
+			showReferenceStrip & If true, display a scrolling strip of image thumbnails for navigating through the images.\\ \hline
+			showNavigator & Makes the navigator minimap visible if true. \\ \hline
+			sequenceMode & Set to true to view a sequence of images.\\ \hline
+			navigatorId & The ID of a div to hold the navigator minimap.\\ \hline
+			zoomPerClick & The distance to zoom in on every mouse click. Setting it to 1.0 disables the feature.\\ \hline
+		\end{tabular}
+		\caption{Overview of used options in OSDV constructor (source: \cite{web:openseadragon})}
+		\label{tab4_osdvParams}
+	\end{center}
+\end{table}
+
+Since drawing paths and managing regions involves clicking onto the corresponding ROIs on the WSI, the zoomPerClick function must be disabled. Otherwise it will be called after each of those interactions, which is highly disorienting.
+
+The OSDV provides an \texttt{open(tileSources)} function, which is used to open a DZI's tiles\footnote{
+	DZI, as well as all other image formats, supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened.
+}. The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
+	Compare subsection \ref{sec4_openslide}.
+})). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
+
+A scalebar is added to the OSDV to support the assessment of ROIs:
+
+\begin{lstlisting}[title=as{\textunderscore}viewer.js, frame=single, language=JavaScript]
+var mpp = 0;
+if(slide.mpp) {
+	ppm = slide.mpp > 0 ? (1e6 / slide.mpp) : 0
+}
+
+viewer.scalebar({
+	type: OpenSeadragon.ScalebarType.MICROSCOPE,
+	minWidth:'150px',
+	pixelsPerMeter:ppm,
+	color:'black',
+	fontColor:'black',
+	backgroundColor:"rgba(255,255,255,0.5)",
+	barThickness:4,
+	location: OpenSeadragon.ScalebarLocation.TOP_RIGHT,
+	xOffset:5,
+	yOffset:5
+});
+\end{lstlisting}
+
+The scale is $pixels/{\mu}m$. Since the ASS only delivers MPP (which is ${\mu}m/pixel)$ and the OSDV's scalebar expects $pixels/m$ (\emph{PPM}), a conversion is necessary:
+\begin{equation}\label{eq:ppm}
+	PPM = \frac{10^6}{MPP}
+\end{equation}
+
+Eq. \ref{eq:ppm} can be seen in line 3 of the code snippet above.  If no valid input is provided from the ASS (that is: when no value was specified for MPP in the WSI's metadata), PPM will be set to 0. If the pixelPerMeter parameter of the scalebar equals 0 it is automatically hidden\cite{web:openseadragon}. The options in line 7 - 16 concern the styling of the scalebar (such as color, position and size).
+
+When navigating through the tiles and layers of the OSDV's tile source, it will automatically request the tiles needed for the current view from the ASS via HTTP GET\cite{web:openseadragon}.
+
+
+\subsubsection{Paper.js}
+
 
 % paper
 % osd

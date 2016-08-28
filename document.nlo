@@ -21,5 +21,8 @@
 \nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{43}
 \nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{45}
 \nomenclatureentry{aREST@[{REST}]\begingroup Representational State Transfer\nomeqref {4.0}|nompageref}{45}
+\nomenclatureentry{aOSD@[{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}|nompageref}{47}
 \nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{48}
 \nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{50}
+\nomenclatureentry{aAJAX@[{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}|nompageref}{55}
+\nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{56}

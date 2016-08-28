@@ -47,6 +47,9 @@ D.~Siganos C.~Stergiou.
 \newblock
   \url{https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Conclusion}.
 
+\bibitem{Ullman07}
+title~= C.~Ullmann, L.~Dykes.
+
 \bibitem{Cornish13}
 T.~Cornish.
 \newblock An introduction to digital whole slide imaging and whole slide image
@@ -304,6 +307,18 @@ JPEG.
 \newblock Overview of jpeg 2000.
 \newblock \url{https://jpeg.org/jpeg2000/}.
 \newblock Accessed: 18.08.2016.
+
+\bibitem{web:jqueryBS}
+jQuery Foundation.
+\newblock jquery browser support.
+\newblock \url{https://jquery.com/browser-support/}.
+\newblock Accessed: 28.08.2016.
+
+\bibitem{web:jquery}
+jQuery Foundation.
+\newblock jquery homepage.
+\newblock \url{https://jquery.com/}.
+\newblock Accessed: 28.08.2016.
 
 \bibitem{Kesteren14}
 A.~Kesteren.
