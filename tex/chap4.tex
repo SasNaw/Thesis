@@ -609,13 +609,13 @@ The AO is a canvas which is placed above the OSDV. On it, paths can be drawn, wh
 
 This leads to issues when zooming in and out onthe OSDV (and consequently changing the level of the tile source). To counteract this, the AO is stretched to fit the new dimensions of the WSI's currently viewed layer. This leads to the problem of having different pixel densities in AO and OSDV.
 
-The AO is of very fine granularity and, when added programmatically, can create path segments within the decimals of a single pixel\cite{web:paper}. In drawing mode however, segments are only added between whole pixels, making it impossible to draw regions in high zoom levels. Since both, AO and OSDV, calculate clicked pixel positions from the clicked pixel in the browser\cite{web:paper},\cite{web:openseadragon}, a conversion is possible. Two conversion functions haven been implemented:
+The AO is of very fine granularity and, when added programmatically, can create path segments within the decimals of a single pixel\cite{web:paper}. In drawing mode however, segments are only added between whole pixels, making it impossible to draw regions in high zoom levels. Since both, AO and OSDV, calculate clicked pixel positions from the clicked pixel in the browser\cite{web:openseadragon},\cite{web:paper}, a conversion is possible. Two conversion functions haven been implemented:
 \begin{enumerate}[(1)]
 	\item\label{item_AOtoIC} AO coordinate $\rightarrow$ image coordinate
 	\item\label{item_ICtoAO} image coordinate $\rightarrow$ AO coordinate
 \end{enumerate}
 
-With those conversion functions, a communication between AO and OSDV becomes possible.
+The corresponding functions are \texttt{convertPathToImgCoordinates(point)} for (\ref{item_AOtoIC}) and \texttt{convertImgToPathCoordinates(point)} for (\ref{item_ICtoAO}). The following code snippet shows their implementation:
 
 \begin{lstlisting}[title=as{\textunderscore}viewer.js, frame=single, language=JavaScript]
 function convertPathToImgCoordinates(point) {
@@ -638,6 +638,14 @@ function convertImgToPathCoordinates(point) {
 	return projectCoords;
 }
 \end{lstlisting}
+
+\texttt{convertPathToImgCoordinates(point)} receives a point that is in the AO coordinate system and turns it into a screen coordinate (line 3). The screen coordinate is converted into a viewport coordinate\footnote{
+	A viewport coordinate maps coordinates into values within the interval $[0, 100]$ for both dimensions, instead of using pixel coordinates\cite{web:openseadragon}.
+} (line 5) from where it can be turned into an actual image coordinate (line 7).
+
+\texttt{convertImgToPathCoordinates(point)} receives a point coordinate of the baseline image, which is turned into a viewport coordinate (line 13). The viewport coordinate is turned into a screen coordinate (line 15), to be turned into an AO coordinate from there (line 17).
+
+Both of those functions need to work with the viewport coordinates to create a relation between the dimensions of the image and the current level.
 
 % paper
 % osd
