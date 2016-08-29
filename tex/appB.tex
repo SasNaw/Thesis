@@ -252,51 +252,201 @@ Since the ASV has \textgreater 2,000 lines of code, there will be no documentati
 	The implementation of the ASV can be found in its GIT repository at: \url{https://github.com/SasNaw/AnnotationService}
 }. Instead a description of every function is provided. Code snippets are present, when necessary or helpful for understanding.
 
-\subsubsection{init()}
-\begin{lstlisting}[language=JavaScript, frame=single]
-function init(file_name, url, mpp) {
-	slide = {"name":file_name, "url":url, "mpp":mpp};
-	staticPath = "/static";
-	loadConfiguration();
-	initAnnotationService();
+
+\subsection{Initialization functions}
+
+\subsubsection{function init(file{\textunderscore}name, url, mpp)}
+\emph{Parameters:\\
+	file{\textunderscore}name: name of the requested WSI\\
+	url: URL to the DZI's metadata file\\
+	mpp: microns per pixel of the requested WSI\\ \\
 }
-\end{lstlisting}
+The \texttt{init(file{\textunderscore}name, url, mpp)} is called by the \emph{as{\textunderscore}viewer.html} to start the initialization of the ASV JavaScript. The parameters are served by the ASS. \emph{file{\textunderscore}name} describes the name of the WSI, \emph{url} contains the URL to the DZI metadata file and \emph{mpp} equals the microns per pixel of the requested WSI (if that information could be retrieved from the metadata, 0 otherwise).
 
-\subsubsection{loadConfiguration()}
-\begin{lstlisting}[language=JavaScript, frame=single]
-function loadConfiguration() {
-var def = $.Deferred();
-// load general microdraw configuration
-$.getJSON(staticPath + "/configuration.json", function(data) {
-config = data;
+The function requests the content of the configuration file (via \texttt{loadConfiguration()}) from the ASS and creates the OSDV (via \texttt{initAnnotationService()}, see fig. \ref{figB_init}).
 
-// set default values for new regions (general configuration)
-config.defaultStrokeColor = 'black';
-config.defaultStrokeWidth = 1;
-config.defaultFillAlpha = 0.5;
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_init.png}
+		\caption{Call hierarchy of \texttt{init(file{\textunderscore}name, url, mpp)}}
+		\label{figB_init}
+	\end{center}
+\end{figure}
 
-// get list of dictionaries
-getDictionaryList();
 
-// load label dictionary
-loadDictionary(staticPath + "/dictionaries/" + config.dictionary);
+\subsubsection{function initAnnotationService()}
+\texttt{initAnnotationService()} selects the navigation tool (via \texttt{selectTool()}), creates the OSDV and its scalebar. It then opens the tile source at the URL specified in the \texttt{init(file{\textunderscore}path, url, mpp)} function. Additionally, event handlers to are set up to react to:
+\begin{itemize}
+	\item mouse interaction
+	\item opening of a WSI
+	\item zooming
+\end{itemize}
+Furthermore, the toolbar is initialized.
 
-drawingTools = ["select", "draw", "draw-polygon", "save", "addpoi"];
-if( config.drawingEnabled == false ) {
-// remove drawing tools from ui
-for( var i = 0; i < drawingTools.length; i++ ){
-$("#" + drawingTools[i]).remove();
+Once a tile source was opened, the AO is initialized (via \texttt{initAnnotationOverlay()}) and the saved annotations are requested (via \texttt{loadJson()}, see fig. \ref{figB_initAS}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_initAS.png}
+		\caption{Call hierarchy of \texttt{initAnnotationService()}}
+		\label{figB_initAS}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function initAnnotationOverlay()}
+\texttt{initAnnotationOverlay()} creates the ASV's AO. The AO is transformed to the size of the OSDV via the \texttt{transform()} function.
+
+
+\subsection{Data management functions}
+
+\subsubsection{function loadConfiguration()}
+\texttt{loadConfiguration()} requests and parses the content of the configuration file from the ASS. Furthermore, it requests the list of available dictionaries (via \texttt{getDictionaryList()}) and loads the content of the dictionary specified in the configuration (via \texttt{loadDictionary(path)}, see fig. \ref{figB_loadConfig}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_init.png}
+		\caption{Call hierarchy of \texttt{loadConfiguration()}}
+		\label{figB_loadConfig}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function getDictionaryList()}
+\texttt{getDictionaryList()} requests a list of all dictionaries from the ASS. The received list is then added as a clickable list to the toolbar.
+
+
+\subsubsection{function loadDictionary(path)}
+\emph{Parameters:\\
+	path: file path of the requested dictionary\\ \\
 }
+\texttt{loadDictionary(path)} requests the content of the dictionary file at \emph{path} from the ASS. The response is either a list of entries, which are then added to the list of available labels in the toolbar (via \texttt{appendLabelsToList()}), or a -1, if no dictionary was found. In this case, the ASV forces the user to create a new, empty dictionary (via \texttt{createNewDictionary(isCancelable)}, see fig. \ref{figB_loadDict}).
 
-}
-for( var i = 0; i < config.removeTools.length; i++ ) {
-$("#" + config.removeTools[i]).remove();
-}
-def.resolve();
-});
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_loadDict.png}
+		\caption{Call hierarchy of \texttt{loadDictionary(path)}}
+		\label{figB_loadDict}
+	\end{center}
+\end{figure}
 
-return def.promise();
-}
-\end{lstlisting}
 
-\subsubsection{initAnnotationService()}
+\subsubsection{function loadJson()}
+\texttt{loadJson()} requests the saved annotations for the provided WSI. If an annotation file could be loaded by the ASS, a list of region data is returned. Each entry of the region data list is then turned into an actual region and added to the region list (via \texttt{newRegion(arg, imageNumber)}, see fig. \ref{figB_loadJson}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_loadJson.png}
+		\caption{Call hierarchy of \texttt{loadJson()}}
+		\label{figB_loadJson}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function createNewDictionary(isCancelable)}
+\emph{Parameters:\\
+	isCancelable: 1 if the process can be canceled without providing a valid dictionary name, 0 otherwise\\ \\
+}
+\texttt{createNewDictionary(isCancelable)} opens a prompt and asks the user to provide a name for the dictionary to create. If \emph{isCancelable} is true (1), the prompt can be closed and the creation process is canceled. If it is false (0), the prompt will be shown until a valid name was provided.
+
+After creation of the new dictionary it is selected as active one (and its empty content is loaded via \texttt{loadDictionary(path)}) and the list of available dictionaries is updated (via \texttt{getDictionaryList()}, see fig. \ref{figB_createDict}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.45]{img/ch_createDict.png}
+		\caption{Call hierarchy of \texttt{createNewDictionary(isCancelable)}}
+		\label{figB_createDict}
+	\end{center}
+\end{figure}
+
+
+\subsection{GUI functions}
+
+\subsubsection{function selectTool()}
+\texttt{selectTool()} changes the mouse cursor to the icon of the currently selected tool.
+
+
+\subsubsection{function transform()}
+\subsubsection{function appendLabelsToList()}
+\subsubsection{function appendLabelToList(label)}
+
+
+
+\subsection{Region functions}
+\subsubsection{function newRegion(arg, imageNumber)}
+
+
+%-----------------------------------------------------------------------
+\subsubsection{function newLabel()}
+
+\subsubsection{function selectNextLabel()}
+\subsubsection{function selectLabel(el)}
+
+\subsubsection{function findContextRegion(region1)}
+\subsubsection{function isRegionAlreadyReferenced(region1, region2)}
+\subsubsection{function removeRegion(reg, imageNumber)}
+\subsubsection{function selectRegion(reg)}
+\subsubsection{function deselectRegion(reg)}
+\subsubsection{function findRegionByUID(uid)}
+\subsubsection{function findRegionByName(name)}
+\subsubsection{function hash(str)}
+\subsubsection{function regionHashColor(name)}
+\subsubsection{function regionPicker(parent)}
+\subsubsection{function changeRegionName(reg,name)}
+\subsubsection{function toggleAllRegions()}
+\subsubsection{function toggleRegions(uid)}
+\subsubsection{function changeRegionAnnotationStyle(uid)}
+\subsubsection{function convertPathToImgCoordinates(point)}
+\subsubsection{function convertImgToPathCoordinates(point)}
+\subsubsection{function clickHandler(event)}
+\subsubsection{function addPoi(event}
+\subsubsection{function pressHandler(event)}
+\subsubsection{function dragHandler(event)}
+\subsubsection{function singleClickOnLabel(event)}
+\subsubsection{function singlePressOnRegion(event)}
+\subsubsection{function doublePressOnRegion(event)}
+\subsubsection{function mouseDown(x,y)}
+\subsubsection{function mouseDrag(x,y,dx,dy)}
+\subsubsection{function getDistance()}
+\subsubsection{function mouseUp()}
+\subsubsection{function pad(number, length)}
+\subsubsection{function annotationStyle(label)}
+\subsubsection{function setRegionColor()}
+\subsubsection{function onFillColorPicker(value)}
+\subsubsection{function onAlphaSlider(value)}
+\subsubsection{function onAlphaInput(value)}
+\subsubsection{function cmdUndo()}
+\subsubsection{function cmdRedo()}
+\subsubsection{function getUndo()}
+\subsubsection{function saveUndo(undoInfo)}
+\subsubsection{function setImage(imageNumber)}
+\subsubsection{function applyUndo(undo)}
+\subsubsection{function commitMouseUndo()}
+\subsubsection{function finishDrawingPolygon(closed)}
+\subsubsection{function backToPreviousTool(prevTool)}
+\subsubsection{function backToSelect()}
+\subsubsection{function cmdDeleteSelected()}
+\subsubsection{function clearToolSelection()}
+\subsubsection{function toolSelection(event)}
+
+\subsubsection{function saveJson(json, filePath)}
+\subsubsection{function saveConfig()}
+\subsubsection{function saveDictionary()}
+\subsubsection{function getJsonSource()}
+\subsubsection{function saveRegions()}
+
+\subsubsection{function loadImage(name)}
+\subsubsection{function resizeAnnotationOverlay()}
+
+
+\subsubsection{function toggleDictPicker()}
+\subsubsection{function dictListClick(index)}
+
+
+\subsubsection{function initAnnotationService()}
+\subsubsection{function help(show)}
+\subsubsection{function toggleMenu ()}
+\subsubsection{\$(document).keydown(function(e)}
+\subsubsection{function selectToolOnKeyPress(id)}
+
+\subsubsection{\$(document).keyup(function(e)}
