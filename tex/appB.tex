@@ -300,6 +300,18 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 
 \subsection{Data management functions}
 
+\subsubsection{function saveConfig()}
+\texttt{saveConfig()} calls \texttt{saveJson(json, filePath)} to save the current configuration to the configuration file (see fig. \ref{figB_saveConfig}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_saveConfig.png}
+		\caption{Call hierarchy of \texttt{saveConfig()}}
+		\label{figB_saveConfig}
+	\end{center}
+\end{figure}
+
+
 \subsubsection{function loadConfiguration()}
 \texttt{loadConfiguration()} requests and parses the content of the configuration file from the ASS. Furthermore, it requests the list of available dictionaries (via \texttt{getDictionaryList()}) and loads the content of the dictionary specified in the configuration (via \texttt{loadDictionary(path)}, see fig. \ref{figB_loadConfig}).
 
@@ -316,6 +328,18 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 \texttt{getDictionaryList()} requests a list of all dictionaries from the ASS. The received list is then added as a clickable list to the toolbar.
 
 
+\subsubsection{function saveDictionary()}
+\texttt{saveDictionary()} calls \texttt{saveJson(json, filePath)} to save the current dictionary to the currently active dictionary's file (see fig. \ref{figB_saveDict}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_saveDict.png}
+		\caption{Call hierarchy of \texttt{saveDictionary()}}
+		\label{figB_saveDict}
+	\end{center}
+\end{figure}
+
+
 \subsubsection{function loadDictionary(path)}
 \emph{Parameters:\\
 	path: file path of the requested dictionary\\ \\
@@ -327,6 +351,26 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 		\includegraphics[scale=0.5]{img/ch_loadDict.png}
 		\caption{Call hierarchy of \texttt{loadDictionary(path)}}
 		\label{figB_loadDict}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function saveJson(json, filePath)}
+\emph{Parameters:\\
+	json: json data to save\\
+	filePath: path to the file where json should be saved\\ \\
+}
+\texttt{saveJson(json, filePath)} sends a POST request to the ASS with the provided json data to save and the path of the file to save the data to.
+
+
+\subsubsection{function saveRegions()}
+\texttt{saveRegions()} calls \texttt{saveJson(json, filePath)} to save the ASV's annotations to a file (see fig. \ref{figB_saveRegs}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_saveRegs.png}
+		\caption{Call hierarchy of \texttt{saveRegions()}}
+		\label{figB_saveRegs}
 	\end{center}
 \end{figure}
 
@@ -428,7 +472,45 @@ After creation of the new dictionary it is selected as active one (and its empty
 \end{figure}
 
 
+\subsubsection{function toggleDictPicker()}
+\texttt{toggleDictPicker()} toggles the visibility of the list of available dictionaries.
+
+
+\subsubsection{function dictListClick(index)}
+\emph{Parameters:\\
+	index: index of the selected dictionary\\ \\
+}
+\texttt{dictListClick(index)} switches the currently active dictionary with the selected one, overwrites the currently active dictionary value in the configuration file (via \texttt{saveJson(json, filePath)}) and loads the entries from the new dictionary (via \texttt{loadDictionary(path)}, see fig. \ref{figB_selectDict}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_selectDict.png}
+		\caption{Call hierarchy of \texttt{dictListClick(index)}}
+		\label{figB_selectDict}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function annotationStyle(label)}
+\emph{Parameters:\\
+	label: label whose style to modify\\ \\
+}
+\texttt{annotationStyle(label)} is used to manipulate the style values (stroke width and color, region color, alpha value) for the provided label.
+
+
+\subsubsection{function help(show)}
+\emph{Parameters:\\
+	show: 1 to show help tooltip, 0 to hide it\\ \\
+}
+\texttt{help(show)} either shows or hides the help tooltip, depending on the provided value for show.
+
+
+\subsubsection{function toggleMenu()}
+\texttt{toggleMenu()} toggles visibility of the toolbar.
+
+
 \subsection{Region functions}
+
 \subsubsection{function newRegion(arg)}
 \emph{Parameters:\\
 	arg: argument object (either a complete region or path and coordinate information)\\ \\
@@ -650,30 +732,51 @@ When in distance measurement mode, the distance tooltip is removed upon release 
 	}
 \end{equation}
 
-%-----------------------------------------------------------------------
 
-
-
-\subsubsection{function annotationStyle(label)}
-\subsubsection{function setRegionColor()}
-
-
-\subsubsection{function cmdDeleteSelected()}
 \subsubsection{function clearToolSelection()}
+\texttt{clearToolSelection()} resets the mouse cursor to the default icon.
 
-\subsubsection{function saveJson(json, filePath)}
-\subsubsection{function saveConfig()}
-\subsubsection{function saveDictionary()}
-\subsubsection{function saveRegions()}
 
-\subsubsection{function resizeAnnotationOverlay()}
+\subsection{Key listener}
 
-\subsubsection{function toggleDictPicker()}
-\subsubsection{function dictListClick(index)}
+\subsubsection{\$(document).keydown(function(e))}
+\emph{Parameters:\\
+	e: key event\\ \\
+}
+\texttt{\$(document).keydown(function(e))} is used to handle the tool selection via hotkeys. A tool is selected depending on the keys pressed (via \texttt{selectToolOnKeyPress(id)}), see fig. \ref{figB_keyDown}).
 
-\subsubsection{function help(show)}
-\subsubsection{function toggleMenu ()}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_keyDown.png}
+		\caption{Call hierarchy of \texttt{keydown(function(e))}}
+		\label{figB_keyDown}
+	\end{center}
+\end{figure}
+	
 
-\subsubsection{\$(document).keydown(function(e)}
+\subsubsection{\$(document).keyup(function(e))}
+\texttt{\$(document).keyup(function(e))} resets the selected tool to the navigation tool upon release of a hotkey (via \texttt{clearToolSelection()}, see fig. \ref{figB_keyup}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_keyup.png}
+		\caption{Call hierarchy of \texttt{keyup(function(e))}}
+		\label{figB_keyup}
+	\end{center}
+\end{figure}
+
+
 \subsubsection{function selectToolOnKeyPress(id)}
-\subsubsection{\$(document).keyup(function(e)}
+\emph{Parameters:\\
+	id: id of the tool to select\\ \\
+}
+\texttt{selectToolOnKeyPress(id)} selects the tool corresponding to the provided id and changes the mouse cursor accordingly (via \texttt{selectTool()}, see fig. \ref{eq:distance}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_selectToolOnKeyPress.png}
+		\caption{Call hierarchy of \texttt{selectToolOnKeyPress(id}}
+		\label{figB_selectToolOnKeyPress}
+	\end{center}
+\end{figure}
+

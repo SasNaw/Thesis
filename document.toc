@@ -98,60 +98,58 @@
 \contentsline {subsubsection}{function initAnnotationService()}{75}{section*.30}
 \contentsline {subsubsection}{function initAnnotationOverlay()}{76}{section*.31}
 \contentsline {subsection}{\numberline {B.2.2}Data management functions}{76}{subsection.1.B.2.2}
-\contentsline {subsubsection}{function loadConfiguration()}{76}{section*.32}
-\contentsline {subsubsection}{function getDictionaryList()}{77}{section*.33}
-\contentsline {subsubsection}{function loadDictionary(path)}{77}{section*.34}
-\contentsline {subsubsection}{function loadJson()}{77}{section*.35}
-\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{78}{section*.36}
-\contentsline {subsection}{\numberline {B.2.3}GUI functions}{78}{subsection.1.B.2.3}
-\contentsline {subsubsection}{function selectTool()}{78}{section*.37}
-\contentsline {subsubsection}{function transform()}{78}{section*.38}
-\contentsline {subsubsection}{function appendLabelsToList()}{79}{section*.39}
-\contentsline {subsubsection}{function appendLabelToList(label)}{79}{section*.40}
-\contentsline {subsubsection}{function selectNextLabel()}{79}{section*.41}
-\contentsline {subsubsection}{function selectLabel(el)}{80}{section*.42}
-\contentsline {subsubsection}{function newLabel()}{80}{section*.43}
-\contentsline {subsection}{\numberline {B.2.4}Region functions}{80}{subsection.1.B.2.4}
-\contentsline {subsubsection}{function newRegion(arg)}{80}{section*.44}
-\contentsline {subsubsection}{function selectRegion(reg)}{81}{section*.45}
-\contentsline {subsubsection}{function deselectRegion(reg)}{81}{section*.46}
-\contentsline {subsubsection}{function findContextRegion(region1)}{81}{section*.47}
-\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{81}{section*.48}
-\contentsline {subsubsection}{function removeRegion(reg)}{81}{section*.49}
-\contentsline {subsubsection}{function findRegionByUID(uid)}{82}{section*.50}
-\contentsline {subsubsection}{function toggleRegions(uid)}{82}{section*.51}
-\contentsline {subsubsection}{function toggleAllRegions()}{82}{section*.52}
-\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{82}{subsection.1.B.2.5}
-\contentsline {subsubsection}{function singleClickOnLabel(event)}{82}{section*.53}
-\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{83}{section*.54}
-\contentsline {subsubsection}{function addPoi(event)}{83}{section*.55}
-\contentsline {subsection}{\numberline {B.2.6}Internal functions}{84}{subsection.1.B.2.6}
-\contentsline {subsubsection}{UniqueID()}{84}{section*.56}
-\contentsline {subsubsection}{function regionHashColor(name)}{84}{section*.57}
-\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{84}{section*.58}
-\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{84}{section*.59}
-\contentsline {subsubsection}{function mouseDown(x,y)}{85}{section*.60}
-\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{85}{section*.61}
-\contentsline {subsubsection}{function mouseUp()}{86}{section*.62}
-\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{86}{section*.63}
-\contentsline {subsubsection}{function getDistance()}{87}{section*.64}
-\contentsline {subsubsection}{function annotationStyle(label)}{87}{section*.65}
-\contentsline {subsubsection}{function setRegionColor()}{87}{section*.66}
-\contentsline {subsubsection}{function cmdDeleteSelected()}{87}{section*.67}
-\contentsline {subsubsection}{function clearToolSelection()}{87}{section*.68}
-\contentsline {subsubsection}{function saveJson(json, filePath)}{87}{section*.69}
-\contentsline {subsubsection}{function saveConfig()}{87}{section*.70}
-\contentsline {subsubsection}{function saveDictionary()}{87}{section*.71}
-\contentsline {subsubsection}{function saveRegions()}{87}{section*.72}
-\contentsline {subsubsection}{function resizeAnnotationOverlay()}{87}{section*.73}
-\contentsline {subsubsection}{function toggleDictPicker()}{87}{section*.74}
-\contentsline {subsubsection}{function dictListClick(index)}{87}{section*.75}
-\contentsline {subsubsection}{function help(show)}{87}{section*.76}
-\contentsline {subsubsection}{function toggleMenu ()}{87}{section*.77}
-\contentsline {subsubsection}{\$(document).keydown(function(e)}{87}{section*.78}
-\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{87}{section*.79}
-\contentsline {subsubsection}{\$(document).keyup(function(e)}{87}{section*.80}
-\contentsline {chapter}{Bibliography}{88}{chapter*.81}
-\contentsline {chapter}{List of Figures}{94}{chapter*.82}
-\contentsline {chapter}{List of Tables}{96}{chapter*.83}
-\contentsline {chapter}{Nomenclature}{98}{chapter*.84}
+\contentsline {subsubsection}{function saveConfig()}{76}{section*.32}
+\contentsline {subsubsection}{function loadConfiguration()}{76}{section*.33}
+\contentsline {subsubsection}{function getDictionaryList()}{77}{section*.34}
+\contentsline {subsubsection}{function saveDictionary()}{77}{section*.35}
+\contentsline {subsubsection}{function loadDictionary(path)}{77}{section*.36}
+\contentsline {subsubsection}{function saveJson(json, filePath)}{78}{section*.37}
+\contentsline {subsubsection}{function saveRegions()}{78}{section*.38}
+\contentsline {subsubsection}{function loadJson()}{78}{section*.39}
+\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{79}{section*.40}
+\contentsline {subsection}{\numberline {B.2.3}GUI functions}{79}{subsection.1.B.2.3}
+\contentsline {subsubsection}{function selectTool()}{79}{section*.41}
+\contentsline {subsubsection}{function transform()}{79}{section*.42}
+\contentsline {subsubsection}{function appendLabelsToList()}{79}{section*.43}
+\contentsline {subsubsection}{function appendLabelToList(label)}{80}{section*.44}
+\contentsline {subsubsection}{function selectNextLabel()}{80}{section*.45}
+\contentsline {subsubsection}{function selectLabel(el)}{81}{section*.46}
+\contentsline {subsubsection}{function newLabel()}{81}{section*.47}
+\contentsline {subsubsection}{function toggleDictPicker()}{81}{section*.48}
+\contentsline {subsubsection}{function dictListClick(index)}{81}{section*.49}
+\contentsline {subsubsection}{function annotationStyle(label)}{82}{section*.50}
+\contentsline {subsubsection}{function help(show)}{82}{section*.51}
+\contentsline {subsubsection}{function toggleMenu()}{82}{section*.52}
+\contentsline {subsection}{\numberline {B.2.4}Region functions}{82}{subsection.1.B.2.4}
+\contentsline {subsubsection}{function newRegion(arg)}{82}{section*.53}
+\contentsline {subsubsection}{function selectRegion(reg)}{83}{section*.54}
+\contentsline {subsubsection}{function deselectRegion(reg)}{83}{section*.55}
+\contentsline {subsubsection}{function findContextRegion(region1)}{83}{section*.56}
+\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{83}{section*.57}
+\contentsline {subsubsection}{function removeRegion(reg)}{83}{section*.58}
+\contentsline {subsubsection}{function findRegionByUID(uid)}{84}{section*.59}
+\contentsline {subsubsection}{function toggleRegions(uid)}{84}{section*.60}
+\contentsline {subsubsection}{function toggleAllRegions()}{84}{section*.61}
+\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{84}{subsection.1.B.2.5}
+\contentsline {subsubsection}{function singleClickOnLabel(event)}{84}{section*.62}
+\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{85}{section*.63}
+\contentsline {subsubsection}{function addPoi(event)}{85}{section*.64}
+\contentsline {subsection}{\numberline {B.2.6}Internal functions}{86}{subsection.1.B.2.6}
+\contentsline {subsubsection}{UniqueID()}{86}{section*.65}
+\contentsline {subsubsection}{function regionHashColor(name)}{86}{section*.66}
+\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{86}{section*.67}
+\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{86}{section*.68}
+\contentsline {subsubsection}{function mouseDown(x,y)}{87}{section*.69}
+\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{87}{section*.70}
+\contentsline {subsubsection}{function mouseUp()}{88}{section*.71}
+\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{88}{section*.72}
+\contentsline {subsubsection}{function getDistance()}{89}{section*.73}
+\contentsline {subsubsection}{function clearToolSelection()}{89}{section*.74}
+\contentsline {subsection}{\numberline {B.2.7}Key listener}{89}{subsection.1.B.2.7}
+\contentsline {subsubsection}{\$(document).keydown(function(e))}{89}{section*.75}
+\contentsline {subsubsection}{\$(document).keyup(function(e))}{89}{section*.76}
+\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{89}{section*.77}
+\contentsline {chapter}{Bibliography}{91}{chapter*.78}
+\contentsline {chapter}{List of Figures}{97}{chapter*.79}
+\contentsline {chapter}{List of Tables}{99}{chapter*.80}
+\contentsline {chapter}{Nomenclature}{101}{chapter*.81}
