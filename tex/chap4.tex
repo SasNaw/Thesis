@@ -466,7 +466,6 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 \end{enumerate}
 
 
-% python web server, flask, openslide, java script, html5, css, jquery
 \section{Annotation Service Viewer Implementation}
 
 The ASV is a browser application based on the MicroDraw open source project. It provides a client with a WSI viewer with annotation capabilities (see subsection \ref{sec4_asvPart}). It is implemented using JavaScript, HTML5 and CSS. The following frameworks were used to add additional functionality:
@@ -649,5 +648,47 @@ function convertImgToPathCoordinates(point) {
 Both of those functions need to work with the viewport coordinates to create a relation between the dimensions of the image and the current level.
 
 \subsection{Definition: Region}
+Regions are used to realize annotations in the ASV. Therefore they are of central importance. This section gives a definition of the region object in the ASV. Tab. \ref{tab4_regionUML} shows a UML class diagram to give an overview.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{7cm} |}
+			\hline
+			\textbf{:Region} \\ \hline
+			context : Array\\
+			imgCoords : OpenSeadragon.Point[1..n]\\
+			name: Integer\\
+			path: Paper.Point[1..n]\\
+			uid: Integer\\ \hline
+		\end{tabular}
+		\caption{Class diagram of the region class}
+		\label{tab4_regionUML}
+	\end{center}
+\end{table}
+
+Each region has a \emph{context, imgCoords, name, path} and \emph{uid} property, as seen in tab. \ref{tab4_regionUML}.
+
+The \textbf{context} property is a list of unique label ids of other regions\footnote{
+	Compare subsection \ref{sec4_asvPart}
+}. If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, when:
+\begin{itemize}
+	\item $R_2$'s path touches, crosses, surrounds or is surrounded by $R_1$'s path, and
+	\item $R_2$'s label is not in the context list of $R_1$ already, and
+	\item $R_2$'s label $\neq R_1$'s label
+\end{itemize}
+
+The \textbf{imgCoords} (image coordinates) property represents the coordinates of the path's segments in the baseline image. It is a list of 1 to n Openseadragon.Points\footnote{
+	See \url{https://openseadragon.github.io/docs/OpenSeadragon.Viewport.html\#viewportToImageCoordinates} for more information on OSD's Point class.
+}.
+Without this property, there would be no relation between the ROIs of the AO and baseline image.
+
+The \textbf{name} property holds the unique id of the region's corresponding label. A region is created with the id of the label selected at the time. That reference can not be changed, unless the whole region object is deleted and redrawn with another corresponding label selected previously to redrawing it.
+
+The \textbf{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
+	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' Point class.
+}. They are being used to manage the contour of an ROI in the AO. The number of points in imgCoords and path is always identical, as is their position inside the list.
+
+The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
+
 \subsection{GUI}
 \subsection{Tools}
