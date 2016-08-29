@@ -40,3 +40,4 @@
 \contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{80}{figure.1.B.10}
 \contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{81}{figure.1.B.11}
 \contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{82}{figure.1.B.12}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{82}{figure.1.B.13}

@@ -463,13 +463,13 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 \emph{Parameters:\\
 	uid: the label uid of the regions to toggle in their visibility\\ \\
 }
-\texttt{toggleRegions(uid)} turns all regions of the corresponding label (in-)visible. If one of the regions to be toggled is currently selected it is deselected (via \texttt{deselectRegion(reg)}, see fig. \ref{figB_singleClickLabel}).
+\texttt{toggleRegions(uid)} turns all regions of the corresponding label (in-)visible. If one of the regions to be toggled is currently selected it is deselected (via \texttt{deselectRegion(reg)}, see fig. \ref{figB_toggleRegions}).
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/ch_toggleRegions.png}
 		\caption{Call hierarchy of \texttt{toggleRegions(uid)}}
-		\label{figB_singleClickLabel}
+		\label{figB_toggleRegions}
 	\end{center}
 \end{figure}
 
@@ -481,17 +481,64 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 \texttt{changeRegionAnnotationStyle(uid)} changes the annotation style (storke width and color, region color, region alpha value) for all regions corresponding to the label uid.
 
 
+\subsubsection{function selectRegion(reg)}
+\emph{Parameters:\\
+	reg: region to select\\ \\
+}
+\texttt{selectRegion(reg)} selects the provided region.
+
+
 \subsubsection{function deselectRegion(reg)}
 \emph{Parameters:\\
 	reg: region to deselect\\ \\
 }
-\texttt{deselectRegion(reg)} deselects the provided region \emph{reg}.
+\texttt{deselectRegion(reg)} deselects the provided region.
 
 
+\subsubsection{function findContextRegion(region1)}
+\emph{Parameters:\\
+	region1: region to find the context to\\ \\
+}
+\texttt{findContextRegion(region1)} finds the context of the provided region. The label of each region that crosses, touches, surrounds or is surrounded by \emph{region1} is considered as context. Too avoid data redundancy, each label will only be added once to the context of region1 (via \texttt{isRegionAlreadyReferenced(region1, region2)}, see fig. \ref{figB_findContext}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/ch_findContext.png}
+		\caption{Call hierarchy of \texttt{findContextRegion()}}
+		\label{figB_findContext}
+	\end{center}
+\end{figure}
 
 
+\subsubsection{function isRegionAlreadyReferenced(region1, region2)}
+\emph{Parameters:\\
+	region1: region with the context to check\\
+	region2: region whose label is checked for\\ \\
+}
+\texttt{isRegionAlreadyReferenced(region1, region2)} checks if region1's context already contains region2’s label.
 
 
+\subsubsection{function removeRegion(reg)}
+\emph{Parameter:\\
+	reg: the region to remove\\ \\
+}
+\texttt{removeRegion(reg)} deletes the provided region.
+
+
+\subsubsection{function findRegionByUID(uid)}
+\subsubsection{function findRegionByName(name)}
+
+
+\subsection{Internal functions}
+\subsubsection{UniqueID()}
+\texttt{UniqueID()} creates a unique id and returns it.
+
+
+\subsubsection{function regionHashColor(name)}
+\emph{Parameters:\\
+	name: name of a label\\ \\
+}
+\texttt{regionHashColor(name)} generates a color (rgba, with a = default alpha from configuration) from the hash value of the provided name.
 
 %-----------------------------------------------------------------------
 
@@ -499,15 +546,9 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 
 
 
-\subsubsection{function findContextRegion(region1)}
-\subsubsection{function isRegionAlreadyReferenced(region1, region2)}
-\subsubsection{function removeRegion(reg, imageNumber)}
-\subsubsection{function selectRegion(reg)}
 
-\subsubsection{function findRegionByUID(uid)}
-\subsubsection{function findRegionByName(name)}
-\subsubsection{function hash(str)}
-\subsubsection{function regionHashColor(name)}
+
+
 \subsubsection{function regionPicker(parent)}
 \subsubsection{function changeRegionName(reg,name)}
 \subsubsection{function toggleAllRegions()}
