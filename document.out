@@ -43,38 +43,37 @@
 \BOOKMARK [2][-]{subsection.4.5.1}{Frameworks}{section.4.5}% 43
 \BOOKMARK [2][-]{subsection.4.5.2}{Definition: Region}{section.4.5}% 44
 \BOOKMARK [2][-]{subsection.4.5.3}{GUI}{section.4.5}% 45
-\BOOKMARK [2][-]{subsection.4.5.4}{Tools}{section.4.5}% 46
-\BOOKMARK [0][-]{chapter.5}{Tessellation Service}{}% 47
-\BOOKMARK [1][-]{section.5.1}{Methodology}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.2}{Implementation}{chapter.5}% 49
-\BOOKMARK [1][-]{section.5.3}{Test}{chapter.5}% 50
-\BOOKMARK [2][-]{subsection.5.3.1}{Setup}{section.5.3}% 51
-\BOOKMARK [2][-]{subsection.5.3.2}{Result}{section.5.3}% 52
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 53
-\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.3}{Future tasks}{chapter.6}% 56
-\BOOKMARK [0][-]{section*.19}{Appendices}{}% 57
-\BOOKMARK [0][-]{Appendix.1.A}{Listing of Conversion Service Test Data}{}% 58
-\BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 59
-\BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 60
-\BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 61
-\BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 62
-\BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 63
-\BOOKMARK [1][-]{section.1.A.6}{Mirax \(.mrxs\)}{Appendix.1.A}% 64
-\BOOKMARK [1][-]{section.1.A.7}{Trestle \(.tiff\)}{Appendix.1.A}% 65
-\BOOKMARK [1][-]{section.1.A.8}{Ventana \(.bif\)}{Appendix.1.A}% 66
-\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 67
-\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 68
-\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 69
-\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 70
-\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 71
-\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 72
-\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 73
-\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 74
-\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 75
-\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 76
-\BOOKMARK [0][-]{chapter*.78}{Bibliography}{}% 77
-\BOOKMARK [0][-]{chapter*.79}{List of Figures}{}% 78
-\BOOKMARK [0][-]{chapter*.80}{List of Tables}{}% 79
-\BOOKMARK [0][-]{chapter*.81}{Nomenclature}{}% 80
+\BOOKMARK [0][-]{chapter.5}{Tessellation Service}{}% 46
+\BOOKMARK [1][-]{section.5.1}{Methodology}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.2}{Implementation}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.3}{Test}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.3.1}{Setup}{section.5.3}% 50
+\BOOKMARK [2][-]{subsection.5.3.2}{Result}{section.5.3}% 51
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 52
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.3}{Future tasks}{chapter.6}% 55
+\BOOKMARK [0][-]{section*.19}{Appendices}{}% 56
+\BOOKMARK [0][-]{Appendix.1.A}{Listing of Conversion Service Test Data}{}% 57
+\BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 58
+\BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 59
+\BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 60
+\BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 61
+\BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 62
+\BOOKMARK [1][-]{section.1.A.6}{Mirax \(.mrxs\)}{Appendix.1.A}% 63
+\BOOKMARK [1][-]{section.1.A.7}{Trestle \(.tiff\)}{Appendix.1.A}% 64
+\BOOKMARK [1][-]{section.1.A.8}{Ventana \(.bif\)}{Appendix.1.A}% 65
+\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 66
+\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 67
+\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 68
+\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 69
+\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 70
+\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 71
+\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 72
+\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 73
+\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 74
+\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 75
+\BOOKMARK [0][-]{chapter*.78}{Bibliography}{}% 76
+\BOOKMARK [0][-]{chapter*.79}{List of Figures}{}% 77
+\BOOKMARK [0][-]{chapter*.80}{List of Tables}{}% 78
+\BOOKMARK [0][-]{chapter*.81}{Nomenclature}{}% 79

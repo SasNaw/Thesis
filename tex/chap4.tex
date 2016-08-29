@@ -690,5 +690,34 @@ The \textbf{path} property represents the coordinates of the path's segments in 
 
 The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
 
+
 \subsection{GUI}
-\subsection{Tools}
+This subsections describes the GUI of the ASV and its individual elements (compare fig. \ref{fig4_asSCreen} for reference):
+
+\begin{enumerate}[{[}1{]}]
+	\item \textbf{Toolbar}\\
+	The toolbar menu contains the \emph{Help button} ([2]), \emph{toolbar toggle switch} ([3]), \emph{navigation map} ([4]), \emph{dictionary list} ([5]) and the \emph{label list} ([6]).
+	\item \textbf{Help button}\\
+	Hovering over the \emph{help button} shows a tooltip containing the hotkey mapping of the ASV.
+	\item \textbf{Toolbar toggle}\\
+	The \emph{toolbar toggle switch} can be used to show and hide the toolbar.
+	\item \textbf{Navigation map}\\
+	The \emph{navigation map} shows a macro image of the currently opened WSI and highlights the viewed area.
+	\item \textbf{Dictionary list}\\
+	The \emph{dictionary list} shows the currently selected dictionary. A left click on it opens a list with all currently available dictionaries from which a new one can be selected. Once selected. the old labels will be removed and the new labels loaded instead.
+	\item \textbf{Label list}\\
+	The \emph{label list} lists all available annotation labels from the loaded dictionary. The selected label is highlighted (see \emph{Gef\"a\ss} (vessel) in fig. \ref{fig4_asSCreen}). Other labels can be selected by a mouse click. Additionally, the labels can be iterated via the \emph{tab key}. A click on the eye symbol on top of the list toggles the visibility of all regions. A click on the eye symbol to the left of the label name toggles the visibility of all regions associated with that label. The color of a label can be changed with a click on the colored square. This will also change the color of all regions which are already drawn and associated to that label.
+	\item \textbf{OSDV and AO}\\
+	The OSDV with its AO and exemplary regions.
+	\item \textbf{Example of a region}\\
+	Example of a \emph{"sonstige"} (miscellaneous) labeled region.
+	
+\end{enumerate}
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.3]{img/asScreen.png}
+		\caption{ASV's GUI with opened, annotated WSI}
+		\label{fig4_asSCreen}
+	\end{center}
+\end{figure}
