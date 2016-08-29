@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  29 AUG 2016 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  29 AUG 2016 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1685,14 +1685,14 @@ Appendix B.
 ] [70] [71] [72] [73
 
 ] [74]
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
 <img/ch_init.png, id=1809, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
-Package pdftex.def Info: img/ch_init.png used on input line 270.
+Package pdftex.def Info: img/ch_init.png used on input line 269.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
 [75pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
@@ -1700,68 +1700,68 @@ Package pdftex.def Info: img/ch_init.png used on input line 270.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.282 	\item z
-              ooming <./img/ch_init.png>]
+l.282 \end{itemize}
+                    <./img/ch_init.png>]
 <img/ch_initAS.png, id=1820, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
-Package pdftex.def Info: img/ch_initAS.png used on input line 290.
+Package pdftex.def Info: img/ch_initAS.png used on input line 289.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
  <img/ch_saveConfig.png, id=1822, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
-Package pdftex.def Info: img/ch_saveConfig.png used on input line 308.
+Package pdftex.def Info: img/ch_saveConfig.png used on input line 307.
 (pdftex.def)             Requested size: 285.0643pt x 42.15738pt.
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
-Package pdftex.def Info: img/ch_init.png used on input line 320.
+Package pdftex.def Info: img/ch_init.png used on input line 319.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
  [76pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.324 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.1.B.3}) has been already used, duplicate ignored
+l.324 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.B.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.324 \end{figure}
-                   <./img/ch_initAS.png> <./img/ch_saveConfig.png>]
-<img/ch_saveDict.png, id=1835, 637.38126pt x 83.31125pt>
+l.324 
+       <./img/ch_initAS.png> <./img/ch_saveConfig.png>]
+<img/ch_saveDict.png, id=1836, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
-Package pdftex.def Info: img/ch_saveDict.png used on input line 336.
+Package pdftex.def Info: img/ch_saveDict.png used on input line 335.
 (pdftex.def)             Requested size: 318.68985pt x 41.65552pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
-<img/ch_loadDict.png, id=1837, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=1838, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
-Package pdftex.def Info: img/ch_loadDict.png used on input line 351.
+Package pdftex.def Info: img/ch_loadDict.png used on input line 350.
 (pdftex.def)             Requested size: 315.6786pt x 107.40099pt.
  [77pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
+l.355 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1.B.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 
+l.355 
        <./img/ch_saveDict.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 362--364
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
 
  []
 
@@ -1769,29 +1769,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--364
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
-Package pdftex.def Info: img/ch_saveRegs.png used on input line 371.
+Package pdftex.def Info: img/ch_saveRegs.png used on input line 370.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
 
 <img/ch_loadJson.png, id=1852, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
-Package pdftex.def Info: img/ch_loadJson.png used on input line 383.
+Package pdftex.def Info: img/ch_loadJson.png used on input line 382.
 (pdftex.def)             Requested size: 268.0006pt x 35.63303pt.
  [78pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.388 
+l.387 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1.B.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.388 
+l.387 
        <./img/ch_loadDict.png> <./img/ch_saveRegs.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
  []
 
@@ -1799,29 +1799,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 393--395
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
-Package pdftex.def Info: img/ch_createDict.png used on input line 400.
+Package pdftex.def Info: img/ch_createDict.png used on input line 399.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
  [79pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.419 
+l.418 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1.B.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.419 
+l.418 
        <./img/ch_loadJson.png> <./img/ch_createDict.png>]
 <img/ch_appendLabels.png, id=1874, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
-Package pdftex.def Info: img/ch_appendLabels.png used on input line 422.
+Package pdftex.def Info: img/ch_appendLabels.png used on input line 421.
 (pdftex.def)             Requested size: 363.85847pt x 99.371pt.
 
-Overfull \hbox (18.85847pt too wide) in paragraph at lines 422--423
+Overfull \hbox (18.85847pt too wide) in paragraph at lines 421--422
  [] 
  []
 
@@ -1829,29 +1829,29 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 422--423
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
-Package pdftex.def Info: img/ch_appendLabel.png used on input line 437.
+Package pdftex.def Info: img/ch_appendLabel.png used on input line 436.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
 
 <img/ch_selectNext.png, id=1878, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
-Package pdftex.def Info: img/ch_selectNext.png used on input line 449.
+Package pdftex.def Info: img/ch_selectNext.png used on input line 448.
 (pdftex.def)             Requested size: 296.60739pt x 41.15364pt.
  [80pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.454 
+l.453 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1.B.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.454 
+l.453 
        <./img/ch_appendLabels.png> <./img/ch_appendLabel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 459--461
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
@@ -1859,10 +1859,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 459--461
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
-Package pdftex.def Info: img/ch_newLabel.png used on input line 468.
+Package pdftex.def Info: img/ch_newLabel.png used on input line 467.
 (pdftex.def)             Requested size: 270.00809pt x 122.95906pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--484
+Underfull \hbox (badness 10000) in paragraph at lines 481--483
 
  []
 
@@ -1871,37 +1871,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--484
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.484 
+l.483 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1.B.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.484 
+l.483 
        <./img/ch_selectNext.png> <./img/ch_newLabel.png>]
 <img/ch_selectDict.png, id=1900, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
-Package pdftex.def Info: img/ch_selectDict.png used on input line 487.
+Package pdftex.def Info: img/ch_selectDict.png used on input line 486.
 (pdftex.def)             Requested size: 250.93687pt x 89.33353pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--499
+Underfull \hbox (badness 10000) in paragraph at lines 496--498
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 503--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--519
+Underfull \hbox (badness 10000) in paragraph at lines 516--518
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 524--526
+Underfull \hbox (badness 10000) in paragraph at lines 523--525
 
  []
 
@@ -1910,14 +1910,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 524--526
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.526 
+l.525 
        <./img/ch_selectDict.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 531--533
+Underfull \hbox (badness 10000) in paragraph at lines 530--532
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--540
+Underfull \hbox (badness 10000) in paragraph at lines 537--539
 
  []
 
@@ -1925,20 +1925,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 538--540
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
-Package pdftex.def Info: img/ch_findContext.png used on input line 543.
+Package pdftex.def Info: img/ch_findContext.png used on input line 542.
 (pdftex.def)             Requested size: 303.93011pt x 38.14182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--556
+Underfull \hbox (badness 10000) in paragraph at lines 553--555
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--563
+Underfull \hbox (badness 10000) in paragraph at lines 560--562
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 568--570
+Underfull \hbox (badness 10000) in paragraph at lines 567--569
 
  []
 
@@ -1947,9 +1947,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 568--570
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.570 
+l.569 
        <./img/ch_findContext.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 575--577
+Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
 
@@ -1957,10 +1957,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 575--577
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
-Package pdftex.def Info: img/ch_toggleRegions.png used on input line 580.
+Package pdftex.def Info: img/ch_toggleRegions.png used on input line 579.
 (pdftex.def)             Requested size: 300.62238pt x 33.12366pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 595--597
+Underfull \hbox (badness 10000) in paragraph at lines 594--596
 
  []
 
@@ -1968,10 +1968,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--597
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
-Package pdftex.def Info: img/ch_singleClickLabel.png used on input line 607.
+Package pdftex.def Info: img/ch_singleClickLabel.png used on input line 606.
 (pdftex.def)             Requested size: 360.34537pt x 130.48718pt.
 
-Overfull \hbox (15.34537pt too wide) in paragraph at lines 607--608
+Overfull \hbox (15.34537pt too wide) in paragraph at lines 606--607
  [] 
  []
 
@@ -1980,27 +1980,27 @@ Overfull \hbox (15.34537pt too wide) in paragraph at lines 607--608
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.612 
+l.611 
        <./img/ch_toggleRegions.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 617--619
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
 
  []
 
 
-Overfull \hbox (6.24886pt too wide) in paragraph at lines 617--619
+Overfull \hbox (6.24886pt too wide) in paragraph at lines 616--618
 \OT1/cmtt/l/n/10 chan-g-eRe-gio-nAn-no-ta-tion-Style(uid) \OT1/cmr/m/n/10 chang
 es the an-no-ta-tion style (storke width
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
 <img/ch_addPoi.png, id=1938, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
-Package pdftex.def Info: img/ch_addPoi.png used on input line 633.
+Package pdftex.def Info: img/ch_addPoi.png used on input line 632.
 (pdftex.def)             Requested size: 287.0718pt x 199.24388pt.
 
 [85pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
@@ -2008,19 +2008,19 @@ Package pdftex.def Info: img/ch_addPoi.png used on input line 633.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.638 
+l.637 
        <./img/ch_singleClickLabel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+Underfull \hbox (badness 10000) in paragraph at lines 648--650
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 655--657
+Underfull \hbox (badness 10000) in paragraph at lines 654--656
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--664
+Underfull \hbox (badness 10000) in paragraph at lines 661--663
 
  []
 
@@ -2029,14 +2029,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 662--664
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.664 
+l.663 
        <./img/ch_addPoi.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 669--671
+Underfull \hbox (badness 10000) in paragraph at lines 668--670
 
  []
 
 
-Overfull \hbox (4.16655pt too wide) in paragraph at lines 672--673
+Overfull \hbox (4.16655pt too wide) in paragraph at lines 671--672
 []\OT1/cmr/m/n/10 create re-gion in free hand and poly-gon draw-ing mode (via \
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
@@ -2045,15 +2045,15 @@ OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 )
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
-Package pdftex.def Info: img/ch_mouseDown.png used on input line 682.
+Package pdftex.def Info: img/ch_mouseDown.png used on input line 681.
 (pdftex.def)             Requested size: 261.9781pt x 182.18018pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 695--697
+Underfull \hbox (badness 10000) in paragraph at lines 694--696
 
  []
 
 
-Overfull \hbox (6.9162pt too wide) in paragraph at lines 695--697
+Overfull \hbox (6.9162pt too wide) in paragraph at lines 694--696
 \OT1/cmtt/l/n/10 mouse-Drag(x,y,dx,dy) \OT1/cmr/m/n/10 han-dles all mouse in-te
 r-ac-tion that hap-pens with a pushed
  []
@@ -2063,16 +2063,16 @@ r-ac-tion that hap-pens with a pushed
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.697 \begin{itemize}
+l.696 \begin{itemize}
                       <./img/ch_mouseDown.png>]
 <img/ch_mouseDrag.png, id=1966, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
-Package pdftex.def Info: img/ch_mouseDrag.png used on input line 707.
+Package pdftex.def Info: img/ch_mouseDrag.png used on input line 706.
 (pdftex.def)             Requested size: 275.52869pt x 94.35226pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--725
+Underfull \hbox (badness 10000) in paragraph at lines 722--724
 
  []
 
@@ -2081,25 +2081,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 723--725
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.729 \begin{equation}
+l.728 \begin{equation}
                       \label{eq:distance} <./img/ch_mouseDrag.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 745--747
+Underfull \hbox (badness 10000) in paragraph at lines 744--746
 
  []
 
 <img/ch_keyDown.png, id=1980, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
-Package pdftex.def Info: img/ch_keyDown.png used on input line 750.
+Package pdftex.def Info: img/ch_keyDown.png used on input line 749.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
 <img/ch_keyup.png, id=1982, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
-Package pdftex.def Info: img/ch_keyup.png used on input line 762.
+Package pdftex.def Info: img/ch_keyup.png used on input line 761.
 (pdftex.def)             Requested size: 204.7645pt x 35.13115pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--774
+Underfull \hbox (badness 10000) in paragraph at lines 771--773
 
  []
 
@@ -2107,7 +2107,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 772--774
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
-Package pdftex.def Info: img/ch_selectToolOnKeyPress.png used on input line 777
+Package pdftex.def Info: img/ch_selectToolOnKeyPress.png used on input line 776
 .
 (pdftex.def)             Requested size: 175.6558pt x 30.11241pt.
  [89pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
@@ -2115,13 +2115,13 @@ B.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.781 \end{figure}
+l.780 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.1.B.22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.781 \end{figure}
+l.780 \end{figure}
                    <./img/ch_keyDown.png> <./img/ch_keyup.png>])
 (./document.bbl [90pdfTeX warning (ext4): destination with the same identifier 
 (name{figure.1.B.23}) has been already used, duplicate ignored
@@ -2430,7 +2430,7 @@ c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on document.pdf (104 pages, 5857425 bytes).
+Output written on document.pdf (104 pages, 5857378 bytes).
 PDF statistics:
  2551 PDF objects out of 2984 (max. 8388607)
  2326 compressed objects within 24 object streams
