@@ -34,3 +34,9 @@
 \contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}}}{77}{figure.1.B.4}
 \contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {loadJson()}}}{78}{figure.1.B.5}
 \contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}}}{78}{figure.1.B.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}}}{79}{figure.1.B.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}}}{79}{figure.1.B.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}}}{80}{figure.1.B.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{80}{figure.1.B.10}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{81}{figure.1.B.11}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{82}{figure.1.B.12}

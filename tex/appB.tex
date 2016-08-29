@@ -367,26 +367,143 @@ After creation of the new dictionary it is selected as active one (and its empty
 
 
 \subsubsection{function transform()}
-\subsubsection{function appendLabelsToList()}
-\subsubsection{function appendLabelToList(label)}
+\texttt{transform()} resizes the AO to fit the view bounds of the OSDV.
 
+
+\subsubsection{function appendLabelsToList()}
+\texttt{appendLabelsToList()} first clears the currently shown list of labels. Then it iterates of the list of available labels (from the configuration) and creates a new, clickable label entry and adds it to the label list (via \texttt{appendLabelToList(label)}. Once all labels are created, the first entry is selected automatically (via \texttt{selectNextLabel()}, see fig. \ref{figB_appendLabels}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_appendLabels.png}
+		\caption{Call hierarchy of \texttt{appendLabelsToList()}}
+		\label{figB_appendLabels}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function appendLabelToList(label)}
+\emph{Parameters:\\
+	label: name of the new label
+}
+\texttt{appendLabelToList(label)} creates a new, clickable label for label list in the toolbar. It adds a click listener (via \texttt{singleClickOnLabel()}) to it and then selects it (via \texttt{selectLabel(el)}, see fig. \ref{figB_appendLabel}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_appendLabel.png}
+		\caption{Call hierarchy of \texttt{appendLabelToList(label)}}
+		\label{figB_appendLabel}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function selectNextLabel()}
+\texttt{selectNextLabel()} selects the next label in the toolbar list. If the currently selected label is the last one, the first entry is selected (via \texttt{selectLabel(el)}, see fig. \ref{figB_selectNextl}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_selectNext.png}
+		\caption{Call hierarchy of \texttt{selectNextLabel(label)}}
+		\label{figB_selectNextl}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function selectLabel(el)}
+\emph{Parameters:\\
+	el: HTML element to select\\ \\
+}
+\texttt{selectLabel(el)} selects the provided element \emph{el} from the toolbar label list.
+
+
+\subsubsection{function newLabel()}
+\texttt{newLabel()} creates a new label for the toolbar's label list. The created label is also added to the dictionary and persisted there (via \texttt{saveDictionary()}). The function automatically generates a uid (via \texttt{uniqueID()}) and color (via \texttt{regionHashColor(label)}, see fig. \ref{figB_newLabel}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_newLabel.png}
+		\caption{Call hierarchy of \texttt{newLabel()}}
+		\label{figB_newLabel}
+	\end{center}
+\end{figure}
 
 
 \subsection{Region functions}
-\subsubsection{function newRegion(arg, imageNumber)}
+\subsubsection{function newRegion(arg)}
+\emph{Parameters:\\
+	arg: argument object (either a complete region or path and coordinate information)\\ \\
+}
+\texttt{newRegion(arg)} creates a new region from the information provided in \emph{arg} and adds it to the region list.
+
+
+\subsection{Interaction functions}
+\subsubsection{function singleClickOnLabel(event)}
+\emph{Parameters:\\
+	event: the click event\\ \\
+}
+\texttt{singleClickOnLabel(event)} handles the click on a label in the toolbar's label list. Depending on what element inside the label is clicked, the following happens:
+\begin{itemize}
+	\item the visibility of all regions with the corresponding label is toggled on/off (via \texttt{toggleRegions(uid)})
+	\item a window to open the annotation style (stroke width and color, alpha value, region color) is shown (via \texttt{changeRegionAnnotationStyle(uid)})
+	\item the clicked label is selected (via \texttt{selectLabel(el)})
+\end{itemize}
+
+See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleClickOnLabel(event)}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_singleClickLabel.png}
+		\caption{Call hierarchy of \texttt{singleClickOnLabel(event)}}
+		\label{figB_singleClickLabel}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function toggleRegions(uid)}
+\emph{Parameters:\\
+	uid: the label uid of the regions to toggle in their visibility\\ \\
+}
+\texttt{toggleRegions(uid)} turns all regions of the corresponding label (in-)visible. If one of the regions to be toggled is currently selected it is deselected (via \texttt{deselectRegion(reg)}, see fig. \ref{figB_singleClickLabel}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_toggleRegions.png}
+		\caption{Call hierarchy of \texttt{toggleRegions(uid)}}
+		\label{figB_singleClickLabel}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function changeRegionAnnotationStyle(uid)}
+\emph{Parameters:\\
+	uid: the uid of the corresponding label\\ \\
+}
+\texttt{changeRegionAnnotationStyle(uid)} changes the annotation style (storke width and color, region color, region alpha value) for all regions corresponding to the label uid.
+
+
+\subsubsection{function deselectRegion(reg)}
+\emph{Parameters:\\
+	reg: region to deselect\\ \\
+}
+\texttt{deselectRegion(reg)} deselects the provided region \emph{reg}.
+
+
+
+
+
 
 
 %-----------------------------------------------------------------------
-\subsubsection{function newLabel()}
 
-\subsubsection{function selectNextLabel()}
-\subsubsection{function selectLabel(el)}
+
+
+
 
 \subsubsection{function findContextRegion(region1)}
 \subsubsection{function isRegionAlreadyReferenced(region1, region2)}
 \subsubsection{function removeRegion(reg, imageNumber)}
 \subsubsection{function selectRegion(reg)}
-\subsubsection{function deselectRegion(reg)}
+
 \subsubsection{function findRegionByUID(uid)}
 \subsubsection{function findRegionByName(name)}
 \subsubsection{function hash(str)}
@@ -394,15 +511,15 @@ After creation of the new dictionary it is selected as active one (and its empty
 \subsubsection{function regionPicker(parent)}
 \subsubsection{function changeRegionName(reg,name)}
 \subsubsection{function toggleAllRegions()}
-\subsubsection{function toggleRegions(uid)}
-\subsubsection{function changeRegionAnnotationStyle(uid)}
+
+
 \subsubsection{function convertPathToImgCoordinates(point)}
 \subsubsection{function convertImgToPathCoordinates(point)}
 \subsubsection{function clickHandler(event)}
 \subsubsection{function addPoi(event}
 \subsubsection{function pressHandler(event)}
 \subsubsection{function dragHandler(event)}
-\subsubsection{function singleClickOnLabel(event)}
+
 \subsubsection{function singlePressOnRegion(event)}
 \subsubsection{function doublePressOnRegion(event)}
 \subsubsection{function mouseDown(x,y)}
