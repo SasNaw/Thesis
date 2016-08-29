@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  29 AUG 2016 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  29 AUG 2016 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1413,9 +1413,9 @@ le.4.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.583 \end{lstlisting}
+l.584 \end{lstlisting}
                       ]
-Overfull \hbox (3.51128pt too wide) in paragraph at lines 585--586
+Overfull \hbox (3.51128pt too wide) in paragraph at lines 586--587
 []\OT1/cmr/m/n/10 The scale is $\OML/cmm/m/it/10 pixels=^^Vm$\OT1/cmr/m/n/10 . 
 Since the ASS only de-liv-ers MPP (which is $\OML/cmm/m/it/10 ^^Vm=pixel\OT1/cm
 r/m/n/10 )$
@@ -1825,7 +1825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 435--437
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--445
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
 
  []
 
@@ -1834,77 +1834,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--445
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.445 \begin{itemize}
-                     pdfTeX warning (ext4): destination with the same identifie
-r (name{figure.1.B.10}) has been already used, duplicate ignored
+l.444 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.B.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.445 \begin{itemize}
-                      <./img/ch_selectNext.png> <./img/ch_newLabel.png>]
-<img/ch_singleClickLabel.png, id=1877, 720.6925pt x 260.975pt>
-File: img/ch_singleClickLabel.png Graphic file (type png)
-
-<use img/ch_singleClickLabel.png>
-Package pdftex.def Info: img/ch_singleClickLabel.png used on input line 455.
-(pdftex.def)             Requested size: 360.34537pt x 130.48718pt.
-
-Overfull \hbox (15.34537pt too wide) in paragraph at lines 455--456
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 465--467
-
- []
-
-<img/ch_toggleRegions.png, id=1879, 601.24625pt x 66.2475pt>
-File: img/ch_toggleRegions.png Graphic file (type png)
-
-<use img/ch_toggleRegions.png>
-Package pdftex.def Info: img/ch_toggleRegions.png used on input line 470.
-(pdftex.def)             Requested size: 300.62238pt x 33.12366pt.
- [81pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-B.11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.475 
-       <./img/ch_singleClickLabel.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 480--482
+l.444 
+       <./img/ch_selectNext.png> <./img/ch_newLabel.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 449--451
 
  []
 
 
-Overfull \hbox (6.24886pt too wide) in paragraph at lines 480--482
-\OT1/cmtt/l/n/10 chan-g-eRe-gio-nAn-no-ta-tion-Style(uid) \OT1/cmr/m/n/10 chang
-es the an-no-ta-tion style (storke width
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 487--489
+Underfull \hbox (badness 10000) in paragraph at lines 456--458
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
-
- []
-
-<img/ch_findContext.png, id=1889, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=1877, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
-Package pdftex.def Info: img/ch_findContext.png used on input line 506.
+Package pdftex.def Info: img/ch_findContext.png used on input line 461.
 (pdftex.def)             Requested size: 303.93011pt x 38.14182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--519
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--488
+
+ []
+
+[81pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.488 
+       <./img/ch_findContext.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 493--495
+
+ []
+
+<img/ch_toggleRegions.png, id=1889, 601.24625pt x 66.2475pt>
+File: img/ch_toggleRegions.png Graphic file (type png)
+
+<use img/ch_toggleRegions.png>
+Package pdftex.def Info: img/ch_toggleRegions.png used on input line 498.
+(pdftex.def)             Requested size: 300.62238pt x 33.12366pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--515
+
+ []
+
+<img/ch_singleClickLabel.png, id=1891, 720.6925pt x 260.975pt>
+File: img/ch_singleClickLabel.png Graphic file (type png)
+
+<use img/ch_singleClickLabel.png>
+Package pdftex.def Info: img/ch_singleClickLabel.png used on input line 525.
+(pdftex.def)             Requested size: 360.34537pt x 130.48718pt.
+
+Overfull \hbox (15.34537pt too wide) in paragraph at lines 525--526
+ [] 
  []
 
 [82pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
@@ -1912,28 +1910,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 517--519
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.519 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-1.B.13}) has been already used, duplicate ignored
+l.530 
+       <./img/ch_toggleRegions.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 535--537
+
+ []
+
+
+Overfull \hbox (6.24886pt too wide) in paragraph at lines 535--537
+\OT1/cmtt/l/n/10 chan-g-eRe-gio-nAn-no-ta-tion-Style(uid) \OT1/cmr/m/n/10 chang
+es the an-no-ta-tion style (storke width
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--544
+
+ []
+
+<img/ch_addPoi.png, id=1904, 574.145pt x 398.48875pt>
+File: img/ch_addPoi.png Graphic file (type png)
+ <use img/ch_addPoi.png>
+Package pdftex.def Info: img/ch_addPoi.png used on input line 551.
+(pdftex.def)             Requested size: 287.0718pt x 199.24388pt.
+
+[83pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.519 
-       <./img/ch_toggleRegions.png> <./img/ch_findContext.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 524--526
+l.556 
+       <./img/ch_singleClickLabel.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 567--569
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+Underfull \hbox (badness 10000) in paragraph at lines 573--575
 
  []
 
-) (./document.bbl [83]
-Overfull \vbox (354.95734pt too high) has occurred while \output is active []
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
+
+ []
+
+[84pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.582 
+       <./img/ch_addPoi.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 587--589
+
+ []
 
 
-[84]
+Overfull \hbox (4.16655pt too wide) in paragraph at lines 590--591
+[]\OT1/cmr/m/n/10 create re-gion in free hand and poly-gon draw-ing mode (via \
+OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
+ []
+
+<img/ch_mouseDown.png, id=1921, 523.9575pt x 364.36125pt>
+File: img/ch_mouseDown.png Graphic file (type png)
+
+<use img/ch_mouseDown.png>
+Package pdftex.def Info: img/ch_mouseDown.png used on input line 600.
+(pdftex.def)             Requested size: 261.9781pt x 182.18018pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 613--615
+
+ []
+
+
+Overfull \hbox (6.9162pt too wide) in paragraph at lines 613--615
+\OT1/cmtt/l/n/10 mouse-Drag(x,y,dx,dy) \OT1/cmr/m/n/10 han-dles all mouse in-te
+r-ac-tion that hap-pens with a pushed
+ []
+
+[85pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+.15}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.615 \begin{itemize}
+                      <./img/ch_mouseDown.png>]
+<img/ch_mouseDrag.png, id=1932, 551.05875pt x 188.705pt>
+File: img/ch_mouseDrag.png Graphic file (type png)
+
+<use img/ch_mouseDrag.png>
+Package pdftex.def Info: img/ch_mouseDrag.png used on input line 625.
+(pdftex.def)             Requested size: 275.52869pt x 94.35226pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 641--643
+
+ []
+
+[86pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.647 \begin{equation}
+                      \label{eq:distance} <./img/ch_mouseDrag.png>])
+(./document.bbl [87]
 Underfull \hbox (badness 5954) in paragraph at lines 11--16
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -2017,7 +2097,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--75
 ramework$[]\OT1/cmr/m/n/10 ,
  []
 
-[85
+[88
 
 ]
 Underfull \hbox (badness 2608) in paragraph at lines 105--109
@@ -2031,7 +2111,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--146
 514 % 201120 %
  []
 
-[86]
+[89]
 Underfull \hbox (badness 10000) in paragraph at lines 166--171
 \OT1/cmtt/l/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
@@ -2049,7 +2129,7 @@ Underfull \hbox (badness 3158) in paragraph at lines 188--194
 Sup-ple-
  []
 
-[87]
+[90]
 Underfull \hbox (badness 3568) in paragraph at lines 252--257
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
@@ -2067,7 +2147,7 @@ Underfull \hbox (badness 2582) in paragraph at lines 271--277
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[88]
+[91]
 Underfull \hbox (badness 3229) in paragraph at lines 357--362
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
@@ -2109,7 +2189,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--434
 identiality %
  []
 
-[89]) [90] (./document.lof
+[92]) [93] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/l/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -2133,13 +2213,13 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
  image -[] apis -[] for -[] 
  []
 
-[91
+[94
 
 ])
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [92] (./document.lot
+ [95] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  [][] [][]\OT1/cmr/m/n/10 Overview of con-ver-sion op-tions for zoom-ing im-age
  for-mats (source: 
@@ -2185,11 +2265,11 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 31--31
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [93
+ (./document.nls [96
 
-] [94])
+] [97])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
- [95
+ [98
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
@@ -2197,7 +2277,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 2C971837C94D6E1E1B1B7C41677DCB90;5210.
+(rerunfilecheck)             Checksum: 58BDA01E30D1C3555B0A611A10108E82;5206.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2205,10 +2285,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
  ) 
 Here is how much of TeX's memory you used:
- 10612 strings out of 493029
- 146684 string characters out of 6136235
- 393983 words of memory out of 5000000
- 13081 multiletter control sequences out of 15000+600000
+ 10615 strings out of 493029
+ 146888 string characters out of 6136235
+ 395286 words of memory out of 5000000
+ 13098 multiletter control sequences out of 15000+600000
  11306 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,51p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2216,28 +2296,28 @@ Here is how much of TeX's memory you used:
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.
-pfb>
-Output written on document.pdf (98 pages, 5766602 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on document.pdf (101 pages, 5819628 bytes).
 PDF statistics:
- 2499 PDF objects out of 2984 (max. 8388607)
+ 2506 PDF objects out of 2984 (max. 8388607)
  2292 compressed objects within 23 object streams
- 852 named destinations out of 1000 (max. 500000)
- 803 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 835 named destinations out of 1000 (max. 500000)
+ 818 words of extra memory for PDF output out of 10000 (max. 10000000)
 

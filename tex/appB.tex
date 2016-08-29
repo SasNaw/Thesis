@@ -436,51 +436,6 @@ After creation of the new dictionary it is selected as active one (and its empty
 \texttt{newRegion(arg)} creates a new region from the information provided in \emph{arg} and adds it to the region list.
 
 
-\subsection{Interaction functions}
-\subsubsection{function singleClickOnLabel(event)}
-\emph{Parameters:\\
-	event: the click event\\ \\
-}
-\texttt{singleClickOnLabel(event)} handles the click on a label in the toolbar's label list. Depending on what element inside the label is clicked, the following happens:
-\begin{itemize}
-	\item the visibility of all regions with the corresponding label is toggled on/off (via \texttt{toggleRegions(uid)})
-	\item a window to open the annotation style (stroke width and color, alpha value, region color) is shown (via \texttt{changeRegionAnnotationStyle(uid)})
-	\item the clicked label is selected (via \texttt{selectLabel(el)})
-\end{itemize}
-
-See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleClickOnLabel(event)}.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_singleClickLabel.png}
-		\caption{Call hierarchy of \texttt{singleClickOnLabel(event)}}
-		\label{figB_singleClickLabel}
-	\end{center}
-\end{figure}
-
-
-\subsubsection{function toggleRegions(uid)}
-\emph{Parameters:\\
-	uid: the label uid of the regions to toggle in their visibility\\ \\
-}
-\texttt{toggleRegions(uid)} turns all regions of the corresponding label (in-)visible. If one of the regions to be toggled is currently selected it is deselected (via \texttt{deselectRegion(reg)}, see fig. \ref{figB_toggleRegions}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_toggleRegions.png}
-		\caption{Call hierarchy of \texttt{toggleRegions(uid)}}
-		\label{figB_toggleRegions}
-	\end{center}
-\end{figure}
-
-
-\subsubsection{function changeRegionAnnotationStyle(uid)}
-\emph{Parameters:\\
-	uid: the uid of the corresponding label\\ \\
-}
-\texttt{changeRegionAnnotationStyle(uid)} changes the annotation style (storke width and color, region color, region alpha value) for all regions corresponding to the label uid.
-
-
 \subsubsection{function selectRegion(reg)}
 \emph{Parameters:\\
 	reg: region to select\\ \\
@@ -526,10 +481,82 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 
 
 \subsubsection{function findRegionByUID(uid)}
-\subsubsection{function findRegionByName(name)}
+\emph{Parameter:\\
+	uid: unique id of the region to find\\ \\
+}
+\texttt{findRegionByUID(uid)} finds a region with the provided id.
+
+
+\subsubsection{function toggleRegions(uid)}
+\emph{Parameters:\\
+	uid: the label uid of the regions to toggle in their visibility\\ \\
+}
+\texttt{toggleRegions(uid)} turns all regions of the corresponding label (in-)visible. If one of the regions to be toggled is currently selected it is deselected (via \texttt{deselectRegion(reg)}, see fig. \ref{figB_toggleRegions}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_toggleRegions.png}
+		\caption{Call hierarchy of \texttt{toggleRegions(uid)}}
+		\label{figB_toggleRegions}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function toggleAllRegions()}
+\texttt{toggleAllRegions()} toggles the visibility of all regions.
+
+
+\subsection{Interaction functions}
+\subsubsection{function singleClickOnLabel(event)}
+\emph{Parameters:\\
+	event: the click event\\ \\
+}
+\texttt{singleClickOnLabel(event)} handles the click on a label in the toolbar's label list. Depending on what element inside the label is clicked, the following happens:
+\begin{itemize}
+	\item the visibility of all regions with the corresponding label is toggled on/off (via \texttt{toggleRegions(uid)})
+	\item a window to open the annotation style (stroke width and color, alpha value, region color) is shown (via \texttt{changeRegionAnnotationStyle(uid)})
+	\item the clicked label is selected (via \texttt{selectLabel(el)})
+\end{itemize}
+
+See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleClickOnLabel(event)}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_singleClickLabel.png}
+		\caption{Call hierarchy of \texttt{singleClickOnLabel(event)}}
+		\label{figB_singleClickLabel}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function changeRegionAnnotationStyle(uid)}
+\emph{Parameters:\\
+	uid: the uid of the corresponding label\\ \\
+}
+\texttt{changeRegionAnnotationStyle(uid)} changes the annotation style (storke width and color, region color, region alpha value) for all regions corresponding to the label uid.
+
+
+\subsubsection{function addPoi(event)}
+\emph{Parameters:\\
+	event: the click event\\ \\
+}
+\texttt{addPoi(event)} requests the server to run the segmentation script and provides it with the x and y coordinate the POI was placed at. Once the server returns with a valid answer (the image coordinates of the ROIs enclosing path), the coordinates are converted from image coordinates into AO coordinates (via \texttt{imgToPathCoordinates(point)}) and the ROI is enclosed by a path drawn along those AO coordinates. Then, a new region is created (via \texttt{newRegion(arg)}) and its checked for context (via \texttt{findContextRegion(region1)}).
+
+If the ASS returns a "404 Not Found", an alert is shown and the currently selected POI tool is reset to the navigation tool (via \texttt{clearToolSelection()}).
+
+Fig. \ref{fig_Bpoi} shows the call hierarchy of \texttt{addPoi(event)}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_addPoi.png}
+		\caption{Call hierarchy of \texttt{addPoi(event)}}
+		\label{fig_Bpoi}
+	\end{center}
+\end{figure}
 
 
 \subsection{Internal functions}
+
 \subsubsection{UniqueID()}
 \texttt{UniqueID()} creates a unique id and returns it.
 
@@ -540,71 +567,113 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 }
 \texttt{regionHashColor(name)} generates a color (rgba, with a = default alpha from configuration) from the hash value of the provided name.
 
+\subsubsection{function convertPathToImgCoordinates(point)}
+\emph{Parameters:\\
+	point: point coordinate to convert\\ \\
+}
+\texttt{convertPathToImgCoordinates(point)} converts a point coordinate from the AO to a point coordinate in the OSDV's image.
+
+
+\subsubsection{function convertImgToPathCoordinates(point)}
+\emph{Parameters:\\
+	point: point coordinate to convert\\ \\
+}
+\texttt{convertImgToPathCoordinates(point)} converts a point coordinate from the OSDV's image to a point coordinate in the AO.
+
+\subsubsection{function mouseDown(x,y)}
+\emph{Parameters:\\
+	x: x coordinate of when left mouse button was pushed down\\
+	y: y coordinate of when left mouse button was pushed down\\ \\
+}
+\texttt{mouseDown(x,y)} listens to mouse click events. It is called, once the mouse button is pushed down. The function handles every interaction the following interactions:
+\begin{itemize}
+	\item create region in free hand and polygon drawing mode (via \texttt{newRegion(arg)})
+	\item add a new segment to a path in polygon drawing mode
+	\item close a region's path in polygon mode, once a segment is clicked the second time (via \texttt{finishDrawingPolygon(closed)})
+	\item select a clicked region (via \texttt{selectRegion(reg)})
+\end{itemize}
+
+See fig. \ref{figB_mouseDown} for the call hierarchy of \texttt{mouseDown(x,y)}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_mouseDown.png}
+		\caption{Call hierarchy of \texttt{mouseDown(x,y)}}
+		\label{figB_mouseDown}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function mouseDrag(x,y,dx,dy)}
+\emph{Parameters:\\
+	x: x coordinate with current mouse position\\
+	y: y coordinate with current mouse position\\
+	dx: delta of current and former mouse position in x \\
+	dy: delta of current and former mouse position in y\\ \\
+}
+\texttt{mouseDrag(x,y,dx,dy)} handles all mouse interaction that happens with a pushed down left mouse button:
+\begin{itemize}
+	\item add new segment to path in free hand drawing mode (including conversion image coordinate $\rightarrow$ AO coordinate and AO coordinate $\rightarrow$ image coordinate\footnote{
+		See subsection \ref{sec4_asvFrameworks} - Paper.js.
+	}, see fig. \ref{figB_mouseDrag})
+	\item move region
+	\item move segment in region
+\end{itemize}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_mouseDrag.png}
+		\caption{Call hierarchy of \texttt{mouseDrag(x,y,dx,dy)}}
+		\label{figB_mouseDrag}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{function mouseUp()}
+When in free hand drawing mode, the \texttt{mouseUp()} function closes a region's path, once the left mouse button is released (including conversion as in the first item of \texttt{mouseDrag(x,y,dx,dy})).
+
+When in distance measurement mode, the distance tooltip is removed upon release of the left mouse button.
+
+
+\subsubsection{function finishDrawingPolygon(closed)}
+\emph{Parameters:\\
+	closed: 1 if path should be closed, 0 otherwise\\ \\
+}
+\texttt{finishDrawingPolygon(closed)} finishes the drawing process of a region's path in polygon drawing mode. If closed is true (1), the first and last segment will be connected.
+
+
+\subsubsection{function getDistance()}
+\texttt{getDistance()} calculates the euclidian distance $d$ between pixels $p_a$ and $p_b$ (see eq. \ref{eq:distance}\cite{Strang03}) of a special path called \emph{ruler} that is exclusively used for the distance measurement tool.
+\begin{equation}\label{eq:distance}
+	d = \sqrt{
+	 	(p_b.x - p_a.x)^2 + (p_b.y - p_a.y)^2
+	}
+\end{equation}
+
 %-----------------------------------------------------------------------
 
 
 
-
-
-
-
-
-\subsubsection{function regionPicker(parent)}
-\subsubsection{function changeRegionName(reg,name)}
-\subsubsection{function toggleAllRegions()}
-
-
-\subsubsection{function convertPathToImgCoordinates(point)}
-\subsubsection{function convertImgToPathCoordinates(point)}
-\subsubsection{function clickHandler(event)}
-\subsubsection{function addPoi(event}
-\subsubsection{function pressHandler(event)}
-\subsubsection{function dragHandler(event)}
-
-\subsubsection{function singlePressOnRegion(event)}
-\subsubsection{function doublePressOnRegion(event)}
-\subsubsection{function mouseDown(x,y)}
-\subsubsection{function mouseDrag(x,y,dx,dy)}
-\subsubsection{function getDistance()}
-\subsubsection{function mouseUp()}
-\subsubsection{function pad(number, length)}
 \subsubsection{function annotationStyle(label)}
 \subsubsection{function setRegionColor()}
-\subsubsection{function onFillColorPicker(value)}
-\subsubsection{function onAlphaSlider(value)}
-\subsubsection{function onAlphaInput(value)}
-\subsubsection{function cmdUndo()}
-\subsubsection{function cmdRedo()}
-\subsubsection{function getUndo()}
-\subsubsection{function saveUndo(undoInfo)}
-\subsubsection{function setImage(imageNumber)}
-\subsubsection{function applyUndo(undo)}
-\subsubsection{function commitMouseUndo()}
-\subsubsection{function finishDrawingPolygon(closed)}
-\subsubsection{function backToPreviousTool(prevTool)}
-\subsubsection{function backToSelect()}
+
+
 \subsubsection{function cmdDeleteSelected()}
 \subsubsection{function clearToolSelection()}
-\subsubsection{function toolSelection(event)}
 
 \subsubsection{function saveJson(json, filePath)}
 \subsubsection{function saveConfig()}
 \subsubsection{function saveDictionary()}
-\subsubsection{function getJsonSource()}
 \subsubsection{function saveRegions()}
 
-\subsubsection{function loadImage(name)}
 \subsubsection{function resizeAnnotationOverlay()}
-
 
 \subsubsection{function toggleDictPicker()}
 \subsubsection{function dictListClick(index)}
 
-
-\subsubsection{function initAnnotationService()}
 \subsubsection{function help(show)}
 \subsubsection{function toggleMenu ()}
+
 \subsubsection{\$(document).keydown(function(e)}
 \subsubsection{function selectToolOnKeyPress(id)}
-
 \subsubsection{\$(document).keyup(function(e)}

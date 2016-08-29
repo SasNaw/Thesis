@@ -38,6 +38,9 @@
 \contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}}}{79}{figure.1.B.8}
 \contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}}}{80}{figure.1.B.9}
 \contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{80}{figure.1.B.10}
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{81}{figure.1.B.11}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{81}{figure.1.B.11}
 \contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{82}{figure.1.B.12}
-\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{82}{figure.1.B.13}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{83}{figure.1.B.13}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}}}{84}{figure.1.B.14}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}}}{85}{figure.1.B.15}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}}}{86}{figure.1.B.16}
