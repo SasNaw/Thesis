@@ -657,7 +657,7 @@ Regions are used to realize annotations in the ASV. Therefore they are of centra
 			\textbf{:Region} \\ \hline
 			context : Array\\
 			imgCoords : OpenSeadragon.Point[1..n]\\
-			name: Integer\\
+			name: String\\
 			path: Paper.Point[1..n]\\
 			uid: Integer\\ \hline
 		\end{tabular}
@@ -682,7 +682,7 @@ The \textbf{imgCoords} (image coordinates) property represents the coordinates o
 }.
 Without this property, there would be no relation between the ROIs of the AO and baseline image.
 
-The \textbf{name} property holds the unique id of the region's corresponding label. A region is created with the id of the label selected at the time. That reference can not be changed, unless the whole region object is deleted and redrawn with another corresponding label selected previously to redrawing it.
+The \textbf{name} property holds the title of the region's corresponding label. A region is created with the title of the label selected at the time. That reference can not be changed, unless the whole region object is deleted and redrawn with another corresponding label selected previously to redrawing it.
 
 The \textbf{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
 	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' Point class.
