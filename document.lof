@@ -27,6 +27,7 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces ASV's GUI with opened, annotated WSI}}{62}{figure.4.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Examplary BBs: $B_1$ is BB of $M_1$, $B_2$ is BB of $M_2$ (source: \url {http://www.idav.ucdavis.edu/education/GraphicsNotes/Bounding-Box/Bounding-Box.html})}}{64}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an ROI approximated via tessellation (gray tiles belong to the ROI)}}{65}{figure.5.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

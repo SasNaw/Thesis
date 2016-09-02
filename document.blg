@@ -3,51 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-I was expecting a `,' or a `}'---line 60 of file ./bibl/bibl.bib
- :   
- :   year      = "2016",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--empty year in Guerdri16
-You've used 73 entries,
+You've used 74 entries,
             2118 wiz_defined-function locations,
-            903 strings with 14832 characters,
-and the built_in function-call counts, 16173 in all, are:
-= -- 1602
-> -- 523
+            909 strings with 15026 characters,
+and the built_in function-call counts, 16400 in all, are:
+= -- 1624
+> -- 530
 < -- 1
-+ -- 232
-- -- 150
-* -- 618
-:= -- 2837
-add.period$ -- 276
-call.type$ -- 73
-change.case$ -- 284
++ -- 236
+- -- 152
+* -- 626
+:= -- 2878
+add.period$ -- 280
+call.type$ -- 74
+change.case$ -- 287
 chr.to.int$ -- 0
 cite$ -- 74
-duplicate$ -- 641
-empty$ -- 1529
-format.name$ -- 150
-if$ -- 3450
+duplicate$ -- 653
+empty$ -- 1551
+format.name$ -- 152
+if$ -- 3499
 int.to.chr$ -- 0
-int.to.str$ -- 73
-missing$ -- 37
-newline$ -- 425
-num.names$ -- 146
-pop$ -- 485
+int.to.str$ -- 74
+missing$ -- 39
+newline$ -- 431
+num.names$ -- 148
+pop$ -- 490
 preamble$ -- 1
-purify$ -- 221
+purify$ -- 224
 quote$ -- 0
-skip$ -- 463
+skip$ -- 470
 stack$ -- 0
-substring$ -- 458
-swap$ -- 85
+substring$ -- 464
+swap$ -- 86
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 274
-warning$ -- 1
-while$ -- 150
-width$ -- 75
-write$ -- 838
-(There was 1 error message)
+type$ -- 276
+warning$ -- 0
+while$ -- 152
+width$ -- 76
+write$ -- 851

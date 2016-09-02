@@ -54,6 +54,12 @@ L.~Dykes C.~Ullmann.
 \newblock
   \url{http://crypto.cs.mcgill.ca/~simonpie/webdav/ipad/EBook/Programmation/Beginning%20Ajax%20(Programmer%20to%20Programmer).pdf}.
 
+\bibitem{Clifford09}
+A.~Clifford.
+\newblock {\em The Math Book: From Pythagoras to the 57th Dimension, 250
+  Milestones in the History of Mathematics}.
+\newblock Sterling, 2007.
+
 \bibitem{Cornish13}
 T.~Cornish.
 \newblock An introduction to digital whole slide imaging and whole slide image
@@ -149,7 +155,8 @@ H.~Guedri et~al.
 \newblock Reconstruction of the human retinal blood vessels by fractal
   interpolation.
 \newblock {\em Journal of Theoretical and Applied Information Technology},
-  83(2).
+  83(2), January 2016.
+\newblock \url{http://www.jatit.org/volumes/Vol83No2/9Vol83No2.pdf}.
 
 \bibitem{Qi12}
 H.~Sharma et~al.

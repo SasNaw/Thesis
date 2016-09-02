@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  2 SEP 2016 18:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  2 SEP 2016 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1491,13 +1491,26 @@ Underfull \hbox (badness 3312) in paragraph at lines 38--38
 ww . idav . ucdavis . edu / education / GraphicsNotes /
  []
 
-) (./tex/chap6.tex [64pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.5.1}) has been already used, duplicate ignored
+[64pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.54 
+      <./img/bb1.png>]
+<img/tessellation.png, id=1619, 476.78125pt x 375.4025pt>
+File: img/tessellation.png Graphic file (type png)
+
+<use img/tessellation.png>
+Package pdftex.def Info: img/tessellation.png used on input line 57.
+(pdftex.def)             Requested size: 238.39003pt x 187.70079pt.
+) (./tex/chap6.tex [65pdfTeX warning (ext4): destination with the same identifi
+er (name{figure.5.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            {Conclusion} <./img/bb1.png>] [65]
+            {Conclusion} <./img/tessellation.png>]
 Chapter 6.
 ) [66
 
@@ -1761,7 +1774,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
-<img/ch_init.png, id=1891, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=1899, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 269.
@@ -1774,13 +1787,13 @@ Package pdftex.def Info: img/ch_init.png used on input line 269.
                                                   \fi \fi 
 l.282 \end{itemize}
                     <./img/ch_init.png>]
-<img/ch_initAS.png, id=1902, 478.78876pt x 243.91125pt>
+<img/ch_initAS.png, id=1910, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 289.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=1904, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=1912, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
@@ -1803,7 +1816,7 @@ l.324
                                                   \fi \fi 
 l.324 
        <./img/ch_initAS.png> <./img/ch_saveConfig.png>]
-<img/ch_saveDict.png, id=1917, 637.38126pt x 83.31125pt>
+<img/ch_saveDict.png, id=1925, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
@@ -1814,7 +1827,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
-<img/ch_loadDict.png, id=1919, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=1927, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
@@ -1837,14 +1850,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--363
 
  []
 
-<img/ch_saveRegs.png, id=1930, 575.14874pt x 86.3225pt>
+<img/ch_saveRegs.png, id=1938, 575.14874pt x 86.3225pt>
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
 Package pdftex.def Info: img/ch_saveRegs.png used on input line 370.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
 
-<img/ch_loadJson.png, id=1932, 536.0025pt x 71.26625pt>
+<img/ch_loadJson.png, id=1940, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
@@ -1867,7 +1880,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
  []
 
-<img/ch_createDict.png, id=1944, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=1952, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
@@ -1886,7 +1899,7 @@ l.418
                                                   \fi \fi 
 l.418 
        <./img/ch_loadJson.png> <./img/ch_createDict.png>]
-<img/ch_appendLabels.png, id=1955, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=1963, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -1897,14 +1910,14 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 421--422
  [] 
  []
 
-<img/ch_appendLabel.png, id=1957, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=1965, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 436.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
 
-<img/ch_selectNext.png, id=1959, 593.21625pt x 82.3075pt>
+<img/ch_selectNext.png, id=1967, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
@@ -1927,7 +1940,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
-<img/ch_newLabel.png, id=1970, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=1979, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
@@ -1951,7 +1964,7 @@ l.483
                                                   \fi \fi 
 l.483 
        <./img/ch_selectNext.png> <./img/ch_newLabel.png>]
-<img/ch_selectDict.png, id=1982, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=1990, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -1993,7 +2006,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--539
 
  []
 
-<img/ch_findContext.png, id=1993, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2001, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
@@ -2025,7 +2038,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 574--576
 
  []
 
-<img/ch_toggleRegions.png, id=2005, 601.24625pt x 66.2475pt>
+<img/ch_toggleRegions.png, id=2013, 601.24625pt x 66.2475pt>
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
@@ -2036,7 +2049,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 594--596
 
  []
 
-<img/ch_singleClickLabel.png, id=2007, 720.6925pt x 260.975pt>
+<img/ch_singleClickLabel.png, id=2015, 720.6925pt x 260.975pt>
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
@@ -2069,7 +2082,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
-<img/ch_addPoi.png, id=2020, 574.145pt x 398.48875pt>
+<img/ch_addPoi.png, id=2028, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 632.
@@ -2113,7 +2126,7 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 671--672
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2037, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2045, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
@@ -2137,7 +2150,7 @@ r-ac-tion that hap-pens with a pushed
                                                   \fi \fi 
 l.696 \begin{itemize}
                       <./img/ch_mouseDown.png>]
-<img/ch_mouseDrag.png, id=2048, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2056, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
@@ -2159,13 +2172,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 744--746
 
  []
 
-<img/ch_keyDown.png, id=2060, 582.175pt x 71.26625pt>
+<img/ch_keyDown.png, id=2068, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 749.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2062, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2070, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 761.
@@ -2175,7 +2188,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--773
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2064, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2072, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
@@ -2244,43 +2257,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--56
  []
 
 
-Underfull \hbox (badness 1931) in paragraph at lines 58--65
+Underfull \hbox (badness 1931) in paragraph at lines 64--71
 \OT1/cmr/m/n/10 im-age anal-y-sis.  []$\OT1/cmtt/l/n/10 http : / / www . hopkin
 smedicine . org / mcp / PHENOCORE /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--65
+Underfull \hbox (badness 10000) in paragraph at lines 64--71
 \OT1/cmtt/l/n/10 CoursePDFs / 2013 / 13 % 2019 % 20Cornish % 20Digital % 20Path
  . pdf$[]\OT1/cmr/m/n/10 , July
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--81
 []\OT1/cmr/m/n/10 T. Cramer.  The in-ter-na-tional im-age in-ter-op-er-abil-ity
  frame-
  []
 
 
-Underfull \hbox (badness 5331) in paragraph at lines 67--75
+Underfull \hbox (badness 5331) in paragraph at lines 73--81
 \OT1/cmr/m/n/10 work (iiif): Lay-ing the foun-da-tion for com-mon ser-vices, in
 -te-
  []
 
 
-Underfull \hbox (badness 3780) in paragraph at lines 67--75
+Underfull \hbox (badness 3780) in paragraph at lines 73--81
 \OT1/cmr/m/n/10 grated re-sources and a mar-ket-place of tools for schol-ars wo
 rld-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--81
 \OT1/cmr/m/n/10 wide.  []$\OT1/cmtt/l/n/10 https : / / www . cni . org / topics
  / information -[] access -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--81
 \OT1/cmtt/l/n/10 retrieval / international -[] image -[] interoperability -[] f
 ramework$[]\OT1/cmr/m/n/10 ,
  []
@@ -2288,97 +2301,97 @@ ramework$[]\OT1/cmr/m/n/10 ,
 [95
 
 ]
-Underfull \hbox (badness 2608) in paragraph at lines 105--109
+Underfull \hbox (badness 2608) in paragraph at lines 111--115
 []\OT1/cmr/m/n/10 digitalpreservation.  Tiff.  []$\OT1/cmtt/l/n/10 http : / / w
 ww . digitalpreservation . gov /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--146
+Underfull \hbox (badness 10000) in paragraph at lines 146--152
 \OT1/cmtt/l/n/10 com / sites / default / files / archives / 2014 / Day2 / 20140
 514 % 201120 %
  []
 
 [96]
-Underfull \hbox (badness 10000) in paragraph at lines 173--178
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
 \OT1/cmtt/l/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--193
+Underfull \hbox (badness 10000) in paragraph at lines 194--200
 \OT1/cmtt/l/n/10 imaging -[] in -[] pathology -[] advantages -[] limitations -[
 ] and -[] emerging -[] p -[]
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 208--214
+Underfull \hbox (badness 3158) in paragraph at lines 215--221
 []\OT1/cmr/m/n/10 R. Singh et al.  Stan-dard-iza-tion in dig-i-tal pathol-ogy: 
 Sup-ple-
  []
 
 [97]
-Underfull \hbox (badness 3568) in paragraph at lines 272--277
+Underfull \hbox (badness 3568) in paragraph at lines 279--284
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
  []
 
 
-Underfull \hbox (badness 2134) in paragraph at lines 291--297
+Underfull \hbox (badness 2134) in paragraph at lines 298--304
 \OT1/cmr/m/n/10 cons.  []$\OT1/cmtt/l/n/10 http : / / www . optimusinfo . com /
  downloads / white -[] paper / open -[]
  []
 
 
-Underfull \hbox (badness 2582) in paragraph at lines 291--297
+Underfull \hbox (badness 2582) in paragraph at lines 298--304
 \OT1/cmtt/l/n/10 source -[] vs -[] proprietary -[] software -[] pros -[] and -[
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
 [98]
-Underfull \hbox (badness 3229) in paragraph at lines 377--382
+Underfull \hbox (badness 3229) in paragraph at lines 384--389
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
  []
 
 
-Underfull \hbox (badness 6364) in paragraph at lines 377--382
+Underfull \hbox (badness 6364) in paragraph at lines 384--389
 \OT1/cmr/m/n/10 Uris.  []$\OT1/cmtt/l/n/10 https : / / developer . mozilla . or
 g / en -[] US / docs / Same -[] origin _
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 397--402
+Underfull \hbox (badness 1270) in paragraph at lines 404--409
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/l/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--402
+Underfull \hbox (badness 10000) in paragraph at lines 404--409
 \OT1/cmtt/l/n/10 Contribution % 20Folders / WebContent / pdf / pm -[] sample -[
 ] employment -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--417
+Underfull \hbox (badness 10000) in paragraph at lines 417--424
 \OT1/cmtt/l/n/10 architecture -[] the -[] good -[] the -[] bad -[] and -[] what
  -[] you -[] could -[] be -[] doing -[]
  []
 
 [99]
-Underfull \hbox (badness 3872) in paragraph at lines 445--449
+Underfull \hbox (badness 3872) in paragraph at lines 452--456
 \OT1/cmtt/l/n/10 / / www . w3 . org / Protocols / rfc2616 / rfc2616 . html$[]\O
 T1/cmr/m/n/10 , 1999.  Ac-cessed:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--461
+Underfull \hbox (badness 10000) in paragraph at lines 463--468
 \OT1/cmtt/l/n/10 / / health . ucsd . edu / about / volunteer / Documents / Conf
 identiality %
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 463--468
+Underfull \hbox (badness 1460) in paragraph at lines 470--475
 \OT1/cmr/m/it/10 Pro-ceed-ings of IEEE MELE-CON'83\OT1/cmr/m/n/10 , May 1983.  
 []$\OT1/cmtt/l/n/10 https : / / www . cs .
  []
@@ -2485,10 +2498,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
  ) 
 Here is how much of TeX's memory you used:
- 10804 strings out of 493029
- 149782 string characters out of 6136235
- 397019 words of memory out of 5000000
- 13220 multiletter control sequences out of 15000+600000
+ 10814 strings out of 493029
+ 149963 string characters out of 6136235
+ 397157 words of memory out of 5000000
+ 13226 multiletter control sequences out of 15000+600000
  13378 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,51p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2515,10 +2528,10 @@ nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (108 pages, 11379475 bytes).
+Output written on document.pdf (108 pages, 11398449 bytes).
 PDF statistics:
- 2659 PDF objects out of 2984 (max. 8388607)
- 2423 compressed objects within 25 object streams
- 877 named destinations out of 1000 (max. 500000)
- 871 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2671 PDF objects out of 2984 (max. 8388607)
+ 2433 compressed objects within 25 object streams
+ 880 named destinations out of 1000 (max. 500000)
+ 876 words of extra memory for PDF output out of 10000 (max. 10000000)
 
