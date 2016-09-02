@@ -1,5 +1,20 @@
 \chapter{Tessellation Service}
 
+\section{Objective of the Tessellation Service}
+\label{sec5_objective}
+The objective of the TS is to provide a service that extracts image regions annotated by the AS to create samples for the training of a NN\footnote{
+	Compare subsection \ref{sec2_learning}
+}. In this context, "extraction" describes the process of creating sub images of the original image, which contain all of the annotated ROI and as little of anything else as possible. Additionally, the correspondence with the associated region label must be kept. The AS uses \emph{regions}\footnote{
+	Compare subsection \ref{sec4_region}
+} to describe ROIs. Those regions are persisted in a JSON file.
+
+Therefore, the TS has 2 objectives:
+\begin{enumerate}[(1)]
+	\item parse a JSON file and acquire its region data
+	\item extract ROIs based on the acquired region data
+\end{enumerate}
+
+
 \section{Methodology}
 \section{Implementation}
 \section{Test}
