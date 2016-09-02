@@ -16,7 +16,45 @@ Therefore, the TS has 2 objectives:
 
 
 \section{Methodology}
+The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method\footnote{
+	Compare section \ref{sec2_introNN}
+} and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel gray scale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color or texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
+
+Because of those varying requirements, the TS will be capable of producing different output:
+\begin{enumerate}[(1)]
+	\item Unaltered image of ROI
+	\item Resize images to a specific width and height
+	\item Approximate ROIs via tessellation
+	\item Convert extracted images to gray scale
+\end{enumerate}
+
+A user can draw a region's path without any restrictions concerning the pattern, resulting in ROIs that can be of arbitrary shape. Therefore, bounding boxes (BB)\nmc{BB}{Bounding Box}\footnote{
+	A BB is a rectangular body, fully enclosing a provided (two dimensional) object of arbitrary shape\cite{Toussaint83}.
+} are used for ROI extraction in the cases (1) and (2) (see fig. \ref{fig5_bbExample} for an example).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.6]{img/bb1.png}
+		\caption{Examplary BBs: $B_1$ is BB of $M_1$, $B_2$ is BB of $M_2$ (source: \url{http://www.idav.ucdavis.edu/education/GraphicsNotes/Bounding-Box/Bounding-Box.html})}
+		\label{fig5_bbExample}
+	\end{center}
+\end{figure}
+
+In the case of (1), an ROI's BB is copied pixel by pixel into a new image. The resizing (scaling the output image up or down to the provided pixel values) in the case of (2) makes preprocessing of the BB necessary. This has 2 reasons:
+\begin{itemize}
+	\item If the aspect ration of the provided width and height is different than the one of the BB, the resulting image will be distorted.
+	\item When scaling images down, interpolation can be used, to reduce the information loss of the image\cite{Thevanez00}. This is partially possible when scaling images up as well, e.g. via fractal interpolation, but a non trivial task\cite{Guerdri16}.
+\end{itemize}
+
+Therefore, the size of the BB will be adjusted to match the aspect ratio of the provided width and height. If the resulting BB is bigger then the provided width and height, the image will be scaled down and interpolated. If the BB is smaller, it will be scaled up instead of the image. This leads to a bigger area inside the BB that is not part of the ROI, but a pixel ratio of 1:1 between original and extracted image, resulting in no distortion or loss of quality.
+
+
+
+
 \section{Implementation}
+% parameters
+% why python
+
 \section{Test}
 \subsection{Setup}
 \subsection{Result}
