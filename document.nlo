@@ -28,3 +28,4 @@
 \nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{56}
 \nomenclatureentry{aAO@[{AO}]\begingroup Annotation Overlay\nomeqref {4.1}|nompageref}{58}
 \nomenclatureentry{aBB@[{BB}]\begingroup Bounding Box\nomeqref {5.0}|nompageref}{64}
+\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}|nompageref}{65}

@@ -269,6 +269,11 @@ L.~Fuller.
 \newblock \url{http://sharp.dimens.io/en/stable/}.
 \newblock Accessed: 22.08.2016.
 
+\bibitem{Bradski08}
+A.~Kaebler G.~Bradski.
+\newblock {\em Learning OpenCV}.
+\newblock O'Reilly, 2008.
+
 \bibitem{web:zoomhub}
 D.~Gasienica.
 \newblock Vips.
@@ -478,6 +483,12 @@ J.~David V.~Shereena.
 \newblock Content based image retrieval: Classification using neural networks.
 \newblock {\em The International Journal of Multimedia \& Its Applications},
   6(5), October 2014.
+
+\bibitem{Walt11}
+S.~van der Walt~et al.
+\newblock The numpy array: A structure for efficient numerical computation.
+\newblock {\em Computing in Science \& Engineering}, 13(2), March 2011.
+\newblock \url{http://ieeexplore.ieee.org/document/5725236/?arnumber=5725236}.
 
 \bibitem{Wolff16}
 E.~Wolff.

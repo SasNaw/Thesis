@@ -20,14 +20,15 @@
 \contentsline {table}{\numberline {4.7}{\ignorespaces Overview of used options in OSDV constructor (source: \cite {web:openseadragon})}}{57}{table.4.7}
 \contentsline {table}{\numberline {4.8}{\ignorespaces Class diagram of the region class}}{60}{table.4.8}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Optional parameters for the TS}}{67}{table.5.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Aperio data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/})}}{68}{table.1.A.1}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Generic Tiled tiff data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Generic-TIFF/})}}{69}{table.1.A.2}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Hamamatsu data set (.ndpi, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/})}}{69}{table.1.A.3}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Hamamatsu data set (.vms, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu-vms/})}}{69}{table.1.A.4}
-\contentsline {table}{\numberline {A.5}{\ignorespaces Leica data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Leica/})}}{70}{table.1.A.5}
-\contentsline {table}{\numberline {A.6}{\ignorespaces Mirax data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/})}}{71}{table.1.A.6}
-\contentsline {table}{\numberline {A.7}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{72}{table.1.A.7}
-\contentsline {table}{\numberline {A.8}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{72}{table.1.A.8}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Aperio data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/})}}{73}{table.1.A.1}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Generic Tiled tiff data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Generic-TIFF/})}}{74}{table.1.A.2}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Hamamatsu data set (.ndpi, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/})}}{74}{table.1.A.3}
+\contentsline {table}{\numberline {A.4}{\ignorespaces Hamamatsu data set (.vms, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu-vms/})}}{74}{table.1.A.4}
+\contentsline {table}{\numberline {A.5}{\ignorespaces Leica data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Leica/})}}{75}{table.1.A.5}
+\contentsline {table}{\numberline {A.6}{\ignorespaces Mirax data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/})}}{76}{table.1.A.6}
+\contentsline {table}{\numberline {A.7}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{77}{table.1.A.7}
+\contentsline {table}{\numberline {A.8}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{77}{table.1.A.8}
 \addvspace {10\p@ }

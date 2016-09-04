@@ -16,6 +16,7 @@ Therefore, the TS has 2 objectives:
 
 
 \section{Methodology}
+\label{sec5_method}
 The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method\footnote{
 	Compare section \ref{sec2_introNN}
 } and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color or texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
@@ -63,9 +64,98 @@ Case (3) approximates a ROI by tessellating\footnote{
 Cases (1) - (3) can be combined with (4) to convert the extracted images into grayscale images.
 
 \section{Implementation}
-% Flowchart
-% parameters
-% why python
+\label{sec5_impl}
+The TS is implemented as a python script called \textbf{\emph{TessellationService.py}}\footnote{
+	See its GitHub repository for more information: \url{https://github.com/SasNaw/TessellationService}.
+}. \emph{OpenSlide} was used to access and read a provided WSI, as in chapters \ref{sec3_cs} (VIPS uses OpenSlide for the same reason\cite{cupitt96}) and \ref{sec4_as}. Additionally, \emph{NumPy}\footnote{
+	See \url{http://www.numpy.org/} for more information on NumPy.
+} and \emph{OpenCV}(Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}\footnote{
+	See \url{http://opencv.org/} for more information on OpenCV.
+} were used to increase imaging and calculating functionality.
+
+NumPy is a python library for efficient scientific computing, especially concerning multi-dimensional array objects\cite{Walt11}.
+
+OpenCV  is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}.
+
+The TS can be called over the python interpreter:
+
+\begin{lstlisting}
+	$ python TessellationService [input] [params]
+\end{lstlisting}
+
+The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be
+\begin{itemize}
+	\item a WSI of proprietary format
+	\item a DZI
+	\item a directory with WSIs and DZIs
+	\item a list of all the types mentioned above
+\end{itemize}
+
+If a directory is handed to the TS, all subdirectories will be searched as well.
+
+Each WSI and DZI targeted by the TS must have an associated JSON file with annotations created by the AS\footnote{
+	Compare \ref{sec4_as}
+}. The [input] argument is mandatory.
+
+As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{3cm} | p{5cm} | p{3cm} |}
+			\hline
+			\textbf{name} & \textbf{description} & \textbf{default}\\ \hline
+			-h, --help & show help & - \\ \hline
+			-f, --force-overwrite & flag to overwrite images with the same name (if not supplied, \emph{"{\textunderscore}copy"} will be added to the image name) & false \\ \hline
+			-g, --grayscale & flag to convert images to grayscale images before saving them & false \\ \hline
+			-i, --interpolation & choose interpolation method: nearest neighbor, bilinear, bicubic, lanczos  & nearest neighbor interpolation \\ \hline
+			-o, --output [directory] & choose output directory (if not provided, the TS will save all extracted images in its own directory) & - \\ \hline
+			-r, --resize [width] [height] & resize all output images to the provided [width] and [height] in pixel & - \\ \hline
+			-s, --show-tessellated & flag to create window and show stitched image resulting from the tessellation process (only for debugging purposes, see \emph{"-t"}) & false\\ \hline
+			-t, --tessellate [width] [height] & tessellate regions into tiles of the provided [width] and [height] in pixels & - \\ \hline
+		\end{tabular}
+		\caption{Optional parameters for the TS}
+		\label{tab5_tsParams}
+	\end{center}
+\end{table}
+
+
+\subsection{Extraction process}
+
+
+\begin{figure}[H]
+	
+	\begin{center}
+		\includegraphics[scale=0.45]{img/ts_run.png}
+		\caption{Activity diagram of TS' extraction process}
+		\label{fig5_extractionProcess}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{WSI}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ts_wsi_uml.png}
+		\caption{Activity diagram of TS' WSI extraction}
+		\label{fig5_tsWsiUml}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{DZI}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/ts_dzi_uml.png}
+		\caption{Activity diagram of TS' DZI extraction}
+		\label{fig5_tsDziUml}
+	\end{center}
+\end{figure}
+
+
+\subsubsection{Tessellation}
+
 
 \section{Test}
 \subsection{Setup}
