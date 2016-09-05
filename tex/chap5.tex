@@ -73,9 +73,11 @@ The TS is implemented as a python script called \textbf{\emph{TessellationServic
 	See \url{http://opencv.org/} for more information on OpenCV.
 } were used to increase imaging and calculating functionality.
 
-NumPy is a python library for efficient scientific computing, especially concerning multi-dimensional array objects\cite{Walt11}.
+NumPy is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
 
-OpenCV  is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}.
+OpenCV  is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function\footnote{
+	See subsection \ref{sec5_tessellation}
+}
 
 The TS can be called over the python interpreter:
 
@@ -85,7 +87,9 @@ The TS can be called over the python interpreter:
 
 The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be
 \begin{itemize}
-	\item a WSI of proprietary format
+	\item a WSI of proprietary format\footnote{
+		Compare subsection \ref{sec2_proprietaryForams}
+	}
 	\item a DZI
 	\item a directory with WSIs and DZIs
 	\item a list of all the types mentioned above
@@ -94,7 +98,7 @@ The files which are supposed to be targeted by the extraction process are handed
 If a directory is handed to the TS, all subdirectories will be searched as well.
 
 Each WSI and DZI targeted by the TS must have an associated JSON file with annotations created by the AS\footnote{
-	Compare \ref{sec4_as}
+	Compare chapter \ref{sec4_as}
 }. The [input] argument is mandatory.
 
 As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
@@ -121,15 +125,51 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 
 \subsection{Extraction process}
 
+The TS expects a list of input arguments. Those arguments will be iterated and their annotated regions extracted from the corresponding JSON file (see fig. \ref{fig5_extractionProcess} for an overview).
 
-\begin{figure}[H]
-	
+After the arguments and parameters are parsed, the script's \texttt{run()} method is called:
+
+\begin{lstlisting}[frame=single, language=python, title=\texttt{run()} from TessellationService.py]
+def run(input):
+	for element in input:
+			# input is folder:
+			if(os.path.isdir(element)):
+				files_from_dir(element)
+			# input is file:
+			elif(os.path.isfile(element)):
+				regions_from_file(element)
+\end{lstlisting}
+
+As stated in section \ref{sec5_method}, valid input are lists of files and folders. Therefore, the individual entries of the input list must be examined. If the current element is a WSI or DZI, the extraction begins right away (see line 8 in \texttt{run()}). If it is a directory, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} will be called (see line 5 in \texttt{run()}) and search for valid files, including all contained subdirectories:
+
+\begin{lstlisting}[frame=single, language=python, title=\texttt{files{\textunderscore}from{\textunderscore}dir(dir)} from TessellationService.py]
+def files_from_dir(dir):
+	if not dir.endswith('/'):
+		dir = dir + '/'
+	contents = os.listdir(dir)
+	for content in contents:
+		if os.path.isdir(dir + content):
+			if not content.endswith('_files'):
+				files_from_dir(dir + content)
+		else:
+			regions_from_file(dir + content)
+\end{lstlisting}
+
+After the contents of the directory are received (see line 4 in \texttt{files{\textunderscore}from{\textunderscore} dir(dir)}), they are evaluated further (see line 5 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). If the input directory contains subdirectories, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} is called recursively for each one of them, until the end of each directory tree is reached (see line6 - 8 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Otherwise, the extraction process is started for the detected file (see line 9 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Directories ending in \emph{"{\textunderscore}files"} are excluded since they only contain the tiled images for an associated DZI metadata file and a metadata.txt, if they were converted by the CS\footnote{
+	Compare chapter \ref{sec3_cs}
+} (see line 7 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}).
+
+\begin{figure}[H]	
 	\begin{center}
-		\includegraphics[scale=0.45]{img/ts_run.png}
+		\includegraphics[scale=0.4]{img/ts_run.png}
 		\caption{Activity diagram of TS' extraction process}
 		\label{fig5_extractionProcess}
 	\end{center}
 \end{figure}
+
+OpenSlide is used to read a WSI. Since OpenSlide can only wrap an \emph{OpenSlide object} into a DZG\footnote{
+	Compare subsection \ref{sec4_openslide}
+}, but not read a native DZI\cite{web:openslide}, a different approach was chosen for DZI. Because of this, the implementation for DZI and WSI differs.
 
 
 \subsubsection{WSI}
@@ -154,8 +194,8 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 \end{figure}
 
 
-\subsubsection{Tessellation}
-
+\subsection{Tessellation}
+\label{sec5_tessellation}
 
 \section{Test}
 \subsection{Setup}
