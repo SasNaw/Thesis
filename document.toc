@@ -65,95 +65,96 @@
 \contentsline {section}{\numberline {5.2}Methodology}{63}{section.5.2}
 \contentsline {section}{\numberline {5.3}Implementation}{65}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Extraction process}{67}{subsection.5.3.1}
-\contentsline {subsubsection}{WSI}{69}{section*.19}
-\contentsline {subsubsection}{DZI}{70}{section*.20}
-\contentsline {subsection}{\numberline {5.3.2}Tessellation}{70}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Test}{70}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Setup}{70}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Result}{70}{subsection.5.4.2}
-\contentsline {chapter}{\numberline {6}Conclusion}{71}{chapter.6}
-\contentsline {section}{\numberline {6.1}Results}{71}{section.6.1}
-\contentsline {section}{\numberline {6.2}Conclusion}{71}{section.6.2}
-\contentsline {section}{\numberline {6.3}Future tasks}{71}{section.6.3}
-\contentsline {chapter}{Appendices}{72}{section*.21}
-\contentsline {chapter}{\numberline {A}Listing of Conversion Service Test Data}{73}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Aperio (.svs)}{73}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{74}{section.1.A.2}
-\contentsline {section}{\numberline {A.3}Hamamatsu (.ndpi)}{74}{section.1.A.3}
-\contentsline {section}{\numberline {A.4}Hamamatsu (.vms)}{74}{section.1.A.4}
-\contentsline {section}{\numberline {A.5}Leica (.scn)}{75}{section.1.A.5}
-\contentsline {section}{\numberline {A.6}Mirax (.mrxs)}{76}{section.1.A.6}
-\contentsline {section}{\numberline {A.7}Trestle (.tiff)}{77}{section.1.A.7}
-\contentsline {section}{\numberline {A.8}Ventana (.bif)}{77}{section.1.A.8}
-\contentsline {chapter}{\numberline {B}Annotation Service Documentation}{78}{Appendix.1.B}
-\contentsline {section}{\numberline {B.1}Annotation Service Server}{78}{section.1.B.1}
-\contentsline {subsubsection}{index{\textunderscore }dzi()}{78}{section*.22}
-\contentsline {subsubsection}{index{\textunderscore }wsi()}{79}{section*.23}
-\contentsline {subsubsection}{dzi(slug)}{80}{section*.24}
-\contentsline {subsubsection}{tile(slug, level, col, row, format)}{80}{section*.25}
-\contentsline {subsubsection}{saveJson()}{81}{section*.26}
-\contentsline {subsubsection}{loadJson()}{81}{section*.27}
-\contentsline {subsubsection}{createDictionary()}{82}{section*.28}
-\contentsline {subsubsection}{getDictionaries()}{82}{section*.29}
-\contentsline {subsubsection}{runSegmentation()}{83}{section*.30}
-\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{84}{section.1.B.2}
-\contentsline {subsection}{\numberline {B.2.1}Initialization functions}{84}{subsection.1.B.2.1}
-\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp)}{84}{section*.31}
-\contentsline {subsubsection}{function initAnnotationService()}{84}{section*.32}
-\contentsline {subsubsection}{function initAnnotationOverlay()}{85}{section*.33}
-\contentsline {subsection}{\numberline {B.2.2}Data management functions}{85}{subsection.1.B.2.2}
-\contentsline {subsubsection}{function saveConfig()}{85}{section*.34}
-\contentsline {subsubsection}{function loadConfiguration()}{85}{section*.35}
-\contentsline {subsubsection}{function getDictionaryList()}{86}{section*.36}
-\contentsline {subsubsection}{function saveDictionary()}{86}{section*.37}
-\contentsline {subsubsection}{function loadDictionary(path)}{86}{section*.38}
-\contentsline {subsubsection}{function saveJson(json, filePath)}{87}{section*.39}
-\contentsline {subsubsection}{function saveRegions()}{87}{section*.40}
-\contentsline {subsubsection}{function loadJson()}{87}{section*.41}
-\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{88}{section*.42}
-\contentsline {subsection}{\numberline {B.2.3}GUI functions}{88}{subsection.1.B.2.3}
-\contentsline {subsubsection}{function selectTool()}{88}{section*.43}
-\contentsline {subsubsection}{function transform()}{88}{section*.44}
-\contentsline {subsubsection}{function appendLabelsToList()}{88}{section*.45}
-\contentsline {subsubsection}{function appendLabelToList(label)}{89}{section*.46}
-\contentsline {subsubsection}{function selectNextLabel()}{89}{section*.47}
-\contentsline {subsubsection}{function selectLabel(el)}{90}{section*.48}
-\contentsline {subsubsection}{function newLabel()}{90}{section*.49}
-\contentsline {subsubsection}{function toggleDictPicker()}{90}{section*.50}
-\contentsline {subsubsection}{function dictListClick(index)}{90}{section*.51}
-\contentsline {subsubsection}{function annotationStyle(label)}{91}{section*.52}
-\contentsline {subsubsection}{function help(show)}{91}{section*.53}
-\contentsline {subsubsection}{function toggleMenu()}{91}{section*.54}
-\contentsline {subsection}{\numberline {B.2.4}Region functions}{91}{subsection.1.B.2.4}
-\contentsline {subsubsection}{function newRegion(arg)}{91}{section*.55}
-\contentsline {subsubsection}{function selectRegion(reg)}{92}{section*.56}
-\contentsline {subsubsection}{function deselectRegion(reg)}{92}{section*.57}
-\contentsline {subsubsection}{function findContextRegion(region1)}{92}{section*.58}
-\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{92}{section*.59}
-\contentsline {subsubsection}{function removeRegion(reg)}{92}{section*.60}
-\contentsline {subsubsection}{function findRegionByUID(uid)}{93}{section*.61}
-\contentsline {subsubsection}{function toggleRegions(uid)}{93}{section*.62}
-\contentsline {subsubsection}{function toggleAllRegions()}{93}{section*.63}
-\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{93}{subsection.1.B.2.5}
-\contentsline {subsubsection}{function singleClickOnLabel(event)}{93}{section*.64}
-\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{94}{section*.65}
-\contentsline {subsubsection}{function addPoi(event)}{94}{section*.66}
-\contentsline {subsection}{\numberline {B.2.6}Internal functions}{95}{subsection.1.B.2.6}
-\contentsline {subsubsection}{UniqueID()}{95}{section*.67}
-\contentsline {subsubsection}{function regionHashColor(name)}{95}{section*.68}
-\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{95}{section*.69}
-\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{95}{section*.70}
-\contentsline {subsubsection}{function mouseDown(x,y)}{96}{section*.71}
-\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{96}{section*.72}
-\contentsline {subsubsection}{function mouseUp()}{97}{section*.73}
-\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{97}{section*.74}
-\contentsline {subsubsection}{function getDistance()}{98}{section*.75}
-\contentsline {subsubsection}{function clearToolSelection()}{98}{section*.76}
-\contentsline {subsection}{\numberline {B.2.7}Key listener}{98}{subsection.1.B.2.7}
-\contentsline {subsubsection}{\$(document).keydown(function(e))}{98}{section*.77}
-\contentsline {subsubsection}{\$(document).keyup(function(e))}{98}{section*.78}
-\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{98}{section*.79}
-\contentsline {chapter}{Bibliography}{100}{chapter*.80}
-\contentsline {chapter}{List of Figures}{106}{chapter*.81}
-\contentsline {chapter}{List of Tables}{108}{chapter*.82}
-\contentsline {chapter}{Nomenclature}{110}{chapter*.83}
+\contentsline {subsubsection}{WSI extraction}{70}{section*.19}
+\contentsline {subsubsection}{DZI extraction}{71}{section*.20}
+\contentsline {subsection}{\numberline {5.3.2}Tessellation}{71}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Test}{71}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Setup}{71}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Result}{71}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {6}Conclusion}{72}{chapter.6}
+\contentsline {section}{\numberline {6.1}Results}{72}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{72}{section.6.2}
+\contentsline {section}{\numberline {6.3}Future tasks}{72}{section.6.3}
+\contentsline {chapter}{Appendices}{73}{section*.21}
+\contentsline {chapter}{\numberline {A}Listing of Conversion Service Test Data}{74}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Aperio (.svs)}{74}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{75}{section.1.A.2}
+\contentsline {section}{\numberline {A.3}Hamamatsu (.ndpi)}{75}{section.1.A.3}
+\contentsline {section}{\numberline {A.4}Hamamatsu (.vms)}{75}{section.1.A.4}
+\contentsline {section}{\numberline {A.5}Leica (.scn)}{76}{section.1.A.5}
+\contentsline {section}{\numberline {A.6}Mirax (.mrxs)}{77}{section.1.A.6}
+\contentsline {section}{\numberline {A.7}Trestle (.tiff)}{78}{section.1.A.7}
+\contentsline {section}{\numberline {A.8}Ventana (.bif)}{78}{section.1.A.8}
+\contentsline {chapter}{\numberline {B}Annotation Service Documentation}{79}{Appendix.1.B}
+\contentsline {section}{\numberline {B.1}Annotation Service Server}{79}{section.1.B.1}
+\contentsline {subsubsection}{index{\textunderscore }dzi()}{79}{section*.22}
+\contentsline {subsubsection}{index{\textunderscore }wsi()}{80}{section*.23}
+\contentsline {subsubsection}{dzi(slug)}{81}{section*.24}
+\contentsline {subsubsection}{tile(slug, level, col, row, format)}{81}{section*.25}
+\contentsline {subsubsection}{saveJson()}{82}{section*.26}
+\contentsline {subsubsection}{loadJson()}{82}{section*.27}
+\contentsline {subsubsection}{createDictionary()}{83}{section*.28}
+\contentsline {subsubsection}{getDictionaries()}{83}{section*.29}
+\contentsline {subsubsection}{runSegmentation()}{84}{section*.30}
+\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{85}{section.1.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Initialization functions}{85}{subsection.1.B.2.1}
+\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp)}{85}{section*.31}
+\contentsline {subsubsection}{function initAnnotationService()}{85}{section*.32}
+\contentsline {subsubsection}{function initAnnotationOverlay()}{86}{section*.33}
+\contentsline {subsection}{\numberline {B.2.2}Data management functions}{86}{subsection.1.B.2.2}
+\contentsline {subsubsection}{function saveConfig()}{86}{section*.34}
+\contentsline {subsubsection}{function loadConfiguration()}{86}{section*.35}
+\contentsline {subsubsection}{function getDictionaryList()}{87}{section*.36}
+\contentsline {subsubsection}{function saveDictionary()}{87}{section*.37}
+\contentsline {subsubsection}{function loadDictionary(path)}{87}{section*.38}
+\contentsline {subsubsection}{function saveJson(json, filePath)}{88}{section*.39}
+\contentsline {subsubsection}{function saveRegions()}{88}{section*.40}
+\contentsline {subsubsection}{function loadJson()}{88}{section*.41}
+\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{89}{section*.42}
+\contentsline {subsection}{\numberline {B.2.3}GUI functions}{89}{subsection.1.B.2.3}
+\contentsline {subsubsection}{function selectTool()}{89}{section*.43}
+\contentsline {subsubsection}{function transform()}{89}{section*.44}
+\contentsline {subsubsection}{function appendLabelsToList()}{89}{section*.45}
+\contentsline {subsubsection}{function appendLabelToList(label)}{90}{section*.46}
+\contentsline {subsubsection}{function selectNextLabel()}{90}{section*.47}
+\contentsline {subsubsection}{function selectLabel(el)}{91}{section*.48}
+\contentsline {subsubsection}{function newLabel()}{91}{section*.49}
+\contentsline {subsubsection}{function toggleDictPicker()}{91}{section*.50}
+\contentsline {subsubsection}{function dictListClick(index)}{91}{section*.51}
+\contentsline {subsubsection}{function annotationStyle(label)}{92}{section*.52}
+\contentsline {subsubsection}{function help(show)}{92}{section*.53}
+\contentsline {subsubsection}{function toggleMenu()}{92}{section*.54}
+\contentsline {subsection}{\numberline {B.2.4}Region functions}{92}{subsection.1.B.2.4}
+\contentsline {subsubsection}{function newRegion(arg)}{92}{section*.55}
+\contentsline {subsubsection}{function selectRegion(reg)}{93}{section*.56}
+\contentsline {subsubsection}{function deselectRegion(reg)}{93}{section*.57}
+\contentsline {subsubsection}{function findContextRegion(region1)}{93}{section*.58}
+\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{93}{section*.59}
+\contentsline {subsubsection}{function removeRegion(reg)}{93}{section*.60}
+\contentsline {subsubsection}{function findRegionByUID(uid)}{94}{section*.61}
+\contentsline {subsubsection}{function toggleRegions(uid)}{94}{section*.62}
+\contentsline {subsubsection}{function toggleAllRegions()}{94}{section*.63}
+\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{94}{subsection.1.B.2.5}
+\contentsline {subsubsection}{function singleClickOnLabel(event)}{94}{section*.64}
+\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{95}{section*.65}
+\contentsline {subsubsection}{function addPoi(event)}{95}{section*.66}
+\contentsline {subsection}{\numberline {B.2.6}Internal functions}{96}{subsection.1.B.2.6}
+\contentsline {subsubsection}{UniqueID()}{96}{section*.67}
+\contentsline {subsubsection}{function regionHashColor(name)}{96}{section*.68}
+\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{96}{section*.69}
+\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{96}{section*.70}
+\contentsline {subsubsection}{function mouseDown(x,y)}{97}{section*.71}
+\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{97}{section*.72}
+\contentsline {subsubsection}{function mouseUp()}{98}{section*.73}
+\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{98}{section*.74}
+\contentsline {subsubsection}{function getDistance()}{99}{section*.75}
+\contentsline {subsubsection}{function clearToolSelection()}{99}{section*.76}
+\contentsline {subsection}{\numberline {B.2.7}Key listener}{99}{subsection.1.B.2.7}
+\contentsline {subsubsection}{\$(document).keydown(function(e))}{99}{section*.77}
+\contentsline {subsubsection}{\$(document).keyup(function(e))}{99}{section*.78}
+\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{99}{section*.79}
+\contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{101}{Appendix.1.C}
+\contentsline {chapter}{Bibliography}{102}{chapter*.80}
+\contentsline {chapter}{List of Figures}{108}{chapter*.81}
+\contentsline {chapter}{List of Tables}{110}{chapter*.82}
+\contentsline {chapter}{Nomenclature}{112}{chapter*.83}

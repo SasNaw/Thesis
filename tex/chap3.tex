@@ -117,7 +117,7 @@ The resize filter is applied to interpolate the pixels of the image when changin
 
 When used as module in another python script, deepzoom.py can simply be imported via the usual \emph{import} command. To actually use deepzoom.py, a Deep Zoom Image Creator needs to be created. This class will manage the conversion process:
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, language=python]
 # Create Deep Zoom Image Creator
 creator = deepzoom.ImageCreator(tile_size=[size], 
 	tile_overlap=[overlap],	tile_format=[format], 
@@ -126,7 +126,7 @@ creator = deepzoom.ImageCreator(tile_size=[size],
 
 The options are analogous with the terminal version (compare tab. \ref{tab3_deepzoomParams}). To start the conversion process, the following call must be made within the python script:
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, language=python]
 # Create Deep Zoom image pyramid from source
 creator.create([source], [destination])
 \end{lstlisting}
@@ -189,7 +189,7 @@ When called, VIPS will take the image [input], convert it into a DZI and then sa
 
 A call in python has the same parameters and default values. It looks like this:
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, language=python]
 image = Vips.Image.new_from_file(input)
 image.dzsave(output[, options])
 \end{lstlisting}
@@ -215,7 +215,7 @@ Both the input and the output directory parameter are mandatory, in order for th
 
 Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. The source code is as follows:
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, language=python]
 def main():
 	path = checkParams()
 	files = os.listdir(path)
@@ -230,7 +230,7 @@ def main():
 
 \emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or aborts the execution otherwise. Furthermore, it will create the specified output folder, if it does not exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
 
-\begin{lstlisting}[frame=single]
+\begin{lstlisting}[frame=single, language=python]
 # convert image source into .dzi format and copies all header 
 # information into [img]_files dir as metadata.txt
 # param path: directory of param file

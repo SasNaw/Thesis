@@ -19,7 +19,7 @@ Therefore, the TS has 2 objectives:
 \label{sec5_method}
 The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method\footnote{
 	Compare section \ref{sec2_introNN}
-} and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color or texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
+} and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color and texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
 
 Because of those varying requirements, the TS will be capable of producing different output:
 \begin{enumerate}[(1)]
@@ -61,7 +61,10 @@ Case (3) approximates a ROI by tessellating\footnote{
 	\end{center}
 \end{figure}
 
-Cases (1) - (3) can be combined with (4) to convert the extracted images into grayscale images.
+Cases (1) - (3) can be combined with (4) to convert the extracted ROI images into grayscale images.
+
+Section \ref{sec5_objective} additionally stated the objective of keeping up correspondence between an ROI and its associated label. To achieve this, an extracted ROI image will be saved in a directory of the same name as its corresponding label. This way, all ROIs of a specific label can be collected in one location.
+
 
 \section{Implementation}
 \label{sec5_impl}
@@ -167,12 +170,41 @@ After the contents of the directory are received (see line 4 in \texttt{files{\t
 	\end{center}
 \end{figure}
 
-OpenSlide is used to read a WSI. Since OpenSlide can only wrap an \emph{OpenSlide object} into a DZG\footnote{
+OpenSlide is used to read a provided WSI. Since OpenSlide can only wrap an \emph{OpenSlide object} into a DZG\footnote{
 	Compare subsection \ref{sec4_openslide}
-}, but not read a native DZI\cite{web:openslide}, a different approach was chosen for DZI. Because of this, the implementation for DZI and WSI differs.
+}, but not read a native DZI\cite{web:openslide}, a different approach was chosen to access DZI. Because of this, the implementations differ in how images of ROIs are acquired and processed.
+
+Both implementations share a number of utility functions\footnote{
+	See appendix \ref{secC} for documentation of the individual function's source code.
+}:
+
+\begin{itemize}
+	\item \texttt{read{\textunderscore}json(path)} tries to read the JSON file at the provided path. If successful, it returns a list with the regions parsed from the file. If the file was not found or corrupt, a message will be printed on the terminal, informing the user about the exception.
+	
+	\item \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles)} saves a provided image either in the directory the TS was called from or in a provided directory if the -o parameter was used (see tab. \ref{tab5_tsParams}). There, the image will be saved in a directory whose name is equal to the region's name attribute\footnote{Compare subsection \ref{sec4_region}} in the following pattern: \emph{"[region name]/[slide{\textunderscore}name]\textunderscore[region's uid].jpeg"}. If a file with that name already exists, \emph{"{\textunderscore}copy"} will be added to the file name, unless the TS was started with the -f parameter (compare tab. \ref{tab5_tsParams}). This way, all regions of one individual label are in one directory. Additionally, the function scales images down to a provided size (via -r [width] [height]) with a provided interpolation method (-i, nearest neighbor interpolation by default). If the TS was run with -t, every extracted image will be converted to grayscale via the ITU-R 601-2 luma transform\cite{ITUR94} (see eq. \ref{luma}).
+	\begin{equation}\label{luma}
+		L = R * 299/1000 + G * 587/1000 + B * 114/1000
+	\end{equation}
+	
+	where $L$ is the luminosity and $R, G, B$ are the color values of each pixel.
+	
+	\item \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} iterates over every segment of a region's path and builds the BB by collecting the minimal and maximal values for x and y (compare fig. \ref{fig5_bbExample}).
+	
+	\item \texttt{resize{\textunderscore}bounding{\textunderscore}box(region)} is used to adjust a region's BB to a different aspect ratio. This is to avoid image distortion when the -r parameter specifies a different image ratio than the BB's inherent one (see fig. \ref{fig5_resizeBBexample} for an example).
+	
+	\begin{figure}[!h]	
+		\begin{center}
+			\includegraphics[scale=0.5]{img/bbResizeExample.png}
+			\caption{Example for adjusted BB (A - original BB with aspect ratio of $\sim$1:1, B - adjusted BB to aspect ratio of $\sim$1:2)}
+			\label{fig5_resizeBBexample}
+		\end{center}
+	\end{figure}
+	
+	\item \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} scales a BB by a provided scale. This is to avoid image distortions due to scaling images up (compare section \ref{sec5_method}). While \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} changes the aspect ratio of a BB, \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} keeps the aspect ratio and changes the BB as a whole instead.
+\end{itemize}
 
 
-\subsubsection{WSI}
+\subsubsection{WSI extraction}
 
 \begin{figure}[H]
 	\begin{center}
@@ -182,8 +214,9 @@ OpenSlide is used to read a WSI. Since OpenSlide can only wrap an \emph{OpenSlid
 	\end{center}
 \end{figure}
 
+adasdasds
 
-\subsubsection{DZI}
+\subsubsection{DZI extraction}
 
 \begin{figure}[H]
 	\begin{center}
