@@ -1,6 +1,8 @@
-\chapter{Listing of Conversion Service Test Data}
-
-The test data for the Conversion Service can be found at OpenSlides homepage, at the freely distributable test data section\footnote{\url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}. Various slides can be found there. The following subsections \ref{sec_A1} - \ref{sec_A8} give listings of all used WSIs, sorted by vendor and file format.
+\chapter{Test Data}
+\label{secA}
+The following test data was used for all tests involving CS, AS and TS. It can be found at OpenSlide's homepage, at the freely distributable test data section\footnote{
+	See \url{http://openslide.cs.cmu.edu/download/openslide-testdata/} for more information.
+}. Various slides can be found there. The sections \ref{sec_A1} - \ref{sec_A8} give listings of all used WSIs, sorted by vendor and file format.
 
 \section{Aperio (.svs)}
 \label{sec_A1}
@@ -89,8 +91,37 @@ The test data for the Conversion Service can be found at OpenSlides homepage, at
 \end{table}
 
 
-\section{Mirax (.mrxs)}
+\section{Trestle (.tiff)}
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
+			\hline
+			\textbf{name} & \textbf{size (MB)} & \textbf{description} \\ \hline
+			 CMU-1.zip & 158.87 & Brightfield \\ \hline
+			 CMU-2.zip & 304.22 & Brightfield \\ \hline
+			 CMU-3.zip & 223.11 & Brightfield \\ \hline
+		\end{tabular}
+		\caption{Trestle data set (source: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}
+	\end{center}
+\end{table}
+
+
+\section{Ventana (.bif)}
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
+			\hline
+			\textbf{name} & \textbf{size (GB)} & \textbf{description} \\ \hline
+			 OS-1.bif & 3.61 & H\&E stain, brightfield \\ \hline
+			 OS-2.bif & 2.53 & Ki-67 stain, brightfield \\ \hline
+ 		\end{tabular}
+		\caption{Trestle data set (source: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}
+	\end{center}
+\end{table}
+
+\section{Mirax (.mrxs)}
+\label{sec_A8}
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
@@ -111,36 +142,5 @@ The test data for the Conversion Service can be found at OpenSlides homepage, at
 			Mirax2.2-4-PNG.zip & 1.01 & Brightfield, PNG, CURRENT{\textunderscore}SLIDE{\textunderscore}VERSION 2.2 \\ \hline
 		\end{tabular}
 		\caption{Mirax data set (source: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/})}
-	\end{center}
-\end{table}
-
-
-\section{Trestle (.tiff)}
-
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
-			\hline
-			\textbf{name} & \textbf{size (MB)} & \textbf{description} \\ \hline
-			 CMU-1.zip & 158.87 & Brightfield \\ \hline
-			 CMU-2.zip & 304.22 & Brightfield \\ \hline
-			 CMU-3.zip & 223.11 & Brightfield \\ \hline
-		\end{tabular}
-		\caption{Trestle data set (source: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}
-	\end{center}
-\end{table}
-
-
-\section{Ventana (.bif)}
-\label{sec_A8}
-\begin{table}[H]
-	\begin{center}
-		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
-			\hline
-			\textbf{name} & \textbf{size (GB)} & \textbf{description} \\ \hline
-			 OS-1.bif & 3.61 & H\&E stain, brightfield \\ \hline
-			 OS-2.bif & 2.53 & Ki-67 stain, brightfield \\ \hline
- 		\end{tabular}
-		\caption{Trestle data set (source: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}
 	\end{center}
 \end{table}

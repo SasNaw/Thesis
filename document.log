@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  7 SEP 2016 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  7 SEP 2016 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1238,15 +1238,16 @@ identifier (name{table.3.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.215 
-      ] [38] <img/inputDir.png, id=1106, 435.6275pt x 286.06876pt>
+l.214 \end{lstlisting}
+                      ] [38]
+<img/inputDir.png, id=1111, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
-
-<use img/inputDir.png>
-Package pdftex.def Info: img/inputDir.png used on input line 293.
+ <use img/inputDir.png>
+Package pdftex.def Info: img/inputDir.png used on input line 295.
 (pdftex.def)             Requested size: 217.81322pt x 143.03403pt.
- [39]
-Underfull \hbox (badness 3281) in paragraph at lines 318--318
+
+[39]
+Underfull \hbox (badness 3281) in paragraph at lines 320--320
 []|\OT1/cmr/m/n/10 CMU-1.dzi, CMU-2.dzi, Leica-2.dzi,
  []
 
@@ -1266,7 +1267,7 @@ l.1 \chapter
 Chapter 4.
 [41
 
-] [42] <img/asUML.png, id=1177, 884.30376pt x 928.46875pt>
+] [42] <img/asUML.png, id=1182, 884.30376pt x 928.46875pt>
 File: img/asUML.png Graphic file (type png)
 
 <use img/asUML.png>
@@ -1289,14 +1290,14 @@ l.82 ...ed through shortcuts in the ASV.\clearpage
                                                    <./img/asUML.png>] [45
 
 ]
-<img/contextregions.png, id=1212, 311.1625pt x 285.065pt>
+<img/contextregions.png, id=1217, 311.1625pt x 285.065pt>
 File: img/contextregions.png Graphic file (type png)
 
 <use img/contextregions.png>
 Package pdftex.def Info: img/contextregions.png used on input line 126.
 (pdftex.def)             Requested size: 171.13991pt x 156.78622pt.
 
-<img/microdrawUI.png, id=1218, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=1223, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1403,7 +1404,7 @@ Overfull \hbox (0.51726pt too wide) in paragraph at lines 408--419
  [] 
  []
 
-<img/wsiUrl.png, id=1368, 554.07pt x 266.9975pt>
+<img/wsiUrl.png, id=1373, 554.07pt x 266.9975pt>
 File: img/wsiUrl.png Graphic file (type png)
  <use img/wsiUrl.png>
 Package pdftex.def Info: img/wsiUrl.png used on input line 428.
@@ -1459,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 725--725
                                                   \fi \fi 
 l.743 	\item \textbf
                     {Toolbar}\\]
-<img/asScreen.png, id=1570, 1084.05pt x 1927.2pt>
+<img/asScreen.png, id=1575, 1084.05pt x 1927.2pt>
 File: img/asScreen.png Graphic file (type png)
  <use img/asScreen.png>
 Package pdftex.def Info: img/asScreen.png used on input line 764.
@@ -1481,7 +1482,7 @@ l.1 \chapter
 Chapter 5.
 [64
 
-] <img/bb1.png, id=1615, 287.0725pt x 199.74625pt>
+] <img/bb1.png, id=1620, 287.0725pt x 199.74625pt>
 File: img/bb1.png Graphic file (type png)
  <use img/bb1.png>
 Package pdftex.def Info: img/bb1.png used on input line 38.
@@ -1506,7 +1507,7 @@ ww . idav . ucdavis . edu / education / GraphicsNotes /
                                                   \fi \fi 
 l.55 
       <./img/bb1.png>]
-<img/tessellation.png, id=1638, 476.78125pt x 375.4025pt>
+<img/tessellation.png, id=1643, 476.78125pt x 375.4025pt>
 File: img/tessellation.png Graphic file (type png)
 
 <use img/tessellation.png>
@@ -1571,7 +1572,7 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 111--123
                                                   \fi \fi 
 l.146 A
        s stated in section \ref{sec5_method}, valid input are lists of files...
-] <img/ts_run.png, id=1702, 493.845pt x 485.815pt>
+] <img/ts_run.png, id=1707, 493.845pt x 485.815pt>
 File: img/ts_run.png Graphic file (type png)
  <use img/ts_run.png>
 Package pdftex.def Info: img/ts_run.png used on input line 167.
@@ -1589,7 +1590,7 @@ Overfull \hbox (1.50253pt too wide) in paragraph at lines 184--185
 n/10 saves a pro-vided im-
  []
 
-<img/bbResizeExample.png, id=1732, 316.18124pt x 607.26875pt>
+<img/bbResizeExample.png, id=1737, 316.18124pt x 607.26875pt>
 File: img/bbResizeExample.png Graphic file (type png)
 
 <use img/bbResizeExample.png>
@@ -1599,7 +1600,7 @@ Package pdftex.def Info: img/bbResizeExample.png used on input line 197.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/ts_wsi_uml.png, id=1734, 635.37375pt x 830.10126pt>
+<img/ts_wsi_uml.png, id=1739, 635.37375pt x 830.10126pt>
 File: img/ts_wsi_uml.png Graphic file (type png)
 
 <use img/ts_wsi_uml.png>
@@ -1622,7 +1623,7 @@ l.216
                                                   \fi \fi 
 l.216 
        <./img/bbResizeExample.png> <./img/ts_wsi_uml.png>]
-<img/ts_dzi_uml.png, id=1753, 664.4825pt x 723.70375pt>
+<img/ts_dzi_uml.png, id=1758, 664.4825pt x 723.70375pt>
 File: img/ts_dzi_uml.png Graphic file (type png)
 
 <use img/ts_dzi_uml.png>
@@ -1644,33 +1645,33 @@ Chapter 6.
 ] (./tex/appA.tex
 Appendix A.
 
-Underfull \hbox (badness 1314) in paragraph at lines 13--13
+Underfull \hbox (badness 1314) in paragraph at lines 15--15
 []|\OT1/cmr/m/n/10 Export of CMU-1.svs, bright-
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 14--14
+Underfull \hbox (badness 4144) in paragraph at lines 16--16
 []|\OT1/cmr/m/n/10 Exported re-gion from CMU-
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 10--21
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 12--23
  [] 
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 21--21
+Underfull \hbox (badness 2384) in paragraph at lines 23--23
 []\OT1/cmr/m/n/10 Table A.1: []Aperio data set (source: []$\OT1/cmtt/l/n/10 htt
 p : / / openslide . cs . cmu . edu /
  []
 
 
-Underfull \hbox (badness 5490) in paragraph at lines 33--33
+Underfull \hbox (badness 5490) in paragraph at lines 35--35
 []|\OT1/cmr/m/n/10 Conversion of CMU-1.svs to
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 30--35
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 32--37
  [] 
  []
 
@@ -1681,49 +1682,49 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.1})
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.38 
+l.40 
      ]
-Underfull \hbox (badness 2189) in paragraph at lines 47--47
+Underfull \hbox (badness 2189) in paragraph at lines 49--49
 []|\OT1/cmr/m/n/10 Small scan with valid JPEG
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 50--50
+Underfull \hbox (badness 3000) in paragraph at lines 52--52
 []|\OT1/cmr/m/n/10 H&E stain, bright-field, circa
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 51--51
+Underfull \hbox (badness 2181) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/10 Ki-67 stain, bright-field, circa
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 44--54
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 46--56
  [] 
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 63--70
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 65--72
  [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--82
-[]|\OT1/cmr/m/n/10 Brightfield, sin-gle ROI,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--83
-[]|\OT1/cmr/m/n/10 Mouse kid-ney, H&E stain,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 84--84
+[]|\OT1/cmr/m/n/10 Brightfield, sin-gle ROI,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
 []|\OT1/cmr/m/n/10 Mouse kid-ney, H&E stain,
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 79--87
+Underfull \hbox (badness 10000) in paragraph at lines 86--86
+[]|\OT1/cmr/m/n/10 Mouse kid-ney, H&E stain,
+ []
+
+
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 81--89
  [] 
  []
 
@@ -1732,192 +1733,194 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 79--87
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 
+l.92 
      pdfTeX warning (ext4): destination with the same identifier (name{table.1.
 A.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 
+l.92 
      pdfTeX warning (ext4): destination with the same identifier (name{table.1.
 A.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.90 
+l.92 
      ]
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-[]|\OT1/cmr/m/n/10 Export of CMU-1.mrxs
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-\OT1/cmr/m/n/10 with over-laps re-solved,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
-\OT1/cmr/m/n/10 bright-field, JPEG, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-[]|\OT1/cmr/m/n/10 Quick save of CMU-1.mrxs
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-\OT1/cmr/m/n/10 at 1/16 res-o-lu-tion (mul-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-\OT1/cmr/m/n/10 ple po-si-tions per im-age),
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-\OT1/cmr/m/n/10 bright-field, JPEG, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--101
-\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
-[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
-[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--105
-[]|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--107
-\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--108
-\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
-[]|\OT1/cmr/m/n/10 Brightfield, BMP, CUR-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\OT1/cmr/m/n/10 Brightfield, PNG, CUR-
- []
-
-
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 96--113
- [] 
- []
-
-[77pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
-5}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.116 
-      ]
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 122--129
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 98--105
  [] 
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 129--129
+Underfull \hbox (badness 2318) in paragraph at lines 105--105
+[]\OT1/cmr/m/n/10 Table A.6: []Trestle data set (source: []$\OT1/cmtt/l/n/10 ht
+tp : / / openslide . cs . cmu . edu /
+ []
+
+
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 113--119
+ [] 
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 119--119
 []\OT1/cmr/m/n/10 Table A.7: []Trestle data set (source: []$\OT1/cmtt/l/n/10 ht
 tp : / / openslide . cs . cmu . edu /
  []
 
-[78pdfTeX warning (ext4): destination with the same identifier (name{table.1.A.
-6}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.132 
-      ]
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 138--144
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+[]|\OT1/cmr/m/n/10 Export of CMU-1.mrxs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+\OT1/cmr/m/n/10 with over-laps re-solved,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+\OT1/cmr/m/n/10 bright-field, JPEG, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|\OT1/cmr/m/n/10 Quick save of CMU-1.mrxs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+\OT1/cmr/m/n/10 at 1/16 res-o-lu-tion (mul-ti-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+\OT1/cmr/m/n/10 ple po-si-tions per im-age),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+\OT1/cmr/m/n/10 bright-field, JPEG, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
+\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
+[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--134
+[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+[]|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+[]|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
+\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+\OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--141
+[]|\OT1/cmr/m/n/10 Brightfield, BMP, CUR-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--142
+[]|\OT1/cmr/m/n/10 Brightfield, PNG, CUR-
+ []
+
+
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 127--144
  [] 
  []
 
-
-Underfull \hbox (badness 2318) in paragraph at lines 144--144
-[]\OT1/cmr/m/n/10 Table A.8: []Trestle data set (source: []$\OT1/cmtt/l/n/10 ht
-tp : / / openslide . cs . cmu . edu /
- []
-
-) (./tex/appB.tex [79pdfTeX warning (ext4): destination with the same identifie
-r (name{table.1.A.7}) has been already used, duplicate ignored
+) (./tex/appB.tex [77pdfTeX warning (ext4): destination with the same identifie
+r (name{table.1.A.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {Annotation Service Documentation}pdfTeX warning (ext4): destinatio
-n with the same identifier (name{table.1.A.8}) has been already used, duplicate
+n with the same identifier (name{table.1.A.6}) has been already used, duplicate
  ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Annotation Service Documentation}pdfTeX warning (ext4): destinatio
+n with the same identifier (name{table.1.A.7}) has been already used, duplicate
+ ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            {Annotation Service Documentation}] [78pdfTeX warning (ext4): desti
+nation with the same identifier (name{table.1.A.8}) has been already used, dupl
+icate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
             {Annotation Service Documentation}]
 Appendix B.
-[80
+[79
 
-] [81] [82] [83] [84
+] [80] [81] [82] [83
 
-] [85]
+] [84]
 Underfull \hbox (badness 10000) in paragraph at lines 262--264
 
  []
 
-<img/ch_init.png, id=2031, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=2032, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 269.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
-[86pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[85pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.282 \end{itemize}
                     <./img/ch_init.png>]
-<img/ch_initAS.png, id=2042, 478.78876pt x 243.91125pt>
+<img/ch_initAS.png, id=2043, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 289.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=2044, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=2045, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
@@ -1927,7 +1930,7 @@ File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 319.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
- [87pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [86pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1940,7 +1943,7 @@ l.324
                                                   \fi \fi 
 l.324 
        <./img/ch_initAS.png> <./img/ch_saveConfig.png>]
-<img/ch_saveDict.png, id=2057, 637.38126pt x 83.31125pt>
+<img/ch_saveDict.png, id=2058, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
@@ -1951,13 +1954,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--347
 
  []
 
-<img/ch_loadDict.png, id=2059, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=2060, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
 Package pdftex.def Info: img/ch_loadDict.png used on input line 350.
 (pdftex.def)             Requested size: 315.6786pt x 107.40099pt.
- [88pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [87pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1987,7 +1990,7 @@ File: img/ch_loadJson.png Graphic file (type png)
 <use img/ch_loadJson.png>
 Package pdftex.def Info: img/ch_loadJson.png used on input line 382.
 (pdftex.def)             Requested size: 268.0006pt x 35.63303pt.
- [89pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [88pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2004,13 +2007,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 392--394
 
  []
 
-<img/ch_createDict.png, id=2084, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=2085, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
 Package pdftex.def Info: img/ch_createDict.png used on input line 399.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
- [90pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [89pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2023,7 +2026,7 @@ l.418
                                                   \fi \fi 
 l.418 
        <./img/ch_loadJson.png> <./img/ch_createDict.png>]
-<img/ch_appendLabels.png, id=2096, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=2097, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -2034,20 +2037,20 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 421--422
  [] 
  []
 
-<img/ch_appendLabel.png, id=2098, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=2099, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 436.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
 
-<img/ch_selectNext.png, id=2100, 593.21625pt x 82.3075pt>
+<img/ch_selectNext.png, id=2101, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
 Package pdftex.def Info: img/ch_selectNext.png used on input line 448.
 (pdftex.def)             Requested size: 296.60739pt x 41.15364pt.
- [91pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [90pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 B.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2064,7 +2067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
-<img/ch_newLabel.png, id=2111, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=2112, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
@@ -2075,7 +2078,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 481--483
 
  []
 
-[92pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[91pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2088,7 +2091,7 @@ l.483
                                                   \fi \fi 
 l.483 
        <./img/ch_selectNext.png> <./img/ch_newLabel.png>]
-<img/ch_selectDict.png, id=2122, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=2123, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -2114,7 +2117,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--525
 
  []
 
-[93pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[92pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2130,7 +2133,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--539
 
  []
 
-<img/ch_findContext.png, id=2133, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2134, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
@@ -2151,7 +2154,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 567--569
 
  []
 
-[94pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[93pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2184,7 +2187,7 @@ Overfull \hbox (15.34537pt too wide) in paragraph at lines 606--607
  [] 
  []
 
-[95pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[94pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2206,13 +2209,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 623--625
 
  []
 
-<img/ch_addPoi.png, id=2160, 574.145pt x 398.48875pt>
+<img/ch_addPoi.png, id=2161, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 632.
 (pdftex.def)             Requested size: 287.0718pt x 199.24388pt.
 
-[96pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[95pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2233,7 +2236,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 661--663
 
  []
 
-[97pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[96pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .18}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2250,7 +2253,7 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 671--672
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2177, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2178, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
@@ -2267,14 +2270,14 @@ Overfull \hbox (6.9162pt too wide) in paragraph at lines 694--696
 r-ac-tion that hap-pens with a pushed
  []
 
-[98pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[97pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.696 \begin{itemize}
                       <./img/ch_mouseDown.png>]
-<img/ch_mouseDrag.png, id=2188, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2189, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
@@ -2285,7 +2288,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 722--724
 
  []
 
-[99pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
+[98pdfTeX warning (ext4): destination with the same identifier (name{figure.1.B
 .20}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2296,13 +2299,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 744--746
 
  []
 
-<img/ch_keyDown.png, id=2200, 582.175pt x 71.26625pt>
+<img/ch_keyDown.png, id=2201, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 749.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2202, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2203, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 761.
@@ -2312,15 +2315,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 771--773
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2204, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2205, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
 Package pdftex.def Info: img/ch_selectToolOnKeyPress.png used on input line 776
 .
 (pdftex.def)             Requested size: 175.6558pt x 30.11241pt.
- [100pdfTeX warning (ext4): destination with the same identifier (name{figure.1
-.B.21}) has been already used, duplicate ignored
+ [99pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+B.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -2332,7 +2335,7 @@ name{figure.1.B.22}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.780 \end{figure}
                    <./img/ch_keyDown.png> <./img/ch_keyup.png>])
-(./tex/appC.tex [101pdfTeX warning (ext4): destination with the same identifier
+(./tex/appC.tex [100pdfTeX warning (ext4): destination with the same identifier
  (name{figure.1.B.23}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2341,7 +2344,7 @@ l.1 \chapter
             {Tessellation Service Documentation} <./img/ch_selectToolOnKeyPress
 .png>]
 Appendix C.
-) (./document.bbl [102
+) (./document.bbl [101
 
 ]
 Underfull \hbox (badness 5954) in paragraph at lines 11--16
@@ -2427,7 +2430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--81
 ramework$[]\OT1/cmr/m/n/10 ,
  []
 
-[103
+[102
 
 ]
 Underfull \hbox (badness 2608) in paragraph at lines 111--115
@@ -2441,7 +2444,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--152
 514 % 201120 %
  []
 
-[104]
+[103]
 Underfull \hbox (badness 10000) in paragraph at lines 180--185
 \OT1/cmtt/l/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
@@ -2459,7 +2462,7 @@ Underfull \hbox (badness 3158) in paragraph at lines 215--221
 Sup-ple-
  []
 
-[105]
+[104]
 Underfull \hbox (badness 3568) in paragraph at lines 284--289
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
@@ -2477,7 +2480,7 @@ Underfull \hbox (badness 2582) in paragraph at lines 303--309
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[106]
+[105]
 Underfull \hbox (badness 3229) in paragraph at lines 396--401
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
@@ -2507,7 +2510,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--436
  -[] you -[] could -[] be -[] doing -[]
  []
 
-[107]
+[106]
 Underfull \hbox (badness 3872) in paragraph at lines 464--468
 \OT1/cmtt/l/n/10 / / www . w3 . org / Protocols / rfc2616 / rfc2616 . html$[]\O
 T1/cmr/m/n/10 , 1999.  Ac-cessed:
@@ -2525,7 +2528,7 @@ Underfull \hbox (badness 1460) in paragraph at lines 482--487
 []$\OT1/cmtt/l/n/10 https : / / www . cs .
  []
 
-) [108] (./document.lof
+) [107] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/l/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -2549,7 +2552,7 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
  image -[] apis -[] for -[] 
  []
 
-[109
+[108
 
 ]
 Overfull \hbox (12.99757pt too wide) in paragraph at lines 29--29
@@ -2561,7 +2564,7 @@ Bounding -[]
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [110] (./document.lot
+ [109] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  [][] [][]\OT1/cmr/m/n/10 Overview of con-ver-sion op-tions for zoom-ing im-age
  for-mats (source: 
@@ -2586,12 +2589,12 @@ Overfull \hbox (11.91524pt too wide) in paragraph at lines 30--30
  []
 
 
-Overfull \hbox (15.1375pt too wide) in paragraph at lines 31--31
- [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: []$\OT1/cmtt/l/n/10 http : / 
-/ openslide . cs . cmu . edu / download / 
+Overfull \hbox (18.80411pt too wide) in paragraph at lines 31--31
+ [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
+/ / openslide . cs . cmu . edu / download / 
  []
 
-[111
+[110
 
 ]
 Overfull \hbox (18.80411pt too wide) in paragraph at lines 32--32
@@ -2600,18 +2603,18 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 32--32
  []
 
 
-Overfull \hbox (18.80411pt too wide) in paragraph at lines 33--33
- [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
-/ / openslide . cs . cmu . edu / download / 
+Overfull \hbox (15.1375pt too wide) in paragraph at lines 33--33
+ [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: []$\OT1/cmtt/l/n/10 http : / 
+/ openslide . cs . cmu . edu / download / 
  []
 
 )
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [112])
+ (./document.nls [111])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
- [113
+ [112
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
@@ -2619,7 +2622,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 1F955D2143C5C71A8B8F897E45422F8F;5526.
+(rerunfilecheck)             Checksum: B79220C013F7512F20A0B7F6A0BCBA4B;5496.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2627,10 +2630,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
- 10962 strings out of 493029
- 151976 string characters out of 6136235
- 401477 words of memory out of 5000000
- 13316 multiletter control sequences out of 15000+600000
+ 10963 strings out of 493029
+ 151986 string characters out of 6136235
+ 405535 words of memory out of 5000000
+ 13317 multiletter control sequences out of 15000+600000
  13378 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,11n,51p,1248b,2001s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2657,10 +2660,10 @@ nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (116 pages, 10998815 bytes).
+Output written on document.pdf (115 pages, 10997817 bytes).
 PDF statistics:
- 2828 PDF objects out of 2984 (max. 8388607)
- 2576 compressed objects within 26 object streams
+ 2830 PDF objects out of 2984 (max. 8388607)
+ 2579 compressed objects within 26 object streams
  931 named destinations out of 1000 (max. 500000)
  920 words of extra memory for PDF output out of 10000 (max. 10000000)
 

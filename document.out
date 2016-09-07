@@ -57,15 +57,15 @@
 \BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 57
 \BOOKMARK [1][-]{section.6.3}{Future tasks}{chapter.6}% 58
 \BOOKMARK [0][-]{section*.21}{Appendices}{}% 59
-\BOOKMARK [0][-]{Appendix.1.A}{Listing of Conversion Service Test Data}{}% 60
+\BOOKMARK [0][-]{Appendix.1.A}{Test Data}{}% 60
 \BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 61
 \BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 62
 \BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 63
 \BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 64
 \BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 65
-\BOOKMARK [1][-]{section.1.A.6}{Mirax \(.mrxs\)}{Appendix.1.A}% 66
-\BOOKMARK [1][-]{section.1.A.7}{Trestle \(.tiff\)}{Appendix.1.A}% 67
-\BOOKMARK [1][-]{section.1.A.8}{Ventana \(.bif\)}{Appendix.1.A}% 68
+\BOOKMARK [1][-]{section.1.A.6}{Trestle \(.tiff\)}{Appendix.1.A}% 66
+\BOOKMARK [1][-]{section.1.A.7}{Ventana \(.bif\)}{Appendix.1.A}% 67
+\BOOKMARK [1][-]{section.1.A.8}{Mirax \(.mrxs\)}{Appendix.1.A}% 68
 \BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 69
 \BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 70
 \BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 71
