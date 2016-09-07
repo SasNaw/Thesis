@@ -37,7 +37,7 @@
 \BOOKMARK [1][-]{section.4.4}{Annotation Service Server Implementation}{chapter.4}% 37
 \BOOKMARK [2][-]{subsection.4.4.1}{Flask}{section.4.4}% 38
 \BOOKMARK [2][-]{subsection.4.4.2}{OpenSlide Python}{section.4.4}% 39
-\BOOKMARK [2][-]{subsection.4.4.3}{Setup}{section.4.4}% 40
+\BOOKMARK [2][-]{subsection.4.4.3}{Structure and Setup}{section.4.4}% 40
 \BOOKMARK [2][-]{subsection.4.4.4}{RESTful API}{section.4.4}% 41
 \BOOKMARK [1][-]{section.4.5}{Annotation Service Viewer Implementation}{chapter.4}% 42
 \BOOKMARK [2][-]{subsection.4.5.1}{Frameworks}{section.4.5}% 43

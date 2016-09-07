@@ -207,11 +207,6 @@ def index_wsi(file_path):
 @app.route('/<slug>.dzi')
 def dzi(slug):
 	...
-
-@app.route('/<slug>_files/<int:level>/
-<int:col>_<int:row>.<format>')
-def tile(slug, level, col, row, format):
-	...
 \end{lstlisting}
 
 To bind a URL with one or more variables, the corresponding function must be parameterized with same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
@@ -255,7 +250,9 @@ Tab. \ref{tab4_flaskBindigns} states a number of URLs, that have been bound to a
 			/saveJson & \texttt{saveJson()}\\ \hline
 			/loadJson & \texttt{loadJson()}\\ \hline
 			/createDictionary & \texttt{createDictionary()}\\ \hline
+			/static/dictionaries/{\textless}dictionary{\textgreater} & \texttt{loadDictionary( dictionary)} \\ \hline
 			/getDictionaries & \texttt{getDictionaries()}\\ \hline
+			/switchDictionary & \texttt{switchDictionary()} \\ \hline
 			/runSementation & \texttt{runSegmentation()}\\ \hline
 		\end{tabular}
 		\caption{ASS' URL-function binding overview}
@@ -338,11 +335,39 @@ The DZG\footnote{
 The use of the DZG enables ASS to create DZI metadata and Deep Zoom tiles from proprietary WSI files on demand.
 
 
-\subsection{Setup}
+\subsection{Structure and Setup}
 \label{sec4_setup}
-To provide static files to Flask a \emph{static/} directory must be present at the root level of the ASS. This directory contains the CSS, JavaScript, dictionary, configuration and WSI files. To make a WSI accessible to the ASV, it must be placed in \emph{static/wsi/}. From there, the file path is arbitrary.
+Flask requires a specific directory structure to access static files and HTML templates. Static files are served from a \emph{static/} directory, templates to render must be contained in a \emph{template} directory. Both of those directories must be at the root level of the ASS\cite{web:flask}. Because of this, the following directory and file structure was chosen:\clearpage
+\begin{itemize}
+	\item AnnotationService/
+	\begin{itemize}
+		\item static/
+		\begin{itemize}
+			\item css/
+			\item cursors/
+			\item dictionaries/
+			\item img/
+			\item lib/
+			\item segmentation/
+			\item wsi/
+			\item configuration.json
+			\item slideDictionaries.json
+		\end{itemize}
+		\item templates/
+		\begin{itemize}
+			\item as{\textunderscore}viewer.html
+		\end{itemize}
+		\item as{\textunderscore}server.py
+	\end{itemize}
+\end{itemize}
 
-To provide a segmentation script, it must be placed in \emph{static/segmentation}. Furthermore, the name of the script must be adjusted in the configuration file (\emph{"segmentationScript"} in \emph{configuration.json}, see tab. \ref{tab4_assConfig} for a list of all configurable parameters). 
+As mentioned before, \textbf{static/} contains all static files required by the ASS, e.g. the CSS files (\textbf{css/}), icons (\textbf{cursors/}, \textbf{img/}) and JavaScript files (\textbf{lib/}) needed by the ASV.
+
+To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs.
+
+\textbf{dictionaries/} contains all dictionaries used by the ASV. \textbf{slideDictionaries.json} is a key-value map containing all WSIs opened (none when the AS is newly set up) and the latest dictionaries used for them. The file name of the WSI is the key, which a dictionary name is corresponding to as value. When a new WSI is opened for the first time, it will be opened with the dictionary defined in the configuration file \textbf{configuration.json}.
+
+\textbf{configuration.json} is the configuration file of the AS. It contains values such as the default dictionary and the default alpha value for regions. All those configurations can be adjusted manually. Tab. \ref{tab4_assConfig} lists all configurable values.
 
 \begin{table}[H]
 	\begin{center}
@@ -352,7 +377,7 @@ To provide a segmentation script, it must be placed in \emph{static/segmentation
 			defaultFillAlpha & Default alpha value for regions & 0.5\\ \hline
 			defaultStrokeColor & Default color for region strokes & black \\ \hline
 			defaultStrokeWidth & Default width for region strokes & 1 \\ \hline
-			dictionary & Name of currently active dictionary & example.json\\ \hline
+			dictionary & Name of default dictionary (whenever a new WSI is opened in the ASV, it will be opened with this dictionary) & example.json\\ \hline
 			hideToolbar & Hide toolbar when ASV is rendered & false\\ \hline
 			segmentationScript & Script used for segmentation of POIs & opencv.py\\ \hline
 		\end{tabular}
@@ -361,7 +386,11 @@ To provide a segmentation script, it must be placed in \emph{static/segmentation
 	\end{center}
 \end{table}
 
-The ASS can be started from a terminal through the use of a python interpreter:
+To provide a segmentation script, it must be placed in \textbf{segmentation/}. Additionally, the \emph{"segmentationScript"} value in the configuration.json file must be adjusted (compare \ref{tab4_assConfig}).
+
+\textbf{templates/} contains all HTML templates that must be rendered by the ASS. The AS contains only one HTML template, which is used to render the ASV: \textbf{as{\textunderscore}viewer.html}.
+
+\textbf{as{\textunderscore}server.py} is the python script that realizes the ASS. It can be started from a terminal through the use of a python interpreter:
 \begin{lstlisting}
 $ python as_server.py
 \end{lstlisting}
@@ -396,7 +425,7 @@ To retrieve a WSI from the ASS, the URL must be pointed to it in the following m
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.2]{img/wsiUrl.png}
+		\includegraphics[scale=0.4]{img/wsiUrl.png}
 		\caption{Example URL to retrieve WSI (\url{http://127.0.0.1:5000/wsi/CMU-1.svs)}
 		\label{fig4_wsiUrl}; WSI source: OpenSlides freely distributable test data (see appendix \ref{sec_A1})}
 	\end{center}
@@ -443,9 +472,9 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	Loads the JSON file specified in [source].\\
 	\emph{Returns} the JSON data if a file was found, an empty JSON map ("[]") otherwise.
 	
-	\item \textbf{/createDictionary?name=[name]\\
+	\item \textbf{/createDictionary?name=[name]\&slide=[slide]\\
 	method:} GET\\
-	Requests the creation of a new, empty dictionary. The file will be called [name]. The ASV adds a ".json" if necessary. A manual call of this functions makes an added ".json" necessary. Otherwise, a text file will be created.\\
+	Requests the creation of a new, empty dictionary. The file will be called [name]. The ASV adds a ".json" if necessary. A manual call of this functions makes an added ".json" necessary. Otherwise, a text file will be created. The slide parameter provides the name of the WSI the dictionary was created at, so it can be changed in the slideDictionaries.json file. \\
 	\emph{Returns} the name and path to the new dictionary as json:
 	\begin{lstlisting}
 	{
@@ -453,12 +482,22 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 		"path":"[dictionary path]"
 	}
 	\end{lstlisting}
-	or "error" if [name] is already taken by another dictionary.\clearpage
+	or "error" if [name] is already taken by another dictionary.
+	
+	\item \textbf{/static/dictionaries/[]dictionary]\\
+		method:} GET\\
+	Loads the dictionary file located at [dictionary]. \\
+	\emph{Returns} a stringified version of the dictionary content if a dictionary was found at [dictionary], a "404 Not Found" HTTP status code otherwise.
 	
 	\item \textbf{/getDictionaries\\
 	method:} GET\\
 	Requests a list of files contained in the \emph{dictionaries} folder.\\
 	\emph{Returns} a list with the file names, or "-1" if no dictionaries are present.
+	
+	\item \textbf{/switchDictionary?name=[name]\&slide=[slide]\\
+		method:} GET\\
+	Changes the key-value entry in the slideDictionaries.json file whose key matches the provided [slide] parameter. The value will be adjusted to [name].\\
+	\emph{Returns} a "200 OK" HTTP status code.
 	
 	\item \textbf{/runSegmentation?x=[x]\&y=[y]\\
 		method:} GET\\
@@ -535,6 +574,15 @@ The OSDV is then created in the ASV's JavaScript file:
 The relation between \textless{div}{\textgreater} and OSDV is created through the \emph{id} parameter (line 3). Tab. \ref{tab4_osdvParams} states a description of every parameter used in the above constructor\footnote{
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.html\#.Options} for an in-depth documentation of every parameter available.
 }.
+
+Since drawing paths and managing regions involves clicking onto the corresponding ROIs on the WSI, the zoomPerClick function must be disabled. Otherwise it will be called after each of those interactions, which is highly disorienting.
+
+The OSDV provides an \texttt{open(tileSources)} function, which is used to open a DZI's tiles\footnote{
+	DZI, as well as all other image formats, supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened.
+}. The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
+Compare subsection \ref{sec4_openslide}.
+})). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
+
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{| p{3.5cm} | p{6.5cm} |}
@@ -552,14 +600,6 @@ The relation between \textless{div}{\textgreater} and OSDV is created through th
 		\label{tab4_osdvParams}
 	\end{center}
 \end{table}
-
-Since drawing paths and managing regions involves clicking onto the corresponding ROIs on the WSI, the zoomPerClick function must be disabled. Otherwise it will be called after each of those interactions, which is highly disorienting.
-
-The OSDV provides an \texttt{open(tileSources)} function, which is used to open a DZI's tiles\footnote{
-	DZI, as well as all other image formats, supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened.
-}. The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
-	Compare subsection \ref{sec4_openslide}.
-})). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
 
 A scalebar is added to the OSDV to support the assessment of ROIs:
 
@@ -616,7 +656,7 @@ The AO is of very fine granularity and, when added programmatically, can create 
 	\item\label{item_ICtoAO} image coordinate $\rightarrow$ AO coordinate
 \end{enumerate}
 
-The corresponding functions are \texttt{convertPathToImgCoordinates(point)} for (\ref{item_AOtoIC}) and \texttt{convertImgToPathCoordinates(point)} for (\ref{item_ICtoAO}). The following code snippet shows their implementation:
+The corresponding functions are \texttt{convertPathToImgCoordinates(point)} for (\ref{item_AOtoIC}) and \texttt{convertImgToPathCoordinates(point)} for (\ref{item_ICtoAO}). The following code snippet shows their implementation:\clearpage
 
 \begin{lstlisting}[title=as{\textunderscore}viewer.js, frame=single, language=JavaScript]
 function convertPathToImgCoordinates(point) {
@@ -661,7 +701,8 @@ Regions are used to realize annotations in the ASV. Therefore they are of centra
 			imgCoords : OpenSeadragon.Point[1..n]\\
 			name: String\\
 			path: Paper.Point[1..n]\\
-			uid: Integer\\ \hline
+			uid: Integer\\
+			zoom: Float\\ \hline
 		\end{tabular}
 		\caption{Class diagram of the region class}
 		\label{tab4_regionUML}
@@ -691,6 +732,8 @@ The \textbf{path} property represents the coordinates of the path's segments in 
 }. They are being used to manage the contour of an ROI in the AO. The number of points in imgCoords and path is always identical, as is their position inside the list.
 
 The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
+
+The \textbf{zoom} describes the level of magnification the region was drawn in. The value is the ratio between original and displayed image size (e.g. a zoom of 0.5 means that the image in the ASV was portrayed in half of the original image size, when the region was created)\cite{web:openseadragon}.
 
 
 \subsection{GUI}

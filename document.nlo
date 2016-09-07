@@ -24,8 +24,8 @@
 \nomenclatureentry{aOSD@[{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}|nompageref}{47}
 \nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{48}
 \nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{50}
-\nomenclatureentry{aAJAX@[{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}|nompageref}{55}
-\nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{56}
-\nomenclatureentry{aAO@[{AO}]\begingroup Annotation Overlay\nomeqref {4.1}|nompageref}{58}
-\nomenclatureentry{aBB@[{BB}]\begingroup Bounding Box\nomeqref {5.0}|nompageref}{64}
-\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}|nompageref}{65}
+\nomenclatureentry{aAJAX@[{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}|nompageref}{56}
+\nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{57}
+\nomenclatureentry{aAO@[{AO}]\begingroup Annotation Overlay\nomeqref {4.1}|nompageref}{59}
+\nomenclatureentry{aBB@[{BB}]\begingroup Bounding Box\nomeqref {5.0}|nompageref}{65}
+\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}|nompageref}{66}
