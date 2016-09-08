@@ -363,7 +363,7 @@ Flask requires a specific directory structure to access static files and HTML te
 
 As mentioned before, \textbf{static/} contains all static files required by the ASS, e.g. the CSS files (\textbf{css/}), icons (\textbf{cursors/}, \textbf{img/}) and JavaScript files (\textbf{lib/}) needed by the ASV.
 
-To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs.
+To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs. A WSI file will have a save file for each dictionary used on it.
 
 \textbf{dictionaries/} contains all dictionaries used by the ASV. \textbf{slideDictionaries.json} is a key-value map containing all WSIs opened (none when the AS is newly set up) and the latest dictionaries used for them. The file name of the WSI is the key, which a dictionary name is corresponding to as value. When a new WSI is opened for the first time, it will be opened with the dictionary defined in the configuration file \textbf{configuration.json}.
 

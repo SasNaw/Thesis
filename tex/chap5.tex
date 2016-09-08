@@ -82,39 +82,35 @@ Section \ref{sec5_objective} additionally stated the objective of keeping up cor
 \label{sec5_impl}
 The TS is implemented as a python script called \textbf{\emph{TessellationService.py}}\footnote{
 	See its GitHub repository for more information: \url{https://github.com/SasNaw/TessellationService}.
-}. \emph{OpenSlide} was used to access and read a provided WSI, as in chapters \ref{sec3_cs} (VIPS uses OpenSlide for the same reason\cite{cupitt96}) and \ref{sec4_as}. Additionally, \emph{NumPy}\footnote{
-	See \url{http://www.numpy.org/} for more information on NumPy.
-} and \emph{OpenCV}(Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}\footnote{
-	See \url{http://opencv.org/} for more information on OpenCV.
-} were used to increase imaging and calculating functionality.
+}. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: \emph{OpenSlide}, \emph{NumPy}, \emph{Pillow} and \emph{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}.
+
+\emph{OpenSlide} was used to access and read a provided WSI\footnote {
+	Compare subsection \ref{sec4_asvFrameworks} - OpenSlide
+}.
 
 NumPy is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
 
-OpenCV  is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function\footnote{
+OpenCV is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function\footnote{
 	See subsection \ref{sec5_tessellation}
 }
+
+Pillow is an imaging library, which offers methods to read from and write to images. It was used for reading, writing, scaling and converting the extracted images.
+
+A detailed documentation of the TS' functions can be found in appendix \ref{secC}.
+
+\subsection{Execution}
 
 The TS can be called over the python interpreter:
 
 \begin{lstlisting}
-	$ python TessellationService [input] [params]
+	$ python TessellationService [input] [dictionary] [params]
 \end{lstlisting}
 
-The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be
-\begin{itemize}
-	\item a WSI of proprietary format\footnote{
-		Compare subsection \ref{sec2_proprietaryForams}
-	}
-	\item a DZI
-	\item a directory with WSIs and DZIs
-	\item a list of all the types mentioned above
-\end{itemize}
+The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
 
-If a directory is handed to the TS, all subdirectories will be searched as well.
+As mentioned in chapter \ref{sec4_as}, multiple dictionaries can be used for annotation. Since every WSI has an individual save file for each dictionary (compare subsection \ref{sec4_setup}), it is necessary to provide the dictionary targeted for extraction via the [dictionary] parameter. Each input file must have its associated save file in the same directory.
 
-Each WSI and DZI targeted by the TS must have an associated JSON file with annotations created by the AS\footnote{
-	Compare chapter \ref{sec4_as}
-}. The [input] argument is mandatory.
+[input] and [dictionary] are mandatory arguments.
 
 As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
 
@@ -124,7 +120,7 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 			\hline
 			\textbf{name} & \textbf{description} & \textbf{default}\\ \hline
 			-h, --help & show help & - \\ \hline
-			-f, --force-overwrite & flag to overwrite images with the same name (if not supplied, \emph{"{\textunderscore}copy"} will be added to the image name) & false \\ \hline
+			-f, --force-overwrite & flag to overwrite images with the same name (if not supplied, a number will be added to the image name) & false \\ \hline
 			-g, --grayscale & flag to convert images to grayscale images before saving them & false \\ \hline
 			-i, --interpolation & choose interpolation method: nearest neighbor, bilinear, bicubic, lanczos  & nearest neighbor interpolation \\ \hline
 			-o, --output [directory] & choose output directory (if not provided, the TS will save all extracted images in its own directory) & - \\ \hline
@@ -140,73 +136,62 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 
 \subsection{Extraction process}
 
-The TS expects a list of input arguments. Those arguments will be iterated and their annotated regions extracted from the corresponding JSON file (see fig. \ref{fig5_extractionProcess} for an overview).
+The TS receives a list of files and folders to extract regions from and iterates over each entry. If the entry is a directory, each contained element will be checked for its type. If it is a WSI/DZI file, the extraction is started right away. Once the extraction is finished, the next element is examined. If the entry is a directory, each contained element is subject to the same evaluation. WSI/DZI files are extracted, while subdirectories are recursively traversed until the end of the directory tree. Each element found in this process that qualifies for region extraction is extracted. Fig. \ref{fig5_tsRunUml} visualizes the described process in an activity diagram.
 
-After the arguments and parameters are parsed, the script's \texttt{run()} method is called:
-
-\begin{lstlisting}[frame=single, language=python, title=\texttt{run()} from TessellationService.py]
-def run(input):
-	for element in input:
-			# input is folder:
-			if(os.path.isdir(element)):
-				files_from_dir(element)
-			# input is file:
-			elif(os.path.isfile(element)):
-				regions_from_file(element)
-\end{lstlisting}
-
-As stated in section \ref{sec5_method}, valid input are lists of files and folders. Therefore, the individual entries of the input list must be examined. If the current element is a WSI or DZI, the extraction begins right away (see line 8 in \texttt{run()}). If it is a directory, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} will be called (see line 5 in \texttt{run()}) and search for valid files, including all contained subdirectories:
-
-\begin{lstlisting}[frame=single, language=python, title=\texttt{files{\textunderscore}from{\textunderscore}dir(dir)} from TessellationService.py]
-def files_from_dir(dir):
-	if not dir.endswith('/'):
-		dir = dir + '/'
-	contents = os.listdir(dir)
-	for content in contents:
-		if os.path.isdir(dir + content):
-			if not content.endswith('_files'):
-				files_from_dir(dir + content)
-		else:
-			regions_from_file(dir + content)
-\end{lstlisting}
-
-After the contents of the directory are received (see line 4 in \texttt{files{\textunderscore}from{\textunderscore} dir(dir)}), they are evaluated further (see line 5 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). If the input directory contains subdirectories, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} is called recursively for each one of them, until the end of each directory tree is reached (see line6 - 8 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Otherwise, the extraction process is started for the detected file (see line 9 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Directories ending in \emph{"{\textunderscore}files"} are excluded since they only contain the tiled images for an associated DZI metadata file and a metadata.txt, if they were converted by the CS\footnote{
-	Compare chapter \ref{sec3_cs}
-} (see line 7 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}).
-
-\begin{figure}[H]	
+\begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.4]{img/ts_run.png}
-		\caption{Activity diagram of TS' extraction process}
-		\label{fig5_extractionProcess}
+		\includegraphics[scale=0.6]{img/ts_run.png}
+		\caption{Activity diagram of TS' extraction procedure}
+		\label{fig5_tsRunUml}
 	\end{center}
 \end{figure}
 
-OpenSlide is used to read a provided WSI. Since OpenSlide can only wrap an \emph{OpenSlide object} into a DZG\footnote{
+OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native DZI, but only wrap an OpenSlide object into a DZG\footnote{
 	Compare subsection \ref{sec4_openslide}
-}, but not read a native DZI\cite{web:openslide}, a different approach was chosen to access DZI. Because of this, the implementations differ in how images of ROIs are acquired and processed.
+}, a different approach had to be chosen to access a provided DZI.
 
-Both implementations share a number of utility functions\footnote{
+Both approaches share the following utility functions\footnote{
 	See appendix \ref{secC} for documentation of the individual function's source code.
 }:
 
 \begin{itemize}
 	\item \texttt{read{\textunderscore}json(path)} tries to read the JSON file at the provided path. If successful, it returns a list with the regions parsed from the file. If the file was not found or corrupt, a message will be printed on the terminal, informing the user about the exception.
 	
-	\item \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles)} saves a provided image either in the directory the TS was called from or in a provided directory if the -o parameter was used (see tab. \ref{tab5_tsParams}). There, the image will be saved in a directory whose name is equal to the region's name attribute\footnote{Compare subsection \ref{sec4_region}} in the following pattern: \emph{"[region name]/[slide{\textunderscore}name]\textunderscore[region's uid].jpeg"}. If a file with that name already exists, \emph{"{\textunderscore}copy"} will be added to the file name, unless the TS was started with the -f parameter (compare tab. \ref{tab5_tsParams}). This way, all regions of one individual label are in one directory. Additionally, the function scales images down to a provided size (via -r [width] [height]) with a provided interpolation method (-i, nearest neighbor interpolation by default). If the TS was run with -t, every extracted image will be converted to grayscale via the ITU-R 601-2 luma transform\cite{ITUR94} (see eq. \ref{luma}).
-	\begin{equation}\label{luma}
-		L = R * 299/1000 + G * 587/1000 + B * 114/1000
+	\item \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles)} generates an appropriate name from the region information and the slide{\textunderscore}name for the image and metadata file. The name differs between tessellated and non-tessellated output (see tab. \ref{tab5_outputNames}).
+	
+	If -r is provided, the image will be resized to the supplied height and width, with the interpolation method provided via -i (default: nearest neighbor interpolation). If -g is specified, the image will be converted to grayscale with the luma transform defined in the ITU-R 601-2 standard\cite{ITUR94} (see eq. \ref{eq:luma}).
+	\begin{equation}\label{eq:luma}
+	L = R * 299/1000 + G * 587/1000 + B * 114/1000
 	\end{equation}
 	
-	where $L$ is the luminosity and $R, G, B$ are the color values of each pixel.
+	Eq. \ref{eq:luma} averages out the RGB values of every pixel under consideration of how a human eye perceives colors.
+	
+	If -o was provided, the processed image will be saved in the supplied location inside a directory with the name of the extracted region's label.
+	
+	\item \texttt{save{\textunderscore}metadata(name, region, *tiles)} writes the corresponding metadata to an extracted image into a file (see tab. \ref{tab5_outputNames} for the file name pattern). The metadata is a JSON map and contains the values listed in tab. \ref{tab5_metadataJson}. When the TS is run with -t, the \emph{"image"} key is replaced by \emph{"tiles"}, which contains a JSON list with the names of all tiles belonging to the extracted image (each individual image name is according to the pattern in tab. \ref{tab5_outputNames}).
+	
+	\begin{table}[H]
+		\begin{center}
+			\begin{tabular}{| l | p{6cm} | l |}
+				\hline
+				\textbf{key} & \textbf{value} & \textbf{type}\\ \hline
+				context & the image region's context & JSON list\\ \hline
+				image & name of the extracted image file (compare tab. \ref{tab5_outputNames}) & string \\ \hline
+				label & the region's label & string\\ \hline
+				zoom & the region's zoom & float\\ \hline
+			\end{tabular}
+			\caption{File name patterns of generated output}
+			\label{tab5_metadataJson}
+		\end{center}
+	\end{table}
 	
 	\item \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} iterates over every segment of a region's path and builds the BB by collecting the minimal and maximal values for x and y (compare fig. \ref{fig5_bbExample}).
 	
 	\item \texttt{resize{\textunderscore}bounding{\textunderscore}box(region)} is used to adjust a region's BB to a different aspect ratio. This is to avoid image distortion when the -r parameter specifies a different image ratio than the BB's inherent one (see fig. \ref{fig5_resizeBBexample} for an example).
 	
-	\begin{figure}[!h]	
+	\begin{figure}[H]	
 		\begin{center}
-			\includegraphics[scale=0.5]{img/bbResizeExample.png}
+			\includegraphics[scale=0.3]{img/bbResizeExample.png}
 			\caption{Example for adjusted BB (A - original BB with aspect ratio of $\sim$1:1, B - adjusted BB to aspect ratio of $\sim$1:2)}
 			\label{fig5_resizeBBexample}
 		\end{center}
@@ -215,6 +200,18 @@ Both implementations share a number of utility functions\footnote{
 	\item \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} scales a BB by a provided scale. This is to avoid image distortions due to scaling images up (compare section \ref{sec5_method}). While \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} changes the aspect ratio of a BB, \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} keeps the aspect ratio and changes the BB as a whole instead.
 \end{itemize}
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{3cm} |p{4cm} | p{4cm} |}
+			\hline
+			\textbf{name} & \textbf{image file} & \textbf{metadata file}\\ \hline
+			\textbf{-t not provided} & [slide{\textunderscore}name]{\textunderscore}[region.uid].{\newline}jpeg & [slide{\textunderscore}name]{\textunderscore}[region.uid].{\newline}metadata.json \\ \hline
+			\textbf{-t provided}  & [slide{\textunderscore}name]{\textunderscore}[region.uid]\newline([row]{\textunderscore}[column]).jpeg & [slide{\textunderscore}name]{\textunderscore}[region.uid].{\newline}metadata.tessellated.json \\ \hline
+		\end{tabular}
+		\caption{File name patterns of generated output}
+		\label{tab5_outputNames}
+	\end{center}
+\end{table}
 
 \subsubsection{WSI extraction}
 

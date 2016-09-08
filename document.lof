@@ -28,7 +28,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Examplary BBs: $B_1$ is BB of $M_1$, $B_2$ is BB of $M_2$ (source: \url {http://www.idav.ucdavis.edu/education/GraphicsNotes/Bounding-Box/Bounding-Box.html})}}{65}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an ROI approximated via tessellation (gray tiles belong to the ROI)}}{66}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Activity diagram of TS' extraction process}}{70}{figure.5.3}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Activity diagram of TS' extraction procedure}}{69}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)}}{71}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction}}{72}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction}}{73}{figure.5.6}

@@ -64,10 +64,11 @@
 \contentsline {section}{\numberline {5.1}Objective of the Tessellation Service}{64}{section.5.1}
 \contentsline {section}{\numberline {5.2}Methodology}{64}{section.5.2}
 \contentsline {section}{\numberline {5.3}Implementation}{67}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Extraction process}{68}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Execution}{67}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Extraction process}{68}{subsection.5.3.2}
 \contentsline {subsubsection}{WSI extraction}{72}{section*.19}
 \contentsline {subsubsection}{DZI extraction}{73}{section*.20}
-\contentsline {subsection}{\numberline {5.3.2}Tessellation}{73}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Tessellation}{73}{subsection.5.3.3}
 \contentsline {section}{\numberline {5.4}Test}{73}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Setup}{73}{subsection.5.4.1}
 \contentsline {subsection}{\numberline {5.4.2}Result}{73}{subsection.5.4.2}
@@ -157,7 +158,7 @@
 \contentsline {subsubsection}{\$(document).keyup(function(e))}{102}{section*.81}
 \contentsline {subsubsection}{function selectToolOnKeyPress(id)}{102}{section*.82}
 \contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{103}{Appendix.1.C}
-\contentsline {chapter}{Bibliography}{104}{chapter*.83}
-\contentsline {chapter}{List of Figures}{111}{chapter*.84}
-\contentsline {chapter}{List of Tables}{113}{chapter*.85}
-\contentsline {chapter}{Nomenclature}{115}{chapter*.86}
+\contentsline {chapter}{Bibliography}{105}{chapter*.83}
+\contentsline {chapter}{List of Figures}{112}{chapter*.84}
+\contentsline {chapter}{List of Tables}{114}{chapter*.85}
+\contentsline {chapter}{Nomenclature}{116}{chapter*.86}

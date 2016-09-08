@@ -47,37 +47,38 @@
 \BOOKMARK [1][-]{section.5.1}{Objective of the Tessellation Service}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.2}{Methodology}{chapter.5}% 48
 \BOOKMARK [1][-]{section.5.3}{Implementation}{chapter.5}% 49
-\BOOKMARK [2][-]{subsection.5.3.1}{Extraction process}{section.5.3}% 50
-\BOOKMARK [2][-]{subsection.5.3.2}{Tessellation}{section.5.3}% 51
-\BOOKMARK [1][-]{section.5.4}{Test}{chapter.5}% 52
-\BOOKMARK [2][-]{subsection.5.4.1}{Setup}{section.5.4}% 53
-\BOOKMARK [2][-]{subsection.5.4.2}{Result}{section.5.4}% 54
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 57
-\BOOKMARK [1][-]{section.6.3}{Future tasks}{chapter.6}% 58
-\BOOKMARK [0][-]{section*.21}{Appendices}{}% 59
-\BOOKMARK [0][-]{Appendix.1.A}{Test Data}{}% 60
-\BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 61
-\BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 62
-\BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 63
-\BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 64
-\BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 65
-\BOOKMARK [1][-]{section.1.A.6}{Trestle \(.tiff\)}{Appendix.1.A}% 66
-\BOOKMARK [1][-]{section.1.A.7}{Ventana \(.bif\)}{Appendix.1.A}% 67
-\BOOKMARK [1][-]{section.1.A.8}{Mirax \(.mrxs\)}{Appendix.1.A}% 68
-\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 69
-\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 70
-\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 71
-\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 72
-\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 73
-\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 74
-\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 75
-\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 76
-\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 77
-\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 78
-\BOOKMARK [0][-]{Appendix.1.C}{Tessellation Service Documentation}{}% 79
-\BOOKMARK [0][-]{chapter*.83}{Bibliography}{}% 80
-\BOOKMARK [0][-]{chapter*.84}{List of Figures}{}% 81
-\BOOKMARK [0][-]{chapter*.85}{List of Tables}{}% 82
-\BOOKMARK [0][-]{chapter*.86}{Nomenclature}{}% 83
+\BOOKMARK [2][-]{subsection.5.3.1}{Execution}{section.5.3}% 50
+\BOOKMARK [2][-]{subsection.5.3.2}{Extraction process}{section.5.3}% 51
+\BOOKMARK [2][-]{subsection.5.3.3}{Tessellation}{section.5.3}% 52
+\BOOKMARK [1][-]{section.5.4}{Test}{chapter.5}% 53
+\BOOKMARK [2][-]{subsection.5.4.1}{Setup}{section.5.4}% 54
+\BOOKMARK [2][-]{subsection.5.4.2}{Result}{section.5.4}% 55
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 56
+\BOOKMARK [1][-]{section.6.1}{Results}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.3}{Future tasks}{chapter.6}% 59
+\BOOKMARK [0][-]{section*.21}{Appendices}{}% 60
+\BOOKMARK [0][-]{Appendix.1.A}{Test Data}{}% 61
+\BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 62
+\BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 63
+\BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 64
+\BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 65
+\BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 66
+\BOOKMARK [1][-]{section.1.A.6}{Trestle \(.tiff\)}{Appendix.1.A}% 67
+\BOOKMARK [1][-]{section.1.A.7}{Ventana \(.bif\)}{Appendix.1.A}% 68
+\BOOKMARK [1][-]{section.1.A.8}{Mirax \(.mrxs\)}{Appendix.1.A}% 69
+\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 70
+\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 71
+\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 72
+\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 73
+\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 74
+\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 75
+\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 76
+\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 77
+\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 78
+\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 79
+\BOOKMARK [0][-]{Appendix.1.C}{Tessellation Service Documentation}{}% 80
+\BOOKMARK [0][-]{chapter*.83}{Bibliography}{}% 81
+\BOOKMARK [0][-]{chapter*.84}{List of Figures}{}% 82
+\BOOKMARK [0][-]{chapter*.85}{List of Tables}{}% 83
+\BOOKMARK [0][-]{chapter*.86}{Nomenclature}{}% 84

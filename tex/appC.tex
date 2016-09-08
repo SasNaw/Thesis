@@ -7,3 +7,40 @@ The TS is openly available at GitHub and comes with instructions for usage and i
 %Once \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles)} is called, the destination for the output is set, either to a location provided via -o or in the same directory as the TS. If the provided directory should not exist, it will be created. To keep correspondence to the label of the ROI, The provided image is saved in a directory with the name of the (see line 2 - 7).  
 
 % # L = R * 299/1000 + G * 587/1000 + B * 114/1000
+
+and the annotated regions extracted from the corresponding JSON file. After the arguments and parameters are parsed, the script's \texttt{run()} method is called, which starts the extraction process for all input elements:
+
+
+\begin{lstlisting}[frame=single, language=python, title=\texttt{run()} from TessellationService.py]
+def run(input):
+for element in input:
+# input is folder:
+if(os.path.isdir(element)):
+files_from_dir(element)
+# input is file:
+elif(os.path.isfile(element)):
+regions_from_file(element)
+\end{lstlisting}
+
+
+
+
+
+As stated in section \ref{sec5_method}, each input element can be a file or a dictionary. Therefore, the individual entries must be examined. If the current element is a WSI or DZI, the extraction begins right away (see line 8). If it is a directory, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} will be called (see line 5) and search for valid files, including all contained subdirectories:
+
+\begin{lstlisting}[frame=single, language=python, title=\texttt{files{\textunderscore}from{\textunderscore}dir(dir)} from TessellationService.py]
+def files_from_dir(dir):
+if not dir.endswith('/'):
+dir = dir + '/'
+contents = os.listdir(dir)
+for content in contents:
+if os.path.isdir(dir + content):
+if not content.endswith('_files'):
+files_from_dir(dir + content)
+else:
+regions_from_file(dir + content)
+\end{lstlisting}
+
+After the contents of the directory are received (see line 4), they are evaluated further (see line 5 - 10). If the input directory contains subdirectories, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} is called recursively for each one of them, until the end of each directory tree is reached (see line6 - 8 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Otherwise, the extraction process is started for the detected file (see line 9 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Directories ending in \emph{"{\textunderscore}files"} are excluded since they only contain the tiled images for an associated DZI metadata file and a metadata.txt, if they were converted by the CS\footnote{
+	Compare chapter \ref{sec3_cs}
+} (see line 7 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}).
