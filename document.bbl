@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{Janowczyk16}
+A.~Madabhushi A.~Janowczyk.
+\newblock Deep learning for digital pathology image analysis: A comprehensive
+  tutorial with selected use cases.
+\newblock {\em J Pathol Inform}, 7(29), July 2016.
+
 \bibitem{Karpathy15}
 L.~Fei-Fei A.~Karpathy.
 \newblock {\em Deep Visual-Semantic Alignments for Generating Image
@@ -218,6 +224,14 @@ R.~Singh et~al.
 \newblock {\em J pathol inform}, 2(23), March 2011.
 \newblock
   \url{http://www.jpathinformatics.org/temp/JPatholInform2123-3144928_084409.pdf}.
+
+\bibitem{Doyle10}
+S.~Doyle et~al.
+\newblock A boosted bayesian multi-resolution classifier for prostate cancer
+  detection from digitized needle biopsies.
+\newblock {\em Transactions on Biomedical Engineering}, June 2010.
+\newblock
+  \url{https://www.researchgate.net/publication/44695140_A_Boosted_Bayesian_Multiresolution_Classifier_for_Prostate_Cancer_Detection_From_Digitized_Needle_Biopsies}.
 
 \bibitem{Park12}
 S.~Park et~al.

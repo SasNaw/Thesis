@@ -733,7 +733,7 @@ The \textbf{path} property represents the coordinates of the path's segments in 
 
 The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
 
-The \textbf{zoom} describes the level of magnification the region was drawn in. The value is the ratio between original and displayed image size (e.g. a zoom of 0.5 means that the image in the ASV was portrayed in half of the original image size, when the region was created)\cite{web:openseadragon}.
+The \textbf{zoom} attribute describes the level of magnification when a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives\cite{Janowczyk16}.
 
 
 \subsection{GUI}

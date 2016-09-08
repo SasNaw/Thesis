@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: ./bibl/bibl.bib
-You've used 77 entries,
+You've used 79 entries,
             2118 wiz_defined-function locations,
-            926 strings with 15513 characters,
-and the built_in function-call counts, 17049 in all, are:
-= -- 1686
-> -- 551
+            938 strings with 16015 characters,
+and the built_in function-call counts, 17481 in all, are:
+= -- 1729
+> -- 565
 < -- 1
-+ -- 246
-- -- 158
-* -- 654
-:= -- 2993
-add.period$ -- 290
-call.type$ -- 77
-change.case$ -- 298
++ -- 253
+- -- 162
+* -- 678
+:= -- 3074
+add.period$ -- 297
+call.type$ -- 79
+change.case$ -- 306
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 682
-empty$ -- 1613
-format.name$ -- 158
-if$ -- 3636
+cite$ -- 79
+duplicate$ -- 702
+empty$ -- 1648
+format.name$ -- 162
+if$ -- 3722
 int.to.chr$ -- 0
-int.to.str$ -- 77
-missing$ -- 42
-newline$ -- 447
-num.names$ -- 154
-pop$ -- 507
+int.to.str$ -- 79
+missing$ -- 44
+newline$ -- 458
+num.names$ -- 158
+pop$ -- 512
 preamble$ -- 1
-purify$ -- 233
+purify$ -- 239
 quote$ -- 0
-skip$ -- 491
+skip$ -- 506
 stack$ -- 0
-substring$ -- 480
-swap$ -- 89
+substring$ -- 491
+swap$ -- 91
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 286
+type$ -- 294
 warning$ -- 0
-while$ -- 158
-width$ -- 79
-write$ -- 884
+while$ -- 162
+width$ -- 81
+write$ -- 907

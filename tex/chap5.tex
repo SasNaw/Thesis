@@ -63,7 +63,19 @@ Case (3) approximates a ROI by tessellating\footnote{
 
 Cases (1) - (3) can be combined with (4) to convert the extracted ROI images into grayscale images.
 
-Section \ref{sec5_objective} additionally stated the objective of keeping up correspondence between an ROI and its associated label. To achieve this, an extracted ROI image will be saved in a directory of the same name as its corresponding label. This way, all ROIs of a specific label can be collected in one location.
+A region contains additional information besides the label that can be utilized, especially the level of magnification\footnote{
+	Compare subsection \ref{sec4_region}
+}. As Doyle has shown in \cite{Doyle10}, the level of magnification an annotation was made in is an important factor. This is due to the fact that manual annotations made in lower magnifications do not have the granularity needed for higher ones, which results in numerous false positives and negatives and therefore distorts the ground truth\cite{Janowczyk16}. A region's zoom attribute informs at what level of magnification a region was drawn in, thus helping to assess the described issue.
+
+To utilize the additional metadata, each extracted region will also have a corresponding metadata file. This metadata contains:
+\begin{itemize}
+	\item the name of the extracted image file (case (1) and (2)), or a list of all image tiles which belong to the ROI (case (3))
+	\item the region's label
+	\item the level of magnification
+	\item the region's context
+\end{itemize}
+
+Section \ref{sec5_objective} additionally stated the objective of keeping up correspondence between an ROI and its associated label. To achieve this, an extracted image will be saved in a directory of the same name as its corresponding label. This way, all ROIs of a specific label can be collected in one location. Additionally, the corresponding metadata file will contain an association between image file and label name.
 
 
 \section{Implementation}
