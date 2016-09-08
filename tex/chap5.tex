@@ -161,7 +161,7 @@ Both approaches share the following utility functions\footnote{
 	
 	If -r is provided, the image will be resized to the supplied height and width, with the interpolation method provided via -i (default: nearest neighbor interpolation). If -g is specified, the image will be converted to grayscale with the luma transform defined in the ITU-R 601-2 standard\cite{ITUR94} (see eq. \ref{eq:luma}).
 	\begin{equation}\label{eq:luma}
-	L = R * 299/1000 + G * 587/1000 + B * 114/1000
+		L = R * 299/1000 + G * 587/1000 + B * 114/1000
 	\end{equation}
 	
 	Eq. \ref{eq:luma} averages out the RGB values of every pixel under consideration of how a human eye perceives colors.
@@ -187,7 +187,7 @@ Both approaches share the following utility functions\footnote{
 	
 	\item \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} iterates over every segment of a region's path and builds the BB by collecting the minimal and maximal values for x and y (compare fig. \ref{fig5_bbExample}).
 	
-	\item \texttt{resize{\textunderscore}bounding{\textunderscore}box(region)} is used to adjust a region's BB to a different aspect ratio. This is to avoid image distortion when the -r parameter specifies a different image ratio than the BB's inherent one (see fig. \ref{fig5_resizeBBexample} for an example).
+	\item \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)} is used to adjust a region's BB to a different aspect ratio. This is to avoid image distortion when the -r parameter specifies a different image ratio than the BB's inherent one (see fig. \ref{fig5_resizeBBexample} for an example).
 	
 	\begin{figure}[H]	
 		\begin{center}
@@ -213,30 +213,55 @@ Both approaches share the following utility functions\footnote{
 	\end{center}
 \end{table}
 
-\subsubsection{WSI extraction}
+
+\subsection{Extraction without Tessellation}
+As mentioned above, the implementation of the conversion differs for WSI and DZI due to the role of OpenSlide in the extraction of WSIs. The following two sections describe the extraction process for both cases.
+
+\subsubsection{WSI}
+The WSI extraction process is done in the \texttt{wsi(file)} function\footnote{
+	See appendix \ref{secC} for a function documentation.
+}. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.5]{img/ts_wsi_uml.png}
-		\caption{Activity diagram of TS' WSI extraction}
+		\caption{Activity diagram of TS' WSI extraction (without tessellation)}
 		\label{fig5_tsWsiUml}
 	\end{center}
 \end{figure}
 
-adasdasds
+As shown in fig. \ref{fig5_tsWsiUml}, calculating the BB is the first step. To do so, the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function is used, which returns a python dictionary with the minimum and maximum values of x and y in the associated region's path. If -r was provided, the BB's size will be adjusted to fit the supplied image ratio.
 
-\subsubsection{DZI extraction}
+Next, the location of the region is determined. This is done by taking the minimum value for x and y from the BB and declaring it as upper, left corner of the region. The size is calculated by subtracting the minimum from the maximum value for x and y respectively (see eq. \ref{eq:sizeX} and \ref{eq:sizey}).
+
+\begin{equation}\label{eq:sizeX}
+size_x = BB_{max(x)} - BB_{min(x)}
+\end{equation}
+\begin{equation}\label{eq:sizey}
+size_y = BB_{max(y)} - BB_{min(y)}
+\end{equation}
+
+OpenSlide's \texttt{readRegion(location, level, size)} function is used to retrieve the region in a separate image from the original baseline image. This extracted image is then written into a file, together with its associated region's metadata.
+
+\subsubsection{DZI}
+Since it is not possible to open a DZI with OpenSlide, the extraction process for DZI differs from the one for WSI. It is implemented in the \texttt{dzi(file)} function\footnote{
+	See appendix \ref{secC} for a function documentation.
+}, which starts and manages the extraction process. Since an image must be stitched together manually, the information about tile size and image dimensions must be parsed from the DZI metadata file, as well as the level containing the baseline image (since DZI uses n instead of 0 for the level with the highest resolution). Once the information is parsed, a file name is created from the file path and the corresponding regions are parsed from the JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which is executed for each region.
 
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{img/ts_dzi_uml.png}
-		\caption{Activity diagram of TS' DZI extraction}
+		\caption{Activity diagram of TS' DZI extraction (without tessellation)}
 		\label{fig5_tsDziUml}
 	\end{center}
 \end{figure}
 
+The BB is created via the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function. Once the BB is created, the stitching process of the area covered by the baseline image begins. This is done in the \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} function. It first checks, if the -r parameter was provided and if so, if the aspect ratio of the BB matches the ratio of the supplied height and width. If necessary, the BB is adjusted via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}.
+ 
+The first step in stitching the baseline image area together, is determining the size of the BB (see eq. \ref{eq:sizeX} and \ref{eq:sizey}). To determine the needed tiles, $BB_{min(x)}$, $BB_{min(y)}$, $BB_{max(x)}$ and $BB_{max(y)}$ are divided by the DZI's tile size, resulting in $BB_{min(x)}^t$, $BB_{min(y)}^t$, $BB_{max(x)}^t$ and $BB_{max(y)}^t$. Those values are then iterated from the pair $(BB_{min(x)}^t, BB_{min(y)}^t)$ to $(BB_{max(x)}^t, BB_{max(y)}^t)$. Each of the resulting pairs $(BB_x^t, BB_y^t)$ refers to a tile from the baseline image. The baseline image area is stitched together by iterating over all pairs $(BB_x^t, BB_y^t)$ and stitching the corresponding tiles together. This is implemented in the \texttt{get{\textunderscore}image{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} function. The stitched image is then cropped to fit the size and position of the BB and saved together with its corresponding metadata file (via \texttt{save{\textunderscore}file(image, region, slide{\textunderscore}name)} and \texttt{save{\textunderscore}metadata(name, region, *tiles)}).
 
-\subsection{Tessellation}
+
+\subsection{Extraction with Tessellation}
 \label{sec5_tessellation}
 
 \section{Test}

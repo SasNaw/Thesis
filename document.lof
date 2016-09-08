@@ -30,32 +30,32 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an ROI approximated via tessellation (gray tiles belong to the ROI)}}{66}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Activity diagram of TS' extraction procedure}}{69}{figure.5.3}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)}}{71}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction}}{72}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction}}{73}{figure.5.6}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction (without tessellation)}}{72}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction (without tessellation)}}{73}{figure.5.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}}}{88}{figure.1.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}}}{88}{figure.1.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}}}{89}{figure.1.B.3}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}}}{89}{figure.1.B.4}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}}}{90}{figure.1.B.5}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}}}{90}{figure.1.B.6}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}}}{91}{figure.1.B.7}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}}}{91}{figure.1.B.8}
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}}}{91}{figure.1.B.9}
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}}}{92}{figure.1.B.10}
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}}}{93}{figure.1.B.11}
-\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}}}{93}{figure.1.B.12}
-\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{94}{figure.1.B.13}
-\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}}}{94}{figure.1.B.14}
-\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{96}{figure.1.B.15}
-\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{96}{figure.1.B.16}
-\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{97}{figure.1.B.17}
-\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}}}{98}{figure.1.B.18}
-\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}}}{100}{figure.1.B.19}
-\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}}}{101}{figure.1.B.20}
-\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}}}{102}{figure.1.B.21}
-\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}}}{102}{figure.1.B.22}
-\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}}}{102}{figure.1.B.23}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}}}{89}{figure.1.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}}}{89}{figure.1.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}}}{90}{figure.1.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}}}{90}{figure.1.B.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}}}{91}{figure.1.B.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}}}{91}{figure.1.B.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}}}{92}{figure.1.B.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}}}{92}{figure.1.B.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}}}{92}{figure.1.B.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}}}{93}{figure.1.B.10}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}}}{94}{figure.1.B.11}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}}}{94}{figure.1.B.12}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{95}{figure.1.B.13}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}}}{95}{figure.1.B.14}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{97}{figure.1.B.15}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{97}{figure.1.B.16}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{98}{figure.1.B.17}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}}}{99}{figure.1.B.18}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}}}{101}{figure.1.B.19}
+\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}}}{102}{figure.1.B.20}
+\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}}}{103}{figure.1.B.21}
+\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}}}{103}{figure.1.B.22}
+\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}}}{103}{figure.1.B.23}
 \addvspace {10\p@ }
