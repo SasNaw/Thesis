@@ -291,155 +291,201 @@ The last step is to iterate each pixel of the RI. For every white pixel found, t
 
 
 \section{Test}
-\subsection{Setup}
+The TS was run on multiple WSIs from the test data set (see appendix \ref{secA}). The test case presented in the following subsections is based on \emph{CMU-1.svs} of the Aperio test set\footnote{
+	Obtainable at \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/}
+} The JSON file used for the test can be found in the git repository of the TS, in the \emph{"test"} branch\footnote{
+	See \url{https://github.com/SasNaw/TessellationService/tree/test}
+}. The annotations were made using the \emph{example.json} dictionary.
 
-\begin{figure}[H]
+
+\subsection{Setup}
+\label{sec5_testSetup}
+The WSI CMU-1.svs, its corresponding JSON file CMU-1.svs{\textunderscore}example.json and TessellationService.py were placed in the same directory. To ensure that all parameters work correctly, the TS was provided with different parameters in multiple test cases (see tab. \ref{tab5_tests}).
+
+The provided JSON file has 3 saved annotations (see fig. \ref{fig5_sample}), to test the behavior of small (BB of 39x41 pixel, see fig. \ref{fig5_sample:3}), medium (BB of 346x288 pixel, see fig. \ref{fig5_sample:1}) and large sized images (BB of 6085x1540 pixel, see fig. \ref{fig5_sample:2}). All test cases were executed with those 3 regions.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{1.5cm} | p{3cm} |  p{5.5cm} |}
+			\hline
+			\textbf{test \#} & \textbf{parameters} & \textbf{description}\\ \hline
+			1 & -o noparams & no parameters provided, except -o \\ \hline
+			2 & -o square -r 256 256 & resize every image to 256x256 pixels (aspect ratio of 1:1)\\ \hline
+			3 & -o rectangle -r 256 128 & resize every image to 256x128 pixels (aspect ratio of 2:1) \\ \hline
+			4 & -o tessellate -t 32 32 & tessellation of ROIs with 32x32 pixel sized tiles \\ \hline
+			5 & -o grayscale -r 256 256 -g & resize every image to 256x256 pixels and turn them to grayscale\\ \hline
+		\end{tabular}
+		\caption{Test cases for the TS}
+		\label{tab5_tests}
+	\end{center}
+\end{table}
+
+\begin{figure}[!h]
 	\begin{subfigure}{.6\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/region1.png}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{test region A (BB = 364x288 pixel)}
+		\label{fig5_sample:1}
 	\end{subfigure}%
 	\begin{subfigure}{.2\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/region3.png}
-		\caption{test region b}
-		\label{subfig5:3}
+		\caption{test region B (BB = 39x41 pixel)}
+		\label{fig5_sample:3}
 	\end{subfigure}
 	\begin{subfigure}{1\textwidth}
 		\centering
 		\includegraphics[width=1\linewidth]{img/ts_test/region2.png}
-		\caption{test region c}
-		\label{subfig5:2}
+		\caption{test region C (BB = 6085x1540 pixel)}
+		\label{fig5_sample:2}
 	\end{subfigure}
-	\caption{Test data used for TS test}
+	\caption{Test case \emph{Aperio - CMU-1.svs}}
 	\label{fig5_sample}
 \end{figure}
+\clearpage
 
 \subsection{Result}
+
+Fig. \ref{fig5_result1} - \ref{fig5_result3} show the results of the test cases described in tab. \ref{tab5_tests}. Tab. \ref{tab5_results} shows how the results correspond to the tests.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| l | l |}
+			\hline
+			\textbf{test \#} & \textbf{figures}\\ \hline
+			1 & \ref{subfig5:a1}, \ref{subfig5:b1}, \ref{subfig5:c1}\\ \hline
+			2 & \ref{subfig5:a2}, \ref{subfig5:b2}, \ref{subfig5:c2}\\ \hline
+			3 & \ref{subfig5:a3}, \ref{subfig5:b3}, \ref{subfig5:c3}\\ \hline
+			4 & \ref{subfig5:a4}, \ref{subfig5:b4}, \ref{subfig5:c4}\\ \hline
+			5 & \ref{subfig5:a5}, \ref{subfig5:b5}, \ref{subfig5:c5}\\ \hline
+		\end{tabular}
+		\caption{Test-result correspondence}
+		\label{tab5_results}
+	\end{center}
+\end{table}
+
+The extraction without parameters was successful in every case (see \ref{subfig5:a1}, \ref{subfig5:b1}, \ref{subfig5:c1}).
+
+The BBs were successfully adjusted and the images scaled to the provided size (\ref{subfig5:a1}, \ref{subfig5:b2}, \ref{subfig5:c2} and \ref{subfig5:a3}, \ref{subfig5:b3}, \ref{subfig5:c3}).
+
+The tessellation of ROIs was successful for all provided regions (\ref{subfig5:a4}, \ref{subfig5:b4}, \ref{subfig5:c4}), as was the conversion to grayscale (\ref{subfig5:a5}, \ref{subfig5:b5}, \ref{subfig5:c5}).
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/region1.png}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Test region A in the ASV}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/1_orig.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted without parameters}
+		\label{subfig5:a1}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/1_r256.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x256 pixel}
+		\label{subfig5:a2}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/1_r128.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x128 pixel}
+		\label{subfig5:a3}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/1_stitched.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Tessellated into 32x32 pixel sized tiles}
+		\label{subfig5:a4}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/1_g.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted, resized and converted to grayscale}
+		\label{subfig5:a5}
 	\end{subfigure}
-	\caption{Test data used for TS test}
-	\label{fig5_sample}
+	\caption{Results for test region A}
+	\label{fig5_result1}
 \end{figure}
-
 
 \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics{img/ts_test/region3.png}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Test region B in ASV}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics{img/ts_test/3_orig.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted without parameters}
+		\label{subfig5:b1}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/3_r256.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x256 pixel}
+		\label{subfig5:b2}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/3_r128.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x128 pixel}
+		\label{subfig5:b3}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics{img/ts_test/3_stitched.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Tessellated into 32x32 pixel sized tiles}
+		\label{subfig5:b4}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/3_g.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted, resized and converted to grayscale}
+		\label{subfig5:b5}
 	\end{subfigure}
-	\caption{Test data used for TS test}
-	\label{fig5_sample}
+	\caption{Results for test region B}
+	\label{fig5_result2}
 \end{figure}
-
 
 \begin{figure}[H]
 	\begin{subfigure}{1.\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{img/ts_test/region2.png}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Test region C in ASV}
 	\end{subfigure}
 	\begin{subfigure}{1.\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{img/ts_test/2_orig.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted without parameters}
+		\label{subfig5:c1}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/2_r256.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x256 pixel}
+		\label{subfig5:c2}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/2_r128.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted and resized to 256x128 pixel}
+		\label{subfig5:c3}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{img/ts_test/2_stitched.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Tessellated into 32x32 pixel sited tiles}
+		\label{subfig5:c4}
 	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=.8\linewidth]{img/ts_test/2_g.jpeg}
-		\caption{test region a}
-		\label{subfig5:1}
+		\caption{Extracted, resized and converted to grayscale}
+		\label{subfig5:c5}
 	\end{subfigure}
-	\caption{Test data used for TS test}
-	\label{fig5_sample}
+	\caption{Results for test region C}
+	\label{fig5_result3}
 \end{figure}
-
