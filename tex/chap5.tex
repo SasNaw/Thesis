@@ -215,6 +215,7 @@ Both approaches share the following utility functions\footnote{
 
 
 \subsection{Extraction without Tessellation}
+\label{sec5_extraction}
 As mentioned above, the implementation of the conversion differs for WSI and DZI due to the role of OpenSlide in the extraction of WSIs. The following two sections describe the extraction process for both cases.
 
 \subsubsection{WSI}
@@ -263,6 +264,31 @@ The first step in stitching the baseline image area together, is determining the
 
 \subsection{Extraction with Tessellation}
 \label{sec5_tessellation}
+
+If a region is extracted with the -t parameter (compare tab. \ref{tab5_tsParams}), it will be tessellated into multiple image tiles of provided width and height (compare \ref{sec5_method}(3) and fig. \ref{fig5_tesExample}). As in subsection \ref{sec5_extraction}, the main difference between the processing of a WSI and a DZI is the need to parse the DZI's associated metadata and stitch an area of the baseline image. With that exception, the tessellated extraction works identical in both cases.
+
+The baseline image is tessellated into $m$*$n$ virtual tiles (see eq. \ref{eq:m} and \ref{eq:n}). All virtual tiles containing parts of the region's path are saved in a list $L^{path}$.
+\begin{equation}\label{eq:m}
+	m = \text{baseline image height} / \text{tile height}
+\end{equation}
+\begin{equation}\label{eq:n}
+	n = \text{baseline image width} / \text{tile width}
+\end{equation}
+
+The virtual tiles are needed to create and work with the \emph{reference image} (RI\nmc{RI}{Reference Image}). The RI is a central component of the tessellated extraction process. It is a binary image, which is $m$ pixels high and $n$ pixels wide. Each pixel represents a virtual tile of the baseline image. If a pixel is white, the corresponding virtual tile is part of the region to extract.The RI is a matrix representation of which tile is needed from the baseline image (see fig. \ref{fig5_riExample}).
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.35]{img/RI_example.png}
+		\caption{Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref{secA})}
+		\label{fig5_riExample}
+	\end{center}
+\end{figure}
+
+When created, the RI has only black pixels. To color the pixels associated with the ROI white,  OpenCV's \texttt{drawContours(image, contours, color, fill)} function is used. Since the correspondence of pixels and tiles is bidirectional, $L^{path}$ can be used to describe the contour. The drawn contour is then filled white.
+
+The last step is to iterate each pixel of the RI. For every white pixel found, the corresponding tile is extracted from the baseline image and saved into an individual image file (compare tab. \ref{tab5_outputNames} for the naming convention).
+
 
 \section{Test}
 \subsection{Setup}
