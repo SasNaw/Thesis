@@ -1,62 +1,66 @@
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Example results of the in \cite {Karpathy15} introduced model (source: \url {http://cs.stanford.edu/people/karpathy/deepimagesent/})}}{5}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Example results of the in \cite {Karpathy15} introduced model (source: \url {http://cs.stanford.edu/people/karpathy/deepimagesent/})\relax }}{5}{figure.caption.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces DICOMs image pyramid (source:\cite {Singh11})}}{9}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces DZI pyramid model example (source:\cite {web:dzi})}}{13}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of iiif request (source:\url {http://www.slideshare.net/Tom-Cramer/iiif-international-image-interoperability-framework-dlf2012?ref=https://www.diglib.org/forums/2012forum/transcending-silos-leveraging-linked-data-and-open-image-apis-for-collaborative-access-to-digital-facsimiles/})}}{14}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Results of IIIF request with different values for region parameter (source:\cite {web:iiif})}}{16}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Results of IIIF request with different values for size parameter (source:\cite {web:iiif})}}{16}{figure.2.5}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Neuron in a BNN (source:\cite {Shiffman12})}}{19}{figure.2.6}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplary NN (source:\cite {Shiffman12})}}{20}{figure.2.7}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Perceptron by Rosenblatt (source:\cite {Shiffman12})}}{21}{figure.2.8}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Examples for linearly separable problems (source:\cite {Shiffman12})}}{22}{figure.2.9}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Examples for non-linearly separable problems (source:\cite {Shiffman12})}}{22}{figure.2.10}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces NN with multiple layers (source: \url {http://docs.opencv.org/2.4/_images/mlp.png)}}}{23}{figure.2.11}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Activity diagram of the process chain}}{28}{figure.2.12}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Visualization of the Conversion Service}}{29}{figure.2.13}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Visualization of the Annotation Service}}{30}{figure.2.14}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Visualization of the Tessellation Service}}{30}{figure.2.15}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces DICOMs image pyramid (source:\cite {Singh11})\relax }}{9}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces DZI pyramid model example (source:\cite {web:dzi})\relax }}{13}{figure.caption.15}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of iiif request (source:\url {http://www.slideshare.net/Tom-Cramer/iiif-international-image-interoperability-framework-dlf2012?ref=https://www.diglib.org/forums/2012forum/transcending-silos-leveraging-linked-data-and-open-image-apis-for-collaborative-access-to-digital-facsimiles/})\relax }}{14}{figure.caption.17}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Results of IIIF request with different values for region parameter (source:\cite {web:iiif})\relax }}{16}{figure.caption.19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Results of IIIF request with different values for size parameter (source:\cite {web:iiif})\relax }}{16}{figure.caption.20}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Neuron in a BNN (source:\cite {Shiffman12})\relax }}{19}{figure.caption.25}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplary NN (source:\cite {Shiffman12})\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Perceptron by Rosenblatt (source:\cite {Shiffman12})\relax }}{21}{figure.caption.27}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Examples for linearly separable problems (source:\cite {Shiffman12})\relax }}{22}{figure.caption.28}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Examples for non-linearly separable problems (source:\cite {Shiffman12})\relax }}{22}{figure.caption.29}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces NN with multiple layers (source: \url {http://docs.opencv.org/2.4/_images/mlp.png)}\relax }}{23}{figure.caption.30}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Activity diagram of the process chain\relax }}{28}{figure.caption.32}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Visualization of the Conversion Service\relax }}{29}{figure.caption.33}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Visualization of the Annotation Service\relax }}{30}{figure.caption.34}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Visualization of the Tessellation Service\relax }}{30}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory}}{40}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Content of input directory\relax }}{39}{figure.caption.39}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Activity diagram of ASS and ASV}}{44}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)}}{46}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Microdraw GUI with opened WSI}}{47}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Example URL to retrieve WSI (\url {http://127.0.0.1:5000/wsi/CMU-1.svs)} ; WSI source: OpenSlides freely distributable test data (see appendix \ref {sec_A1})}}{53}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces ASV's GUI with opened, annotated WSI}}{63}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Activity diagram of ASS and ASV\relax }}{43}{figure.caption.41}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of context regions (B, C are context of A; A, C are context of B; A, B are context of C; D has no context region)\relax }}{45}{figure.caption.42}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Microdraw GUI with opened WSI\relax }}{46}{figure.caption.43}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example URL to retrieve WSI (\url {http://127.0.0.1:5000/wsi/CMU-1.svs)} ; WSI source: OpenSlides freely distributable test data (see appendix \ref {sec_A1})\relax }}{52}{figure.caption.50}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces ASV's GUI with opened, annotated WSI\relax }}{62}{figure.caption.55}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Examplary BBs: $B_1$ is BB of $M_1$, $B_2$ is BB of $M_2$ (source: \url {http://www.idav.ucdavis.edu/education/GraphicsNotes/Bounding-Box/Bounding-Box.html})}}{65}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an ROI approximated via tessellation (gray tiles belong to the ROI)}}{66}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Activity diagram of TS' extraction procedure}}{69}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)}}{71}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction (without tessellation)}}{72}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction (without tessellation)}}{73}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref {secA})}}{75}{figure.5.7}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Examplary BBs: $B_1$ is BB of $M_1$, $B_2$ is BB of $M_2$ (source: \url {http://www.idav.ucdavis.edu/education/GraphicsNotes/Bounding-Box/Bounding-Box.html})\relax }}{64}{figure.caption.56}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Example of an ROI approximated via tessellation (gray tiles belong to the ROI)\relax }}{65}{figure.caption.57}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Activity diagram of TS' extraction procedure\relax }}{68}{figure.caption.59}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)\relax }}{70}{figure.caption.61}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction (without tessellation)\relax }}{71}{figure.caption.64}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction (without tessellation)\relax }}{72}{figure.caption.66}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref {secA})\relax }}{74}{figure.caption.67}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Test data used for TS test\relax }}{74}{figure.caption.68}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Test data used for TS test\relax }}{75}{figure.caption.69}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Test data used for TS test\relax }}{76}{figure.caption.70}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Test data used for TS test\relax }}{77}{figure.caption.71}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}}}{90}{figure.1.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}}}{90}{figure.1.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}}}{91}{figure.1.B.3}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}}}{91}{figure.1.B.4}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}}}{92}{figure.1.B.5}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}}}{92}{figure.1.B.6}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}}}{93}{figure.1.B.7}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}}}{93}{figure.1.B.8}
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}}}{93}{figure.1.B.9}
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}}}{94}{figure.1.B.10}
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}}}{95}{figure.1.B.11}
-\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}}}{95}{figure.1.B.12}
-\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}}}{96}{figure.1.B.13}
-\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}}}{96}{figure.1.B.14}
-\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}}}{98}{figure.1.B.15}
-\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}}}{98}{figure.1.B.16}
-\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}}}{99}{figure.1.B.17}
-\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}}}{100}{figure.1.B.18}
-\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}}}{102}{figure.1.B.19}
-\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}}}{103}{figure.1.B.20}
-\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}}}{104}{figure.1.B.21}
-\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}}}{104}{figure.1.B.22}
-\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}}}{104}{figure.1.B.23}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}\relax }}{92}{figure.caption.94}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}\relax }}{92}{figure.caption.96}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}\relax }}{93}{figure.caption.99}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}\relax }}{93}{figure.caption.101}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}\relax }}{94}{figure.caption.104}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}\relax }}{94}{figure.caption.106}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}\relax }}{95}{figure.caption.109}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}\relax }}{95}{figure.caption.111}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}\relax }}{95}{figure.caption.113}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}\relax }}{96}{figure.caption.117}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}\relax }}{97}{figure.caption.119}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}\relax }}{97}{figure.caption.121}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}\relax }}{98}{figure.caption.124}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}\relax }}{98}{figure.caption.127}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}\relax }}{100}{figure.caption.135}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}\relax }}{100}{figure.caption.140}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}\relax }}{101}{figure.caption.143}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}\relax }}{102}{figure.caption.146}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}\relax }}{104}{figure.caption.152}
+\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}\relax }}{105}{figure.caption.154}
+\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}\relax }}{106}{figure.caption.160}
+\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}\relax }}{106}{figure.caption.162}
+\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}\relax }}{106}{figure.caption.164}
 \addvspace {10\p@ }

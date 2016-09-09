@@ -1,37 +1,37 @@
 \select@language {english}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces File formats by vendor}}{10}{table.2.1}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Valid values for \emph {region} parameter (source:\cite {web:iiif})}}{15}{table.2.2}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Valid values for \emph {size} parameter (source:\cite {web:iiif})}}{17}{table.2.3}
+\contentsline {table}{\numberline {2.1}{\ignorespaces File formats by vendor\relax }}{10}{table.caption.5}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Valid values for \emph {region} parameter (source:\cite {web:iiif})\relax }}{15}{table.caption.18}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Valid values for \emph {size} parameter (source:\cite {web:iiif})\relax }}{17}{table.caption.21}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces File formats by vendor}}{32}{table.3.1}
-\contentsline {table}{\numberline {3.2}{Overview of conversion options for zooming image formats (source: \cite {web:openseadragon})}}{34}{table.3.2}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Options for deepzoom.py}}{35}{table.3.3}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Options for VIPS}}{37}{table.3.4}
-\contentsline {table}{\numberline {3.5}{\ignorespaces Results of Conversion Service Test}}{40}{table.3.5}
+\contentsline {table}{\numberline {3.1}{\ignorespaces File formats by vendor\relax }}{31}{table.caption.36}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Overview of conversion options for zooming image formats (source: \cite {web:openseadragon})\relax }}{33}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Options for deepzoom.py\relax }}{34}{table.caption.37}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Options for VIPS\relax }}{36}{table.caption.38}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Results of Conversion Service Test\relax }}{39}{table.caption.40}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Available converters in Flask (source: \cite {web:flask})}}{49}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces ASS' URL-function binding overview}}{49}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces DZG parameters (source: \cite {web:openslide})}}{51}{table.4.3}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Description of \texttt {get{\textunderscore }tile(level, address)} parameters (source: \cite {web:openslide})}}{51}{table.4.4}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Configurable parameters in configuration.json}}{52}{table.4.5}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Parameters for as{\textunderscore }server.py}}{53}{table.4.6}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Overview of used options in OSDV constructor (source: \cite {web:openseadragon})}}{58}{table.4.7}
-\contentsline {table}{\numberline {4.8}{\ignorespaces Class diagram of the region class}}{61}{table.4.8}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Available converters in Flask (source: \cite {web:flask})\relax }}{48}{table.caption.44}
+\contentsline {table}{\numberline {4.2}{\ignorespaces ASS' URL-function binding overview\relax }}{48}{table.caption.45}
+\contentsline {table}{\numberline {4.3}{\ignorespaces DZG parameters (source: \cite {web:openslide})\relax }}{50}{table.caption.46}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Description of \texttt {get{\textunderscore }tile(level, address)} parameters (source: \cite {web:openslide})\relax }}{50}{table.caption.47}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Configurable parameters in configuration.json\relax }}{51}{table.caption.48}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Parameters for as{\textunderscore }server.py\relax }}{52}{table.caption.49}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Overview of used options in OSDV constructor (source: \cite {web:openseadragon})\relax }}{57}{table.caption.52}
+\contentsline {table}{\numberline {4.8}{\ignorespaces Class diagram of the region class\relax }}{60}{table.caption.54}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Optional parameters for the TS}}{68}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces File name patterns of generated output}}{70}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces File name patterns of generated output}}{71}{table.5.3}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Optional parameters for the TS\relax }}{67}{table.caption.58}
+\contentsline {table}{\numberline {5.2}{\ignorespaces File name patterns of generated output\relax }}{69}{table.caption.60}
+\contentsline {table}{\numberline {5.3}{\ignorespaces File name patterns of generated output\relax }}{70}{table.caption.62}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Aperio data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/})}}{78}{table.1.A.1}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Generic Tiled tiff data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Generic-TIFF/})}}{79}{table.1.A.2}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Hamamatsu data set (.ndpi, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/})}}{79}{table.1.A.3}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Hamamatsu data set (.vms, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu-vms/})}}{79}{table.1.A.4}
-\contentsline {table}{\numberline {A.5}{\ignorespaces Leica data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Leica/})}}{80}{table.1.A.5}
-\contentsline {table}{\numberline {A.6}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{80}{table.1.A.6}
-\contentsline {table}{\numberline {A.7}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})}}{80}{table.1.A.7}
-\contentsline {table}{\numberline {A.8}{\ignorespaces Mirax data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/})}}{81}{table.1.A.8}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Aperio data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/})\relax }}{80}{table.caption.73}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Generic Tiled tiff data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Generic-TIFF/})\relax }}{81}{table.caption.74}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Hamamatsu data set (.ndpi, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu/})\relax }}{81}{table.caption.75}
+\contentsline {table}{\numberline {A.4}{\ignorespaces Hamamatsu data set (.vms, source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Hamamatsu-vms/})\relax }}{81}{table.caption.76}
+\contentsline {table}{\numberline {A.5}{\ignorespaces Leica data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Leica/})\relax }}{82}{table.caption.77}
+\contentsline {table}{\numberline {A.6}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})\relax }}{82}{table.caption.78}
+\contentsline {table}{\numberline {A.7}{\ignorespaces Trestle data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Trestle/})\relax }}{82}{table.caption.79}
+\contentsline {table}{\numberline {A.8}{\ignorespaces Mirax data set (source: \url {http://openslide.cs.cmu.edu/download/openslide-testdata/Mirax/})\relax }}{83}{table.caption.80}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
