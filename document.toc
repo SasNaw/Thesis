@@ -166,22 +166,22 @@
 \contentsline {section}{\numberline {C.2}WSI}{110}{section.1.C.2}
 \contentsline {subsubsection}{wsi(file)}{110}{section*.170}
 \contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{111}{section*.171}
-\contentsline {subsubsection}{is{\textunderscore }supported(file)}{111}{section*.172}
-\contentsline {section}{\numberline {C.3}DZI}{112}{section.1.C.3}
-\contentsline {subsubsection}{dzi(file)}{112}{section*.173}
-\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{112}{section*.174}
-\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding(dzi, bounding{\textunderscore }box)}{113}{section*.175}
-\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{113}{section*.176}
-\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{113}{section*.177}
-\contentsline {section}{\numberline {C.4}Utility}{114}{section.1.C.4}
-\contentsline {subsubsection}{read{\textunderscore }json(path)}{114}{section*.178}
-\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{114}{section*.179}
-\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{115}{section*.180}
-\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{115}{section*.181}
-\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{116}{section*.182}
-\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{116}{section*.183}
-\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{117}{section*.184}
-\contentsline {chapter}{Bibliography}{118}{chapter*.185}
-\contentsline {chapter}{List of Figures}{125}{chapter*.186}
-\contentsline {chapter}{List of Tables}{127}{chapter*.187}
-\contentsline {chapter}{Nomenclature}{129}{chapter*.188}
+\contentsline {subsubsection}{is{\textunderscore }supported(file)}{113}{section*.172}
+\contentsline {section}{\numberline {C.3}DZI}{113}{section.1.C.3}
+\contentsline {subsubsection}{dzi(file)}{113}{section*.173}
+\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{113}{section*.174}
+\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding(dzi, bounding{\textunderscore }box)}{114}{section*.175}
+\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{114}{section*.176}
+\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{114}{section*.177}
+\contentsline {section}{\numberline {C.4}Utility}{115}{section.1.C.4}
+\contentsline {subsubsection}{read{\textunderscore }json(path)}{115}{section*.178}
+\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{115}{section*.179}
+\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{116}{section*.180}
+\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{116}{section*.181}
+\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{117}{section*.182}
+\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{117}{section*.183}
+\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{118}{section*.184}
+\contentsline {chapter}{Bibliography}{120}{chapter*.185}
+\contentsline {chapter}{List of Figures}{127}{chapter*.186}
+\contentsline {chapter}{List of Tables}{129}{chapter*.187}
+\contentsline {chapter}{Nomenclature}{131}{chapter*.188}

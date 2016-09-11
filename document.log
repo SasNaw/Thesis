@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  11 SEP 2016 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  11 SEP 2016 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2117,7 +2117,13 @@ lectToolOnKeyPress.png>]
 Appendix C.
 [109
 
-] [110] [111] [112] [113] [114] [115] [116]) (./document.bbl [117]
+] [110]
+Overfull \hbox (11.4972pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/10 tour can be used to fill in the ROI in the RI via OpenCV's \OT1
+/cmtt/l/n/10 cv2.drawContours(...)
+ []
+
+[111] [112] [113] [114] [115] [116] [117] [118]) (./document.bbl [119]
 Underfull \hbox (badness 5954) in paragraph at lines 17--22
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -2171,7 +2177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--77
  . pdf$[]\OT1/cmr/m/n/10 , July
  []
 
-[118
+[120
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 79--87
@@ -2215,7 +2221,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--158
 514 % 201120 %
  []
 
-[119]
+[121]
 Underfull \hbox (badness 10000) in paragraph at lines 186--191
 \OT1/cmtt/l/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
@@ -2239,7 +2245,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--235
 er _ for _
  []
 
-[120]
+[122]
 Underfull \hbox (badness 3568) in paragraph at lines 298--303
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
@@ -2257,7 +2263,7 @@ Underfull \hbox (badness 2582) in paragraph at lines 317--323
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[121]
+[123]
 Underfull \hbox (badness 3229) in paragraph at lines 410--415
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
@@ -2269,7 +2275,7 @@ Underfull \hbox (badness 6364) in paragraph at lines 410--415
 g / en -[] US / docs / Same -[] origin _
  []
 
-[122]
+[124]
 Underfull \hbox (badness 1270) in paragraph at lines 430--435
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/l/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
@@ -2305,7 +2311,7 @@ Underfull \hbox (badness 1460) in paragraph at lines 496--501
 []$\OT1/cmtt/l/n/10 https : / / www . cs .
  []
 
-[123]) [124] (./document.lof
+[125]) [126] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/l/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -2329,7 +2335,7 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
  image -[] apis -[] for -[] 
  []
 
-[125
+[127
 
 ]
 Overfull \hbox (12.99757pt too wide) in paragraph at lines 29--29
@@ -2341,7 +2347,7 @@ Bounding -[]
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [126] (./document.lot
+ [128] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  [][] [][]\OT1/cmr/m/n/10 Overview of con-ver-sion op-tions for zoom-ing im-age
  for-mats (source: 
@@ -2359,7 +2365,7 @@ Overfull \hbox (0.74934pt too wide) in paragraph at lines 32--32
 0 http : / / openslide . cs . cmu . 
  []
 
-[127
+[129
 
 ]
 Overfull \hbox (11.91524pt too wide) in paragraph at lines 34--34
@@ -2389,9 +2395,9 @@ Overfull \hbox (15.1375pt too wide) in paragraph at lines 37--37
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [128])
+ (./document.nls [130])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
- [129
+ [131
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
@@ -2407,10 +2413,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 12771 strings out of 493029
- 183872 string characters out of 6136235
- 507044 words of memory out of 5000000
- 14653 multiletter control sequences out of 15000+600000
+ 12776 strings out of 493029
+ 183923 string characters out of 6136235
+ 535088 words of memory out of 5000000
+ 14654 multiletter control sequences out of 15000+600000
  13677 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,51p,1248b,2013s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2438,10 +2444,10 @@ mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (132 pages, 18157662 bytes).
+Output written on document.pdf (134 pages, 18162444 bytes).
 PDF statistics:
- 3560 PDF objects out of 3580 (max. 8388607)
- 3251 compressed objects within 33 object streams
- 1369 named destinations out of 1440 (max. 500000)
+ 3577 PDF objects out of 3580 (max. 8388607)
+ 3266 compressed objects within 33 object streams
+ 1373 named destinations out of 1440 (max. 500000)
  1063 words of extra memory for PDF output out of 10000 (max. 10000000)
 
