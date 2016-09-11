@@ -314,6 +314,7 @@ def tessellate_dzi(dzi, slide_name, region):
 \section{Utility}
 
 \subsubsection{read{\textunderscore}json(path)}
+\texttt{read{\textunderscore}json(path)} is utilized to read a provided JSON file and parse its contents into a python dictionary (see line 2 - 6). If an error occurred in the extraction process, the user will be informed (see line 7 - 8).
 
 \begin{lstlisting}[frame=single,language=python]
 def read_json(path):
@@ -329,10 +330,16 @@ def read_json(path):
 
 \subsubsection{save{\textunderscore}metadata(name, region, *tiles)}
 
+\texttt{save{\textunderscore}metadata(name, region, *tiles)} is used to save the metadata to a corresponding extracted image.
+
+The metadata for regions extracted with the -t parameters differs from the ones without. Because of this, \emph{"{\textunderscore}tessellated"} is added to the files name (see line 2 - 3). If the -f parameter was provided (compare tab. \ref{tab5_tsParams}), files of the same name will be overwritten. Otherwise, an upwards counting, positive integer is added in parenthesis to the file name (see line 4 - 10).
+
+A file stream is opened and the associated region's metadata is written in a file (see line 12 - 19). The metadata file is encoded in UTF-8 to support special characters.
+
 \begin{lstlisting}[frame=single,language=python]
 def save_metadata(name, region, *tiles):
 	if len(tiles) > 0:
-	name = name + '_tessellated.metadata.json'
+		name = name + '_tessellated.metadata.json'
 	if not FORCE:
 		cnt = 0
 		while os.path.isfile(name):
@@ -353,6 +360,11 @@ def save_metadata(name, region, *tiles):
 
 
 \subsubsection{generate{\textunderscore}file{\textunderscore}name(region, slide{\textunderscore}name, *tiles)}
+\texttt{generate{\textunderscore}file{\textunderscore}name(region, slide{\textunderscore}name, *tiles)} creates a file name and output path for the provided information. The generated file name is used for the metadata as well as the image file.
+
+If the -o parameter was provided (compare tab. \ref{tab5_tsParams}), the supplied output directory will be added to the file path. If the path does not exist, it is created (see line 2 - 5). The region's uid is added to the file name (see line 8). If the image is tessellated into tiles (\emph{*tiles} will be a non-empty tupel with the x and y position of the tile), the position of the tile will be added to the file name (see line 9 - 13).
+
+When the -f parameter was not specified, an upwards counting, positive integer will be added to the file name (see line 12 - 16). The created file name is then returned (see line 17). 
 
 \begin{lstlisting}[frame=single,language=python]
 def generate_file_name(region, slide_name, *tiles):
@@ -376,6 +388,13 @@ def generate_file_name(region, slide_name, *tiles):
 
 
 \subsubsection{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles}
+\texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles} saves an extracted image. 
+
+The file name is generated, either for a tiled or non-tiled image (see line 2 - 5). If -r was specified (compare tab. \ref{tab5_tsParams}), the image will be resized according to the specified values with the provided interpolation method, if applicable. Otherwise, nearest neighbor interpolation is chosen by default (see line 6 - 7).
+
+If the grayscale conversion is activated (-g parameter, compare tab. \ref{tab5_tsParams}), the image will be converted to grayscale via the luma transform method (see eq. \ref{eq:luma} in subsection \ref{sec5_extractionProcess}).
+
+The image is then saved and the path returned (see line 11 - 14). If the image is not tessellated, the metadata is saved automatically as well (see line 12 - 13).
 
 \begin{lstlisting}[frame=single,language=python]
 def save_image(image, region, slide_name, *tiles):
@@ -396,6 +415,7 @@ def save_image(image, region, slide_name, *tiles):
 
 
 \subsubsection{get{\textunderscore}bounding{\textunderscore}box(region)}
+\texttt{get{\textunderscore}bounding{\textunderscore}box(region)} creates the BB for a provided region, by iteration over its path's segments and saving the smallest and largest values for the x and y coordinate.
 
 \begin{lstlisting}[frame=single,language=python]
 def get_bounding_box(region):
@@ -421,6 +441,16 @@ def get_bounding_box(region):
 
 
 \subsubsection{resize{\textunderscore}bounding{\textunderscore}box(region)}
+\texttt{resize{\textunderscore}bounding{\textunderscore}box(region)} adjusts the width:height ratio of a provided BB to match the ratio of the provided width and height, if the TS was run with the -r parameter (see tab. \ref{tab5_tsParams}).
+
+In order to do so, the width:height ratios of the -r values (\textbf{r{\textunderscore}ratio}) and the BB must be calculated (see line 2 - 5). If the ratios are identical, no further adjustments are necessary (line 6 - 7). Depending on the ration of the provided width and height of the -r parameter, the following adjustments are made:
+\begin{itemize}
+	\item \textbf{r{\textunderscore}ratio = 1}: the BB is adjusted to a square (see line 9 - 13)
+	\item \textbf{r{\textunderscore}ratio \textless 1}: the BB must be adjusted to rectangle that is wider than high (see line 20 - 32)
+	\item \textbf{r{\textunderscore}ratio \textgreater 1}: the BB must be adjusted to rectangle that is higher than wide (see line 33 - 45)
+\end{itemize}
+
+If the BB is smaller than the specified values after the adjustment, the BB is scaled up to match the specified values via \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}, scale)} (see line 48 - 55). If the scaling process creates a negative value for either one of the minimum values, the BB is moved in such a way, that the negative value will turn to 0 (see line 57 - 64).
 
 \begin{lstlisting}[frame=single,language=python]
 def resize_bounding_box(bounding_box):
@@ -493,6 +523,7 @@ def resize_bounding_box(bounding_box):
 
 
 \subsubsection{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}, scale)}
+\texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}, scale)} scale a provided BB by the provided scale in height and width. The ROI stays in the center of the BB when scaling up.
 
 \begin{lstlisting}[frame=single,language=python]
 def scale_bounding_box(bounding_box, scale):

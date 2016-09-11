@@ -177,11 +177,11 @@
 \contentsline {subsubsection}{read{\textunderscore }json(path)}{116}{section*.178}
 \contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{116}{section*.179}
 \contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{117}{section*.180}
-\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{117}{section*.181}
+\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{118}{section*.181}
 \contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{118}{section*.182}
-\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{118}{section*.183}
-\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{119}{section*.184}
-\contentsline {chapter}{Bibliography}{120}{chapter*.185}
-\contentsline {chapter}{List of Figures}{127}{chapter*.186}
-\contentsline {chapter}{List of Tables}{129}{chapter*.187}
-\contentsline {chapter}{Nomenclature}{131}{chapter*.188}
+\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{119}{section*.183}
+\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{121}{section*.184}
+\contentsline {chapter}{Bibliography}{122}{chapter*.185}
+\contentsline {chapter}{List of Figures}{129}{chapter*.186}
+\contentsline {chapter}{List of Tables}{131}{chapter*.187}
+\contentsline {chapter}{Nomenclature}{133}{chapter*.188}

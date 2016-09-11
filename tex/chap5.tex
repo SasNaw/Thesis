@@ -135,7 +135,7 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 
 
 \subsection{Extraction process}
-
+\label{sec5_extractionProcess}
 The TS receives a list of files and folders to extract regions from and iterates over each entry. If the entry is a directory, each contained element will be checked for its type. If it is a WSI/DZI file, the extraction is started right away. Once the extraction is finished, the next element is examined. If the entry is a directory, each contained element is subject to the same evaluation. WSI/DZI files are extracted, while subdirectories are recursively traversed until the end of the directory tree. Each element found in this process that qualifies for region extraction is extracted. Fig. \ref{fig5_tsRunUml} visualizes the described process in an activity diagram.
 
 \begin{figure}[H]
