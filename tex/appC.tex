@@ -6,7 +6,8 @@ The TS is openly available at GitHub and comes with instructions for usage and i
 
 \section{Main}
 
-\subsubsection{run()}
+\subsubsection{run(input)}
+As stated in section \ref{sec5_method}, each input element can be a file or a dictionary. Therefore, the individual entries must be examined. The \texttt{run(input)} function does exactly that. Each element's type (file or directory) is checked. If it is a file, the extraction process is started (line 8). If it is a directory, its files and subdirectories are extracted (line 5).
 
 \begin{lstlisting}[frame=single,language=python]
 def run(input):
@@ -21,6 +22,7 @@ def run(input):
 
 
 \subsubsection{files{\textunderscore}from{\textunderscore}dir(element)}
+\texttt{files{\textunderscore}from{\textunderscore}dir(element)} gets the content of the provided directory (line 4). For every subdirectory found, \texttt{files{\textunderscore}from{\textunderscore}dir(element)} is called recursively, until the end of each directory tree is reached. An exception from this are the DZI \emph{"{\textunderscore}files"} directories, since they only contain the corresponding DZI's tessellated image levels (line 6 - 8). If a file was found, the extraction process is started for it (line 9 - 10).
 
 \begin{lstlisting}[frame=single,language=python]
 def files_from_dir(dir):
@@ -37,7 +39,7 @@ def files_from_dir(dir):
 
 
 \subsubsection{regions{\textunderscore}from{\textunderscore}file(element)}
-
+Since the implementation for WSI and DZI differs, a distinction must be made, which of two approaches is chosen. \texttt{regions{\textunderscore}from{\textunderscore}file(element)} makes this distinction and starts the extraction process for the provided element. If the provided element is not of the DZI type, it is checked if it is a valid WSI (via \texttt{is{\textunderscore}supported(file)}, see line 5) before the process is started. This way, only DZI and WSI will be targeted with extraction attempts.
 \begin{lstlisting}[frame=single,language=python]
 def regions_from_file(file):
 	if file.endswith('.dzi'):
@@ -54,10 +56,8 @@ def regions_from_file(file):
 
 %and the annotated regions extracted from the corresponding JSON file. After the arguments and parameters are parsed, the script's \texttt{run()} method is called, which starts the extraction process for all input elements:
 
-%As stated in section \ref{sec5_method}, each input element can be a file or a dictionary. Therefore, the individual entries must be examined. If the current element is a WSI or DZI, the extraction begins right away (see line 8). If it is a directory, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} will be called (see line 5) and search for valid files, including all contained subdirectories:
 
-%After the contents of the directory are received (see line 4), they are evaluated further (see line 5 - 10). If the input directory contains subdirectories, \texttt{files{\textunderscore}from{\textunderscore}dir(dir)} is called recursively for each one of them, until the end of each directory tree is reached (see line6 - 8 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Otherwise, the extraction process is started for the detected file (see line 9 - 10 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}). Directories ending in \emph{"{\textunderscore}files"} are excluded since they only contain the tiled images for an associated DZI metadata file and a metadata.txt, if they were converted by the CS\footnote{	Compare chapter \ref{sec3_cs}
-%} (see line 7 in \texttt{files{\textunderscore}from{\textunderscore}dir(dir)}).
+
 
 \section{WSI}
 

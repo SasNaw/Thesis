@@ -160,26 +160,26 @@
 \contentsline {subsubsection}{function selectToolOnKeyPress(id)}{108}{section*.165}
 \contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{109}{Appendix.1.C}
 \contentsline {section}{\numberline {C.1}Main}{109}{section.1.C.1}
-\contentsline {subsubsection}{run()}{109}{section*.167}
+\contentsline {subsubsection}{run(input)}{109}{section*.167}
 \contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{109}{section*.168}
 \contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{110}{section*.169}
 \contentsline {section}{\numberline {C.2}WSI}{110}{section.1.C.2}
 \contentsline {subsubsection}{wsi(file)}{110}{section*.170}
-\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{110}{section*.171}
+\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{111}{section*.171}
 \contentsline {subsubsection}{is{\textunderscore }supported(file)}{111}{section*.172}
-\contentsline {section}{\numberline {C.3}DZI}{111}{section.1.C.3}
-\contentsline {subsubsection}{dzi(file)}{111}{section*.173}
+\contentsline {section}{\numberline {C.3}DZI}{112}{section.1.C.3}
+\contentsline {subsubsection}{dzi(file)}{112}{section*.173}
 \contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{112}{section*.174}
-\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding(dzi, bounding{\textunderscore }box)}{112}{section*.175}
+\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding(dzi, bounding{\textunderscore }box)}{113}{section*.175}
 \contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{113}{section*.176}
 \contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{113}{section*.177}
 \contentsline {section}{\numberline {C.4}Utility}{114}{section.1.C.4}
 \contentsline {subsubsection}{read{\textunderscore }json(path)}{114}{section*.178}
 \contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{114}{section*.179}
-\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{114}{section*.180}
+\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{115}{section*.180}
 \contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{115}{section*.181}
-\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{115}{section*.182}
-\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{115}{section*.183}
+\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{116}{section*.182}
+\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{116}{section*.183}
 \contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{117}{section*.184}
 \contentsline {chapter}{Bibliography}{118}{chapter*.185}
 \contentsline {chapter}{List of Figures}{125}{chapter*.186}
