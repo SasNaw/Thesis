@@ -173,6 +173,9 @@ def is_suppoted(file):
 \section{DZI}
 
 \subsubsection{dzi(file)}
+\texttt{dzi(file)} extracts the regions from a DZI. Since OpenSlide can not be used with DZIs, the corresponding ROI must be stitched manually. To do so, the provided file's DZI metadata must be parsed to access the information about width, height, format and location of the highest resolution layer (see line 2 - 6). The saved regions are parsed with the \texttt{read{\textunderscore}json(path)} function (see line 7).
+
+For each parsed region, an image is extracted together with a metadata file, like in the WSI scenario. If the tessellation parameter was provided when TessellationService.py was called, \texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} is called. Otherwise, the BB is calculated via \texttt{get{\textunderscore}bounding{\textunderscore}box(region)}. The tiles containing the ROI are stitched together and cropped to size in the \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} function. The resulting image is saved via the \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name)} function (see line 10 - 15).
 
 \begin{lstlisting}[frame=single,language=python]
 def dzi(file):
@@ -194,6 +197,11 @@ def dzi(file):
 
 
 \subsubsection{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)}
+\texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} stitches the tiles containing the ROI to extract together by utilizing the ROI's BB.
+
+If the -r parameter was provided at the TS' execution, the BB will be adjusted to fit the provided image ratio. This also has influence on what tiles will be needed (see line 2 - 3). The stitching of the baseline image area is realized in \texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} (see line 4). Once the tiles are stitched, the offset of the ROI's BB inside the stitched image is calculated (see line 6 - 7), as well as its corners (see line 9 - 12).
+
+This information is used to crop the stitched image to the size of the ROI's BB.
 
 \begin{lstlisting}[frame=single,language=python]
 def create_image_from_tiles(dzi, bounding_box):
@@ -213,7 +221,13 @@ def create_image_from_tiles(dzi, bounding_box):
 \end{lstlisting}
 
 
-\subsubsection{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding(dzi, bounding{\textunderscore}box)}
+\subsubsection{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)}
+
+\texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} stitches together a baseline image area  based on the provided BB.
+
+To do so, the corners of the BB are converted to tile positions (see line 2 - 5). Then, a new image is created which will hold the needed tiles (see line 7). All needed tiles are iterated in width and height and pasted into the corresponding postion of the holding image (see line 9 - 12).
+
+The stitched image is then returned.
 
 \begin{lstlisting}[frame=single,language=python]
 def get_tiles_from_bounding_box(dzi, bounding_box):
@@ -233,6 +247,7 @@ def get_tiles_from_bounding_box(dzi, bounding_box):
 
 
 \subsubsection{get{\textunderscore}tile{\textunderscore}source(file)}
+\texttt{get{\textunderscore}tile{\textunderscore}source(file)} finds the level with the highest resolution in a DZI's \emph{"{\textunderscore}files"} directory and builds a file path based on that.
 
 \begin{lstlisting}[frame=single,language=python]
 def get_tile_source(file):
@@ -245,6 +260,11 @@ def get_tile_source(file):
 
 
 \subsubsection{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)}
+\texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} works in the same way as \texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)}, except for the tile extraction (see line 26 - 35).
+
+As in \texttt{dzi(file)}, a baseline image area must be stitched (see line 3). To extract a virtual tile from that stitched image, \texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} crops that stitched image to the size of the current virtual tile and saves this in an individual image.
+
+Once all tiles are extracted, a metadata file is created (see line 43).
 
 \begin{lstlisting}[frame=single,language=python]
 def tessellate_dzi(dzi, slide_name, region):
