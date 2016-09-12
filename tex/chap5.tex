@@ -1,5 +1,5 @@
 \chapter{Tessellation Service}
-
+\label{sec5}
 \section{Objective of the Tessellation Service}
 \label{sec5_objective}
 The objective of the TS is to provide a service that extracts image regions annotated by the AS to create samples for the training of a NN\footnote{
@@ -291,6 +291,7 @@ The last step is to iterate each pixel of the RI. For every white pixel found, t
 
 
 \section{Test}
+\label{sec5_test}
 The TS was run on multiple WSIs from the test data set (see appendix \ref{secA}). The test case presented in the following subsections is based on \emph{CMU-1.svs} of the Aperio test set\footnote{
 	Obtainable at \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/}
 } The JSON file used for the test can be found in the git repository of the TS, in the \emph{"test"} branch\footnote{

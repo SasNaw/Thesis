@@ -1,7 +1,56 @@
 \chapter{Conclusion}
+
 \section{Results}
+The research goal of this thesis was to create a set of tools which enables deep learning and pathology experts to cooperate in creating a ground truth for NN by annotating WSIs. 3 objectives were defined to reach that goal\footnote{
+	Compare section \ref{sec1_researchObjective}	
+}:
+
+\begin{enumerate}[(1)]
+	\item The introduction of a conversion tool, which turns proprietary WSI formats into an open one.
+	\item The deployment of a WSI viewer tool with annotation capabilities and easy-to-understand GUI.
+	\item The implementation of a tool that is capable of turning persisted annotations into a format usable as ground truth.
+\end{enumerate}
+
+Each objective has a corresponding chapter, in which one or more tools were introduced. The tools, chapters and goals correspond as stated in tab. \ref{tab6_objCorrespondence}.
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| R{2cm} | R{1.5cm} | p{3cm} | p{4cm} |}
+			\hline
+			\textbf{objective} & \textbf{chapter} & \textbf{tool} & \textbf{repository} \\ \hline
+			(1) & \ref{sec3_cs} & ConversionService.py & \url{https://github.com/SasNaw/ConversionService} \\ \hline
+			(2) & \ref{sec4_as} & ASS \& ASV & \url{https://github.com/SasNaw/AnnotationService} \\ \hline
+			(3) & \ref{sec5} & ConversionService.py & \url{https://github.com/SasNaw/TessellationService} \\ \hline
+		\end{tabular}
+		\caption{Correspondence of objectives, chapters and tools}
+		\label{tab6_objCorrespondence}
+	\end{center}
+\end{table}
+
+Chapter \ref{sec3_cs} introduced the CS, which is capable of converting a proprietary WSI to a DZI. A test was set up to ensure its functionality, which was successful (compare subsection \ref{sec3_test}).
+
+Chapter \ref{sec4_as} introduced the AS, which consists of the ASS and the ASV. It was developed in an iterative process with regular feedback after each iteration from a pathologist concerning the GUI and UX. The ASS' use of OpenSlide enabled the AS to read and view a proprietary WSI, thus making the CS redundant.
+
+Chapter \ref{sec5} introduced the TS, which extracts annotations made and persisted by the AS into individual images with a corresponding metadata file, thus delivering a ground truth for the training of NN. To ensure, that the TS works as intended, a test case was set up (compare subsection \ref{sec5_test}), which was completed successfully.
+
+
 \section{Conclusion}
-\section{Future tasks}
+
+Objective (1), the conversion of proprietary to open image formats, was accomplished by the CS. The need of converting a WSI to DZI prior to using it in the AS was inflexible and cumbersome. Thus, an on demand conversion was implemented into the AS, which eliminates the need of a prior conversion and enabled the AS to view a proprietary WSI directly.
+ 
+Objective (2), developing a WSI viewer with annotation capabilities\footnote{
+	Compare subsection \ref{sec4_asvPart}
+}, was accomplished by the AS, which consists of 2 parts: ASS and ASV. The ASS delivers a local slide repository. Additionally, it offers a RESTful API, which can be used by the ASV to request and persist data. Since the ASV is running in a web browser, it can be used independent of an operating system. The ASV offers a simple GUI to make annotations to a WSI based on regions\footnote{
+	Compare subsection \ref{sec4_region}
+} and label dictionaries.
+
+Objective (3), the extraction of the AS' annotations to create a ground truth, was accomplished by the TS. It offers a python script to extract an ROI out of a WSI into an individual image, while keeping correspondence to the region's label and metadata through the use of directory structure and metadata files.
+
+The tools presented in this thesis are capable of handling the complete process chain introduced in subsection \ref{sec2_pc}. Thus, the goal of introducing tools for the cooperative annotation of WSIs by deep learning and pathology experts to create a ground truth was accomplished.
+
+
+
+\section{Future work}
 % turn ASS into a real server
 % deliver a working segmentation script
 % implement wsi browser
