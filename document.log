@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  12 SEP 2016 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  12 SEP 2016 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1643,7 +1643,7 @@ Overfull \hbox (3.75388pt too wide) in paragraph at lines 18--25
 
 [79
 
-]) [80] [81
+] [80]) [81] [82
 
 
 ] (./tex/appA.tex
@@ -1679,7 +1679,7 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 32--37
  [] 
  []
 
-[82
+[83
 
 ]
 Underfull \hbox (badness 2189) in paragraph at lines 49--49
@@ -1726,7 +1726,7 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 81--89
  [] 
  []
 
-[83]
+[84]
 Overfull \hbox (5.58028pt too wide) in paragraph at lines 98--105
  [] 
  []
@@ -1843,53 +1843,53 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 127--144
  [] 
  []
 
-) (./tex/appB.tex [84] [85]
+) (./tex/appB.tex [85] [86]
 Appendix B.
-[86
+[87
 
-] [87] [88] [89
+] [88] [89] [90
 
-] [90] [91] [92]
+] [91] [92] [93]
 Underfull \hbox (badness 10000) in paragraph at lines 324--326
 
  []
 
-<img/ch_init.png, id=2240, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=2245, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 331.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
-[93] <img/ch_initAS.png, id=2268, 478.78876pt x 243.91125pt>
+[94] <img/ch_initAS.png, id=2274, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 351.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=2270, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=2276, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
 Package pdftex.def Info: img/ch_saveConfig.png used on input line 369.
 (pdftex.def)             Requested size: 285.0643pt x 42.15738pt.
- [94 <./img/ch_init.png> <./img/ch_initAS.png>]
+ [95 <./img/ch_init.png> <./img/ch_initAS.png>]
 File: img/ch_init.png Graphic file (type png)
 
 <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 381.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
- <img/ch_saveDict.png, id=2281, 637.38126pt x 83.31125pt>
+ <img/ch_saveDict.png, id=2286, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
 Package pdftex.def Info: img/ch_saveDict.png used on input line 397.
 (pdftex.def)             Requested size: 318.68985pt x 41.65552pt.
- [95 <./img/ch_saveConfig.png>]
+ [96 <./img/ch_saveConfig.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 407--409
 
  []
 
-<img/ch_loadDict.png, id=2294, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=2299, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
@@ -1900,14 +1900,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--425
 
  []
 
-<img/ch_saveRegs.png, id=2296, 575.14874pt x 86.3225pt>
+<img/ch_saveRegs.png, id=2301, 575.14874pt x 86.3225pt>
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
 Package pdftex.def Info: img/ch_saveRegs.png used on input line 432.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
- [96 <./img/ch_saveDict.png> <./img/ch_loadDict.png>]
-<img/ch_loadJson.png, id=2307, 536.0025pt x 71.26625pt>
+ [97 <./img/ch_saveDict.png> <./img/ch_loadDict.png>]
+<img/ch_loadJson.png, id=2312, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
@@ -1918,15 +1918,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 454--456
 
  []
 
-<img/ch_createDict.png, id=2309, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=2314, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
 Package pdftex.def Info: img/ch_createDict.png used on input line 461.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
- [97 <./img/ch_saveRegs.png> <./img/ch_loadJson.png> <./img/ch_createDict.png>]
+ [98 <./img/ch_saveRegs.png> <./img/ch_loadJson.png> <./img/ch_createDict.png>]
 
-<img/ch_appendLabels.png, id=2319, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=2324, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -1937,14 +1937,14 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 483--484
  [] 
  []
 
-<img/ch_appendLabel.png, id=2321, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=2326, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 498.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
- [98 <./img/ch_appendLabels.png>]
-<img/ch_selectNext.png, id=2333, 593.21625pt x 82.3075pt>
+ [99 <./img/ch_appendLabels.png>]
+<img/ch_selectNext.png, id=2338, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
@@ -1955,18 +1955,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 520--522
 
  []
 
-<img/ch_newLabel.png, id=2335, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=2340, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
 Package pdftex.def Info: img/ch_newLabel.png used on input line 529.
 (pdftex.def)             Requested size: 270.00809pt x 122.95906pt.
- [99 <./img/ch_appendLabel.png> <./img/ch_selectNext.png>]
+ [100 <./img/ch_appendLabel.png> <./img/ch_selectNext.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 543--545
 
  []
 
-<img/ch_selectDict.png, id=2346, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=2352, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -1982,7 +1982,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--567
 
  []
 
-[100 <./img/ch_newLabel.png> <./img/ch_selectDict.png>]
+[101 <./img/ch_newLabel.png> <./img/ch_selectDict.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 578--580
 
  []
@@ -2002,13 +2002,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 599--601
 
  []
 
-<img/ch_findContext.png, id=2358, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2363, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
 Package pdftex.def Info: img/ch_findContext.png used on input line 604.
 (pdftex.def)             Requested size: 303.93011pt x 38.14182pt.
- [101]
+ [102]
 Underfull \hbox (badness 10000) in paragraph at lines 615--617
 
  []
@@ -2028,18 +2028,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 636--638
 
  []
 
-<img/ch_toggleRegions.png, id=2371, 601.24625pt x 66.2475pt>
+<img/ch_toggleRegions.png, id=2376, 601.24625pt x 66.2475pt>
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
 Package pdftex.def Info: img/ch_toggleRegions.png used on input line 641.
 (pdftex.def)             Requested size: 300.62238pt x 33.12366pt.
- [102 <./img/ch_findContext.png> <./img/ch_toggleRegions.png>]
+ [103 <./img/ch_findContext.png> <./img/ch_toggleRegions.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 656--658
 
  []
 
-<img/ch_singleClickLabel.png, id=2382, 720.6925pt x 260.975pt>
+<img/ch_singleClickLabel.png, id=2387, 720.6925pt x 260.975pt>
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
@@ -2066,8 +2066,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 685--687
 
  []
 
-[103 <./img/ch_singleClickLabel.png>]
-<img/ch_addPoi.png, id=2392, 574.145pt x 398.48875pt>
+[104 <./img/ch_singleClickLabel.png>]
+<img/ch_addPoi.png, id=2397, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 694.
@@ -2077,7 +2077,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 710--712
 
  []
 
-[104 <./img/ch_addPoi.png>]
+[105 <./img/ch_addPoi.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 716--718
 
  []
@@ -2098,13 +2098,13 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 733--734
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2402, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2407, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
 Package pdftex.def Info: img/ch_mouseDown.png used on input line 743.
 (pdftex.def)             Requested size: 261.9781pt x 182.18018pt.
- [105]
+ [106]
 Underfull \hbox (badness 10000) in paragraph at lines 756--758
 
  []
@@ -2115,13 +2115,13 @@ Overfull \hbox (6.9162pt too wide) in paragraph at lines 756--758
 r-ac-tion that hap-pens with a pushed
  []
 
-<img/ch_mouseDrag.png, id=2414, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2420, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
 Package pdftex.def Info: img/ch_mouseDrag.png used on input line 768.
 (pdftex.def)             Requested size: 275.52869pt x 94.35226pt.
- [106 <./img/ch_mouseDown.png>]
+ [107 <./img/ch_mouseDown.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 784--786
 
  []
@@ -2131,14 +2131,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 806--808
 
  []
 
-[107 <./img/ch_mouseDrag.png>]
-<img/ch_keyDown.png, id=2437, 582.175pt x 71.26625pt>
+[108 <./img/ch_mouseDrag.png>]
+<img/ch_keyDown.png, id=2442, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 811.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2439, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2444, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 823.
@@ -2148,34 +2148,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 833--835
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2441, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2446, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
 Package pdftex.def Info: img/ch_selectToolOnKeyPress.png used on input line 838
 .
 (pdftex.def)             Requested size: 175.6558pt x 30.11241pt.
-) (./tex/appC.tex [108 <./img/ch_keyDown.png> <./img/ch_keyup.png> <./img/ch_se
+) (./tex/appC.tex [109 <./img/ch_keyDown.png> <./img/ch_keyup.png> <./img/ch_se
 lectToolOnKeyPress.png>]
 Appendix C.
-[109
+[110
 
-] [110]
+] [111]
 Overfull \hbox (11.4972pt too wide) in paragraph at lines 93--94
 \OT1/cmr/m/n/10 tour can be used to fill in the ROI in the RI via OpenCV's \OT1
 /cmtt/l/n/10 cv2.drawContours(...)
  []
 
-[111] [112] [113] [114]
+[112] [113] [114] [115]
 Overfull \hbox (3.2256pt too wide) in paragraph at lines 265--266
 \OT1/cmr/m/n/10 tract a vir-tual tile from that stitched im-age, \OT1/cmtt/l/n/
 10 tes-sel-late[]dzi(dzi, slide[]name,
  []
 
-[115] [116] [117] [118]
+[116] [117] [118] [119]
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
 (Font)              Font shape `OML/cmm/b/it' tried instead on input line 449.
- [119] [120]) (./document.bbl [121]
+ [120] [121]) (./document.bbl [122]
 Underfull \hbox (badness 5954) in paragraph at lines 17--22
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -2229,7 +2229,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--77
  . pdf$[]\OT1/cmr/m/n/10 , July
  []
 
-[122
+[123
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 79--87
@@ -2273,7 +2273,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--158
 514 % 201120 %
  []
 
-[123]
+[124]
 Underfull \hbox (badness 10000) in paragraph at lines 186--191
 \OT1/cmtt/l/n/10 researchgate . net / publication / 220603536 _ Image _ process
 ing _ with _
@@ -2297,7 +2297,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--235
 er _ for _
  []
 
-[124]
+[125]
 Underfull \hbox (badness 3568) in paragraph at lines 298--303
 []\OT1/cmr/m/n/10 I. Gilman.  Opensead-ragon.  []$\OT1/cmtt/l/n/10 http : / / o
 penseadragon . github . io /
@@ -2315,7 +2315,7 @@ Underfull \hbox (badness 2582) in paragraph at lines 317--323
 ] cons . pdf$[]\OT1/cmr/m/n/10 , 2015.  Ac-
  []
 
-[125]
+[126]
 Underfull \hbox (badness 3229) in paragraph at lines 410--415
 []\OT1/cmr/m/n/10 Mozilla De-vel-oper Net-work (MDN).  Same-origin pol-icy for 
 file:
@@ -2327,7 +2327,7 @@ Underfull \hbox (badness 6364) in paragraph at lines 410--415
 g / en -[] US / docs / Same -[] origin _
  []
 
-[126]
+[127]
 Underfull \hbox (badness 1270) in paragraph at lines 430--435
 \OT1/cmr/m/n/10 pathol-o-gist.  []$\OT1/cmtt/l/n/10 http : / / www . cap . org 
 / ShowProperty ? nodePath = /UCMCon /
@@ -2363,7 +2363,7 @@ Underfull \hbox (badness 1460) in paragraph at lines 496--501
 []$\OT1/cmtt/l/n/10 https : / / www . cs .
  []
 
-[127]) [128] (./document.lof
+[128]) [129] (./document.lof
 Overfull \hbox (8.47122pt too wide) in paragraph at lines 7--7
  [][] [][]\OT1/cmr/m/n/10 Example of iiif re-quest (source:[]$\OT1/cmtt/l/n/10 
 http : / / www . slideshare . net / Tom -[] 
@@ -2387,7 +2387,7 @@ Overfull \hbox (1.24771pt too wide) in paragraph at lines 7--7
  image -[] apis -[] for -[] 
  []
 
-[129
+[130
 
 ]
 Overfull \hbox (12.99757pt too wide) in paragraph at lines 29--29
@@ -2399,7 +2399,7 @@ Bounding -[]
 \tf@lof=\write6
 \openout6 = `document.lof'.
 
- [130] (./document.lot
+ [131] (./document.lot
 Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  [][] [][]\OT1/cmr/m/n/10 Overview of con-ver-sion op-tions for zoom-ing im-age
  for-mats (source: 
@@ -2417,7 +2417,7 @@ Overfull \hbox (0.74934pt too wide) in paragraph at lines 33--33
 0 http : / / openslide . cs . cmu . 
  []
 
-[131
+[132
 
 ]
 Overfull \hbox (11.91524pt too wide) in paragraph at lines 35--35
@@ -2447,9 +2447,9 @@ Overfull \hbox (15.1375pt too wide) in paragraph at lines 38--38
 \tf@lot=\write7
 \openout7 = `document.lot'.
 
- (./document.nls [132])
+ (./document.nls [133])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
- [133
+ [134
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
@@ -2465,9 +2465,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
  ) 
 Here is how much of TeX's memory you used:
- 12788 strings out of 493029
- 184082 string characters out of 6136235
- 533298 words of memory out of 5000000
+ 12789 strings out of 493029
+ 184090 string characters out of 6136235
+ 533300 words of memory out of 5000000
  14660 multiletter control sequences out of 15000+600000
  14035 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2497,10 +2497,10 @@ onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (136 pages, 18189821 bytes).
+Output written on document.pdf (137 pages, 18191164 bytes).
 PDF statistics:
- 3625 PDF objects out of 4296 (max. 8388607)
- 3310 compressed objects within 34 object streams
- 1378 named destinations out of 1440 (max. 500000)
+ 3630 PDF objects out of 4296 (max. 8388607)
+ 3314 compressed objects within 34 object streams
+ 1379 named destinations out of 1440 (max. 500000)
  1063 words of extra memory for PDF output out of 10000 (max. 10000000)
 
