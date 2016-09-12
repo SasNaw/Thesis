@@ -1,32 +1,31 @@
 \nomenclatureentry{aWSI@[{WSI}]\begingroup Whole Slide Image\nomeqref {1.0}|nompageref}{4}
 \nomenclatureentry{aNN@[{NN}]\begingroup Neural Network\nomeqref {1.0}|nompageref}{4}
 \nomenclatureentry{aROI@[{ROI}]\begingroup Region of Interest\nomeqref {1.0}|nompageref}{5}
-\nomenclatureentry{aDZI@[{DZI}]\begingroup Deep Zoom Image\nomeqref {1.0}|nompageref}{6}
 \nomenclatureentry{aGUI@[{GUI}]\begingroup Graphical User Interface\nomeqref {1.0}|nompageref}{6}
-\nomenclatureentry{aDICOM@[{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}|nompageref}{8}
-\nomenclatureentry{aIIIF@[{IIIF}]\begingroup International Image Interoperability Framework\nomeqref {2.0}|nompageref}{14}
-\nomenclatureentry{aOSM@[{OSM}]\begingroup OpenStreetMap\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aTMS@[{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aOSGF@[{OSGF}]\begingroup Open Source Geospatial Foundation\nomeqref {2.0}|nompageref}{18}
-\nomenclatureentry{aTIFF@[{TIFF}]\begingroup Tagged Image File Format\nomeqref {2.0}|nompageref}{19}
-\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Network\nomeqref {2.0}|nompageref}{19}
-\nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{24}
+\nomenclatureentry{aDICOM@[{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}|nompageref}{7}
+\nomenclatureentry{aIIIF@[{IIIF}]\begingroup International Image Interoperability Framework\nomeqref {2.0}|nompageref}{13}
+\nomenclatureentry{aOSM@[{OSM}]\begingroup OpenStreetMap\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aTMS@[{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aOSGF@[{OSGF}]\begingroup Open Source Geospatial Foundation\nomeqref {2.0}|nompageref}{17}
+\nomenclatureentry{aTIFF@[{TIFF}]\begingroup Tagged Image File Format\nomeqref {2.0}|nompageref}{18}
+\nomenclatureentry{aBNN@[{BNN}]\begingroup Biological Neural Network\nomeqref {2.0}|nompageref}{18}
+\nomenclatureentry{aMS@[{MS}]\begingroup Microservice\nomeqref {2.0}|nompageref}{23}
 \nomenclatureentry{aCS@[{CS}]\begingroup Conversion Service\nomeqref {2.0}|nompageref}{28}
 \nomenclatureentry{aAS@[{AS}]\begingroup Annotation Service\nomeqref {2.0}|nompageref}{29}
-\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{30}
-\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{35}
-\nomenclatureentry{aCORS@[{CORS}]\begingroup Cross Origin Resource Sharing\nomeqref {4.0}|nompageref}{40}
-\nomenclatureentry{aSOP@[{SOP}]\begingroup Same-Origin Policy\nomeqref {4.0}|nompageref}{40}
-\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{41}
-\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{42}
-\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{44}
-\nomenclatureentry{aREST@[{REST}]\begingroup Representational State Transfer\nomeqref {4.0}|nompageref}{44}
-\nomenclatureentry{aOSD@[{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}|nompageref}{46}
-\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{47}
-\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{49}
-\nomenclatureentry{aAJAX@[{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}|nompageref}{55}
-\nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{56}
-\nomenclatureentry{aAO@[{AO}]\begingroup Annotation Overlay\nomeqref {4.1}|nompageref}{58}
-\nomenclatureentry{aBB@[{BB}]\begingroup Bounding Box\nomeqref {5.0}|nompageref}{64}
-\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}|nompageref}{66}
-\nomenclatureentry{aRI@[{RI}]\begingroup Reference Image\nomeqref {5.5}|nompageref}{73}
+\nomenclatureentry{aTS@[{TS}]\begingroup Tessellation Service\nomeqref {2.0}|nompageref}{29}
+\nomenclatureentry{aVIPS@[{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}|nompageref}{34}
+\nomenclatureentry{aCORS@[{CORS}]\begingroup Cross Origin Resource Sharing\nomeqref {4.0}|nompageref}{39}
+\nomenclatureentry{aSOP@[{SOP}]\begingroup Same-Origin Policy\nomeqref {4.0}|nompageref}{39}
+\nomenclatureentry{aASS@[{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}|nompageref}{40}
+\nomenclatureentry{aASV@[{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}|nompageref}{41}
+\nomenclatureentry{aPOI@[{POI}]\begingroup Point of Interest\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aREST@[{REST}]\begingroup Representational State Transfer\nomeqref {4.0}|nompageref}{43}
+\nomenclatureentry{aOSD@[{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}|nompageref}{45}
+\nomenclatureentry{aWSGI@[{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}|nompageref}{46}
+\nomenclatureentry{aDZG@[{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}|nompageref}{48}
+\nomenclatureentry{aAJAX@[{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}|nompageref}{54}
+\nomenclatureentry{aOSDV@[{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}|nompageref}{55}
+\nomenclatureentry{aAO@[{AO}]\begingroup Annotation Overlay\nomeqref {4.1}|nompageref}{57}
+\nomenclatureentry{aBB@[{BB}]\begingroup Bounding Box\nomeqref {5.0}|nompageref}{63}
+\nomenclatureentry{aOpenCV@[{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}|nompageref}{65}
+\nomenclatureentry{aRI@[{RI}]\begingroup Reference Image\nomeqref {5.5}|nompageref}{72}

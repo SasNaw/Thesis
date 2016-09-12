@@ -488,7 +488,7 @@ This makes the advantages outweight the disadvantages clearly:
 
 \section{Process Chain}
 \label{sec2_pc}
-This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The usual procedure look as follows:
+This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The process looks as follows:
 
 \begin{enumerate}[(1.)]
 	\item convert chosen WSI $img^{wsi}_i$ to open format $img^{cvrt}_i$
@@ -508,9 +508,9 @@ While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{cvr
 	\end{center}
 \end{figure}
 
-The single steps of the process chain will be sorted into semantic groups. Each group will be realized as its own MS. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
+The single steps of the process chain will be sorted into semantic groups. Each group will be realized on its own, in a MS like fashion. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
 
-A MS will be introduced for each group in the subsections \ref{sec2_cs} - \ref{sec2_ts}). Those are:
+A tool will be introduced for each group in the subsections \ref{sec2_cs} - \ref{sec2_ts}). Those are:
 
 \begin{itemize}
 	\item \textbf{Conversion Service}\\
@@ -567,7 +567,7 @@ The supplied GUI will offer different tools to help the user annotate the WSI, e
 
 \subsection{Tessellation Service}
 \label{sec2_ts}
-The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to extract annotations and their corresponding image data in such a fashion that they will become usable as training samples for NN.
+The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to extract annotations and their corresponding image data to create a ground truth.
 
 \begin{figure}[H]
 	\begin{center}
@@ -577,4 +577,4 @@ The task of the Tessellation Service (TS)\nmc{TS}{Tessellation Service} is to ex
 	\end{center}
 \end{figure}
 
-Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the smallest bounding box around the region described by $a_i$ (see fig. \ref{fig2_processChainC}). To be used as training sample, the TS must keep up the relationship between $img_i$ and $a_i$.
+Let there be a WSI $Img$ and a corresponding set of annotations $A$. The TS will achieve the extraction by iterating over every $a_i \in A$, creating a sub-image $img_i$ which is the bounding box around the region described by $a_i$ (see fig. \ref{fig2_processChainC}). To be used as training sample, the TS must keep up the relationship between $img_i$ and $a_i$.
