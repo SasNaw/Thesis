@@ -1,0 +1,520 @@
+\begin{thebibliography}{10}
+
+\bibitem{Janowczyk16}
+A.~Madabhushi A.~Janowczyk.
+\newblock Deep learning for digital pathology image analysis: A comprehensive
+  tutorial with selected use cases.
+\newblock {\em J Pathol Inform}, 7(29), July 2016.
+
+\bibitem{Karpathy15}
+L.~Fei-Fei A.~Karpathy.
+\newblock {\em Deep Visual-Semantic Alignments for Generating Image
+  Descriptions}.
+\newblock Department of Computer Science, Standford University, 2015.
+\newblock \url{http://cs.stanford.edu/people/karpathy/cvpr2015.pdf}.
+
+\bibitem{web:typicalissues}
+AgileLoad.
+\newblock Performance symptoms and issues.
+\newblock
+  \url{http://www.agileload.com/performance-testing/performance-testing-methodology/performance-symptoms-and-issues}.
+\newblock Accessed: 24.08.2016.
+
+\bibitem{web:microdraw2}
+Neuroanatomy Applied and Theoretical (NAAT).
+\newblock Microdraw.
+\newblock \url{http://microdraw.pasteur.fr/index.html}.
+\newblock Accessed: 23.08.2016.
+
+\bibitem{web:deepzoom}
+R.~Berta.
+\newblock deepzoom.
+\newblock
+  \url{http://search.cpan.org/~drrho/Graphics-DZI-0.05/script/deepzoom}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Brandl16}
+G.~Brandl.
+\newblock {\em Python Web Server Gateway Interface v1.0}, June 2016.
+\newblock \url{https://hg.python.org/peps/file/tip/pep-0333.txt}.
+
+\bibitem{Bugwadia15}
+J.~Bugwadia.
+\newblock Microservices: Five architectural constraints.
+\newblock
+  \url{http://www.nirmata.com/2015/02/microservices-five-architectural-constraints/},
+  February 2015.
+\newblock Accessed: 12.08.2016.
+
+\bibitem{Stergiou96}
+D.~Siganos C.~Stergiou.
+\newblock Neural networks.
+\newblock Technical report, Imperial College London, 1995.
+\newblock
+  \url{https://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol4/cs11/report.html#Conclusion}.
+
+\bibitem{Ullman07}
+L.~Dykes C.~Ullmann.
+\newblock {\em Beginning Ajax}.
+\newblock Wiley Publishing, Inc., 2007.
+\newblock
+  \url{http://crypto.cs.mcgill.ca/~simonpie/webdav/ipad/EBook/Programmation/Beginning%20Ajax%20(Programmer%20to%20Programmer).pdf}.
+
+\bibitem{Clifford09}
+A.~Clifford.
+\newblock {\em The Math Book: From Pythagoras to the 57th Dimension, 250
+  Milestones in the History of Mathematics}.
+\newblock Sterling, 2007.
+
+\bibitem{Cornish13}
+T.~Cornish.
+\newblock An introduction to digital whole slide imaging and whole slide image
+  analysis.
+\newblock
+  \url{http://www.hopkinsmedicine.org/mcp/PHENOCORE/CoursePDFs/2013/13%2019%20Cornish%20Digital%20Path.pdf},
+  July 2013.
+\newblock Accessed: 12.04.2016.
+
+\bibitem{Cramer11}
+T.~Cramer.
+\newblock The international image interoperability framework (iiif): Laying the
+  foundation for common services, integrated resources and a marketplace of
+  tools for scholars worldwide.
+\newblock
+  \url{https://www.cni.org/topics/information-access-retrieval/international-image-interoperability-framework},
+  December 2011.
+\newblock Accessed: 18.08.2016.
+
+\bibitem{web:vips}
+J.~Cupitt.
+\newblock Vips.
+\newblock \url{http://www.vips.ecs.soton.ac.uk/index.php?title=VIPS}.
+\newblock Accessed: 25.05.2016.
+
+\bibitem{Bourg04}
+G.~Seeman D.~Bourg.
+\newblock {\em AI for Game Developers}.
+\newblock O'Reilly, 2004.
+
+\bibitem{Taubmann01}
+M.~Marcellin D.~Taubmann.
+\newblock {\em JPEG 2000: Image compression fundamentals, standards and
+  practice}.
+\newblock Kluwer Academic Publishers, 2001.
+
+\bibitem{DICOM10}
+Working Group 26.~Pathology DICOM Standards~Committee.
+\newblock Digital imaging and communications in medicine (dicom), supplement
+  145: Whole slide microscopic image iod and sop classes, August 2010.
+
+\bibitem{web:digitalpreservation}
+digitalpreservation.
+\newblock Bigtiff.
+\newblock \url{http://www.digitalpreservation.gov/formats/fdd/fdd000328.shtml}.
+\newblock Accessed: 20.08.2016.
+
+\bibitem{web:digitalpreservation2}
+digitalpreservation.
+\newblock Tiff.
+\newblock \url{http://www.digitalpreservation.gov/formats/fdd/fdd000237.shtml}.
+\newblock Accessed: 20.08.2016.
+
+\bibitem{web:dzt}
+D.~Doubrovkine.
+\newblock Dzt.
+\newblock \url{https://github.com/dblock/dzt}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Eddins07}
+S.~Eddins.
+\newblock Tiff, bigtiff, and blockproc.
+\newblock
+  \url{http://blogs.mathworks.com/steve/2013/08/07/tiff-bigtiff-and-blockproc/},
+  August 2013.
+
+\bibitem{Goode13}
+A.~Goode et~al.
+\newblock Openslide: A vendor-neutral software foundation for digital
+  pathology.
+\newblock {\em J pathol inform}, 4(1), September 2013.
+\newblock
+  \url{http://download.openslide.org/docs/JPatholInform_2013_4_1_27_119005.pdf}.
+
+\bibitem{Wilbur09}
+D.~Wilbur et~al.
+\newblock Whole-slide imaging digital pathology as a platform for
+  teleconsultation.
+\newblock {\em Arch Pathol Lab Med}, 133(12), December 2009.
+\newblock
+  \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
+
+\bibitem{Tseytlin14}
+E.~Tseytlin et~al.
+\newblock Wsi zoomviewer.
+\newblock
+  \url{http://www.pathologyinformatics.com/sites/default/files/archives/2014/Day2/20140514%201120%20-%20WSI%20Zoom%20Viewer.pdf},
+  2014.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Guerdri16}
+H.~Guedri et~al.
+\newblock Reconstruction of the human retinal blood vessels by fractal
+  interpolation.
+\newblock {\em Journal of Theoretical and Applied Information Technology},
+  83(2), January 2016.
+\newblock \url{http://www.jatit.org/volumes/Vol83No2/9Vol83No2.pdf}.
+
+\bibitem{Qi12}
+H.~Sharma et~al.
+\newblock Robust segmentation of overlapping cells in histopathology specimens
+  using parallel seed detection and repulsive level set.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(3), March 2012.
+
+\bibitem{Sharma16}
+H.~Sharma et~al.
+\newblock Deep convolutional neural networks for histological image analysis in
+  gastric cancer whole slide images.
+\newblock {\em Computerized Medical Imaging and Graphics}, December 2016.
+
+\bibitem{web:iiif}
+M.~Appleby et~al.
+\newblock Iiif image api 2.0.
+\newblock \url{http://iiif.io/api/image/2.0/}.
+\newblock Accessed: 18.08.2016.
+
+\bibitem{Egmont-Petersen02}
+M.~Egmonst-Petersen et~al.
+\newblock Image processing with neural networks - a review.
+\newblock {\em Pattern Regcognition}, 35, October 2002.
+\newblock
+  \url{https://www.researchgate.net/publication/220603536_Image_processing_with_neural_networks_-_a_review_Pattern_Recogn_352279C2301}.
+
+\bibitem{Frosterus11}
+M.~Frosterus et~al.
+\newblock Extending ontologies with free keywords in a collaborative annotation
+  environment.
+\newblock Technical report, University of Helsinki, 2010.
+\newblock \url{http://ceur-ws.org/Vol-809/paper-02.pdf}.
+
+\bibitem{Farahanil15}
+N.~Farahanil et~al.
+\newblock Whole slide imaging in pathology: advantages, limitations, and
+  emerging perspectives.
+\newblock {\em Pathology and Laboratory Medicine International}, 7, June 2015.
+\newblock
+  \url{https://www.dovepress.com/whole-slide-imaging-in-pathology-advantages-limitations-and-emerging-p-peer-reviewed-fulltext-article-PLMI#ref10}.
+
+\bibitem{Thevanez00}
+P.~Thévanez et~al.
+\newblock Image interpolation and resampling.
+\newblock {\em Handbook of Medical Imaging, Processing and Analysis}, 2000.
+\newblock \url{http://bigwww.epfl.ch/publications/thevenaz9901.pdf}.
+
+\bibitem{Harvey91}
+R.~Harvey et~al.
+\newblock A neural network architecture for general image recognition.
+\newblock {\em The Lincoln Library Journal}, 4(2), 1991.
+\newblock
+  \url{https://www.ll.mit.edu/publications/journal/pdf/vol04_no2/4.2.5.neuralnetwork.pdf}.
+
+\bibitem{Singh11}
+R.~Singh et~al.
+\newblock Standardization in digital pathology: Supplement 145 of the dicom
+  standards.
+\newblock {\em J pathol inform}, 2(23), March 2011.
+\newblock
+  \url{http://www.jpathinformatics.org/temp/JPatholInform2123-3144928_084409.pdf}.
+
+\bibitem{Doyle10}
+S.~Doyle et~al.
+\newblock A boosted bayesian multi-resolution classifier for prostate cancer
+  detection from digitized needle biopsies.
+\newblock {\em Transactions on Biomedical Engineering}, June 2010.
+\newblock
+  \url{https://www.researchgate.net/publication/44695140_A_Boosted_Bayesian_Multiresolution_Classifier_for_Prostate_Cancer_Detection_From_Digitized_Needle_Biopsies}.
+
+\bibitem{Park12}
+S.~Park et~al.
+\newblock Digital imaging in pathology.
+\newblock {\em Clin Lab Med}, 4(32), December 2012.
+
+\bibitem{Wienert12}
+S.~Wienert et~al.
+\newblock Detection and segmentation of cell nuclei in virtual microscopy
+  images: A minimum-model approach.
+\newblock {\em Scientific Reports}, 2(503), Juli 2012.
+\newblock
+  \url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3694269/pdf/nihms-486265.pdf}.
+
+\bibitem{Fielding00}
+R.~Fielding.
+\newblock {\em Architectural Styles and the Design of Network-based Software
+  Architectures}.
+\newblock PhD thesis, University of Carolina, 2000.
+\newblock \url{http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm}.
+
+\bibitem{web:flask}
+Flask.
+\newblock Flask user guide.
+\newblock \url{http://flask.pocoo.org/docs/0.11/}.
+\newblock Accessed: 24.08.2016.
+
+\bibitem{web:pyramidio}
+National~Institute for Standards and Technology.
+\newblock Pyramidio.
+\newblock \url{https://github.com/usnistgov/pyramidio}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{web:tms}
+Open Source~Geospatial Foundation.
+\newblock Tile map service specification.
+\newblock \url{http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{web:osm}
+OpenStreetMap Foundation.
+\newblock Openstreetmap homepage.
+\newblock \url{http://www.openstreetmap.org/about}.
+\newblock Accessed: 18.08.2016.
+
+\bibitem{web:sharp}
+L.~Fuller.
+\newblock sharp homepage.
+\newblock \url{http://sharp.dimens.io/en/stable/}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Bradski08}
+A.~Kaebler G.~Bradski.
+\newblock {\em Learning OpenCV}.
+\newblock O'Reilly, 2008.
+
+\bibitem{web:zoomhub}
+D.~Gasienica.
+\newblock Vips.
+\newblock \url{https://github.com/zoomhub/zoomhub}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{web:openseadragon}
+I.~Gilman.
+\newblock Openseadragon.
+\newblock
+  \url{http://openseadragon.github.io/examples/creating-zooming-images/}.
+\newblock Accessed: 26.04.2016.
+
+\bibitem{web:iiif2}
+IIIF.
+\newblock Internation image interoperability framework homepage.
+\newblock \url{http://iiif.io}.
+\newblock Accessed: 18.08.2016.
+
+\bibitem{web:imagemagick}
+ImageMagick.
+\newblock Imagemagick: Formats.
+\newblock \url{http://www.imagemagick.org/script/formats.php}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Optimus15}
+Optimus~Information Inc.
+\newblock Open-source vs. proprietary software, pros and cons.
+\newblock
+  \url{http://www.optimusinfo.com/downloads/white-paper/open-source-vs-proprietary-software-pros-and-cons.pdf},
+  2015.
+\newblock Accessed: 16.08.2016.
+
+\bibitem{ITUR94}
+Radiocommunication~Sector International Telecommunication~Union.
+\newblock Recommendation itu-r bt.601-4 encoding parameters of digital
+  television for studios.
+\newblock \url{http://www-inst.eecs.berkeley.edu/~cs150/Documents/ITU601.PDF},
+  1998.
+
+\bibitem{intoPix08}
+intoPix.
+\newblock Everything you always wanted to know about jpeg 2000.
+\newblock \url{http://www.intopix.com/pdf/JPEG%202000%20Handbook.pdf}, 2008.
+
+\bibitem{cupitt96}
+K.~Martinez J.~Cupitt.
+\newblock Vips: an image processing system for large images.
+\newblock {\em Proc. SPIE}, 2663:19 -- 28, 1996.
+\newblock \url{http://eprints.soton.ac.uk/252227/1/vipsspie96a.pdf}.
+
+\bibitem{cupitt05}
+K.~Martinez J.~Cupitt.
+\newblock Vips - a highly tuned image processing software architecture.
+\newblock In {\em IEEE International Conference on Image Processing}, pages 574
+  -- 577, September 2005.
+\newblock \url{http://eprints.soton.ac.uk/262371/}.
+
+\bibitem{Angulo10}
+K.~Martinez J.~Cupitt.
+\newblock Nucleus modelling and segmentation in cell clusters.
+\newblock {\em Mathematics in Industry}, 15:217 -- 222, May 2010.
+
+\bibitem{web:paper}
+J.~Puckey J.~Lehni.
+\newblock Paper.js homepage.
+\newblock \url{http://paperjs.org/about/}.
+\newblock Accessed: 28.08.2016.
+
+\bibitem{Lewis14}
+M.~Fowler J.Lewis.
+\newblock Microservices, a definition of this new architectural term.
+\newblock
+  \url{http://martinfowler.com/articles/microservices.html#footnote-etymology},
+  March 2014.
+\newblock Accessed: 12.08.2016.
+
+\bibitem{web:jpeg2000}
+JPEG.
+\newblock Overview of jpeg 2000.
+\newblock \url{https://jpeg.org/jpeg2000/}.
+\newblock Accessed: 18.08.2016.
+
+\bibitem{web:jqueryBS}
+jQuery Foundation.
+\newblock jquery browser support.
+\newblock \url{https://jquery.com/browser-support/}.
+\newblock Accessed: 28.08.2016.
+
+\bibitem{web:jquery}
+jQuery Foundation.
+\newblock jquery homepage.
+\newblock \url{https://jquery.com/}.
+\newblock Accessed: 28.08.2016.
+
+\bibitem{Kesteren14}
+A.~Kesteren.
+\newblock {\em Cross-Origin Resource Sharing: W3C Recommendation 16 January
+  2014}, January 2014.
+\newblock \url{https://www.w3.org/TR/cors/#cross-origin-request}.
+
+\bibitem{Kriesel07}
+D.~Kriesel.
+\newblock {\em A Brief Introduction to Neural Networks}, 2007.
+\newblock \url{http://www.dkriesel.com/en/science/neural_networks}.
+
+\bibitem{Liu12}
+D.~Liu.
+\newblock A review of computer vision segmentation algorithms.
+\newblock Technical report, University of Washington, 2012.
+\newblock \url{https://homes.cs.washington.edu/~bilge/remote.pdf}.
+
+\bibitem{Rabbani02}
+R.~Joshi M.~Rabbani.
+\newblock An overview of the jpeg2000 still image compression standard.
+\newblock {\em Signal Processing Image Communication}, 17(3), 2002.
+\newblock \url{https://www.csd.uoc.gr/~hy471/bibliography/jpeg2000.pdf}.
+
+\bibitem{web:mdn}
+Mozilla Developer~Network (MDN).
+\newblock Same-origin policy for file: Uris.
+\newblock
+  \url{https://developer.mozilla.org/en-US/docs/Same-origin_policy_for_file:_URIs}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{web:dzi}
+Microsoft.
+\newblock Deep zoom file format overview.
+\newblock
+  \url{https://msdn.microsoft.com/en-us/library/cc645077(v=vs.95).aspx}.
+\newblock Accessed: 17.08.2016.
+
+\bibitem{web:gmap}
+K.~Mulka.
+\newblock Gmap uploader tiler.
+\newblock \url{https://github.com/mulka/tiler}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{COA}
+College of~American~Pathologists.
+\newblock Sample emplyment contract for a pathologist.
+\newblock
+  \url{http://www.cap.org/ShowProperty?nodePath=/UCMCon/Contribution%20Folders/WebContent/pdf/pm-sample-employment-contract.pdf}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{web:openslide}
+OpenSlide.
+\newblock Openslide format documentation.
+\newblock \url{http://openslide.org/}.
+\newblock Accessed: 16.08.2016.
+
+\bibitem{Riggins15}
+J.~Riggins.
+\newblock Microservices architecture: The good, the bad, and what you could be
+  doing better.
+\newblock
+  \url{http://nordicapis.com/microservices-architecture-the-good-the-bad-and-what-you-could-be-doing-better/},
+  April 2015.
+\newblock Accessed: 12.08.2016.
+
+\bibitem{Rojas96}
+R.~Rojas.
+\newblock {\em Neural Networks - A Systematic Introduction}.
+\newblock Springer-Verlag, 1996.
+\newblock \url{https://page.mi.fu-berlin.de/rojas/neural/}.
+
+\bibitem{Rosenblatt58}
+F.~Rosenblatt.
+\newblock The perceptron: a probabilistic model for information storage and
+  organization in the brain.
+\newblock {\em Psychological Review}, 65(6), 1958.
+\newblock \url{http://www.ling.upenn.edu/courses/cogs501/Rosenblatt1958.pdf}.
+
+\bibitem{Shiffman12}
+D.~Shiffman.
+\newblock {\em The Nature of Code}.
+\newblock D. Shiffman, 2012.
+\newblock \url{http://natureofcode.com/book/chapter-10-neural-networks/}.
+
+\bibitem{Smith97}
+S.~Smith.
+\newblock {\em The Scientist and Engineer's Guide to Digital Signal
+  Processing}.
+\newblock California Technical Publishing, 1997.
+\newblock \url{http://www.dspguide.com/ch26/4.htm}.
+
+\bibitem{web:w3c}
+The~Internet Society.
+\newblock Hypertext transfer protocol -- http/1.1.
+\newblock \url{https://www.w3.org/Protocols/rfc2616/rfc2616.html}, 1999.
+\newblock Accessed: 26.08.2016.
+
+\bibitem{Strang03}
+G.~Strang.
+\newblock {\em Introduction to Linear Algebra}.
+\newblock Springer, 2003.
+
+\bibitem{USSanDiego}
+US~San Diego~Health System.
+\newblock Confidentiality agreement.
+\newblock
+  \url{https://health.ucsd.edu/about/volunteer/Documents/Confidentiality%20Agreement%20D214.pdf}.
+\newblock Accessed: 22.08.2016.
+
+\bibitem{Toussaint83}
+G.~Toussaint.
+\newblock Solving geometric problems with the rotating calipers.
+\newblock {\em Proceedings of IEEE MELECON'83}, May 1983.
+\newblock
+  \url{https://www.cs.swarthmore.edu/~adanner/cs97/s08/pdf/calipers.pdf}.
+
+\bibitem{Shereena14}
+J.~David V.~Shereena.
+\newblock Content based image retrieval: Classification using neural networks.
+\newblock {\em The International Journal of Multimedia \& Its Applications},
+  6(5), October 2014.
+
+\bibitem{Walt11}
+S.~van der Walt~et al.
+\newblock The numpy array: A structure for efficient numerical computation.
+\newblock {\em Computing in Science \& Engineering}, 13(2), March 2011.
+\newblock \url{http://ieeexplore.ieee.org/document/5725236/?arnumber=5725236}.
+
+\bibitem{Wolff16}
+E.~Wolff.
+\newblock {\em Microservices Primer}.
+\newblock innoQ, January 2016.
+\newblock \url{https://leanpub.com/microservices-primer/read}.
+
+\end{thebibliography}
