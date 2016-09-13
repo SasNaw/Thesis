@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  13 SEP 2016 15:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  13 SEP 2016 16:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -891,14 +891,14 @@ g>]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) h
 as been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.129 \newpage
+l.133 \newpage
                [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.136 \end{abstract}
+l.140 \end{abstract}
                      [1] (./document.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
@@ -2456,21 +2456,21 @@ einer an-deren Pr^^?ufungs-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
  [135
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: F7D888E65B20D7B71226A859FE07C3E5;5948.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
  12795 strings out of 493029
@@ -2505,7 +2505,7 @@ onts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (138 pages, 18193490 bytes).
+Output written on document.pdf (138 pages, 18194604 bytes).
 PDF statistics:
  3640 PDF objects out of 4296 (max. 8388607)
  3323 compressed objects within 34 object streams
