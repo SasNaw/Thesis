@@ -16,173 +16,173 @@
 \contentsline {subsubsection}{Trestle}{11}{section*.12}
 \contentsline {subsubsection}{Ventana}{11}{section*.13}
 \contentsline {subsection}{\numberline {2.1.3}Open Formats}{11}{subsection.2.1.3}
-\contentsline {subsubsection}{Deep Zoom Images}{12}{section*.14}
-\contentsline {subsubsection}{International Image Interoperability Framework}{13}{section*.16}
+\contentsline {subsubsection}{Deep Zoom Images}{11}{section*.14}
+\contentsline {subsubsection}{International Image Interoperability Framework}{12}{section*.16}
 \contentsline {subsubsection}{OpenStreetMap/Tiled Map Service}{17}{section*.22}
 \contentsline {subsubsection}{JPEG 2000}{17}{section*.23}
 \contentsline {subsubsection}{TIFF/BigTIFF}{18}{section*.24}
 \contentsline {section}{\numberline {2.2}Short Introduction to Neural Networks}{18}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Methods of Learning}{19}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Methods of Learning}{20}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}The Perceptron}{20}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Multi-layered Neural Networks}{21}{subsection.2.2.3}
 \contentsline {subsubsection}{Backpropagation}{22}{section*.31}
 \contentsline {section}{\numberline {2.3}Microservices}{23}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Definition}{23}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Advantages and Disadvantages}{25}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Conclusion}{25}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Conclusion}{26}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Process Chain}{26}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Conversion Service}{28}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Annotation Service}{29}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Tessellation Service}{29}{subsection.2.4.3}
-\contentsline {chapter}{\numberline {3}Conversion Service}{30}{chapter.3}
-\contentsline {section}{\numberline {3.1}Methodology}{30}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Selection of Image Format}{31}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Deepzoom.py}{32}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}VIPS}{34}{subsection.3.1.3}
-\contentsline {section}{\numberline {3.2}Implementation}{35}{section.3.2}
-\contentsline {section}{\numberline {3.3}Test}{37}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Setup}{37}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Result}{38}{subsection.3.3.2}
-\contentsline {chapter}{\numberline {4}Annotation Service}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}Objective of the Annotation Service}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Methodology}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}Parts of the Annotation Service}{40}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Annotation Service Server}{41}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Annotation Service Viewer}{43}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Annotation Service Server Implementation}{45}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Flask}{46}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}OpenSlide Python}{48}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Structure and Setup}{49}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}RESTful API}{52}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Annotation Service Viewer Implementation}{54}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Frameworks}{54}{subsection.4.5.1}
-\contentsline {subsubsection}{OpenSeadragon}{54}{section*.51}
-\contentsline {subsubsection}{Paper.js}{57}{section*.53}
-\contentsline {subsection}{\numberline {4.5.2}Definition: Region}{58}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}GUI}{60}{subsection.4.5.3}
-\contentsline {chapter}{\numberline {5}Tessellation Service}{62}{chapter.5}
-\contentsline {section}{\numberline {5.1}Objective of the Tessellation Service}{62}{section.5.1}
-\contentsline {section}{\numberline {5.2}Methodology}{62}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementation}{65}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Execution}{65}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Extraction process}{66}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Extraction without Tessellation}{69}{subsection.5.3.3}
-\contentsline {subsubsection}{WSI}{70}{section*.63}
-\contentsline {subsubsection}{DZI}{71}{section*.65}
-\contentsline {subsection}{\numberline {5.3.4}Extraction with Tessellation}{72}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Test}{73}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Setup}{73}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Result}{75}{subsection.5.4.2}
-\contentsline {chapter}{\numberline {6}Conclusion}{79}{chapter.6}
-\contentsline {section}{\numberline {6.1}Results}{79}{section.6.1}
-\contentsline {section}{\numberline {6.2}Conclusion}{80}{section.6.2}
-\contentsline {section}{\numberline {6.3}Future work}{80}{section.6.3}
-\contentsline {chapter}{Appendices}{82}{section*.75}
-\contentsline {chapter}{\numberline {A}Test Data}{83}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}Aperio (.svs)}{83}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{84}{section.1.A.2}
-\contentsline {section}{\numberline {A.3}Hamamatsu (.ndpi)}{84}{section.1.A.3}
-\contentsline {section}{\numberline {A.4}Hamamatsu (.vms)}{84}{section.1.A.4}
-\contentsline {section}{\numberline {A.5}Leica (.scn)}{85}{section.1.A.5}
-\contentsline {section}{\numberline {A.6}Trestle (.tiff)}{85}{section.1.A.6}
-\contentsline {section}{\numberline {A.7}Ventana (.bif)}{85}{section.1.A.7}
-\contentsline {section}{\numberline {A.8}Mirax (.mrxs)}{86}{section.1.A.8}
-\contentsline {chapter}{\numberline {B}Annotation Service Documentation}{87}{Appendix.1.B}
-\contentsline {section}{\numberline {B.1}Annotation Service Server}{87}{section.1.B.1}
-\contentsline {subsubsection}{getDictionary()}{87}{section*.84}
-\contentsline {subsubsection}{index{\textunderscore }dzi()}{88}{section*.85}
-\contentsline {subsubsection}{index{\textunderscore }wsi()}{88}{section*.86}
-\contentsline {subsubsection}{dzi(slug)}{89}{section*.87}
-\contentsline {subsubsection}{tile(slug, level, col, row, format)}{90}{section*.88}
-\contentsline {subsubsection}{saveJson()}{91}{section*.89}
-\contentsline {subsubsection}{loadJson()}{91}{section*.90}
-\contentsline {subsubsection}{createDictionary()}{91}{section*.91}
-\contentsline {subsubsection}{loadDictionary(dictionary)}{92}{section*.92}
-\contentsline {subsubsection}{getDictionaries()}{92}{section*.93}
-\contentsline {subsubsection}{switchDictionary()}{93}{section*.94}
-\contentsline {subsubsection}{runSegmentation()}{93}{section*.95}
-\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{94}{section.1.B.2}
-\contentsline {subsection}{\numberline {B.2.1}Initialization functions}{94}{subsection.1.B.2.1}
-\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp)}{94}{section*.96}
-\contentsline {subsubsection}{function initAnnotationService()}{95}{section*.98}
-\contentsline {subsubsection}{function initAnnotationOverlay()}{95}{section*.100}
-\contentsline {subsection}{\numberline {B.2.2}Data management functions}{96}{subsection.1.B.2.2}
-\contentsline {subsubsection}{function saveConfig()}{96}{section*.101}
-\contentsline {subsubsection}{function loadConfiguration()}{96}{section*.103}
-\contentsline {subsubsection}{function getDictionaryList()}{96}{section*.105}
-\contentsline {subsubsection}{function saveDictionary()}{96}{section*.106}
-\contentsline {subsubsection}{function loadDictionary(path)}{97}{section*.108}
-\contentsline {subsubsection}{function saveJson(json, filePath)}{97}{section*.110}
-\contentsline {subsubsection}{function saveRegions()}{97}{section*.111}
-\contentsline {subsubsection}{function loadJson()}{98}{section*.113}
-\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{98}{section*.115}
-\contentsline {subsection}{\numberline {B.2.3}GUI functions}{99}{subsection.1.B.2.3}
-\contentsline {subsubsection}{function selectTool()}{99}{section*.117}
-\contentsline {subsubsection}{function transform()}{99}{section*.118}
-\contentsline {subsubsection}{function appendLabelsToList()}{99}{section*.119}
-\contentsline {subsubsection}{function appendLabelToList(label)}{99}{section*.121}
-\contentsline {subsubsection}{function selectNextLabel()}{100}{section*.123}
-\contentsline {subsubsection}{function selectLabel(el)}{100}{section*.125}
-\contentsline {subsubsection}{function newLabel()}{100}{section*.126}
-\contentsline {subsubsection}{function toggleDictPicker()}{101}{section*.128}
-\contentsline {subsubsection}{function dictListClick(index)}{101}{section*.129}
-\contentsline {subsubsection}{function annotationStyle(label)}{101}{section*.131}
-\contentsline {subsubsection}{function help(show)}{102}{section*.132}
-\contentsline {subsubsection}{function toggleMenu()}{102}{section*.133}
-\contentsline {subsection}{\numberline {B.2.4}Region functions}{102}{subsection.1.B.2.4}
-\contentsline {subsubsection}{function newRegion(arg)}{102}{section*.134}
-\contentsline {subsubsection}{function selectRegion(reg)}{102}{section*.135}
-\contentsline {subsubsection}{function deselectRegion(reg)}{102}{section*.136}
-\contentsline {subsubsection}{function findContextRegion(region1)}{102}{section*.137}
-\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{103}{section*.139}
-\contentsline {subsubsection}{function removeRegion(reg)}{103}{section*.140}
-\contentsline {subsubsection}{function findRegionByUID(uid)}{103}{section*.141}
-\contentsline {subsubsection}{function toggleRegions(uid)}{103}{section*.142}
-\contentsline {subsubsection}{function toggleAllRegions()}{104}{section*.144}
-\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{104}{subsection.1.B.2.5}
-\contentsline {subsubsection}{function singleClickOnLabel(event)}{104}{section*.145}
-\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{104}{section*.147}
-\contentsline {subsubsection}{function addPoi(event)}{105}{section*.148}
-\contentsline {subsection}{\numberline {B.2.6}Internal functions}{105}{subsection.1.B.2.6}
-\contentsline {subsubsection}{UniqueID()}{105}{section*.150}
-\contentsline {subsubsection}{function regionHashColor(name)}{105}{section*.151}
-\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{106}{section*.152}
-\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{106}{section*.153}
-\contentsline {subsubsection}{function mouseDown(x,y)}{106}{section*.154}
-\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{107}{section*.156}
-\contentsline {subsubsection}{function mouseUp()}{108}{section*.158}
-\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{108}{section*.159}
-\contentsline {subsubsection}{function getDistance()}{108}{section*.160}
-\contentsline {subsubsection}{function clearToolSelection()}{108}{section*.161}
-\contentsline {subsection}{\numberline {B.2.7}Key listener}{108}{subsection.1.B.2.7}
-\contentsline {subsubsection}{\$(document).keydown(function(e))}{108}{section*.162}
-\contentsline {subsubsection}{\$(document).keyup(function(e))}{109}{section*.164}
-\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{109}{section*.166}
-\contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{110}{Appendix.1.C}
-\contentsline {section}{\numberline {C.1}Main}{110}{section.1.C.1}
-\contentsline {subsubsection}{run(input)}{110}{section*.168}
-\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{110}{section*.169}
-\contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{111}{section*.170}
-\contentsline {section}{\numberline {C.2}WSI}{111}{section.1.C.2}
-\contentsline {subsubsection}{wsi(file)}{111}{section*.171}
-\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{112}{section*.172}
-\contentsline {subsubsection}{is{\textunderscore }supported(file)}{114}{section*.173}
-\contentsline {section}{\numberline {C.3}DZI}{114}{section.1.C.3}
-\contentsline {subsubsection}{dzi(file)}{114}{section*.174}
-\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{115}{section*.175}
-\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{115}{section*.176}
-\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{116}{section*.177}
-\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{116}{section*.178}
-\contentsline {section}{\numberline {C.4}Utility}{117}{section.1.C.4}
-\contentsline {subsubsection}{read{\textunderscore }json(path)}{117}{section*.179}
-\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{117}{section*.180}
-\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{118}{section*.181}
-\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{119}{section*.182}
-\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{119}{section*.183}
-\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{120}{section*.184}
-\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{122}{section*.185}
-\contentsline {chapter}{Bibliography}{123}{chapter*.186}
-\contentsline {chapter}{List of Figures}{130}{chapter*.187}
-\contentsline {chapter}{List of Tables}{132}{chapter*.188}
-\contentsline {chapter}{Nomenclature}{134}{chapter*.189}
-\contentsline {chapter}{Statutory declaration}{135}{chapter*.190}
+\contentsline {chapter}{\numberline {3}Conversion Service}{31}{chapter.3}
+\contentsline {section}{\numberline {3.1}Methodology}{31}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Selection of Image Format}{32}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Deepzoom.py}{33}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}VIPS}{35}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Implementation}{36}{section.3.2}
+\contentsline {section}{\numberline {3.3}Test}{38}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Setup}{38}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Result}{39}{subsection.3.3.2}
+\contentsline {chapter}{\numberline {4}Annotation Service}{40}{chapter.4}
+\contentsline {section}{\numberline {4.1}Objective of the Annotation Service}{40}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methodology}{40}{section.4.2}
+\contentsline {section}{\numberline {4.3}Parts of the Annotation Service}{42}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Annotation Service Server}{42}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Annotation Service Viewer}{44}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Annotation Service Server Implementation}{46}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Flask}{47}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}OpenSlide Python}{49}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Structure and Setup}{50}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}RESTful API}{53}{subsection.4.4.4}
+\contentsline {section}{\numberline {4.5}Annotation Service Viewer Implementation}{55}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Frameworks}{55}{subsection.4.5.1}
+\contentsline {subsubsection}{OpenSeadragon}{55}{section*.51}
+\contentsline {subsubsection}{Paper.js}{58}{section*.53}
+\contentsline {subsection}{\numberline {4.5.2}Definition: Region}{59}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}GUI}{61}{subsection.4.5.3}
+\contentsline {chapter}{\numberline {5}Tessellation Service}{63}{chapter.5}
+\contentsline {section}{\numberline {5.1}Objective of the Tessellation Service}{63}{section.5.1}
+\contentsline {section}{\numberline {5.2}Methodology}{63}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementation}{66}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Execution}{66}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Extraction process}{67}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Extraction without Tessellation}{70}{subsection.5.3.3}
+\contentsline {subsubsection}{WSI}{71}{section*.63}
+\contentsline {subsubsection}{DZI}{72}{section*.65}
+\contentsline {subsection}{\numberline {5.3.4}Extraction with Tessellation}{73}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Test}{74}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Setup}{74}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Result}{76}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {6}Conclusion}{80}{chapter.6}
+\contentsline {section}{\numberline {6.1}Results}{80}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{81}{section.6.2}
+\contentsline {section}{\numberline {6.3}Future work}{81}{section.6.3}
+\contentsline {chapter}{Appendices}{83}{section*.75}
+\contentsline {chapter}{\numberline {A}Test Data}{84}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}Aperio (.svs)}{84}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}Generic Tiled tiff (.tiff)}{85}{section.1.A.2}
+\contentsline {section}{\numberline {A.3}Hamamatsu (.ndpi)}{85}{section.1.A.3}
+\contentsline {section}{\numberline {A.4}Hamamatsu (.vms)}{85}{section.1.A.4}
+\contentsline {section}{\numberline {A.5}Leica (.scn)}{86}{section.1.A.5}
+\contentsline {section}{\numberline {A.6}Trestle (.tiff)}{86}{section.1.A.6}
+\contentsline {section}{\numberline {A.7}Ventana (.bif)}{86}{section.1.A.7}
+\contentsline {section}{\numberline {A.8}Mirax (.mrxs)}{87}{section.1.A.8}
+\contentsline {chapter}{\numberline {B}Annotation Service Documentation}{88}{Appendix.1.B}
+\contentsline {section}{\numberline {B.1}Annotation Service Server}{88}{section.1.B.1}
+\contentsline {subsubsection}{getDictionary()}{88}{section*.84}
+\contentsline {subsubsection}{index{\textunderscore }dzi()}{89}{section*.85}
+\contentsline {subsubsection}{index{\textunderscore }wsi()}{89}{section*.86}
+\contentsline {subsubsection}{dzi(slug)}{90}{section*.87}
+\contentsline {subsubsection}{tile(slug, level, col, row, format)}{91}{section*.88}
+\contentsline {subsubsection}{saveJson()}{92}{section*.89}
+\contentsline {subsubsection}{loadJson()}{92}{section*.90}
+\contentsline {subsubsection}{createDictionary()}{92}{section*.91}
+\contentsline {subsubsection}{loadDictionary(dictionary)}{93}{section*.92}
+\contentsline {subsubsection}{getDictionaries()}{93}{section*.93}
+\contentsline {subsubsection}{switchDictionary()}{94}{section*.94}
+\contentsline {subsubsection}{runSegmentation()}{94}{section*.95}
+\contentsline {section}{\numberline {B.2}Annotation Service Viewer}{95}{section.1.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Initialization functions}{95}{subsection.1.B.2.1}
+\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp)}{95}{section*.96}
+\contentsline {subsubsection}{function initAnnotationService()}{96}{section*.98}
+\contentsline {subsubsection}{function initAnnotationOverlay()}{96}{section*.100}
+\contentsline {subsection}{\numberline {B.2.2}Data management functions}{97}{subsection.1.B.2.2}
+\contentsline {subsubsection}{function saveConfig()}{97}{section*.101}
+\contentsline {subsubsection}{function loadConfiguration()}{97}{section*.103}
+\contentsline {subsubsection}{function getDictionaryList()}{97}{section*.105}
+\contentsline {subsubsection}{function saveDictionary()}{97}{section*.106}
+\contentsline {subsubsection}{function loadDictionary(path)}{98}{section*.108}
+\contentsline {subsubsection}{function saveJson(json, filePath)}{98}{section*.110}
+\contentsline {subsubsection}{function saveRegions()}{98}{section*.111}
+\contentsline {subsubsection}{function loadJson()}{99}{section*.113}
+\contentsline {subsubsection}{function createNewDictionary(isCancelable)}{99}{section*.115}
+\contentsline {subsection}{\numberline {B.2.3}GUI functions}{100}{subsection.1.B.2.3}
+\contentsline {subsubsection}{function selectTool()}{100}{section*.117}
+\contentsline {subsubsection}{function transform()}{100}{section*.118}
+\contentsline {subsubsection}{function appendLabelsToList()}{100}{section*.119}
+\contentsline {subsubsection}{function appendLabelToList(label)}{100}{section*.121}
+\contentsline {subsubsection}{function selectNextLabel()}{101}{section*.123}
+\contentsline {subsubsection}{function selectLabel(el)}{101}{section*.125}
+\contentsline {subsubsection}{function newLabel()}{101}{section*.126}
+\contentsline {subsubsection}{function toggleDictPicker()}{102}{section*.128}
+\contentsline {subsubsection}{function dictListClick(index)}{102}{section*.129}
+\contentsline {subsubsection}{function annotationStyle(label)}{102}{section*.131}
+\contentsline {subsubsection}{function help(show)}{103}{section*.132}
+\contentsline {subsubsection}{function toggleMenu()}{103}{section*.133}
+\contentsline {subsection}{\numberline {B.2.4}Region functions}{103}{subsection.1.B.2.4}
+\contentsline {subsubsection}{function newRegion(arg)}{103}{section*.134}
+\contentsline {subsubsection}{function selectRegion(reg)}{103}{section*.135}
+\contentsline {subsubsection}{function deselectRegion(reg)}{103}{section*.136}
+\contentsline {subsubsection}{function findContextRegion(region1)}{103}{section*.137}
+\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{104}{section*.139}
+\contentsline {subsubsection}{function removeRegion(reg)}{104}{section*.140}
+\contentsline {subsubsection}{function findRegionByUID(uid)}{104}{section*.141}
+\contentsline {subsubsection}{function toggleRegions(uid)}{104}{section*.142}
+\contentsline {subsubsection}{function toggleAllRegions()}{105}{section*.144}
+\contentsline {subsection}{\numberline {B.2.5}Interaction functions}{105}{subsection.1.B.2.5}
+\contentsline {subsubsection}{function singleClickOnLabel(event)}{105}{section*.145}
+\contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{105}{section*.147}
+\contentsline {subsubsection}{function addPoi(event)}{106}{section*.148}
+\contentsline {subsection}{\numberline {B.2.6}Internal functions}{106}{subsection.1.B.2.6}
+\contentsline {subsubsection}{UniqueID()}{106}{section*.150}
+\contentsline {subsubsection}{function regionHashColor(name)}{106}{section*.151}
+\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{107}{section*.152}
+\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{107}{section*.153}
+\contentsline {subsubsection}{function mouseDown(x,y)}{107}{section*.154}
+\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{108}{section*.156}
+\contentsline {subsubsection}{function mouseUp()}{109}{section*.158}
+\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{109}{section*.159}
+\contentsline {subsubsection}{function getDistance()}{109}{section*.160}
+\contentsline {subsubsection}{function clearToolSelection()}{109}{section*.161}
+\contentsline {subsection}{\numberline {B.2.7}Key listener}{109}{subsection.1.B.2.7}
+\contentsline {subsubsection}{\$(document).keydown(function(e))}{109}{section*.162}
+\contentsline {subsubsection}{\$(document).keyup(function(e))}{110}{section*.164}
+\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{110}{section*.166}
+\contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{111}{Appendix.1.C}
+\contentsline {section}{\numberline {C.1}Main}{111}{section.1.C.1}
+\contentsline {subsubsection}{run(input)}{111}{section*.168}
+\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{111}{section*.169}
+\contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{112}{section*.170}
+\contentsline {section}{\numberline {C.2}WSI}{112}{section.1.C.2}
+\contentsline {subsubsection}{wsi(file)}{112}{section*.171}
+\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{113}{section*.172}
+\contentsline {subsubsection}{is{\textunderscore }supported(file)}{115}{section*.173}
+\contentsline {section}{\numberline {C.3}DZI}{115}{section.1.C.3}
+\contentsline {subsubsection}{dzi(file)}{115}{section*.174}
+\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{116}{section*.175}
+\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{116}{section*.176}
+\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{117}{section*.177}
+\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{117}{section*.178}
+\contentsline {section}{\numberline {C.4}Utility}{118}{section.1.C.4}
+\contentsline {subsubsection}{read{\textunderscore }json(path)}{118}{section*.179}
+\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{118}{section*.180}
+\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{119}{section*.181}
+\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{120}{section*.182}
+\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{120}{section*.183}
+\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{121}{section*.184}
+\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{123}{section*.185}
+\contentsline {chapter}{Bibliography}{124}{chapter*.186}
+\contentsline {chapter}{List of Figures}{131}{chapter*.187}
+\contentsline {chapter}{List of Tables}{133}{chapter*.188}
+\contentsline {chapter}{Nomenclature}{135}{chapter*.189}
+\contentsline {chapter}{Statutory declaration}{136}{chapter*.190}
