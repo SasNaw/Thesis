@@ -128,7 +128,11 @@ Hello, this is the preface
 
 \newpage
 \begin{abstract}
-This is the abstract.
+The digitalization of pathologic tissue samples (so called whole slide images) enables the use of image processing and analysis techniques to support pathology experts in their work. The area of digital pathology can greatly benefit from introducing neural networks. Neural networks have proven to be ideally suited for image classification and pattern recognition tasks. In order to be used efficiently, they need training. To do so, training samples and ground truth are needed. Unfortunately, context specific training samples are hard to come by in this medical context, thus the needed samples must be created. One way to create training samples are image annotations. 
+
+The lack of an official standard resulted in a number of proprietary solutions and image formats by different vendors, including viewers and annotation tools. Those tools only work on specific platforms and formats. Additionally, most of those tools are not specialized in annotating images and include many other functions, making them difficult to use. This makes the annotation of whole slide images difficult and cumbersome.
+
+Therefore, the goal of this thesis is to introduce novel, lightweight open source annotation tools for whole slide images that enable deep learning and pathology experts to cooperate in creating training samples by annotating regions of interest in whole slide images, regardless of platform and format, in a fast and easy manner. Additionally, the made annotations will be extracted into regular image (JPEG, PNG) and text (TXT) files, to ensure easy-to-use and non-proprietary training samples.
 \end{abstract}
 \newpage
 
