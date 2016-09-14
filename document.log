@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  14 SEP 2016 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  14 SEP 2016 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1593,250 +1593,225 @@ Overfull \vbox (9.57343pt too high) has occurred while \output is active []
 [78 <./img/ts_test/2_orig.jpeg> <./img/ts_test/2_r256.jpeg> <./img/ts_test/2_r1
 28.jpeg> <./img/ts_test/2_stitched.jpeg> <./img/ts_test/2_g.jpeg>]
 Chapter 6.
-
-Overfull \hbox (6.97525pt too wide) in paragraph at lines 19--19
-[]|\OT1/cmr/m/n/10 ConversionService.py| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-[]|[]$\OT1/cmtt/l/n/10 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
-\OT1/cmtt/l/n/10 com / SasNaw /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
-[]|[]$\OT1/cmtt/l/n/10 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
-\OT1/cmtt/l/n/10 com / SasNaw /
- []
-
-
-Overfull \hbox (6.97525pt too wide) in paragraph at lines 21--21
-[]|\OT1/cmr/m/n/10 ConversionService.py| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-[]|[]$\OT1/cmtt/l/n/10 https : / / github .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--21
-\OT1/cmtt/l/n/10 com / SasNaw /
- []
-
-
-Overfull \hbox (3.75388pt too wide) in paragraph at lines 16--23
- [] 
- []
-
 [79
 
-] [80]) [81] [82
+]) [80] [81] [82
 
 
 ] (./tex/appA.tex
 Appendix A.
 
-Underfull \hbox (badness 1314) in paragraph at lines 26--26
-[]|\OT1/cmr/m/n/10 Export of CMU-1.svs, bright-
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]|[]$\OT1/cmtt/l/n/10 https : / / github . com / SasNaw /
  []
 
 
-Underfull \hbox (badness 4144) in paragraph at lines 27--27
-[]|\OT1/cmr/m/n/10 Exported re-gion from CMU-
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|[]$\OT1/cmtt/l/n/10 https : / / github . com / SasNaw /
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 23--34
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]|[]$\OT1/cmtt/l/n/10 https : / / github . com / SasNaw /
+ []
+
+
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 10--17
  [] 
- []
-
-
-Underfull \hbox (badness 2384) in paragraph at lines 34--34
-[]\OT1/cmr/m/n/10 Table A.1: |Ape-rio data set (source: []$\OT1/cmtt/l/n/10 htt
-p : / / openslide . cs . cmu . edu /
  []
 
 [83
 
 ]
-Underfull \hbox (badness 5490) in paragraph at lines 46--46
+Underfull \hbox (badness 1314) in paragraph at lines 44--44
+[]|\OT1/cmr/m/n/10 Export of CMU-1.svs, bright-
+ []
+
+
+Underfull \hbox (badness 4144) in paragraph at lines 45--45
+[]|\OT1/cmr/m/n/10 Exported re-gion from CMU-
+ []
+
+
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 41--52
+ [] 
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 52--52
+[]\OT1/cmr/m/n/10 Table A.2: |Ape-rio data set (source: []$\OT1/cmtt/l/n/10 htt
+p : / / openslide . cs . cmu . edu /
+ []
+
+
+Underfull \hbox (badness 5490) in paragraph at lines 64--64
 []|\OT1/cmr/m/n/10 Conversion of CMU-1.svs to
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 43--48
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 61--66
  [] 
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 60--60
+Underfull \hbox (badness 2189) in paragraph at lines 79--79
 []|\OT1/cmr/m/n/10 Small scan with valid JPEG
  []
 
 
-Underfull \hbox (badness 3000) in paragraph at lines 63--63
+Underfull \hbox (badness 3000) in paragraph at lines 82--82
 []|\OT1/cmr/m/n/10 H&E stain, bright-field, circa
  []
 
 
-Underfull \hbox (badness 2181) in paragraph at lines 64--64
+Underfull \hbox (badness 2181) in paragraph at lines 83--83
 []|\OT1/cmr/m/n/10 Ki-67 stain, bright-field, circa
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 57--67
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 76--86
  [] 
  []
 
 [84]
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 76--83
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 95--102
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 114--114
 []|\OT1/cmr/m/n/10 Brightfield, sin-gle ROI,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--96
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
 []|\OT1/cmr/m/n/10 Mouse kid-ney, H&E stain,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--97
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 []|\OT1/cmr/m/n/10 Mouse kid-ney, H&E stain,
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 92--100
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 111--119
  [] 
  []
 
 [85]
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 109--116
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 128--135
  [] 
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 116--116
-[]\OT1/cmr/m/n/10 Table A.6: |Tres-tle data set (source: []$\OT1/cmtt/l/n/10 ht
-tp : / / openslide . cs . cmu . edu /
- []
-
-
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 124--130
- [] 
- []
-
-
-Underfull \hbox (badness 2318) in paragraph at lines 130--130
+Underfull \hbox (badness 2318) in paragraph at lines 135--135
 []\OT1/cmr/m/n/10 Table A.7: |Tres-tle data set (source: []$\OT1/cmtt/l/n/10 ht
 tp : / / openslide . cs . cmu . edu /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 143--149
+ [] 
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 149--149
+[]\OT1/cmr/m/n/10 Table A.8: |Tres-tle data set (source: []$\OT1/cmtt/l/n/10 ht
+tp : / / openslide . cs . cmu . edu /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 []|\OT1/cmr/m/n/10 Export of CMU-1.mrxs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 \OT1/cmr/m/n/10 with over-laps re-solved,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
 \OT1/cmr/m/n/10 bright-field, JPEG, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 []|\OT1/cmr/m/n/10 Quick save of CMU-1.mrxs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 \OT1/cmr/m/n/10 at 1/16 res-o-lu-tion (mul-ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 \OT1/cmr/m/n/10 ple po-si-tions per im-age),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--142
+Underfull \hbox (badness 10000) in paragraph at lines 161--161
 \OT1/cmr/m/n/10 bright-field, JPEG, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--143
+Underfull \hbox (badness 10000) in paragraph at lines 162--162
 \OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 163--163
 []|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--145
+Underfull \hbox (badness 10000) in paragraph at lines 164--164
 []|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--146
+Underfull \hbox (badness 10000) in paragraph at lines 165--165
 []|\OT1/cmr/m/n/10 Brightfield, JPEG, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--147
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
 []|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--148
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
 []|\OT1/cmr/m/n/10 Mirax2-Fluorescence-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 \OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
 \OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
 \OT1/cmr/m/n/10 CUR-RENT[]SLIDE[]VERSION
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
 []|\OT1/cmr/m/n/10 Brightfield, BMP, CUR-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--153
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
 []|\OT1/cmr/m/n/10 Brightfield, PNG, CUR-
  []
 
 
-Overfull \hbox (5.58028pt too wide) in paragraph at lines 138--155
+Overfull \hbox (5.58028pt too wide) in paragraph at lines 157--174
  [] 
  []
 
@@ -1851,19 +1826,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
-<img/ch_init.png, id=2162, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=2166, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 327.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
-[95] <img/ch_initAS.png, id=2188, 478.78876pt x 243.91125pt>
+[95] <img/ch_initAS.png, id=2192, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 347.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=2190, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=2194, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
@@ -1875,7 +1850,7 @@ File: img/ch_init.png Graphic file (type png)
 <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 377.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
- <img/ch_saveDict.png, id=2200, 637.38126pt x 83.31125pt>
+ <img/ch_saveDict.png, id=2204, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
@@ -1886,7 +1861,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
-<img/ch_loadDict.png, id=2213, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=2217, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
@@ -1897,14 +1872,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
-<img/ch_saveRegs.png, id=2215, 575.14874pt x 86.3225pt>
+<img/ch_saveRegs.png, id=2219, 575.14874pt x 86.3225pt>
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
 Package pdftex.def Info: img/ch_saveRegs.png used on input line 428.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
  [98 <./img/ch_saveDict.png> <./img/ch_loadDict.png>]
-<img/ch_loadJson.png, id=2226, 536.0025pt x 71.26625pt>
+<img/ch_loadJson.png, id=2230, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
@@ -1915,7 +1890,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
-<img/ch_createDict.png, id=2228, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=2232, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
@@ -1923,7 +1898,7 @@ Package pdftex.def Info: img/ch_createDict.png used on input line 457.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
  [99 <./img/ch_saveRegs.png> <./img/ch_loadJson.png> <./img/ch_createDict.png>]
 
-<img/ch_appendLabels.png, id=2238, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=2242, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -1934,14 +1909,14 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 479--480
  [] 
  []
 
-<img/ch_appendLabel.png, id=2240, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=2244, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 494.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
  [100 <./img/ch_appendLabels.png>]
-<img/ch_selectNext.png, id=2253, 593.21625pt x 82.3075pt>
+<img/ch_selectNext.png, id=2258, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
@@ -1952,7 +1927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 516--518
 
  []
 
-<img/ch_newLabel.png, id=2255, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=2260, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
@@ -1963,7 +1938,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
-<img/ch_selectDict.png, id=2267, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=2271, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -1999,7 +1974,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--597
 
  []
 
-<img/ch_findContext.png, id=2277, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2281, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
@@ -2025,7 +2000,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 632--634
 
  []
 
-<img/ch_toggleRegions.png, id=2290, 601.24625pt x 66.2475pt>
+<img/ch_toggleRegions.png, id=2294, 601.24625pt x 66.2475pt>
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
@@ -2036,7 +2011,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 652--654
 
  []
 
-<img/ch_singleClickLabel.png, id=2301, 720.6925pt x 260.975pt>
+<img/ch_singleClickLabel.png, id=2305, 720.6925pt x 260.975pt>
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
@@ -2064,7 +2039,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--683
  []
 
 [105 <./img/ch_singleClickLabel.png>]
-<img/ch_addPoi.png, id=2311, 574.145pt x 398.48875pt>
+<img/ch_addPoi.png, id=2315, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 690.
@@ -2095,7 +2070,7 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 729--730
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2322, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2326, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
@@ -2112,7 +2087,7 @@ Overfull \hbox (6.9162pt too wide) in paragraph at lines 752--754
 r-ac-tion that hap-pens with a pushed
  []
 
-<img/ch_mouseDrag.png, id=2334, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2338, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
@@ -2129,13 +2104,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 802--804
  []
 
 [109 <./img/ch_mouseDrag.png>]
-<img/ch_keyDown.png, id=2356, 582.175pt x 71.26625pt>
+<img/ch_keyDown.png, id=2360, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 807.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2358, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2362, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 819.
@@ -2145,7 +2120,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--831
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2360, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2364, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
@@ -2403,13 +2378,13 @@ Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  []
 
 
-Overfull \hbox (18.47083pt too wide) in paragraph at lines 31--31
+Overfull \hbox (18.47083pt too wide) in paragraph at lines 32--32
  [][] [][]\OT1/cmr/m/n/10 Aperio data set (source: []$\OT1/cmtt/l/n/10 http : /
  / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (0.74934pt too wide) in paragraph at lines 33--33
+Overfull \hbox (0.74934pt too wide) in paragraph at lines 34--34
  [][] [][]\OT1/cmr/m/n/10 Hamamatsu data set (.ndpi, source: []$\OT1/cmtt/l/n/1
 0 http : / / openslide . cs . cmu . 
  []
@@ -2417,15 +2392,9 @@ Overfull \hbox (0.74934pt too wide) in paragraph at lines 33--33
 [133
 
 ]
-Overfull \hbox (11.91524pt too wide) in paragraph at lines 35--35
+Overfull \hbox (11.91524pt too wide) in paragraph at lines 36--36
  [][] [][]\OT1/cmr/m/n/10 Leica data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
- []
-
-
-Overfull \hbox (18.80411pt too wide) in paragraph at lines 36--36
- [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
-/ / openslide . cs . cmu . edu / download / 
  []
 
 
@@ -2435,7 +2404,13 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 37--37
  []
 
 
-Overfull \hbox (15.1375pt too wide) in paragraph at lines 38--38
+Overfull \hbox (18.80411pt too wide) in paragraph at lines 38--38
+ [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
+/ / openslide . cs . cmu . edu / download / 
+ []
+
+
+Overfull \hbox (15.1375pt too wide) in paragraph at lines 39--39
  [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
  []
@@ -2462,7 +2437,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: C5163A9B53EAEB3E16A32CD65DF349E8;6155.
+(rerunfilecheck)             Checksum: 994A92DA2D65036D61904363F76416D1;6157.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2470,10 +2445,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 12755 strings out of 493029
- 183778 string characters out of 6136235
- 513832 words of memory out of 5000000
- 14664 multiletter control sequences out of 15000+600000
+ 12758 strings out of 493029
+ 183818 string characters out of 6136235
+ 513973 words of memory out of 5000000
+ 14666 multiletter control sequences out of 15000+600000
  14035 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,51p,1256b,2013s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2501,10 +2476,10 @@ onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (139 pages, 18094800 bytes).
+Output written on document.pdf (139 pages, 18096051 bytes).
 PDF statistics:
- 3538 PDF objects out of 3580 (max. 8388607)
- 3222 compressed objects within 33 object streams
- 1338 named destinations out of 1440 (max. 500000)
+ 3544 PDF objects out of 3580 (max. 8388607)
+ 3228 compressed objects within 33 object streams
+ 1339 named destinations out of 1440 (max. 500000)
  1087 words of extra memory for PDF output out of 10000 (max. 10000000)
 

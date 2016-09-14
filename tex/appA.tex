@@ -1,11 +1,29 @@
 \chapter{Test Data}
 
-\section{Files on CD}
+\section{Files on disc}
 \label{secA_cd}
-All files of the AS are openly available in its GitHub repository. Additionally, a manual with installation and usage instructions can be found there. The repository can be found at:
 
-\url{https://github.com/SasNaw/AnnotationService}.
+A disc is included at the end of this thesis. This disc contains the 3 introduced services from the chapters \ref{sec3_cs} (CS), \ref{sec4_as} (AS) and \ref{sec5} (TS). Alternatively, they are available at their corresponding GitHub repositories (see tab. \ref{tabA_paths}).
 
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{1.5cm} | p{4.5cm} | p{5cm} |}
+			\hline
+			\textbf{service} & \textbf{disc path} & \textbf{GitHub repository} \\ \hline
+			CS & /services/ConversionService & \url{https://github.com/SasNaw/ConversionService} \\ \hline
+			AS & /services/AnnotationService & \url{https://github.com/SasNaw/AnnotationService} \\ \hline
+			TS & /services/TessellationService & \url{https://github.com/SasNaw/TessellationService}  \\ \hline
+		\end{tabular}
+		\caption{Services with their disc paths and repository URLs}
+		\label{tabA_paths}
+	\end{center}
+\end{table}
+
+All tools presented in this thesis are open source and their use, further development and diversification are highly encouraged.
+
+The disc also contains 2 exemplary WSI files (CMU-1.svs from Aperio, see \ref{sec_A1} and CMU-3.ndpi from Hamamatsu, \ref{secA_Hama}). Due to the limited storage space available on the medium and the size of most WSI files, only 2 could be provided on disc. They can be found under \emph{/testdata/wsi/} and are usable for all 3 services.
+
+The JSON save file from \ref{sec5_test} can also be found on the disc, at \emph{/testdata/json/}.
 
 
 
@@ -51,6 +69,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 
 
 \subsection{Hamamatsu (.ndpi)}
+\label{secA_Hama}
 
 \begin{table}[H]
 	\begin{center}
