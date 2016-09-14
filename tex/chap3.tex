@@ -69,7 +69,7 @@ Since the CS should only consist of brief user interaction and be as automated a
 
 One of the reasons not to use proprietary formats was the limitation to only certain operating systems, eliminating Windows-only tools. Those are \emph{Image Composite Editor} and \emph{DeepZoomTools.dll}.
 
-Furthermore, reading the proprietary formats is a highly specialized task, eliminating most of the leftover choices: \emph{deepzoom}\cite{web:deepzoom}, \emph{DZT}\cite{web:dzt}, \emph{sharp}\cite{web:sharp}, \emph{MagickSlicer}, \emph{Node.js Deep Zoom Tools}\footnote{MagickSlicer and Node.js Deep Zoom Tools use ImageMagick to read images, which does not support any of the proprietary WSI formats\cite{web:imagemagick}.}, \emph{Gmap Uploader Tiler}\cite{web:gmap}, Zoomhub\cite{web:zoomhub} and \emph{PyramidIO}\cite{web:pyramidio}.
+Furthermore, reading the proprietary formats is a highly specialized task, eliminating most of the leftover choices: \emph{deepzoom}\cite{web:deepzoom}, \emph{DZT}\cite{web:dzt}, \emph{sharp}\cite{web:sharp}, \emph{MagickSlicer}, \emph{Node.js Deep Zoom Tools} (both use ImageMagick to read images, which does not support any of the proprietary WSI formats\cite{web:imagemagick}), \emph{Gmap Uploader Tiler}\cite{web:gmap}, Zoomhub\cite{web:zoomhub} and \emph{PyramidIO}\cite{web:pyramidio}.
 
 \emph{Kakadu} can only encode and decode JPEG 2000 images\cite{web:openseadragon}, making it no valid choice either.
 
@@ -132,7 +132,7 @@ The options are analogous with the terminal version (compare tab. \ref{tab3_deep
 creator.create([source], [destination])
 \end{lstlisting}
 
-In the proposed workflow, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI\footnote{Compare subsection \ref{sec2_openFormats}}. The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
+In the proposed workflow, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI (compare subsection \ref{sec2_openFormats}). The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
 
 \begin{equation}
 	max{\_}dim = max(height, width)
@@ -267,7 +267,9 @@ The console command \emph{vipsheader -a} is responsible for extracting the heade
 
 \section{Test}
 \label{sec3_test}
-To test the correct functionality of the CS a test data set was needed. OpenSlide offers a selection of freely distributable WSIs\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
+To test the correct functionality of the CS a test data set was needed. OpenSlide offers a selection of freely distributable WSIs\footnote{
+	See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or \url{http://openslide.cs.cmu.edu/download/openslide-testdata/} for the test data.
+}, which can be used for that purpose.
 
 Since the size of the WSIs is big, they are not delivered via the CS repository\footnote{See \url{https://github.com/SasNaw/ConversionService}}. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see appendix \ref{secA}.
 

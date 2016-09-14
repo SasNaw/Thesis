@@ -2,11 +2,7 @@
 \label{sec5}
 \section{Objective of the Tessellation Service}
 \label{sec5_objective}
-The objective of the TS is to provide a service that extracts image regions annotated by the AS to create samples for the training of a NN\footnote{
-	Compare subsection \ref{sec2_learning}
-}. In this context, "extraction" describes the process of creating sub images of the original image, which contain all of the annotated ROI and as little of anything else as possible. Additionally, the correspondence with the associated region label must be kept. The AS uses \emph{regions}\footnote{
-	Compare subsection \ref{sec4_region}
-} to describe ROIs. Those regions are persisted in a JSON file. Therefore, the TS has 2 objectives:
+The objective of the TS is to provide a service that extracts image regions annotated by the AS to create samples for the training of a NN. In this context, "extraction" describes the process of creating sub images of the original image, which contain all of the annotated ROI and as little of anything else as possible. Additionally, the correspondence with the associated region label must be kept. The AS uses \emph{regions} to describe ROIs (compare subsection \ref{sec4_region}). Those regions are persisted in a JSON file. Therefore, the TS has 2 objectives:
 \begin{enumerate}[(1)]
 	\item parse a JSON file and acquire its region data
 	\item extract ROIs based on the acquired region data
@@ -15,9 +11,7 @@ The objective of the TS is to provide a service that extracts image regions anno
 
 \section{Methodology}
 \label{sec5_method}
-The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method\footnote{
-	Compare section \ref{sec2_introNN}
-} and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color and texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
+The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method (compare section \ref{sec2_introNN}) and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color and texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
 
 Because of those varying requirements, the TS will be capable of producing different output:
 \begin{enumerate}[(1)]
@@ -27,9 +21,7 @@ Because of those varying requirements, the TS will be capable of producing diffe
 	\item Convert extracted images to grayscale
 \end{enumerate}
 
-A user can draw a region's path without any restrictions concerning the pattern, resulting in ROIs that can be of arbitrary shape. Therefore, bounding boxes (BB)\nmc{BB}{Bounding Box}\footnote{
-	A BB is a rectangular body, fully enclosing a provided (two dimensional) object of arbitrary shape\cite{Toussaint83}.
-} are used for ROI extraction in the cases (1) and (2) (see fig. \ref{fig5_bbExample} for an example).
+A user can draw a region's path without any restrictions concerning the pattern, resulting in ROIs that can be of arbitrary shape. Therefore, bounding boxes (BB)\nmc{BB}{Bounding Box} are used for ROI extraction in the cases (1) and (2) (see fig. \ref{fig5_bbExample} for an example). A BB is a rectangular body, fully enclosing a provided (two dimensional) object of arbitrary shape\cite{Toussaint83}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -47,9 +39,7 @@ In the case of (1), an ROI's BB is copied pixel by pixel into a new image. The r
 
 Therefore, the size of the BB will be adjusted to match the aspect ratio of the provided width and height. If the resulting BB is bigger then the provided width and height, the image will be scaled down and interpolated. If the BB is smaller, it will be scaled up instead of the image. This leads to a bigger area inside the BB that is not part of the ROI, but a pixel ratio of 1:1 between original and extracted image, resulting in no distortion or loss of quality.
 
-Case (3) approximates a ROI by tessellating\footnote{
-	\emph{Tessellation} describes the tiling of a plane using one or more geometric shapes with no overlaps or gaps\cite{Clifford09}.
-} it into tiles of the provided width and height (see fig. \ref{fig5_tesExample} for an example). Every tile inside the region's enclosing path (or touched by it) is targeted by the extraction. Each tile is extracted into an individual image.
+Case (3) approximates a ROI by tessellating it into tiles of the provided width and height. \emph{Tessellation} describes the tiling of a plane using one or more geometric shapes with no overlaps or gaps (see fig. \ref{fig5_tesExample} for an example)\cite{Clifford09}. Every tile inside the region's enclosing path (or touched by it) is targeted by the extraction. Each tile is extracted into an individual image.
 
 \begin{figure}[H]
 	\begin{center}
@@ -61,9 +51,7 @@ Case (3) approximates a ROI by tessellating\footnote{
 
 Cases (1) - (3) can be combined with (4) to convert the extracted ROI images into grayscale images.
 
-A region contains additional information besides the label that can be utilized, especially the level of magnification\footnote{
-	Compare subsection \ref{sec4_region}
-}. As Doyle has shown in \cite{Doyle10}, the level of magnification an annotation was made in is an important factor. This is due to the fact that manual annotations made in lower magnifications do not have the granularity needed for higher ones, which results in numerous false positives and negatives and therefore distorts the ground truth\cite{Janowczyk16}. A region's zoom attribute informs at what level of magnification a region was drawn in, thus helping to assess the described issue.
+A region contains additional information besides the label that can be utilized, especially the level of magnification (compare subsection \ref{sec4_region}). As Doyle has shown in \cite{Doyle10}, the level of magnification an annotation was made in is an important factor. This is due to the fact that manual annotations made in lower magnifications do not have the granularity needed for higher ones, which results in numerous false positives and negatives and therefore distorts the ground truth\cite{Janowczyk16}. A region's zoom attribute informs at what level of magnification a region was drawn in, thus helping to assess the described issue.
 
 To utilize the additional metadata, each extracted region will also have a corresponding metadata file. This metadata contains:
 \begin{itemize}
@@ -82,15 +70,11 @@ The TS is implemented as a python script called \textbf{\emph{TessellationServic
 	See its GitHub repository for more information: \url{https://github.com/SasNaw/TessellationService}.
 }. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: \emph{OpenSlide}, \emph{NumPy}, \emph{Pillow} and \emph{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}.
 
-\emph{OpenSlide} was used to access and read a provided WSI\footnote {
-	Compare subsection \ref{sec4_asvFrameworks} - OpenSlide
-}.
+\emph{OpenSlide} was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
 
 NumPy is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
 
-OpenCV is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function\footnote{
-	See subsection \ref{sec5_tessellation}
-}
+OpenCV is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function (see subsection \ref{sec5_tessellation}).
 
 Pillow is an imaging library, which offers methods to read from and write to images. It was used for reading, writing, scaling and converting the extracted images.
 
@@ -144,9 +128,7 @@ The TS receives a list of files and folders to extract regions from and iterates
 	\end{center}
 \end{figure}
 
-OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native DZI, but only wrap an OpenSlide object into a DZG\footnote{
-	Compare subsection \ref{sec4_openslide}
-}, a different approach had to be chosen to access a provided DZI.
+OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native DZI, but only wrap an OpenSlide object into a DZG(compare subsection \ref{sec4_openslide}), a different approach had to be chosen to access a provided DZI.
 
 Both approaches share the following utility functions\footnote{
 	See appendix \ref{secC} for documentation of the individual function's source code.
@@ -214,12 +196,10 @@ Both approaches share the following utility functions\footnote{
 
 \subsection{Extraction without Tessellation}
 \label{sec5_extraction}
-As mentioned above, the implementation of the conversion differs for WSI and DZI due to the role of OpenSlide in the extraction of WSIs. The following two sections describe the extraction process for both cases.
+As mentioned above, the implementation of the conversion differs for WSI and DZI due to the role of OpenSlide in the extraction of WSIs. The following two sections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
 
 \subsubsection{WSI}
-The WSI extraction process is done in the \texttt{wsi(file)} function\footnote{
-	See appendix \ref{secC} for a function documentation.
-}. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
+The WSI extraction process is done in the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -243,9 +223,7 @@ size_y = BB_{max(y)} - BB_{min(y)}
 OpenSlide's \texttt{readRegion(location, level, size)} function is used to retrieve the region in a separate image from the original baseline image. This extracted image is then written into a file, together with its associated region's metadata.
 
 \subsubsection{DZI}
-Since it is not possible to open a DZI with OpenSlide, the extraction process for DZI differs from the one for WSI. It is implemented in the \texttt{dzi(file)} function\footnote{
-	See appendix \ref{secC} for a function documentation.
-}, which starts and manages the extraction process. Since an image must be stitched together manually, the information about tile size and image dimensions must be parsed from the DZI metadata file, as well as the level containing the baseline image (since DZI uses n instead of 0 for the level with the highest resolution). Once the information is parsed, a file name is created from the file path and the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
+Since it is not possible to open a DZI with OpenSlide, the extraction process for DZI differs from the one for WSI. It is implemented in the \texttt{dzi(file)} function, which starts and manages the extraction process. Since an image must be stitched together manually, the information about tile size and image dimensions must be parsed from the DZI metadata file, as well as the level containing the baseline image (since DZI uses n instead of 0 for the level with the highest resolution). Once the information is parsed, a file name is created from the file path and the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
 
 \begin{figure}[!h]
 	\begin{center}
