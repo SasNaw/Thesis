@@ -191,7 +191,7 @@ The region parameter defines the rectangular portion of the full image to be ret
 	\end{center}
 \end{table}
 
-If the request specifies a region whose size extends beyond the actual size of the image, the response should be a cropped image, instead of an image with added empty space. If the region is completely outside of the image, the response should be a "404 Not Found" http status code\cite{web:iiif}.
+If the request specifies a region whose size extends beyond the actual size of the image, the response should be a cropped image, instead of an image with added empty space. If the region is completely outside of the image, the response should be a "404 Not Found" HTTP status code\cite{web:iiif}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -211,7 +211,7 @@ If a region was extracted, it is scaled to the dimensions specified by the size 
 	\end{center}
 \end{figure}
 
-If the resulting height or width equals 0, then the server should return a "400 Bad Request" http status code. Depending on the image server, scaling above the full size of the extracted region may be supported\cite{web:iiif}.
+If the resulting height or width equals 0, then the server should return a "400 Bad Request" HTTP status code. Depending on the image server, scaling above the full size of the extracted region may be supported\cite{web:iiif}.
 
 \begin{table}[H]
 	\begin{center}

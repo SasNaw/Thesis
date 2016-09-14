@@ -118,7 +118,7 @@ If a response for OpenSeadragon was created via \texttt{slug(dzi)}, OpenSeadrago
 
 As in \texttt{slug(dzi)}, the \emph{slug} parameter is the slide URL generated in \texttt{index{\textunderscore}wsi}. The parameters \emph{level}, \emph{col} and \emph{row} describe the DZI level and address of the requested image tile. \emph{format} is the image format of the tile.
 
-If the format is not JPEG or PNG, the ASS return a "404 Not Found" http status code (line 3 - 6).
+If the format is not JPEG or PNG, the ASS return a "404 Not Found" HTTP status code (line 3 - 6).
 
 If the format is either JPEG or PNG, the requested tile is generated through the use of the DZGs \texttt{get{\textunderscore}tile(level, address)} function (line 8). If it was not possible to generate the tile, a "404 Not Found" HTTP status code will be returned.
 
