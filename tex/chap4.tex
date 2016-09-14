@@ -52,13 +52,11 @@ As described in section \ref{sec4_methodology}, the AS will be realized in 2 sep
 
 The ASS will be responsible for data management, supplying image data and serving the ASV to the client. The ASV will provide a WSI viewer with the tools needed to annotate ROIs in a WSI.
 
-The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, MPP \review{Was ist MPP?} and file name of the WSI. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
+The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, the image's microns per pixel (MPP)\nmc{MPP}{Microns Per Pixel} and file name. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
 
-The ASV is returned to the client and requests the data necessary to view the WSI and it's annotations (this includes configurations, previously made annotations if present, labels and the image tiles for the current view).
-\review{Hier eventuell eher was in die Richtung: "The ASV is served to the client as a web application that requests the data \dots" oder "the ASV code is executed by the client and requests the data\dots}
-Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Additionally, annotations can be made and persisted at any time.
+The ASV is served to the client as a web application that requests the data necessary to view the WSI and it's annotations. This includes configurations, previously made annotations (if present), label dictionaries and the image tiles for the current view. Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Annotations can be made and persisted at any time.
 
-See fig. \ref{fig4_asUml} for a diagram of how the ASS and ASV interact with each other.
+Fig. \ref{fig4_asUml} visualizes the described interaction process in an activity diagram.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -311,9 +309,8 @@ An OpenSlide object offers methods to access available metadata, image tiles, th
 
 The DZG\footnote{
 	For an in-depth list of functions, see \url{http://openslide.org/api/python/}
-} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance:
+} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions, provided by the DZG, are of special importance:
 
-\review{Woher kommen diese beiden Funktionen? Sind das Teile der DZG Lib? Wenn ja, explizit reinschreiben}
 \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file\footnote{
 	Compare subsection \ref{sec2_openFormats} - Deep Zoom Images
 }. The parameter (format) specifies the format (PNG or JPEG) of the individual Deep Zoom tiles.
@@ -576,13 +573,9 @@ The relation between the \textless{div}{\textgreater} element in the webpage and
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.html\#.Options} for an in-depth documentation of every parameter available.
 }.
 
-\review{Eventuell: The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor. Since drawing...}
-Since drawing paths and managing regions involves clicking onto the corresponding ROIs on the WSI, the zoomPerClick function must be disabled. Otherwise it will be called after each of those interactions, which is highly disorienting.
+The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor when clicked. Since drawing paths and managing regions involves clicking onto the corresponding ROIs, this function must be disabled. If not disabled, each interaction with an ROI or region will lead to a call of \texttt{zoomPerClick}, which creates a highly disorienting experience.
 
-\review{Fußnote nach oben ziehen: supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened. This functionality is provided by the \texttt{open(tileSources)} function...}
-The OSDV provides an \texttt{open(tileSources)} function, which is used to open a DZI's tiles\footnote{
-	DZI, as well as all other image formats, supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened.
-}. The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
+Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of images tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
 Compare subsection \ref{sec4_openslide}.
 })). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
 
@@ -693,8 +686,7 @@ Both of those functions need to work with the viewport coordinates to create a r
 
 \subsection{Definition: Region}
 \label{sec4_region}
-\review{Der Absatz hier holpert imho noch ziemlich. Eventuell umformulieren in richtung: The basic concept used to realize annotations in the ASV are regions \dots Außerdem eine der beiden referenzen auf tab. \ref{tab4_regionUML} rausnehnmen.}
-Regions are used to realize annotations in the ASV. Therefore they are of central importance. This section gives a definition of the region object in the ASV. Tab. \ref{tab4_regionUML} shows a UML class diagram to give an overview.
+The basic concept used to realize annotations in the ASV are regions. Each region has a \emph{context, imgCoords, name, path, uid} and \emph{zoom} property as shown in tab. \ref{tab4_regionUML}. They contain the connecting information between an ROI (imgCoords, path) and its label (name), making them the interface between visual and textual information- Because of their central importance to the ASV, this section describes the \texttt{region} object and its properties. 
 
 \begin{table}[H]
 	\begin{center}
@@ -713,8 +705,6 @@ Regions are used to realize annotations in the ASV. Therefore they are of centra
 	\end{center}
 \end{table}
 
-Each region has a \emph{context, imgCoords, name, path} and \emph{uid} property, as seen in tab. \ref{tab4_regionUML}.
-
 The \textbf{context} property is a list of unique label ids of other regions\footnote{
 	Compare subsection \ref{sec4_asvPart}
 }. If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, if:
@@ -728,7 +718,7 @@ The \textbf{imgCoords} (image coordinates) property represents the coordinates o
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.Viewport.html\#viewportToImageCoordinates} for more information on OSD's Point class.
 }. This property is used to establish the relation between the ROIs of the AO and the baseline image.
 
-The \textbf{name} property holds the title of the region's corresponding label. A region is created with the title of the label selected \review{selected wo?} at the time. The name property cannot be changed, unless the whole region object is deleted and redrawn with another corresponding label selected (prior to the redrawing).
+The \textbf{name} property contains the title of the region's corresponding label. A region is created with the dictionary label entry currently active at the time of the regions creation.
 
 The \textbf{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
 	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' Point class.
@@ -736,7 +726,7 @@ The \textbf{path} property represents the coordinates of the path's segments in 
 
 The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
 
-The \textbf{zoom} attribute describes the level of magnification at the point a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives\cite{Janowczyk16}.
+The \textbf{zoom} attribute describes the level of magnification at the point a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives and negatives\cite{Janowczyk16}.
 
 
 \subsection{Graphical User Interface}

@@ -39,29 +39,28 @@ A format or service must be chosen as conversion target for the CS. Choices have
 
 To convert a WSI, a conversion tool is needed. Tab. \ref{tab3_convOptions} shows a listing of possibilities for that purpose. Listed are the name of the tool, the technology used and the output format. The table indicates, that DZI has a great variety of options, while the alternatives have little to none (Map Tiler for TMS, Kakadu for IFFF and none for the others).
 
-\review{Tabelle ist inkonsistent: zum einen gib es "perl utility" (Programmiersprache + utility) und zum anderen Python/PHP (Nur die sprache) und zum dritten fließtext + ruby}
-
 \begin{longtable}{| p{3cm} | p{4cm} | p{2.5cm} |}
 	\hline
+	\textbf{tool} & \textbf{description} & \textbf{output} \\ \hline
 	Deep Zoom Composer & dekstop app for Windows & DZI \\ \hline
-	Image Composite Editor & panoramic image stitcher from Microsoft Research for the Windows desktop & DZI \\ \hline
-	DeepZoomTools.dll & .NET-library, comes with Deep Zoom Composer & DZI \\ \hline
-	deepzoom.py & Python & DZI \\ \hline
-	deepzoom & Perl utility & DZI \\ \hline
-	PHP Deep Zoom Tools & PHP & DZI \\ \hline
-	Deepzoom & PHP & DZI \\ \hline
-	DZT & an image slicing library and tool written in Ruby & DZI \\ \hline
+	Image Composite Editor & dekstop app for Windows & DZI \\ \hline
+	DeepZoomTools.dll & .NET library & DZI \\ \hline
+	deepzoom.py & python script& DZI \\ \hline
+	deepzoom & perl script & DZI \\ \hline
+	PHP Deep Zoom Tools & PHP script & DZI \\ \hline
+	Deepzoom & PHP script & DZI \\ \hline
+	DZT & Ruby library & DZI \\ \hline
 	MapTiler &  desktop app for Windows, Mac, Linux & TMS \\ \hline
-	VIPS & command line tool and library for a number of languages & DZI \\ \hline
-	Sharp & Node.js, uses VIPS & DZI \\ \hline
-	MagickSlicer & shell script (Linux/Mac) & DZI \\ \hline
-	Gmap Uploader Tiler & C++ & DZI \\ \hline
-	Node.js Deep Zoom Tools & Node.js, under construction & DZI \\ \hline
-	OpenSeaDragon DZI Online Composer & Web app (and PERL and PHP scripts) & DZI \\ \hline
+	VIPS & command line tool, library for a number of languages & DZI \\ \hline
+	Sharp & Node.js script, uses VIPS & DZI \\ \hline
+	MagickSlicer & shell script & DZI \\ \hline
+	Gmap Uploader Tiler & C++ application & DZI \\ \hline
+	Node.js Deep Zoom Tools & Node.js script, under construction & DZI \\ \hline
+	OpenSeaDragon DZI Online Composer & Web app (and PERL, PHP scripts) & DZI \\ \hline
 	Zoomable & service, offers embeds; no explicit API & DZI \\ \hline
 	ZoomHub & service, under construction & DZI \\ \hline
-	Kakadu & C++ library to encode or decode JPEG 2000 images & IIIF \\ \hline
-	PyramidIO & Java (command line and library) & DZI \\ \hline
+	Kakadu & C++ library & IIIF \\ \hline
+	PyramidIO & Java tool (command line and library) & DZI \\ \hline
 	\caption{Overview of conversion options for zooming image formats (source: \cite{web:openseadragon})}
 	\label{tab3_convOptions}
 \end{longtable}
