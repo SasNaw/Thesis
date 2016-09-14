@@ -67,7 +67,7 @@ Section \ref{sec5_objective} additionally stated the objective of keeping up cor
 \section{Implementation}
 \label{sec5_impl}
 The TS is implemented as a python script called \textbf{\emph{TessellationService.py}}\footnote{
-	See its GitHub repository for more information: \url{https://github.com/SasNaw/TessellationService}.
+	The TS is contained on the disc at the end of this thesis, see appendix \ref{secA_cd}.
 }. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: \emph{OpenSlide}, \emph{NumPy}, \emph{Pillow} and \emph{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}.
 
 \emph{OpenSlide} was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
@@ -270,9 +270,7 @@ The last step is to iterate each pixel of the RI. For every white pixel found, t
 \label{sec5_test}
 The TS was run on multiple WSIs from the test data set (see appendix \ref{secA}). The test case presented in the following subsections is based on \emph{CMU-1.svs} of the Aperio test set\footnote{
 	Obtainable at \url{http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/}
-} The JSON file used for the test can be found in the git repository of the TS, in the \emph{"test"} branch\footnote{
-	See \url{https://github.com/SasNaw/TessellationService/tree/test}
-}. The annotations were made using the \emph{example.json} dictionary.
+} The WSI and corresponding JSON file used for the test are included on the disc at the end of this thesis (see appendix \ref{secA_cd}). The annotations were made using the \emph{example.json} dictionary.
 
 
 \subsection{Setup}

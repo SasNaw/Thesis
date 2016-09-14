@@ -60,31 +60,33 @@
 \BOOKMARK [1][-]{section.6.3}{Future work}{chapter.6}% 60
 \BOOKMARK [0][-]{section*.75}{Appendices}{}% 61
 \BOOKMARK [0][-]{Appendix.1.A}{Test Data}{}% 62
-\BOOKMARK [1][-]{section.1.A.1}{Aperio \(.svs\)}{Appendix.1.A}% 63
-\BOOKMARK [1][-]{section.1.A.2}{Generic Tiled tiff \(.tiff\)}{Appendix.1.A}% 64
-\BOOKMARK [1][-]{section.1.A.3}{Hamamatsu \(.ndpi\)}{Appendix.1.A}% 65
-\BOOKMARK [1][-]{section.1.A.4}{Hamamatsu \(.vms\)}{Appendix.1.A}% 66
-\BOOKMARK [1][-]{section.1.A.5}{Leica \(.scn\)}{Appendix.1.A}% 67
-\BOOKMARK [1][-]{section.1.A.6}{Trestle \(.tiff\)}{Appendix.1.A}% 68
-\BOOKMARK [1][-]{section.1.A.7}{Ventana \(.bif\)}{Appendix.1.A}% 69
-\BOOKMARK [1][-]{section.1.A.8}{Mirax \(.mrxs\)}{Appendix.1.A}% 70
-\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 71
-\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 72
-\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 73
-\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 74
-\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 75
-\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 76
-\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 77
-\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 78
-\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 79
-\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 80
-\BOOKMARK [0][-]{Appendix.1.C}{Tessellation Service Documentation}{}% 81
-\BOOKMARK [1][-]{section.1.C.1}{Main}{Appendix.1.C}% 82
-\BOOKMARK [1][-]{section.1.C.2}{WSI}{Appendix.1.C}% 83
-\BOOKMARK [1][-]{section.1.C.3}{DZI}{Appendix.1.C}% 84
-\BOOKMARK [1][-]{section.1.C.4}{Utility}{Appendix.1.C}% 85
-\BOOKMARK [0][-]{chapter*.186}{Bibliography}{}% 86
-\BOOKMARK [0][-]{chapter*.187}{List of Figures}{}% 87
-\BOOKMARK [0][-]{chapter*.188}{List of Tables}{}% 88
-\BOOKMARK [0][-]{chapter*.189}{Nomenclature}{}% 89
-\BOOKMARK [0][-]{chapter*.190}{Statutory declaration}{}% 90
+\BOOKMARK [1][-]{section.1.A.1}{Files on CD}{Appendix.1.A}% 63
+\BOOKMARK [1][-]{section.1.A.2}{Free Whole Slide Images}{Appendix.1.A}% 64
+\BOOKMARK [2][-]{subsection.1.A.2.1}{Aperio \(.svs\)}{section.1.A.2}% 65
+\BOOKMARK [2][-]{subsection.1.A.2.2}{Generic Tiled tiff \(.tiff\)}{section.1.A.2}% 66
+\BOOKMARK [2][-]{subsection.1.A.2.3}{Hamamatsu \(.ndpi\)}{section.1.A.2}% 67
+\BOOKMARK [2][-]{subsection.1.A.2.4}{Hamamatsu \(.vms\)}{section.1.A.2}% 68
+\BOOKMARK [2][-]{subsection.1.A.2.5}{Leica \(.scn\)}{section.1.A.2}% 69
+\BOOKMARK [2][-]{subsection.1.A.2.6}{Trestle \(.tiff\)}{section.1.A.2}% 70
+\BOOKMARK [2][-]{subsection.1.A.2.7}{Ventana \(.bif\)}{section.1.A.2}% 71
+\BOOKMARK [2][-]{subsection.1.A.2.8}{Mirax \(.mrxs\)}{section.1.A.2}% 72
+\BOOKMARK [0][-]{Appendix.1.B}{Annotation Service Documentation}{}% 73
+\BOOKMARK [1][-]{section.1.B.1}{Annotation Service Server}{Appendix.1.B}% 74
+\BOOKMARK [1][-]{section.1.B.2}{Annotation Service Viewer}{Appendix.1.B}% 75
+\BOOKMARK [2][-]{subsection.1.B.2.1}{Initialization functions}{section.1.B.2}% 76
+\BOOKMARK [2][-]{subsection.1.B.2.2}{Data management functions}{section.1.B.2}% 77
+\BOOKMARK [2][-]{subsection.1.B.2.3}{GUI functions}{section.1.B.2}% 78
+\BOOKMARK [2][-]{subsection.1.B.2.4}{Region functions}{section.1.B.2}% 79
+\BOOKMARK [2][-]{subsection.1.B.2.5}{Interaction functions}{section.1.B.2}% 80
+\BOOKMARK [2][-]{subsection.1.B.2.6}{Internal functions}{section.1.B.2}% 81
+\BOOKMARK [2][-]{subsection.1.B.2.7}{Key listener}{section.1.B.2}% 82
+\BOOKMARK [0][-]{Appendix.1.C}{Tessellation Service Documentation}{}% 83
+\BOOKMARK [1][-]{section.1.C.1}{Main}{Appendix.1.C}% 84
+\BOOKMARK [1][-]{section.1.C.2}{WSI}{Appendix.1.C}% 85
+\BOOKMARK [1][-]{section.1.C.3}{DZI}{Appendix.1.C}% 86
+\BOOKMARK [1][-]{section.1.C.4}{Utility}{Appendix.1.C}% 87
+\BOOKMARK [0][-]{chapter*.186}{Bibliography}{}% 88
+\BOOKMARK [0][-]{chapter*.187}{List of Figures}{}% 89
+\BOOKMARK [0][-]{chapter*.188}{List of Tables}{}% 90
+\BOOKMARK [0][-]{chapter*.189}{Nomenclature}{}% 91
+\BOOKMARK [0][-]{chapter*.190}{Statutory declaration}{}% 92
