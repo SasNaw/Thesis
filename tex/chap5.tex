@@ -6,9 +6,7 @@ The objective of the TS is to provide a service that extracts image regions anno
 	Compare subsection \ref{sec2_learning}
 }. In this context, "extraction" describes the process of creating sub images of the original image, which contain all of the annotated ROI and as little of anything else as possible. Additionally, the correspondence with the associated region label must be kept. The AS uses \emph{regions}\footnote{
 	Compare subsection \ref{sec4_region}
-} to describe ROIs. Those regions are persisted in a JSON file.
-
-Therefore, the TS has 2 objectives:
+} to describe ROIs. Those regions are persisted in a JSON file. Therefore, the TS has 2 objectives:
 \begin{enumerate}[(1)]
 	\item parse a JSON file and acquire its region data
 	\item extract ROIs based on the acquired region data
@@ -106,11 +104,11 @@ The TS can be called over the python interpreter:
 	$ python TessellationService [input] [dictionary] [params]
 \end{lstlisting}
 
-The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
+The arguments [input] and [dictionary] are mandatory. The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
 
 As mentioned in chapter \ref{sec4_as}, multiple dictionaries can be used for annotation. Since every WSI has an individual save file for each dictionary (compare subsection \ref{sec4_setup}), it is necessary to provide the dictionary targeted for extraction via the [dictionary] parameter. Each input file must have its associated save file in the same directory.
 
-[input] and [dictionary] are mandatory arguments.
+
 
 As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
 
@@ -123,7 +121,7 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 			-f, --force-overwrite & flag to overwrite images with the same name (if not supplied, a number will be added to the image name) & false \\ \hline
 			-g, --grayscale & flag to convert images to grayscale images before saving them & false \\ \hline
 			-i, --interpolation & choose interpolation method: nearest neighbor, bilinear, bicubic, lanczos  & nearest neighbor interpolation \\ \hline
-			-o, --output [directory] & choose output directory (if not provided, the TS will save all extracted images in its own directory) & - \\ \hline
+			-o, --output [directory] & choose output directory (if not provided, the TS will save all extracted images in its current working directory) & - \\ \hline
 			-r, --resize [width] [height] & resize all output images to the provided [width] and [height] in pixel & - \\ \hline
 			-s, --show-tessellated & flag to create window and show stitched image resulting from the tessellation process (only for debugging purposes, see \emph{"-t"}) & false\\ \hline
 			-t, --tessellate [width] [height] & tessellate regions into tiles of the provided [width] and [height] in pixels & - \\ \hline

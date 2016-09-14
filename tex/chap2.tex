@@ -299,18 +299,8 @@ One of the biggest strengths of a NN, much like a BNN, is the ability to adapt b
 
 Each line in fig. \ref{fig2_nn} represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
 
-According to \cite{Shiffman12}, some of the standard use cases for NN are:
+According to \cite{Shiffman12}, some of the standard use cases for NN are: Pattern Recognition, Time Series Prediction, Signal Processing Perceptron, Control, Soft Sensors, and Anomaly Detection
 
-\begin{itemize}
-	\item Pattern Recognition
-	\item Time Series Prediction
-	\item Signal Processing Perceptron
-	\item Control
-	\item Soft Sensors
-	\item Anomaly Detection
-\end{itemize}
-
-\clearpage
 \subsection{Methods of Learning}
 \label{sec2_learning}
 There are 3 general strategies when it comes to the training of a NN\cite{Bourg04}. Those are:
@@ -463,9 +453,9 @@ The small and focused nature of MS makes scaling, updates, general changes and t
 Another advantage is how well MS plays into the hands of agile, scrum and continuous software development processes, due to their previously discussed inherent traits.
 
 % cons
-The modularization of MS does not only yield advantages. Since each MS has its own, closed off data management\footnote{See subsection \ref{sec2_msDef} - \emph{Decentralized Data Management}}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
+The modularization of MS does not only yield advantages. Since each MS has its own, closed off data management (see \ref{sec2_msDef}(f)), interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
 
-2.3.1(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
+\ref{sec2_msDef}(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
 
 It often makes sense to share code inside a system to not replicate functionality which is already there and therefore increase the maintenance burden. The independent nature of MS can make that very difficult, since shared libraries must be build carefully and with the fact in mind, that different MS may use different technologies, possibly creating dependency conflicts.
 
@@ -482,13 +472,13 @@ This makes the advantages outweight the disadvantages clearly:
 	\item different languages and technologies can be used for every single step of the process chain, making the choice of the most fitting tool possible
 	\item WSIs take a heavy toll on memory and disk space due to their size; the use of MS allows each step of the chain to handle those issues in the most suitable way for each given step
 	\item separating the steps of the process chain into multiple MS leads to well separated modules, each having a small and therefore easy to maintain codebase
-	\item other bachelor/master students may continue to use or work on this project in the future, making the benefit of a small, easily maintainable code base twice as important
+	\item other bachelor/master students may continue to use or work on this project in the future, further increasing the benefit of a small, easily maintainable code base
 \end{itemize}
 
 
 \section{Process Chain}
 \label{sec2_pc}
-This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The process looks as follows:
+This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The process to create training samples from a set of WSI images is defined as follows:
 
 \begin{enumerate}[(1.)]
 	\item convert chosen WSI $img^{wsi}_i$ to open format $img^{cvrt}_i$
