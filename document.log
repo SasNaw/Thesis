@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  14 SEP 2016 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  15 SEP 2016 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -933,7 +933,7 @@ Package pdftex.def Info: img/deepVisual.png used on input line 10.
 
 ] [5 <./img/deepVisual.png>]) (./tex/chap2.tex [6]
 Chapter 2.
-<img/imgPyramid.png, id=554, 1016.79875pt x 630.355pt>
+<img/imgPyramid.png, id=551, 1016.79875pt x 630.355pt>
 File: img/imgPyramid.png Graphic file (type png)
 
 <use img/imgPyramid.png>
@@ -946,7 +946,7 @@ Package pdftex.def Info: img/imgPyramid.png used on input line 23.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8 <./img/imgPyramid.png>] [9] [10]
-<img/dzi_pyramid.png, id=645, 529.98pt x 365.365pt>
+<img/dzi_pyramid.png, id=642, 529.98pt x 365.365pt>
 File: img/dzi_pyramid.png Graphic file (type png)
  <use img/dzi_pyramid.png>
 Package pdftex.def Info: img/dzi_pyramid.png used on input line 132.
@@ -960,7 +960,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
- [12 <./img/dzi_pyramid.png>] <img/iiif_url_example.jpg, id=673, 1027.84pt x 77
+ [12 <./img/dzi_pyramid.png>] <img/iiif_url_example.jpg, id=670, 1027.84pt x 77
 0.88pt>
 File: img/iiif_url_example.jpg Graphic file (type jpg)
 
@@ -994,14 +994,14 @@ and -[] open -[] image -[] apis -[]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 173.
 [13 <./img/iiif_url_example.jpg>]
-<img/region_param.png, id=702, 824.07875pt x 601.24625pt>
+<img/region_param.png, id=699, 824.07875pt x 601.24625pt>
 File: img/region_param.png Graphic file (type png)
 
 <use img/region_param.png>
 Package pdftex.def Info: img/region_param.png used on input line 198.
 (pdftex.def)             Requested size: 329.62566pt x 240.49423pt.
  [14]
-<img/size_parameter.png, id=717, 825.0825pt x 478.78876pt>
+<img/size_parameter.png, id=714, 825.0825pt x 478.78876pt>
 File: img/size_parameter.png Graphic file (type png)
 
 <use img/size_parameter.png>
@@ -1013,37 +1013,37 @@ Overfull \hbox (11.4347pt too wide) in paragraph at lines 243--244
 c maps of geo-referenced
  []
 
-[17] <img/bnn.png, id=777, 433.62pt x 109.8504pt>
+[17] <img/bnn.png, id=773, 433.62pt x 109.8504pt>
 File: img/bnn.png Graphic file (type png)
  <use img/bnn.png>
 Package pdftex.def Info: img/bnn.png used on input line 283.
 (pdftex.def)             Requested size: 303.53192pt x 76.89473pt.
- [18 <./img/bnn.png>] <img/NN.png, id=797, 207.6558pt x 137.5539pt>
+ [18 <./img/bnn.png>] <img/NN.png, id=794, 207.6558pt x 137.5539pt>
 File: img/NN.png Graphic file (type png)
  <use img/NN.png>
 Package pdftex.def Info: img/NN.png used on input line 295.
 (pdftex.def)             Requested size: 207.65529pt x 137.55354pt.
 
-[19 <./img/NN.png>] <img/perceptron.png, id=823, 433.62pt x 69.6201pt>
+[19 <./img/NN.png>] <img/perceptron.png, id=820, 433.62pt x 69.6201pt>
 File: img/perceptron.png Graphic file (type png)
 
 <use img/perceptron.png>
 Package pdftex.def Info: img/perceptron.png used on input line 334.
 (pdftex.def)             Requested size: 303.53192pt x 48.73372pt.
- <img/lsp.png, id=830, 433.62pt x 119.4864pt>
+ <img/lsp.png, id=827, 433.62pt x 119.4864pt>
 File: img/lsp.png Graphic file (type png)
 
 <use img/lsp.png>
 Package pdftex.def Info: img/lsp.png used on input line 351.
 (pdftex.def)             Requested size: 260.17401pt x 71.69238pt.
  [20 <./img/perceptron.png>]
-<img/nlsp.png, id=839, 433.62pt x 92.9874pt>
+<img/nlsp.png, id=836, 433.62pt x 92.9874pt>
 File: img/nlsp.png Graphic file (type png)
  <use img/nlsp.png>
 Package pdftex.def Info: img/nlsp.png used on input line 359.
 (pdftex.def)             Requested size: 325.2142pt x 69.74037pt.
 
-<img/mlp.png, id=845, 237.88875pt x 215.00325pt>
+<img/mlp.png, id=842, 237.88875pt x 215.00325pt>
 File: img/mlp.png Graphic file (type png)
  <use img/mlp.png>
 Package pdftex.def Info: img/mlp.png used on input line 380.
@@ -1054,14 +1054,14 @@ Overfull \hbox (0.16719pt too wide) in paragraph at lines 476--477
 ork on this project
  []
 
-<img/processChainUML.png, id=921, 809.0225pt x 832.10875pt>
+<img/processChainUML.png, id=918, 809.0225pt x 832.10875pt>
 File: img/processChainUML.png Graphic file (type png)
 
 <use img/processChainUML.png>
 Package pdftex.def Info: img/processChainUML.png used on input line 498.
 (pdftex.def)             Requested size: 323.60327pt x 332.8376pt.
  [26] [27 <./img/processChainUML.png>]
-<img/processChainA.png, id=944, 1039.885pt x 281.05pt>
+<img/processChainA.png, id=941, 1039.885pt x 281.05pt>
 File: img/processChainA.png Graphic file (type png)
 
 <use img/processChainA.png>
@@ -1072,14 +1072,14 @@ Overfull \hbox (18.9652pt too wide) in paragraph at lines 522--523
  [] 
  []
 
-<img/processChainB.png, id=947, 1676.2625pt x 442.65375pt>
+<img/processChainB.png, id=944, 1676.2625pt x 442.65375pt>
 File: img/processChainB.png Graphic file (type png)
 
 <use img/processChainB.png>
 Package pdftex.def Info: img/processChainB.png used on input line 537.
 (pdftex.def)             Requested size: 335.24657pt x 88.52917pt.
  [28 <./img/processChainA.png> <./img/processChainB.png>] <img/processChainC.pn
-g, id=958, 1204.5pt x 307.1475pt>
+g, id=955, 1204.5pt x 307.1475pt>
 File: img/processChainC.png Graphic file (type png)
 
 <use img/processChainC.png>
@@ -1136,7 +1136,7 @@ Underfull \vbox (badness 10000) detected at line 63
 [31] [32] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-[33] [34] [35] [36] <img/inputDir.png, id=1118, 435.6275pt x 286.06876pt>
+[33] [34] [35] [36] <img/inputDir.png, id=1115, 435.6275pt x 286.06876pt>
 File: img/inputDir.png Graphic file (type png)
 
 <use img/inputDir.png>
@@ -1151,7 +1151,7 @@ Underfull \hbox (badness 3281) in paragraph at lines 319--319
 Chapter 4.
 [39
 
-] [40] <img/asUML.png, id=1187, 884.30376pt x 928.46875pt>
+] [40] <img/asUML.png, id=1184, 884.30376pt x 928.46875pt>
 File: img/asUML.png Graphic file (type png)
 
 <use img/asUML.png>
@@ -1170,14 +1170,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [42 <./img/asUML.png>] [43
 
 ]
-<img/contextregions.png, id=1217, 311.1625pt x 285.065pt>
+<img/contextregions.png, id=1214, 311.1625pt x 285.065pt>
 File: img/contextregions.png Graphic file (type png)
 
 <use img/contextregions.png>
 Package pdftex.def Info: img/contextregions.png used on input line 116.
 (pdftex.def)             Requested size: 171.13991pt x 156.78622pt.
 
-<img/microdrawUI.png, id=1222, 1509.64pt x 874.26625pt>
+<img/microdrawUI.png, id=1219, 1509.64pt x 874.26625pt>
 File: img/microdrawUI.png Graphic file (type png)
 
 <use img/microdrawUI.png>
@@ -1238,7 +1238,7 @@ Overfull \hbox (0.51726pt too wide) in paragraph at lines 373--384
  [] 
  []
 
-[50] <img/wsiUrl.png, id=1367, 554.07pt x 266.9975pt>
+[50] <img/wsiUrl.png, id=1364, 554.07pt x 266.9975pt>
 File: img/wsiUrl.png Graphic file (type png)
  <use img/wsiUrl.png>
 Package pdftex.def Info: img/wsiUrl.png used on input line 393.
@@ -1272,7 +1272,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 677--677
  . io / docs / OpenSeadragon . Viewport . html #
  []
 
-[59] <img/asScreen.png, id=1550, 1084.05pt x 1927.2pt>
+[59] <img/asScreen.png, id=1547, 1084.05pt x 1927.2pt>
 File: img/asScreen.png Graphic file (type png)
  <use img/asScreen.png>
 Package pdftex.def Info: img/asScreen.png used on input line 715.
@@ -1288,7 +1288,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Chapter 5.
 [62
 
-] <img/bb1.png, id=1589, 287.0725pt x 199.74625pt>
+] <img/bb1.png, id=1586, 287.0725pt x 199.74625pt>
 File: img/bb1.png Graphic file (type png)
  <use img/bb1.png>
 Package pdftex.def Info: img/bb1.png used on input line 28.
@@ -1306,7 +1306,7 @@ Underfull \hbox (badness 3312) in paragraph at lines 29--29
 ww . idav . ucdavis . edu / education / GraphicsNotes /
  []
 
-<img/tessellation.png, id=1596, 476.78125pt x 375.4025pt>
+<img/tessellation.png, id=1593, 476.78125pt x 375.4025pt>
 File: img/tessellation.png Graphic file (type png)
 
 <use img/tessellation.png>
@@ -1347,14 +1347,14 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 101--113
  [] 
  []
 
-[65] <img/ts_run.png, id=1646, 493.845pt x 485.815pt>
+[65] <img/ts_run.png, id=1643, 493.845pt x 485.815pt>
 File: img/ts_run.png Graphic file (type png)
  <use img/ts_run.png>
 Package pdftex.def Info: img/ts_run.png used on input line 125.
 (pdftex.def)             Requested size: 296.30928pt x 291.49124pt.
 
 [66] [67 <./img/ts_run.png>]
-<img/bbResizeExample.png, id=1671, 316.18124pt x 607.26875pt>
+<img/bbResizeExample.png, id=1668, 316.18124pt x 607.26875pt>
 File: img/bbResizeExample.png Graphic file (type png)
 
 <use img/bbResizeExample.png>
@@ -1366,35 +1366,35 @@ Overfull \hbox (5.58028pt too wide) in paragraph at lines 185--191
  []
 
 [69 <./img/bbResizeExample.png>]
-<img/ts_wsi_uml.png, id=1689, 436.63126pt x 605.26125pt>
+<img/ts_wsi_uml.png, id=1686, 436.63126pt x 605.26125pt>
 File: img/ts_wsi_uml.png Graphic file (type png)
 
 <use img/ts_wsi_uml.png>
 Package pdftex.def Info: img/ts_wsi_uml.png used on input line 206.
 (pdftex.def)             Requested size: 196.48224pt x 272.36504pt.
  [70 <./img/ts_wsi_uml.png>]
-<img/ts_dzi_uml.png, id=1703, 674.52pt x 486.81876pt>
+<img/ts_dzi_uml.png, id=1699, 674.52pt x 486.81876pt>
 File: img/ts_dzi_uml.png Graphic file (type png)
  <use img/ts_dzi_uml.png>
 Package pdftex.def Info: img/ts_dzi_uml.png used on input line 230.
 (pdftex.def)             Requested size: 303.53119pt x 219.0664pt.
 
 [71 <./img/ts_dzi_uml.png>]
-<img/RI_example.png, id=1719, 935.495pt x 359.3425pt>
+<img/RI_example.png, id=1716, 935.495pt x 359.3425pt>
 File: img/RI_example.png Graphic file (type png)
  <use img/RI_example.png>
 Package pdftex.def Info: img/RI_example.png used on input line 258.
 (pdftex.def)             Requested size: 327.42815pt x 125.77174pt.
 
 [72 <./img/RI_example.png>]
-<img/ts_test/region1.png, id=1740, 434.62375pt x 366.36874pt>
+<img/ts_test/region1.png, id=1737, 434.62375pt x 366.36874pt>
 File: img/ts_test/region1.png Graphic file (type png)
 
 <use img/ts_test/region1.png>
 Package pdftex.def Info: img/ts_test/region1.png used on input line 301.
 (pdftex.def)             Requested size: 165.60231pt x 139.59612pt.
 
-<img/ts_test/region3.png, id=1741, 77.28876pt x 80.3pt>
+<img/ts_test/region3.png, id=1738, 77.28876pt x 80.3pt>
 File: img/ts_test/region3.png Graphic file (type png)
 
 <use img/ts_test/region3.png>
@@ -1405,7 +1405,7 @@ Underfull \hbox (badness 4353) in paragraph at lines 308--308
 []\OT1/cmr/m/n/9 (b) |test re-gion
  []
 
-<img/ts_test/region2.png, id=1742, 1335.99126pt x 357.335pt>
+<img/ts_test/region2.png, id=1739, 1335.99126pt x 357.335pt>
 File: img/ts_test/region2.png Graphic file (type png)
 
 <use img/ts_test/region2.png>
@@ -1426,35 +1426,35 @@ File: img/ts_test/region1.png Graphic file (type png)
 Package pdftex.def Info: img/ts_test/region1.png used on input line 351.
 (pdftex.def)             Requested size: 138.00052pt x 116.32916pt.
 
-<img/ts_test/1_orig.jpeg, id=1789, 365.365pt x 289.08pt>
+<img/ts_test/1_orig.jpeg, id=1786, 365.365pt x 289.08pt>
 File: img/ts_test/1_orig.jpeg Graphic file (type jpg)
 
 <use img/ts_test/1_orig.jpeg>
 Package pdftex.def Info: img/ts_test/1_orig.jpeg used on input line 356.
 (pdftex.def)             Requested size: 138.00052pt x 109.18547pt.
 
-<img/ts_test/1_r256.jpeg, id=1790, 256.96pt x 256.96pt>
+<img/ts_test/1_r256.jpeg, id=1787, 256.96pt x 256.96pt>
 File: img/ts_test/1_r256.jpeg Graphic file (type jpg)
 
 <use img/ts_test/1_r256.jpeg>
 Package pdftex.def Info: img/ts_test/1_r256.jpeg used on input line 362.
 (pdftex.def)             Requested size: 138.00052pt x 138.00351pt.
 
-<img/ts_test/1_r128.jpeg, id=1791, 256.96pt x 128.48pt>
+<img/ts_test/1_r128.jpeg, id=1788, 256.96pt x 128.48pt>
 File: img/ts_test/1_r128.jpeg Graphic file (type jpg)
 
 <use img/ts_test/1_r128.jpeg>
 Package pdftex.def Info: img/ts_test/1_r128.jpeg used on input line 368.
 (pdftex.def)             Requested size: 138.00052pt x 69.00175pt.
 
-<img/ts_test/1_stitched.jpeg, id=1792, 376.40625pt x 290.08376pt>
+<img/ts_test/1_stitched.jpeg, id=1789, 376.40625pt x 290.08376pt>
 File: img/ts_test/1_stitched.jpeg Graphic file (type jpg)
 
 <use img/ts_test/1_stitched.jpeg>
 Package pdftex.def Info: img/ts_test/1_stitched.jpeg used on input line 374.
 (pdftex.def)             Requested size: 138.00052pt x 106.35551pt.
 
-<img/ts_test/1_g.jpeg, id=1793, 256.96pt x 256.96pt>
+<img/ts_test/1_g.jpeg, id=1790, 256.96pt x 256.96pt>
 File: img/ts_test/1_g.jpeg Graphic file (type jpg)
 
 <use img/ts_test/1_g.jpeg>
@@ -1483,35 +1483,35 @@ File: img/ts_test/region3.png Graphic file (type png)
 Package pdftex.def Info: img/ts_test/region3.png used on input line 391.
 (pdftex.def)             Requested size: 77.28856pt x 80.29979pt.
 
-<img/ts_test/3_orig.jpeg, id=1802, 39.14626pt x 41.15375pt>
+<img/ts_test/3_orig.jpeg, id=1799, 39.14626pt x 41.15375pt>
 File: img/ts_test/3_orig.jpeg Graphic file (type jpg)
 
 <use img/ts_test/3_orig.jpeg>
 Package pdftex.def Info: img/ts_test/3_orig.jpeg used on input line 396.
 (pdftex.def)             Requested size: 39.14615pt x 41.15364pt.
 
-<img/ts_test/3_r256.jpeg, id=1803, 256.96pt x 256.96pt>
+<img/ts_test/3_r256.jpeg, id=1800, 256.96pt x 256.96pt>
 File: img/ts_test/3_r256.jpeg Graphic file (type jpg)
 
 <use img/ts_test/3_r256.jpeg>
 Package pdftex.def Info: img/ts_test/3_r256.jpeg used on input line 402.
 (pdftex.def)             Requested size: 138.00052pt x 138.00351pt.
 
-<img/ts_test/3_r128.jpeg, id=1804, 256.96pt x 128.48pt>
+<img/ts_test/3_r128.jpeg, id=1801, 256.96pt x 128.48pt>
 File: img/ts_test/3_r128.jpeg Graphic file (type jpg)
 
 <use img/ts_test/3_r128.jpeg>
 Package pdftex.def Info: img/ts_test/3_r128.jpeg used on input line 408.
 (pdftex.def)             Requested size: 138.00052pt x 69.00175pt.
 
-<img/ts_test/3_stitched.jpeg, id=1805, 72.27pt x 61.22874pt>
+<img/ts_test/3_stitched.jpeg, id=1802, 72.27pt x 61.22874pt>
 File: img/ts_test/3_stitched.jpeg Graphic file (type jpg)
 
 <use img/ts_test/3_stitched.jpeg>
 Package pdftex.def Info: img/ts_test/3_stitched.jpeg used on input line 414.
 (pdftex.def)             Requested size: 72.2698pt x 61.22858pt.
 
-<img/ts_test/3_g.jpeg, id=1806, 256.96pt x 256.96pt>
+<img/ts_test/3_g.jpeg, id=1803, 256.96pt x 256.96pt>
 File: img/ts_test/3_g.jpeg Graphic file (type jpg)
 
 <use img/ts_test/3_g.jpeg>
@@ -1540,35 +1540,35 @@ File: img/ts_test/region2.png Graphic file (type png)
 Package pdftex.def Info: img/ts_test/region2.png used on input line 431.
 (pdftex.def)             Requested size: 345.0pt x 92.27242pt.
 
-<img/ts_test/2_orig.jpeg, id=1812, 6107.81876pt x 1545.775pt>
+<img/ts_test/2_orig.jpeg, id=1809, 6107.81876pt x 1545.775pt>
 File: img/ts_test/2_orig.jpeg Graphic file (type jpg)
 
 <use img/ts_test/2_orig.jpeg>
 Package pdftex.def Info: img/ts_test/2_orig.jpeg used on input line 436.
 (pdftex.def)             Requested size: 345.0pt x 87.29399pt.
 
-<img/ts_test/2_r256.jpeg, id=1813, 256.96pt x 256.96pt>
+<img/ts_test/2_r256.jpeg, id=1810, 256.96pt x 256.96pt>
 File: img/ts_test/2_r256.jpeg Graphic file (type jpg)
 
 <use img/ts_test/2_r256.jpeg>
 Package pdftex.def Info: img/ts_test/2_r256.jpeg used on input line 442.
 (pdftex.def)             Requested size: 138.00052pt x 138.00351pt.
 
-<img/ts_test/2_r128.jpeg, id=1814, 256.96pt x 128.48pt>
+<img/ts_test/2_r128.jpeg, id=1811, 256.96pt x 128.48pt>
 File: img/ts_test/2_r128.jpeg Graphic file (type jpg)
 
 <use img/ts_test/2_r128.jpeg>
 Package pdftex.def Info: img/ts_test/2_r128.jpeg used on input line 448.
 (pdftex.def)             Requested size: 138.00052pt x 69.00175pt.
 
-<img/ts_test/2_stitched.jpeg, id=1815, 6164.02875pt x 1546.77875pt>
+<img/ts_test/2_stitched.jpeg, id=1812, 6164.02875pt x 1546.77875pt>
 File: img/ts_test/2_stitched.jpeg Graphic file (type jpg)
 
 <use img/ts_test/2_stitched.jpeg>
 Package pdftex.def Info: img/ts_test/2_stitched.jpeg used on input line 454.
 (pdftex.def)             Requested size: 172.5pt x 43.2859pt.
 
-<img/ts_test/2_g.jpeg, id=1816, 256.96pt x 256.96pt>
+<img/ts_test/2_g.jpeg, id=1813, 256.96pt x 256.96pt>
 File: img/ts_test/2_g.jpeg Graphic file (type jpg)
 
 <use img/ts_test/2_g.jpeg>
@@ -1832,19 +1832,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
-<img/ch_init.png, id=2166, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=2163, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 327.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
-[95] <img/ch_initAS.png, id=2192, 478.78876pt x 243.91125pt>
+[95] <img/ch_initAS.png, id=2189, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 347.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=2194, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=2191, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
@@ -1856,7 +1856,7 @@ File: img/ch_init.png Graphic file (type png)
 <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 377.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
- <img/ch_saveDict.png, id=2204, 637.38126pt x 83.31125pt>
+ <img/ch_saveDict.png, id=2201, 637.38126pt x 83.31125pt>
 File: img/ch_saveDict.png Graphic file (type png)
 
 <use img/ch_saveDict.png>
@@ -1867,7 +1867,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
-<img/ch_loadDict.png, id=2217, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=2214, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
@@ -1878,14 +1878,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
-<img/ch_saveRegs.png, id=2219, 575.14874pt x 86.3225pt>
+<img/ch_saveRegs.png, id=2216, 575.14874pt x 86.3225pt>
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
 Package pdftex.def Info: img/ch_saveRegs.png used on input line 428.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
  [98 <./img/ch_saveDict.png> <./img/ch_loadDict.png>]
-<img/ch_loadJson.png, id=2230, 536.0025pt x 71.26625pt>
+<img/ch_loadJson.png, id=2227, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
@@ -1896,7 +1896,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
-<img/ch_createDict.png, id=2232, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=2229, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
@@ -1904,7 +1904,7 @@ Package pdftex.def Info: img/ch_createDict.png used on input line 457.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
  [99 <./img/ch_saveRegs.png> <./img/ch_loadJson.png> <./img/ch_createDict.png>]
 
-<img/ch_appendLabels.png, id=2242, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=2239, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -1915,14 +1915,14 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 479--480
  [] 
  []
 
-<img/ch_appendLabel.png, id=2244, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=2241, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 494.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
  [100 <./img/ch_appendLabels.png>]
-<img/ch_selectNext.png, id=2258, 593.21625pt x 82.3075pt>
+<img/ch_selectNext.png, id=2254, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
@@ -1933,7 +1933,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 516--518
 
  []
 
-<img/ch_newLabel.png, id=2260, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=2256, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
@@ -1944,7 +1944,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
-<img/ch_selectDict.png, id=2271, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=2268, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -1980,7 +1980,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--597
 
  []
 
-<img/ch_findContext.png, id=2281, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2278, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
@@ -2006,7 +2006,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 632--634
 
  []
 
-<img/ch_toggleRegions.png, id=2294, 601.24625pt x 66.2475pt>
+<img/ch_toggleRegions.png, id=2291, 601.24625pt x 66.2475pt>
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
@@ -2017,7 +2017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 652--654
 
  []
 
-<img/ch_singleClickLabel.png, id=2305, 720.6925pt x 260.975pt>
+<img/ch_singleClickLabel.png, id=2302, 720.6925pt x 260.975pt>
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
@@ -2045,7 +2045,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--683
  []
 
 [105 <./img/ch_singleClickLabel.png>]
-<img/ch_addPoi.png, id=2315, 574.145pt x 398.48875pt>
+<img/ch_addPoi.png, id=2312, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 690.
@@ -2076,7 +2076,7 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 729--730
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2326, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2323, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
@@ -2093,7 +2093,7 @@ Overfull \hbox (6.9162pt too wide) in paragraph at lines 752--754
 r-ac-tion that hap-pens with a pushed
  []
 
-<img/ch_mouseDrag.png, id=2338, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2335, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
@@ -2110,13 +2110,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 802--804
  []
 
 [109 <./img/ch_mouseDrag.png>]
-<img/ch_keyDown.png, id=2360, 582.175pt x 71.26625pt>
+<img/ch_keyDown.png, id=2357, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 807.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2362, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2359, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 819.
@@ -2126,7 +2126,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--831
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2364, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2361, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
@@ -2451,8 +2451,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 12758 strings out of 493029
- 183818 string characters out of 6136235
+ 12756 strings out of 493029
+ 183804 string characters out of 6136235
  513973 words of memory out of 5000000
  14666 multiletter control sequences out of 15000+600000
  14035 words of font info for 54 fonts, out of 8000000 for 9000
@@ -2482,10 +2482,10 @@ onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (139 pages, 18096170 bytes).
+Output written on document.pdf (139 pages, 18095733 bytes).
 PDF statistics:
- 3544 PDF objects out of 3580 (max. 8388607)
- 3228 compressed objects within 33 object streams
- 1339 named destinations out of 1440 (max. 500000)
+ 3540 PDF objects out of 3580 (max. 8388607)
+ 3224 compressed objects within 33 object streams
+ 1337 named destinations out of 1440 (max. 500000)
  1087 words of extra memory for PDF output out of 10000 (max. 10000000)
 
