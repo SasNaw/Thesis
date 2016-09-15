@@ -38,7 +38,7 @@ Objective (1), the conversion of proprietary to open image formats, was accompli
  
 Objective (2), developing a WSI viewer with annotation capabilities (compare subsection \ref{sec4_asvPart}), was accomplished by the AS, which consists of 2 parts: ASS and ASV. The ASS delivers a local slide repository. Additionally, it offers a RESTful API, which can be used by the ASV to request and persist data. Since the ASV is running in a web browser, it can be used independent of an operating system. The ASV offers a simple GUI to make annotations to a WSI based on regions (compare subsection \ref{sec4_region}) and label dictionaries.
 
-Objective (3), the extraction of the AS' annotations to create a ground truth, was accomplished by the TS. It offers a python script to extract an ROI out of a WSI into an individual image, while keeping correspondence to the region's label and metadata through the use of directory structure and metadata files.
+Objective (3), the extraction of the AS' annotations to create a ground truth, was accomplished by the TS. It offers a python script to extract an ROI out of a WSI into an individual image, while keeping correspondence to the region's label and metadata through the use of directory structure and metadata files. The extracted files are of common types (JPEG, PNG, TXT) to ensure uncomplicated further processing.
 
 The tools presented in this thesis are capable of handling the complete process chain introduced in subsection \ref{sec2_pc}. Thus, the goal of introducing tools for the cooperative annotation of WSIs by deep learning and pathology experts to create a ground truth was accomplished.
 
