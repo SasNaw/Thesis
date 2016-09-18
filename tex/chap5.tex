@@ -72,13 +72,13 @@ The TS is implemented as a python script called \textbf{\emph{TessellationServic
 	The TS is contained on the disc at the end of this thesis, see appendix \ref{secA_cd}.
 }. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: \emph{OpenSlide}, \emph{NumPy}, \emph{Pillow} and \emph{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}.
 
-\emph{OpenSlide} was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
+OpenSlide was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
 
 NumPy is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
 
-OpenCV is an open source computer vision and machine learning software library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning, with a strong focus on real-time computing and efficiency\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function (see subsection \ref{sec5_tessellation}).
+OpenCV is an open source computer vision and machine learning library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function (see subsection \ref{sec5_tessellation}).
 
-Pillow is an imaging library, which offers methods to read from and write to images. It was used for reading, writing, scaling and converting the extracted images.
+Pillow is an imaging library, which offers methods to read from and write to image files. It was used for reading, writing, scaling and converting the extracted images.
 
 A detailed documentation of the TS' functions can be found in appendix \ref{secC}.
 
@@ -90,11 +90,11 @@ The TS can be called over the python interpreter:
 	$ python TessellationService [input] [dictionary] [params]
 \end{lstlisting}
 
-The arguments [input] and [dictionary] are mandatory. The files which are supposed to be targeted by the extraction process are handed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
+The [input] and [dictionary] arguments are mandatory. 
 
-As mentioned in chapter \ref{sec4_as}, multiple dictionaries can be used for annotation. Since every WSI has an individual save file for each dictionary (compare subsection \ref{sec4_setup}), it is necessary to provide the dictionary targeted for extraction via the [dictionary] parameter. Each input file must have its associated save file in the same directory.
+Files whose ROIs are supposed to be extracted are passed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
 
-
+As mentioned in subsection \ref{sec4_setup}, each used dictionary has its own save file per WSI annotated with it, according the the pattern \emph{[file name].[extension]\textunderscore\allowbreak[dictionary].json}. The \emph{[dictionary]} parameter is used to determine which save file to use. Each input file must have its associated save file in the same directory.
 
 As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
 
@@ -124,7 +124,7 @@ The TS receives a list of files and folders to extract regions from and iterates
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.6]{img/ts_run.png}
+		\includegraphics[scale=0.65]{img/ts_run.png}
 		\caption{Activity diagram of TS' extraction procedure}
 		\label{fig5_tsRunUml}
 	\end{center}
