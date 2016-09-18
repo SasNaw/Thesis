@@ -94,7 +94,7 @@ The [input] and [dictionary] arguments are mandatory.
 
 Files whose ROIs are supposed to be extracted are passed to the TS via the \emph{[input]} argument. This can be a list of WSIs, DZIs and directories. If a directory is handed to the TS, all subdirectories (except a DZI's \emph{"{\textunderscore}files"} directory) will be searched as well.
 
-As mentioned in subsection \ref{sec4_setup}, each used dictionary has its own save file per WSI annotated with it, according the the pattern \emph{[file name].[extension]\textunderscore\allowbreak[dictionary].json}. The \emph{[dictionary]} parameter is used to determine which save file to use. Each input file must have its associated save file in the same directory.
+As mentioned in subsection \ref{sec4_setup}, each used dictionary has its own save file per WSI annotated with it, according the the pattern \emph{[file name].[extension]\textunderscore\allowbreak[dictionary].json}. The \emph{[dictionary]} parameter is used to determine which save file to use. The provided directory name is applied to all input elements. Each file must have its associated save file in the same directory.
 
 As mentioned in section \ref{sec5_method}, it might be necessary to create different output images for different purposes. Therefore, the TS has a list of optional parameters to manipulate the created output in order to be applicable to a wider variety of cases (see tab. \ref{tab5_tsParams}). Those parameters are optional. 
 
@@ -120,7 +120,7 @@ As mentioned in section \ref{sec5_method}, it might be necessary to create diffe
 
 \subsection{Extraction process}
 \label{sec5_extractionProcess}
-The TS receives a list of files and folders to extract regions from and iterates over each entry. If the entry is a directory, each contained element will be checked for its type. If it is a WSI/DZI file, the extraction is started right away. Once the extraction is finished, the next element is examined. If the entry is a directory, each contained element is subject to the same evaluation. WSI/DZI files are extracted, while subdirectories are recursively traversed until the end of the directory tree. Each element found in this process that qualifies for region extraction is extracted. Fig. \ref{fig5_tsRunUml} visualizes the described process in an activity diagram.
+The TS receives a list of files and folders to extract regions from and iterates over each entry. If the entry is a directory, each contained element will be checked for its type. If it is a WSI/DZI file, the extraction is started right away. Once the extraction is finished, the next element is examined. If the entry is a directory, each contained element is subject to the same evaluation. WSI/DZI files are extracted, while subdirectories are recursively traversed until the end of the directory tree. Each element found in this process that qualifies for region extraction is extracted. Fig. \ref{fig5_tsRunUml} visualizes this process in an activity diagram.
 
 \begin{figure}[H]
 	\begin{center}
@@ -130,9 +130,7 @@ The TS receives a list of files and folders to extract regions from and iterates
 	\end{center}
 \end{figure}
 
-OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native DZI, but only wrap an OpenSlide object into a DZG(compare subsection \ref{sec4_openslide}), a different approach had to be chosen to access a provided DZI.
-
-Both approaches share the following utility functions\footnote{
+OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native DZI, a different approach had to be chosen to access a provided DZI. Both approaches share the following utility functions\footnote{
 	See appendix \ref{secC} for documentation of the individual function's source code.
 }:
 
@@ -162,7 +160,7 @@ Both approaches share the following utility functions\footnote{
 				label & the region's label & string\\ \hline
 				zoom & the region's zoom & float\\ \hline
 			\end{tabular}
-			\caption{File name patterns of generated output}
+			\caption{Metadata information}
 			\label{tab5_metadataJson}
 		\end{center}
 	\end{table}
