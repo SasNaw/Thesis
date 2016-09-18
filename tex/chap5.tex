@@ -196,7 +196,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 
 \subsection{Extraction without Tessellation}
 \label{sec5_extraction}
-As mentioned above, the implementation of the conversion differs for WSI and DZI due to the role of OpenSlide in the extraction of WSIs. The following two sections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
+As mentioned above, the implementation of the extraction differs for WSI and DZI due to the use of OpenSlide when accessing a WSI. The following two sections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
 
 \subsubsection{WSI}
 The WSI extraction process is done in the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
