@@ -45,7 +45,7 @@ Case (3) approximates a ROI by tessellating it into tiles of the provided width 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/tessellation.png}
+		\includegraphics[scale=0.4]{img/tessellation.png}
 		\caption{Example of an ROI approximated via tessellation (gray tiles belong to the ROI)}
 		\label{fig5_tesExample}
 	\end{center}
@@ -197,7 +197,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 
 \subsection{Extraction without Tessellation}
 \label{sec5_extraction}
-As mentioned above, the implementation of the extraction differs for WSI and DZI due to the use of OpenSlide when accessing a WSI. The following two sections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
+As mentioned in subsection \ref{sec5_extractionProcess}, the implementation of the extraction process differs for DZI and WSI. This is because of the use of OpenSlide to read a WSI. The following two subsections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
 
 \subsubsection{WSI}
 The WSI extraction process is realized with the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
@@ -243,30 +243,48 @@ The first step in stitching the baseline area is to determine the BB's size (see
 
 \subsection{Extraction with Tessellation}
 \label{sec5_tessellation}
+If the TS was executed with the -t parameter (compare tab. \ref{tab5_tsParams}), every region will be tessellated into multiple image tiles of the provided width and height (compare \ref{sec5_method}(3) and fig. \ref{fig5_tesExample}). As stated in subsection \ref{sec5_extraction}, the main difference between the processing of a WSI and DZI is the need to parse the DZI's associated metadata in order to stitch a baseline area. With that exception, the tessellated extraction works identical in both cases.
 
-If a region is extracted with the -t parameter (compare tab. \ref{tab5_tsParams}), it will be tessellated into multiple image tiles of provided width and height (compare \ref{sec5_method}(3) and fig. \ref{fig5_tesExample}). As in subsection \ref{sec5_extraction}, the main difference between the processing of a WSI and a DZI is the need to parse the DZI's associated metadata and stitch an area of the baseline image. With that exception, the tessellated extraction works identical in both cases.
-
-The baseline image is tessellated into $m$*$n$ virtual tiles (see eq. \ref{eq:m} and \ref{eq:n}). All virtual tiles containing parts of the region's path are saved in a list $L^{path}$.
+The baseline image is tessellated into $m$*$n$ virtual tiles (see eq. \ref{eq:m} and \ref{eq:n}). 
 \begin{equation}\label{eq:m}
-	m = \text{baseline image height} / \text{tile height}
+m = \frac{image^{height}}{tile^{height}}
 \end{equation}
 \begin{equation}\label{eq:n}
-	n = \text{baseline image width} / \text{tile width}
+n = \frac{image^{width}}{tile^{width}}
 \end{equation}
 
-The virtual tiles are needed to create and work with the \emph{reference image} (RI\nmc{RI}{Reference Image}). The RI is a central component of the tessellated extraction process. It is a binary image, which is $m$ pixels high and $n$ pixels wide. Each pixel represents a virtual tile of the baseline image. If a pixel is white, the corresponding virtual tile is part of the region to extract.The RI is a matrix representation of which tile is needed from the baseline image (see fig. \ref{fig5_riExample}).
+As mentioned before, a DZI has no baseline image. However, the height and width information from the DZI's metadata file suffice for the purpose of creating virtual tiles. In either case, the virtual tiles are only a set of reference points to describe a tiled approximation of the region's path (see fig. \ref{fig5_vtExample}). All virtual tiles containing segments of the region's path are saved in a list $L^{path}$.
 
 \begin{figure}[!h]
 	\begin{center}
-		\includegraphics[scale=0.35]{img/RI_example.png}
-		\caption{Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref{secA})}
-		\label{fig5_riExample}
+		\includegraphics[scale=0.35]{img/virtualTiles.png}
+		\caption{Example of path approximated by virtual tiles}
+		\label{fig5_vtExample}
 	\end{center}
+\end{figure}
+
+The virtual tiles are used to create and work with the \emph{reference image} (RI)\nmc{RI}{Reference Image}. The RI is a central component of the tessellated extraction process. It is a binary image, which is $m$ pixels high and $n$ pixels wide. Each pixel represents a virtual tile of the baseline image/area. If a pixel is white, the corresponding virtual tile is part of the region to extract (see fig. \ref{fig5_riA}). The RI is a matrix representation of which tile is needed from the baseline image/area.
+
+\begin{figure}[H]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{img/RI_a.png}
+		\caption{RI (white pixels correspond to\newline tiles that are part of the region)}
+		\label{fig5_riA}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{img/RI_b.png}
+		\caption{stitched, approximated region (32x32 pixel tile size) }
+		\label{fig5_riB}
+	\end{subfigure}
+	\caption{Example of RI (a) and resulting approximated region (b); example was created using CMU-1.svs from Aperio, see appendix \ref{secA}}
+	\label{fig5_riExample}
 \end{figure}
 
 When created, the RI has only black pixels. To color the pixels associated with the ROI white,  OpenCV's \texttt{drawContours(image, contours, color, fill)} function is used. Since the correspondence of pixels and tiles is bidirectional, $L^{path}$ can be used to describe the contour. The drawn contour is then filled white.
 
-The last step is to iterate each pixel of the RI. For every white pixel found, the corresponding tile is extracted from the baseline image and saved into an individual image file (compare tab. \ref{tab5_outputNames} for the naming convention).
+The last step is to iterate each pixel of the RI. For every white pixel found, the corresponding tile is extracted from the baseline image and saved into an individual image file (see fig. \ref{fig5_riB} for a stitched example, compare tab. \ref{tab5_outputNames} for the naming convention).
 
 
 \section{Test}

@@ -32,35 +32,36 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)\relax }}{69}{figure.caption.61}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction (without tessellation)\relax }}{70}{figure.caption.64}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction (without tessellation)\relax }}{71}{figure.caption.66}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref {secA})\relax }}{73}{figure.caption.67}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Test case \emph {Aperio - CMU-1.svs}\relax }}{74}{figure.caption.69}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Results for test region A\relax }}{76}{figure.caption.71}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Results for test region B\relax }}{77}{figure.caption.72}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Results for test region C\relax }}{78}{figure.caption.73}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of path approximated by virtual tiles\relax }}{73}{figure.caption.67}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Example of RI (a) and resulting approximated region (b); example was created using CMU-1.svs from Aperio, see appendix \ref {secA}\relax }}{73}{figure.caption.68}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Test case \emph {Aperio - CMU-1.svs}\relax }}{75}{figure.caption.70}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Results for test region A\relax }}{77}{figure.caption.72}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Results for test region B\relax }}{78}{figure.caption.73}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Results for test region C\relax }}{79}{figure.caption.74}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}\relax }}{96}{figure.caption.98}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}\relax }}{96}{figure.caption.100}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}\relax }}{97}{figure.caption.103}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}\relax }}{97}{figure.caption.105}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}\relax }}{98}{figure.caption.108}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}\relax }}{98}{figure.caption.110}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}\relax }}{99}{figure.caption.113}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}\relax }}{99}{figure.caption.115}
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}\relax }}{99}{figure.caption.117}
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}\relax }}{100}{figure.caption.121}
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}\relax }}{101}{figure.caption.123}
-\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}\relax }}{101}{figure.caption.125}
-\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}\relax }}{102}{figure.caption.128}
-\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}\relax }}{102}{figure.caption.131}
-\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}\relax }}{104}{figure.caption.139}
-\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}\relax }}{104}{figure.caption.144}
-\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}\relax }}{105}{figure.caption.147}
-\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}\relax }}{106}{figure.caption.150}
-\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}\relax }}{108}{figure.caption.156}
-\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}\relax }}{109}{figure.caption.158}
-\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}\relax }}{110}{figure.caption.164}
-\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}\relax }}{110}{figure.caption.166}
-\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}\relax }}{110}{figure.caption.168}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Call hierarchy of \texttt {init(file{\textunderscore }name, url, mpp)}\relax }}{97}{figure.caption.99}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Call hierarchy of \texttt {initAnnotationService()}\relax }}{97}{figure.caption.101}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Call hierarchy of \texttt {saveConfig()}\relax }}{98}{figure.caption.104}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Call hierarchy of \texttt {loadConfiguration()}\relax }}{98}{figure.caption.106}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Call hierarchy of \texttt {saveDictionary()}\relax }}{99}{figure.caption.109}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Call hierarchy of \texttt {loadDictionary(path)}\relax }}{99}{figure.caption.111}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Call hierarchy of \texttt {saveRegions()}\relax }}{100}{figure.caption.114}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Call hierarchy of \texttt {loadJson()}\relax }}{100}{figure.caption.116}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Call hierarchy of \texttt {createNewDictionary(isCancelable)}\relax }}{100}{figure.caption.118}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Call hierarchy of \texttt {appendLabelsToList()}\relax }}{101}{figure.caption.122}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Call hierarchy of \texttt {appendLabelToList(label)}\relax }}{102}{figure.caption.124}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Call hierarchy of \texttt {selectNextLabel(label)}\relax }}{102}{figure.caption.126}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Call hierarchy of \texttt {newLabel()}\relax }}{103}{figure.caption.129}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Call hierarchy of \texttt {dictListClick(index)}\relax }}{103}{figure.caption.132}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Call hierarchy of \texttt {findContextRegion()}\relax }}{105}{figure.caption.140}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Call hierarchy of \texttt {toggleRegions(uid)}\relax }}{105}{figure.caption.145}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Call hierarchy of \texttt {singleClickOnLabel(event)}\relax }}{106}{figure.caption.148}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Call hierarchy of \texttt {addPoi(event)}\relax }}{107}{figure.caption.151}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Call hierarchy of \texttt {mouseDown(x,y)}\relax }}{109}{figure.caption.157}
+\contentsline {figure}{\numberline {B.20}{\ignorespaces Call hierarchy of \texttt {mouseDrag(x,y,dx,dy)}\relax }}{110}{figure.caption.159}
+\contentsline {figure}{\numberline {B.21}{\ignorespaces Call hierarchy of \texttt {keydown(function(e))}\relax }}{111}{figure.caption.165}
+\contentsline {figure}{\numberline {B.22}{\ignorespaces Call hierarchy of \texttt {keyup(function(e))}\relax }}{111}{figure.caption.167}
+\contentsline {figure}{\numberline {B.23}{\ignorespaces Call hierarchy of \texttt {selectToolOnKeyPress(id}\relax }}{111}{figure.caption.169}
 \addvspace {10\p@ }
