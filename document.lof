@@ -32,7 +32,7 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example for adjusted BB (A - original BB with aspect ratio of $\sim $1:1, B - adjusted BB to aspect ratio of $\sim $1:2)\relax }}{69}{figure.caption.61}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Activity diagram of TS' WSI extraction (without tessellation)\relax }}{70}{figure.caption.64}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Activity diagram of TS' DZI extraction (without tessellation)\relax }}{71}{figure.caption.66}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref {secA})\relax }}{72}{figure.caption.67}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Example of RI (A) and resulting image tiles (B, stitched) with a tile size of 32x32 pixel (example was created using CMU-1.svs from Aperio, see appendix \ref {secA})\relax }}{73}{figure.caption.67}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Test case \emph {Aperio - CMU-1.svs}\relax }}{74}{figure.caption.69}
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Results for test region A\relax }}{76}{figure.caption.71}
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Results for test region B\relax }}{77}{figure.caption.72}

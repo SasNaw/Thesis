@@ -148,7 +148,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 	
 	If -o was provided, the processed image will be saved in the supplied location inside a directory with the name of the extracted region's label.
 	
-	\item \texttt{save{\textunderscore}metadata(name, region, *tiles)} writes the corresponding metadata to an extracted image into a file (see tab. \ref{tab5_outputNames} for the file name pattern). The metadata is a JSON map and contains the values listed in tab. \ref{tab5_metadataJson}. When the TS is run with -t, the \emph{"image"} key is replaced by \emph{"tiles"}, which contains a JSON list with the names of all tiles belonging to the extracted image (each individual image name is according to the pattern in tab. \ref{tab5_outputNames}).
+	\item \texttt{save{\textunderscore}metadata(name, region, *tiles)} writes the corresponding metadata to an extracted image into a file (see tab. \ref{tab5_outputNames} for the file name pattern). The metadata is a JSON map and contains the values listed in tab. \ref{tab5_metadataJson}. When the TS is run with -t, the \emph{"image"} key is replaced by \emph{"tiles"}, which is a JSON list containing the names of all tile image files belonging to the extracted image (each file name is in accordance with the pattern in tab. \ref{tab5_outputNames}).
 	
 	\begin{table}[H]
 		\begin{center}
@@ -157,6 +157,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 				\textbf{key} & \textbf{value} & \textbf{type}\\ \hline
 				context & the image region's context & JSON list\\ \hline
 				image & name of the extracted image file (compare tab. \ref{tab5_outputNames}) & string \\ \hline
+				tiles & list of file names of the extracted tiles (compare tab. \ref{tab5_outputNames}) & JSON list \\ \hline
 				label & the region's label & string\\ \hline
 				zoom & the region's zoom & float\\ \hline
 			\end{tabular}
@@ -177,7 +178,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 		\end{center}
 	\end{figure}
 	
-	\item \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} scales a BB by a provided scale. This is to avoid image distortions due to scaling images up (compare section \ref{sec5_method}). While \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} changes the aspect ratio of a BB, \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} keeps the aspect ratio and changes the BB as a whole instead.
+	\item \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} scales a BB by a provided scale. This is to avoid image distortions due to scaling images up (compare section \ref{sec5_method}). While \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} changes the aspect ratio of a BB, \texttt{scale{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box, scale)} keeps the aspect ratio and increases or decreases both dimensions of the BB by the provided scale.
 \end{itemize}
 
 \begin{table}[H]
@@ -199,7 +200,7 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 As mentioned above, the implementation of the extraction differs for WSI and DZI due to the use of OpenSlide when accessing a WSI. The following two sections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
 
 \subsubsection{WSI}
-The WSI extraction process is done in the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
+The WSI extraction process is realized with the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -209,7 +210,7 @@ The WSI extraction process is done in the \texttt{wsi(file)} function. It opens 
 	\end{center}
 \end{figure}
 
-As shown in fig. \ref{fig5_tsWsiUml}, calculating the BB is the first step. To do so, the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function is used, which returns a python dictionary with the minimum and maximum values of x and y in the associated region's path. If -r was provided, the BB's size will be adjusted to fit the supplied image ratio.
+Calculating the BB is the first step. To do so, the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function is used, which returns a python dictionary with the minimum and maximum values of x and y in the associated region's path ($BB_{min(x)}$, $BB_{min(y)}$, $BB_{max(x)}$ and $BB_{max(y)}$). If -r was provided, the BB's size will be adjusted to fit the supplied image ratio.
 
 Next, the location of the region is determined. This is done by taking the minimum value for x and y from the BB and declaring it as upper, left corner of the region. The size is calculated by subtracting the minimum from the maximum value for x and y respectively (see eq. \ref{eq:sizeX} and \ref{eq:sizey}).
 
@@ -220,10 +221,10 @@ size_x = BB_{max(x)} - BB_{min(x)}
 size_y = BB_{max(y)} - BB_{min(y)}
 \end{equation}
 
-OpenSlide's \texttt{readRegion(location, level, size)} function is used to retrieve the region in a separate image from the original baseline image. This extracted image is then written into a file, together with its associated region's metadata.
+OpenSlide's \texttt{readRegion(location, level, size)} function is used to retrieve the region's BB in a separate image from the original baseline image. This extracted image and its associated region's metadata are then written to file.
 
 \subsubsection{DZI}
-Since it is not possible to open a DZI with OpenSlide, the extraction process for DZI differs from the one for WSI. It is implemented in the \texttt{dzi(file)} function, which starts and manages the extraction process. Since an image must be stitched together manually, the information about tile size and image dimensions must be parsed from the DZI metadata file, as well as the level containing the baseline image (since DZI uses n instead of 0 for the level with the highest resolution). Once the information is parsed, a file name is created from the file path and the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
+It is not possible to read a DZI with OpenSlide, thus their extraction process differs from the WSI approach. The process is implemented in the \texttt{dzi(file)} function. Since a DZI only consists of multiple tiles over different levels, the baseline image must be stitched together manually (compare \ref{sec2_openFormats}). Only the area of the ROI is of interest for the further extraction process. Therefore only that area is stitched together (the stitched area will be called \emph{baseline area} from here on). In order to do so the information about tile size and image dimensions must be parsed from the DZI's metadata file. Since DZI uses $n$ instead of $0$ for the highest resolution level, $n$ must be determined as well. Once the information is acquired, a file name is created from the file path. Afterwards, the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -233,9 +234,11 @@ Since it is not possible to open a DZI with OpenSlide, the extraction process fo
 	\end{center}
 \end{figure}
 
-The BB is created via the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function. Once the BB is created, the stitching process of the area covered by the baseline image begins. This is realized in the \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} function. It first checks, if the -r parameter was provided and if so, if the aspect ratio of the BB matches the ratio of the supplied height and width. If necessary, the BB is adjusted via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}.
+The BB is created via the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function. Once the BB is created, the baseline area is stitched (via \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles({\allowbreak}dzi, bounding{\textunderscore}box)}). 
+
+If -r was provided, \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles({\allowbreak}dzi, bounding{\textunderscore}box)} compares the aspect ratio of the BB and the provided height and width supplied via -r.  If necessary, the BB is adjusted to fit the provided aspect ratio (via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}).
  
-The first step in stitching the baseline image area together, is determining the size of the BB (see eq. \ref{eq:sizeX} and \ref{eq:sizey}). To determine the needed tiles, $BB_{min(x)}$, $BB_{min(y)}$, $BB_{max(x)}$ and $BB_{max(y)}$ are divided by the DZI's tile size, resulting in $BB_{min(x)}^t$, $BB_{min(y)}^t$, $BB_{max(x)}^t$ and $BB_{max(y)}^t$. Those values are then iterated from the pair $(BB_{min(x)}^t, BB_{min(y)}^t)$ to $(BB_{max(x)}^t, BB_{max(y)}^t)$. Each of the resulting pairs $(BB_x^t, BB_y^t)$ refers to a tile from the baseline image. The baseline image area is stitched together by iterating over all pairs $(BB_x^t, BB_y^t)$ and stitching the corresponding tiles together. This is implemented in the \texttt{get{\textunderscore}image{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} function. The stitched image is then cropped to fit the size and position of the BB and saved together with its corresponding metadata file (via \texttt{save{\textunderscore}file(image, region, slide{\textunderscore}name)} and \texttt{save{\textunderscore}metadata(name, region, *tiles)}).
+The first step in stitching the baseline area is to determine the BB's size (see eq. \ref{eq:sizeX} and \ref{eq:sizey}). To determine the needed tiles, $BB_{min(x)}$, $BB_{min(y)}$, $BB_{max(x)}$ and $BB_{max(y)}$ are divided by the DZI's tile size, resulting in $BB_{min(x)}^t$, $BB_{min(y)}^t$, $BB_{max(x)}^t$ and $BB_{max(y)}^t$. Those values are then iterated from the pair $(BB_{min(x)}^t,$ $BB_{min(y)}^t)$ to $(BB_{max(x)}^t, BB_{max(y)}^t)$. Each of the resulting pairs $(BB_x^t, BB_y^t)$ represents a tile of the baseline area. The baseline area is stitched together by iterating over all pairs $(BB_x^t, BB_y^t)$ and stitching the corresponding tiles together(via \texttt{get{\textunderscore}image{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)}). The baseline area is then cropped to fit the size and position of the BB and saved together with its corresponding metadata file (via \texttt{save{\textunderscore}file(image, region, slide{\textunderscore}name)} and \texttt{save{\textunderscore}metadata(name, region, *tiles)}).
 
 
 \subsection{Extraction with Tessellation}
