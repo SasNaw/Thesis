@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 SEP 2016 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  20 SEP 2016 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -722,7 +722,11 @@ Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 
 
 Writing nomenclature file document.nlo
-(./document.aux)
+(./document.aux
+
+LaTeX Warning: Label `tabA_paths' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -739,8 +743,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1625,7 +1628,7 @@ Overfull \vbox (9.57343pt too high) has occurred while \output is active []
 Chapter 6.
 [79
 
-] [80]) [81] [82
+]) [80] [81] [82
 
 
 ] (./tex/appA.tex
@@ -1648,12 +1651,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--15
 
 Overfull \hbox (5.58028pt too wide) in paragraph at lines 10--17
  [] 
- []
-
-
-Overfull \hbox (22.39871pt too wide) in paragraph at lines 26--27
-[]\OT1/cmr/m/n/10 The JSON save file from []5.4[] can also be found on the disc
-, at \OT1/cmr/m/it/10 /testdata/json/CMU-
  []
 
 [83
@@ -1862,19 +1859,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
-<img/ch_init.png, id=2170, 506.89375pt x 202.7575pt>
+<img/ch_init.png, id=2168, 506.89375pt x 202.7575pt>
 File: img/ch_init.png Graphic file (type png)
  <use img/ch_init.png>
 Package pdftex.def Info: img/ch_init.png used on input line 327.
 (pdftex.def)             Requested size: 253.44626pt x 101.3785pt.
 
-[95] <img/ch_initAS.png, id=2196, 478.78876pt x 243.91125pt>
+[95] <img/ch_initAS.png, id=2194, 478.78876pt x 243.91125pt>
 File: img/ch_initAS.png Graphic file (type png)
 
 <use img/ch_initAS.png>
 Package pdftex.def Info: img/ch_initAS.png used on input line 347.
 (pdftex.def)             Requested size: 239.39378pt x 121.95532pt.
- <img/ch_saveConfig.png, id=2198, 570.13pt x 84.315pt>
+ <img/ch_saveConfig.png, id=2196, 570.13pt x 84.315pt>
 File: img/ch_saveConfig.png Graphic file (type png)
 
 <use img/ch_saveConfig.png>
@@ -1897,7 +1894,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--405
 
  []
 
-<img/ch_loadDict.png, id=2221, 631.35875pt x 214.8025pt>
+<img/ch_loadDict.png, id=2223, 631.35875pt x 214.8025pt>
 File: img/ch_loadDict.png Graphic file (type png)
 
 <use img/ch_loadDict.png>
@@ -1908,14 +1905,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 419--421
 
  []
 
-<img/ch_saveRegs.png, id=2223, 575.14874pt x 86.3225pt>
+<img/ch_saveRegs.png, id=2225, 575.14874pt x 86.3225pt>
 File: img/ch_saveRegs.png Graphic file (type png)
 
 <use img/ch_saveRegs.png>
 Package pdftex.def Info: img/ch_saveRegs.png used on input line 428.
 (pdftex.def)             Requested size: 287.57367pt x 43.16113pt.
  [98 <./img/ch_saveDict.png> <./img/ch_loadDict.png>]
-<img/ch_loadJson.png, id=2234, 536.0025pt x 71.26625pt>
+<img/ch_loadJson.png, id=2238, 536.0025pt x 71.26625pt>
 File: img/ch_loadJson.png Graphic file (type png)
 
 <use img/ch_loadJson.png>
@@ -1926,7 +1923,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--452
 
  []
 
-<img/ch_createDict.png, id=2236, 724.7075pt x 190.7125pt>
+<img/ch_createDict.png, id=2240, 724.7075pt x 190.7125pt>
 File: img/ch_createDict.png Graphic file (type png)
 
 <use img/ch_createDict.png>
@@ -1934,7 +1931,7 @@ Package pdftex.def Info: img/ch_createDict.png used on input line 457.
 (pdftex.def)             Requested size: 326.11536pt x 85.81982pt.
  [99 <./img/ch_saveRegs.png> <./img/ch_loadJson.png> <./img/ch_createDict.png>]
 
-<img/ch_appendLabels.png, id=2246, 727.71875pt x 198.7425pt>
+<img/ch_appendLabels.png, id=2253, 727.71875pt x 198.7425pt>
 File: img/ch_appendLabels.png Graphic file (type png)
 
 <use img/ch_appendLabels.png>
@@ -1945,14 +1942,14 @@ Overfull \hbox (18.85847pt too wide) in paragraph at lines 479--480
  [] 
  []
 
-<img/ch_appendLabel.png, id=2248, 554.07pt x 180.675pt>
+<img/ch_appendLabel.png, id=2255, 554.07pt x 180.675pt>
 File: img/ch_appendLabel.png Graphic file (type png)
 
 <use img/ch_appendLabel.png>
 Package pdftex.def Info: img/ch_appendLabel.png used on input line 494.
 (pdftex.def)             Requested size: 277.03432pt x 90.33727pt.
  [100 <./img/ch_appendLabels.png>]
-<img/ch_selectNext.png, id=2262, 593.21625pt x 82.3075pt>
+<img/ch_selectNext.png, id=2269, 593.21625pt x 82.3075pt>
 File: img/ch_selectNext.png Graphic file (type png)
 
 <use img/ch_selectNext.png>
@@ -1963,7 +1960,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 516--518
 
  []
 
-<img/ch_newLabel.png, id=2264, 540.0175pt x 245.91875pt>
+<img/ch_newLabel.png, id=2271, 540.0175pt x 245.91875pt>
 File: img/ch_newLabel.png Graphic file (type png)
 
 <use img/ch_newLabel.png>
@@ -1974,7 +1971,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
-<img/ch_selectDict.png, id=2275, 501.875pt x 178.6675pt>
+<img/ch_selectDict.png, id=2285, 501.875pt x 178.6675pt>
 File: img/ch_selectDict.png Graphic file (type png)
 
 <use img/ch_selectDict.png>
@@ -2010,7 +2007,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 595--597
 
  []
 
-<img/ch_findContext.png, id=2285, 759.83875pt x 95.35625pt>
+<img/ch_findContext.png, id=2297, 759.83875pt x 95.35625pt>
 File: img/ch_findContext.png Graphic file (type png)
 
 <use img/ch_findContext.png>
@@ -2036,7 +2033,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 632--634
 
  []
 
-<img/ch_toggleRegions.png, id=2298, 601.24625pt x 66.2475pt>
+<img/ch_toggleRegions.png, id=2310, 601.24625pt x 66.2475pt>
 File: img/ch_toggleRegions.png Graphic file (type png)
 
 <use img/ch_toggleRegions.png>
@@ -2047,7 +2044,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 652--654
 
  []
 
-<img/ch_singleClickLabel.png, id=2309, 720.6925pt x 260.975pt>
+<img/ch_singleClickLabel.png, id=2323, 720.6925pt x 260.975pt>
 File: img/ch_singleClickLabel.png Graphic file (type png)
 
 <use img/ch_singleClickLabel.png>
@@ -2075,7 +2072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 681--683
  []
 
 [105 <./img/ch_singleClickLabel.png>]
-<img/ch_addPoi.png, id=2319, 574.145pt x 398.48875pt>
+<img/ch_addPoi.png, id=2334, 574.145pt x 398.48875pt>
 File: img/ch_addPoi.png Graphic file (type png)
  <use img/ch_addPoi.png>
 Package pdftex.def Info: img/ch_addPoi.png used on input line 690.
@@ -2106,7 +2103,7 @@ Overfull \hbox (4.16655pt too wide) in paragraph at lines 729--730
 OT1/cmtt/l/n/10 newRe-gion(arg)\OT1/cmr/m/n/10 ) 
  []
 
-<img/ch_mouseDown.png, id=2330, 523.9575pt x 364.36125pt>
+<img/ch_mouseDown.png, id=2346, 523.9575pt x 364.36125pt>
 File: img/ch_mouseDown.png Graphic file (type png)
 
 <use img/ch_mouseDown.png>
@@ -2123,7 +2120,7 @@ Overfull \hbox (6.9162pt too wide) in paragraph at lines 752--754
 r-ac-tion that hap-pens with a pushed
  []
 
-<img/ch_mouseDrag.png, id=2342, 551.05875pt x 188.705pt>
+<img/ch_mouseDrag.png, id=2358, 551.05875pt x 188.705pt>
 File: img/ch_mouseDrag.png Graphic file (type png)
 
 <use img/ch_mouseDrag.png>
@@ -2140,13 +2137,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 802--804
  []
 
 [109 <./img/ch_mouseDrag.png>]
-<img/ch_keyDown.png, id=2364, 582.175pt x 71.26625pt>
+<img/ch_keyDown.png, id=2382, 582.175pt x 71.26625pt>
 File: img/ch_keyDown.png Graphic file (type png)
  <use img/ch_keyDown.png>
 Package pdftex.def Info: img/ch_keyDown.png used on input line 807.
 (pdftex.def)             Requested size: 291.08679pt x 35.63303pt.
 
-<img/ch_keyup.png, id=2366, 409.53pt x 70.2625pt>
+<img/ch_keyup.png, id=2384, 409.53pt x 70.2625pt>
 File: img/ch_keyup.png Graphic file (type png)
  <use img/ch_keyup.png>
 Package pdftex.def Info: img/ch_keyup.png used on input line 819.
@@ -2156,7 +2153,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 829--831
 
  []
 
-<img/ch_selectToolOnKeyPress.png, id=2368, 351.3125pt x 60.225pt>
+<img/ch_selectToolOnKeyPress.png, id=2386, 351.3125pt x 60.225pt>
 File: img/ch_selectToolOnKeyPress.png Graphic file (type png)
 
 <use img/ch_selectToolOnKeyPress.png>
@@ -2414,13 +2411,13 @@ Overfull \hbox (3.30624pt too wide) in paragraph at lines 9--9
  []
 
 
-Overfull \hbox (18.47083pt too wide) in paragraph at lines 32--32
+Overfull \hbox (18.47083pt too wide) in paragraph at lines 33--33
  [][] [][]\OT1/cmr/m/n/10 Aperio data set (source: []$\OT1/cmtt/l/n/10 http : /
  / openslide . cs . cmu . edu / download / 
  []
 
 
-Overfull \hbox (0.74934pt too wide) in paragraph at lines 34--34
+Overfull \hbox (0.74934pt too wide) in paragraph at lines 35--35
  [][] [][]\OT1/cmr/m/n/10 Hamamatsu data set (.ndpi, source: []$\OT1/cmtt/l/n/1
 0 http : / / openslide . cs . cmu . 
  []
@@ -2428,15 +2425,9 @@ Overfull \hbox (0.74934pt too wide) in paragraph at lines 34--34
 [134
 
 ]
-Overfull \hbox (11.91524pt too wide) in paragraph at lines 36--36
+Overfull \hbox (11.91524pt too wide) in paragraph at lines 37--37
  [][] [][]\OT1/cmr/m/n/10 Leica data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
- []
-
-
-Overfull \hbox (18.80411pt too wide) in paragraph at lines 37--37
- [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
-/ / openslide . cs . cmu . edu / download / 
  []
 
 
@@ -2446,7 +2437,13 @@ Overfull \hbox (18.80411pt too wide) in paragraph at lines 38--38
  []
 
 
-Overfull \hbox (15.1375pt too wide) in paragraph at lines 39--39
+Overfull \hbox (18.80411pt too wide) in paragraph at lines 39--39
+ [][] [][]\OT1/cmr/m/n/10 Trestle data set (source: []$\OT1/cmtt/l/n/10 http : 
+/ / openslide . cs . cmu . edu / download / 
+ []
+
+
+Overfull \hbox (15.1375pt too wide) in paragraph at lines 40--40
  [][] [][]\OT1/cmr/m/n/10 Mirax data set (source: []$\OT1/cmtt/l/n/10 http : / 
 / openslide . cs . cmu . edu / download / 
  []
@@ -2472,50 +2469,134 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
  (./document.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
-Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 2132C6702D539BDB21E39ED0C7E19BB9;6157.
 
+
+Package rerunfilecheck Warning: File `document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `document.out':
+(rerunfilecheck)             Before: 049B482B5EFF488449CF9445C41DBA06;6157
+(rerunfilecheck)             After:  2132C6702D539BDB21E39ED0C7E19BB9;6157.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 12773 strings out of 493029
- 184054 string characters out of 6136235
- 514382 words of memory out of 5000000
+ 12798 strings out of 493029
+ 184496 string characters out of 6136235
+ 514422 words of memory out of 5000000
  14679 multiletter control sequences out of 15000+600000
  14035 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,51p,1256b,2013s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (140 pages, 18071277 bytes).
+pdfTeX warning (dest): name{table.caption.86} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.170} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.168} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.166} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.160} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.158} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.152} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.149} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.146} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.141} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.133} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.130} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.127} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.125} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.123} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.119} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.117} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.115} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.112} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.110} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.107} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.105} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.102} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.100} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter*.193} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on document.pdf (140 pages, 18071136 bytes).
 PDF statistics:
- 3553 PDF objects out of 3580 (max. 8388607)
- 3232 compressed objects within 33 object streams
- 1339 named destinations out of 1440 (max. 500000)
+ 3581 PDF objects out of 4296 (max. 8388607)
+ 3260 compressed objects within 33 object streams
+ 1364 named destinations out of 1440 (max. 500000)
  1097 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -29,26 +29,25 @@ Chapter \ref{sec3_cs} introduced the CS, which is capable of converting a propri
 
 Chapter \ref{sec4_as} introduced the AS, which consists of the ASS and the ASV. It was developed in an iterative process with regular feedback after each iteration from a pathologist concerning the GUI and UX. The ASS' use of OpenSlide enabled the AS to read and view a proprietary WSI, thus making the CS redundant.
 
-Chapter \ref{sec5} introduced the TS, which extracts annotations made and persisted by the AS into individual images with a corresponding metadata file, thus delivering a ground truth for the training of NN. To ensure, that the TS works as intended, a test case was set up (compare subsection \ref{sec5_test}), which was completed successfully.
+Chapter \ref{sec5} introduced the TS, which extracts annotations made and persisted by the AS into individual images with a corresponding metadata file, thus delivering a ground truth for the training of NN. To ensure, that the TS works as intended a test case was set up (compare subsection \ref{sec5_test}), which was completed successfully.
 
 
 \section{Conclusion}
 
-Objective (1), the conversion of proprietary to open image formats, was accomplished by the CS. The need of converting a WSI to DZI prior to using it in the AS was inflexible and cumbersome. Thus, an on demand conversion was implemented into the AS, which eliminates the need of a prior conversion and enabled the AS to view a proprietary WSI directly.
+Objective (1), the conversion from proprietary to open image formats, was accomplished by the CS. The need of converting a WSI to DZI prior to using it in the AS was inflexible and cumbersome. Thus, an on demand conversion was implemented into the AS, which eliminates the need of a prior conversion and enabled the AS to view a proprietary WSI directly.
  
 Objective (2), developing a WSI viewer with annotation capabilities (compare subsection \ref{sec4_asvPart}), was accomplished by the AS, which consists of 2 parts: ASS and ASV. The ASS delivers a local slide repository. Additionally, it offers a RESTful API, which can be used by the ASV to request and persist data. Since the ASV is running in a web browser, it can be used independent of an operating system. The ASV offers a simple GUI to make annotations to a WSI based on regions (compare subsection \ref{sec4_region}) and label dictionaries.
 
-Objective (3), the extraction of the AS' annotations to create a ground truth, was accomplished by the TS. It offers a python script to extract an ROI out of a WSI into an individual image, while keeping correspondence to the region's label and metadata through the use of directory structure and metadata files. The extracted files are of common types (JPEG, PNG, TXT) to ensure uncomplicated further processing.
+Objective (3), the extraction of the AS' annotations to create a ground truth, was accomplished by the TS. It offers a python script to extract persisted regions from a WSI/DZI and save them and their metadata (such as label and context) to file. The extracted files are of common types (JPEG, PNG and TXT) to ensure uncomplicated further processing.
 
-The tools presented in this thesis are capable of handling the complete process chain introduced in subsection \ref{sec2_pc}. Thus, the goal of introducing tools for the cooperative annotation of WSIs by deep learning and pathology experts to create a ground truth was accomplished.
-
+The tools presented in this thesis are capable of handling the complete process chain introduced in subsection \ref{sec2_pc}. The goal of introducing tools for the cooperative annotation of WSIs by deep learning and pathology experts to create a ground truth was accomplished.
 
 
 \section{Future work}
-All tools introduced in this thesis are open source and available in their corresponding repositories on GitHub (see tab. \ref{tab6_objCorrespondence}). This makes their distribution convenient and enables third parties to add functionality they deem imperative. Additionally, new projects can be based on the existing code base.
-
 Currently, the ASS is a local web server. In future iterations it could be turned into a dedicated RESTful web server with access to a slide repository, making an easier distribution of WSIs possible. Additionally, a functioning script for the automated segmentation has to be delivered yet.
 
 Since the TS and the ASS are both written in python, the TS could be integrated into the ASS and be executable over the ASV's GUI. This would also make a visualization and manual manipulation of BBs possible.
 
 For easier handling, a file browser could be integrated into the ASV, so that the user does not have to build and send URLs manually.
+
+All tools introduced in this thesis are open source and available on the disc at the end of this thesis or their corresponding repositories on GitHub (see tab. \ref{secA_cd}). The latter part makes them easily distributable and enables third parties to add functionality deemed imperative. Additionally, new projects can be based on the existing code bases.
