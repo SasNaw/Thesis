@@ -50,11 +50,11 @@
 \contentsline {subsection}{\numberline {4.3.1}Annotation Service Server}{41}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Annotation Service Viewer}{43}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Annotation Service Server Implementation}{45}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Flask}{45}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}OpenSlide Python}{47}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.1}Flask}{46}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}OpenSlide Python}{48}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Structure and Setup}{49}{subsection.4.4.3}
 \contentsline {subsection}{\numberline {4.4.4}RESTful API}{51}{subsection.4.4.4}
-\contentsline {section}{\numberline {4.5}Annotation Service Viewer Implementation}{53}{section.4.5}
+\contentsline {section}{\numberline {4.5}Annotation Service Viewer Implementation}{54}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Frameworks}{54}{subsection.4.5.1}
 \contentsline {subsubsection}{OpenSeadragon}{54}{section*.51}
 \contentsline {subsubsection}{Paper.js}{57}{section*.53}

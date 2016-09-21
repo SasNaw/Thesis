@@ -14,6 +14,7 @@ The handling of WSIs is complicated due to their size and file formats. To avoid
 \section{Methodology}
 \label{sec5_method}
 The objective of the TS is to create usable training samples for NNs, as stated in section \ref{sec5_objective}. Depending on the setup, chosen learning method (compare section \ref{sec2_introNN}) and purpose of the NN, the requirements imposed on the training samples may vary. Smith demonstrates in \cite{Smith97} exemplary how to train a NN to recognize letters in images of written text by training it with 10x10 pixel grayscale images (256 gray levels/pixel) of letters. Shereena and David introduce a novel content based image retrieval classification method in \cite{Shereena14}, based on color and texture features. Other approaches extract features through the use of mathematical models from the supplied images (such as edges or shapes)\cite{Harvey91}.
+\clearpage
 
 Because of those varying requirements, the TS will be capable of producing different output:
 \begin{enumerate}[(1)]
@@ -136,7 +137,8 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 
 \begin{itemize}
 	\item \texttt{read{\textunderscore}json(path)} tries to read the JSON file at the provided path. If successful, it returns a list with the regions parsed from the file. If the file was not found or corrupt, a message will be printed on the terminal, informing the user about the exception.
-	
+\clearpage
+
 	\item \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name, *tiles)} generates an appropriate name from the region information and the slide{\textunderscore}name for the image and metadata file. The name differs between tessellated and non-tessellated output (see tab. \ref{tab5_outputNames}).
 	
 	If -r is provided, the image will be resized to the supplied height and width, with the interpolation method provided via -i (default: nearest neighbor interpolation). If -g is specified, the image will be converted to grayscale with the luma transform defined in the ITU-R 601-2 standard\cite{ITUR94} (see eq. \ref{eq:luma}).
@@ -235,6 +237,7 @@ It is not possible to read a DZI with OpenSlide, thus their extraction process d
 \end{figure}
 
 The BB is created via the \texttt{get{\textunderscore}bounding{\textunderscore}box(region)} function. Once the BB is created, the baseline area is stitched (via \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles({\allowbreak}dzi, bounding{\textunderscore}box)}). 
+\clearpage
 
 If -r was provided, \texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles({\allowbreak}dzi, bounding{\textunderscore}box)} compares the aspect ratio of the BB and the provided height and width supplied via -r.  If necessary, the BB is adjusted to fit the provided aspect ratio (via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}).
  

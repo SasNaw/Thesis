@@ -105,7 +105,7 @@ The annotation capabilities look as follows:
 		\item are surrounded by
 	\end{itemize}
 	the region (see fig. \ref{fig4_contextregions}).
-
+\clearpage
 	\item A \emph{point of interest} (POI)\nmc{POI}{Point of Interest} is another way to create a region. After selecting a POI (a point coordinate in the image), an external script will start a segmentation and return the image coordinates for an enclosing path to the ASV. The ASV will then automatically create a region based on the provided information. Since segmentation approaches differ drastically between cases and scenarios\cite{Liu12} (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12} or \cite{Angulo10} for cell segmentation alone), it exceeds the scope of this work by far. To prove basic functionality a dummy implementation will be delivered. The script will be an interchangeable python plug in.
 	
 	\item For annotation support, a distance measurement tool is provided. This tool can measure the distance between 2 pixels in a straight line. The measurement will be realized by the euclidean distance between a pixel $p_a$ and $p_b$\cite{Strang03}.
@@ -122,6 +122,7 @@ The annotation capabilities look as follows:
 The ASV uses keywords from a dictionary to label regions. While a free text approach is more flexible and easier to handle for novice users, it encounters difficulties in a professional metadata environment (such as histopathological image annotation). A dictionary-based approach facilitates interoperability between different persons and annotation precision\cite{Frosterus11}. To increase flexibility, the ASV will offer the possibility of adding new entries to existing dictionaries.
 
 Since the vocabulary may vary strongly between different studies, the ASV offers the possibility to create new dictionaries. This way, dictionaries can be filled with a few case-relevant keywords instead of many generic, mostly irrelevant ones. This explicitly does not exclude the use of a generic dictionary if it should serve a broad series of cases.
+\clearpage
 
 The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraw's GUI).  
 
@@ -282,7 +283,7 @@ An OpenSlide object offers methods to access available metadata, image tiles, th
 
 The DZG\footnote{
 	For an in-depth list of functions, see \url{http://openslide.org/api/python/}
-} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The DZG's \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance. \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file (compare subsection \ref{sec2_openFormats} - Deep Zoom Images). The parameter \emph{format} specifies the format (PNG or JPEG) of the individual Deep Zoom tiles. \texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}, 
+} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The DZG's \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance. \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file (compare subsection \ref{sec2_openFormats} - Deep Zoom Images). The parameter \emph{format} specifies the format (PNG or JPEG) of the individual Deep Zoom tiles. \texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}.
 
 \begin{table}[H]
 	\begin{center}
@@ -329,6 +330,7 @@ Flask requires a specific directory structure to access static files and HTML te
 As mentioned before, \textbf{static/} contains all static files required by the ASS, e.g. the CSS files (\textbf{css/}), icons (\textbf{cursors/}, \textbf{img/}) and JavaScript files (\textbf{lib/}) needed by the ASV.
 
 To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs. A WSI file will have a save file for each dictionary, according to the following naming pattern: \emph{[file name].[extension]\textunderscore[dictionary].json}.
+\clearpage
 
 \textbf{dictionaries/} contains all dictionaries used by the ASV. \textbf{slideDictionaries.json} is a key-value map containing all WSIs opened (none when the AS is newly set up) and the latest dictionaries used for them. The file name of the WSI is the key, which maps to a dictionary name as the value. When a new WSI is opened for the first time, it will be opened with the dictionary defined in the configuration file \textbf{configuration.json}.
 
@@ -406,6 +408,7 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	method:} GET\\
 	Requests an ASV to view the requested DZI. [file path] must point to a valid DZI, otherwise a "404 Not Found" HTTP status code is returned.\\
 	\emph{Returns} either a rendered ASV, which requests the DZI at [file path] or "404 Not Found"
+\clearpage
 	
 	\item \textbf{/wsi/[file path]\\
 	method:} GET\\
@@ -437,11 +440,17 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	Loads the JSON file specified in [source].\\
 	\emph{Returns} the JSON data if a file was found, an empty JSON map ("[]") otherwise.
 	
+	\item \textbf{/static/dictionaries/[dictionary]\\
+		method:} GET\\
+	Loads the dictionary file located at [dictionary]. \\
+	\emph{Returns} a stringified version of the dictionary content if a dictionary was found at [dictionary], a "404 Not Found" HTTP status code otherwise.
+	\clearpage
+	
 	\item \textbf{/createDictionary?name=[name]\&slide=[slide]\\
 	method:} GET\\
 	Requests the creation of a new, empty dictionary. The file will be called [name]. The ASV adds a ".json" if necessary. A manual call of this functions makes an added ".json" necessary. Otherwise, a text file will be created. The slide parameter provides the name of the WSI the dictionary was created at, so it can be changed in the slideDictionaries.json file. \\
 	\emph{Returns} the name and path to the new dictionary as json:
-	\clearpage
+	
 	\begin{lstlisting}
 	{
 		"name":"[name]",
@@ -450,13 +459,8 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	\end{lstlisting}
 	or "error" if [name] is already taken by another dictionary.
 	
-	\item \textbf{/static/dictionaries/[dictionary]\\
-		method:} GET\\
-	Loads the dictionary file located at [dictionary]. \\
-	\emph{Returns} a stringified version of the dictionary content if a dictionary was found at [dictionary], a "404 Not Found" HTTP status code otherwise.
-	
 	\item \textbf{/getDictionaries\\
-	method:} GET\\
+		method:} GET\\
 	Requests a list of files contained in the \emph{dictionaries} folder.\\
 	\emph{Returns} a list with the file names, or "-1" if no dictionaries are present.
 	
@@ -470,7 +474,7 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	Requests the invocation of the segmentation script provided in the configuration file. The coordinates of the POI are passed as URL arguments and will be handed down to the segmentation script.\\
 	\emph{Returns} a list of 2D coordinates, describing the contour around the POI, or a "404 Not Found" HTTP status code if no script was provided or the provided script was not found.
 \end{enumerate}
-
+\clearpage
 
 \section{Annotation Service Viewer Implementation}
 
@@ -502,16 +506,10 @@ jQuery is a common JavaScript library, that offers an API to handle HTML documen
 See the corresponding subsections for OSD and Paper.js.
 
 \subsubsection{OpenSeadragon}
-OSD is used by the ASV to show a WSI. It is a JavaScript based, open source web application to serve a viewer for \emph{"high-resolution zoomable images"}\cite{web:openseadragon}. It supports the following image formats:
-
-\begin{itemize}
-	\item DZI
-	\item IIIF
-	\item OSM
-	\item TMS
-\end{itemize}
+OSD is used by the ASV to show a WSI. It is a JavaScript based, open source web application to serve a viewer for \emph{"high-resolution zoomable images"}\cite{web:openseadragon}. It supports the following image formats: DZI, IIIF, OSM and TMS.
 
 Furthermore, custom tile sources can be added to support other image formats as well. Since the ASS is capable of delivering every WSI as DZI, no custom tile source implementation is necessary for proprietary WSIs.
+\clearpage
 
 The ASV defines a placeholder block element in its HTML file, which will be used to hold the OSD viewer (OSDV)\nmc{OSDV}{OpenSeadragon Viewer}:
 \begin{lstlisting}[title=as{\textunderscore}viewer.html, frame=single, language=html]
@@ -537,10 +535,6 @@ The relation between the \textless{div}{\textgreater} element in the webpage and
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.html\#.Options} for an in-depth documentation of every parameter available.
 }.
 
-The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor when clicked. Since drawing paths and managing regions involves clicking onto the corresponding ROIs, this function must be disabled. If not disabled, each interaction with an ROI or region will lead to a call of \texttt{zoomPerClick}, which creates a highly disorienting experience.
-
-Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of images tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG (compare subsection \ref{sec4_openslide}). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
-
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{| p{3.5cm} | p{6.5cm} |}
@@ -558,6 +552,10 @@ Since DZI implements a version of the tiled image pyramid model (compare subsect
 		\label{tab4_osdvParams}
 	\end{center}
 \end{table}
+
+The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor when clicked. Since drawing paths and managing regions involves clicking onto the corresponding ROIs, this function must be disabled. If not disabled, each interaction with an ROI or region will lead to a call of \texttt{zoomPerClick}, which creates a highly disorienting experience.
+
+Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of images tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG (compare subsection \ref{sec4_openslide}). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
 
 A scalebar is added to the OSDV to support the assessment of ROIs:
 
@@ -589,6 +587,7 @@ The scale is $pixels/{\mu}m$. Since the ASS only delivers MPP (which is ${\mu}m/
 Eq. \ref{eq:ppm} can be seen in line 3 of the code snippet above.  If no valid input is provided from the ASS (that is: when no value was specified for MPP in the WSI's metadata), PPM will be set to 0. If the pixelPerMeter parameter of the scalebar equals 0 it is automatically hidden\cite{web:openseadragon}. The options in line 7 - 16 concern the styling of the scalebar (such as color, position and size).
 
 When navigating through the tiles and layers of the OSDV's tile source, it will automatically load the tiles needed for the current view from the ASS via HTTP GET requests \cite{web:openseadragon}.
+\clearpage
 
 
 \subsubsection{Paper.js}
