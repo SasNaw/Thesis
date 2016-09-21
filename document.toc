@@ -105,86 +105,87 @@
 \contentsline {subsubsection}{runSegmentation()}{94}{section*.97}
 \contentsline {section}{\numberline {B.2}Annotation Service Viewer}{95}{section.1.B.2}
 \contentsline {subsection}{\numberline {B.2.1}Initialization functions}{95}{subsection.1.B.2.1}
-\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp)}{95}{section*.98}
+\contentsline {subsubsection}{function init(file{\textunderscore }name, url, mpp, dictionary)}{95}{section*.98}
 \contentsline {subsubsection}{function initAnnotationService()}{96}{section*.100}
-\contentsline {subsubsection}{function initAnnotationOverlay()}{96}{section*.102}
+\contentsline {subsubsection}{function initAnnotationOverlay()}{97}{section*.102}
 \contentsline {subsection}{\numberline {B.2.2}Data management functions}{97}{subsection.1.B.2.2}
 \contentsline {subsubsection}{function saveConfig()}{97}{section*.103}
 \contentsline {subsubsection}{function loadConfiguration()}{97}{section*.105}
 \contentsline {subsubsection}{function getDictionaryList()}{97}{section*.107}
-\contentsline {subsubsection}{function saveDictionary()}{97}{section*.108}
+\contentsline {subsubsection}{function saveDictionary()}{98}{section*.108}
 \contentsline {subsubsection}{function loadDictionary(path)}{98}{section*.110}
 \contentsline {subsubsection}{function saveJson(json, filePath)}{98}{section*.112}
-\contentsline {subsubsection}{function saveRegions()}{98}{section*.113}
+\contentsline {subsubsection}{function saveRegions()}{99}{section*.113}
 \contentsline {subsubsection}{function loadJson()}{99}{section*.115}
 \contentsline {subsubsection}{function createNewDictionary(isCancelable)}{99}{section*.117}
 \contentsline {subsection}{\numberline {B.2.3}GUI functions}{100}{subsection.1.B.2.3}
 \contentsline {subsubsection}{function selectTool()}{100}{section*.119}
 \contentsline {subsubsection}{function transform()}{100}{section*.120}
-\contentsline {subsubsection}{function appendLabelsToList()}{100}{section*.121}
-\contentsline {subsubsection}{function appendLabelToList(label)}{100}{section*.123}
-\contentsline {subsubsection}{function selectNextLabel()}{101}{section*.125}
-\contentsline {subsubsection}{function selectLabel(el)}{101}{section*.127}
-\contentsline {subsubsection}{function newLabel()}{101}{section*.128}
-\contentsline {subsubsection}{function toggleDictPicker()}{102}{section*.130}
-\contentsline {subsubsection}{function dictListClick(index)}{102}{section*.131}
-\contentsline {subsubsection}{function annotationStyle(label)}{102}{section*.133}
-\contentsline {subsubsection}{function help(show)}{103}{section*.134}
-\contentsline {subsubsection}{function toggleMenu()}{103}{section*.135}
+\contentsline {subsubsection}{function help(show)}{100}{section*.121}
+\contentsline {subsubsection}{function toggleMenu()}{100}{section*.122}
+\contentsline {subsubsection}{function appendLabelsToList()}{100}{section*.123}
+\contentsline {subsubsection}{function appendLabelToList(label)}{101}{section*.125}
+\contentsline {subsubsection}{function selectNextLabel()}{101}{section*.127}
+\contentsline {subsubsection}{function selectLabel(el)}{101}{section*.129}
+\contentsline {subsubsection}{function toggleDictPicker()}{101}{section*.130}
+\contentsline {subsubsection}{function newLabel()}{102}{section*.131}
+\contentsline {subsubsection}{function dictListClick(index)}{102}{section*.133}
+\contentsline {subsubsection}{function annotationStyle(label)}{103}{section*.135}
 \contentsline {subsection}{\numberline {B.2.4}Region functions}{103}{subsection.1.B.2.4}
 \contentsline {subsubsection}{function newRegion(arg)}{103}{section*.136}
 \contentsline {subsubsection}{function selectRegion(reg)}{103}{section*.137}
 \contentsline {subsubsection}{function deselectRegion(reg)}{103}{section*.138}
-\contentsline {subsubsection}{function findContextRegion(region1)}{103}{section*.139}
-\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{104}{section*.141}
-\contentsline {subsubsection}{function removeRegion(reg)}{104}{section*.142}
+\contentsline {subsubsection}{function isRegionAlreadyReferenced(region1, region2)}{103}{section*.139}
+\contentsline {subsubsection}{function removeRegion(reg)}{103}{section*.140}
+\contentsline {subsubsection}{function findContextRegion(region1)}{104}{section*.141}
 \contentsline {subsubsection}{function findRegionByUID(uid)}{104}{section*.143}
 \contentsline {subsubsection}{function toggleRegions(uid)}{104}{section*.144}
-\contentsline {subsubsection}{function toggleAllRegions()}{105}{section*.146}
+\contentsline {subsubsection}{function toggleAllRegions()}{104}{section*.146}
 \contentsline {subsection}{\numberline {B.2.5}Interaction functions}{105}{subsection.1.B.2.5}
 \contentsline {subsubsection}{function singleClickOnLabel(event)}{105}{section*.147}
 \contentsline {subsubsection}{function changeRegionAnnotationStyle(uid)}{105}{section*.149}
 \contentsline {subsubsection}{function addPoi(event)}{106}{section*.150}
 \contentsline {subsection}{\numberline {B.2.6}Internal functions}{106}{subsection.1.B.2.6}
-\contentsline {subsubsection}{UniqueID()}{106}{section*.152}
-\contentsline {subsubsection}{function regionHashColor(name)}{106}{section*.153}
-\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{107}{section*.154}
-\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{107}{section*.155}
-\contentsline {subsubsection}{function mouseDown(x,y)}{107}{section*.156}
-\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{108}{section*.158}
-\contentsline {subsubsection}{function mouseUp()}{109}{section*.160}
-\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{109}{section*.161}
-\contentsline {subsubsection}{function getDistance()}{109}{section*.162}
-\contentsline {subsubsection}{function clearToolSelection()}{109}{section*.163}
+\contentsline {subsubsection}{function uniqueID()}{106}{section*.152}
+\contentsline {subsubsection}{function getZoom()}{106}{section*.153}
+\contentsline {subsubsection}{function regionHashColor(name)}{107}{section*.154}
+\contentsline {subsubsection}{function mouseDown(x,y)}{107}{section*.155}
+\contentsline {subsubsection}{function mouseDrag(x,y,dx,dy)}{108}{section*.157}
+\contentsline {subsubsection}{function mouseUp()}{108}{section*.159}
+\contentsline {subsubsection}{function convertPathToImgCoordinates(point)}{108}{section*.160}
+\contentsline {subsubsection}{function convertImgToPathCoordinates(point)}{109}{section*.161}
+\contentsline {subsubsection}{function finishDrawingPolygon(closed)}{109}{section*.162}
+\contentsline {subsubsection}{function getDistance()}{109}{section*.163}
+\contentsline {subsubsection}{function clearToolSelection()}{109}{section*.164}
 \contentsline {subsection}{\numberline {B.2.7}Key listener}{109}{subsection.1.B.2.7}
-\contentsline {subsubsection}{\$(document).keydown(function(e))}{109}{section*.164}
-\contentsline {subsubsection}{\$(document).keyup(function(e))}{110}{section*.166}
-\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{110}{section*.168}
+\contentsline {subsubsection}{\$(document).keyup(function(e))}{109}{section*.165}
+\contentsline {subsubsection}{\$(document).keydown(function(e))}{110}{section*.167}
+\contentsline {subsubsection}{function selectToolOnKeyPress(id)}{110}{section*.169}
 \contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{111}{Appendix.1.C}
 \contentsline {section}{\numberline {C.1}Main}{111}{section.1.C.1}
-\contentsline {subsubsection}{run(input)}{111}{section*.170}
-\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{111}{section*.171}
-\contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{112}{section*.172}
+\contentsline {subsubsection}{run(input)}{111}{section*.171}
+\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{111}{section*.172}
+\contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{112}{section*.173}
 \contentsline {section}{\numberline {C.2}WSI}{112}{section.1.C.2}
-\contentsline {subsubsection}{wsi(file)}{112}{section*.173}
-\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{113}{section*.174}
-\contentsline {subsubsection}{is{\textunderscore }supported(file)}{114}{section*.175}
+\contentsline {subsubsection}{wsi(file)}{112}{section*.174}
+\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{113}{section*.175}
+\contentsline {subsubsection}{is{\textunderscore }supported(file)}{114}{section*.176}
 \contentsline {section}{\numberline {C.3}DZI}{115}{section.1.C.3}
-\contentsline {subsubsection}{dzi(file)}{115}{section*.176}
-\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{116}{section*.177}
-\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{116}{section*.178}
-\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{117}{section*.179}
-\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{117}{section*.180}
+\contentsline {subsubsection}{dzi(file)}{115}{section*.177}
+\contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{116}{section*.178}
+\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{116}{section*.179}
+\contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{117}{section*.180}
+\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{117}{section*.181}
 \contentsline {section}{\numberline {C.4}Utility}{118}{section.1.C.4}
-\contentsline {subsubsection}{read{\textunderscore }json(path)}{118}{section*.181}
-\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{118}{section*.182}
-\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{119}{section*.183}
-\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{120}{section*.184}
-\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{120}{section*.185}
-\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{121}{section*.186}
-\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{122}{section*.187}
-\contentsline {chapter}{Bibliography}{124}{chapter*.188}
-\contentsline {chapter}{List of Figures}{131}{chapter*.189}
-\contentsline {chapter}{List of Tables}{134}{chapter*.190}
-\contentsline {chapter}{Nomenclature}{136}{chapter*.191}
-\contentsline {chapter}{Statutory declaration}{137}{chapter*.192}
+\contentsline {subsubsection}{read{\textunderscore }json(path)}{118}{section*.182}
+\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{118}{section*.183}
+\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{119}{section*.184}
+\contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{120}{section*.185}
+\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{120}{section*.186}
+\contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{121}{section*.187}
+\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{122}{section*.188}
+\contentsline {chapter}{Bibliography}{124}{chapter*.189}
+\contentsline {chapter}{List of Figures}{131}{chapter*.190}
+\contentsline {chapter}{List of Tables}{134}{chapter*.191}
+\contentsline {chapter}{Nomenclature}{136}{chapter*.192}
+\contentsline {chapter}{Statutory declaration}{137}{chapter*.193}
