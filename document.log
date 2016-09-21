@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  21 SEP 2016 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.9)  21 SEP 2016 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2211,22 +2211,32 @@ Package pdftex.def Info: img/ch_selectToolOnKeyPress.png used on input line 843
 Appendix C.
 [111
 
-] [112]
-Overfull \hbox (11.4972pt too wide) in paragraph at lines 91--92
-\OT1/cmr/m/n/10 tour can be used to fill in the ROI in the RI via OpenCV's \OT1
-/cmtt/l/n/10 cv2.drawContours(...)
+] [112
+
+]
+Overfull \hbox (2.31105pt too wide) in paragraph at lines 60--61
+\OT1/cmr/m/n/10 justed to fit the sup-plied im-age ra-tio (via \OT1/cmtt/l/n/10
+ re-size[]bounding[]box(bounding[]box)\OT1/cmr/m/n/10 ,
  []
 
-[113] [114] [115] [116]
-Overfull \hbox (3.2256pt too wide) in paragraph at lines 263--264
+[113
+
+] [114
+
+] [115] [116
+
+] [117]
+Overfull \hbox (3.2256pt too wide) in paragraph at lines 261--262
 \OT1/cmr/m/n/10 tract a vir-tual tile from that stitched im-age, \OT1/cmtt/l/n/
 10 tes-sel-late[]dzi(dzi, slide[]name,
  []
 
-[117] [118] [119] [120]
+[118] [119] [120]
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 447.
- [121] [122]) (./document.bbl [123]
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 444.
+ [121
+
+] [122]) (./document.bbl [123]
 Underfull \hbox (badness 5954) in paragraph at lines 17--22
 []\OT1/cmr/m/n/10 AgileLoad.  Per-for-mance symp-toms and is-sues.  []$\OT1/cmt
 t/l/n/10 http : / / www .
@@ -2524,13 +2534,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 12773 strings out of 493029
- 184154 string characters out of 6136235
- 512541 words of memory out of 5000000
+ 12769 strings out of 493029
+ 184098 string characters out of 6136235
+ 486541 words of memory out of 5000000
  14683 multiletter control sequences out of 15000+600000
  14035 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,51p,1256b,2011s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,51p,1256b,2009s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
@@ -2555,10 +2565,10 @@ onts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (140 pages, 18195972 bytes).
+Output written on document.pdf (140 pages, 18194936 bytes).
 PDF statistics:
- 3545 PDF objects out of 3580 (max. 8388607)
- 3223 compressed objects within 33 object streams
- 1334 named destinations out of 1440 (max. 500000)
+ 3540 PDF objects out of 3580 (max. 8388607)
+ 3218 compressed objects within 33 object streams
+ 1330 named destinations out of 1440 (max. 500000)
  1102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

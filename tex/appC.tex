@@ -17,6 +17,7 @@ def run(input):
 		elif(os.path.isfile(element)):
 			regions_from_file(element)
 \end{lstlisting}
+\clearpage
 
 
 \subsubsection{files{\textunderscore}from{\textunderscore}dir(element)}
@@ -46,49 +47,70 @@ def regions_from_file(file):
 		if(is_suppoted(file)):
 			wsi(file)
 \end{lstlisting}
+\clearpage
 
 
 \section{WSI}
 
 \subsubsection{wsi(file)}
-\texttt{wsi(file)} extracts the regions from a WSI. To do so, the provided file must have an associated JSON file which was annotated with the dictionary provided as argument when the TS was started\footnote{
-	Compare subsection \ref{sec5_exec}
-}.
+\texttt{wsi(file)} extracts the regions from a WSI. To do so, the provided file must have an associated JSON file which was annotated with the dictionary provided as argument when the TS was started (compare subsection \ref{sec5_exec}).
 
 OpenSlide is used to read the provided WSI (see line 2). The file name is extracted from the file path (see line 3). The saved regions are loaded and parsed via \texttt{read{\textunderscore}json(path)} function (see line 4).
 
-For each parsed region, an image is extracted together with a metadata file. If the tessellation parameter was provided when TessellationService.py was called, \texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)} is called. Otherwise, the BB is calculated via \texttt{get{\textunderscore}bounding{\textunderscore}box(region)}. If the -r parameter was provided, the BB will be adjusted to fit the supplied image ratio (via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}, see line 10 - 12). Then, the BB's position inside the baseline image of the provided WSI is determined (see line 13). Afterwards, the size of the BB is calculated for both dimension (see line 14). OpenSlide's \texttt{read{\textunderscore}region(location, level, size)} is used to access the ROI located at the specified position (the baseline image is at level 0\cite{DICOM10}, see line 15). The extracted image is then saved via the \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name)} function.
+For each parsed region, an image is extracted together with a metadata file. If the TS was started with -t (compare tab. \ref{tab5_tsParams}), \texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)} is called. Otherwise, the BB is calculated via \texttt{get{\textunderscore}{\allowbreak}bounding{\textunderscore}box(region)}. If the -r parameter was provided, the BB will be adjusted to fit the supplied image ratio (via \texttt{resize{\textunderscore}bounding{\textunderscore}box(bounding{\textunderscore}box)}, see line 10 - 12). Afterwards, the BB's position inside the baseline image of the provided WSI is determined (see line 13). Afterwards, the size of the BB is calculated for both dimension (see line 14). OpenSlide's \texttt{read{\textunderscore}region(location, level, size)} is used to access the ROI located at the specified position (the baseline image is at level 0\cite{DICOM10}, see line 15). The extracted image is then saved via the \texttt{save{\textunderscore}image(image, region, slide{\textunderscore}name)} function.
 
 Once every region was extracted, the OpenSlide object is closed again.
 
 \begin{lstlisting}[frame=single,language=python]
 def wsi(file):
-	slide = OpenSlide(file)
-	slide_name = file.split('/')[-1]
-	regions = read_json(file + '_' + DICTIONARY)
-	
-	for region in regions:
-		if(TESSELLATE):
-			tessellate_wsi(slide, slide_name, region)
-		else:
-			bounding_box = get_bounding_box(region)
-			if(RESIZE):
-				bounding_box = resize_bounding_box(bounding_box)
-			location = (bounding_box['x_min'], bounding_box['y_min'])
-			size = (bounding_box['x_max'] - bounding_box['x_min'], bounding_box['y_max'] - bounding_box['y_min'])
-			image = slide.read_region(location, 0, size)
-			save_image(image, region, slide_name)
-	
-	slide.close()
+slide = OpenSlide(file)
+slide_name = file.split('/')[-1]
+regions = read_json(file + '_' + DICTIONARY)
+
+for region in regions:
+if(TESSELLATE):
+tessellate_wsi(slide, slide_name, region)
+else:
+bounding_box = get_bounding_box(region)
+if(RESIZE):
+bounding_box = resize_bounding_box(bounding_box)
+location = (bounding_box['x_min'], bounding_box['y_min'])
+size = (bounding_box['x_max'] - bounding_box['x_min'], bounding_box['y_max'] - bounding_box['y_min'])
+image = slide.read_region(location, 0, size)
+save_image(image, region, slide_name)
+
+slide.close()
+\end{lstlisting}
+\clearpage
+
+
+\subsubsection{is{\textunderscore}supported(file)}
+\texttt{is{\textunderscore}supported(file)} checks if a provided file is a proprietary WSI (see subsection \ref{sec2_proprietaryForams}).
+\begin{lstlisting}[frame=single,language=python]
+def is_suppoted(file):
+ext = (file.split('.'))[-1]
+if(
+'bif' in ext or
+'mrxs' in ext or
+'npdi' in ext or
+'scn' in ext or
+'svs' in ext or
+'svslide' in ext or
+'tif' in ext or
+'tiff' in ext or
+'vms' in ext or
+'vmu' in ext
+):
+return 1
+else:
+return 0
 \end{lstlisting}
 
 
 \subsubsection{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)}
-\texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)} realizes the approximation of a ROI through tessellation\footnote{
-	Compare subsection \ref{sec5_tessellation}
-}. To do so, it first gets the slide dimension to calculate the amount of virtual tiles necessary to cover the whole WSI (see line 2 - 4). Afterwards, a contour is created by iteration over every segment of a region's path and associating it with a virtual tile (see line 10 - 18). The result is a contour of virtual tiles.
+\texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)} realizes the approximation of an ROI through tessellation (compare subsection \ref{sec5_tessellation}). To do so, it acquires the slide dimensions to calculate the amount of virtual tiles necessary to cover the whole WSI (see line 2 - 4). Afterwards, a contour is created by iteration over every segment of a region's path and associating it with a virtual tile (see line 10 - 18). The result is a contour of virtual tiles.
 
-In the next step, the RI is created. Each pixel in the RI corresponds to a virtual tile. Because of this relation between tiles and pixels, the created tile contour can be used to fill in the ROI in the RI via OpenCV's \texttt{cv2.drawContours(...)} function (see line 23). The provided parameters are:
+In the next step, the RI is created. Each pixel in the RI corresponds to a virtual tile. Because of this relation between tiles and pixels, the created tile contour can be used to fill in the ROI in the RI via OpenCV's \texttt{cv2.drawContours} function (see line 23). The provided parameters are:
 \begin{itemize}
 	\item \textbf{cv{\textunderscore}ref{\textunderscore}img}: the RI
 	\item \textbf{[contour]}: the list of contours to draw
@@ -97,9 +119,9 @@ In the next step, the RI is created. Each pixel in the RI corresponds to a virtu
 	\item \textbf{-1}: the stroke width of the contour (-1 equals fill)
 \end{itemize}
 
-The result is the RI where every pixel corresponding to a virtual tile in the ROI is white. In the next step, the function iterates over every single pixel of the RI and extracts a ROI into an individual image, whenever the corresponding pixel is white (see line 27 - 37).
+The result is the RI. Each pixel corresponding to a virtual tile inside the ROI is white. In the next step, the function iterates over every single pixel of the RI and extracts the associated tile into an individual image, whenever the corresponding pixel is white (see line 27 - 37).
 
-After all tiles were extracted, an associated metadata file is created (see line 40).
+After all tiles are extracted, an associated metadata file is created (see line 40).
 
 \begin{lstlisting}[frame=single,language=python]
 def tessellate_wsi(slide, slide_name, region):
@@ -143,29 +165,7 @@ def tessellate_wsi(slide, slide_name, region):
 	dbg_img.show()
 	save_metadata(generate_file_name(region, slide_name), region, tiles)
 \end{lstlisting}
-
-
-\subsubsection{is{\textunderscore}supported(file)}
-\texttt{is{\textunderscore}supported(file)} checks if a provided file is a proprietary WSI (see subsection \ref{sec2_proprietaryForams}).
-\begin{lstlisting}[frame=single,language=python]
-def is_suppoted(file):
-	ext = (file.split('.'))[-1]
-	if(
-		'bif' in ext or
-		'mrxs' in ext or
-		'npdi' in ext or
-		'scn' in ext or
-		'svs' in ext or
-		'svslide' in ext or
-		'tif' in ext or
-		'tiff' in ext or
-		'vms' in ext or
-		'vmu' in ext
-	):
-		return 1
-	else:
-		return 0
-\end{lstlisting}
+\clearpage
 
 
 \section{DZI}
@@ -195,9 +195,9 @@ def dzi(file):
 
 
 \subsubsection{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)}
-\texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} stitches the tiles containing the ROI to extract together by utilizing the ROI's BB.
+\texttt{create{\textunderscore}image{\textunderscore}from{\textunderscore}tiles(dzi, bounding{\textunderscore}box)} stitches the tiles containing the baseline area by utilizing the ROI's BB.
 
-If the -r parameter was provided at the TS' execution, the BB will be adjusted to fit the provided image ratio. This also has influence on what tiles will be needed (see line 2 - 3). The stitching of the baseline image area is realized in \texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} (see line 4). Once the tiles are stitched, the offset of the ROI's BB inside the stitched image is calculated (see line 6 - 7), as well as its corners (see line 9 - 12).
+If the TS was executed with the -r parameter (compare tab. \ref{tab5_tsParams}), the BB will be adjusted to fit the provided image ratio. This also has influence on what tiles will be needed (see line 2 - 3). The stitching of the baseline area is realized in \texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} (see line 4). Once the tiles are stitched, the offset of the ROI's BB inside the stitched image is calculated (see line 6 - 7), as well as its corners (see line 9 - 12).
 
 This information is used to crop the stitched image to the size of the ROI's BB.
 
@@ -221,11 +221,9 @@ def create_image_from_tiles(dzi, bounding_box):
 
 \subsubsection{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)}
 
-\texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} stitches together a baseline image area  based on the provided BB.
+\texttt{get{\textunderscore}tiles{\textunderscore}from{\textunderscore}bounding{\textunderscore}box(dzi, bounding{\textunderscore}box)} stitches together a baseline area  based on the provided BB.
 
-To do so, the corners of the BB are converted to tile positions (see line 2 - 5). Then, a new image is created which will hold the needed tiles (see line 7). All needed tiles are iterated in width and height and pasted into the corresponding postion of the holding image (see line 9 - 12).
-
-The stitched image is then returned.
+To do so, the corners of the BB are converted to tile positions (see line 2 - 5). Then, a new image is created which will hold the tiles (see line 7). All needed tiles are iterated in width and height and pasted to the corresponding postion of the holding image (see line 9 - 12). The stitched image is then returned.
 
 \begin{lstlisting}[frame=single,language=python]
 def get_tiles_from_bounding_box(dzi, bounding_box):
@@ -258,22 +256,20 @@ def get_tile_source(file):
 
 
 \subsubsection{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)}
-\texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} works in the same way as \texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)}, except for the tile extraction (see line 26 - 35).
+\texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} works in the same way as \texttt{tessellate{\textunderscore}wsi(slide, slide{\textunderscore}name, region)}, except for the tile extraction (see line 24 - 33).
 
 As in \texttt{dzi(file)}, a baseline image area must be stitched (see line 3). To extract a virtual tile from that stitched image, \texttt{tessellate{\textunderscore}dzi(dzi, slide{\textunderscore}name, region)} crops that stitched image to the size of the current virtual tile and saves this in an individual image.
 
-Once all tiles are extracted, a metadata file is created (see line 43).
+Once all tiles are extracted, a metadata file is created (see line 39).
 
 \begin{lstlisting}[frame=single,language=python]
 def tessellate_dzi(dzi, slide_name, region):
 	bounding_box = get_bounding_box(region)
 	tile_image = get_tiles_from_bounding_box(dzi, bounding_box)
-	
 	offset_x = bounding_box['x_min']
 	offset_y = bounding_box['y_min']
 	
 	n,m = tile_image.size
-	
 	m = m / TESSELLATE[HEIGHT]
 	n = n / TESSELLATE[WIDTH]
 	
@@ -330,9 +326,9 @@ def read_json(path):
 
 \texttt{save{\textunderscore}metadata(name, region, *tiles)} is used to save the metadata to a corresponding extracted image.
 
-The metadata for regions extracted with the -t parameters differs from the ones without. Because of this, \emph{"{\textunderscore}tessellated"} is added to the files name (see line 2 - 3). If the -f parameter was provided (compare tab. \ref{tab5_tsParams}), files of the same name will be overwritten. Otherwise, an upwards counting, positive integer is added in parenthesis to the file name (see line 4 - 10).
+The metadata differs slightly if the -t parameter (compare tab. \ref{tab5_tsParams}) was provided (compare tab. \ref{tab5_metadataJson}) at the TS' execution. Therefore, \emph{"{\textunderscore}tessellated"} is added to the file's name (see line 2 - 3). If the -f parameter was provided, files of the same name will be overwritten. Otherwise, an upwards counting, positive integer is added in parenthesis to the file name (see line 4 - 10).
 
-A file stream is opened and the associated region's metadata is written in a file (see line 12 - 19). The metadata file is encoded in UTF-8 to support special characters.
+A file stream is opened and the associated region's metadata is written into a file (see line 12 - 19). The metadata file is encoded in UTF-8 to support special characters.
 
 \begin{lstlisting}[frame=single,language=python]
 def save_metadata(name, region, *tiles):
@@ -393,6 +389,7 @@ The file name is generated, either for a tiled or non-tiled image (see line 2 - 
 If the grayscale conversion is activated (-g parameter, compare tab. \ref{tab5_tsParams}), the image will be converted to grayscale via the luma transform method (see eq. \ref{eq:luma} in subsection \ref{sec5_extractionProcess}).
 
 The image is then saved and the path returned (see line 11 - 14). If the image is not tessellated, the metadata is saved automatically as well (see line 12 - 13).
+\clearpage
 
 \begin{lstlisting}[frame=single,language=python]
 def save_image(image, region, slide_name, *tiles):

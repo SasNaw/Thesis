@@ -164,26 +164,26 @@
 \contentsline {chapter}{\numberline {C}Tessellation Service Documentation}{111}{Appendix.1.C}
 \contentsline {section}{\numberline {C.1}Main}{111}{section.1.C.1}
 \contentsline {subsubsection}{run(input)}{111}{section*.171}
-\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{111}{section*.172}
+\contentsline {subsubsection}{files{\textunderscore }from{\textunderscore }dir(element)}{112}{section*.172}
 \contentsline {subsubsection}{regions{\textunderscore }from{\textunderscore }file(element)}{112}{section*.173}
-\contentsline {section}{\numberline {C.2}WSI}{112}{section.1.C.2}
-\contentsline {subsubsection}{wsi(file)}{112}{section*.174}
-\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{113}{section*.175}
-\contentsline {subsubsection}{is{\textunderscore }supported(file)}{114}{section*.176}
-\contentsline {section}{\numberline {C.3}DZI}{115}{section.1.C.3}
-\contentsline {subsubsection}{dzi(file)}{115}{section*.177}
+\contentsline {section}{\numberline {C.2}WSI}{113}{section.1.C.2}
+\contentsline {subsubsection}{wsi(file)}{113}{section*.174}
+\contentsline {subsubsection}{is{\textunderscore }supported(file)}{114}{section*.175}
+\contentsline {subsubsection}{tessellate{\textunderscore }wsi(slide, slide{\textunderscore }name, region)}{114}{section*.176}
+\contentsline {section}{\numberline {C.3}DZI}{116}{section.1.C.3}
+\contentsline {subsubsection}{dzi(file)}{116}{section*.177}
 \contentsline {subsubsection}{create{\textunderscore }image{\textunderscore }from{\textunderscore }tiles(dzi, bounding{\textunderscore }box)}{116}{section*.178}
-\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{116}{section*.179}
+\contentsline {subsubsection}{get{\textunderscore }tiles{\textunderscore }from{\textunderscore }bounding{\textunderscore }box(dzi, bounding{\textunderscore }box)}{117}{section*.179}
 \contentsline {subsubsection}{get{\textunderscore }tile{\textunderscore }source(file)}{117}{section*.180}
-\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{117}{section*.181}
-\contentsline {section}{\numberline {C.4}Utility}{118}{section.1.C.4}
-\contentsline {subsubsection}{read{\textunderscore }json(path)}{118}{section*.182}
-\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{118}{section*.183}
-\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{119}{section*.184}
+\contentsline {subsubsection}{tessellate{\textunderscore }dzi(dzi, slide{\textunderscore }name, region)}{118}{section*.181}
+\contentsline {section}{\numberline {C.4}Utility}{119}{section.1.C.4}
+\contentsline {subsubsection}{read{\textunderscore }json(path)}{119}{section*.182}
+\contentsline {subsubsection}{save{\textunderscore }metadata(name, region, *tiles)}{119}{section*.183}
+\contentsline {subsubsection}{generate{\textunderscore }file{\textunderscore }name(region, slide{\textunderscore }name, *tiles)}{120}{section*.184}
 \contentsline {subsubsection}{save{\textunderscore }image(image, region, slide{\textunderscore }name, *tiles}{120}{section*.185}
-\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{120}{section*.186}
+\contentsline {subsubsection}{get{\textunderscore }bounding{\textunderscore }box(region)}{121}{section*.186}
 \contentsline {subsubsection}{resize{\textunderscore }bounding{\textunderscore }box(region)}{121}{section*.187}
-\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{122}{section*.188}
+\contentsline {subsubsection}{scale{\textunderscore }bounding{\textunderscore }box(bounding{\textunderscore }, scale)}{123}{section*.188}
 \contentsline {chapter}{Bibliography}{124}{chapter*.189}
 \contentsline {chapter}{List of Figures}{131}{chapter*.190}
 \contentsline {chapter}{List of Tables}{134}{chapter*.191}
