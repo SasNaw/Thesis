@@ -3,7 +3,7 @@
 \section{Methodology}
 As stated in section \ref{sec2_wsif}, there is no standardized format for WSIs. Supplement 145 of the DICOM standard tries to unify the whole process around WSIs, but vendors still push their proprietary formats. For the reasons mentioned in subsection \ref{sec2_openFormats}, it is necessary to establish a common format for all the WSIs which are subject to the process chain established in section \ref{sec2_pc}. Therefore, the goal of the CS is to convert WSIs of proprietary formats into a common open format.
 
-To make the conversion as convenient and fast as possible, the CS should only have brief user interaction. For this purpose it will not have a GUI. Instead the CS will be implemented as a console script. Furthermore, the CS should be capable of converting multiple WSIs after one another, so that no restart is necessary between conversions. Therefore, the CS will take an input directory as parameter and convert all WSIs of valid format inside that directory. Another parameter will be the output folder, in which the converted DZIs are stored.
+To make the conversion as convenient and fast as possible, the CS should only have brief user interaction. For this purpose it will not have a GUI. Instead the CS will be implemented as a console script. Furthermore, the CS should be capable of converting multiple WSIs after one another, so that no restart is necessary between conversions. Therefore, the CS will take an input directory as parameter and convert all WSIs of valid format inside that directory. Another parameter will be the output folder, in which the converted DZIs are stored. Tab. \ref{tab3_formatsByVendor} gives an overview of valid input formats, sorted by vendor.
 
 \begin{table}[H]
 	\begin{center}
@@ -24,51 +24,43 @@ To make the conversion as convenient and fast as possible, the CS should only ha
 	\end{center}
 \end{table}
 
-Tab. \ref{tab3_formatsByVendor} gives an overview of file formats, sorted by vendor, which are viable as input for the conversion.
-
 
 \subsection{Selection of Image Format}
-A format or service must be chosen as conversion target for the CS. Choices have been established in \ref{sec2_openFormats}. These are:
-\begin{enumerate}[(1)]
-	\item BigTIFF
-	\item DZI
-	\item IFFF
-	\item JPEG 2000
-	\item TMS/OMS
-\end{enumerate}
+A format or service must be chosen as conversion target for the CS. Choices have been established in \ref{sec2_openFormats}. These are: BigTIFF, DZI, IFFF, JPEG 2000 and TMS/OMS.
 
 To convert a WSI, a conversion tool is needed. Tab. \ref{tab3_convOptions} shows a listing of possibilities for that purpose. Listed are the name of the tool, the technology used and the output format. The table indicates, that DZI has a great variety of options, while the alternatives have little to none (Map Tiler for TMS, Kakadu for IFFF and none for the others).
 
 \begin{longtable}{| p{3cm} | p{4cm} | p{2.5cm} |}
 	\hline
+	\textbf{tool} & \textbf{description} & \textbf{output} \\ \hline
 	Deep Zoom Composer & dekstop app for Windows & DZI \\ \hline
-	Image Composite Editor & panoramic image stitcher from Microsoft Research for the Windows desktop & DZI \\ \hline
-	DeepZoomTools.dll & .NET-library, comes with Deep Zoom Composer & DZI \\ \hline
-	deepzoom.py & Python & DZI \\ \hline
-	deepzoom & Perl utility & DZI \\ \hline
-	PHP Deep Zoom Tools & PHP & DZI \\ \hline
-	Deepzoom & PHP & DZI \\ \hline
-	DZT & an image slicing library and tool written in Ruby & DZI \\ \hline
+	Image Composite Editor & dekstop app for Windows & DZI \\ \hline
+	DeepZoomTools.dll & .NET library & DZI \\ \hline
+	deepzoom.py & python script& DZI \\ \hline
+	deepzoom & perl script & DZI \\ \hline
+	PHP Deep Zoom Tools & PHP script & DZI \\ \hline
+	Deepzoom & PHP script & DZI \\ \hline
+	DZT & Ruby library & DZI \\ \hline
 	MapTiler &  desktop app for Windows, Mac, Linux & TMS \\ \hline
-	VIPS & command line tool and library for a number of languages & DZI \\ \hline
-	Sharp & Node.js, uses VIPS & DZI \\ \hline
-	MagickSlicer & shell script (Linux/Mac) & DZI \\ \hline
-	Gmap Uploader Tiler & C++ & DZI \\ \hline
-	Node.js Deep Zoom Tools & Node.js, under construction & DZI \\ \hline
-	OpenSeaDragon DZI Online Composer & Web app (and PERL and PHP scripts) & DZI \\ \hline
+	VIPS & command line tool, library for a number of languages & DZI \\ \hline
+	Sharp & Node.js script, uses VIPS & DZI \\ \hline
+	MagickSlicer & shell script & DZI \\ \hline
+	Gmap Uploader Tiler & C++ application & DZI \\ \hline
+	Node.js Deep Zoom Tools & Node.js script, under construction & DZI \\ \hline
+	OpenSeaDragon DZI Online Composer & Web app (and PERL, PHP scripts) & DZI \\ \hline
 	Zoomable & service, offers embeds; no explicit API & DZI \\ \hline
 	ZoomHub & service, under construction & DZI \\ \hline
-	Kakadu & C++ library to encode or decode JPEG 2000 images & IIIF \\ \hline
-	PyramidIO & Java (command line and library) & DZI \\ \hline
+	Kakadu & C++ library & IIIF \\ \hline
+	PyramidIO & Java tool (command line and library) & DZI \\ \hline
 	\caption{Overview of conversion options for zooming image formats (source: \cite{web:openseadragon})}
 	\label{tab3_convOptions}
 \end{longtable}
 
 Since the CS should only consist of brief user interaction and be as automated as possible, desktop and web applications are not valid as tools for conversion. This excludes \emph{Deep Zoom Composer}, \emph{MapTiler}, \emph{OpenSeaDragon DZI Online Composer} and \emph{Zoomable} as possible choices (therefore also excluding (next to the reasons given in subsection \ref{sec2_openFormats}), TMS as possible format).
 
-One of the reasons not to use proprietary formats was the support of only certain operating systems, eliminating Windows-only tools. Those are \emph{Image Composite Editor} and \emph{DeepZoomTools.dll}.
+One of the reasons not to use proprietary formats was the limitation to only certain operating systems, eliminating Windows-only tools. Those are \emph{Image Composite Editor} and \emph{DeepZoomTools.dll}.
 
-Furthermore, reading the proprietary formats is a highly specialized task, eliminating most of the leftover choices: \emph{deepzoom}\cite{web:deepzoom}, \emph{DZT}\cite{web:dzt}, \emph{sharp}\cite{web:sharp}, \emph{MagickSlicer}, \emph{Node.js Deep Zoom Tools}\footnote{MagickSlicer and Node.js Deep Zoom Tools use ImageMagick to read images, which does not support any of the proprietary WSI formats\cite{web:imagemagick}.}, \emph{Gmap Uploader Tiler}\cite{web:gmap}, Zoomhub\cite{web:zoomhub} and \emph{PyramidIO}\cite{web:pyramidio}.
+Furthermore, reading the proprietary formats is a highly specialized task, eliminating most of the leftover choices: \emph{deepzoom}\cite{web:deepzoom}, \emph{DZT}\cite{web:dzt}, \emph{sharp}\cite{web:sharp}, \emph{MagickSlicer}, \emph{Node.js Deep Zoom Tools} (both use ImageMagick to read images, which does not support any of the proprietary WSI formats\cite{web:imagemagick}), \emph{Gmap Uploader Tiler}\cite{web:gmap}, Zoomhub\cite{web:zoomhub} and \emph{PyramidIO}\cite{web:pyramidio}.
 
 \emph{Kakadu} can only encode and decode JPEG 2000 images\cite{web:openseadragon}, making it no valid choice either.
 
@@ -85,7 +77,7 @@ If run in a terminal the call looks like the following:
 	$ python deepzoom.py [options] [input file]
 \end{lstlisting}
 
-The various options and their default values can be seen in \ref{tab3_deepzoomParams}. If called without a designated output destination, deepzoom.py will save the converted DZI in the same directory as the input file.
+The various options and their default values can be seen in table \ref{tab3_deepzoomParams}. If called without a designated output destination, deepzoom.py will save the converted DZI in the same directory as the input file.
 
 \begin{table}[H]
 	\begin{center}
@@ -131,7 +123,7 @@ The options are analogous with the terminal version (compare tab. \ref{tab3_deep
 creator.create([source], [destination])
 \end{lstlisting}
 
-In the proposed workflow, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI\footnote{Compare subsection \ref{sec2_openFormats}}. The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
+In the proposed workflow, the ImageCreator opens the input image $img^{wsi}$ and accesses the information necessary to create the describing XML file for the DZI (compare subsection \ref{sec2_openFormats}). The needed number of levels is calculated next. For this, the bigger value of height or width of $img^{wsi}$ is chosen (see eq. 3.1) and then used to determine the number of levels $lvl^{max}$ (see eq. 3.2) necessary.
 
 \begin{equation}
 	max{\_}dim = max(height, width)
@@ -194,18 +186,15 @@ image = Vips.Image.new_from_file(input)
 image.dzsave(output[, options])
 \end{lstlisting}
 
-In line 1 the image gets opened and saved into a local variable called \emph{image}. While being opened, further operations could be done. The command in line 2 writes the processed image as DZI into the specified output location.
+In line 1 the image gets opened and saved into a local variable called \emph{image}. While being opened, further operations on the image could be done. The command in line 2 writes the processed image as DZI into the specified output location.
 
 
 \section{Implementation}
+The first iteration of the CS was a python script using deepzoom.py for the conversion. This caused severe performance issues. Out of all the image files in the test set (see section \ref{sec3_test}), only \emph{CMU-3.svs} (from Aperio, see appendix \ref{sec_A1}) could be converted. Other files were either too big, so the process would eventually be killed by the operating system, or exited with an IOError concerning the input file from the PIL imaging library.
 
-As stated before, the CS should be implemented as a script\footnote{
-	The CS can be found in its GitHub repository at \url{https://github.com/SasNaw/ConversionService}.
+The second iteration uses VIPS python implementation, which is capable of converting all the given test images\footnote{
+	The CS can be found on the disc at the end of this thesis, see appendix \ref{secA_cd}.
 }.
-
-The first iteration was a python script using deepzoom.py for the conversion. This caused severe performance issues. Out of all the image files in the test set\footnote{See section \ref{sec3_test}}, only one could be converted\footnote{CMU-3.svs from Aperio, see appendix \ref{sec_A1}}. Other files were either too big, so the process would eventually be killed by the operating system, or exited with an IOError concerning the input file from the PIL imaging library.
-
-The second iteration uses VIPS python implementation, which is capable of converting all the given test images.
 
 The script has to be called inside a terminal in the following fashion:
 
@@ -216,6 +205,7 @@ The script has to be called inside a terminal in the following fashion:
 Both the input and the output directory parameter are mandatory, in order for the script to know where to look for images to convert and where to save the resulting DZIs.
 
 Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. The source code is as follows:
+\clearpage
 
 \begin{lstlisting}[frame=single, language=python]
 def main():
@@ -257,7 +247,8 @@ def convert(path, file, extLen):
 	text_file.close()
 \end{lstlisting}
 
-The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the current working directory of ConversionService.py, appending "/dzi/[\emph{OUTPUT}]/".
+The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their default values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the current working directory of ConversionService.py, appending "/dzi/[\emph{OUTPUT}]/".
+\clearpage
 
 When a WSI gets converted into DZI by the CS, most of the image header information is lost. To counteract this, a file \emph{metadata.txt} is created in the [name]{\textunderscore}files directory, which serves as container for the header information of the original WSI (see line 12 and 13).
 
@@ -266,10 +257,11 @@ The console command \emph{vipsheader -a} is responsible for extracting the heade
 
 \section{Test}
 \label{sec3_test}
-To test the correct functionality of the CS a test data set was needed. OpenSlide offers a selection of freely distributable WSIs\footnote{See OpenSlides Homepage: \url{http://openslide.cs.cmu.edu}, or directly for the test data: \url{http://openslide.cs.cmu.edu/download/openslide-testdata/}}, which can be used for that purpose.
+To test the correct functionality of the CS a test data set was needed. OpenSlide offers a selection of freely distributable WSI files\footnote{
+	See \url{http://openslide.cs.cmu.edu/download/openslide-testdata/} for the test data.
+}, which can be used for that purpose.
 
-Since the size of the WSIs is big, they are not delivered via the CS repository\footnote{See \url{https://github.com/SasNaw/ConversionService}}. Instead they need to be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see appendix \ref{secA}.
-
+Because of the size of each single WSI file, only 2 are included on the disc at the end of this thesis (see appendix \ref{secA_cd}). The others must be downloaded separately from the OpenSlide homepage. For a complete listing of the used test data see appendix \ref{secA}.
 
 \subsection{Setup}
 

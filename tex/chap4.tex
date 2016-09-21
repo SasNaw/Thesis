@@ -5,35 +5,35 @@
 \label{sec4_objective}
 As described in \ref{sec2_as}, the goal of the AS is to provide a user with the possibility to:
 \begin{enumerate}[(1)]
-	\item view A WSI
+	\item view a WSI
 	\item annotate a WSI
-	\item manage made annotations
+	\item manage previously made annotations
 \end{enumerate}
 
 In order to achieve objective (1) - (3), a GUI needs to be deployed which supports the user in working on those tasks. (3) also adds the need for file persistence management.
 
-It became clear during the development process that the support of only DZI was impractical for the real life environment of the AS, thus making it necessary to support proprietary formats as well. A solution has to be found, that still addresses the vendor and platform issues stated in \ref{sec1_researchObjective} and \ref{sec2_openFormats}.
+During the development of the AS it became clear that the support of DZI as the only image format was impractical for the real life environment, thus making it necessary to support proprietary formats as well. A solution has to be found, that still addresses the vendor and platform issues stated in \ref{sec1_researchObjective} and \ref{sec2_openFormats}.
 
 
 \section{Methodology}
 \label{sec4_methodology}
-As stated in \ref{sec2_openFormats}, most vendors have proprietary image formats and their own implementation of a viewer for those, thus creating a vendor lock-in. Further do vendors often support only Windows platforms, ignoring other operating systems\cite{Cornish13},\cite{DICOM10},\cite{Farahanil15}. To avoid this, a solution must be found that is independent of operating system and vendor.
+As stated in \ref{sec2_openFormats}, most vendors ship their own implementation of an image viewer tailored to their proprietary image format, thus creating a vendor lock-in. Furthermore most of the vendors only support Windows as a platform, ignoring other operating systems\cite{Cornish13},\cite{DICOM10},\cite{Farahanil15}. To avoid vendor- or platform lock-in, a solution must be found that is independent of operating system and vendor.
 
 Independence from an operating system can be achieved by using web technologies, especially when running an application in a web browser, since those are supported by all modern operating systems and even mobile platforms\cite{Tseytlin14}.
 
-To develop the AS as a web application means to become subject to \emph{cross-origin resource sharing} (CORS)\nmc{CORS}{Cross Origin Resource Sharing}\cite{Kesteren14} and the \emph{same-origin policy} (SOP)\cite{web:mdn}\nmc{SOP}{Same-Origin Policy}. The SOP is a security concept of the web application security model, that only allows direct file access if the parent directory of the originating file is an ancestor directory of the target file\cite{web:mdn}. Since the local WSI file will not have the same origin, CORS is needed. CORS is a standard that defines mechanisms to allow access to restricted resources from a domain outside of the origin, when using the HTTP protocol\cite{Kesteren14}. Since the WSI is a local file, HTTP can not be used to retrieve the file.
+By choosing the web as target environment for the AS, the service itself becomes subject to security considerations, namely \emph{cross-origin resource sharing} (CORS)\nmc{CORS}{Cross Origin Resource Sharing}\cite{Kesteren14} and the \emph{same-origin policy} (SOP)\cite{web:mdn}\nmc{SOP}{Same-Origin Policy}. The SOP is a security concept of the web application security model, that only allows direct file access if the parent directory of the originating file is an ancestor directory of the target file\cite{web:mdn}. Since the local WSI file will not have the same origin, CORS is needed. CORS is a standard that defines mechanisms to allow access to restricted resources from a domain outside of the origin, when using the HTTP protocol\cite{Kesteren14}. Since the WSI is a local file, HTTP can not be used to retrieve the file.
 
-The restrictions of SOP and CORS can be worked around by deploying a server as so called \emph{digital slide repository} (DSR). A DSR manages storage of WSIs and their metadata\cite{Cornish13}. This way, WSIs would share the same origin as the viewer and their retrieval would be possible.
+The restrictions of SOP and CORS can be worked around by deploying a server as a so called \emph{digital slide repository} (DSR). A DSR manages storage of WSIs and their metadata\cite{Cornish13}. This way, WSIs would share the same origin as the viewer and their retrieval would be possible.
 
 Using a DSR has additional advantages: 
 \begin{itemize}
 	\item WSIs are medical images and as such confidential information. Their access is usually tied to non-disclosure or confidentiality agreements (e.g. \cite{COA} or \cite{USSanDiego}). A DSR eliminates the need to hand out copies of WSIs, which makes it easier to uphold the mentioned agreements.
 	\item WSIs take up big portions of storage\cite{Singh11}. The local systems used by pathologists in the environment of the AS are usual desktop computers and laptops. As such, their storage might be insufficient to hold data in those quantities. A DSR can be set up as a dedicated file server, equipped for the purpose of offering large amounts of storage.
-	\item A DSR enables centralized file management. Pathologists don't access local their local version of a WSI and it's annotations, but share the same data pool.
+	\item A DSR enables centralized file management. Pathologists don't access their local version of a WSI and it's annotations, but share the same data pool.
 	\item Depending on the network setup, other advantages become possible, e.g. sharing of rare cases as educational material and teleconsultation of experts independent of their physical position\cite{Wilbur09}.
 \end{itemize}
 
-Chapter \ref{sec3_cs} established a service to convert WSIs of various, proprietary formats to DZI, addressing the need to implement multiple image format drivers. But, as stated in \ref{sec4_objective}, a solution to serve proprietary image formats without explicit conversion must be found.
+Chapter \ref{sec3_cs} established a service to convert WSIs of various, proprietary formats to DZI, addressing the need to implement multiple image format drivers. But, as stated in \ref{sec4_objective}, a solution to serve proprietary image formats without explicit conversion is needed as well.
 
 \emph{OpenSlides Python} provides a DZI wrapper. This wrapper can be used to wrap a proprietary WSI and treat it as a DZI\cite{web:openslide}. A DSR can use this to serve a proprietary WSI as DZI to a viewer.
 
@@ -44,21 +44,17 @@ For the reasons mentioned above, the AS will be implemented as a web application
 \label{sec4_parts}
 As described in section \ref{sec4_methodology}, the AS will be realized in 2 separate parts:
 \begin{itemize}
-	\item a DSR, called \emph{Annotation Service Server} (ASS)\footnote{
-		ASS is pronounced "A2S".
-	}\nmc{ASS}{Annoation Service Server} (see subsection \ref{sec4_assPart})
+	\item a DSR, called \emph{Annotation Service Server} (ASS)\nmc{ASS}{Annoation Service Server} (see subsection \ref{sec4_assPart})
 	\item a viewer, called \emph{Annotation Service Viewer} (ASV)\nmc{ASV}{Annotation Service Viewer} (see subsection \ref{sec4_asvPart})
 \end{itemize}
 
 The ASS will be responsible for data management, supplying image data and serving the ASV to the client. The ASV will provide a WSI viewer with the tools needed to annotate ROIs in a WSI.
 
-The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, MPP and file name of the WSI. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
+The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, the image's microns per pixel (MPP)\nmc{MPP}{Microns Per Pixel} and file name. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
 
-The ASV is returned to the client and requests the data necessary to view the WSI and it's annotation if they should already exist (this includes configurations, annotations, labels and the image tiles for the current view).
+The ASV is served to the client as a web application that requests the data necessary to view the WSI and it's annotations. This includes configurations, previously made annotations (if present), label dictionaries and the image tiles for the current view. Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Annotations can be made and persisted at any time.
 
-Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Additionally, annotations can be made and persisted at any time.
-
-See fig. \ref{fig4_asUml} for a diagram of how the ASS and ASV interact with each other.
+Fig. \ref{fig4_asUml} visualizes the described interaction process in an activity diagram.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -81,17 +77,15 @@ As described in section \ref{sec4_methodology}, the ASS serves as a DZR. As such
 
 Communication with the ASS directly is only necessary to request the rendering of an ASV with a WSI. Once the ASV is rendered, communication can be handled through shortcuts in the ASV.\clearpage
 
-Communication between ASS and client, as well as ASS and ASV, will be realized over a RESTful API\footnote{
-	\emph{Representational State Transfer} (REST)\nmc{REST}{Representational State Transfer} is an architectural style for developing web applications. It was established in 2000 by Fielding in \cite{Fielding00}. A system that complies to the constraints of REST can be called RESTful. Typically, RESTful systems communicate via the HTTP protocol\cite{Fielding00}.
-	} offered by the ASS.
+Communication between ASS and client will be realized over a \emph{Representational State Transfer} (REST)\nmc{REST}{Representational State Transfer} API offered by the ASS. REST is an architectural style for developing web applications. It was established in 2000 by Fielding in \cite{Fielding00}. A system that complies to the constraints of REST can be called RESTful. Typically, RESTful systems communicate via the HTTP protocol\cite{Fielding00}.
 
-The development of a fully functional web server is not within the scope of this thesis. Therefore, the ASS will run as a local web server. This works around many of the common issues when hosting a web server (e.g. inefficient caching, load balance issues, gateway issues, poor security design, connectivity issues)\cite{web:typicalissues}.
+The development of a fully functional web server is not within the scope of this thesis. Therefore, the ASS is intended to run as a local web server. This works around many of the common issues when hosting a web server (e.g. inefficient caching, load balance issues, gateway issues, poor security design, connectivity issues)\cite{web:typicalissues}.
 
 
 \subsection{Annotation Service Viewer}
 \label{sec4_asvPart}
 
-The ASV is developed to provide a WSI viewer with annotation capabilities. It serves as main component for interaction with the AS, realizing most of the communication with the ASS (compare fig. \ref{fig4_asUml}).
+The ASV is developed to provide a WSI viewer with annotation capabilities. It serves as the main component for interaction with the AS, realizing most of the communication with the ASS (compare fig. \ref{fig4_asUml}).
 
 The annotation capabilities look as follows:
 \begin{itemize}
@@ -111,14 +105,10 @@ The annotation capabilities look as follows:
 		\item are surrounded by
 	\end{itemize}
 	the region (see fig. \ref{fig4_contextregions}).
-
-	\item A \emph{point of interest} (POI)\nmc{POI}{Point of Interest} is another way to create a region. After selecting a POI (a point coordinate in the image), an external script will start a segmentation\footnote{
-		Segmentation approaches differ drastically between cases and scenarios\cite{Liu12}, see e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12} or \cite{Angulo10} alone for cell segmentation. Since image segmentation exceeds the scope of this work by far, only a dummy implementation will be delivered, to show basic functionality. The script will be an interchangeable python plug in.
-	} and return the image coordinates for an enclosing path to the ASV. The ASV will then automatically create a region based on the provided information.
+\clearpage
+	\item A \emph{point of interest} (POI)\nmc{POI}{Point of Interest} is another way to create a region. After selecting a POI (a point coordinate in the image), an external script will start a segmentation and return the image coordinates for an enclosing path to the ASV. The ASV will then automatically create a region based on the provided information. Since segmentation approaches differ drastically between cases and scenarios\cite{Liu12} (e.g. \cite{Qi12}, \cite{Sharma16}, \cite{Wienert12} or \cite{Angulo10} for cell segmentation alone), it exceeds the scope of this work by far. To prove basic functionality a dummy implementation will be delivered. The script will be an interchangeable python plug in.
 	
-	\item For annotation support, a distance measurement tool is provided. This tool can measure the distance between 2 pixels in a straight line\footnote{
-		The measurement will be realized by the euclidean distance between a pixel $p_A$ and $p_B$\cite{Strang03}.
-	}	
+	\item For annotation support, a distance measurement tool is provided. This tool can measure the distance between 2 pixels in a straight line. The measurement will be realized by the euclidean distance between a pixel $p_a$ and $p_b$\cite{Strang03}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -131,9 +121,8 @@ The annotation capabilities look as follows:
 
 The ASV uses keywords from a dictionary to label regions. While a free text approach is more flexible and easier to handle for novice users, it encounters difficulties in a professional metadata environment (such as histopathological image annotation). A dictionary-based approach facilitates interoperability between different persons and annotation precision\cite{Frosterus11}. To increase flexibility, the ASV will offer the possibility of adding new entries to existing dictionaries.
 
-Since the vocabulary may vary strongly between different studies, the ASV offers the possibility to create new dictionaries. This way, dictionaries can be filled with a few case-relevant keywords instead of many generic, mostly irrelevant ones\footnote{
-	This does not exclude the use of a "generic" dictionary if it should serve a broad series of cases.
-}.
+Since the vocabulary may vary strongly between different studies, the ASV offers the possibility to create new dictionaries. This way, dictionaries can be filled with a few case-relevant keywords instead of many generic, mostly irrelevant ones. This explicitly does not exclude the use of a generic dictionary if it should serve a broad series of cases.
+\clearpage
 
 The first iteration of the ASV will be based on an open source project called \emph{MicroDraw}\footnote{See \url{https://github.com/r03ert0/microdraw} for more information on the MicroDraw project} (see fig. \ref{fig4_microdrawUI} for MicroDraw's GUI).  
 
@@ -146,8 +135,10 @@ The first iteration of the ASV will be based on an open source project called \e
 \end{figure}
 
 MicroDraw is a web application to view and annotate \emph{"high resolution histology data"}\cite{web:microdraw2}. The visualization is based on \emph{OpenSeadragon} (OSD)\nmc{OSD}{OpenSeadragon}\footnote{
-	For more information visit OSDs repository on GitHub: \url{https://openseadragon.github.io/}.
-}, another open source project. Annotations are made possible by the use of \emph{Paper.js}\footnote{See \url{http://paperjs.org/} for more information on Paper.js}. This delivers a baseline for the capabilities stated earlier in this subsection.
+	See \url{https://openseadragon.github.io/} for more information on OSD.
+}, another open source project. Annotations are made possible by the use of \emph{Paper.js}\footnote{
+	See \url{http://paperjs.org/} for more information on Paper.js.
+}. This delivers a baseline for the capabilities stated earlier in this section.
 
 Each iteration of the ASV will be reviewed regarding its usability and functionality by a pathologist, thus adjusting it to its real life environment with each iteration.
 
@@ -166,10 +157,8 @@ All code snippets in the following subsections have been taken from \emph{\textb
 \subsection{Flask}
 \label{sec4_flask}
 To give ASS its server capabilities, Flask was used\footnote{
-	See Flasks homepage for additional information: \url{http://flask.pocoo.org/}
-}. It provides a built-in development server, integrated unit testing, RESTful request dispatching and is Web Server Gateway Interface\footnote{
-		The WSGI is a standard interface for the communication between web servers and web applications or frameworks in python. The interface has a server and application side. Basically, the server side invokes a callable object that is provided by the application side. The specifics of providing this object are up to the individual server\cite{Brandl16}.
-} (WSGI)\nmc{WSGI}{Web Server Gateway Interface} compliant\cite{web:flask}.
+	See \url{http://flask.pocoo.org/} for additional information on Flask.
+}. It provides a built-in development server, integrated unit testing, RESTful request dispatching and is Web Server Gateway Interface (WSGI)\nmc{WSGI}{Web Server Gateway Interface} compliant\cite{web:flask}. The WSGI is a standard interface for the communication between web servers and web applications or frameworks in python. The interface has a server and application side. The server side invokes a callable object that is provided by the application side. The specifics of providing this object are up to the individual server\cite{Brandl16}.
 
 Flask's so called \emph{route() decorator} provides a simple way to build a RESTful API for server client communication:
 
@@ -209,7 +198,7 @@ def dzi(slug):
 	...
 \end{lstlisting}
 
-To bind a URL with one or more variables, the corresponding function must be parameterized with same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
+To bind a URL with one or more variables, the corresponding function must be parameterized with the same variables (compare line 1 and 2 or 13 - 14 and 15)\cite{web:flask}.
 
 \begin{table}[H]
 	\begin{center}
@@ -228,7 +217,7 @@ To bind a URL with one or more variables, the corresponding function must be par
 	\end{center}
 \end{table}
 
-HTTP knows different methods for accessing URLs (such as GET or POST)\cite{web:w3c}]. Flask will answer only GET requests by default. Any other method is answered with a "405 Method not allowed" HTTP status code\cite{web:flask}. This can be changed by adding the \emph{methods} argument to the decorator:
+HTTP provides different methods for accessing URLs (such as GET or POST)\cite{web:w3c}]. By default Flask will answer only GET requests. Any other method is answered with a "405 Method not allowed" HTTP status code\cite{web:flask}. This can be changed by adding the \emph{methods} argument to the decorator:
 
 \begin{lstlisting}[language=Python, frame=single]
 @app.route('/saveJson', methods=['POST'])
@@ -262,22 +251,7 @@ Tab. \ref{tab4_flaskBindigns} states a number of URLs, that have been bound to a
 
 \subsection{OpenSlide Python}
 \label{sec4_openslide}
-To read a WSI, ASS uses OpenSlide Python, which is a python interface to the OpenSlide C library. Besides providing an interface to read a WSI, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}. The DZG can be used to create Deep Zoom tiles on demand. The following formats are supported by OpenSlide\cite{web:openslide}:
-
-\begin{itemize}
-	\item BIF
-	\item NDPI
-	\item MRXS
-	\item SCN
-	\item SVS
-	\item SVSLIDE
-	\item TIF
-	\item TIFF
-	\item VMS
-	\item VMU
-\end{itemize}
-
-This list is identical to the list of image formats supported by the CS (compare chapter \ref{sec3_cs}. This is due to the fact that \emph{VIPS} uses OpenSlide to read WSIs as well\cite{web:vips}.
+To read a WSI, ASS uses OpenSlide Python, which is a python interface to the OpenSlide C library. Besides providing an interface to read a WSI, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}. The DZG can be used to create Deep Zoom tiles on demand. The following formats are supported by OpenSlide\cite{web:openslide}: BIF, NDPI, MRXS, SCN, SVS, SVSLIDE, TIF, TIFF, VMS and VMU. This list is identical to the list of image formats supported by the CS (compare chapter \ref{sec3_cs}). This is due to the fact that \emph{VIPS} uses OpenSlide to read WSIs as well\cite{web:vips}.
 
 OpenSlide can read a proprietary WSI as a so called \emph{OpenSlide} object (see line 4):
 
@@ -289,9 +263,7 @@ slide = open_slide(slide path)
 dzg = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds])
 \end{lstlisting}
 
-An OpenSlide object offers methods to access available metadata, image tiles, the thumbnail image and associated images, if available\footnote{
-	See the OpenSlide documentation for further information: \url{http://openslide.org/api/python/}
-} The OpenSlide object can be wrapped with a DZG to enable DZI support (see line 5)\cite{web:openslide}. A number of optional parameters can be passed into the constructor as well (see tab \ref{tab4_DZGparam} for parameters and their default values).
+An OpenSlide object offers methods to access available metadata, image tiles, the thumbnail image and associated images, if available. The OpenSlide object can be wrapped with a DZG to enable DZI support (see line 5)\cite{web:openslide}. A number of optional parameters can be passed into the constructor as well (see tab \ref{tab4_DZGparam} for parameters and their default values).
 
 \begin{table}[H]
 	\begin{center}
@@ -311,13 +283,7 @@ An OpenSlide object offers methods to access available metadata, image tiles, th
 
 The DZG\footnote{
 	For an in-depth list of functions, see \url{http://openslide.org/api/python/}
-} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. Of special importance are the \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions.
-
-\texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file\footnote{
-	Compare subsection \ref{sec2_openFormats} - Deep Zoom Images
-}. The parameter (format) specifies the format (PNG or JPEG) of the individual Deep Zoom tiles.
-
-\texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}, 
+} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The DZG's \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance. \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file (compare subsection \ref{sec2_openFormats} - Deep Zoom Images). The parameter \emph{format} specifies the format (PNG or JPEG) of the individual Deep Zoom tiles. \texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}.
 
 \begin{table}[H]
 	\begin{center}
@@ -337,7 +303,7 @@ The use of the DZG enables ASS to create DZI metadata and Deep Zoom tiles from p
 
 \subsection{Structure and Setup}
 \label{sec4_setup}
-Flask requires a specific directory structure to access static files and HTML templates. Static files are served from a \emph{static/} directory, templates to render must be contained in a \emph{template} directory. Both of those directories must be at the root level of the ASS\cite{web:flask}. Because of this, the following directory and file structure was chosen:\clearpage
+Flask requires a specific directory structure to access static files and HTML templates. Static files are served from a \emph{static/} directory, render-able view templates must be stored in a \emph{template} directory. Both of those directories must be at the root level of the ASS\cite{web:flask}. Because of this, the following directory and file structure was chosen:
 \begin{itemize}
 	\item AnnotationService/
 	\begin{itemize}
@@ -363,9 +329,10 @@ Flask requires a specific directory structure to access static files and HTML te
 
 As mentioned before, \textbf{static/} contains all static files required by the ASS, e.g. the CSS files (\textbf{css/}), icons (\textbf{cursors/}, \textbf{img/}) and JavaScript files (\textbf{lib/}) needed by the ASV.
 
-To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs. A WSI file will have a save file for each dictionary used on it.
+To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From there, the file path is arbitrary. \textbf{wsi/} contains also the persisted annotations of the associated WSIs. A WSI file will have a save file for each dictionary, according to the following naming pattern: \emph{[file name].[extension]\textunderscore[dictionary].json}.
+\clearpage
 
-\textbf{dictionaries/} contains all dictionaries used by the ASV. \textbf{slideDictionaries.json} is a key-value map containing all WSIs opened (none when the AS is newly set up) and the latest dictionaries used for them. The file name of the WSI is the key, which a dictionary name is corresponding to as value. When a new WSI is opened for the first time, it will be opened with the dictionary defined in the configuration file \textbf{configuration.json}.
+\textbf{dictionaries/} contains all dictionaries used by the ASV. \textbf{slideDictionaries.json} is a key-value map containing all WSIs opened (none when the AS is newly set up) and the latest dictionaries used for them. The file name of the WSI is the key, which maps to a dictionary name as the value. When a new WSI is opened for the first time, it will be opened with the dictionary defined in the configuration file \textbf{configuration.json}.
 
 \textbf{configuration.json} is the configuration file of the AS. It contains values such as the default dictionary and the default alpha value for regions. All those configurations can be adjusted manually. Tab. \ref{tab4_assConfig} lists all configurable values.
 
@@ -386,7 +353,7 @@ To make a WSI accessible to the AS, it must be placed in \textbf{wsi/}. From the
 	\end{center}
 \end{table}
 
-To provide a segmentation script, it must be placed in \textbf{segmentation/}. Additionally, the \emph{"segmentationScript"} value in the configuration.json file must be adjusted (compare \ref{tab4_assConfig}).
+To provide a segmentation script, it must be placed in \textbf{segmentation/}. Additionally, the \emph{"segmentationScript"} value in the configuration.json file must be adjusted (see tab. \ref{tab4_assConfig}).
 
 \textbf{templates/} contains all HTML templates that must be rendered by the ASS. The AS contains only one HTML template, which is used to render the ASV: \textbf{as{\textunderscore}viewer.html}.
 
@@ -434,13 +401,14 @@ To retrieve a WSI from the ASS, the URL must be pointed to it in the following m
 
 \subsection{RESTful API}
 \label{sec4_api}
-The ASS provides a RESTful API. This was realized with Flasks route() decorators\footnote{See subsection \ref{sec4_flask}} (compare tab. \ref{tab4_flaskBindigns} for a list of corresponding functions). The listing below gives an overview over the URLs offered by the API:
+The ASS provides a RESTful API. This was realized with Flasks route() decorators (compare subsection \ref{sec4_flask}). Tab. \ref{tab4_flaskBindigns} shows a list of corresponding functions. The listing below gives an overview of the URLs provided by the API:
 
 \begin{enumerate}[(1) -]
 	\item\textbf{/wsi/[file path].dzi\\
 	method:} GET\\
 	Requests an ASV to view the requested DZI. [file path] must point to a valid DZI, otherwise a "404 Not Found" HTTP status code is returned.\\
 	\emph{Returns} either a rendered ASV, which requests the DZI at [file path] or "404 Not Found"
+\clearpage
 	
 	\item \textbf{/wsi/[file path]\\
 	method:} GET\\
@@ -472,10 +440,17 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	Loads the JSON file specified in [source].\\
 	\emph{Returns} the JSON data if a file was found, an empty JSON map ("[]") otherwise.
 	
+	\item \textbf{/static/dictionaries/[dictionary]\\
+		method:} GET\\
+	Loads the dictionary file located at [dictionary]. \\
+	\emph{Returns} a stringified version of the dictionary content if a dictionary was found at [dictionary], a "404 Not Found" HTTP status code otherwise.
+	\clearpage
+	
 	\item \textbf{/createDictionary?name=[name]\&slide=[slide]\\
 	method:} GET\\
 	Requests the creation of a new, empty dictionary. The file will be called [name]. The ASV adds a ".json" if necessary. A manual call of this functions makes an added ".json" necessary. Otherwise, a text file will be created. The slide parameter provides the name of the WSI the dictionary was created at, so it can be changed in the slideDictionaries.json file. \\
 	\emph{Returns} the name and path to the new dictionary as json:
+	
 	\begin{lstlisting}
 	{
 		"name":"[name]",
@@ -484,13 +459,8 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	\end{lstlisting}
 	or "error" if [name] is already taken by another dictionary.
 	
-	\item \textbf{/static/dictionaries/[]dictionary]\\
-		method:} GET\\
-	Loads the dictionary file located at [dictionary]. \\
-	\emph{Returns} a stringified version of the dictionary content if a dictionary was found at [dictionary], a "404 Not Found" HTTP status code otherwise.
-	
 	\item \textbf{/getDictionaries\\
-	method:} GET\\
+		method:} GET\\
 	Requests a list of files contained in the \emph{dictionaries} folder.\\
 	\emph{Returns} a list with the file names, or "-1" if no dictionaries are present.
 	
@@ -504,7 +474,7 @@ The ASS provides a RESTful API. This was realized with Flasks route() decorators
 	Requests the invocation of the segmentation script provided in the configuration file. The coordinates of the POI are passed as URL arguments and will be handed down to the segmentation script.\\
 	\emph{Returns} a list of 2D coordinates, describing the contour around the POI, or a "404 Not Found" HTTP status code if no script was provided or the provided script was not found.
 \end{enumerate}
-
+\clearpage
 
 \section{Annotation Service Viewer Implementation}
 
@@ -531,27 +501,17 @@ A documentation of the individual functions of the ASV JavaScript (as{\textunder
 \label{sec4_asvFrameworks}
 The ASV uses jQuery, OSD and Paper.js for additional functionality.
 
-jQuery is a common JavaScript library, that offers an API to handle HTML document traversal and manipulation, event handling, animation and AJAX\footnote{
-	Asynchronous JavaScript and XML (AJAX)\nmc{AJAX}{Asynchronous JavaScript and XML} is a group of technologies which enable a client to make asynchronous web requests\cite{Ullman07}.
-} requests\cite{web:jquery}. It is also supported by all common web browsers\cite{web:jqueryBS}. The ASV uses jQuery especially for its HTML document traversal and manipulation capabilities, as well as its AJAX support.
+jQuery is a common JavaScript library, that offers an API to handle HTML document traversal and manipulation, event handling, animation and Asynchronous JavaScript and XML (AJAX)\nmc{AJAX}{Asynchronous JavaScript and XML} requests\cite{web:jquery}. AJAX is a group of technologies which enable a client to make asynchronous web requests\cite{Ullman07}. jQuery is also supported by all common web browsers\cite{web:jqueryBS}. The ASV uses jQuery especially for its HTML document traversal and manipulation capabilities, as well as its AJAX support.
 
 See the corresponding subsections for OSD and Paper.js.
 
 \subsubsection{OpenSeadragon}
-OSD is used by the ASV to show a WSI. It is a JavaScript based, open source web application to serve a viewer for \emph{"high-resolution zoomable images"}\cite{web:openseadragon}. It supports the following image formats:
+OSD is used by the ASV to show a WSI. It is a JavaScript based, open source web application to serve a viewer for \emph{"high-resolution zoomable images"}\cite{web:openseadragon}. It supports the following image formats: DZI, IIIF, OSM and TMS.
 
-\begin{itemize}
-	\item DZI
-	\item IIIF
-	\item OSM
-	\item TMS
-\end{itemize}
+Furthermore, custom tile sources can be added to support other image formats as well. Since the ASS is capable of delivering every WSI as DZI, no custom tile source implementation is necessary for proprietary WSIs.
+\clearpage
 
-Furthermore, custom tile sources can be added to support other image formats as well. Since the ASS is capable of delivering every WSI as DZI, no custom tile source implementation is necessary for proprietary WSIs\footnote{
-	Compare subsection \ref{sec2_openFormats}.
-}.
-
-The ASV defines a \textless{div}{\textgreater} in its HTML file, which will be used to hold the OSD viewer (OSDV)\nmc{OSDV}{OpenSeadragon Viewer}:
+The ASV defines a placeholder block element in its HTML file, which will be used to hold the OSD viewer (OSDV)\nmc{OSDV}{OpenSeadragon Viewer}:
 \begin{lstlisting}[title=as{\textunderscore}viewer.html, frame=single, language=html]
 <!-- OpenSeadragon viewer -->
 <div id="openseadragon1" style="width:vh;height:hh"></div>
@@ -571,17 +531,9 @@ The OSDV is then created in the ASV's JavaScript file:
  });
 \end{lstlisting}
 
-The relation between \textless{div}{\textgreater} and OSDV is created through the \emph{id} parameter (line 3). Tab. \ref{tab4_osdvParams} states a description of every parameter used in the above constructor\footnote{
+The relation between the \textless{div}{\textgreater} element in the webpage and OSDV is created through the \emph{id} parameter (line 3). A description of the other used parameters of the OpenSeadragon constructor is provided in Tab. \ref{tab4_osdvParams} \footnote{
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.html\#.Options} for an in-depth documentation of every parameter available.
 }.
-
-Since drawing paths and managing regions involves clicking onto the corresponding ROIs on the WSI, the zoomPerClick function must be disabled. Otherwise it will be called after each of those interactions, which is highly disorienting.
-
-The OSDV provides an \texttt{open(tileSources)} function, which is used to open a DZI's tiles\footnote{
-	DZI, as well as all other image formats, supported by the OSDV implement a tiled image pyramid scheme (see \ref{sec:dicomSupplement}). Thus, a number of images must be opened.
-}. The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG\footnote{
-Compare subsection \ref{sec4_openslide}.
-})). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
 
 \begin{table}[H]
 	\begin{center}
@@ -600,6 +552,10 @@ Compare subsection \ref{sec4_openslide}.
 		\label{tab4_osdvParams}
 	\end{center}
 \end{table}
+
+The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor when clicked. Since drawing paths and managing regions involves clicking onto the corresponding ROIs, this function must be disabled. If not disabled, each interaction with an ROI or region will lead to a call of \texttt{zoomPerClick}, which creates a highly disorienting experience.
+
+Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of images tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG (compare subsection \ref{sec4_openslide}). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
 
 A scalebar is added to the OSDV to support the assessment of ROIs:
 
@@ -630,7 +586,8 @@ The scale is $pixels/{\mu}m$. Since the ASS only delivers MPP (which is ${\mu}m/
 
 Eq. \ref{eq:ppm} can be seen in line 3 of the code snippet above.  If no valid input is provided from the ASS (that is: when no value was specified for MPP in the WSI's metadata), PPM will be set to 0. If the pixelPerMeter parameter of the scalebar equals 0 it is automatically hidden\cite{web:openseadragon}. The options in line 7 - 16 concern the styling of the scalebar (such as color, position and size).
 
-When navigating through the tiles and layers of the OSDV's tile source, it will automatically request the tiles needed for the current view from the ASS via HTTP GET\cite{web:openseadragon}.
+When navigating through the tiles and layers of the OSDV's tile source, it will automatically load the tiles needed for the current view from the ASS via HTTP GET requests \cite{web:openseadragon}.
+\clearpage
 
 
 \subsubsection{Paper.js}
@@ -646,11 +603,11 @@ viewer.addHandler('open',function(){
 }
 \end{lstlisting}
 
-The AO is a canvas which is placed above the OSDV. On it, paths can be drawn, which will be used to enclose an ROI. The AO is initialized in \texttt{initAnnotationOverlay()} (see line 3 in the code snippet above). Once created, the AO is resized to fit the opened WSI in height and width. This only happens when initializing the canvas. Therefore the AO will have (and keep) the dimensions of the level the WSI was opened in.
+The AO is a canvas which is placed above the OSDV. On it, paths can be drawn, which will be used to enclose an ROI. The AO is initialized in \texttt{initAnnotationOverlay()} (see line 2 in the code snippet above). Once created, the AO is resized to fit the opened WSI in height and width. This only happens when initializing the canvas. Therefore the AO will have (and keep) the dimensions of the level the WSI was opened in.
 
-This leads to issues when zooming in and out onthe OSDV (and consequently changing the level of the tile source). To counteract this, the AO is stretched to fit the new dimensions of the WSI's currently viewed layer. This leads to the problem of having different pixel densities in AO and OSDV.
+This leads to issues when zooming in and out on the OSDV (and consequently changing the level of the tile source). To counteract this, the AO is stretched to fit the new dimensions of the WSI's currently viewed layer. This leads to the problem of having different pixel densities in AO and OSDV.
 
-The AO is of very fine granularity and, when added programmatically, can create path segments within the decimals of a single pixel\cite{web:paper}. In drawing mode however, segments are only added between whole pixels, making it impossible to draw regions in high zoom levels. Since both, AO and OSDV, calculate clicked pixel positions from the clicked pixel in the browser\cite{web:openseadragon},\cite{web:paper}, a conversion is possible. Two conversion functions haven been implemented:
+The supported granularity of the AO is very fine and, when added programmatically, can create path segments within the decimals of a single pixel\cite{web:paper}. In drawing mode however, segments are only added between whole pixels, making it impossible to draw regions in high zoom levels. Since both, AO and OSDV, calculate clicked pixel positions from the clicked pixel in the browser \cite{web:openseadragon,web:paper}, a conversion is possible. Two conversion functions haven been implemented:
 \begin{enumerate}[(1)]
 	\item\label{item_AOtoIC} AO coordinate $\rightarrow$ image coordinate
 	\item\label{item_ICtoAO} image coordinate $\rightarrow$ AO coordinate
@@ -680,9 +637,7 @@ function convertImgToPathCoordinates(point) {
 }
 \end{lstlisting}
 
-\texttt{convertPathToImgCoordinates(point)} receives a point that is in the AO coordinate system and turns it into a screen coordinate (line 3). The screen coordinate is converted into a viewport coordinate\footnote{
-	A viewport coordinate maps coordinates into values within the interval $[0, 100]$ for both dimensions, instead of using pixel coordinates\cite{web:openseadragon}.
-} (line 5) from where it can be turned into an actual image coordinate (line 7).
+\texttt{convertPathToImgCoordinates(point)} receives a point that is in the AO coordinate system and turns it into a screen coordinate (line 3). The screen coordinate is converted into a viewport coordinate (line 5) from where it can be turned into an actual image coordinate (line 7). A viewport coordinate maps coordinates into values within the interval $[0, 100]$ for both dimensions x and y, instead of using pixel coordinates\cite{web:openseadragon}.
 
 \texttt{convertImgToPathCoordinates(point)} receives a point coordinate of the baseline image, which is turned into a viewport coordinate (line 13). The viewport coordinate is turned into a screen coordinate (line 15), to be turned into an AO coordinate from there (line 17).
 
@@ -690,7 +645,7 @@ Both of those functions need to work with the viewport coordinates to create a r
 
 \subsection{Definition: Region}
 \label{sec4_region}
-Regions are used to realize annotations in the ASV. Therefore they are of central importance. This section gives a definition of the region object in the ASV. Tab. \ref{tab4_regionUML} shows a UML class diagram to give an overview.
+The basic concept used to realize annotations in the ASV are regions. Each region has a \emph{context, imgCoords, name, path, uid} and \emph{zoom} property as shown in tab. \ref{tab4_regionUML}. They contain the connecting information between an ROI (imgCoords, path) and its label (name), making them the interface between visual and textual information- Because of their central importance to the ASV, this section describes the \texttt{region} object and its properties. 
 
 \begin{table}[H]
 	\begin{center}
@@ -709,23 +664,18 @@ Regions are used to realize annotations in the ASV. Therefore they are of centra
 	\end{center}
 \end{table}
 
-Each region has a \emph{context, imgCoords, name, path} and \emph{uid} property, as seen in tab. \ref{tab4_regionUML}.
-
-The \textbf{context} property is a list of unique label ids of other regions\footnote{
-	Compare subsection \ref{sec4_asvPart}
-}. If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, when:
+The \textbf{context} property is a list of unique label ids of other regions (compare subsection \ref{sec4_asvPart}). If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, if:
 \begin{itemize}
 	\item $R_2$'s path touches, crosses, surrounds or is surrounded by $R_1$'s path, and
 	\item $R_2$'s label is not in the context list of $R_1$ already, and
 	\item $R_2$'s label $\neq R_1$'s label
 \end{itemize}
 
-The \textbf{imgCoords} (image coordinates) property represents the coordinates of the path's segments in the baseline image. It is a list of 1 to n Openseadragon.Points\footnote{
+The \textbf{imgCoords} (image coordinates) property represents the coordinates of the path's segments in the baseline image. They are represented as a list of 1 to n Openseadragon.Points\footnote{
 	See \url{https://openseadragon.github.io/docs/OpenSeadragon.Viewport.html\#viewportToImageCoordinates} for more information on OSD's Point class.
-}.
-Without this property, there would be no relation between the ROIs of the AO and baseline image.
+}. This property is used to establish the relation between the ROIs of the AO and the baseline image.
 
-The \textbf{name} property holds the title of the region's corresponding label. A region is created with the title of the label selected at the time. That reference can not be changed, unless the whole region object is deleted and redrawn with another corresponding label selected previously to redrawing it.
+The \textbf{name} property contains the title of the region's corresponding label. A region is created with the dictionary label entry currently active at the time of the regions creation.
 
 The \textbf{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
 	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' Point class.
@@ -733,10 +683,10 @@ The \textbf{path} property represents the coordinates of the path's segments in 
 
 The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
 
-The \textbf{zoom} attribute describes the level of magnification when a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives\cite{Janowczyk16}.
+The \textbf{zoom} attribute describes the level of magnification at the point a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives and negatives\cite{Janowczyk16}.
 
 
-\subsection{GUI}
+\subsection{Graphical User Interface}
 This subsections describes the GUI of the ASV and its individual elements (compare fig. \ref{fig4_asSCreen} for reference):
 
 \begin{enumerate}[{[}1{]}]
@@ -749,7 +699,7 @@ This subsections describes the GUI of the ASV and its individual elements (compa
 	\item \textbf{Navigation map}\\
 	The \emph{navigation map} shows a macro image of the currently opened WSI and highlights the viewed area.
 	\item \textbf{Dictionary list}\\
-	The \emph{dictionary list} shows the currently selected dictionary. A left click on it opens a list with all currently available dictionaries from which a new one can be selected. Once selected. the old labels will be removed and the new labels loaded instead.
+	The \emph{dictionary list} shows the currently selected dictionary. A left click on it opens a list with all currently available dictionaries from which a new one can be selected. Once selected the old labels will be removed and the new labels loaded instead.
 	\item \textbf{Label list}\\
 	The \emph{label list} lists all available annotation labels from the loaded dictionary. The selected label is highlighted (see \emph{Gef\"a\ss} (vessel) in fig. \ref{fig4_asSCreen}). Other labels can be selected by a mouse click. Additionally, the labels can be iterated via the \emph{tab key}. A click on the eye symbol on top of the list toggles the visibility of all regions. A click on the eye symbol to the left of the label name toggles the visibility of all regions associated with that label. The color of a label can be changed with a click on the colored square. This will also change the color of all regions which are already drawn and associated to that label.
 	\item \textbf{OSDV and AO}\\

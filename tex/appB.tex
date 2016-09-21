@@ -1,8 +1,6 @@
 \chapter{Annotation Service Documentation}
 
-The following two sections document the implemented functions of the ASS (section \ref{sec_B1}) and ASV (section \ref{sec_B2}) in detail. All files of the AS are openly available in its GitHub repository. Additionally, a manual with installation and usage instructions can be found there. The repository can be found at:
-
- \url{https://github.com/SasNaw/AnnotationService}.
+The following two sections document the implemented functions of the ASS (section \ref{sec_B1}) and ASV (section \ref{sec_B2}) in detail. 
 
 \section{Annotation Service Server}
 \label{sec_B1}
@@ -120,7 +118,7 @@ If a response for OpenSeadragon was created via \texttt{slug(dzi)}, OpenSeadrago
 
 As in \texttt{slug(dzi)}, the \emph{slug} parameter is the slide URL generated in \texttt{index{\textunderscore}wsi}. The parameters \emph{level}, \emph{col} and \emph{row} describe the DZI level and address of the requested image tile. \emph{format} is the image format of the tile.
 
-If the format is not JPEG or PNG, the ASS return a "404 Not Found" http status code (line 3 - 6).
+If the format is not JPEG or PNG, the ASS return a "404 Not Found" HTTP status code (line 3 - 6).
 
 If the format is either JPEG or PNG, the requested tile is generated through the use of the DZGs \texttt{get{\textunderscore}tile(level, address)} function (line 8). If it was not possible to generate the tile, a "404 Not Found" HTTP status code will be returned.
 
@@ -309,26 +307,25 @@ def runSegmentation():
 
 \section{Annotation Service Viewer}
 \label{sec_B2}
-Since the ASV has \textgreater 2,000 lines of code, there will be no documentation of every single line of code\footnote{
-	The implementation of the ASV can be found in its GIT repository at: \url{https://github.com/SasNaw/AnnotationService}
-}. Instead a brief description of every function is provided.
+Since the ASV has \textgreater 2,000 lines of code, there will be no documentation of every single line of code. Instead, a brief description of every function is provided. The implementation of the ASV can be found on the disc at the end of this thesis (see appendix \ref{secA_cd}).
 
 
 \subsection{Initialization functions}
 
-\subsubsection{function init(file{\textunderscore}name, url, mpp)}
+\subsubsection{function init(file{\textunderscore}name, url, mpp, dictionary)}
 \emph{Parameters:\\
 	file{\textunderscore}name: name of the requested WSI\\
 	url: URL to the DZI's metadata file\\
 	mpp: microns per pixel of the requested WSI\\ \\
 }
-The \texttt{init(file{\textunderscore}name, url, mpp)} is called by the \emph{as{\textunderscore}viewer.html} to start the initialization of the ASV JavaScript. The parameters are served by the ASS. \emph{file{\textunderscore}name} describes the name of the WSI, \emph{url} contains the URL to the DZI metadata file and \emph{mpp} equals the microns per pixel of the requested WSI (if that information could be retrieved from the metadata, 0 otherwise).
+The \texttt{init(file{\textunderscore}name, url, mpp, dictionary)} is called by the \emph{as{\textunderscore}viewer.html} to start the initialization of the ASV JavaScript. The parameters are served by the ASS. \emph{file{\textunderscore}name} describes the name of the WSI, \emph{url} contains the URL to the DZI metadata file, \emph{mpp} equals the MPP of the requested WSI (if that information could be retrieved from the metadata, 0 otherwise) and  \emph{dictionary} describes the current dictionary for the dictionary associated with the current slide. All those informations are saved in the \emph{slide object}.
+\clearpage
 
 The function requests the content of the configuration file (via \texttt{loadConfiguration()}) from the ASS and creates the OSDV (via \texttt{initAnnotationService()}, see fig. \ref{figB_init}).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_init.png}
+		\includegraphics[scale=0.6]{img/ch_init.png}
 		\caption{Call hierarchy of \texttt{init(file{\textunderscore}name, url, mpp)}}
 		\label{figB_init}
 	\end{center}
@@ -374,11 +371,11 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 
 
 \subsubsection{function loadConfiguration()}
-\texttt{loadConfiguration()} requests and parses the content of the configuration file from the ASS. Furthermore, it requests the list of available dictionaries (via \texttt{getDictionaryList()}) and loads the content of the dictionary specified in the configuration (via \texttt{loadDictionary(path)}, see fig. \ref{figB_loadConfig}).
+\texttt{loadConfiguration()} requests and parses the content of the configuration file from the ASS. Furthermore, it requests the list of available dictionaries (via \texttt{getDictionaryList()}) and loads the content of the dictionary specified in the slide object (via \texttt{loadDictionary(path)}, see fig. \ref{figB_loadConfig}).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_init.png}
+		\includegraphics[scale=0.5]{img/ch_loadConfig.png}
 		\caption{Call hierarchy of \texttt{loadConfiguration()}}
 		\label{figB_loadConfig}
 	\end{center}
@@ -387,7 +384,7 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 
 \subsubsection{function getDictionaryList()}
 \texttt{getDictionaryList()} requests a list of all dictionaries from the ASS. The received list is then added as a clickable list to the toolbar.
-
+\clearpage
 
 \subsubsection{function saveDictionary()}
 \texttt{saveDictionary()} calls \texttt{saveJson(json, filePath)} to save the current dictionary to the currently active dictionary's file (see fig. \ref{figB_saveDict}).
@@ -450,7 +447,7 @@ Once a tile source was opened, the AO is initialized (via \texttt{initAnnotation
 
 \subsubsection{function createNewDictionary(isCancelable)}
 \emph{Parameters:\\
-	isCancelable: 1 if the process can be canceled without providing a valid dictionary name, 0 otherwise\\ \\
+	isCancelable: 1 if the process can be canceled, 0 otherwise\\ \\
 }
 \texttt{createNewDictionary(isCancelable)} opens a prompt and asks the user to provide a name for the dictionary to create. If \emph{isCancelable} is true (1), the prompt can be closed and the creation process is canceled. If it is false (0), the prompt will be shown until a valid name was provided.
 
@@ -458,7 +455,7 @@ After creation of the new dictionary it is selected as active one (and its empty
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.45]{img/ch_createDict.png}
+		\includegraphics[scale=0.47]{img/ch_createDict.png}
 		\caption{Call hierarchy of \texttt{createNewDictionary(isCancelable)}}
 		\label{figB_createDict}
 	\end{center}
@@ -475,6 +472,17 @@ After creation of the new dictionary it is selected as active one (and its empty
 \texttt{transform()} resizes the AO to fit the view bounds of the OSDV.
 
 
+\subsubsection{function help(show)}
+\emph{Parameters:\\
+	show: 1 to show help tooltip, 0 to hide it\\ \\
+}
+\texttt{help(show)} either shows or hides the help tooltip, depending on the provided value for show.
+
+
+\subsubsection{function toggleMenu()}
+\texttt{toggleMenu()} toggles visibility of the toolbar.
+
+
 \subsubsection{function appendLabelsToList()}
 \texttt{appendLabelsToList()} first clears the currently shown list of labels. Then it iterates of the list of available labels (from the configuration) and creates a new, clickable label entry and adds it to the label list (via \texttt{appendLabelToList(label)}. Once all labels are created, the first entry is selected automatically (via \texttt{selectNextLabel()}, see fig. \ref{figB_appendLabels}).
 
@@ -485,11 +493,12 @@ After creation of the new dictionary it is selected as active one (and its empty
 		\label{figB_appendLabels}
 	\end{center}
 \end{figure}
+\clearpage
 
 
 \subsubsection{function appendLabelToList(label)}
 \emph{Parameters:\\
-	label: name of the new label
+	label: name of the new label \\ \\
 }
 \texttt{appendLabelToList(label)} creates a new, clickable label for label list in the toolbar. It adds a click listener (via \texttt{singleClickOnLabel()}) to it and then selects it (via \texttt{selectLabel(el)}, see fig. \ref{figB_appendLabel}).
 
@@ -521,6 +530,10 @@ After creation of the new dictionary it is selected as active one (and its empty
 \texttt{selectLabel(el)} selects the provided element \emph{el} from the toolbar label list.
 
 
+\subsubsection{function toggleDictPicker()}
+\texttt{toggleDictPicker()} toggles the visibility of the list of available dictionaries.
+
+
 \subsubsection{function newLabel()}
 \texttt{newLabel()} creates a new label for the toolbar's label list. The created label is also added to the dictionary and persisted there (via \texttt{saveDictionary()}). The function automatically generates a uid (via \texttt{uniqueID()}) and color (via \texttt{regionHashColor(label)}, see fig. \ref{figB_newLabel}).
 
@@ -533,19 +546,15 @@ After creation of the new dictionary it is selected as active one (and its empty
 \end{figure}
 
 
-\subsubsection{function toggleDictPicker()}
-\texttt{toggleDictPicker()} toggles the visibility of the list of available dictionaries.
-
-
 \subsubsection{function dictListClick(index)}
 \emph{Parameters:\\
 	index: index of the selected dictionary\\ \\
 }
-\texttt{dictListClick(index)} switches the currently active dictionary with the selected one, overwrites the currently active dictionary value in the configuration file (via \texttt{saveJson(json, filePath)}) and loads the entries from the new dictionary (via \texttt{loadDictionary(path)}, see fig. \ref{figB_selectDict}).
+\texttt{dictListClick(index)} switches the currently active dictionary with the selected one from the dictionary list. To persist the dictionary switch, a GET request is send to the ASS, including the dictionary name and slide as URL parameters. The contents of the dictionary are loaded via \texttt{loadDictionary(path)} and the saved regions of that dictionary are loaded via \texttt{loadJson()} (see fig. \ref{figB_selectDict}).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_selectDict.png}
+		\includegraphics[scale=0.6]{img/ch_dictListClick.png}
 		\caption{Call hierarchy of \texttt{dictListClick(index)}}
 		\label{figB_selectDict}
 	\end{center}
@@ -557,17 +566,6 @@ After creation of the new dictionary it is selected as active one (and its empty
 	label: label whose style to modify\\ \\
 }
 \texttt{annotationStyle(label)} is used to manipulate the style values (stroke width and color, region color, alpha value) for the provided label.
-
-
-\subsubsection{function help(show)}
-\emph{Parameters:\\
-	show: 1 to show help tooltip, 0 to hide it\\ \\
-}
-\texttt{help(show)} either shows or hides the help tooltip, depending on the provided value for show.
-
-
-\subsubsection{function toggleMenu()}
-\texttt{toggleMenu()} toggles visibility of the toolbar.
 
 
 \subsection{Region functions}
@@ -593,21 +591,6 @@ After creation of the new dictionary it is selected as active one (and its empty
 \texttt{deselectRegion(reg)} deselects the provided region.
 
 
-\subsubsection{function findContextRegion(region1)}
-\emph{Parameters:\\
-	region1: region to find the context to\\ \\
-}
-\texttt{findContextRegion(region1)} finds the context of the provided region. The label of each region that crosses, touches, surrounds or is surrounded by \emph{region1} is considered as context. Too avoid data redundancy, each label will only be added once to the context of region1 (via \texttt{isRegionAlreadyReferenced(region1, region2)}, see fig. \ref{figB_findContext}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.4]{img/ch_findContext.png}
-		\caption{Call hierarchy of \texttt{findContextRegion()}}
-		\label{figB_findContext}
-	\end{center}
-\end{figure}
-
-
 \subsubsection{function isRegionAlreadyReferenced(region1, region2)}
 \emph{Parameters:\\
 	region1: region with the context to check\\
@@ -621,6 +604,21 @@ After creation of the new dictionary it is selected as active one (and its empty
 	reg: the region to remove\\ \\
 }
 \texttt{removeRegion(reg)} deletes the provided region.
+
+
+\subsubsection{function findContextRegion(region1)}
+\emph{Parameters:\\
+	region1: region to find the context to\\ \\
+}
+\texttt{findContextRegion(region1)} finds the context of the provided region. The label of each region that crosses, touches, surrounds or is surrounded by \emph{region1} is considered as context. Too avoid data redundancy, each label will only be added once to the context of region1 (via \texttt{isRegionAlreadyReferenced(region1, region2)}, see fig. \ref{figB_findContext}).
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{img/ch_findContext.png}
+		\caption{Call hierarchy of \texttt{findContextRegion()}}
+		\label{figB_findContext}
+	\end{center}
+\end{figure}
 
 
 \subsubsection{function findRegionByUID(uid)}
@@ -677,21 +675,22 @@ See fig. \ref{figB_singleClickLabel} for the call hierarchy of \texttt{singleCli
 	uid: the uid of the corresponding label\\ \\
 }
 \texttt{changeRegionAnnotationStyle(uid)} changes the annotation style (storke width and color, region color, region alpha value) for all regions corresponding to the label uid.
+\clearpage
 
 
 \subsubsection{function addPoi(event)}
 \emph{Parameters:\\
 	event: the click event\\ \\
 }
-\texttt{addPoi(event)} requests the server to run the segmentation script and provides it with the x and y coordinate the POI was placed at. Once the server returns with a valid answer (the image coordinates of the ROIs enclosing path), the coordinates are converted from image coordinates into AO coordinates (via \texttt{imgToPathCoordinates(point)}) and the ROI is enclosed by a path drawn along those AO coordinates. Then, a new region is created (via \texttt{newRegion(arg)}) and its checked for context (via \texttt{findContextRegion(region1)}).
+\texttt{addPoi(event)} requests the server to run the segmentation script and provides it with the x and y coordinate the POI was placed at. Once the server returns with a valid answer (the image coordinates of the ROIs enclosing path), the coordinates are converted from image coordinates into AO coordinates (via \texttt{imgToPathCoordinates(point)}) and the ROI is enclosed by a path drawn along those AO coordinates. Then, a new region is created (via \texttt{newRegion(arg)}, the current zoom level is passed to the function via \texttt{getZoom()}) and it is checked for its context (via \texttt{findContextRegion(region1)}).
 
-If the ASS returns a "404 Not Found", an alert is shown and the currently selected POI tool is reset to the navigation tool (via \texttt{clearToolSelection()}).
+If the ASS returns a "404 Not Found" HTTP status code, an alert is shown and the POI tool is reset to the navigation tool (via \texttt{clearToolSelection()}).
 
 Fig. \ref{fig_Bpoi} shows the call hierarchy of \texttt{addPoi(event)}.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_addPoi.png}
+		\includegraphics[scale=0.6]{img/ch_addPoi.png}
 		\caption{Call hierarchy of \texttt{addPoi(event)}}
 		\label{fig_Bpoi}
 	\end{center}
@@ -700,9 +699,11 @@ Fig. \ref{fig_Bpoi} shows the call hierarchy of \texttt{addPoi(event)}.
 
 \subsection{Internal functions}
 
-\subsubsection{UniqueID()}
-\texttt{UniqueID()} creates a unique id and returns it.
+\subsubsection{function uniqueID()}
+\texttt{uniqueID()} creates a unique id and returns it.
 
+\subsubsection{function getZoom()}
+\texttt{getZoom()} requests the current zoom level of the OSDV.
 
 \subsubsection{function regionHashColor(name)}
 \emph{Parameters:\\
@@ -710,25 +711,13 @@ Fig. \ref{fig_Bpoi} shows the call hierarchy of \texttt{addPoi(event)}.
 }
 \texttt{regionHashColor(name)} generates a color (rgba, with a = default alpha from configuration) from the hash value of the provided name.
 
-\subsubsection{function convertPathToImgCoordinates(point)}
-\emph{Parameters:\\
-	point: point coordinate to convert\\ \\
-}
-\texttt{convertPathToImgCoordinates(point)} converts a point coordinate from the AO to a point coordinate in the OSDV's image.
-
-
-\subsubsection{function convertImgToPathCoordinates(point)}
-\emph{Parameters:\\
-	point: point coordinate to convert\\ \\
-}
-\texttt{convertImgToPathCoordinates(point)} converts a point coordinate from the OSDV's image to a point coordinate in the AO.
 
 \subsubsection{function mouseDown(x,y)}
 \emph{Parameters:\\
 	x: x coordinate of when left mouse button was pushed down\\
 	y: y coordinate of when left mouse button was pushed down\\ \\
 }
-\texttt{mouseDown(x,y)} listens to mouse click events. It is called, once the mouse button is pushed down. The function handles every interaction the following interactions:
+\texttt{mouseDown(x,y)} listens to mouse click events. It is called, once the mouse button is pushed down. The function handles the following interactions:
 \begin{itemize}
 	\item create region in free hand and polygon drawing mode (via \texttt{newRegion(arg)})
 	\item add a new segment to a path in polygon drawing mode
@@ -736,15 +725,16 @@ Fig. \ref{fig_Bpoi} shows the call hierarchy of \texttt{addPoi(event)}.
 	\item select a clicked region (via \texttt{selectRegion(reg)})
 \end{itemize}
 
-See fig. \ref{figB_mouseDown} for the call hierarchy of \texttt{mouseDown(x,y)}.
+Whenever a new region is created, the zoom level is acquired (via \texttt{getZoom()}) and passed to the \texttt{newRegion(arg)} function. See fig. \ref{figB_mouseDown} for the call hierarchy of \texttt{mouseDown(x,y)}.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_mouseDown.png}
+		\includegraphics[scale=0.6]{img/ch_mouseDown.png}
 		\caption{Call hierarchy of \texttt{mouseDown(x,y)}}
 		\label{figB_mouseDown}
 	\end{center}
 \end{figure}
+\clearpage
 
 
 \subsubsection{function mouseDrag(x,y,dx,dy)}
@@ -778,6 +768,20 @@ When in free hand drawing mode, the \texttt{mouseUp()} function closes a region'
 When in distance measurement mode, the distance tooltip is removed upon release of the left mouse button.
 
 
+\subsubsection{function convertPathToImgCoordinates(point)}
+\emph{Parameters:\\
+	point: point coordinate to convert\\ \\
+}
+\texttt{convertPathToImgCoordinates(point)} converts a point coordinate from the AO to a point coordinate in the OSDV's image.
+
+
+\subsubsection{function convertImgToPathCoordinates(point)}
+\emph{Parameters:\\
+	point: point coordinate to convert\\ \\
+}
+\texttt{convertImgToPathCoordinates(point)} converts a point coordinate from the OSDV's image to a point coordinate in the AO.
+
+
 \subsubsection{function finishDrawingPolygon(closed)}
 \emph{Parameters:\\
 	closed: 1 if path should be closed, 0 otherwise\\ \\
@@ -800,21 +804,6 @@ When in distance measurement mode, the distance tooltip is removed upon release 
 
 \subsection{Key listener}
 
-\subsubsection{\$(document).keydown(function(e))}
-\emph{Parameters:\\
-	e: key event\\ \\
-}
-\texttt{\$(document).keydown(function(e))} is used to handle the tool selection via hotkeys. A tool is selected depending on the keys pressed (via \texttt{selectToolOnKeyPress(id)}), see fig. \ref{figB_keyDown}).
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.5]{img/ch_keyDown.png}
-		\caption{Call hierarchy of \texttt{keydown(function(e))}}
-		\label{figB_keyDown}
-	\end{center}
-\end{figure}
-	
-
 \subsubsection{\$(document).keyup(function(e))}
 \texttt{\$(document).keyup(function(e))} resets the selected tool to the navigation tool upon release of a hotkey (via \texttt{clearToolSelection()}, see fig. \ref{figB_keyup}).
 
@@ -823,6 +812,22 @@ When in distance measurement mode, the distance tooltip is removed upon release 
 		\includegraphics[scale=0.5]{img/ch_keyup.png}
 		\caption{Call hierarchy of \texttt{keyup(function(e))}}
 		\label{figB_keyup}
+	\end{center}
+\end{figure}
+\clearpage
+
+
+\subsubsection{\$(document).keydown(function(e))}
+\emph{Parameters:\\
+	e: key event\\ \\
+}
+\texttt{\$(document).keydown(function(e))} is used to handle the hotkey interaction (together with \texttt{\$(document).keyup(function(e))}). It manages the tool selection (via \texttt{selectToolOnKeyPress(id)}), saving of regions (via \texttt{saveRegions()}) and dictionaries (via \texttt{saveDictionaries()}), deleting and deselecting of selected regions (via \texttt{deselectRegion()} and \texttt{cmdDeleteSelected()}), the creation of new dictionaries (via \texttt{createNewDictionary}) and labels (via \texttt{appendLabelToList(label)}), as well as clearing the tool selection if necessary (via \texttt{clearToolSelection()}, e.g. when a dialog pops up in drawing mode). See fig. \ref{figB_keyDown} for the call hierarchy diagram.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.5]{img/ch_keyDown.png}
+		\caption{Call hierarchy of \texttt{keydown(function(e))}}
+		\label{figB_keyDown}
 	\end{center}
 \end{figure}
 

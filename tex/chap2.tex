@@ -73,7 +73,8 @@ Hamamatsu WSIs come in 3 variants:
 
 (1) and (2) consist of an index file ((1) - [file name].vms, (2) - [file name].vmu) and 2 or more image files. In the case of (2), there is also an additional optimization file. (3) consists of a single TIFF-like file with custom TIFF tags. While (1) and (3) contain JPEG images, (2) contains a custom, uncompressed image format called \emph{NGR}\footnote{For more information on NGR, consult \url{http://openslide.org/formats/hamamatsu/}}\cite{web:openslide}.
 
-The random access support for decoding parts of jpeg files is poor \cite{web:openslide}. To get around this, so called \emph{restart markers}\footnote{Restart markers were originally designed for error recovery. The markers allow the decoder to resynchronize at set intervals throughout the image\cite{Goode13}.} are used to create virtual slides\cite{Goode13}. The markers are placed at regular intervals. The offset of every marker is specified in different manner. In the case of (1), it can be found in the index file. In the case of (2), the optimization file holds the information and in the case of (3), a TIFF tag contains the offset\cite{web:openslide}.
+The random access support for decoding parts of jpeg files is poor \cite{web:openslide}. To work around this, so called \emph{restart markers} are used to create virtual slides. Restart markers were originally designed for error recovery. They allow a decoder to resynchronize at set intervals throughout the image\cite{Goode13}.	
+These markers are placed at regular intervals. Their offset is specified in a different manner, depending on the file format. In the case of (1), it can be found in the index file. In the case of (2), the optimization file holds the information and in the case of (3), a TIFF tag contains the offset\cite{web:openslide}.
 
 
 \subsubsection{Leica}
@@ -150,7 +151,8 @@ A DZI consists of two main parts\cite{web:dzi}:
 
 
 \subsubsection{International Image Interoperability Framework}
-The International Image Interoperability Framework (IIIF)\nmc{IIIF}{International Image Interoperability Framework} is the result of a cooperation between The British Library, Stanford University, the Bodleian Libraries\footnote{Oxford University}, the Bibliothèque Nationale de France, Nasjonalbiblioteket\footnote{National Library of Norway}], Los Alamos National Laboratory Research Library and Cornell University\cite{Cramer11}. Version 1.0 was published in 2012.
+The International Image Interoperability Framework (IIIF)\nmc{IIIF}{International Image Interoperability Framework} is the result of a cooperation between The British Library, Stanford University, the Bodleian Libraries (Oxford University), the Bibliothèque Nationale de France, Nasjonalbiblioteket (National Library of Norway), Los Alamos National Laboratory Research Library and Cornell University\cite{Cramer11}. Version 1.0 was published in 2012.
+\clearpage
 
 IIIFs goal is to collaboratively produce an interoperable technology and community framework for image delivery\cite{web:iiif2}. To achieve this, IIIF tries to:
 \begin{enumerate}[(1)]
@@ -190,7 +192,7 @@ The region parameter defines the rectangular portion of the full image to be ret
 	\end{center}
 \end{table}
 
-If the request specifies a region whose size extends beyond the actual size of the image, the response should be a cropped image, instead of an image with added empty space. If the region is completely outside of the image, the response should be a "404 Not Found" http status code\cite{web:iiif}.
+If the request specifies a region whose size extends beyond the actual size of the image, the response should be a cropped image, instead of an image with added empty space. If the region is completely outside of the image, the response should be a "404 Not Found" HTTP status code\cite{web:iiif}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -210,7 +212,7 @@ If a region was extracted, it is scaled to the dimensions specified by the size 
 	\end{center}
 \end{figure}
 
-If the resulting height or width equals 0, then the server should return a "400 Bad Request" http status code. Depending on the image server, scaling above the full size of the extracted region may be supported\cite{web:iiif}.
+If the resulting height or width equals 0, then the server should return a "400 Bad Request" HTTP status code. Depending on the image server, scaling above the full size of the extracted region may be supported\cite{web:iiif}.
 
 \begin{table}[H]
 	\begin{center}
@@ -250,7 +252,7 @@ Both, OSM and TMS, offer zooming images, which in general, have the functionalit
 	"JPEG 2000 is an image coding system that uses state-of-the-art compression techniques based on wavelet technology. Its architecture lends itself to a wide range of uses from portable digital cameras through to advanced pre-press, medical imaging and other key sectors."
 \end{quotation}
 
-It incorporates a mathematically lossless compression mode, in which the storage requirement of images can be reduced by an average of 2:1. On top of that, there is a visually lossless compression mode\footnote{At \emph{visually lossless compression rates, even a trained observer can not see the difference between original and compressed version\cite{intoPix08}.}} with compression rates between 10:1 to 20:1\cite{intoPix08}. JPEG 2000 code streams offer mechanisms to support random access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality\cite{Taubmann01}. 
+It incorporates a mathematically lossless compression mode, in which the storage requirement of images can be reduced by an average of 2:1 \cite{Taubmann01}. Furthermore, a visually lossless compression mode is provided. At \emph{visually lossless compression rates}, even a trained observer can not see the difference between original and compressed version. The visually lossless compression mode achieves compression rates of 10:1 and up to 20:1\cite{intoPix08}. JPEG 2000 code streams offer mechanisms to support random access at varying degrees of granularity. It is possible to store different parts of the same picture using different quality\cite{Taubmann01}. 
 
 In the compression process, JPEG 2000 partitions an image into rectangular and non-overlapping tiles of equal size (except for tiles at the image borders). The tile size is arbitrary and
 can be as large as the original image itself (resulting in only one tile) or as small as a single pixel. Furthermore, the image gets decomposed into a multiple resolution representation\cite{Rabbani02}. 
@@ -285,9 +287,9 @@ Artificial NNs are a group of models inspired by Biological Neural Networks (BNN
 	\end{center}
 \end{figure}
 
-Although artificial NNs are much simpler in comparison\footnote{Usually, they do not have much more than a few dozen neurons\cite{Bourg04}.}, they generally work in the same fashion.
+Although artificial NNs are much simpler in comparison (they seldom have more than a few dozen neurons\cite{Bourg04}), they generally work in the same fashion.
 
-One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning\footnote{As humans, NN learn by training\cite{Shiffman12}.}. This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig \ref{fig2_nn} shows an exemplary NN with neurons and the connections between them.
+One of the biggest strengths of a NN, much like a BNN, is the ability to adapt by learning (as humans, NN learn by training\cite{Shiffman12}). This adaption is based on \emph{weights} that are assigned to the connections between single neurons. Fig \ref{fig2_nn} shows an exemplary NN with neurons and the connections between them.
 
 \begin{figure}[H]
 	\begin{center}
@@ -299,18 +301,8 @@ One of the biggest strengths of a NN, much like a BNN, is the ability to adapt b
 
 Each line in fig. \ref{fig2_nn} represents a connection between 2 neurons. Those connections are a one-directional flow of information, each assigned with a specific weight. This weight is a simple number that is multiplied with the incoming/outgoing signal and therefore weakens or enhances it. They are the defining factor of the behavior of a NN. Determining those values is the purpose of training a NN\cite{Bourg04}.
 
-According to \cite{Shiffman12}, some of the standard use cases for NN are:
+According to \cite{Shiffman12}, some of the standard use cases for NN are: Pattern Recognition, Time Series Prediction, Signal Processing Perceptron, Control, Soft Sensors, and Anomaly Detection
 
-\begin{itemize}
-	\item Pattern Recognition
-	\item Time Series Prediction
-	\item Signal Processing Perceptron
-	\item Control
-	\item Soft Sensors
-	\item Anomaly Detection
-\end{itemize}
-
-\clearpage
 \subsection{Methods of Learning}
 \label{sec2_learning}
 There are 3 general strategies when it comes to the training of a NN\cite{Bourg04}. Those are:
@@ -321,7 +313,7 @@ There are 3 general strategies when it comes to the training of a NN\cite{Bourg0
 	\item Reinforcement Learning (a variant of Unsupervised Learning\cite{Rojas96})
 \end{enumerate}
 
-\emph{Supervised Learning} is a strategy that involves a training set to which the correct output is known, as well as an observing teacher. The NN is provided with the training data and computes its output. This output is compared to the expected output and the difference is measured. According to the error made, the weights of the NN are corrected. The magnitude of the correction is determined by the used learning algorithm\cite{Rojas96}.
+\emph{Supervised Learning} is a strategy that involves a training set to which the correct output is known (a so called \emph{ground truth}), as well as an observing teacher. The NN is provided with the training data and computes its output. This output is compared to the expected output and the difference is measured. According to the error made, the weights of the NN are corrected. The magnitude of the correction is determined by the used learning algorithm\cite{Rojas96}.
 
 \emph{Unsupervised Learning} is a strategy that is required when the correct output is unknown and no teacher is available. Because of this, he NN must organize itself\cite{Shiffman12}. \cite{Rojas96} makes a distinction between 2 different classes of unsupervised learning:
 
@@ -398,7 +390,7 @@ Training this kind of NN is much more complicated than training a simple percept
 
 
 \subsubsection{Backpropagation}
-Training is an optimization process. To optimize something, a metric to measure has to be established. In the case of backpropagation, this metric is the accumulated output error of the NN to a given input\footnote{To do so, it is necessary to know the right answer. Therefore, backpropagation is part of the supervised learning process.}. There are several ways to calculate this error, with the \emph{mean square error}\footnote{Mean square error is the average of the square of the differences of two variables, in this case the expected and the actual output.} being the most common one\cite{Bourg04}.
+Training is an optimization process. To optimize something, a metric to measure has to be established. In the case of backpropagation, this metric is the accumulated output error of the NN to a given input. There are several ways to calculate this error, with the \emph{mean square error} being the most common one\cite{Bourg04}. The mean square error describes the average of the square of the differences of two variables (in this case the expected and the actual output). 
 
 Finding the optimal weights is an iterative process of the following steps:
 \begin{enumerate}
@@ -463,9 +455,9 @@ The small and focused nature of MS makes scaling, updates, general changes and t
 Another advantage is how well MS plays into the hands of agile, scrum and continuous software development processes, due to their previously discussed inherent traits.
 
 % cons
-The modularization of MS does not only yield advantages. Since each MS has its own, closed off data management\footnote{See subsection \ref{sec2_msDef} - \emph{Decentralized Data Management}}, interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
+The modularization of MS does not only yield advantages. Since each MS has its own, closed off data management (see \ref{sec2_msDef}(f)), interprocess communication becomes a necessity. This can lead to communicational overhead which has a negative impact on the overall performance of the system\cite{Wolff16}.
 
-2.3.1(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
+\ref{sec2_msDef}(e) (\emph{Decentralized Governance}) can lead to compatibility issues, if different developer teams chose to use different technologies. Thus, more communication and social compatibility between teams is required. This can lead to an unstable system which makes the deployment of extensive workarounds necessary\cite{Riggins15}.
 
 It often makes sense to share code inside a system to not replicate functionality which is already there and therefore increase the maintenance burden. The independent nature of MS can make that very difficult, since shared libraries must be build carefully and with the fact in mind, that different MS may use different technologies, possibly creating dependency conflicts.
 
@@ -473,22 +465,24 @@ It often makes sense to share code inside a system to not replicate functionalit
 \subsection{Conclusion}	
 The tools needed to achieve the research objective stated in subsection \ref{sec1_researchObjective} will be implemented by using the MS modularization patterns. Due to the implementation being done by a single person, some of the inherent disadvantages of MS are negated (making them a favorable modularization concept):
 \begin{itemize}
-	\item Interprocess communication does not arise between the single stages of the process chain, since they have a set order\footnote{E.g. it would not make sense trying to extract a training sample without converting or annotating a WSI first.}
+	\item Interprocess communication does not arise between the single stages of the process chain, since they have a set order (e.g. it would not make sense trying to extract a training sample without converting or annotating a WSI first).
 	\item Different technologies may be chosen for the single steps of the process chain, however, working alone on the project makes technological incompatibilities instantly visible
 	\item The services should not share functionality, therefore there should be no need for shared libraries
 \end{itemize}
+\clearpage
+
 This makes the advantages outweight the disadvantages clearly:
 \begin{itemize}
 	\item different languages and technologies can be used for every single step of the process chain, making the choice of the most fitting tool possible
 	\item WSIs take a heavy toll on memory and disk space due to their size; the use of MS allows each step of the chain to handle those issues in the most suitable way for each given step
 	\item separating the steps of the process chain into multiple MS leads to well separated modules, each having a small and therefore easy to maintain codebase
-	\item other bachelor/master students may continue to use or work on this project in the future, making the benefit of a small, easily maintainable code base twice as important
+	\item other bachelor/master students may continue to use or work on this project in the future, further increasing the benefit of a small, easily maintainable code base
 \end{itemize}
 
 
 \section{Process Chain}
 \label{sec2_pc}
-This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The process looks as follows:
+This section and its following subsections are dedicated to establish the process chain necessary to accomplish the research objectives stated in \ref{sec1_researchObjective}. The process to create training samples from a set of WSI images is defined as follows:
 
 \begin{enumerate}[(1.)]
 	\item convert chosen WSI $img^{wsi}_i$ to open format $img^{cvrt}_i$
@@ -500,15 +494,15 @@ This section and its following subsections are dedicated to establish the proces
 
 While it only makes sense to run (1.) once per $img^{wsi}_i$ to create $img^{cvrt}_i$, steps (2.) - (4.) can be repeated multiple times, so that there is no need to finish the annotation of an image in one session. That makes it necessary to not only save but also load annotations. Therefore, the loading of already made annotations can be added as step (2.5). This also enables the user of editing and deleting already made annotations. Because of this, step (5.) also needs to be repeatable (see fig. \ref{fig2_processChainUML}).
 
-\begin{figure}[h]
+The single steps of the process chain will be sorted into semantic groups. Each group will be realized on its own, in a MS like fashion. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
+
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=0.4]{img/processChainUML.png}
 		\caption{Activity diagram of the process chain}
 		\label{fig2_processChainUML}
 	\end{center}
 \end{figure}
-
-The single steps of the process chain will be sorted into semantic groups. Each group will be realized on its own, in a MS like fashion. The semantic groups are: conversion (1.), extraction (5.) and viewing and annotation (2. - 4.).
 
 A tool will be introduced for each group in the subsections \ref{sec2_cs} - \ref{sec2_ts}). Those are:
 
@@ -524,7 +518,7 @@ A tool will be introduced for each group in the subsections \ref{sec2_cs} - \ref
 
 \subsection{Conversion Service}
 \label{sec2_cs}
-The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the vendor system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format\footnote{Compare subsections \ref{sec2_proprietaryForams} and \ref{sec2_openFormats}} (see fig. \ref{fig2_processChainA}).
+The devices which create WSIs, so called \emph{whole slide scanners}, create images in various formats, depending on the vendor system (due to the lack of standardization \cite{Cornish13}). The Conversion Service (CS)\nmc{CS}{Conversion Service} has the goal of converting those formats to an open format (compare subsections \ref{sec2_proprietaryForams} and \ref{sec2_openFormats}, see fig. \ref{fig2_processChainA}).
 
 \begin{figure}[H]
 	\begin{center}
@@ -534,20 +528,7 @@ The devices which create WSIs, so called \emph{whole slide scanners}, create ima
 	\end{center}
 \end{figure}
 
-Upon invocation, the CS will take every single WSI inside a given directory and convert it to a chosen open format. The output of each conversion will be saved in another specified folder. Valid image formats for conversion are:
-
-\begin{itemize}
-	\item BIF
-	\item MRXS
-	\item NDPI
-	\item SCN
-	\item SVS
-	\item SVSLIDE
-	\item TIF
-	\item TIFF
-	\item VMS
-	\item VMU
-\end{itemize}
+Upon invocation, the CS will take every single WSI inside a given directory and convert it to a chosen open format. The output of each conversion will be saved in another specified folder. Valid image formats for conversion are: BIF, MRXS, NDPI, SCN, SVS, SVSLIDE, TIF, TIFF, VMS and VMU.
 
 
 \subsection{Annotation Service}

@@ -3,60 +3,61 @@
  \nomgroup{A}
 
   \item [{AJAX}]\begingroup Asynchronous JavaScript and XML\nomeqref {4.0}
-		\nompageref{55}
+		\nompageref{54}
   \item [{AO}]\begingroup Annotation Overlay\nomeqref {4.1}
-		\nompageref{58}
+		\nompageref{57}
   \item [{AS}]\begingroup Annotation Service\nomeqref {2.0}
-		\nompageref{29}
+		\nompageref{28}
   \item [{ASS}]\begingroup Annoation Service Server\nomeqref {4.0}
 		\nompageref{41}
   \item [{ASV}]\begingroup Annotation Service Viewer\nomeqref {4.0}
-		\nompageref{42}
-  \item [{BB}]\begingroup Bounding Box\nomeqref {5.0}\nompageref{64}
+		\nompageref{41}
+  \item [{BB}]\begingroup Bounding Box\nomeqref {5.0}\nompageref{63}
   \item [{BNN}]\begingroup Biological Neural Network\nomeqref {2.0}
-		\nompageref{19}
+		\nompageref{18}
   \item [{CORS}]\begingroup Cross Origin Resource Sharing\nomeqref {4.0}
 		\nompageref{40}
   \item [{CS}]\begingroup Conversion Service\nomeqref {2.0}
 		\nompageref{28}
   \item [{DICOM}]\begingroup Digital Imaging and Communications in Medicine\nomeqref {2.0}
-		\nompageref{8}
+		\nompageref{7}
   \item [{DZG}]\begingroup DeepZoomGenerator\nomeqref {4.0}
-		\nompageref{49}
-  \item [{DZI}]\begingroup Deep Zoom Image\nomeqref {1.0}\nompageref{6}
+		\nompageref{47}
   \item [{GUI}]\begingroup Graphical User Interface\nomeqref {1.0}
 		\nompageref{6}
   \item [{IIIF}]\begingroup International Image Interoperability Framework\nomeqref {2.0}
-		\nompageref{14}
-  \item [{MS}]\begingroup Microservice\nomeqref {2.0}\nompageref{24}
+		\nompageref{12}
+  \item [{MPP}]\begingroup Microns Per Pixel\nomeqref {4.0}
+		\nompageref{41}
+  \item [{MS}]\begingroup Microservice\nomeqref {2.0}\nompageref{23}
   \item [{NN}]\begingroup Neural Network\nomeqref {1.0}\nompageref{4}
   \item [{OpenCV}]\begingroup Open Source Computer Vision Library\nomeqref {5.0}
-		\nompageref{66}
-  \item [{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}\nompageref{46}
+		\nompageref{65}
+  \item [{OSD}]\begingroup OpenSeadragon\nomeqref {4.0}\nompageref{45}
   \item [{OSDV}]\begingroup OpenSeadragon Viewer\nomeqref {4.0}
-		\nompageref{56}
+		\nompageref{54}
   \item [{OSGF}]\begingroup Open Source Geospatial Foundation\nomeqref {2.0}
-		\nompageref{18}
-  \item [{OSM}]\begingroup OpenStreetMap\nomeqref {2.0}\nompageref{18}
+		\nompageref{17}
+  \item [{OSM}]\begingroup OpenStreetMap\nomeqref {2.0}\nompageref{17}
   \item [{POI}]\begingroup Point of Interest\nomeqref {4.0}
-		\nompageref{44}
+		\nompageref{43}
   \item [{REST}]\begingroup Representational State Transfer\nomeqref {4.0}
-		\nompageref{44}
-  \item [{RI}]\begingroup Reference Image\nomeqref {5.5}\nompageref{73}
+		\nompageref{43}
+  \item [{RI}]\begingroup Reference Image\nomeqref {5.5}\nompageref{72}
   \item [{ROI}]\begingroup Region of Interest\nomeqref {1.0}
 		\nompageref{5}
   \item [{SOP}]\begingroup Same-Origin Policy\nomeqref {4.0}
 		\nompageref{40}
   \item [{TIFF}]\begingroup Tagged Image File Format\nomeqref {2.0}
-		\nompageref{19}
-  \item [{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}
 		\nompageref{18}
+  \item [{TMS}]\begingroup Tiled Map Service\nomeqref {2.0}
+		\nompageref{17}
   \item [{TS}]\begingroup Tessellation Service\nomeqref {2.0}
-		\nompageref{30}
+		\nompageref{29}
   \item [{VIPS}]\begingroup VASARI Image Processing System\nomeqref {3.3}
-		\nompageref{35}
+		\nompageref{34}
   \item [{WSGI}]\begingroup Web Server Gateway Interface\nomeqref {4.0}
-		\nompageref{47}
+		\nompageref{46}
   \item [{WSI}]\begingroup Whole Slide Image\nomeqref {1.0}
 		\nompageref{4}
 

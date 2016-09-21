@@ -8,7 +8,7 @@ Scanning style file /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist.
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
 Scanning input file document.nlo....done (32 entries accepted, 0 rejected).
-Sorting entries....done (191 comparisons).
-Generating output file document.nls....done (63 lines written, 0 warnings).
+Sorting entries....done (173 comparisons).
+Generating output file document.nls....done (64 lines written, 0 warnings).
 Output written in document.nls.
 Transcript written in document.ilg.

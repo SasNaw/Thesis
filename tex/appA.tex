@@ -1,10 +1,39 @@
 \chapter{Test Data}
+
+\section{Files on disc}
+\label{secA_cd}
+
+A disc is included at the end of this thesis. This disc contains the 3 introduced services from the chapters \ref{sec3_cs} (CS), \ref{sec4_as} (AS) and \ref{sec5} (TS). Alternatively, they are available at their corresponding GitHub repositories (see tab. \ref{tabA_paths}).
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{| p{1.5cm} | p{4.5cm} | p{5cm} |}
+			\hline
+			\textbf{service} & \textbf{disc path} & \textbf{GitHub repository} \\ \hline
+			CS & /services/ConversionService & \url{https://github.com/SasNaw/ConversionService} \\ \hline
+			AS & /services/AnnotationService & \url{https://github.com/SasNaw/AnnotationService} \\ \hline
+			TS & /services/TessellationService & \url{https://github.com/SasNaw/TessellationService}  \\ \hline
+		\end{tabular}
+		\caption{Services with their disc paths and repository URLs}
+		\label{tabA_paths}
+	\end{center}
+\end{table}
+
+All tools presented in this thesis are open source and their use, further development and diversification are highly encouraged.
+
+The disc also contains 6 exemplary WSI files (DZI, MRXS, NDPI, SCN, SVS, TIF). Due to the limited storage space available on the medium and the size of most WSI files, not all test files could be provided on disc. They can be found under \emph{/testdata/wsi/} and are usable for all 3 services.
+
+The JSON save file from \ref{sec5_test} can also be found on the disc, at \emph{/testdata/{\allowbreak}json/CMU-1.svs{\textunderscore}example.json}.
+
+
+
+\section{Free Whole Slide Images}
 \label{secA}
 The following test data was used for all tests involving CS, AS and TS. It can be found at OpenSlide's homepage, at the freely distributable test data section\footnote{
 	See \url{http://openslide.cs.cmu.edu/download/openslide-testdata/} for more information.
 }. Various slides can be found there. The sections \ref{sec_A1} - \ref{sec_A8} give listings of all used WSIs, sorted by vendor and file format.
 
-\section{Aperio (.svs)}
+\subsection{Aperio (.svs)}
 \label{sec_A1}
 
 \begin{table}[H]
@@ -25,7 +54,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Generic Tiled tiff (.tiff)}
+\subsection{Generic Tiled tiff (.tiff)}
 
 \begin{table}[H]
 	\begin{center}
@@ -39,7 +68,8 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Hamamatsu (.ndpi)}
+\subsection{Hamamatsu (.ndpi)}
+\label{secA_Hama}
 
 \begin{table}[H]
 	\begin{center}
@@ -58,7 +88,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Hamamatsu (.vms)}
+\subsection{Hamamatsu (.vms)}
 
 \begin{table}[H]
 	\begin{center}
@@ -74,7 +104,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Leica (.scn)}
+\subsection{Leica (.scn)}
 
 \begin{table}[H]
 	\begin{center}
@@ -91,7 +121,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Trestle (.tiff)}
+\subsection{Trestle (.tiff)}
 
 \begin{table}[H]
 	\begin{center}
@@ -107,7 +137,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 \end{table}
 
 
-\section{Ventana (.bif)}
+\subsection{Ventana (.bif)}
 \begin{table}[H]
 	\begin{center}
 		\begin{tabular}{| p{4cm} | p{2cm} | p{5cm} |}
@@ -120,7 +150,7 @@ The following test data was used for all tests involving CS, AS and TS. It can b
 	\end{center}
 \end{table}
 
-\section{Mirax (.mrxs)}
+\subsection{Mirax (.mrxs)}
 \label{sec_A8}
 \begin{table}[H]
 	\begin{center}

@@ -24,18 +24,19 @@ A possible way to prepare them is by using image annotation: tagging regions of 
 \label{sec1_researchObjective}
 The goal of this thesis is the conceptualization and implementation of tools to enable deep learning and pathology experts to cooperate in annotating WSIs to create a ground truth for the later use in NNs. In order to do so, it must be possible to open a given WSI with a viewer, add annotations to it and persist those annotations. Additionally, persisted annotations must be extracted from the WSI to be used as ground truth.
 
-Since there is no WSI file format standard, vendors developed their own proprietary solutions\cite{Cornish13}. This either leads to
+%Since there is no WSI file format standard, vendors developed their own proprietary solutions\cite{Cornish13}. This either leads to
 
-\begin{enumerate}[(i)]
-	\item locking-in on a specific vendor or
-	\item separate handling of each proprietary format
-\end{enumerate}
 
-(i) would render the whole process vendor specific, limiting its use drastically. (ii) would not render the process chain vendor specific but demand additional work and maintenance, due to the need of implementing multiple drivers for different formats. To counteract this, open file formats, such as the Deep Zoom Image format, have been specified\cite{Cornish13}. Additionally, converters and wrappers exist, that help to void the stated issues (i) and (ii). 
+%\begin{enumerate}[(i)]
+%	\item locking-in on a specific vendor or
+%	\item separate handling of each proprietary format
+%\end{enumerate}
+
+%(i) would render the whole process vendor specific, limiting its use drastically. (ii) would not render the process chain vendor specific but demand additional work and maintenance, due to the need of implementing multiple drivers for different formats. To counteract this, open file formats, such as the Deep Zoom Image format, have been specified\cite{Cornish13}. Additionally, converters and wrappers exist, that help to void the stated issues (i) and (ii). 
 
 This thesis has three objectives:
 \begin{enumerate}[(1)]
-	\item The introduction of a conversion tool, which turns proprietary WSI formats into an open one.
+	\item There is no standard for WSI files, therefore vendors developed their own proprietary solutions\cite{Cornish13}. This either leads to a vendor lock-in or separate handling of each proprietary format. To avoid both cases, a conversion tool that turns proprietary WSI formats into an open format must be introduced.
 	\item The deployment of a WSI viewer tool. This WSI viewer must be capable of adding annotations to a WSI and persisting them. As stated earlier, the tool is intended to be used by deep learning and pathology experts. An intuitive and easy-to-understand graphical user interface (GUI)\nmc{GUI}{Graphical User Interface} is necessary to avoid long learning periods and create willingness to actually use the tool.
 	\item The implementation of a tool that is capable of turning persisted annotations into a format usable as ground truth.
 \end{enumerate}
