@@ -52,7 +52,7 @@ The ASS will be responsible for data management, supplying image data and servin
 
 The two components interact as follows: once the client requested a valid image URL, the ASS will check if the requested WSI is a DZI and, if so, render a ASV with the image path, the image's microns per pixel (MPP)\nmc{MPP}{Microns Per Pixel} and file name. If the WSI is proprietary, it will be wrapped by OpenSlide. The remaining procedure is then identical to the DZI case.
 
-The ASV is served to the client as a web application that requests the data necessary to view the WSI and it's annotations. This includes configurations, previously made annotations (if present), label dictionaries and the image tiles for the current view. Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Annotations can be made and persisted at any time.
+The ASV is served to the client as a web application that requests the data necessary to view the WSI and its annotations. This includes configurations, previously made annotations (if present), label dictionaries and the image tiles for the current view. Once loaded, the client can change the current view to maneuver through the different levels and image tiles available, which will be requested by the ASS whenever needed. Annotations can be made and persisted at any time.
 
 Fig. \ref{fig4_asUml} visualizes the described interaction process in an activity diagram.
 
