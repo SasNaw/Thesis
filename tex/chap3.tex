@@ -204,7 +204,7 @@ The script has to be called inside a terminal in the following fashion:
 
 Both the input and the output directory parameter are mandatory, in order for the script to know where to look for images to convert and where to save the resulting DZIs.
 
-Upon calling, the \emph{main()} routine will be started, which orchestrates the whole conversion process. The source code is as follows:
+Upon execution, the \texttt{main()} function will be called, which orchestrates the whole conversion process. The source code can be seen in the code snippet below.
 \clearpage
 
 \begin{lstlisting}[frame=single, language=python]
@@ -220,7 +220,7 @@ def main():
 			print("done!")
 \end{lstlisting}
 
-\emph{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or aborts the execution otherwise. Furthermore, it will create the specified output folder, if it does not exist already. In the next step, the specified input folder will be checked for its content. \emph{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \emph{convert(...)} function:
+\texttt{checkParams()} checks if the input parameters are valid and, if so, returns the path to the specified folder or aborts the execution otherwise. Furthermore, it will create the specified output folder, if it does not exist already. In the next step, the specified input folder will be checked for its content. \texttt{getFileExt(file)} looks up the extension of each contained file and will either return the length of the files extension or $0$ otherwise. Each valid file will then be converted with the \texttt{convert(...)} function:
 
 \begin{lstlisting}[frame=single, language=python]
 # convert image source into .dzi format and copies all header 
@@ -247,12 +247,12 @@ def convert(path, file, extLen):
 	text_file.close()
 \end{lstlisting}
 
-The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \emph{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' Image class. Afterwards, \emph{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \emph{OVERLAP} and \emph{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their default values are 0 (\emph{OVERLAP}) and 256 (\emph{TILESIZE}). The output will be saved to the current working directory of ConversionService.py, appending "/dzi/[\emph{OUTPUT}]/".
+The name for the new DZI file will be created from the original file name, however, the former extension will be replaced by "dzi" (see line 7). \texttt{OUTPUT} specifies the output directory which the file will be saved to. Next, the image file will be opened with Vips' \texttt{Image} class. Afterwards, \texttt{dzsave(...)} will be called, which handles the actual conversion into the dzi file format. \texttt{OVERLAP} and \texttt{TILESIZE} are global variables which describe the overlap of the tiles and their respective size. Their default values are 0 (\texttt{OVERLAP}) and 256 (\texttt{TILESIZE}). The output will be saved to the current working directory of ConversionService.py, appending "/dzi/[\texttt{OUTPUT}]/".
 \clearpage
 
 When a WSI gets converted into DZI by the CS, most of the image header information is lost. To counteract this, a file \emph{metadata.txt} is created in the [name]{\textunderscore}files directory, which serves as container for the header information of the original WSI (see line 12 and 13).
 
-The console command \emph{vipsheader -a} is responsible for extracting the header information (see line 17 - 18). The read information (\emph{out} in line 18) is then written into the \emph{metadata.txt} file (Line 20 - 22).
+The console command \texttt{vipsheader -a} is responsible for extracting the header information (see line 17 - 18). The read information (\texttt{out} in line 18) is then written into the \emph{metadata.txt} file (Line 20 - 22).
 
 
 \section{Test}
