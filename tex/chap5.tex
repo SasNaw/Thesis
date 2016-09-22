@@ -37,12 +37,12 @@ A user can draw a region's path without any restrictions concerning the pattern,
 In the case of (1), an ROI's BB is copied pixel by pixel into a new image. The resizing (scaling the output image up or down to the provided pixel values) in the case of (2) makes preprocessing of the BB necessary. This has 2 reasons:
 \begin{itemize}
 	\item If the aspect ration of the provided width and height is different than the one of the BB, the resulting image will be distorted.
-	\item When scaling images down, interpolation can be used, to reduce the information loss of the image\cite{Thevanez00}. This is partially possible when scaling images up as well, e.g. via fractal interpolation, but a non trivial task\cite{Guerdri16}.
+	\item When scaling images down, interpolation can be used to reduce the information loss of the image\cite{Thevanez00}. This is partially possible when scaling images up as well, e.g. via fractal interpolation, but a non trivial task\cite{Guerdri16}.
 \end{itemize}
 
 Therefore, the size of the BB will be adjusted to match the aspect ratio of the provided width and height. If the resulting BB is bigger then the provided width and height, the image will be scaled down and interpolated. If the BB is smaller, it will be scaled up instead of the image. This leads to a bigger area inside the BB that is not part of the ROI, but a pixel ratio of 1:1 between original and extracted image, resulting in no distortion or loss of quality.
 
-Case (3) approximates a ROI by tessellating it into tiles of the provided width and height. \emph{Tessellation} describes the tiling of a plane using one or more geometric shapes with no overlaps or gaps (see fig. \ref{fig5_tesExample} for an example)\cite{Clifford09}. Every tile inside the region's enclosing path (or touched by it) is targeted by the extraction. Each tile is extracted into an individual image.
+Case (3) approximates a ROI by tessellating it into tiles of the provided width and height. \emph{Tessellation} describes the tiling of a plane, using one or more geometric shapes with no overlaps or gaps (see fig. \ref{fig5_tesExample} for an example)\cite{Clifford09}. Every tile inside the region's enclosing path (or touched by it) is targeted by the extraction. Each tile is extracted into an individual image.
 
 \begin{figure}[H]
 	\begin{center}
@@ -71,17 +71,17 @@ Section \ref{sec5_objective} additionally stated the objective of keeping up cor
 \label{sec5_impl}
 The TS is implemented as a python script called \textbf{\emph{TessellationService.py}}\footnote{
 	The TS is contained on the disc at the end of this thesis, see appendix \ref{secA_cd}.
-}. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: \emph{OpenSlide}, \emph{NumPy}, \emph{Pillow} and \emph{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library}.
+}. As stated in sections \ref{sec5_objective} and \ref{sec5_method}, its purpose is to extract annotated ROIs from a WSI. This is done with the help of the following frameworks and libraries: 
 
-OpenSlide was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
-
-NumPy is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
-
-OpenCV is an open source computer vision and machine learning library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function (see subsection \ref{sec5_tessellation}).
-
-Pillow is an imaging library, which offers methods to read from and write to image files. It was used for reading, writing, scaling and converting the extracted images.
+\begin{itemize}
+	\item \textbf{OpenSlide} was used to access and read a provided WSI (compare subsection \ref{sec4_asvFrameworks} - OpenSlide).
+	\item \textbf{NumPy} is a python library for efficient scientific computing, especially regarding operations involving multi-dimensional array objects\cite{Walt11}. Since a lot of image operations are based on the use of matrices, this library was used to increase efficiency.
+	\item \textbf{OpenCV} (Open Source Computer Vision Library)\nmc{OpenCV}{Open Source Computer Vision Library} is an open source computer vision and machine learning library. It was built to provide a common infrastructure for computer vision applications. It offers numerous functions regarding image processing and machine learning\cite{Bradski08}. Its main purpose in the TS is to create a reference image for the tessellation function (see subsection \ref{sec5_tessellation}).
+	\item \textbf{Pillow} is an imaging library, which offers methods to read from and write to image files. It was used for reading, writing, scaling and converting the extracted images.
+\end{itemize}
 
 A detailed documentation of the TS' functions can be found in appendix \ref{secC}.
+
 
 \subsection{Execution}
 \label{sec5_exec}
@@ -199,7 +199,9 @@ OpenSlide is used to read a provided WSI. Since OpenSlide can not open a native 
 
 \subsection{Extraction without Tessellation}
 \label{sec5_extraction}
-As mentioned in subsection \ref{sec5_extractionProcess}, the implementation of the extraction process differs for DZI and WSI. This is because of the use of OpenSlide to read a WSI. The following two subsections describe the extraction process for both cases. A documentation of all mentioned functions can be found in appendix \ref{secC}.
+As mentioned in subsection \ref{sec5_extractionProcess}, the implementation of the extraction process differs for DZI and WSI. This is because of the use of OpenSlide to read a WSI. The following two subsections describe the extraction process for both cases.
+\clearpage
+
 
 \subsubsection{WSI}
 The WSI extraction process is realized with the \texttt{wsi(file)} function. It opens the provided file via OpenSlide, builds a name from its path and parses the regions of the WSI via \texttt{read{\textunderscore}json(path)}. The function iterates over every parsed region to extract it. The extraction process is visualized in fig. \ref{fig5_tsWsiUml}. 
@@ -226,7 +228,7 @@ size_y = BB_{max(y)} - BB_{min(y)}
 OpenSlide's \texttt{readRegion(location, level, size)} function is used to retrieve the region's BB in a separate image from the original baseline image. This extracted image and its associated region's metadata are then written to file.
 
 \subsubsection{DZI}
-It is not possible to read a DZI with OpenSlide, thus their extraction process differs from the WSI approach. The process is implemented in the \texttt{dzi(file)} function. Since a DZI only consists of multiple tiles over different levels, the baseline image must be stitched together manually (compare \ref{sec2_openFormats}). Only the area of the ROI is of interest for the further extraction process. Therefore only that area is stitched together (the stitched area will be called \emph{baseline area} from here on). In order to do so the information about tile size and image dimensions must be parsed from the DZI's metadata file. Since DZI uses $n$ instead of $0$ for the highest resolution level, $n$ must be determined as well. Once the information is acquired, a file name is created from the file path. Afterwards, the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
+It is not possible to read a DZI with OpenSlide, thus their extraction process differs from the WSI approach. The process is implemented in the \texttt{dzi(file)} function. Since a DZI only consists of multiple tiles over different levels, the baseline image must be stitched together manually (compare \ref{sec2_openFormats}). Only the area of the ROI is of interest for the further extraction process. Therefore only that area is stitched together (the stitched area will be called \emph{baseline area} from here on). In order to do so, the information about tile size and image dimensions must be parsed from the DZI's metadata file. Since DZI uses $n$ instead of $0$ for the highest resolution level, $n$ must be determined as well. Once the information is acquired, a file name is created from the file path. Afterwards, the corresponding regions are parsed from the associated JSON file. Fig. \ref{fig5_tsDziUml} visualizes the extraction process and its individual steps, which are executed for each region.
 
 \begin{figure}[!h]
 	\begin{center}
@@ -256,7 +258,7 @@ m = \frac{image^{height}}{tile^{height}}
 n = \frac{image^{width}}{tile^{width}}
 \end{equation}
 
-As mentioned before, a DZI has no baseline image. However, the height and width information from the DZI's metadata file suffice for the purpose of creating virtual tiles. In either case, the virtual tiles are only a set of reference points to describe a tiled approximation of the region's path (see fig. \ref{fig5_vtExample}). All virtual tiles containing segments of the region's path are saved in a list $L^{path}$.
+As mentioned before, a DZI has no baseline image. However, the width and height information from the DZI's metadata file suffice for the purpose of creating virtual tiles. In either case, the virtual tiles are only a set of reference points to describe a tiled approximation of the region's path (see fig. \ref{fig5_vtExample}). All virtual tiles containing segments of the region's path are saved in a list $L^{path}$.
 
 \begin{figure}[!h]
 	\begin{center}
