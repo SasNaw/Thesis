@@ -217,7 +217,7 @@ To bind a URL with one or more variables, the corresponding function must be par
 	\end{center}
 \end{table}
 
-HTTP provides different methods for accessing URLs (such as GET or POST)\cite{web:w3c}]. By default Flask will answer only GET requests. Any other method is answered with a "405 Method not allowed" HTTP status code\cite{web:flask}. This can be changed by adding the \emph{methods} argument to the decorator:
+HTTP provides different methods for accessing URLs (such as GET or POST)\cite{web:w3c}]. By default Flask will answer only GET requests. Any other method is answered with a "405 Method not allowed" HTTP status code\cite{web:flask}. This can be changed by adding the \texttt{methods} argument to the decorator:
 
 \begin{lstlisting}[language=Python, frame=single]
 @app.route('/saveJson', methods=['POST'])
@@ -251,9 +251,9 @@ Tab. \ref{tab4_flaskBindigns} states a number of URLs, that have been bound to a
 
 \subsection{OpenSlide Python}
 \label{sec4_openslide}
-To read a WSI, ASS uses OpenSlide Python, which is a python interface to the OpenSlide C library. Besides providing an interface to read a WSI, it offers a DZI wrapper\cite{web:openslide}, called \emph{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}. The DZG can be used to create Deep Zoom tiles on demand. The following formats are supported by OpenSlide\cite{web:openslide}: BIF, NDPI, MRXS, SCN, SVS, SVSLIDE, TIF, TIFF, VMS and VMU. This list is identical to the list of image formats supported by the CS (compare chapter \ref{sec3_cs}). This is due to the fact that \emph{VIPS} uses OpenSlide to read WSIs as well\cite{web:vips}.
+To read a WSI, ASS uses OpenSlide Python, which is a python interface to the OpenSlide C library. Besides providing an interface to read a WSI, it offers a DZI wrapper\cite{web:openslide}, called \texttt{DeepZoomGenerator} (DZG)\nmc{DZG}{DeepZoomGenerator}. The DZG can be used to create Deep Zoom tiles on demand. The following formats are supported by OpenSlide\cite{web:openslide}: \emph{BIF, NDPI, MRXS, SCN, SVS, SVSLIDE, TIF, TIFF, VMS} and \emph{VMU}. This list is identical to the list of image formats supported by the CS (compare chapter \ref{sec3_cs}). This is due to the fact that \emph{VIPS} uses OpenSlide to read a WSI as well\cite{web:vips}.
 
-OpenSlide can read a proprietary WSI as a so called \emph{OpenSlide} object (see line 4):
+OpenSlide can read a proprietary WSI as a so called \texttt{OpenSlide} object (see line 4):
 
 \begin{lstlisting}[language=python, frame=single]
 from openslide import open_slide
@@ -263,7 +263,7 @@ slide = open_slide(slide path)
 dzg = DeepZoomGenerator(slide[, tile_size, overlap, limit_bounds])
 \end{lstlisting}
 
-An OpenSlide object offers methods to access available metadata, image tiles, the thumbnail image and associated images, if available. The OpenSlide object can be wrapped with a DZG to enable DZI support (see line 5)\cite{web:openslide}. A number of optional parameters can be passed into the constructor as well (see tab \ref{tab4_DZGparam} for parameters and their default values).
+An \texttt{OpenSlide} object offers methods to access available metadata, image tiles, the thumbnail image and associated images, if available. The \texttt{OpenSlide} object can be wrapped with a DZG to enable DZI support (see line 5)\cite{web:openslide}. A number of optional parameters can be passed into the constructor as well (see tab \ref{tab4_DZGparam} for parameters and their default values).
 
 \begin{table}[H]
 	\begin{center}
@@ -283,7 +283,7 @@ An OpenSlide object offers methods to access available metadata, image tiles, th
 
 The DZG\footnote{
 	For an in-depth list of functions, see \url{http://openslide.org/api/python/}
-} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The DZG's \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance. \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file (compare subsection \ref{sec2_openFormats} - Deep Zoom Images). The parameter \emph{format} specifies the format (PNG or JPEG) of the individual Deep Zoom tiles. \texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}.
+} generates all data necessary, to work with a proprietary WSI as if it would be a DZI\cite{web:openslide}. The DZG's \texttt{get{\textunderscore}dzi(format)} and \texttt{get{\textunderscore}tile(level, address)} functions are of special importance. \texttt{get{\textunderscore}dzi(format)} generates a string containing the complete metadata of a DZI XML file (compare subsection \ref{sec2_openFormats} - Deep Zoom Images). The parameter \texttt{format} specifies the format (PNG or JPEG) of the individual Deep Zoom tiles. \texttt{get{\textunderscore}tile(level, address)} returns an image of the tile corresponding to the provided parameter values (see tab. \ref{tab4_getTileParams}). The tiles are returned either as PNG or JPEG, depending on which format was chosen for \texttt{get{\textunderscore}dzi(format)}.
 
 \begin{table}[H]
 	\begin{center}
@@ -555,7 +555,7 @@ The relation between the \textless{div}{\textgreater} element in the webpage and
 
 The OSDV provides a function called \texttt{zoomPerClick} that enhances the image section under the cursor when clicked. Since drawing paths and managing regions involves clicking onto the corresponding ROIs, this function must be disabled. If not disabled, each interaction with an ROI or region will lead to a call of \texttt{zoomPerClick}, which creates a highly disorienting experience.
 
-Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of images tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG (compare subsection \ref{sec4_openslide}). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \emph{TileSource} interface to access the individual tiles and levels of the provided image format.
+Since DZI implements a version of the tiled image pyramid model (compare subsection \ref{sec:dicomSupplement}), a number of image tiles must be opened to display a current view. For this purpose the OSDV provides an \texttt{open(tileSources)} function.  The tileSources are provided as URL to the DZI's metadata file by the ASS (either "/static/wsi/[file].dzi" (natural DZI) or "/static/slide.dzi" (artificial DZI from the DZG (compare subsection \ref{sec4_openslide}). Based on the URL extension (always \emph{".dzi"} in this AS' scope), the OSDV selects an appropriate \texttt{TileSource} interface to access the individual tiles and levels of the provided image format.
 
 A scalebar is added to the OSDV to support the assessment of ROIs:
 
@@ -584,7 +584,7 @@ The scale is $pixels/{\mu}m$. Since the ASS only delivers MPP (which is ${\mu}m/
 	PPM = \frac{10^6}{MPP}
 \end{equation}
 
-Eq. \ref{eq:ppm} can be seen in line 3 of the code snippet above.  If no valid input is provided from the ASS (that is: when no value was specified for MPP in the WSI's metadata), PPM will be set to 0. If the pixelPerMeter parameter of the scalebar equals 0 it is automatically hidden\cite{web:openseadragon}. The options in line 7 - 16 concern the styling of the scalebar (such as color, position and size).
+Eq. \ref{eq:ppm} can be seen in line 3 of the code snippet above.  If no valid input is provided from the ASS (that is: when no value was specified for MPP in the WSI's metadata), PPM will be set to 0. If the \texttt{pixelPerMeter} parameter of the scalebar equals 0 it is automatically hidden\cite{web:openseadragon}. The options in line 7 - 16 concern the styling of the scalebar (such as color, position and size).
 
 When navigating through the tiles and layers of the OSDV's tile source, it will automatically load the tiles needed for the current view from the ASS via HTTP GET requests \cite{web:openseadragon}.
 \clearpage
@@ -593,9 +593,9 @@ When navigating through the tiles and layers of the OSDV's tile source, it will 
 \subsubsection{Paper.js}
 The ASV utilizes Paper.js to create a region's path. Paper.js is an \emph{"open source vector graphics scripting framework"}, running on top of the HTML5 canvas\cite{web:paper}. It offers an API to create and manage vector graphics and bezier curves\footnote{
 	A \emph{bezier curve} is a parametric curve, frequently used in computer graphics\cite{Strang03}.
-}. Additionally, it offers vector relevant entities, such as \emph{point}, \emph{size} and \emph{rectangle} objects and enables the drawing of finely grained paths.
+}. Additionally, it offers vector relevant entities, such as \texttt{point}, \texttt{size} and \texttt{rectangle} objects and enables the drawing of finely grained paths.
 
-When the OSDV opens an image, a so called \emph{annotation overlay} (AO)\nmc{AO}{Annotation Overlay} is created:
+When the OSDV opens an image, a so called \texttt{annotation overlay} (AO)\nmc{AO}{Annotation Overlay} is created:
 \begin{lstlisting}[title=Excerpt from \texttt{initAnnotationService()} in as{\textunderscore}viewer.js, frame=single, language=JavaScript]
 viewer.addHandler('open',function(){
 	initAnnotationOverlay();
@@ -637,15 +637,15 @@ function convertImgToPathCoordinates(point) {
 }
 \end{lstlisting}
 
-\texttt{convertPathToImgCoordinates(point)} receives a point that is in the AO coordinate system and turns it into a screen coordinate (line 3). The screen coordinate is converted into a viewport coordinate (line 5) from where it can be turned into an actual image coordinate (line 7). A viewport coordinate maps coordinates into values within the interval $[0, 100]$ for both dimensions x and y, instead of using pixel coordinates\cite{web:openseadragon}.
+\texttt{convertPathToImgCoordinates(point)} receives a point that is in the AO coordinate system and turns it into a \texttt{screen coordinate} (line 3). The \texttt{screen coordinate} is converted into a \texttt{viewport coordinate} (line 5) from where it can be turned into an actual \texttt{image coordinate} (line 7). A \texttt{viewport coordinate} maps coordinates into values within the interval $[0, 100]$ for both dimensions x and y, instead of using pixel coordinates\cite{web:openseadragon}.
 
-\texttt{convertImgToPathCoordinates(point)} receives a point coordinate of the baseline image, which is turned into a viewport coordinate (line 13). The viewport coordinate is turned into a screen coordinate (line 15), to be turned into an AO coordinate from there (line 17).
+\texttt{convertImgToPathCoordinates(point)} receives a \texttt{point coordinate} of the baseline image, which is turned into a \texttt{viewport coordinate} (line 13). The \texttt{viewport coordinate} is turned into a \texttt{screen coordinate} (line 15), to be turned into an AO coordinate from there (line 17).
 
 Both of those functions need to work with the viewport coordinates to create a relation between the dimensions of the image and the current level.
 
 \subsection{Definition: Region}
 \label{sec4_region}
-The basic concept used to realize annotations in the ASV are regions. Each region has a \emph{context, imgCoords, name, path, uid} and \emph{zoom} property as shown in tab. \ref{tab4_regionUML}. They contain the connecting information between an ROI (imgCoords, path) and its label (name), making them the interface between visual and textual information- Because of their central importance to the ASV, this section describes the \texttt{region} object and its properties. 
+The basic concept used to realize annotations in the ASV are regions. Each region has a \texttt{context, imgCoords, name, path, uid} and \texttt{zoom} property as shown in tab. \ref{tab4_regionUML}. They contain the connecting information between an ROI (\texttt{imgCoords, path}) and its label (\texttt{name}), making them the interface between visual and textual information. Because of their central importance to the ASV, this section describes the \texttt{region} object and its properties. 
 
 \begin{table}[H]
 	\begin{center}
@@ -664,26 +664,26 @@ The basic concept used to realize annotations in the ASV are regions. Each regio
 	\end{center}
 \end{table}
 
-The \textbf{context} property is a list of unique label ids of other regions (compare subsection \ref{sec4_asvPart}). If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, if:
+The \texttt{context} property is a list of unique label ids of other regions (compare subsection \ref{sec4_asvPart}). If there is a region $R_1$ and a region $R_2$, then the label of $R_2$ is added to the context of $R_1$, if:
 \begin{itemize}
 	\item $R_2$'s path touches, crosses, surrounds or is surrounded by $R_1$'s path, and
 	\item $R_2$'s label is not in the context list of $R_1$ already, and
 	\item $R_2$'s label $\neq R_1$'s label
 \end{itemize}
 
-The \textbf{imgCoords} (image coordinates) property represents the coordinates of the path's segments in the baseline image. They are represented as a list of 1 to n Openseadragon.Points\footnote{
-	See \url{https://openseadragon.github.io/docs/OpenSeadragon.Viewport.html\#viewportToImageCoordinates} for more information on OSD's Point class.
+The \texttt{imgCoords} (image coordinates) property represents the coordinates of the path's segments in the baseline image. They are represented as a list of 1 to n Openseadragon.Points\footnote{
+	See \url{https://openseadragon.github.io/docs/OpenSeadragon.Viewport.html\#viewportToImageCoordinates} for more information on OSD's \texttt{Point} class.
 }. This property is used to establish the relation between the ROIs of the AO and the baseline image.
 
-The \textbf{name} property contains the title of the region's corresponding label. A region is created with the dictionary label entry currently active at the time of the regions creation.
+The \texttt{name} property contains the title of the region's corresponding label. A region is created with the dictionary label entry currently active at the time of the regions creation.
 
-The \textbf{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
-	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' Point class.
+The \texttt{path} property represents the coordinates of the path's segments in the AO. It is a list of 1 to n Paper.Points\footnote{
+	See \url{http://paperjs.org/reference/point/} for more information on Paper.js' \texttt{Point} class.
 }. They are being used to manage the contour of an ROI in the AO. The number of points in imgCoords and path is always identical, as is their position inside the list.
 
-The \textbf{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
+The \texttt{uid} is a unique id ($\text{uid} \in \mathbb{Z}^{+}$) that is used to identify the region.
 
-The \textbf{zoom} attribute describes the level of magnification at the point a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives and negatives\cite{Janowczyk16}.
+The \texttt{zoom} attribute describes the level of magnification at the point a region was created. It is the ratio between displayed and original image size (e.g. 1 = 1:1 ratio, 0.5 = 1:2 ratio). This information is added due to the fact that the annotation process seldom happens in the highest nor at a singular magnification. Instead, different magnifications are used (lower ones to speed up the process, higher ones to inspect ROIs in more detail). This leads to annotations that are rarely pixel precise and tend to contain numerous false positives and negatives\cite{Janowczyk16}.
 
 
 \subsection{Graphical User Interface}
